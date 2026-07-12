@@ -1,0 +1,683 @@
+/* =========================================================
+   Remarka Studio — компонентные стили поверх Prespa.
+   Токены приходят из theme.json как --wp--preset--*.
+   Все селекторы либо брендовые (sr-*), либо переопределяют
+   каркас Prespa (#masthead, .site-footer) и разметку core-блоков.
+   ========================================================= */
+
+:root {
+  --sr-carta: var(--wp--preset--color--carta, #F7F6F2);
+  --sr-bianco: var(--wp--preset--color--bianco, #FFFFFF);
+  --sr-inchiostro: var(--wp--preset--color--inchiostro, #14161A);
+  --sr-grigio: var(--wp--preset--color--grigio, #5A5E66);
+  --sr-bordo: var(--wp--preset--color--bordo, #DDDBD4);
+  --sr-traccia: var(--wp--preset--color--traccia, #EBEAE4);
+  --sr-oltremare: var(--wp--preset--color--oltremare, #2440C8);
+  --sr-oltremare-scuro: var(--wp--preset--color--oltremare-scuro, #1A2F96);
+  --sr-oltremare-chiaro: var(--wp--preset--color--oltremare-chiaro, #5B73E8);
+  --sr-verde: var(--wp--preset--color--verde, #1E7F4F);
+  --sr-whatsapp: #25D366;
+  --sr-font-display: var(--wp--preset--font-family--display, 'Clash Display', sans-serif);
+  --sr-font-body: var(--wp--preset--font-family--body, 'General Sans', system-ui, sans-serif);
+  --sr-font-mono: var(--wp--preset--font-family--mono, 'Fragment Mono', monospace);
+  --sr-radius: 8px;
+}
+
+body {
+  background: var(--sr-carta);
+  color: var(--sr-inchiostro);
+  font-family: var(--sr-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--sr-oltremare);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--sr-oltremare);
+  color: var(--sr-carta);
+}
+
+/* ---------- Шапка Prespa в бренд ---------- */
+
+#masthead.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--sr-carta);
+  border-bottom: 1px solid var(--sr-bordo);
+  box-shadow: none;
+}
+
+#masthead .site-title,
+#masthead .site-title a {
+  font-family: var(--sr-font-display);
+  font-weight: 600;
+  font-size: 21px;
+  letter-spacing: -0.01em;
+  color: var(--sr-inchiostro);
+}
+
+#masthead .main-navigation a {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--sr-grigio);
+  transition: color 0.2s ease;
+}
+
+#masthead .main-navigation a:hover {
+  color: var(--sr-inchiostro);
+}
+
+#masthead .main-navigation .current-menu-item > a,
+#masthead .main-navigation .current_page_item > a {
+  color: var(--sr-inchiostro);
+  border-bottom: 2px solid var(--sr-oltremare);
+}
+
+/* Пункт меню-CTA: в WP пункту меню задаётся класс sr-menu-cta */
+#masthead .sr-menu-cta > a {
+  background: var(--sr-oltremare);
+  color: var(--sr-carta) !important;
+  padding: 12px 22px;
+  border-radius: var(--sr-radius);
+  border-bottom: none !important;
+  transition: background-color 0.2s ease;
+}
+
+#masthead .sr-menu-cta > a:hover {
+  background: var(--sr-oltremare-scuro);
+}
+
+/* ---------- Типографика ---------- */
+
+.sr-eyebrow,
+.is-style-sr-eyebrow {
+  font-family: var(--sr-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sr-grigio);
+  margin: 0 0 20px;
+}
+
+.sr-mono {
+  font-family: var(--sr-font-mono);
+}
+
+.sr-accent-dot {
+  color: var(--sr-oltremare);
+}
+
+.sr-dark .sr-accent-dot,
+.is-style-sr-dark .sr-accent-dot {
+  color: var(--sr-oltremare-chiaro);
+}
+
+.sr-muted {
+  color: var(--sr-grigio);
+}
+
+/* ---------- Секции ---------- */
+
+.sr-section,
+.is-style-sr-section {
+  padding-top: clamp(64px, 8vw, 104px);
+  padding-bottom: clamp(64px, 8vw, 104px);
+  border-bottom: 1px solid var(--sr-bordo);
+  position: relative;
+}
+
+.sr-section--bianco,
+.is-style-sr-section--bianco {
+  background: var(--sr-bianco);
+}
+
+.sr-dark,
+.is-style-sr-dark {
+  background: var(--sr-inchiostro);
+  color: rgba(247, 246, 242, 0.66);
+  border-bottom: none;
+}
+
+.sr-dark h1, .sr-dark h2, .sr-dark h3,
+.is-style-sr-dark h1, .is-style-sr-dark h2, .is-style-sr-dark h3 {
+  color: var(--sr-carta);
+}
+
+.sr-dark .sr-eyebrow,
+.is-style-sr-dark .sr-eyebrow,
+.sr-dark .is-style-sr-eyebrow,
+.is-style-sr-dark .is-style-sr-eyebrow {
+  color: #9BA3C4;
+}
+
+/* Фон-сетка героя */
+.sr-hero,
+.is-style-sr-hero {
+  overflow: hidden;
+}
+
+.sr-hero::before,
+.is-style-sr-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(20, 22, 26, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 22, 26, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+}
+
+.sr-hero::after,
+.is-style-sr-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(247, 246, 242, 0) 0%, rgba(247, 246, 242, 0.6) 62%, var(--sr-carta) 100%);
+  pointer-events: none;
+}
+
+.sr-hero > *,
+.is-style-sr-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Вращающийся астериск-вотермарк (вставляется wp:html внутри героя) */
+.sr-watermark {
+  position: absolute;
+  right: -150px;
+  top: -130px;
+  width: 620px;
+  height: 620px;
+  opacity: 0.055;
+  pointer-events: none;
+  z-index: 0;
+  animation: sr-spin 90s linear infinite;
+}
+
+@keyframes sr-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Кнопки (поверх core button) ---------- */
+
+.wp-block-button__link {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.is-style-outline .wp-block-button__link,
+.sr-btn-outline .wp-block-button__link {
+  background: transparent;
+  color: var(--sr-inchiostro);
+  border: 1px solid var(--sr-inchiostro);
+}
+
+.is-style-outline .wp-block-button__link:hover,
+.sr-btn-outline .wp-block-button__link:hover {
+  background: transparent;
+  color: var(--sr-oltremare);
+  border-color: var(--sr-oltremare);
+}
+
+.sr-dark .is-style-outline .wp-block-button__link,
+.is-style-sr-dark .is-style-outline .wp-block-button__link {
+  color: var(--sr-carta);
+  border-color: rgba(247, 246, 242, 0.4);
+}
+
+.sr-dark .is-style-outline .wp-block-button__link:hover,
+.is-style-sr-dark .is-style-outline .wp-block-button__link:hover {
+  color: var(--sr-oltremare-chiaro);
+  border-color: var(--sr-oltremare-chiaro);
+}
+
+.sr-dark .wp-block-button__link,
+.is-style-sr-dark .wp-block-button__link {
+  background: var(--sr-oltremare-chiaro);
+}
+
+.sr-btn-whatsapp .wp-block-button__link,
+.is-style-sr-btn-whatsapp .wp-block-button__link {
+  background: var(--sr-whatsapp);
+  color: #fff;
+}
+
+.sr-btn-whatsapp .wp-block-button__link:hover,
+.is-style-sr-btn-whatsapp .wp-block-button__link:hover {
+  background: #1EBE5A;
+}
+
+/* ---------- Карточки ---------- */
+
+.sr-card,
+.is-style-sr-card {
+  background: var(--sr-bianco);
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  padding: 28px;
+  transition: border-color 0.2s ease;
+  box-shadow: none;
+}
+
+.sr-card:hover,
+.is-style-sr-card:hover {
+  border-color: var(--sr-oltremare);
+}
+
+.sr-card--carta,
+.is-style-sr-card--carta {
+  background: var(--sr-carta);
+}
+
+.sr-card h3,
+.is-style-sr-card h3 {
+  margin-top: 0;
+}
+
+.sr-card-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--sr-oltremare);
+}
+
+/* ---------- Stat-блоки («tre numeri», garanzie) ---------- */
+
+.sr-stat {
+  border-top: 1px solid var(--sr-inchiostro);
+  padding-top: 28px;
+}
+
+.sr-dark .sr-stat,
+.is-style-sr-dark .sr-stat {
+  border-top-color: rgba(247, 246, 242, 0.18);
+}
+
+.sr-stat__num {
+  font-family: var(--sr-font-mono);
+  font-size: var(--wp--preset--font-size--big-number, clamp(56px, 5vw, 84px));
+  line-height: 1;
+  color: var(--sr-oltremare);
+}
+
+.sr-stat__num--verde { color: var(--sr-verde); }
+.sr-dark .sr-stat__num,
+.is-style-sr-dark .sr-stat__num { color: var(--sr-oltremare-chiaro); }
+
+.sr-stat p {
+  margin: 8px 0 0;
+}
+
+/* ---------- La barra dei cento ---------- */
+
+.sr-barra {
+  position: relative;
+  background: var(--sr-traccia);
+  height: 10px;
+}
+
+.sr-barra--h3 { height: 3px; }
+.sr-barra--h6 { height: 6px; }
+.sr-barra--h8 { height: 8px; }
+
+.sr-barra__fill {
+  height: 100%;
+  background: var(--sr-oltremare);
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.sr-barra__fill--muted { background: var(--sr-grigio); }
+.sr-barra__fill--verde { background: var(--sr-verde); }
+
+.sr-barra[data-barra-ready] .sr-barra__fill {
+  width: var(--sr-barra-target, 0%);
+}
+
+.sr-barra__tick {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 1px;
+  background: var(--sr-inchiostro);
+  opacity: 0.3;
+}
+
+.sr-barra-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.sr-barra-row .sr-eyebrow { margin: 0; }
+
+.sr-barra-row__val {
+  font-family: var(--sr-font-mono);
+  font-size: 26px;
+  color: var(--sr-grigio);
+}
+
+.sr-barra-row__val--verde { color: var(--sr-verde); }
+
+/* ---------- Метрики кейса (строки с числом слева) ---------- */
+
+.sr-metric-rows {
+  border-top: 1px solid var(--sr-bordo);
+  margin-top: 32px;
+}
+
+.sr-metric-rows > div,
+.sr-metric-rows > p {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  padding: 16px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--sr-bordo);
+  color: var(--sr-grigio);
+}
+
+.sr-metric-rows .sr-mono {
+  font-size: 20px;
+  color: var(--sr-oltremare);
+  min-width: 88px;
+  flex-shrink: 0;
+}
+
+/* ---------- Строка счёта в hero-виджете ---------- */
+
+.sr-score-line {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 16px 0 0;
+}
+
+.sr-score-num {
+  font-family: var(--sr-font-mono);
+  font-size: var(--wp--preset--font-size--big-number, clamp(56px, 5vw, 84px));
+  line-height: 1;
+  color: var(--sr-verde);
+}
+
+.sr-score-of {
+  font-family: var(--sr-font-mono);
+  font-size: 18px;
+  color: var(--sr-grigio);
+}
+
+.sr-score-scale {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0 0;
+  font-family: var(--sr-font-mono);
+  font-size: 11px;
+  color: var(--sr-grigio);
+}
+
+/* ---------- Браузерная рамка скриншотов ---------- */
+
+.sr-browser {
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  overflow: hidden;
+  background: var(--sr-bianco);
+}
+
+.sr-browser__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--sr-bordo);
+}
+
+.sr-browser__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #C9CBCF;
+}
+
+.sr-browser__url {
+  font-family: var(--sr-font-mono);
+  font-size: 12px;
+  color: var(--sr-grigio);
+  margin-left: 8px;
+}
+
+.sr-browser img {
+  display: block;
+  width: 100%;
+}
+
+/* ---------- Таблица цен ---------- */
+
+.sr-price-table {
+  overflow-x: auto;
+}
+
+.sr-price-table table {
+  min-width: 760px;
+  width: 100%;
+  background: var(--sr-bianco);
+  border: 1px solid var(--sr-bordo);
+  border-collapse: collapse;
+}
+
+.sr-price-table th {
+  font-family: var(--sr-font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sr-grigio);
+  text-align: left;
+  padding: 14px 28px;
+  border-bottom: 1px solid var(--sr-bordo);
+}
+
+.sr-price-table td {
+  padding: 26px 28px;
+  border-bottom: 1px solid var(--sr-bordo);
+  vertical-align: baseline;
+}
+
+.sr-price-table tr:last-child td { border-bottom: none; }
+
+.sr-price-table td:first-child {
+  font-family: var(--sr-font-display);
+  font-weight: 500;
+  font-size: 21px;
+  color: var(--sr-inchiostro);
+}
+
+.sr-price-table td:last-child {
+  font-family: var(--sr-font-mono);
+  font-size: 17px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ---------- Шаги (come lavoriamo) ---------- */
+
+.sr-steps,
+.is-style-sr-steps {
+  border-top: 1px solid var(--sr-inchiostro);
+}
+
+.sr-steps .wp-block-column,
+.is-style-sr-steps .wp-block-column {
+  padding-top: 24px;
+}
+
+.sr-step__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--sr-font-mono);
+}
+
+.sr-step__head .sr-step-num {
+  font-size: 14px;
+  color: var(--sr-oltremare);
+}
+
+.sr-step__head .sr-step-tag {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--sr-grigio);
+}
+
+/* ---------- FAQ через core details ---------- */
+
+.sr-faq .wp-block-details {
+  border-bottom: 1px solid var(--sr-bordo);
+  padding: 22px 0;
+  margin: 0;
+}
+
+.sr-faq .wp-block-details:first-child {
+  border-top: 1px solid var(--sr-bordo);
+}
+
+.sr-faq summary {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--sr-inchiostro);
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 48px;
+}
+
+.sr-faq summary::-webkit-details-marker { display: none; }
+
+.sr-faq summary::after {
+  content: '+';
+  font-family: var(--sr-font-mono);
+  font-size: 22px;
+  color: var(--sr-oltremare);
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sr-faq details[open] summary::after {
+  content: '−';
+}
+
+.sr-faq details > :not(summary) {
+  margin: 16px 48px 0 0;
+  color: var(--sr-grigio);
+}
+
+/* ---------- Reveal-система (порт из прототипа) ---------- */
+
+.sr-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.sr-reveal.sr-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Каскад: контейнеру задаётся sr-cascade, детям — задержки через JS */
+.sr-cascade > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.sr-cascade.sr-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Счётчик — просто маркер для JS */
+.sr-counter { font-variant-numeric: tabular-nums; }
+
+/* ---------- Подвал ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--sr-bordo);
+  background: var(--sr-carta);
+}
+
+.site-footer a {
+  color: var(--sr-inchiostro);
+}
+
+.site-footer a:hover {
+  color: var(--sr-oltremare);
+}
+
+.sr-footer-score {
+  font-family: var(--sr-font-mono);
+  font-size: 12px;
+  color: var(--sr-grigio);
+}
+
+.sr-footer-score b {
+  color: var(--sr-verde);
+  font-weight: 400;
+}
+
+/* ---------- Утилиты ---------- */
+
+.sr-rule-top { border-top: 1px solid var(--sr-bordo); }
+.sr-no-margin { margin: 0; }
+
+.sr-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- prefers-reduced-motion: всё видимо, ничего не движется ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .sr-reveal,
+  .sr-cascade > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .sr-barra__fill {
+    transition: none;
+  }
+
+  .sr-barra .sr-barra__fill {
+    width: var(--sr-barra-target, 100%);
+  }
+
+  .sr-watermark {
+    animation: none;
+  }
+
+  /* Анимации Prespa тоже глушим */
+  [class*='p-animation-'] {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

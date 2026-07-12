@@ -1,0 +1,19 @@
+/*
+Theme Name:  Remarka Studio
+Theme URI:   https://remarka.biz
+Description: Дочерняя тема Prespa с дизайн-системой Studio Remarka: измеримость, la barra dei cento, числа вместо прилагательных. Контент собирается из Gutenberg-паттернов категории «Remarka».
+Author:      Studio Remarka
+Template:    prespa
+Version:     1.0.0
+Requires at least: 6.4
+Tested up to: 7.0
+Requires PHP: 7.4
+License:     GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: remarka-studio
+*/
+
+/*
+Стили темы живут в assets/css/remarka.css (подключается из functions.php).
+Этот файл намеренно пуст: WordPress требует его только как манифест темы.
+*/
