@@ -83,7 +83,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Formazione all'uso, misurazioni mensili e assistenza inclusa.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Formazione all’uso, misurazioni mensili e assistenza inclusa.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

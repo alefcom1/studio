@@ -506,6 +506,305 @@ body {
   white-space: nowrap;
 }
 
+/* ---------- Righe con lettera mono (per chi è / cosa fa variare) ---------- */
+
+.sr-list-rows {
+  border-top: 1px solid var(--sr-bordo);
+}
+
+.sr-list-rows > div,
+.sr-list-rows > p {
+  display: flex;
+  gap: 16px;
+  padding: 18px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--sr-bordo);
+}
+
+.sr-list-rows .sr-mono {
+  color: var(--sr-oltremare);
+  min-width: 16px;
+  flex-shrink: 0;
+}
+
+/* ---------- Checklist a due colonne (cosa include) ---------- */
+
+.sr-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 4px 40px;
+  margin-top: 40px;
+}
+
+.sr-checklist > div,
+.sr-checklist > p {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--sr-bordo);
+}
+
+.sr-checklist .sr-mono {
+  color: var(--sr-verde);
+  flex-shrink: 0;
+}
+
+/* ---------- Capitoli numerati (caso detail) ---------- */
+
+.sr-chapter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 48px;
+}
+
+.sr-chapter__label {
+  flex: 0 0 200px;
+  color: var(--sr-oltremare);
+  font-size: 14px;
+}
+
+.sr-chapter__content {
+  flex: 1 1 480px;
+  max-width: 720px;
+}
+
+.sr-chapter__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+  border-top: 1px solid var(--sr-inchiostro);
+  padding-top: 20px;
+}
+
+.sr-chapter__stats .sr-stat__num {
+  font-size: clamp(32px, 3vw, 44px);
+}
+
+/* ---------- Citazione con barra a sinistra ---------- */
+
+.sr-pull-quote {
+  margin: 32px 0 0;
+  padding-left: 28px;
+  border-left: 2px solid var(--sr-oltremare);
+}
+
+.sr-pull-quote p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--sr-inchiostro);
+}
+
+.sr-pull-quote cite {
+  display: block;
+  margin-top: 12px;
+  font-style: normal;
+  font-size: 13px;
+  color: var(--sr-grigio);
+}
+
+/* ---------- Tabella comparativa (Prezzi, pagina completa) ---------- */
+
+.sr-compare-table {
+  overflow-x: auto;
+}
+
+.sr-compare-table table {
+  min-width: 840px;
+  width: 100%;
+  background: var(--sr-bianco);
+  border: 1px solid var(--sr-bordo);
+  border-collapse: collapse;
+}
+
+.sr-compare-table th {
+  padding: 20px;
+  border-bottom: 1px solid var(--sr-inchiostro);
+  text-align: left;
+  font-weight: 400;
+}
+
+.sr-compare-table th strong {
+  display: block;
+  font-family: var(--sr-font-display);
+  font-weight: 500;
+  font-size: 19px;
+  color: var(--sr-inchiostro);
+}
+
+.sr-compare-table th span {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--sr-font-mono);
+  font-size: 15px;
+  color: var(--sr-oltremare);
+  font-weight: 400;
+}
+
+.sr-compare-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--sr-bordo);
+  border-left: 1px solid var(--sr-bordo);
+  text-align: center;
+  font-family: var(--sr-font-mono);
+  font-size: 14px;
+}
+
+.sr-compare-table td:first-child {
+  border-left: none;
+  text-align: left;
+  font-family: var(--sr-font-body);
+  font-size: 14.5px;
+  color: var(--sr-grigio);
+}
+
+.sr-compare-table .sr-yes { color: var(--sr-verde); }
+.sr-compare-table .sr-no { color: #A2A5AB; }
+
+/* ---------- Widget strumento (test velocità) ---------- */
+
+.sr-tool-widget {
+  padding: 32px;
+}
+
+.sr-tool-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sr-text-input {
+  flex: 1 1 200px;
+  min-width: 0;
+  background: var(--sr-bianco);
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  padding: 13px 14px;
+  font-family: var(--sr-font-body);
+  font-size: 15px;
+  color: var(--sr-inchiostro);
+  outline: none;
+}
+
+.sr-text-input:focus {
+  border-color: var(--sr-oltremare);
+  box-shadow: inset 0 0 0 1px var(--sr-oltremare);
+}
+
+.sr-tool-pending {
+  margin: 20px 0 0;
+  font-size: 14px;
+  color: var(--sr-grigio);
+}
+
+.sr-tool-result {
+  margin-top: 24px;
+}
+
+.sr-tool-result__score {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.sr-tool-result__score .sr-mono:first-child {
+  font-size: clamp(56px, 5vw, 84px);
+  line-height: 1;
+  color: var(--sr-inchiostro);
+}
+
+.sr-tool-cwv {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--sr-bordo);
+}
+
+.sr-tool-cwv-value {
+  font-family: var(--sr-font-mono);
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+
+.sr-tool-caption {
+  margin-top: 28px;
+  font-size: 11.5px;
+  color: var(--sr-grigio);
+  opacity: 0.8;
+}
+
+.sr-blink {
+  animation: sr-blink 1s ease infinite;
+}
+
+@keyframes sr-blink {
+  50% { opacity: 0.15; }
+}
+
+/* ---------- Righe blog ---------- */
+
+.sr-blog-row {
+  display: flex;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--sr-bordo);
+}
+
+.sr-blog-row:first-child { border-top: 1px solid var(--sr-bordo); }
+
+.sr-blog-date {
+  flex: 0 0 150px;
+  font-family: var(--sr-font-mono);
+  font-size: 13px;
+  color: var(--sr-grigio);
+}
+
+.sr-blog-body { display: flex; flex-direction: column; gap: 8px; }
+
+/* ---------- Milano / pagine città ---------- */
+
+.sr-dove-siamo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.sr-dove-siamo__map {
+  flex: 2 1 420px;
+  min-height: 320px;
+  background: var(--sr-traccia);
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+}
+
+.sr-recensioni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.sr-servizi-rows {
+  border-top: 1px solid var(--sr-bordo);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+}
+
+.sr-servizi-rows > div,
+.sr-servizi-rows > p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 16px 20px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--sr-bordo);
+}
+
 /* ---------- Шаги (come lavoriamo) ---------- */
 
 .sr-steps,
@@ -634,6 +933,18 @@ body {
   font-weight: 400;
 }
 
+/* ---------- Layout core-блоков (сетки/колонки) ----------
+   Явные классы is-layout-*, которые проставляет наш генератор паттернов
+   (build-tools/generate_pages.py), — не полагаемся на автогенерируемые
+   инлайн-стили ядра WP для layout:{"type":"grid"}, чтобы вёрстка была
+   предсказуема и не зависела от версии WP/темы. */
+
+.wp-block-group.is-layout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--sr-grid-min, 260px), 1fr));
+  gap: 20px;
+}
+
 /* ---------- Утилиты ---------- */
 
 .sr-rule-top { border-top: 1px solid var(--sr-bordo); }
@@ -680,4 +991,107 @@ body {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* ---------- Мобильная адаптация ---------- */
+
+@media (max-width: 680px) {
+  .sr-checklist,
+  .sr-servizi-rows {
+    grid-template-columns: 1fr;
+  }
+
+  .sr-chapter__label {
+    flex-basis: 100%;
+  }
+
+  .sr-watermark {
+    display: none;
+  }
+}
+
+/* ---------- Cookie banner + WhatsApp FAB (site-wide, iniettati da functions.php) ---------- */
+
+.sr-cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  background: var(--sr-bianco);
+  border-top: 1px solid var(--sr-bordo);
+}
+
+.sr-cookie-banner[hidden] { display: none; }
+
+.sr-cookie-banner__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sr-cookie-banner__text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--sr-grigio);
+  margin: 0;
+  max-width: 640px;
+}
+
+.sr-cookie-banner__text a { color: var(--sr-oltremare); }
+
+.sr-cookie-banner__actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.sr-cookie-btn {
+  font-family: var(--sr-font-body);
+  font-size: 15px;
+  font-weight: 500;
+  background: transparent;
+  color: var(--sr-inchiostro);
+  border: 1px solid var(--sr-inchiostro);
+  border-radius: var(--sr-radius);
+  padding: 11px 26px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.sr-cookie-btn:hover {
+  color: var(--sr-oltremare);
+  border-color: var(--sr-oltremare);
+}
+
+.sr-wa-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 40;
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  background: var(--sr-whatsapp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(20, 22, 26, 0.22);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.2s ease;
+}
+
+.sr-wa-fab:hover { background: #1EBE5A; }
+
+.sr-wa-fab.sr-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }

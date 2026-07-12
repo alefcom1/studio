@@ -51,7 +51,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Un sito che si comporta come un'app: installabile, funziona anche offline, apre all'istante.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Un sito che si comporta come un’app: installabile, funziona anche offline, apre all’istante.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->

@@ -1,11 +1,16 @@
 /**
- * Remarka Studio — фронтовый движок (~3 КБ, без зависимостей).
+ * Remarka Studio — фронтовый движок (~5 КБ, без зависимостей).
  *
  * 1. sr-reveal / sr-cascade — появление блоков (порт из прототипа).
  * 2. .sr-barra[data-sr-target] — la barra dei cento: заливка до целевого %.
  * 3. .sr-counter[data-sr-to] — счётчик числа (0 → цель, ease-out cubic).
  * 4. Фолбэк для анимаций Prespa: если JS родительской темы не добавил
  *    .animated элементам .p-animation-*, добавляем сами по тому же контракту.
+ * 5. Demo-виджеты (hero, test velocità) — детерминированный fake-скоринг
+ *    по хешу URL, как в дизайн-прототипе. В продакшене заменить на реальный
+ *    вызов PageSpeed Insights API (см. TODO в конце файла).
+ * 6. Cookie-banner + WhatsApp FAB — сайтвайд, инжектятся в футер через
+ *    functions.php (remarka_inject_footer_widgets), логика здесь.
  *
  * prefers-reduced-motion: всё видимо сразу, ничего не движется (см. CSS).
  */
@@ -185,10 +190,175 @@
 		}, 1500);
 	}
 
+	/* ---------- 5. Demo-виджеты скорости ---------- */
+
+	function hashScore(url, min, range) {
+		var h = 0;
+		for (var i = 0; i < url.length; i++) {
+			h = (h * 31 + url.charCodeAt(i)) >>> 0;
+		}
+		return min + (h % range);
+	}
+
+	function itNumber(value, decimals) {
+		return value.toFixed(decimals).replace('.', ',');
+	}
+
+	/** Виджет в hero: собственный балл студии (97) + форма «а у вас?». */
+	function initHeroWidgets() {
+		document.querySelectorAll('[data-sr-hero-form]').forEach(function (form) {
+			var pending = form.querySelector('[data-sr-hero-pending]');
+			var result = form.querySelector('[data-sr-hero-result]');
+			var urlOut = form.querySelector('[data-sr-hero-url]');
+			var scoreOut = form.querySelector('[data-sr-hero-score]');
+			var fill = form.querySelector('[data-sr-hero-fill]');
+			var running = false;
+
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+				if (running) {
+					return;
+				}
+				var input = form.querySelector('input[type="text"]');
+				var url = (input.value || '').trim() || 'www.tuosito.it';
+				running = true;
+				if (pending) pending.hidden = false;
+				if (result) result.hidden = true;
+				if (fill) fill.style.width = '0%';
+
+				window.setTimeout(function () {
+					var score = hashScore(url, 31, 28);
+					if (pending) pending.hidden = true;
+					if (result) result.hidden = false;
+					if (urlOut) urlOut.textContent = url;
+					if (scoreOut) scoreOut.textContent = String(score);
+					if (fill) {
+						window.requestAnimationFrame(function () {
+							window.requestAnimationFrame(function () {
+								fill.style.width = score + '%';
+							});
+						});
+					}
+					running = false;
+				}, 1400);
+			});
+		});
+	}
+
+	/** Виджet strumento «Test velocità»: punteggio + LCP/INP/CLS. */
+	function initToolWidgets() {
+		document.querySelectorAll('[data-sr-tool-form]').forEach(function (form) {
+			var pending = form.querySelector('[data-sr-tool-pending]');
+			var result = form.querySelector('[data-sr-tool-result]');
+			var running = false;
+
+			function verdictFor(score) {
+				if (score < 50) {
+					return 'Il sito è lento su mobile: la maggior parte dei visitatori abbandona prima del caricamento completo. Un restyling tecnico è la priorità.';
+				}
+				if (score < 90) {
+					return 'Il sito è nella media, ma lontano dagli standard consigliati da Google. Ci sono margini di miglioramento concreti e misurabili.';
+				}
+				return 'Ottimo punteggio: il sito rispetta gli standard Google per l’esperienza mobile.';
+			}
+
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+				if (running) {
+					return;
+				}
+				var input = form.querySelector('input[type="text"]');
+				var url = (input.value || '').trim() || 'www.tuosito.it';
+				running = true;
+				if (pending) pending.hidden = false;
+				if (result) result.hidden = true;
+
+				window.setTimeout(function () {
+					var score = hashScore(url, 28, 37);
+					var lcp = Math.max(1.2, 6.2 - score * 0.05);
+					var inp = Math.max(120, 640 - score * 6);
+					var cls = Math.max(0.02, 0.42 - score * 0.004);
+
+					var set = function (sel, text) {
+						var el = form.querySelector(sel);
+						if (el) el.textContent = text;
+					};
+					set('[data-sr-tool-url]', url);
+					set('[data-sr-tool-score]', String(score));
+					set('[data-sr-tool-verdict]', verdictFor(score));
+					set('[data-sr-tool-lcp]', itNumber(lcp, 1) + ' s');
+					set('[data-sr-tool-inp]', Math.round(inp) + ' ms');
+					set('[data-sr-tool-cls]', itNumber(cls, 2));
+
+					if (pending) pending.hidden = true;
+					if (result) result.hidden = false;
+
+					var fill = form.querySelector('[data-sr-tool-fill]');
+					if (fill) {
+						fill.style.width = '0%';
+						window.requestAnimationFrame(function () {
+							window.requestAnimationFrame(function () {
+								fill.style.width = score + '%';
+							});
+						});
+					}
+					running = false;
+				}, 1800);
+			});
+		});
+	}
+	/* TODO produzione: sostituire hashScore()/verdictFor() con una chiamata
+	   server-side alla PageSpeed Insights API (mediana di 3 rilevazioni),
+	   mantenendo lo stesso stato pending 1.4–1.8s e la stessa struttura dati. */
+
+	/* ---------- 6. Cookie banner + WhatsApp FAB ---------- */
+
+	function initCookieBanner() {
+		var banner = document.querySelector('[data-sr-cookie-banner]');
+		if (!banner) {
+			return;
+		}
+		var KEY = 'sr-cookie-choice';
+		try {
+			if (!window.localStorage.getItem(KEY)) {
+				banner.hidden = false;
+			}
+		} catch (err) {
+			banner.hidden = false;
+		}
+		banner.querySelectorAll('[data-sr-cookie-choice]').forEach(function (btn) {
+			btn.addEventListener('click', function () {
+				try {
+					window.localStorage.setItem(KEY, btn.getAttribute('data-sr-cookie-choice'));
+				} catch (err) { /* privacy mode: la scelta vale solo per la sessione */ }
+				banner.hidden = true;
+			});
+		});
+	}
+
+	function initWaFab() {
+		var fab = document.querySelector('[data-sr-wa-fab]');
+		if (!fab) {
+			return;
+		}
+		var check = function () {
+			var scrolled = window.scrollY + window.innerHeight;
+			var threshold = document.documentElement.scrollHeight * 0.6;
+			fab.classList.toggle('sr-visible', scrolled > threshold);
+		};
+		check();
+		window.addEventListener('scroll', check, { passive: true });
+		window.addEventListener('resize', check);
+	}
+
 	onReady(function () {
 		initReveal();
 		initBarre();
 		initCounters();
 		initPrespaFallback();
+		initHeroWidgets();
+		initToolWidgets();
+		initCookieBanner();
+		initWaFab();
 	});
 })();

@@ -13,7 +13,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Prezzi trasparenti. Nessuna sorpresa in corso d'opera<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Prezzi trasparenti. Nessuna sorpresa in corso d’opera<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 
 <!-- wp:group {"className":"sr-price-table","style":{"spacing":{"margin":{"top":"56px"}}},"layout":{"type":"constrained"}} -->

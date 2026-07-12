@@ -28,7 +28,7 @@
 
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"36px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:36px"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/strumenti/test-velocita/">Analizza il tuo sito — gratis</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/strumenti/test-velocita/">Analizza il vostro sito — gratis</a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-outline"} -->
@@ -54,7 +54,28 @@
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
 <p class="has-grigio-color has-text-color has-small-font-size">Punteggio medio dei siti che consegniamo. Garantito da contratto.</p>
-<!-- /wp:paragraph --></div>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<form data-sr-hero-form style="margin-top:24px;border-top:1px solid var(--sr-bordo);padding-top:24px">
+  <label for="hero-url" class="sr-eyebrow" style="display:block;margin-bottom:10px">E il vostro sito quanto fa?</label>
+  <div class="sr-tool-row">
+    <input id="hero-url" type="text" placeholder="www.tuosito.it" class="sr-text-input" />
+    <button type="submit" class="wp-block-button__link" style="padding:13px 22px;font-size:15px;border:1px solid var(--sr-oltremare)">Analizza</button>
+  </div>
+  <p class="sr-tool-pending sr-mono" data-sr-hero-pending hidden>Analisi in corso<span class="sr-blink">…</span></p>
+  <div data-sr-hero-result hidden style="margin-top:18px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+      <span data-sr-hero-url style="font-size:14px;color:var(--sr-grigio);overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></span>
+      <span data-sr-hero-score class="sr-mono" style="font-size:28px;color:var(--sr-inchiostro)"></span>
+    </div>
+    <div class="sr-barra sr-barra--h8" style="margin-top:8px">
+      <div class="sr-barra__fill sr-barra__fill--muted" data-sr-hero-fill style="width:0%"></div>
+    </div>
+    <p style="margin:12px 0 0;font-size:14px;line-height:1.5;color:var(--sr-grigio)">Margine di miglioramento: con un sito progressivo garantiamo <span class="sr-mono" style="color:var(--sr-verde)">90+</span> da contratto.</p>
+  </div>
+</form>
+<!-- /wp:html --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

@@ -32,7 +32,7 @@
 
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Quanto tempo ci vuole?</summary><!-- wp:paragraph -->
-<p>Da 3 settimane per un sito vetrina a 10 per un e-commerce. La data di consegna è scritta nel contratto: ogni giorno lavorativo di ritardo vale l'1% di sconto.</p>
+<p>Da 3 settimane per un sito vetrina a 10 per un e-commerce. La data di consegna è scritta nel contratto: ogni giorno lavorativo di ritardo vale l’1% di sconto.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
@@ -44,7 +44,7 @@
 
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Il sito sarà a norma GDPR?</summary><!-- wp:paragraph -->
-<p>Sì: banner cookie con rifiuto equivalente, informative aggiornate, dati ospitati nell'Unione Europea. La conformità è inclusa nel prezzo, non un extra.</p>
+<p>Sì: banner cookie con rifiuto equivalente, informative aggiornate, dati ospitati nell’Unione Europea. La conformità è inclusa nel prezzo, non un extra.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
@@ -56,7 +56,7 @@
 
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Ho già un sito: devo rifarlo da zero?</summary><!-- wp:paragraph -->
-<p>Non sempre. L'analisi gratuita dice cosa tenere e cosa rifare: spesso un restyling tecnico basta per passare da 30 a 90+.</p>
+<p>Non sempre. L’analisi gratuita dice cosa tenere e cosa rifare: spesso un restyling tecnico basta per passare da 30 a 90+.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details --></div>
 <!-- /wp:column --></div>

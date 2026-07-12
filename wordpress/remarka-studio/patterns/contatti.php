@@ -15,11 +15,11 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Parliamo del tuo progetto<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Parliamo del vostro progetto<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium","style":{"spacing":{"margin":{"top":"18px"}}}} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:18px">Un'analisi gratuita del sito attuale o un preventivo chiuso in 24 ore. Scegliete il canale che preferite.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:18px">Un’analisi gratuita del sito attuale o un preventivo chiuso in 24 ore. Scegliete il canale che preferite.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"className":"sr-btn-whatsapp","style":{"spacing":{"margin":{"top":"32px"}}}} -->
@@ -40,7 +40,7 @@
 <!-- /wp:shortcode -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Rispondiamo entro un giorno lavorativo. I dati restano nell'UE, come da informativa privacy.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Rispondiamo entro un giorno lavorativo. I dati restano nell’UE, come da informativa privacy.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
