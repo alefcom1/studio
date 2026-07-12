@@ -1,0 +1,81 @@
+---
+const faqs = [
+  { q: 'Quanto costa un sito web?', a: 'Un sito vetrina parte da € 1.900, un sito aziendale da € 3.900, un e-commerce da € 7.500. Il preventivo è un prezzo chiuso: quello che firmate è quello che pagate, per iscritto.' },
+  { q: 'Quanto tempo ci vuole?', a: 'Da 3 settimane per un sito vetrina a 10 per un e-commerce. La data di consegna è scritta nel contratto: ogni giorno lavorativo di ritardo vale l’1% di sconto.' },
+  { q: 'Emettete fattura elettronica?', a: 'Sì. Siamo una S.r.l. italiana con P.IVA verificabile: fattura elettronica via SDI, pagamenti tracciabili, nessun acconto superiore al 40%.' },
+  { q: 'Il sito sarà a norma GDPR?', a: 'Sì: banner cookie con rifiuto equivalente, informative aggiornate, dati ospitati nell’Unione Europea. La conformità è inclusa nel prezzo, non un extra.' },
+  { q: 'Cosa succede dopo la consegna?', a: 'Dodici mesi di assistenza inclusi: aggiornamenti, backup, piccole modifiche e una misurazione PageSpeed ogni mese, con report scritto.' },
+  { q: 'Ho già un sito: devo rifarlo da zero?', a: 'Non sempre. L’analisi gratuita dice cosa tenere e cosa rifare: spesso un restyling tecnico basta per passare da 30 a 90+.' },
+];
+---
+<div class="faq" data-faq>
+  {faqs.map((faq) => (
+    <div class="faq__item">
+      <button type="button" class="faq__question" data-faq-toggle aria-expanded="false">
+        <span>{faq.q}</span>
+        <span class="mono faq__icon" aria-hidden="true">+</span>
+      </button>
+      <p class="body-text faq__answer" hidden>{faq.a}</p>
+    </div>
+  ))}
+</div>
+
+<style>
+  .faq {
+    border-top: 1px solid var(--bordo);
+  }
+  .faq__item {
+    border-bottom: 1px solid var(--bordo);
+  }
+  .faq__question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 22px 0;
+    text-align: left;
+    font-family: var(--font-body);
+  }
+  .faq__question span:first-child {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--inchiostro);
+  }
+  .faq__icon {
+    font-size: 22px;
+    color: var(--oltremare);
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+  }
+  .faq__answer {
+    margin: 0;
+    padding: 0 48px 24px 0;
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-faq]').forEach((faq) => {
+    const buttons = Array.from(faq.querySelectorAll<HTMLButtonElement>('[data-faq-toggle]'));
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling as HTMLElement;
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        buttons.forEach((other) => {
+          other.setAttribute('aria-expanded', 'false');
+          other.querySelector('.faq__icon')!.textContent = '+';
+          (other.nextElementSibling as HTMLElement).hidden = true;
+        });
+        if (!isOpen) {
+          btn.setAttribute('aria-expanded', 'true');
+          btn.querySelector('.faq__icon')!.textContent = '−';
+          answer.hidden = false;
+        }
+      });
+    });
+  });
+</script>

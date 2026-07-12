@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GridBackground from '../../components/ui/GridBackground.astro';
+import Barra from '../../components/ui/Barra.astro';
+import { services } from '../../data/services';
+
+export function getStaticPaths() {
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+---
+<BaseLayout title={service.title} description={service.heroSub} active="servizi">
+  <section class="section section--hero rule hero">
+    <GridBackground />
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow">{service.breadcrumb}</p>
+        <h1 class="h1" style="font-size:clamp(38px,4.6vw,64px)">{service.title}<span class="accent-dot">.</span></h1>
+        <p class="lede">{service.heroSub}</p>
+        <div class="hero__actions">
+          <a href="/#contatti" class="btn btn-primary">Richiedi preventivo</a>
+          <a href="/casi-studio" class="btn btn-outline">Vedi i casi studio</a>
+        </div>
+      </div>
+      <div class="hero__stat stat-block">
+        <span class="stat-block__number mono" style="color:var(--oltremare)">{service.heroStatValue}</span>
+        <p style="margin:16px 0 0;font-size:15.5px;color:var(--grigio)">{service.heroStatLabel}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container per-chi">
+      <div>
+        <p class="eyebrow">Per chi è</p>
+        <h2 class="h2">È il servizio giusto se<span class="accent-dot">.</span></h2>
+      </div>
+      <div class="per-chi__list">
+        {service.perChi.map((item, i) => (
+          <div class="per-chi__row">
+            <span class="mono per-chi__letter">{String.fromCharCode(97 + i)}</span>
+            <span class="body-text">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-bianco" style="border-top:1px solid var(--bordo)">
+    <div class="container">
+      <p class="eyebrow">Cosa include</p>
+      <h2 class="h2">Tutto compreso nel prezzo<span class="accent-dot">.</span></h2>
+      <div class="include-grid">
+        {service.include.map((item) => (
+          <div class="include-row">
+            <span class="mono include-check">✓</span>
+            <span class="body-text">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container mini-caso">
+      <div class="mini-caso__text">
+        <p class="eyebrow">Mini caso</p>
+        <h2 class="h2" style="font-size:clamp(26px,3vw,34px)">{service.miniCaso.cliente}<span class="accent-dot">.</span></h2>
+        <p class="body-text" style="margin-top:16px;font-size:16px">{service.miniCaso.testo}</p>
+      </div>
+      <div class="mini-caso__bars">
+        <div class="caso-bar">
+          <div class="caso-bar__row"><span class="eyebrow" style="margin:0">Prima</span><span class="mono" style="font-size:26px;color:var(--grigio)">{service.miniCaso.prima}</span></div>
+          <Barra target={service.miniCaso.prima} muted height={8} />
+        </div>
+        <div class="caso-bar">
+          <div class="caso-bar__row"><span class="eyebrow" style="margin:0">Dopo</span><span class="mono" style="font-size:26px;color:var(--verde)">{service.miniCaso.dopo}</span></div>
+          <Barra target={service.miniCaso.dopo} delay={150} height={8} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-bianco" style="border-top:1px solid var(--bordo)">
+    <div class="container">
+      <p class="eyebrow">Prezzo</p>
+      <div class="prezzo-range mono">{service.prezzoRange}</div>
+      <p class="body-text" style="margin-top:24px;font-weight:500;font-size:16px;color:var(--inchiostro)">Cosa fa variare il prezzo</p>
+      <div class="prezzo-note">
+        {service.prezzoNote.map((n, i) => (
+          <div class="per-chi__row">
+            <span class="mono per-chi__letter">{i + 1}</span>
+            <span class="body-text">{n}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Domande frequenti</p>
+      <div class="faq-grid">
+        {service.faq.map((f) => (
+          <div class="faq-grid__item">
+            <h3 class="card-title" style="font-size:18px">{f.q}</h3>
+            <p class="body-text" style="margin-top:10px;font-size:15px">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark">
+    <div class="container" style="text-align:center">
+      <h2 class="h2">Parliamo del vostro progetto<span class="accent-dot">.</span></h2>
+      <div style="display:flex;gap:14px;justify-content:center;margin-top:28px;flex-wrap:wrap">
+        <a href="/#contatti" class="btn btn-primary">Preventivo in 24 ore</a>
+        <a href="/prezzi" class="btn btn-outline">Confronta le tariffe</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero__inner { display: flex; flex-wrap: wrap; gap: 56px; align-items: center; position: relative; }
+  .hero__copy { flex: 1 1 480px; min-width: 0; }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+  .hero__stat { flex: 0 1 220px; }
+
+  .per-chi { display: flex; flex-wrap: wrap; gap: 40px 64px; }
+  .per-chi > div:first-child { flex: 1 1 280px; }
+  .per-chi__list, .prezzo-note { flex: 1.4 1 400px; border-top: 1px solid var(--bordo); }
+  .per-chi__row {
+    display: flex;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--bordo);
+  }
+  .per-chi__letter { color: var(--oltremare); min-width: 16px; }
+
+  .include-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    gap: 4px 40px;
+    margin-top: 40px;
+  }
+  .include-row { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--bordo); }
+  .include-check { color: var(--verde); }
+
+  .mini-caso { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; }
+  .mini-caso__text { flex: 1.2 1 380px; }
+  .mini-caso__bars { flex: 1 1 320px; display: flex; flex-direction: column; gap: 20px; }
+  .caso-bar { display: flex; flex-direction: column; gap: 8px; }
+  .caso-bar__row { display: flex; justify-content: space-between; align-items: baseline; }
+
+  .prezzo-range { font-size: clamp(36px, 4vw, 52px); color: var(--inchiostro); margin-top: 16px; }
+  .prezzo-note { margin-top: 16px; max-width: 640px; }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+  }
+  .faq-grid__item { border-top: 1px solid var(--inchiostro); padding-top: 20px; }
+</style>

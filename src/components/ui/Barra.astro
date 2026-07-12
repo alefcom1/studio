@@ -1,0 +1,23 @@
+---
+interface Props {
+  target: number;
+  height?: number;
+  delay?: number;
+  muted?: boolean;
+  tickAt?: number;
+  ariaLabel?: string;
+}
+const { target, height = 10, delay = 0, muted = false, tickAt, ariaLabel } = Astro.props;
+---
+<div
+  class="barra"
+  style={`height:${height}px`}
+  data-barra
+  data-barra-delay={delay}
+  role={ariaLabel ? 'img' : undefined}
+  aria-label={ariaLabel}
+  aria-hidden={ariaLabel ? undefined : 'true'}
+>
+  <div class:list={['barra__fill', { 'barra__fill--muted': muted }]} style={`--barra-target:${target}%`}></div>
+  {tickAt !== undefined && <span class="barra__tick" style={`left:${tickAt}%`}></span>}
+</div>

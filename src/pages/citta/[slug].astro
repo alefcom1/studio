@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GridBackground from '../../components/ui/GridBackground.astro';
+import BrowserFrame from '../../components/ui/BrowserFrame.astro';
+import Barra from '../../components/ui/Barra.astro';
+import { cities } from '../../data/cities';
+import { services } from '../../data/services';
+import { cases } from '../../data/cases';
+
+export function getStaticPaths() {
+  return cities.map((city) => ({
+    params: { slug: city.slug },
+    props: { city },
+  }));
+}
+
+const { city } = Astro.props;
+const localCase = cases.find((c) => c.slug === 'studio-fontana') ?? cases[0];
+
+const recensioni = [
+  { quote: 'Prezzo chiuso, data rispettata, sito che vola. Esattamente quello che era scritto nel preventivo.', attribuzione: 'Marco Colombo, Arredamenti Colombo' },
+  { quote: 'Il team ha seguito tutta la migrazione senza farci perdere una sola posizione su Google.', attribuzione: 'Laura Riva, Officine Riva' },
+  { quote: 'Risposta rapida su WhatsApp, report mensile puntuale. Assistenza vera, non solo promessa.', attribuzione: 'Elena Fontana, Studio Fontana' },
+];
+---
+<BaseLayout title={`Siti web a ${city.nome}`} description={`Realizzazione siti web a ${city.nome}: PageSpeed 90+ garantito, prezzo chiuso, prima consulenza gratuita.`} active="none">
+  <section class="section section--hero rule hero">
+    <GridBackground />
+    <div class="container" style="position:relative">
+      <p class="eyebrow">{city.eyebrow}</p>
+      <h1 class="h1" style="font-size:clamp(38px,4.6vw,64px)">Realizzazione siti web a {city.nome}<span class="accent-dot">.</span></h1>
+      <p class="lede">Prima consulenza gratuita, in sede o online. Prezzo chiuso e PageSpeed 90+ garantito da contratto.</p>
+      <div class="stat-block" style="margin-top:40px;max-width:280px">
+        <span class="stat-block__number mono" style="color:var(--oltremare)">{city.progetti}</span>
+        <p style="margin:10px 0 0;font-size:15px;color:var(--grigio)">progetti consegnati nell’area di {city.nome} dal {city.desde}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-bianco" style="border-top:1px solid var(--bordo)">
+    <div class="container">
+      <p class="eyebrow">Sei servizi</p>
+      <h2 class="h2">Cosa possiamo fare per voi<span class="accent-dot">.</span></h2>
+      <div class="servizi-rows" data-reveal-cascade>
+        {services.map((s) => (
+          <a href={`/servizi/${s.slug}`} class="servizi-rows__row">
+            <span style="font-size:16px;font-weight:500;color:var(--inchiostro)">{s.title}</span>
+            <span class="mono" style="color:var(--oltremare)">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container caso-body">
+      <div class="caso-body__frame">
+        <BrowserFrame aspect="16/10" label={`Screenshot del sito ${localCase.cliente}`} />
+      </div>
+      <div class="caso-body__stats">
+        <p class="eyebrow">Caso locale</p>
+        <h3 class="card-title" style="font-size:24px">{localCase.cliente}<span class="accent-dot">.</span></h3>
+        <p class="body-text" style="margin-top:12px">{localCase.risultati.narrativa}</p>
+        <div class="mini-caso__bars" style="margin-top:24px">
+          <Barra target={localCase.prima} muted height={6} />
+          <Barra target={localCase.dopo} delay={150} height={6} />
+        </div>
+        <a href={`/casi-studio/${localCase.slug}`} class="servizi-card__link">Leggi il caso completo →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-bianco" style="border-top:1px solid var(--bordo)">
+    <div class="container dove-siamo">
+      <div class="dove-siamo__map" aria-hidden="true">
+        <span class="visually-hidden">Mappa della sede di {city.nome}</span>
+      </div>
+      <div class="card dove-siamo__card">
+        <p class="eyebrow" style="margin:0">Dove siamo</p>
+        <p style="margin:12px 0 0;font-size:16px;color:var(--inchiostro)">{city.indirizzo}</p>
+        <p class="mono" style="margin:8px 0 0;font-size:13px;color:var(--grigio)">{city.metro}</p>
+        <p style="margin:16px 0 0;font-size:15px;color:var(--grigio)">{city.orari}</p>
+        <p class="mono" style="margin:6px 0 0;font-size:14px;color:var(--inchiostro)">{city.telefono}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Recensioni</p>
+      <p class="mono" style="margin:0 0 32px;color:var(--oltremare)">★ 4,9 · 47 recensioni</p>
+      <div class="recensioni-grid" data-reveal-cascade>
+        {recensioni.map((r) => (
+          <div class="card recensione-card">
+            <p class="mono" style="color:var(--oltremare)">★★★★★</p>
+            <p style="margin:14px 0 0;font-size:15.5px;line-height:1.6;color:var(--inchiostro)">“{r.quote}”</p>
+            <p class="mono" style="margin:16px 0 0;font-size:13px;color:var(--grigio)">{r.attribuzione}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark">
+    <div class="container" style="text-align:center">
+      <h2 class="h2">Parliamo del vostro progetto a {city.nome}<span class="accent-dot">.</span></h2>
+      <a href="https://wa.me/393458219047" class="btn btn-primary" style="margin-top:28px;background:var(--whatsapp);border-color:var(--whatsapp)" target="_blank" rel="noopener noreferrer">
+        WhatsApp Business
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .servizi-rows { margin-top: 32px; border-top: 1px solid var(--bordo); display: grid; grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+  .servizi-rows__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 16px 20px 0;
+    border-bottom: 1px solid var(--bordo);
+  }
+  .caso-body { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; }
+  .caso-body__frame { flex: 1 1 480px; min-width: 0; }
+  .caso-body__stats { flex: 1 1 380px; min-width: 0; }
+  .servizi-card__link { display: inline-block; margin-top: 20px; font-size: 15px; font-weight: 500; color: var(--oltremare); }
+  .mini-caso__bars { display: flex; flex-direction: column; gap: 10px; }
+
+  .dove-siamo { display: flex; flex-wrap: wrap; gap: 32px; }
+  .dove-siamo__map {
+    flex: 2 1 420px;
+    min-height: 320px;
+    background: var(--traccia);
+    border: 1px solid var(--bordo);
+    border-radius: var(--radius);
+  }
+  .dove-siamo__card { flex: 1 1 260px; padding: 28px; }
+
+  .recensioni-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .recensione-card { padding: 26px; }
+</style>

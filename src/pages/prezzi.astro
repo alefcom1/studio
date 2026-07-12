@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GridBackground from '../components/ui/GridBackground.astro';
+import Barra from '../components/ui/Barra.astro';
+
+const tiers = [
+  { nome: 'Sito vetrina', prezzo: '€ 1.900–2.800' },
+  { nome: 'Sito aziendale', prezzo: '€ 3.900–5.800' },
+  { nome: 'E-commerce', prezzo: '€ 7.500–14.000' },
+];
+
+const rows = [
+  { label: 'Pagine incluse', values: ['5', '15', 'Catalogo'] },
+  { label: 'Lingue', values: ['1', '2', '2'] },
+  { label: 'Design su misura', values: [true, true, true] },
+  { label: 'CMS', values: [false, true, true] },
+  { label: 'PWA', values: [false, true, true] },
+  { label: 'Catalogo e pagamenti', values: [false, false, true] },
+  { label: 'SEO', values: ['base', 'completa', 'completa'] },
+  { label: 'PageSpeed 90+', values: [true, true, true] },
+  { label: 'Assistenza', values: ['12 mesi', '12 mesi', '12 mesi'] },
+  { label: 'Consegna', values: ['3 sett.', '5–7 sett.', '8–10 sett.'] },
+];
+
+const variazioni = [
+  { titolo: 'Contenuti', desc: 'Numero di pagine, sezioni e lingue del sito finale.' },
+  { titolo: 'Lingue', desc: 'Ogni lingua aggiuntiva richiede traduzione madrelingua e SEO dedicata.' },
+  { titolo: 'Integrazioni', desc: 'CRM, prenotazioni, pagamenti o sistemi gestionali esterni.' },
+];
+---
+<BaseLayout title="Prezzi" description="Prezzi trasparenti per siti vetrina, aziendali ed e-commerce. Prezzo chiuso, nessuna sorpresa." active="prezzi">
+  <section class="section section--hero rule hero">
+    <GridBackground />
+    <div class="container" style="position:relative">
+      <p class="eyebrow">Prezzi</p>
+      <h1 class="h1" style="font-size:clamp(38px,4.6vw,64px)">Prezzi trasparenti<span class="accent-dot">.</span></h1>
+      <p class="lede">Un prezzo chiuso: quello che firmate è quello che pagate.</p>
+      <div style="margin-top:40px;max-width:600px">
+        <Barra target={100} height={6} />
+        <p class="mono" style="margin-top:10px;font-size:12px;color:var(--grigio)">100% DEI PREVENTIVI 2025 CHIUSI AL PREZZO FIRMATO</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="overflow-x:auto">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            {tiers.map((t) => (
+              <th>
+                <span class="compare-table__tier">{t.nome}</span>
+                <span class="mono compare-table__price">{t.prezzo}</span>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr>
+              <td class="compare-table__label">{row.label}</td>
+              {row.values.map((v) => (
+                <td class="compare-table__value">
+                  {typeof v === 'boolean' ? (
+                    v ? <span class="mono" style="color:var(--verde)">✓</span> : <span style="color:var(--client-wordmarks)">—</span>
+                  ) : (
+                    <span class="mono">{v}</span>
+                  )}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="body-text" style="margin-top:24px;font-size:15px">
+        Fattura elettronica via SDI. Pagamento in tre tranche: 40 / 40 / 20.
+      </p>
+      <a href="/#contatti" class="btn btn-primary" style="margin-top:20px">Richiedi preventivo dettagliato</a>
+    </div>
+  </section>
+
+  <section class="section bg-bianco" style="border-top:1px solid var(--bordo)">
+    <div class="container">
+      <p class="eyebrow">Cosa fa variare il prezzo</p>
+      <div class="variazioni">
+        {variazioni.map((v, i) => (
+          <div class="variazioni__row">
+            <span class="mono variazioni__num">{i + 1}</span>
+            <div>
+              <p style="margin:0;font-weight:500;font-size:16px;color:var(--inchiostro)">{v.titolo}</p>
+              <p class="body-text" style="margin-top:6px">{v.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark">
+    <div class="container" style="text-align:center">
+      <h2 class="h2">Preventivo scritto in 24 ore<span class="accent-dot">.</span></h2>
+      <a href="/#contatti" class="btn btn-primary" style="margin-top:28px">Richiedi preventivo</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .compare-table {
+    min-width: 840px;
+    width: 100%;
+    background: var(--bianco);
+    border: 1px solid var(--bordo);
+    border-collapse: collapse;
+  }
+  .compare-table th {
+    padding: 20px 20px;
+    border-bottom: 1px solid var(--inchiostro);
+    text-align: left;
+    font-weight: 400;
+  }
+  .compare-table__tier { display: block; font-family: var(--font-display); font-weight: 500; font-size: 19px; color: var(--inchiostro); }
+  .compare-table__price { display: block; margin-top: 6px; font-size: 15px; color: var(--oltremare); }
+  .compare-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--bordo);
+    border-left: 1px solid var(--bordo);
+  }
+  .compare-table td:first-child, .compare-table th:first-child { border-left: none; }
+  .compare-table__label { font-size: 14.5px; color: var(--grigio); }
+  .compare-table__value { text-align: center; }
+
+  .variazioni { margin-top: 32px; border-top: 1px solid var(--bordo); max-width: 640px; }
+  .variazioni__row {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--bordo);
+  }
+  .variazioni__num { color: var(--oltremare); }
+</style>

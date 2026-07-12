@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GridBackground from '../../components/ui/GridBackground.astro';
+import SpeedTestDemo from '../../components/SpeedTestDemo.astro';
+import { tools } from '../../data/tools';
+
+export function getStaticPaths() {
+  return tools.map((tool, index) => ({
+    params: { slug: tool.slug },
+    props: { tool, otherTools: tools.filter((_, i) => i !== index) },
+  }));
+}
+
+const { tool, otherTools } = Astro.props;
+---
+<BaseLayout title={tool.titolo} description={tool.heroSub} active="strumenti">
+  <section class="section section--hero rule hero">
+    <GridBackground watermark={false} />
+    <div class="container-narrow" style="position:relative">
+      <p class="eyebrow">Strumento gratuito {tool.idx}</p>
+      <h1 class="h1" style="font-size:clamp(34px,4vw,52px)">{tool.heroTitolo}</h1>
+      <p class="lede" style="max-width:100%">{tool.heroSub}</p>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container-narrow">
+      {tool.hasDemo ? (
+        <SpeedTestDemo />
+      ) : (
+        <div class="card tool-placeholder">
+          <p class="eyebrow" style="margin:0">In arrivo</p>
+          <p class="body-text" style="font-size:16px;margin-top:12px">
+            Questo strumento è in fase di sviluppo. Nel frattempo richiedete un’analisi gratuita: vi rispondiamo entro un giorno lavorativo.
+          </p>
+          <a href="/#contatti" class="btn btn-primary" style="margin-top:20px">Richiedi analisi gratuita</a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container-narrow">
+      <p class="eyebrow" style="border-top:1px solid var(--bordo);padding-top:32px">Gli altri strumenti gratuiti</p>
+      <div class="altri-strumenti">
+        {otherTools.map((t) => (
+          <a href={`/strumenti/${t.slug}`} class="altri-strumenti__row">
+            <span class="mono" style="color:var(--oltremare)">{t.idx}</span>
+            <span class="body-text" style="color:var(--inchiostro);font-size:15.5px">{t.titolo}</span>
+            <span class="mono" style="color:var(--oltremare)">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tool-placeholder { padding: 40px 32px; text-align: center; }
+  .altri-strumenti { margin-top: 8px; }
+  .altri-strumenti__row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--bordo);
+  }
+</style>

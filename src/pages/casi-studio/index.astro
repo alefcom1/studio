@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GridBackground from '../../components/ui/GridBackground.astro';
+import BrowserFrame from '../../components/ui/BrowserFrame.astro';
+import Barra from '../../components/ui/Barra.astro';
+import { cases } from '../../data/cases';
+---
+<BaseLayout title="Casi studio" description="Risultati misurati, non promessi: i casi studio di Studio Remarka con punteggi PageSpeed reali." active="casi-studio">
+  <section class="section section--hero rule hero">
+    <GridBackground />
+    <div class="container" style="position:relative">
+      <p class="eyebrow">Casi studio</p>
+      <h1 class="h1" style="font-size:clamp(38px,4.6vw,64px)">Risultati misurati, non promessi<span class="accent-dot">.</span></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container casi-grid" data-reveal-cascade>
+      {cases.map((c) => (
+        <a href={`/casi-studio/${c.slug}`} class="caso-card">
+          <BrowserFrame aspect="16/10" label={`Screenshot del sito ${c.cliente}`} />
+          <h2 class="card-title" style="margin-top:20px">{c.cliente}</h2>
+          <p class="mono caso-card__meta">{c.settore} · {c.citta} · {c.intervento}</p>
+          <p class="mono caso-card__metric">{c.keyMetric}</p>
+          <div class="caso-card__bars">
+            <Barra target={c.prima} muted height={6} />
+            <Barra target={c.dopo} delay={150} height={6} />
+          </div>
+        </a>
+      ))}
+    </div>
+    <p class="mono" style="margin-top:40px;font-size:12px;color:var(--grigio)">
+      Punteggi Google PageSpeed su mobile — report disponibili su richiesta
+    </p>
+  </section>
+
+  <section class="section bg-dark">
+    <div class="container" style="text-align:center">
+      <h2 class="h2">Il prossimo caso studio può essere il vostro<span class="accent-dot">.</span></h2>
+      <a href="/#contatti" class="btn btn-primary" style="margin-top:28px">Preventivo in 24 ore</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .casi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 48px 40px;
+  }
+  .caso-card { display: block; color: var(--inchiostro); }
+  .caso-card__meta {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--grigio);
+    margin: 6px 0 0;
+  }
+  .caso-card__metric {
+    font-size: 18px;
+    color: var(--oltremare);
+    margin: 10px 0 0;
+  }
+  .caso-card__bars {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 14px;
+  }
+</style>

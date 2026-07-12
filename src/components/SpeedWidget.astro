@@ -1,0 +1,167 @@
+---
+import Barra from './ui/Barra.astro';
+
+interface Props {
+  score?: number;
+}
+const { score = 97 } = Astro.props;
+---
+<div class="speed-widget card" data-speed-widget>
+  <p class="eyebrow" style="margin:0">Google PageSpeed — mobile</p>
+  <div class="speed-widget__score">
+    <span class="mono" data-counter-to={score} data-hero-number style={`color:${score >= 90 ? 'var(--verde)' : 'var(--oltremare)'}`}>0</span>
+    <span class="mono speed-widget__of100">/ 100</span>
+  </div>
+  <Barra target={score} delay={400} tickAt={90} ariaLabel={`Punteggio ${score} su 100`} />
+  <div class="speed-widget__scale mono" aria-hidden="true"><span>0</span><span>50</span><span>100</span></div>
+  <p class="body-text speed-widget__note">Punteggio medio dei siti che consegniamo. Garantito da contratto.</p>
+
+  <form data-speed-form class="speed-widget__form">
+    <label for="hero-url" class="eyebrow" style="margin-bottom:10px">E il tuo sito quanto fa?</label>
+    <div class="speed-widget__row">
+      <input id="hero-url" name="url" type="text" placeholder="www.tuosito.it" class="text-input" />
+      <button type="submit" class="btn btn-primary btn--sm">Analizza</button>
+    </div>
+    <p class="mono speed-widget__pending" data-speed-pending hidden>Analisi in corso<span class="blink">…</span></p>
+    <div class="speed-widget__result" data-speed-result hidden>
+      <div class="speed-widget__result-row">
+        <span class="speed-widget__result-url" data-speed-url></span>
+        <span class="mono speed-widget__result-score" data-speed-score></span>
+      </div>
+      <div class="barra" style="height:8px">
+        <div class="barra__fill barra__fill--muted" data-speed-fill style="width:0%"></div>
+      </div>
+      <p class="body-text speed-widget__margin">
+        Margine di miglioramento: con un sito progressivo garantiamo <span class="mono" style="color:var(--verde)">90+</span> da contratto.
+      </p>
+    </div>
+  </form>
+</div>
+
+<style>
+  .speed-widget {
+    padding: 32px;
+  }
+  .speed-widget__score {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .speed-widget__score .mono:first-child {
+    font-size: clamp(56px, 5vw, 84px);
+    line-height: 1;
+  }
+  .speed-widget__of100 {
+    font-size: 18px;
+    color: var(--grigio);
+  }
+  .speed-widget :global(.barra) {
+    margin-top: 18px;
+  }
+  .speed-widget__scale {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--grigio);
+  }
+  .speed-widget__note {
+    margin: 14px 0 0;
+    font-size: 14px;
+  }
+  .speed-widget__form {
+    margin-top: 24px;
+    border-top: 1px solid var(--bordo);
+    padding-top: 24px;
+  }
+  .speed-widget__row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .text-input {
+    flex: 1 1 180px;
+    min-width: 0;
+    background: var(--bianco);
+    border: 1px solid var(--bordo);
+    border-radius: var(--radius);
+    padding: 13px 14px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--inchiostro);
+    outline: none;
+  }
+  .text-input:focus {
+    border-color: var(--oltremare);
+    box-shadow: inset 0 0 0 1px var(--oltremare);
+  }
+  .speed-widget__pending {
+    margin: 16px 0 0;
+    font-size: 13px;
+    color: var(--grigio);
+  }
+  .speed-widget__result {
+    margin-top: 18px;
+  }
+  .speed-widget__result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .speed-widget__result-url {
+    font-size: 14px;
+    color: var(--grigio);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .speed-widget__result-score {
+    font-size: 28px;
+    color: var(--inchiostro);
+  }
+  .speed-widget__margin {
+    margin: 12px 0 0;
+    font-size: 14px;
+  }
+</style>
+
+<script>
+  function hashScore(url: string, min: number, range: number) {
+    let h = 0;
+    for (let i = 0; i < url.length; i++) h = (h * 31 + url.charCodeAt(i)) >>> 0;
+    return min + (h % range);
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-speed-widget]').forEach((widget) => {
+    const form = widget.querySelector<HTMLFormElement>('[data-speed-form]')!;
+    const pending = widget.querySelector<HTMLElement>('[data-speed-pending]')!;
+    const result = widget.querySelector<HTMLElement>('[data-speed-result]')!;
+    const urlOut = widget.querySelector<HTMLElement>('[data-speed-url]')!;
+    const scoreOut = widget.querySelector<HTMLElement>('[data-speed-score]')!;
+    const fill = widget.querySelector<HTMLElement>('[data-speed-fill]')!;
+    let running = false;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (running) return;
+      const input = form.querySelector<HTMLInputElement>('#hero-url')!;
+      const url = input.value.trim() || 'www.tuosito.it';
+      running = true;
+      pending.hidden = false;
+      result.hidden = true;
+      fill.style.width = '0%';
+
+      window.setTimeout(() => {
+        const score = hashScore(url, 31, 28);
+        pending.hidden = true;
+        result.hidden = false;
+        urlOut.textContent = url;
+        scoreOut.textContent = String(score);
+        requestAnimationFrame(() => requestAnimationFrame(() => { fill.style.width = `${score}%`; }));
+        running = false;
+      }, 1400);
+    });
+  });
+</script>

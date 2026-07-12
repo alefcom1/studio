@@ -1,0 +1,61 @@
+---
+interface Props {
+  phone?: string;
+}
+const { phone = '390212345678' } = Astro.props;
+---
+<a
+  href={`https://wa.me/${phone}`}
+  class="wa-fab"
+  data-wa-fab
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Scrivici su WhatsApp"
+>
+  <svg width="30" height="30" viewBox="0 0 32 32" fill="#FFFFFF" aria-hidden="true">
+    <path d="M16.003 3C9.377 3 4 8.373 4 15c0 2.294.638 4.437 1.746 6.264L4 29l7.94-1.708A11.93 11.93 0 0 0 16.003 27C22.63 27 28 21.627 28 15S22.63 3 16.003 3Zm6.98 16.998c-.294.826-1.457 1.512-2.386 1.71-.634.135-1.462.243-4.248-.911-3.562-1.475-5.855-5.086-6.033-5.322-.177-.236-1.44-1.916-1.44-3.655 0-1.74.913-2.594 1.237-2.95.324-.354.708-.443.944-.443.236 0 .472.002.678.012.217.011.508-.082.795.607.294.708.998 2.447 1.086 2.625.088.177.147.384.03.62-.118.236-.177.383-.35.59-.177.207-.37.463-.53.62-.177.176-.36.367-.155.72.206.354.914 1.51 1.963 2.446 1.348 1.202 2.485 1.575 2.838 1.751.353.177.56.147.766-.088.207-.236.884-1.03 1.12-1.383.235-.354.47-.295.795-.177.324.118 2.06.972 2.414 1.148.353.177.588.265.677.412.088.147.088.855-.206 1.68Z"/>
+  </svg>
+</a>
+
+<style>
+  .wa-fab {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 40;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-full);
+    background: var(--whatsapp);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(20, 22, 26, 0.22);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.2s ease;
+  }
+  .wa-fab:hover {
+    background: var(--whatsapp-hover);
+  }
+  .wa-fab.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const fab = document.querySelector<HTMLElement>('[data-wa-fab]');
+  if (fab) {
+    const check = () => {
+      const scrolled = window.scrollY + window.innerHeight;
+      const threshold = document.documentElement.scrollHeight * 0.6;
+      fab.classList.toggle('is-visible', scrolled > threshold);
+    };
+    check();
+    window.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('resize', check);
+  }
+</script>

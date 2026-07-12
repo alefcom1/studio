@@ -1,0 +1,154 @@
+---
+import Logo from './Logo.astro';
+
+interface Props {
+  active?: 'servizi' | 'casi-studio' | 'prezzi' | 'strumenti' | 'blog' | 'none';
+}
+const { active = 'none' } = Astro.props;
+
+const links = [
+  { href: '/servizi', label: 'Servizi', key: 'servizi' },
+  { href: '/casi-studio', label: 'Casi studio', key: 'casi-studio' },
+  { href: '/prezzi', label: 'Prezzi', key: 'prezzi' },
+  { href: '/strumenti', label: 'Strumenti', key: 'strumenti' },
+  { href: '/blog', label: 'Blog', key: 'blog' },
+];
+---
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="site-header__brand">
+      <Logo size={30} />
+      <span>Studio Remarka</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Navigazione principale">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class="site-header__link"
+          aria-current={active === link.key ? 'page' : undefined}
+          data-active={active === link.key}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="site-header__controls">
+      <div class="lang-switcher" data-lang-switcher role="group" aria-label="Lingua">
+        <button type="button" data-lang="it" aria-pressed="true">IT</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+      <a href="/#contatti" class="btn btn-primary btn--sm">Preventivo in 24 ore</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--carta);
+    border-bottom: 1px solid var(--bordo);
+  }
+  .site-header__inner {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .site-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--inchiostro);
+  }
+  .site-header__brand span {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 21px;
+    letter-spacing: -0.01em;
+  }
+  .site-header__brand:hover {
+    color: var(--inchiostro);
+  }
+  .site-header__nav {
+    display: flex;
+    gap: 28px;
+    flex: 1;
+    justify-content: center;
+  }
+  .site-header__link {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--grigio);
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+  }
+  .site-header__link:hover {
+    color: var(--inchiostro);
+  }
+  .site-header__link[aria-current='page'] {
+    color: var(--inchiostro);
+    border-bottom-color: var(--oltremare);
+  }
+  .site-header__controls {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding-left: 18px;
+    border-left: 1px solid var(--bordo);
+  }
+  .lang-switcher button {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    padding: 5px 6px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--grigio);
+    cursor: pointer;
+  }
+  .lang-switcher button[aria-pressed='true'] {
+    color: var(--inchiostro);
+    border-bottom-color: var(--oltremare);
+  }
+
+  @media (max-width: 860px) {
+    .site-header__nav {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const STORAGE_KEY = 'sr-lang';
+  const switcher = document.querySelector<HTMLElement>('[data-lang-switcher]');
+  if (switcher) {
+    const buttons = switcher.querySelectorAll<HTMLButtonElement>('button[data-lang]');
+    const saved = localStorage.getItem(STORAGE_KEY) || 'it';
+
+    const setActive = (lang: string) => {
+      buttons.forEach((btn) => btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang)));
+    };
+    setActive(saved);
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang!;
+        localStorage.setItem(STORAGE_KEY, lang);
+        setActive(lang);
+        // NOTE: content translation not implemented — UI state only.
+      });
+    });
+  }
+</script>

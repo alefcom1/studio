@@ -1,0 +1,143 @@
+---
+---
+<div class="speedtest card" data-speedtest>
+  <form data-speedtest-form class="speedtest__form">
+    <div class="speedtest__row">
+      <input type="text" name="url" placeholder="www.tuosito.it" class="text-input" required />
+      <button type="submit" class="btn btn-primary">Avvia il test</button>
+    </div>
+  </form>
+
+  <p class="mono speedtest__pending" data-speedtest-pending hidden>
+    Rilevazione in corso — mobile, connessione 4G simulata<span class="blink">…</span>
+  </p>
+
+  <div class="speedtest__result" data-speedtest-result hidden>
+    <p class="body-text speedtest__url" data-speedtest-url style="margin:0"></p>
+    <div class="speedtest__score">
+      <span class="mono" data-speedtest-score>0</span>
+      <span class="mono speedtest__of100">/100</span>
+    </div>
+    <div class="barra" style="height:10px">
+      <div class="barra__fill" data-speedtest-fill style="width:0%"></div>
+      <span class="barra__tick" style="left:90%"></span>
+    </div>
+    <div class="speedtest__scale mono" aria-hidden="true"><span>0</span><span>50</span><span>90</span><span>100</span></div>
+    <p class="body-text speedtest__verdict" data-speedtest-verdict style="margin-top:20px"></p>
+
+    <div class="speedtest__cwv">
+      <div class="speedtest__cwv-item">
+        <p class="eyebrow" style="margin:0 0 8px">LCP</p>
+        <p class="mono speedtest__cwv-value" data-speedtest-lcp></p>
+        <p class="body-text speedtest__cwv-desc">Tempo di caricamento del contenuto principale. Sotto i 2,5 s è considerato buono.</p>
+      </div>
+      <div class="speedtest__cwv-item">
+        <p class="eyebrow" style="margin:0 0 8px">INP</p>
+        <p class="mono speedtest__cwv-value" data-speedtest-inp></p>
+        <p class="body-text speedtest__cwv-desc">Reattività del sito al tocco. Sotto i 200 ms è considerato buono.</p>
+      </div>
+      <div class="speedtest__cwv-item">
+        <p class="eyebrow" style="margin:0 0 8px">CLS</p>
+        <p class="mono speedtest__cwv-value" data-speedtest-cls></p>
+        <p class="body-text speedtest__cwv-desc">Stabilità visiva durante il caricamento. Sotto 0,1 è considerato buono.</p>
+      </div>
+    </div>
+
+    <p class="mono speedtest__caption">
+      Dimostrazione con punteggio simulato. In produzione i risultati arrivano dalla vera Google PageSpeed Insights API, media di tre rilevazioni.
+    </p>
+
+    <div class="speedtest__cta bg-dark">
+      <h3 class="h2" style="font-size:clamp(24px,3vw,32px)">Vuoi che sistemiamo noi questi problemi<span class="accent-dot">?</span></h3>
+      <a href="/#contatti" class="btn btn-primary" style="margin-top:20px">Richiedi un’analisi gratuita</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .speedtest { padding: 32px; }
+  .speedtest__row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .speedtest__pending { margin: 20px 0 0; font-size: 14px; color: var(--grigio); }
+  .speedtest__result { margin-top: 24px; }
+  .speedtest__url { color: var(--grigio); font-size: 14px; }
+  .speedtest__score { display: flex; align-items: baseline; gap: 10px; margin-top: 8px; }
+  .speedtest__score .mono:first-child { font-size: clamp(56px, 5vw, 84px); line-height: 1; color: var(--inchiostro); }
+  .speedtest__of100 { font-size: 18px; color: var(--grigio); }
+  .speedtest__scale { display: flex; justify-content: space-between; margin-top: 8px; font-size: 11px; color: var(--grigio); }
+  .speedtest__cwv {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--bordo);
+  }
+  .speedtest__cwv-value { font-size: 28px; margin: 0 0 8px; }
+  .speedtest__cwv-desc { font-size: 13.5px; margin: 0; }
+  .speedtest__caption {
+    margin-top: 28px;
+    font-size: 11.5px;
+    color: var(--grigio);
+    opacity: 0.8;
+  }
+  .speedtest__cta {
+    margin-top: 24px;
+    padding: 40px 32px;
+    border-radius: var(--radius);
+    text-align: center;
+  }
+</style>
+
+<script>
+  function hashScore(url: string) {
+    let h = 0;
+    for (let i = 0; i < url.length; i++) h = (h * 31 + url.charCodeAt(i)) >>> 0;
+    return 28 + (h % 37); // 28-64
+  }
+  function it(n: number, decimals: number) {
+    return n.toFixed(decimals).replace('.', ',');
+  }
+  function verdictFor(score: number) {
+    if (score < 50) return 'Il sito è lento su mobile: la maggior parte dei visitatori abbandona prima del caricamento completo. Un restyling tecnico è la priorità.';
+    if (score < 90) return 'Il sito è nella media, ma lontano dagli standard consigliati da Google. Ci sono margini di miglioramento concreti e misurabili.';
+    return 'Ottimo punteggio: il sito rispetta gli standard Google per l’esperienza mobile.';
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-speedtest]').forEach((widget) => {
+    const form = widget.querySelector<HTMLFormElement>('[data-speedtest-form]')!;
+    const pending = widget.querySelector<HTMLElement>('[data-speedtest-pending]')!;
+    const result = widget.querySelector<HTMLElement>('[data-speedtest-result]')!;
+    let running = false;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (running) return;
+      const input = form.querySelector<HTMLInputElement>('input[name="url"]')!;
+      const url = input.value.trim() || 'www.tuosito.it';
+      running = true;
+      pending.hidden = false;
+      result.hidden = true;
+
+      window.setTimeout(() => {
+        const score = hashScore(url);
+        const lcp = Math.max(1.2, 6.2 - score * 0.05);
+        const inp = Math.max(120, 640 - score * 6);
+        const cls = Math.max(0.02, 0.42 - score * 0.004);
+
+        widget.querySelector('[data-speedtest-url]')!.textContent = url;
+        widget.querySelector('[data-speedtest-score]')!.textContent = String(score);
+        widget.querySelector('[data-speedtest-verdict]')!.textContent = verdictFor(score);
+        widget.querySelector('[data-speedtest-lcp]')!.textContent = `${it(lcp, 1)} s`;
+        widget.querySelector('[data-speedtest-inp]')!.textContent = `${Math.round(inp)} ms`;
+        widget.querySelector('[data-speedtest-cls]')!.textContent = it(cls, 2);
+
+        pending.hidden = true;
+        result.hidden = false;
+        const fill = widget.querySelector<HTMLElement>('[data-speedtest-fill]')!;
+        fill.style.width = '0%';
+        requestAnimationFrame(() => requestAnimationFrame(() => { fill.style.width = `${score}%`; }));
+        running = false;
+      }, 1800);
+    });
+  });
+</script>

@@ -1,0 +1,36 @@
+:root {
+  /* Colors */
+  --carta: #F7F6F2;
+  --bianco: #FFFFFF;
+  --inchiostro: #14161A;
+  --grigio: #5A5E66;
+  --bordo: #DDDBD4;
+  --traccia: #EBEAE4;
+  --oltremare: #2440C8;
+  --oltremare-scuro: #1A2F96;
+  --oltremare-chiaro: #5B73E8;
+  --verde: #1E7F4F;
+  --whatsapp: #25D366;
+  --whatsapp-hover: #1EBE5A;
+
+  /* On dark */
+  --dark-text: rgba(247, 246, 242, 0.66);
+  --dark-rule: rgba(247, 246, 242, 0.18);
+  --dark-eyebrow: #9BA3C4;
+
+  /* Detail grays */
+  --browser-dots: #C9CBCF;
+  --client-wordmarks: #A2A5AB;
+
+  /* Typography */
+  --font-display: 'Clash Display', sans-serif;
+  --font-body: 'General Sans', system-ui, sans-serif;
+  --font-mono: 'Fragment Mono', monospace;
+
+  /* Layout */
+  --container: 1240px;
+  --container-narrow: 760px;
+  --container-pad: 24px;
+  --radius: 8px;
+  --radius-full: 9999px;
+}

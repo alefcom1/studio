@@ -1,0 +1,67 @@
+---
+---
+<div class="cookie-banner" data-cookie-banner hidden>
+  <div class="cookie-banner__inner">
+    <p class="cookie-banner__text">
+      Usiamo solo cookie tecnici necessari al funzionamento del sito. Nessuna profilazione, nessun tracciamento pubblicitario.
+      <a href="/cookie-preferenze">Preferenze</a> · <a href="/cookie-policy">Cookie policy</a>
+    </p>
+    <div class="cookie-banner__actions">
+      <button type="button" class="btn btn-outline btn--sm" data-cookie-choice="rejected">Rifiuta</button>
+      <button type="button" class="btn btn-outline btn--sm" data-cookie-choice="accepted">Accetta</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    background: var(--bianco);
+    border-top: 1px solid var(--bordo);
+  }
+  .cookie-banner__inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .cookie-banner__text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--grigio);
+    margin: 0;
+    max-width: 640px;
+  }
+  .cookie-banner__actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .cookie-banner .btn {
+    padding: 11px 26px;
+  }
+</style>
+
+<script>
+  const STORAGE_KEY = 'sr-cookie-choice';
+  const banner = document.querySelector<HTMLElement>('[data-cookie-banner]');
+  if (banner) {
+    if (!localStorage.getItem(STORAGE_KEY)) {
+      banner.hidden = false;
+    }
+    banner.querySelectorAll<HTMLButtonElement>('[data-cookie-choice]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        localStorage.setItem(STORAGE_KEY, btn.dataset.cookieChoice!);
+        banner.hidden = true;
+      });
+    });
+  }
+</script>

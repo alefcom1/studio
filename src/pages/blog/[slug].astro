@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { posts } from '../../data/blog';
+
+export function getStaticPaths() {
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+<BaseLayout title={post.titolo} description={post.estratto} active="blog">
+  <section class="section section--hero rule">
+    <div class="container-narrow">
+      <p class="mono" style="color:var(--grigio);font-size:13px">{post.data}</p>
+      <h1 class="h1" style="font-size:clamp(32px,4vw,48px);margin-top:16px">{post.titolo}</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-narrow">
+      <p class="body-text" style="font-size:17px;line-height:1.7">{post.corpo}</p>
+      <a href="/blog" class="btn btn-outline" style="margin-top:32px">← Tutti gli articoli</a>
+    </div>
+  </section>
+</BaseLayout>

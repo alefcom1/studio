@@ -1,0 +1,25 @@
+---
+interface Props {
+  value: string;
+  color?: string;
+  caption: string;
+  description?: string;
+}
+const { value, color = 'var(--oltremare)', caption, description } = Astro.props;
+---
+<div class="stat-block">
+  <span class="stat-block__number mono" style={`color:${color}`}>{value}</span>
+  <p class="stat-block__caption">{caption}</p>
+  {description && <p class="body-text stat-block__desc">{description}</p>}
+</div>
+
+<style>
+  .stat-block__caption {
+    font-weight: 600;
+    font-size: 15.5px;
+    margin: 10px 0 4px;
+  }
+  .stat-block__desc {
+    margin: 0;
+  }
+</style>

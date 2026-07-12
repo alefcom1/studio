@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GridBackground from '../../components/ui/GridBackground.astro';
+import { services } from '../../data/services';
+---
+<BaseLayout title="Servizi" description="Sei servizi per PMI italiane: siti aziendali, e-commerce, PWA, restyling, SEO tecnica, siti multilingue." active="servizi">
+  <section class="section section--hero rule hero">
+    <GridBackground />
+    <div class="container" style="position:relative">
+      <p class="eyebrow">Servizi</p>
+      <h1 class="h1" style="font-size:clamp(38px,4.6vw,64px)">Sei cose che sappiamo fare bene<span class="accent-dot">.</span></h1>
+      <p class="lede">Ogni servizio nasce con lo stesso obiettivo: PageSpeed 90+ da contratto, prezzo chiuso, data fissa.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container servizi-grid" data-reveal-cascade>
+      {services.map((s) => (
+        <a href={`/servizi/${s.slug}`} class="card servizi-card">
+          <h2 class="card-title">{s.title}</h2>
+          <p class="body-text" style="margin-top:10px">{s.heroSub}</p>
+          <span class="servizi-card__link">Scopri →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .servizi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .servizi-card { display: block; }
+  .servizi-card__link {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--oltremare);
+  }
+</style>

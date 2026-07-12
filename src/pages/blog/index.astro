@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GridBackground from '../../components/ui/GridBackground.astro';
+import { posts } from '../../data/blog';
+---
+<BaseLayout title="Blog" description="Appunti tecnici in italiano su velocità, SEO, GDPR e sviluppo web per PMI." active="blog">
+  <section class="section section--hero rule hero">
+    <GridBackground />
+    <div class="container" style="position:relative">
+      <p class="eyebrow">Blog</p>
+      <h1 class="h1" style="font-size:clamp(38px,4.6vw,64px)">Appunti tecnici, in italiano<span class="accent-dot">.</span></h1>
+      <p class="lede">Niente marketing travestito da articolo: solo quello che impariamo consegnando siti veloci.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-narrow blog-list" data-reveal-cascade>
+      {posts.map((post) => (
+        <a href={`/blog/${post.slug}`} class="blog-row">
+          <span class="mono blog-row__date">{post.data}</span>
+          <span class="blog-row__body">
+            <span class="blog-row__title">{post.titolo}</span>
+            <span class="body-text blog-row__excerpt">{post.estratto}</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-list {
+    border-top: 1px solid var(--bordo);
+  }
+  .blog-row {
+    display: flex;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--bordo);
+    color: var(--inchiostro);
+  }
+  .blog-row__date {
+    flex: 0 0 150px;
+    font-size: 13px;
+    color: var(--grigio);
+  }
+  .blog-row__body { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .blog-row__title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 26px;
+    color: var(--inchiostro);
+  }
+  .blog-row__excerpt { font-size: 15.5px; }
+</style>

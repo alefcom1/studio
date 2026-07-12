@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GridBackground from '../../components/ui/GridBackground.astro';
+import BrowserFrame from '../../components/ui/BrowserFrame.astro';
+import Barra from '../../components/ui/Barra.astro';
+import { cases } from '../../data/cases';
+
+export function getStaticPaths() {
+  return cases.map((c) => ({
+    params: { slug: c.slug },
+    props: { caseStudy: c },
+  }));
+}
+
+const { caseStudy } = Astro.props;
+---
+<BaseLayout title={caseStudy.cliente} description={caseStudy.titolo} active="casi-studio">
+  <section class="section section--hero rule hero">
+    <GridBackground />
+    <div class="container" style="position:relative">
+      <p class="eyebrow">Casi studio / {caseStudy.cliente}</p>
+      <h1 class="h1" style="font-size:clamp(34px,4.4vw,58px);max-width:900px">{caseStudy.titolo}</h1>
+      <p class="mono caso-meta">
+        SETTORE {caseStudy.settore.toUpperCase()} · SEDE {caseStudy.citta.toUpperCase()} · INTERVENTO {caseStudy.intervento.toUpperCase()} · ANNO {caseStudy.anno}
+      </p>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container">
+      <BrowserFrame aspect="21/10" label={`Screenshot del sito ${caseStudy.cliente}`} />
+    </div>
+  </section>
+
+  <section class="section chapter">
+    <div class="container chapter__row">
+      <p class="mono chapter__label">01 — Problema</p>
+      <div class="chapter__content">
+        <p class="body-text" style="font-size:17px">{caseStudy.problema.narrativa}</p>
+        <div class="chapter__stats">
+          {caseStudy.problema.stats.map((s) => (
+            <div class="stat-block">
+              <span class="stat-block__number mono" style="font-size:clamp(32px,3vw,44px);color:var(--oltremare)">{s.value}</span>
+              <p style="margin:10px 0 0;font-size:14.5px;color:var(--grigio)">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section chapter bg-bianco" style="border-top:1px solid var(--bordo)">
+    <div class="container chapter__row">
+      <p class="mono chapter__label">02 — Soluzione</p>
+      <div class="chapter__content">
+        <p class="body-text" style="font-size:17px">{caseStudy.soluzione.narrativa}</p>
+        <div class="chapter__interventi">
+          {caseStudy.soluzione.interventi.map((item, i) => (
+            <div class="per-chi__row">
+              <span class="mono per-chi__letter">{String.fromCharCode(97 + i)}</span>
+              <span class="body-text">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section chapter" style="border-top:1px solid var(--bordo)">
+    <div class="container chapter__row">
+      <p class="mono chapter__label">03 — Risultati</p>
+      <div class="chapter__content">
+        <div class="mini-caso__bars">
+          <div class="caso-bar">
+            <div class="caso-bar__row"><span class="eyebrow" style="margin:0">Prima</span><span class="mono" style="font-size:28px;color:var(--grigio)">{caseStudy.prima}</span></div>
+            <Barra target={caseStudy.prima} muted height={10} />
+          </div>
+          <div class="caso-bar">
+            <div class="caso-bar__row"><span class="eyebrow" style="margin:0">Dopo</span><span class="mono" style="font-size:28px;color:var(--verde)">{caseStudy.dopo}</span></div>
+            <Barra target={caseStudy.dopo} delay={150} height={10} />
+          </div>
+        </div>
+        <p class="body-text" style="font-size:17px;margin-top:24px">{caseStudy.risultati.narrativa}</p>
+        <div class="chapter__stats">
+          {caseStudy.risultati.stats.map((s) => (
+            <div class="stat-block">
+              <span class="stat-block__number mono" style="font-size:clamp(32px,3vw,44px);color:var(--oltremare)">{s.value}</span>
+              <p style="margin:10px 0 0;font-size:14.5px;color:var(--grigio)">{s.label}</p>
+            </div>
+          ))}
+        </div>
+        <blockquote class="pull-quote">
+          <p style="margin:0;font-size:20px;font-weight:500;color:var(--inchiostro)">“{caseStudy.risultati.quote}”</p>
+          <cite class="mono pull-quote__attr">{caseStudy.risultati.attribuzione}</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark">
+    <div class="container" style="text-align:center">
+      <h2 class="h2">Vuoi risultati simili sul tuo sito<span class="accent-dot">?</span></h2>
+      <a href="/#contatti" class="btn btn-primary" style="margin-top:28px">Preventivo in 24 ore</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .caso-meta {
+    margin-top: 20px;
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    color: var(--grigio);
+  }
+  .chapter__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 48px;
+  }
+  .chapter__label {
+    flex: 0 0 200px;
+    color: var(--oltremare);
+    font-size: 14px;
+  }
+  .chapter__content {
+    flex: 1 1 520px;
+    max-width: 720px;
+  }
+  .chapter__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+    border-top: 1px solid var(--inchiostro);
+    padding-top: 20px;
+  }
+  .chapter__interventi { margin-top: 24px; border-top: 1px solid var(--bordo); }
+  .per-chi__row { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--bordo); }
+  .per-chi__letter { color: var(--oltremare); min-width: 16px; }
+  .mini-caso__bars { display: flex; flex-direction: column; gap: 20px; }
+  .caso-bar { display: flex; flex-direction: column; gap: 8px; }
+  .caso-bar__row { display: flex; justify-content: space-between; align-items: baseline; }
+  .pull-quote {
+    margin: 32px 0 0;
+    padding-left: 28px;
+    border-left: 2px solid var(--oltremare);
+  }
+  .pull-quote__attr {
+    display: block;
+    margin-top: 12px;
+    font-style: normal;
+    font-size: 13px;
+    color: var(--grigio);
+  }
+</style>

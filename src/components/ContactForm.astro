@@ -1,0 +1,78 @@
+---
+---
+<div data-contact-form>
+  <form class="contact-form card" data-contact-form-el>
+    <div class="contact-form__field">
+      <label for="c-nome">Nome e cognome</label>
+      <input id="c-nome" name="nome" type="text" required class="text-input" />
+    </div>
+    <div class="contact-form__field">
+      <label for="c-contatto">Email o telefono</label>
+      <input id="c-contatto" name="contatto" type="text" required class="text-input" />
+    </div>
+    <div class="contact-form__field">
+      <label for="c-msg">Messaggio</label>
+      <textarea id="c-msg" name="messaggio" rows="4" placeholder="Il sito attuale, cosa non funziona, cosa vi serve." class="text-input"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Invia la richiesta</button>
+    <p class="body-text contact-form__gdpr">Rispondiamo entro un giorno lavorativo. I dati restano nell’UE, come da informativa privacy.</p>
+  </form>
+  <div class="contact-form__success card" data-contact-success hidden>
+    <p class="mono contact-form__success-label">RICHIESTA INVIATA ✓</p>
+    <p class="body-text">Grazie. Vi rispondiamo entro un giorno lavorativo con un’analisi o un preventivo chiuso.</p>
+  </div>
+</div>
+
+<style>
+  .contact-form {
+    background: var(--carta);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contact-form__field label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--inchiostro);
+    margin-bottom: 8px;
+  }
+  .contact-form textarea.text-input {
+    resize: vertical;
+    width: 100%;
+  }
+  .contact-form input.text-input {
+    width: 100%;
+  }
+  .contact-form__gdpr {
+    margin: 0;
+    font-size: 13.5px;
+  }
+  .contact-form__success {
+    background: var(--carta);
+    padding: 48px 32px;
+    text-align: center;
+  }
+  .contact-form__success-label {
+    color: var(--verde);
+    font-size: 14px;
+    margin: 0;
+  }
+  .contact-form__success p.body-text {
+    margin: 16px auto 0;
+    max-width: 360px;
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-contact-form]').forEach((wrapper) => {
+    const form = wrapper.querySelector<HTMLFormElement>('[data-contact-form-el]')!;
+    const success = wrapper.querySelector<HTMLElement>('[data-contact-success]')!;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.hidden = true;
+      success.hidden = false;
+    });
+  });
+</script>
