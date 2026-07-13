@@ -276,6 +276,38 @@ add_action( 'wp_footer', 'remarka_footer_widgets' );
  * Testi e link del footer proprietario, tutti modificabili da Aspetto →
  * Personalizza senza toccare codice o database a mano.
  */
+/**
+ * Unica fonte di verità per i campi testuali del footer: usata sia per
+ * registrare i controlli Customizer sia per leggerne il valore in
+ * remarka_render_footer(). Prima erano duplicati (default qui, '' come
+ * fallback nel render), e finché nessuno apre il Customizer get_theme_mod()
+ * restituiva quel fallback vuoto invece del default — footer che sembrava
+ * "vuoto" pur essendo tutto configurato correttamente lato codice.
+ */
+function remarka_footer_field_defs(): array {
+	return array(
+		'remarka_company_name'          => array( 'section' => 'remarka_contatti', 'label' => 'Ragione sociale', 'type' => 'text', 'default' => 'Studio Remarka S.r.l.' ),
+		'remarka_company_address'       => array( 'section' => 'remarka_contatti', 'label' => 'Indirizzo (usare Invio per andare a capo)', 'type' => 'textarea', 'default' => "Via Andrea Solari 43\n20144 Milano (MI)" ),
+		'remarka_company_piva'          => array( 'section' => 'remarka_contatti', 'label' => 'Partita IVA', 'type' => 'text', 'default' => 'IT 01234567890' ),
+		'remarka_company_pec'           => array( 'section' => 'remarka_contatti', 'label' => 'PEC', 'type' => 'text', 'default' => 'studioremarka@pec.it' ),
+		'remarka_company_email'         => array( 'section' => 'remarka_contatti', 'label' => 'Email di contatto', 'type' => 'email', 'default' => 'info@studioremarka.it' ),
+		'remarka_company_phone'         => array( 'section' => 'remarka_contatti', 'label' => 'Telefono', 'type' => 'text', 'default' => '+39 02 8736 5412' ),
+		'remarka_footer_tagline'        => array( 'section' => 'remarka_footer_cta', 'label' => 'Descrizione breve sotto il logo', 'type' => 'textarea', 'default' => 'Siti progressivi per PMI italiane. Parte del gruppo Remarka, nel settore linguistico e digitale dal 2001.' ),
+		'remarka_footer_cta_heading'    => array( 'section' => 'remarka_footer_cta', 'label' => 'Titolo banner', 'type' => 'text', 'default' => 'Parliamo del vostro sito' ),
+		'remarka_footer_cta_text'       => array( 'section' => 'remarka_footer_cta', 'label' => 'Sottotitolo banner', 'type' => 'textarea', 'default' => 'Analisi gratuita del sito attuale, preventivo chiuso entro 24 ore dalla chiamata.' ),
+		'remarka_footer_cta_btn1_label' => array( 'section' => 'remarka_footer_cta', 'label' => 'Testo pulsante 1', 'type' => 'text', 'default' => 'Richiedi preventivo in 24 ore' ),
+		'remarka_footer_cta_btn1_url'   => array( 'section' => 'remarka_footer_cta', 'label' => 'Link pulsante 1', 'type' => 'url', 'default' => '/#contatti' ),
+		'remarka_footer_cta_btn2_label' => array( 'section' => 'remarka_footer_cta', 'label' => 'Testo pulsante 2', 'type' => 'text', 'default' => 'Analizza il tuo sito — gratis' ),
+		'remarka_footer_cta_btn2_url'   => array( 'section' => 'remarka_footer_cta', 'label' => 'Link pulsante 2', 'type' => 'url', 'default' => '/strumenti/test-velocita/' ),
+	);
+}
+
+/** Legge un campo footer da Customizer, col vero default (mai '') come fallback. */
+function remarka_footer_mod( string $key ) {
+	$defs = remarka_footer_field_defs();
+	return get_theme_mod( $key, $defs[ $key ]['default'] ?? '' );
+}
+
 function remarka_customize_register( WP_Customize_Manager $wp_customize ): void {
 	$wp_customize->add_section( 'remarka_contatti', array(
 		'title'    => __( 'Remarka — Contatti e dati societari', 'remarka-studio' ),
@@ -291,49 +323,20 @@ function remarka_customize_register( WP_Customize_Manager $wp_customize ): void 
 		'type'    => 'text',
 	) );
 
-	$company_fields = array(
-		'remarka_company_name'    => array( 'Ragione sociale', 'text', 'Studio Remarka S.r.l.' ),
-		'remarka_company_address' => array( 'Indirizzo (usare Invio per andare a capo)', 'textarea', "Via Andrea Solari 43\n20144 Milano (MI)" ),
-		'remarka_company_piva'    => array( 'Partita IVA', 'text', 'IT 01234567890' ),
-		'remarka_company_pec'     => array( 'PEC', 'text', 'studioremarka@pec.it' ),
-		'remarka_company_email'   => array( 'Email di contatto', 'email', 'info@studioremarka.it' ),
-		'remarka_company_phone'   => array( 'Telefono', 'text', '+39 02 8736 5412' ),
-	);
-	foreach ( $company_fields as $id => list( $label, $type, $default ) ) {
-		$wp_customize->add_setting( $id, array(
-			'default'           => $default,
-			'sanitize_callback' => 'sanitize_textarea_field',
-		) );
-		$wp_customize->add_control( $id, array(
-			'label'   => $label,
-			'section' => 'remarka_contatti',
-			'type'    => $type,
-		) );
-	}
-
 	$wp_customize->add_section( 'remarka_footer_cta', array(
 		'title'    => __( 'Remarka — Banner e footer', 'remarka-studio' ),
 		'priority' => 31,
 	) );
 
-	$footer_fields = array(
-		'remarka_footer_tagline'        => array( 'Descrizione breve sotto il logo', 'textarea', 'Siti progressivi per PMI italiane. Parte del gruppo Remarka, nel settore linguistico e digitale dal 2001.' ),
-		'remarka_footer_cta_heading'    => array( 'Titolo banner', 'text', 'Parliamo del vostro sito' ),
-		'remarka_footer_cta_text'       => array( 'Sottotitolo banner', 'textarea', 'Analisi gratuita del sito attuale, preventivo chiuso entro 24 ore dalla chiamata.' ),
-		'remarka_footer_cta_btn1_label' => array( 'Testo pulsante 1', 'text', 'Richiedi preventivo in 24 ore' ),
-		'remarka_footer_cta_btn1_url'   => array( 'Link pulsante 1', 'url', '/#contatti' ),
-		'remarka_footer_cta_btn2_label' => array( 'Testo pulsante 2', 'text', 'Analizza il tuo sito — gratis' ),
-		'remarka_footer_cta_btn2_url'   => array( 'Link pulsante 2', 'url', '/strumenti/test-velocita/' ),
-	);
-	foreach ( $footer_fields as $id => list( $label, $type, $default ) ) {
+	foreach ( remarka_footer_field_defs() as $id => $field ) {
 		$wp_customize->add_setting( $id, array(
-			'default'           => $default,
-			'sanitize_callback' => 'url' === $type ? 'esc_url_raw' : 'sanitize_textarea_field',
+			'default'           => $field['default'],
+			'sanitize_callback' => 'url' === $field['type'] ? 'esc_url_raw' : 'sanitize_textarea_field',
 		) );
 		$wp_customize->add_control( $id, array(
-			'label'   => $label,
-			'section' => 'remarka_footer_cta',
-			'type'    => $type,
+			'label'   => $field['label'],
+			'section' => $field['section'],
+			'type'    => $field['type'],
 		) );
 	}
 
@@ -370,12 +373,12 @@ function remarka_render_footer(): void {
 		<div class="sr-footer-cta">
 			<div class="sr-footer-cta__inner">
 				<div>
-					<h2 class="sr-footer-cta__heading"><?php echo esc_html( get_theme_mod( 'remarka_footer_cta_heading', 'Parliamo del vostro sito' ) ); ?><span class="sr-accent-dot">.</span></h2>
-					<p class="sr-footer-cta__text"><?php echo esc_html( get_theme_mod( 'remarka_footer_cta_text', '' ) ); ?></p>
+					<h2 class="sr-footer-cta__heading"><?php echo esc_html( remarka_footer_mod( 'remarka_footer_cta_heading' ) ); ?><span class="sr-accent-dot">.</span></h2>
+					<p class="sr-footer-cta__text"><?php echo esc_html( remarka_footer_mod( 'remarka_footer_cta_text' ) ); ?></p>
 				</div>
 				<div class="sr-footer-cta__buttons">
-					<a class="sr-footer-cta__btn sr-footer-cta__btn--primary" href="<?php echo esc_url( remarka_footer_link_url( 'remarka_footer_cta_btn1_url', '/#contatti' ) ); ?>"><?php echo esc_html( get_theme_mod( 'remarka_footer_cta_btn1_label', '' ) ); ?></a>
-					<a class="sr-footer-cta__btn sr-footer-cta__btn--outline" href="<?php echo esc_url( remarka_footer_link_url( 'remarka_footer_cta_btn2_url', '/' ) ); ?>"><?php echo esc_html( get_theme_mod( 'remarka_footer_cta_btn2_label', '' ) ); ?></a>
+					<a class="sr-footer-cta__btn sr-footer-cta__btn--primary" href="<?php echo esc_url( remarka_footer_link_url( 'remarka_footer_cta_btn1_url', '/#contatti' ) ); ?>"><?php echo esc_html( remarka_footer_mod( 'remarka_footer_cta_btn1_label' ) ); ?></a>
+					<a class="sr-footer-cta__btn sr-footer-cta__btn--outline" href="<?php echo esc_url( remarka_footer_link_url( 'remarka_footer_cta_btn2_url', '/' ) ); ?>"><?php echo esc_html( remarka_footer_mod( 'remarka_footer_cta_btn2_label' ) ); ?></a>
 				</div>
 			</div>
 		</div>
@@ -384,7 +387,7 @@ function remarka_render_footer(): void {
 			<div class="sr-footer-main__inner">
 				<div class="sr-footer-col sr-footer-col--brand">
 					<div class="sr-footer-logo"><?php the_custom_logo(); ?><span><?php bloginfo( 'name' ); ?></span></div>
-					<p><?php echo esc_html( get_theme_mod( 'remarka_footer_tagline', '' ) ); ?></p>
+					<p><?php echo esc_html( remarka_footer_mod( 'remarka_footer_tagline' ) ); ?></p>
 				</div>
 
 				<div class="sr-footer-col">
@@ -416,13 +419,13 @@ function remarka_render_footer(): void {
 				<div class="sr-footer-col">
 					<p class="sr-footer-col__title"><?php esc_html_e( 'Dati societari', 'remarka-studio' ); ?></p>
 					<p class="sr-footer-company">
-						<strong><?php echo esc_html( get_theme_mod( 'remarka_company_name', '' ) ); ?></strong><br>
-						<?php echo nl2br( esc_html( get_theme_mod( 'remarka_company_address', '' ) ) ); ?>
+						<strong><?php echo esc_html( remarka_footer_mod( 'remarka_company_name' ) ); ?></strong><br>
+						<?php echo nl2br( esc_html( remarka_footer_mod( 'remarka_company_address' ) ) ); ?>
 					</p>
-					<p class="sr-mono">P.IVA <?php echo esc_html( get_theme_mod( 'remarka_company_piva', '' ) ); ?></p>
-					<p>PEC <?php echo esc_html( get_theme_mod( 'remarka_company_pec', '' ) ); ?></p>
-					<p><a href="mailto:<?php echo esc_attr( get_theme_mod( 'remarka_company_email', '' ) ); ?>"><?php echo esc_html( get_theme_mod( 'remarka_company_email', '' ) ); ?></a></p>
-					<p><?php echo esc_html( get_theme_mod( 'remarka_company_phone', '' ) ); ?></p>
+					<p class="sr-mono">P.IVA <?php echo esc_html( remarka_footer_mod( 'remarka_company_piva' ) ); ?></p>
+					<p>PEC <?php echo esc_html( remarka_footer_mod( 'remarka_company_pec' ) ); ?></p>
+					<p><a href="mailto:<?php echo esc_attr( remarka_footer_mod( 'remarka_company_email' ) ); ?>"><?php echo esc_html( remarka_footer_mod( 'remarka_company_email' ) ); ?></a></p>
+					<p><?php echo esc_html( remarka_footer_mod( 'remarka_company_phone' ) ); ?></p>
 				</div>
 			</div>
 		</div>
@@ -431,7 +434,7 @@ function remarka_render_footer(): void {
 			<div class="sr-footer-bottom__inner">
 				<div class="sr-barra sr-barra--h4" data-sr-target="<?php echo esc_attr( $score ); ?>%" aria-hidden="true"><div class="sr-barra__fill"></div></div>
 				<div class="sr-footer-bottom__row">
-					<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( get_theme_mod( 'remarka_company_name', '' ) ); ?> — <?php esc_html_e( 'Tutti i diritti riservati', 'remarka-studio' ); ?></span>
+					<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( remarka_footer_mod( 'remarka_company_name' ) ); ?> — <?php esc_html_e( 'Tutti i diritti riservati', 'remarka-studio' ); ?></span>
 					<span class="sr-footer-score"><?php esc_html_e( 'Punteggio PageSpeed medio', 'remarka-studio' ); ?>: <b><?php echo esc_html( $score ); ?></b>/100</span>
 				</div>
 			</div>
