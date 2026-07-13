@@ -179,10 +179,13 @@ foreach ( $ordered as $pattern_slug ) {
 	list( $pattern_title, $content ) = remarka_deploy_read_pattern( $file );
 
 	$title = $title_override ?: preg_replace( '/^Pagina — (Servizio: |Caso: |Città: |Articolo: |Strumento: )?/u', '', $pattern_title );
+	// $parent_key in $page_map è lo SLUG della pagina genitore (es. 'servizi'),
+	// quindi $created_ids va indicizzato per slug pagina, non per slug pattern —
+	// altrimenti il lookup fallisce sempre e post_parent resta 0.
 	$parent_id = $parent_key ? ( $created_ids[ $parent_key ] ?? 0 ) : 0;
 
 	$id = remarka_deploy_upsert_page( $page_slug, $title, $content, $parent_id, $force );
-	$created_ids[ $pattern_slug ] = $id;
+	$created_ids[ $page_slug ] = $id;
 }
 
 /* ---------- 3. Menu principale ---------- */
