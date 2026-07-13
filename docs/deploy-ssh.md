@@ -84,6 +84,43 @@ find . -type f -exec chmod 644 {} \;
 wp theme activate remarka-studio --allow-root --path=/var/www/alefcom/data/www/remarka.biz
 ```
 
+## ⚠️ Обязательный шаг: .htaccess (иначе все вложенные URL будут 404)
+
+На этом сервере nginx — просто reverse proxy (`proxy_pass http://127.0.0.1:81`),
+а реальный движок — **Apache** на 127.0.0.1:81 (FastPanel-конфигурация).
+Без `.htaccess` Apache отдаёт СВОЙ 404 (не доходя до WordPress) на любой URL,
+который не совпадает с реальным файлом — то есть все "красивые" адреса вида
+`/servizi/siti-aziendali/` ломаются, а `/` работает (это DirectoryIndex).
+Признак именно этой проблемы: тело 404-ответа содержит
+`Apache/2.4.58 (Ubuntu) Server at remarka.biz` — если видите это, дело не в
+WordPress и не в permalinks, а именно в отсутствующем `.htaccess`.
+
+`AllowOverride All` на сервере уже включён (проверено), поэтому достаточно
+создать файл. `wp rewrite flush --hard` его НЕ создаёт при запуске от root
+(предупреждает "Regenerating a .htaccess file requires special configuration")
+— нужно вручную:
+
+```bash
+cat > /var/www/alefcom/data/www/remarka.biz/.htaccess << 'HTACCESS'
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+HTACCESS
+chown alefcom:alefcom /var/www/alefcom/data/www/remarka.biz/.htaccess
+chmod 644 /var/www/alefcom/data/www/remarka.biz/.htaccess
+```
+
+Проверка: `curl -sI https://remarka.biz/servizi/siti-aziendali/` должен
+вернуть `200 OK`, а не 404 с адресом Apache в теле ответа.
+
 ## Импорт всех страниц + меню + главная (deploy-import.php)
 
 Скрипт лежит в репозитории: `wordpress/build-tools/deploy-import.php`.
