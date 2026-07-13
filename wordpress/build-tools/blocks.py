@@ -148,9 +148,17 @@ def raw_html(html):
     return f'<!-- wp:html -->\n{html}\n<!-- /wp:html -->\n'
 
 
-def image(alt=''):
+PLACEHOLDER_IMG_SRC = '/wp-content/themes/remarka-studio/assets/img/placeholder-browser.svg'
+
+
+def image(alt='', src=None):
+    # src vuoto (`src=""`) non sopravvive a wp_insert_post() senza utente
+    # loggato (wp_kses lo rimuove): serve un URL reale, anche per un
+    # placeholder. Resta un vero blocco Immagine: sostituibile dal
+    # proprietario del sito con lo screenshot reale via editor a blocchi.
+    src = src or PLACEHOLDER_IMG_SRC
     return (f'<!-- wp:image {{"sizeSlug":"large"}} -->\n'
-            f'<figure class="wp-block-image size-large"><img src="" alt="{alt}"/></figure>\n'
+            f'<figure class="wp-block-image size-large"><img src="{src}" alt="{alt}"/></figure>\n'
             f'<!-- /wp:image -->\n')
 
 
