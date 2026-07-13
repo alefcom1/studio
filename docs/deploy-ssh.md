@@ -55,6 +55,21 @@ wp db export ~/backup-remarka-biz-db-$(date +%F).sql --allow-root --path=/var/ww
 
 ## Доставка темы на сервер
 
+> ⚠️ **Точечное обновление одного файла через `curl raw.githubusercontent.com/.../<ветка>/...`
+> может отдать УСТАРЕВШУЮ версию** сразу после пуша — у raw.githubusercontent.com
+> свой CDN-кэш (Fastly) по имени ветки на несколько минут. Проверено на практике:
+> после пуша трёх коммитов подряд `curl` по имени ветки дважды притащил версию
+> файла на 1-2 коммита позади реального HEAD (файл не совпадал по содержимому,
+> хотя сама команда отрабатывала без ошибок). Правильно — тянуть по точному
+> **хэшу коммита**, у него неизменяемый адрес и кэш не мешает:
+> ```bash
+> curl -sL https://raw.githubusercontent.com/alefcom1/studio/<commit-sha>/wordpress/remarka-studio/assets/css/remarka.css \
+>   -o /var/www/alefcom/data/www/remarka.biz/wp-content/themes/remarka-studio/assets/css/remarka.css
+> ```
+> После любого точечного обновления файла — обязательно `grep` на признак
+> самой свежей правки, чтобы убедиться, что реально прилетел актуальный контент,
+> а не просто отсутствие ошибки в `curl`.
+
 **Вариант А — git clone прямо на сервере:**
 ```bash
 cd /tmp
