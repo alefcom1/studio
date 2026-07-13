@@ -351,6 +351,53 @@
 		window.addEventListener('resize', check);
 	}
 
+	/* ---------- 7. Переключатель языка (IT/EN/RU) ----------
+	   Per il design brief: solo stato UI, persistito in localStorage,
+	   traduzione contenuti non implementata (TODO — vedi README handoff).
+	   Iniettato via JS invece che in header.php: non tocchiamo markup/JS
+	   di Prespa di cui non abbiamo il sorgente completo (ricerca, menu
+	   mobile) — stesso approccio già usato per il footer proprietario. */
+	function initLangSwitch() {
+		var menu = document.getElementById('primary-menu');
+		if (!menu || menu.querySelector('.sr-lang-switch')) {
+			return;
+		}
+		var langs = ['IT', 'EN', 'RU'];
+		var stored = window.localStorage.getItem('sr-lang') || 'IT';
+
+		var li = document.createElement('li');
+		li.className = 'sr-lang-switch';
+		li.innerHTML = '<span class="sr-lang-switch__divider" aria-hidden="true"></span>' +
+			langs.map(function (code) {
+				return '<button type="button" class="sr-lang-switch__btn" data-sr-lang="' + code + '">' + code + '</button>';
+			}).join('');
+
+		var searchItem = menu.querySelector('.search-icon');
+		if (searchItem) {
+			menu.insertBefore(li, searchItem);
+		} else {
+			menu.appendChild(li);
+		}
+
+		function setActive(code) {
+			li.querySelectorAll('[data-sr-lang]').forEach(function (btn) {
+				btn.classList.toggle('sr-lang-switch__btn--active', btn.getAttribute('data-sr-lang') === code);
+			});
+		}
+
+		li.addEventListener('click', function (e) {
+			var btn = e.target.closest('[data-sr-lang]');
+			if (!btn) {
+				return;
+			}
+			var code = btn.getAttribute('data-sr-lang');
+			window.localStorage.setItem('sr-lang', code);
+			setActive(code);
+		});
+
+		setActive(stored);
+	}
+
 	onReady(function () {
 		initReveal();
 		initBarre();
@@ -360,5 +407,6 @@
 		initToolWidgets();
 		initCookieBanner();
 		initWaFab();
+		initLangSwitch();
 	});
 })();

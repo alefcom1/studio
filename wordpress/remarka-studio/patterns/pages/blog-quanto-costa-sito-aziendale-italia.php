@@ -1,24 +1,24 @@
 <?php
 /**
- * Title: Pagina — Articolo: Core Web Vitals spiegati senza gergo tecnico
- * Slug: remarka-studio/blog-core-web-vitals-spiegati
+ * Title: Pagina — Articolo: Quanto costa un sito aziendale in Italia: i prezzi veri
+ * Slug: remarka-studio/blog-quanto-costa-sito-aziendale-italia
  * Categories: remarka-pagine
- * Description: Articolo blog: Core Web Vitals spiegati senza gergo tecnico
+ * Description: Articolo blog: Quanto costa un sito aziendale in Italia: i prezzi veri
  * Viewport Width: 1400
  */
 ?>
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
-<p class="sr-mono" style="color:var(--sr-grigio);font-size:13px">20 MAR 2026</p>
+<p class="sr-mono" style="color:var(--sr-grigio);font-size:13px">03 FEB 2026</p>
 <!-- /wp:html -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Core Web Vitals spiegati senza gergo tecnico</h1>
+<h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Quanto costa un sito aziendale in Italia: i prezzi veri</h1>
 <!-- /wp:heading -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="font-size:17px;line-height:1.7">LCP, INP e CLS sono le tre metriche che Google usa per valutare l’esperienza utente di un sito. In questo articolo le spieghiamo senza gergo tecnico, con esempi reali di cosa le peggiora e come si sistemano.</p>
+<p class="has-base-font-size" style="font-size:17px;line-height:1.7">Il mercato dei siti web in Italia è frammentato e poco trasparente: si va dagli 800 euro dei costruttori fai-da-te ai 50.000 euro delle grandi agenzie. In questo articolo mappiamo onestamente cosa si compra a ogni fascia di prezzo, incluso il nostro, e le domande da fare prima di firmare qualunque preventivo.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"32px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:32px"><!-- wp:button {"className":"is-style-outline"} -->

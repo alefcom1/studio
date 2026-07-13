@@ -26,7 +26,7 @@
 <h3 class="wp-block-heading">Siti aziendali</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Struttura chiara e caricamento sotto il secondo per chi vive di richieste di preventivo.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Quindici pagine, due lingue, CMS per aggiornarlo da soli. Progettato per trasformare visite in richieste di preventivo.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/servizi/siti-aziendali/">Scopri →</a></p>
@@ -38,7 +38,7 @@
 <h3 class="wp-block-heading">E-commerce</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Cataloghi veloci e checkout senza attriti, con fatturazione elettronica integrata.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Catalogo veloce, checkout in un passaggio, fatturazione elettronica integrata: pensato per chi vende, non solo per chi naviga.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/servizi/e-commerce/">Scopri →</a></p>
@@ -50,7 +50,7 @@
 <h3 class="wp-block-heading">Siti progressivi PWA</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Un sito che si comporta come un’app: installabile, funziona anche offline, apre all’istante.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Installabile, funziona offline, si apre all’istante anche alla decima visita: senza i costi e i tempi di App Store e Play Store.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/servizi/siti-pwa/">Scopri →</a></p>
@@ -62,7 +62,7 @@
 <h3 class="wp-block-heading">Restyling e migrazione</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Il vostro sito attuale, ricostruito: stessi contenuti, il triplo della velocità.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Nessun posizionamento perso, nessun contenuto da riscrivere: solo la base tecnica cambia, e cambia in meglio.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/servizi/restyling-migrazione/">Scopri →</a></p>
@@ -74,7 +74,7 @@
 <h3 class="wp-block-heading">SEO tecnica</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Struttura, dati e Core Web Vitals a posto prima ancora di scrivere i contenuti.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Core Web Vitals, dati strutturati e sitemap corretti: la parte tecnica della SEO, quella che il copywriting da sola non risolve.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/servizi/seo-tecnica/">Scopri →</a></p>
@@ -86,7 +86,7 @@
 <h3 class="wp-block-heading">Siti multilingue</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Quattro lingue tradotte da madrelingua: dal 2001 è il mestiere del gruppo Remarka.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Dal 2001 è il mestiere del gruppo Remarka: traduzione professionale, non automatica, con SEO multilingue corretta fin dal primo giorno.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/servizi/siti-multilingue/">Scopri →</a></p>

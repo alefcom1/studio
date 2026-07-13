@@ -3,7 +3,7 @@
  * Title: Pagina — Caso: Arredamenti Colombo
  * Slug: remarka-studio/caso-arredamenti-colombo
  * Categories: remarka-pagine
- * Description: Caso studio dettagliato: Da 34 a 96 in sei settimane, con il 41% di richieste in più
+ * Description: Caso studio dettagliato: Da 34 a 96 in sei settimane, senza fermare lo showroom
  * Viewport Width: 1400
  */
 ?>
@@ -12,10 +12,10 @@
 <p class="sr-eyebrow">Casi studio / Arredamenti Colombo</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(34px,4.4vw,58px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(34px,4.4vw,58px)">Da 34 a 96 in sei settimane, con il 41% di richieste in più<span class="sr-accent-dot">.</span></h1>
+<h1 class="wp-block-heading" style="font-size:clamp(34px,4.4vw,58px)">Da 34 a 96 in sei settimane, senza fermare lo showroom<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<p class="sr-mono" style="margin-top:20px;font-size:12.5px;letter-spacing:0.06em;color:var(--sr-grigio)">SETTORE ARREDAMENTO SU MISURA · SEDE LISSONE (MB) · INTERVENTO RESTYLING E MIGRAZIONE · ANNO 2025</p>
+<p class="sr-mono" style="margin-top:20px;font-size:12.5px;letter-spacing:0.06em;color:var(--sr-grigio)">SETTORE ARREDO SU MISURA · SEDE LISSONE (MB) · INTERVENTO RESTYLING + PWA + SEO · ANNO 2025</p>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -36,10 +36,10 @@
 <div class="sr-chapter"><p class="sr-chapter__label">01 — Problema</p><div class="sr-chapter__content">
 <!-- /wp:html -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="font-size:17px">Il sito di Arredamenti Colombo caricava in 4,1 secondi su mobile, con immagini non ottimizzate e una struttura costruita per una versione desktop del 2015. Il 68% dei visitatori da mobile abbandonava la pagina prima del caricamento completo, e solo l’1,2% arrivava al modulo contatti.</p>
+<p class="has-base-font-size" style="font-size:17px">Il sito del 2019 caricava gallerie fotografiche complete su ogni pagina: 4,1 secondi di attesa media su mobile, dove arrivava il 78% delle visite. Le richieste di preventivo passavano quasi solo dal telefono, e le campagne locali portavano visite che se ne andavano prima di vedere il primo divano.</p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"160px"}} -->
-<div class="wp-block-group is-layout-grid" style="--sr-grid-min:160px"><div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">4,1 s</span><p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">tempo di caricamento mobile</p></div><div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">68%</span><p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">abbandono prima del caricamento</p></div><div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">1,2%</span><p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">tasso di conversione al modulo contatti</p></div></div>
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:160px"><div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">4,1 s</span><p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">di caricamento medio su mobile</p></div><div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">68%</span><p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">di rimbalzo dalle campagne locali</p></div><div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">1,2%</span><p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">di visite che diventavano richieste</p></div></div>
 <!-- /wp:group -->
 <!-- wp:html -->
 </div></div>
@@ -51,10 +51,10 @@
 <div class="sr-chapter"><p class="sr-chapter__label">02 — Soluzione</p><div class="sr-chapter__content">
 <!-- /wp:html -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="font-size:17px">Abbiamo ricostruito la base tecnica mantenendo intatti i contenuti e la struttura di navigazione a cui i clienti erano abituati, con redirect 301 per non perdere il posizionamento già acquisito.</p>
+<p class="has-base-font-size" style="font-size:17px">Sei settimane, showroom sempre online: il sito nuovo è cresciuto su un ambiente di prova ed è andato in produzione in una notte, con i redirect già pronti.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Migrazione su base tecnica performante con generazione statica</span></div><div><span class="sr-mono">b</span><span>Compressione e lazy loading di tutte le immagini del catalogo</span></div><div><span class="sr-mono">c</span><span>Nuovo modulo contatti con notifica WhatsApp Business</span></div><div><span class="sr-mono">d</span><span>SEO tecnica: dati strutturati per ogni prodotto</span></div></div>
+<div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Architettura PWA: il catalogo si apre all’istante e resta consultabile anche offline, in showroom.</span></div><div><span class="sr-mono">b</span><span>Fotografie ricompresse in AVIF con caricamento progressivo: −82% di peso a parità di qualità visibile.</span></div><div><span class="sr-mono">c</span><span>Una pagina per ogni lavorazione, con dati strutturati: «arredamenti su misura Lissone» da pagina 3 a pagina 1.</span></div><div><span class="sr-mono">d</span><span>Richiesta di preventivo in due passaggi, con notifica immediata in showroom via WhatsApp Business.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
 </div></div>
@@ -75,16 +75,19 @@
 <div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">Dopo</span><span class="sr-barra-row__val sr-barra-row__val--verde">96</span></div><div class="sr-barra" style="height:10px" data-sr-target="96%" data-sr-delay="150" role="img" aria-label="Dopo: 96 su 100"><div class="sr-barra__fill"></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
+<p class="sr-mono" style="font-size:11.5px;letter-spacing:0.06em;color:var(--sr-grigio)">GOOGLE PAGESPEED, MOBILE — MEDIA DI 3 RILEVAZIONI</p>
+<!-- /wp:html -->
+<!-- wp:html -->
 </div>
 <!-- /wp:html -->
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;margin-top:24px">Sei settimane dopo la messa online, il punteggio PageSpeed mobile è passato da 34 a 96, con un tempo di caricamento sceso a 1,2 secondi.</p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"160px"}} -->
-<div class="wp-block-group is-layout-grid" style="--sr-grid-min:160px"><div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">−2,9 s</span><p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">di caricamento: da 4,1 a 1,2 secondi</p></div><div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">+41%</span><p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">richieste di preventivo in sei mesi</p></div><div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">Pag. 1</span><p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">su Google per «arredamenti su misura Lissone»</p></div></div>
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:160px"><div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">1,2 s</span><p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">caricamento su mobile (da 4,1 s)</p></div><div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">+41%</span><p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">richieste di preventivo in sei mesi</p></div><div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">Pag. 1</span><p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">per «arredamenti su misura Lissone»</p></div></div>
 <!-- /wp:group -->
 <!-- wp:html -->
-<blockquote class="sr-pull-quote"><p>«Non ci aspettavamo che un problema “tecnico” portasse così tante richieste in più. Il sito adesso si apre prima che io finisca di sbloccare il telefono.»</p><cite>Marco Colombo, titolare</cite></blockquote>
+<blockquote class="sr-pull-quote"><p>«Prima il sito era un biglietto da visita lento. Adesso è il commerciale più veloce che abbiamo.»</p><cite>Paolo Colombo — titolare, Arredamenti Colombo S.r.l.</cite></blockquote>
 <!-- /wp:html -->
 <!-- wp:html -->
 </div></div>
@@ -93,13 +96,19 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-dark"><!-- wp:heading -->
-<h2 class="wp-block-heading">Volete risultati simili sul vostro sito<span class="sr-accent-dot">?</span></h2>
+<h2 class="wp-block-heading">Numeri simili per il vostro settore<span class="sr-accent-dot">?</span></h2>
 <!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px">L’analisi del sito attuale è gratuita e vi arriva come report scritto, con le priorità.</p>
+<!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"28px"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Preventivo in 24 ore</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi l’analisi gratuita</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
+<!-- wp:html -->
+<p class="sr-card-link" style="text-align:center;margin-top:20px"><a href="/casi-studio/">Altri casi studio →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->

@@ -138,9 +138,9 @@ $page_map = array(
 
 	'casi-studio-index'                    => array( 'casi-studio', null, 'Casi studio' ),
 	'caso-arredamenti-colombo'             => array( 'arredamenti-colombo', 'casi-studio', null ),
-	'caso-officine-riva'                   => array( 'officine-riva', 'casi-studio', null ),
-	'caso-studio-fontana'                  => array( 'studio-fontana', 'casi-studio', null ),
-	'caso-bb-il-cortile'                   => array( 'bb-il-cortile', 'casi-studio', null ),
+	'caso-cantina-serralta'                => array( 'cantina-serralta', 'casi-studio', null ),
+	'caso-tecnoidraulica'                  => array( 'tecnoidraulica', 'casi-studio', null ),
+	'caso-studio-legale-fontana'           => array( 'studio-legale-fontana', 'casi-studio', null ),
 
 	'prezzi'                               => array( 'prezzi', null, null ),
 
@@ -156,13 +156,13 @@ $page_map = array(
 	'cookie-policy'                        => array( 'cookie-policy', null, null ),
 	'cookie-preferenze'                    => array( 'cookie-preferenze', null, null ),
 
-	'blog-index'                           => array( 'blog', null, 'Blog' ),
-	'blog-perche-pagespeed-conta'          => array( 'perche-pagespeed-conta', 'blog', null ),
-	'blog-redirect-301-senza-perdere-seo'  => array( 'redirect-301-senza-perdere-seo', 'blog', null ),
-	'blog-pwa-vs-app-nativa'               => array( 'pwa-vs-app-nativa', 'blog', null ),
-	'blog-core-web-vitals-spiegati'        => array( 'core-web-vitals-spiegati', 'blog', null ),
-	'blog-gdpr-cookie-banner-regole'       => array( 'gdpr-cookie-banner-regole', 'blog', null ),
-	'blog-quanto-costa-davvero-un-sito'    => array( 'quanto-costa-davvero-un-sito', 'blog', null ),
+	'blog-index'                                => array( 'blog', null, 'Blog' ),
+	'blog-sito-quattro-lingue-costi-tempi'      => array( 'sito-quattro-lingue-costi-tempi', 'blog', null ),
+	'blog-cookie-banner-checklist-garante-2026' => array( 'cookie-banner-checklist-garante-2026', 'blog', null ),
+	'blog-migrare-wordpress-senza-perdere-seo'  => array( 'migrare-wordpress-senza-perdere-seo', 'blog', null ),
+	'blog-pwa-per-pmi-quando-app-non-serve'     => array( 'pwa-per-pmi-quando-app-non-serve', 'blog', null ),
+	'blog-quanto-costa-sito-aziendale-italia'   => array( 'quanto-costa-sito-aziendale-italia', 'blog', null ),
+	'blog-core-web-vitals-2026'                 => array( 'core-web-vitals-2026', 'blog', null ),
 );
 
 // Le pagine "genitore" (parent=null ma referenziate come parent altrove)
@@ -192,6 +192,36 @@ foreach ( $ordered as $pattern_slug ) {
 
 	$id = remarka_deploy_upsert_page( $page_slug, $title, $content, $parent_id, $force );
 	$created_ids[ $page_slug ] = $id;
+}
+
+/* ---------- 2b. Pulizia pagine orfane ----------
+ * Se un caso/articolo viene rinominato o rimosso da data.py (successo con
+ * gli slug dei casi studio: officine-riva/studio-fontana/bb-il-cortile →
+ * cantina-serralta/tecnoidraulica/studio-legale-fontana), la vecchia pagina
+ * resta nel database con lo slug precedente — non viene toccata perché non
+ * compare più in $page_map. Qui cerchiamo tutte le pagine con il meta
+ * _remarka_generated il cui slug non è (più) nella mappa corrente e le
+ * spostiamo nel cestino, solo con --force (stessa cautela dell'update). */
+$current_slugs = wp_list_pluck( $page_map, 0 );
+$orphans       = get_posts( array(
+	'post_type'   => 'page',
+	'post_status' => 'any',
+	'numberposts' => -1,
+	'meta_key'    => '_remarka_generated',
+) );
+$orphans = array_filter( $orphans, function ( $p ) use ( $current_slugs ) {
+	return ! in_array( $p->post_name, $current_slugs, true );
+} );
+if ( $orphans ) {
+	WP_CLI::log( "\nPagine orfane (slug non più in uso):" );
+	foreach ( $orphans as $p ) {
+		if ( $force ) {
+			wp_trash_post( $p->ID );
+			WP_CLI::log( "  ✗ /{$p->post_name}/ spostata nel cestino (ID {$p->ID})" );
+		} else {
+			WP_CLI::warning( "  /{$p->post_name}/ non più referenziata — rilanciare con REMARKA_FORCE=1 per spostarla nel cestino" );
+		}
+	}
 }
 
 /* ---------- 3. Menu principale ---------- */

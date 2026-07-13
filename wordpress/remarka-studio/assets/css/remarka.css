@@ -126,13 +126,55 @@ body.dark-mode .site-description {
 
 /* Иконка поиска дописывается темой в конец меню программно (не пункт
    меню, порядком в редакторе меню не двигается) — переставляем визуально
-   через flex order, чтобы CTA «Preventivo» шла последней, после лупы. */
-#masthead .search-icon {
+   через flex order: переключатель языка → лупа → CTA «Preventivo». */
+#masthead .sr-lang-switch {
   order: 1;
 }
 
-#masthead .sr-menu-cta {
+#masthead .search-icon {
   order: 2;
+}
+
+#masthead .sr-menu-cta {
+  order: 3;
+}
+
+/* Переключатель языка IT/EN/RU — только состояние интерфейса, без перевода
+   контента (см. remarka_render_footer/README хендоффа: "Content translation
+   not implemented — switcher is UI state only"), вставляется JS-ом в
+   #primary-menu (см. initLangSwitch в remarka.js). */
+#masthead .sr-lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+#masthead .sr-lang-switch__divider {
+  width: 1px;
+  height: 18px;
+  background: var(--sr-bordo);
+  margin: 0 10px;
+}
+
+#masthead .sr-lang-switch__btn {
+  font-family: var(--sr-font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  padding: 5px 6px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--sr-grigio);
+  cursor: pointer;
+}
+
+#masthead .sr-lang-switch__btn:hover {
+  color: var(--sr-inchiostro);
+}
+
+#masthead .sr-lang-switch__btn--active {
+  color: var(--sr-inchiostro);
+  border-bottom-color: var(--sr-oltremare);
 }
 
 /* ---------- Типографика ---------- */

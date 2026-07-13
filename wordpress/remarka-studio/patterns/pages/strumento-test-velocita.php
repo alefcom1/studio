@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(34px,4vw,52px)">Test di velocità del vostro sito<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:100%">Misuriamo il PageSpeed reale del vostro sito su mobile e vi spieghiamo cosa significa, in italiano.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:100%">Punteggio Google PageSpeed e le tre metriche che lo determinano, spiegate in italiano. Senza registrazione.</p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
@@ -56,9 +56,12 @@
 <section class="wp-block-group is-layout-constrained sr-section sr-dark"><!-- wp:heading -->
 <h2 class="wp-block-heading">Vuoi che sistemiamo noi questi problemi<span class="sr-accent-dot">?</span></h2>
 <!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px">Report gratuito con le cause, le priorità e un preventivo chiuso: 90+ garantito da contratto.</p>
+<!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"28px"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi un’analisi gratuita</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi l’analisi completa</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

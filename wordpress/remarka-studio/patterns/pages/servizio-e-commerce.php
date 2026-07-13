@@ -14,14 +14,14 @@
 <p class="sr-eyebrow">Servizio / E-commerce</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(38px, 4.6vw, 64px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(38px, 4.6vw, 64px)">E-commerce<span class="sr-accent-dot">.</span></h1>
+<h1 class="wp-block-heading" style="font-size:clamp(38px, 4.6vw, 64px)">Il negozio online che non perde clienti nel checkout<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">Cataloghi veloci e checkout senza attriti, con fatturazione elettronica integrata.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">Catalogo veloce, checkout in un passaggio, fatturazione elettronica integrata: pensato per chi vende, non solo per chi naviga.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"36px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:36px"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi preventivo</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi preventivo in 24 ore</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/casi-studio/">Vedi i casi studio</a></div>
@@ -32,7 +32,7 @@
 <!-- /wp:column -->
 <!-- wp:column {"width":"38%","verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:38%"><!-- wp:html -->
-<div class="sr-stat" style="max-width:260px"><span class="sr-stat__num" style="color:var(--sr-oltremare)">1,4 s</span><p style="margin-top:16px;font-size:15.5px;color:var(--sr-grigio)">tempo di caricamento medio consegnato</p></div>
+<div class="sr-stat" style="max-width:260px"><span class="sr-stat__num" style="color:var(--sr-oltremare)">1,4 s</span><p style="margin-top:16px;font-size:15.5px;color:var(--sr-grigio)">Caricamento medio (LCP) degli e-commerce consegnati nel 2025.</p></div>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -47,13 +47,13 @@
 <p class="sr-eyebrow">Per chi è</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">È il servizio giusto se<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Per chi vende sul serio, non solo espone<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"62%"} -->
 <div class="wp-block-column" style="flex-basis:62%"><!-- wp:html -->
-<div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Attività che vendono online ma perdono clienti nel checkout</span></div><div><span class="sr-mono">b</span><span>Negozi fisici pronti ad aprire un canale e-commerce</span></div><div><span class="sr-mono">c</span><span>Chi ha bisogno di fatturazione elettronica automatica</span></div></div>
+<div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Attività che vendono online ma perdono clienti proprio nel checkout.</span></div><div><span class="sr-mono">b</span><span>Negozi fisici pronti ad aprire un canale e-commerce senza improvvisare.</span></div><div><span class="sr-mono">c</span><span>Chi ha bisogno di fatturazione elettronica automatica, non di un plugin da rincorrere.</span></div></div>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -66,10 +66,10 @@
 <p class="sr-eyebrow">Cosa include</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Tutto compreso nel prezzo<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Tutto scritto nel preventivo<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Catalogo prodotti illimitato con varianti</span></div><div><span class="sr-mono">✓</span><span>Checkout in un solo passaggio</span></div><div><span class="sr-mono">✓</span><span>Pagamenti con carta, PayPal e bonifico</span></div><div><span class="sr-mono">✓</span><span>Fatturazione elettronica via SDI integrata</span></div><div><span class="sr-mono">✓</span><span>Gestione magazzino e spedizioni</span></div><div><span class="sr-mono">✓</span><span>SEO tecnica per le pagine prodotto</span></div><div><span class="sr-mono">✓</span><span>Formazione all’uso del pannello ordini</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ garantito da contratto</span></div></div>
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Catalogo prodotti illimitato con varianti</span></div><div><span class="sr-mono">✓</span><span>Checkout in un solo passaggio</span></div><div><span class="sr-mono">✓</span><span>Pagamenti con carta, PayPal e bonifico</span></div><div><span class="sr-mono">✓</span><span>Fatturazione elettronica via SDI integrata</span></div><div><span class="sr-mono">✓</span><span>Gestione magazzino e spedizioni</span></div><div><span class="sr-mono">✓</span><span>SEO tecnica per le pagine prodotto</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ garantito da contratto</span></div><div><span class="sr-mono">✓</span><span>12 mesi di assistenza e misurazioni mensili</span></div></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -77,14 +77,17 @@
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
 <div class="wp-block-column" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Mini caso</p>
+<p class="sr-eyebrow">Dal registro consegne</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(26px,3vw,34px)"}}} -->
-<h2 class="wp-block-heading" style="font-size:clamp(26px,3vw,34px)">Pasticceria Volta<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading" style="font-size:clamp(26px,3vw,34px)">Cantina Serralta, Asti<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:16px;font-size:16px">Il vecchio store impiegava oltre 6 secondi a caricare le pagine prodotto. Con il nuovo catalogo veloce, il tasso di abbandono carrello è sceso del 34%.</p>
+<p class="has-base-font-size" style="margin-top:16px;font-size:16px">Catalogo vini tradotto in tre lingue con checkout in un solo passaggio: le vendite dirette dal sito sono cresciute del 63% in un anno.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/casi-studio/cantina-serralta/">Leggi un caso completo →</a></p>
+<!-- /wp:html -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%"} -->
@@ -92,10 +95,13 @@
 <div style="display:flex;flex-direction:column;gap:20px">
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">Prima</span><span class="sr-barra-row__val">22</span></div><div class="sr-barra" style="height:8px" data-sr-target="22%" data-sr-delay="0" role="img" aria-label="Prima: 22 su 100"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
+<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">Prima</span><span class="sr-barra-row__val">41</span></div><div class="sr-barra" style="height:8px" data-sr-target="41%" data-sr-delay="0" role="img" aria-label="Prima: 41 su 100"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">Dopo</span><span class="sr-barra-row__val sr-barra-row__val--verde">91</span></div><div class="sr-barra" style="height:8px" data-sr-target="91%" data-sr-delay="150" role="img" aria-label="Dopo: 91 su 100"><div class="sr-barra__fill"></div></div>
+<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">Dopo</span><span class="sr-barra-row__val sr-barra-row__val--verde">97</span></div><div class="sr-barra" style="height:8px" data-sr-target="97%" data-sr-delay="150" role="img" aria-label="Dopo: 97 su 100"><div class="sr-barra__fill"></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-mono" style="font-size:11.5px;letter-spacing:0.06em;color:var(--sr-grigio)">GOOGLE PAGESPEED, MOBILE — RILEVAZIONI DOCUMENTATE</p>
 <!-- /wp:html -->
 <!-- wp:html -->
 </div>
@@ -113,17 +119,23 @@
 <!-- wp:html -->
 <div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">€ 7.500–14.000</div>
 <!-- /wp:html -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:14px;max-width:60ch">Prezzo chiuso nel preventivo, consegna in 8–10 settimane. Fattura elettronica, pagamento in tre tranche.</p>
+<!-- /wp:paragraph -->
 <!-- wp:paragraph -->
-<p style="margin-top:24px;font-weight:500;font-size:16px">Cosa fa variare il prezzo</p>
+<p style="margin-top:28px;font-weight:500;font-size:16px">Cosa fa variare il prezzo</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Numero di prodotti e varianti</span></div><div><span class="sr-mono">b</span><span>Integrazioni con corrieri e magazzino</span></div><div><span class="sr-mono">c</span><span>Metodi di pagamento aggiuntivi</span></div></div>
+<div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Numero di prodotti e varianti oltre il catalogo base.</span></div><div><span class="sr-mono">b</span><span>Integrazioni con corrieri e magazzino esterno.</span></div><div><span class="sr-mono">c</span><span>Metodi di pagamento aggiuntivi oltre carta, PayPal e bonifico.</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:20px"><a href="/prezzi/">Confronta tutte le tariffe →</a></p>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Domande frequenti</p>
+<p class="sr-eyebrow">Tre domande tipiche</p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><!-- wp:html -->
@@ -133,7 +145,7 @@
 <div style="border-top:1px solid var(--sr-inchiostro);padding-top:20px"><h3 class="wp-block-heading" style="font-size:18px">Posso vendere anche all’estero?</h3><p style="margin-top:10px;font-size:15px;color:var(--sr-grigio)">Sì, il catalogo supporta più lingue e più valute su richiesta.</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div style="border-top:1px solid var(--sr-inchiostro);padding-top:20px"><h3 class="wp-block-heading" style="font-size:18px">Quanto costa mantenere il negozio online?</h3><p style="margin-top:10px;font-size:15px;color:var(--sr-grigio)">Hosting e assistenza sono inclusi nei primi 12 mesi; dopo, un canone annuale contenuto copre aggiornamenti e sicurezza.</p></div>
+<div style="border-top:1px solid var(--sr-inchiostro);padding-top:20px"><h3 class="wp-block-heading" style="font-size:18px">Il dominio e i dati dei clienti restano nostri?</h3><p style="margin-top:10px;font-size:15px;color:var(--sr-grigio)">Sempre. Dominio, database ordini e codice sono intestati a voi dal primo giorno.</p></div>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -141,14 +153,17 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-dark"><!-- wp:heading -->
-<h2 class="wp-block-heading">Parliamo del vostro progetto<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Parliamo del vostro sito<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px">Analisi gratuita del sito attuale, preventivo chiuso entro 24 ore dalla chiamata.</p>
+<!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"28px"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Preventivo in 24 ore</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi preventivo in 24 ore</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/prezzi/">Confronta le tariffe</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/strumenti/test-velocita/">Analizza il tuo sito — gratis</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

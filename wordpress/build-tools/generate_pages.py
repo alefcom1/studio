@@ -75,34 +75,37 @@ def build_servizi_index():
 
 
 def build_servizio(svc):
-    hero = hero_interno(svc['breadcrumb'], svc['title'], svc['hero_sub'],
+    hero = hero_interno(svc['breadcrumb'], svc['hero_title'], svc['hero_sub'],
                          extra_html=buttons([
-                             ('Richiedi preventivo', '/#contatti', None),
+                             ('Richiedi preventivo in 24 ore', '/#contatti', None),
                              ('Vedi i casi studio', '/casi-studio/', 'outline'),
                          ], margin_top='36px'),
                          stat=(svc['hero_stat_value'], svc['hero_stat_label']))
 
     per_chi = section(
         columns([
-            column(eyebrow('Per chi è') + heading(2, 'È il servizio giusto se'), width='38%'),
+            column(eyebrow('Per chi è') + heading(2, svc['per_chi_heading']), width='38%'),
             column(list_rows(svc['per_chi']), width='62%'),
         ]),
         classes='sr-section',
     )
 
     include = section(
-        eyebrow('Cosa include') + heading(2, 'Tutto compreso nel prezzo') + checklist(svc['include']),
+        eyebrow('Cosa include') + heading(2, svc['include_heading']) + checklist(svc['include']),
         classes='sr-section sr-section--bianco',
     )
 
     mc = svc['mini_caso']
     mini_caso = section(
         columns([
-            column(eyebrow('Mini caso') + heading(2, mc['cliente'], style='clamp(26px,3vw,34px)') +
-                   paragraph(mc['testo'], size='base', extra_style='margin-top:16px;font-size:16px'), width='55%'),
+            column(eyebrow('Dal registro consegne') + heading(2, f"{mc['cliente']}, {mc['citta']}", style='clamp(26px,3vw,34px)') +
+                   paragraph(mc['testo'], size='base', extra_style='margin-top:16px;font-size:16px') +
+                   raw_html(f'<p class="sr-card-link" style="margin-top:16px"><a href="/casi-studio/{mc["link_slug"]}/">Leggi un caso completo →</a></p>'),
+                   width='55%'),
             column(raw_html('<div style="display:flex;flex-direction:column;gap:20px">') +
                    raw_html(barra_row('Prima', str(mc['prima']), mc['prima'], muted=True)) +
                    raw_html(barra_row('Dopo', str(mc['dopo']), mc['dopo'], delay=150, verde_value=True)) +
+                   raw_html(f'<p class="sr-mono" style="font-size:11.5px;letter-spacing:0.06em;color:var(--sr-grigio)">{mc["caption"]}</p>') +
                    raw_html('</div>'), width='45%'),
         ], valign='center'),
         classes='sr-section',
@@ -111,13 +114,15 @@ def build_servizio(svc):
     prezzo = section(
         eyebrow('Prezzo') +
         raw_html(f'<div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">{svc["prezzo_range"]}</div>') +
-        paragraph('Cosa fa variare il prezzo', extra_style='margin-top:24px;font-weight:500;font-size:16px') +
-        list_rows(svc['prezzo_note']),
+        paragraph(svc['prezzo_lede'], color='grigio', size='base', extra_style='margin-top:14px;max-width:60ch') +
+        paragraph('Cosa fa variare il prezzo', extra_style='margin-top:28px;font-weight:500;font-size:16px') +
+        list_rows(svc['prezzo_note']) +
+        raw_html('<p class="sr-card-link" style="margin-top:20px"><a href="/prezzi/">Confronta tutte le tariffe →</a></p>'),
         classes='sr-section sr-section--bianco',
     )
 
     faq = section(
-        eyebrow('Domande frequenti') +
+        eyebrow(svc['faq_heading']) +
         group(''.join(
             raw_html(f'<div style="border-top:1px solid var(--sr-inchiostro);padding-top:20px">'
                       f'<h3 class="wp-block-heading" style="font-size:18px">{q}</h3>'
@@ -128,8 +133,11 @@ def build_servizio(svc):
     )
 
     cta = section(
-        heading(2, 'Parliamo del vostro progetto', style=None) +
-        buttons([('Preventivo in 24 ore', '/#contatti', None), ('Confronta le tariffe', '/prezzi/', 'outline')],
+        heading(2, 'Parliamo del vostro sito', style=None) +
+        paragraph('Analisi gratuita del sito attuale, preventivo chiuso entro 24 ore dalla chiamata.',
+                   color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
+                 ('Analizza il tuo sito — gratis', '/strumenti/test-velocita/', 'outline')],
                 justify='center', margin_top='28px'),
         classes='sr-section sr-dark',
     )
@@ -172,8 +180,10 @@ def build_casi_studio_index():
     )
 
     cta = section(
-        heading(2, 'Il prossimo caso studio può essere il vostro') +
-        buttons([('Preventivo in 24 ore', '/#contatti', None)], justify='center', margin_top='28px'),
+        heading(2, 'Il prossimo caso può essere il vostro') +
+        paragraph('Prima misuriamo il sito attuale, poi vi diciamo — con numeri — cosa possiamo garantire.',
+                   color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([('Analizza il tuo sito — gratis', '/strumenti/test-velocita/', None)], justify='center', margin_top='28px'),
         classes='sr-section sr-dark',
     )
     write('casi-studio-index', 'Pagina — Casi studio (elenco)',
@@ -209,6 +219,7 @@ def build_caso_detail(c):
     cap3_bars = raw_html('<div style="display:flex;flex-direction:column;gap:20px">') + \
         raw_html(barra_row('Prima', str(c['prima']), c['prima'], muted=True, height=10)) + \
         raw_html(barra_row('Dopo', str(c['dopo']), c['dopo'], delay=150, verde_value=True, height=10)) + \
+        raw_html(f'<p class="sr-mono" style="font-size:11.5px;letter-spacing:0.06em;color:var(--sr-grigio)">{c["caption"]}</p>') + \
         raw_html('</div>')
     cap3 = section(chapter('03 — Risultati',
                             cap3_bars +
@@ -222,8 +233,11 @@ def build_caso_detail(c):
                     classes='sr-section')
 
     cta = section(
-        heading(2, 'Volete risultati simili sul vostro sito', dot_char='?') +
-        buttons([('Preventivo in 24 ore', '/#contatti', None)], justify='center', margin_top='28px'),
+        heading(2, 'Numeri simili per il vostro settore', dot_char='?') +
+        paragraph("L’analisi del sito attuale è gratuita e vi arriva come report scritto, con le priorità.",
+                   color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([("Richiedi l’analisi gratuita", '/#contatti', None)], justify='center', margin_top='28px') +
+        raw_html('<p class="sr-card-link" style="text-align:center;margin-top:20px"><a href="/casi-studio/">Altri casi studio →</a></p>'),
         classes='sr-section sr-dark',
     )
 
@@ -236,8 +250,10 @@ def build_caso_detail(c):
 
 def build_prezzi():
     hero = section(
-        eyebrow('Prezzi') + heading(1, 'Prezzi trasparenti', style='clamp(38px,4.6vw,64px)') +
-        paragraph('Un prezzo chiuso: quello che firmate è quello che pagate.', color='grigio', size='medium') +
+        eyebrow('Prezzi') + heading(1, 'Prezzi trasparenti. Nessuna sorpresa in corso d’opera', style='clamp(38px,4.6vw,64px)') +
+        paragraph('La tabella qui sotto è pubblica; il preventivo che firmate è un prezzo chiuso. '
+                   'Se in corso d’opera serve altro, si concorda prima, per iscritto.',
+                   color='grigio', size='medium') +
         raw_html('<div style="margin-top:40px;max-width:600px">') +
         raw_html(barra(100, height=6)) +
         raw_html('<p class="sr-mono" style="margin-top:10px;font-size:12px;color:var(--sr-grigio)">100% DEI PREVENTIVI 2025 CHIUSI AL PREZZO FIRMATO</p></div>'),
@@ -248,14 +264,14 @@ def build_prezzi():
                'E-commerce<br><span>€ 7.500–14.000</span>']
     rows_data = [
         ('Pagine incluse', ['5', '15', 'Catalogo']),
-        ('Lingue', ['1', '2', '2']),
-        ('Design su misura', [True, True, True]),
-        ('CMS', [False, True, True]),
-        ('PWA', [False, True, True]),
-        ('Catalogo e pagamenti', [False, False, True]),
-        ('SEO', ['base', 'completa', 'completa']),
-        ('PageSpeed 90+', [True, True, True]),
-        ('Assistenza', ['12 mesi', '12 mesi', '12 mesi']),
+        ('Lingue tradotte da madrelingua', ['1', '2', '2']),
+        ('Design su misura, senza template', [True, True, True]),
+        ('CMS per aggiornarlo da soli', [False, True, True]),
+        ('PWA: offline e installabile', [False, True, True]),
+        ('Catalogo, carrello e pagamenti', [False, False, True]),
+        ('SEO tecnica e dati strutturati', ['base', 'completa', 'completa']),
+        ('PageSpeed 90+ da contratto', [True, True, True]),
+        ('Assistenza inclusa', ['12 mesi', '12 mesi', '12 mesi']),
         ('Consegna', ['3 sett.', '5–7 sett.', '8–10 sett.']),
     ]
     thead = '<tr>' + ''.join(f'<th>{h}</th>' for h in headers) + '</tr>'
@@ -272,15 +288,21 @@ def build_prezzi():
 
     variazioni = section(
         eyebrow('Cosa fa variare il prezzo') +
-        list_rows(['Numero di pagine, sezioni e lingue del sito finale',
-                   'Ogni lingua aggiuntiva richiede traduzione madrelingua e SEO dedicata',
-                   'CRM, prenotazioni, pagamenti o sistemi gestionali esterni']),
+        paragraph('Tre voci, sempre le stesse. Le trovate esplicitate riga per riga nel preventivo.',
+                   color='grigio', size='medium', extra_style='margin-bottom:24px') +
+        list_rows([
+            '<strong>Contenuti:</strong> pagine e schede oltre quelle incluse, servizi fotografici, testi da scrivere ex novo.',
+            '<strong>Lingue:</strong> ogni lingua oltre quelle comprese, tradotta da madrelingua del gruppo Remarka.',
+            '<strong>Integrazioni:</strong> gestionale, CRM, listini, sistemi di prenotazione o pagamento particolari.',
+        ]),
         classes='sr-section sr-section--bianco',
     )
 
     cta = section(
-        heading(2, 'Preventivo scritto in 24 ore') +
-        buttons([('Richiedi preventivo', '/#contatti', None)], justify='center', margin_top='28px'),
+        heading(2, 'Preventivo chiuso in 24 ore') +
+        paragraph('Descriveteci il progetto: ricevete prezzo e data di consegna, entrambi vincolanti.',
+                   color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([('Richiedi preventivo dettagliato', '/#contatti', None)], justify='center', margin_top='28px'),
         classes='sr-section sr-dark',
     )
     write('prezzi', 'Pagina — Prezzi (completa)',
@@ -351,7 +373,9 @@ def build_strumento_test_velocita():
 
     cta = section(
         heading(2, 'Vuoi che sistemiamo noi questi problemi', dot_char='?') +
-        buttons([("Richiedi un’analisi gratuita", '/#contatti', None)], justify='center', margin_top='28px'),
+        paragraph('Report gratuito con le cause, le priorità e un preventivo chiuso: 90+ garantito da contratto.',
+                   color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([("Richiedi l’analisi completa", '/#contatti', None)], justify='center', margin_top='28px'),
         classes='sr-section sr-dark',
     )
 
@@ -414,9 +438,12 @@ def build_milano():
     c = CITY
     hero = section(
         eyebrow(c['eyebrow']) + heading(1, f'Realizzazione siti web a {c["nome"]}', style='clamp(38px,4.6vw,64px)') +
-        paragraph('Prima consulenza gratuita, in sede o online. Prezzo chiuso e PageSpeed 90+ garantito da contratto.',
+        paragraph(f'Siti progressivi per PMI di {c["nome"]} e provincia: PageSpeed 90+ garantito da contratto, '
+                   'consegna a data fissa, prezzo chiuso. Il primo incontro, da voi o in studio, non si paga.',
                    color='grigio', size='medium') +
-        stat_block(str(c['progetti']), f'progetti consegnati nell’area di {c["nome"]} dal {c["dal"]}', '', counter=True),
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
+                 ('Analizza il tuo sito — gratis', '/strumenti/test-velocita/', 'outline')], margin_top='28px') +
+        stat_block(str(c['progetti']), f'progetti consegnati a {c["nome"]} e provincia dal {c["dal"]}', '', counter=True),
         classes='sr-section sr-hero',
     )
 
@@ -426,22 +453,22 @@ def build_milano():
         for s in SERVICES
     )
     servizi = section(
-        eyebrow('Sei servizi') + heading(2, 'Cosa possiamo fare per voi') +
+        eyebrow('Cosa facciamo') + heading(2, 'Sei servizi, un’unica garanzia') +
         raw_html(f'<div class="sr-servizi-rows" style="margin-top:32px">{servizi_rows}</div>'),
         classes='sr-section sr-section--bianco',
     )
 
-    local_case = CASES[2]  # Studio Fontana — Milano
+    local_case = next(x for x in CASES if x['slug'] == 'studio-legale-fontana')
     caso = section(
         columns([
-            column(browser_frame('studioremarka.it', f'Screenshot del sito {local_case["cliente"]}'), width='55%'),
-            column(eyebrow('Caso locale') + heading(3, local_case['cliente'], accent_dot=False) +
+            column(browser_frame('studiolegalefontana.it', f'Screenshot del sito {local_case["cliente"]}'), width='55%'),
+            column(eyebrow(f'Un caso da {c["nome"]}') + heading(3, f'{local_case["cliente"]}, {c["nome"]}', accent_dot=False) +
                    paragraph(local_case['risultati_testo'], color='grigio', size='base', extra_style='margin-top:12px') +
                    raw_html('<div style="display:flex;flex-direction:column;gap:10px;margin-top:24px">') +
                    raw_html(barra(local_case['prima'], muted=True, height=6)) +
                    raw_html(barra(local_case['dopo'], delay=150, height=6)) +
                    raw_html('</div>') +
-                   raw_html(f'<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/{local_case["slug"]}/">Leggi il caso completo →</a></p>'),
+                   raw_html(f'<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/">Tutti i casi studio →</a></p>'),
                    width='45%'),
         ], valign='center'),
         classes='sr-section',
@@ -462,9 +489,9 @@ def build_milano():
     )
 
     recensioni_data = [
-        ('Prezzo chiuso, data rispettata, sito che vola. Esattamente quello che era scritto nel preventivo.', 'Marco Colombo, Arredamenti Colombo'),
-        ('Il team ha seguito tutta la migrazione senza farci perdere una sola posizione su Google.', 'Laura Riva, Officine Riva'),
-        ('Risposta rapida su WhatsApp, report mensile puntuale. Assistenza vera, non solo promessa.', 'Elena Fontana, Studio Fontana'),
+        ('Preventivo chiaro, consegnato il giorno promesso. Il sito carica subito anche in cantiere, dove la rete è quella che è.', 'Marco T. — impresa edile, Sesto S. Giovanni'),
+        ('Ci hanno mostrato i numeri del vecchio sito prima di parlare di soldi. Nessuno l’aveva mai fatto.', f'Elena R. — showroom ceramiche, {c["nome"]}'),
+        ('Versione tedesca impeccabile: i clienti di Monaco ordinano dal sito senza scriverci più per chiedere chiarimenti.', 'Giulia B. — torneria meccanica, Cinisello'),
     ]
     rec_cards = ''.join(
         f'<div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">★★★★★</p>'
@@ -473,15 +500,18 @@ def build_milano():
         for q, a in recensioni_data
     )
     recensioni = section(
-        eyebrow('Recensioni') +
-        raw_html('<p class="sr-mono" style="margin:0 0 32px;color:var(--sr-oltremare)">★ 4,9 · 47 recensioni</p>') +
+        eyebrow(f'Dicono di noi, da {c["nome"]}') + heading(2, 'Recensioni Google verificate') +
+        raw_html('<p class="sr-mono" style="margin:16px 0 32px;color:var(--sr-oltremare)">★ 4,9 · 47 recensioni</p>') +
         group(rec_cards, classes='', layout_type='grid', style='260px'),
         classes='sr-section',
     )
 
     cta = section(
-        heading(2, f'Parliamo del vostro progetto a {c["nome"]}') +
-        buttons([('WhatsApp Business', 'https://wa.me/390000000000', 'whatsapp')], justify='center', margin_top='28px'),
+        heading(2, 'Parliamo del vostro progetto') +
+        paragraph('Primo incontro gratuito, da voi o in studio. Preventivo chiuso entro 24 ore.',
+                   color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
+                 ('WhatsApp Business', 'https://wa.me/390000000000', 'whatsapp')], justify='center', margin_top='28px'),
         classes='sr-section sr-dark',
     )
     write('citta-milano', 'Pagina — Città: Milano', 'Landing di città (template parametrizzabile per altre città).',

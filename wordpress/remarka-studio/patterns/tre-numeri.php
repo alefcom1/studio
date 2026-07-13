@@ -43,7 +43,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"500"},"spacing":{"margin":{"top":"16px"}}}} -->
-<p style="margin-top:16px;font-weight:500">Lingue native disponibili</p>
+<p style="margin-top:16px;font-weight:500">Lingue native in ogni progetto</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
