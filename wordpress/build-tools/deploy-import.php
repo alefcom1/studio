@@ -12,10 +12,11 @@
  * stesso slug — le salta e lo segnala. Rilanciabile senza rischio: alla
  * seconda esecuzione non fa nulla (tutto già esiste). Per rigenerare il
  * contenuto di una pagina, cancellarla manualmente prima di rilanciare,
- * oppure lanciare con --force (aggiorna solo le pagine create da questo
- * script, riconosciute dal meta _remarka_generated — non tocca pagine
- * modificate a mano che non hanno quel meta o il cui contenuto è stato
- * salvato dall'editor dopo la generazione).
+ * oppure lanciare con REMARKA_FORCE=1 (aggiorna solo le pagine create da
+ * questo script, riconosciute dal meta _remarka_generated — non tocca
+ * pagine modificate a mano che non hanno quel meta o il cui contenuto è
+ * stato salvato dall'editor dopo la generazione):
+ *   REMARKA_FORCE=1 wp eval-file wp-content/themes/remarka-studio/deploy-import.php --path=/percorso/a/wordpress
  *
  * Deve girare via `wp eval-file`: usa funzioni WP (wp_insert_post,
  * wp_update_nav_menu_item, get_page_by_path, ecc.) non disponibili fuori
@@ -27,7 +28,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 1 );
 }
 
-$force = in_array( '--force', $args ?? $GLOBALS['argv'] ?? array(), true );
+// `wp eval-file <file> --force` fa fallire wp-cli ("unknown --force parameter"):
+// il runner valida ogni token `--xxx` contro il synopsis del comando eval-file,
+// che non dichiara --force, quindi lo rifiuta prima ancora di eseguire lo script.
+// Una variabile d'ambiente bypassa completamente il parser di wp-cli.
+$force = getenv( 'REMARKA_FORCE' ) === '1'
+	|| in_array( '--force', $args ?? $GLOBALS['argv'] ?? array(), true );
 
 $theme_dir    = get_stylesheet_directory();
 $patterns_dir = $theme_dir . '/patterns';
