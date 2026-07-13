@@ -20,8 +20,8 @@
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.7">Il mercato dei siti web in Italia è frammentato e poco trasparente: si va dagli 800 euro dei costruttori fai-da-te ai 50.000 euro delle grandi agenzie. In questo articolo mappiamo onestamente cosa si compra a ogni fascia di prezzo, incluso il nostro, e le domande da fare prima di firmare qualunque preventivo.</p>
 <!-- /wp:paragraph -->
-<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"32px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:32px"><!-- wp:button {"className":"is-style-outline"} -->
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"40px"}}}} -->
+<div class="wp-block-buttons" style="margin-top:40px"><!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/blog/">← Tutti gli articoli</a></div>
 <!-- /wp:button -->
 </div>

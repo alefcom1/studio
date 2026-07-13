@@ -216,11 +216,17 @@ def metric_rows(items):
     return raw_html(f'<div class="sr-metric-rows">{rows}</div>')
 
 
-def browser_frame(url_label, alt_text):
+def browser_frame(url_label, alt_text, src=None):
     bar = (f'<div class="sr-browser__bar"><span class="sr-browser__dot"></span>'
            f'<span class="sr-browser__dot"></span><span class="sr-browser__dot"></span>'
            f'<span class="sr-browser__url">{url_label}</span></div>')
-    return group(raw_html(bar) + image(alt_text), classes='sr-browser')
+    return group(raw_html(bar) + image(alt_text, src=src), classes='sr-browser')
+
+
+def case_screenshot_src(case_slug):
+    """Мокап-скриншоты кейсов (сгенерированы Playwright'ом, лежат в теме).
+    Владелец заменяет реальными через редактор блоков (кнопка «Sostituisci»)."""
+    return f'/wp-content/themes/remarka-studio/assets/img/caso-{case_slug}.jpg'
 
 
 def barra(target, delay=0, muted=False, height=10, aria_label=None):

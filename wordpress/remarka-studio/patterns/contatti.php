@@ -36,7 +36,7 @@
 <!-- wp:column {"width":"55%"} -->
 <div class="wp-block-column" style="flex-basis:55%"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
 <div class="wp-block-group sr-card sr-card--carta"><!-- wp:shortcode -->
-[Inserire qui lo shortcode del modulo — es. Fluent Forms o Contact Form 7. Campi: nome e cognome, email o telefono, messaggio. Nota GDPR sotto il pulsante.]
+[remarka_form]
 <!-- /wp:shortcode -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->

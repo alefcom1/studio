@@ -22,10 +22,10 @@
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">studioremarka.it</span></div>
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">cantinaserralta.it</span></div>
 <!-- /wp:html -->
 <!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/placeholder-browser.svg" alt="Screenshot del sito Cantina Serralta"/></figure>
+<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-cantina-serralta.jpg" alt="Screenshot del sito Cantina Serralta"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:group -->

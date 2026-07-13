@@ -20,8 +20,8 @@
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.7">Ogni migrazione tecnica comporta il rischio di perdere anni di posizionamento organico. In questo articolo spieghiamo il protocollo di audit, mappatura URL e redirect 301 che applichiamo prima di ogni migrazione da WordPress, cosa monitoriamo nelle prime sei settimane dopo il cambio, e un caso reale in cui il posizionamento è rimasto invariato.</p>
 <!-- /wp:paragraph -->
-<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"32px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:32px"><!-- wp:button {"className":"is-style-outline"} -->
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"40px"}}}} -->
+<div class="wp-block-buttons" style="margin-top:40px"><!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/blog/">← Tutti gli articoli</a></div>
 <!-- /wp:button -->
 </div>

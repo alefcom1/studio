@@ -21,10 +21,10 @@
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:280px"><!-- wp:group {"className":"","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">studioremarka.it</span></div>
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">arredamenticolombo.it</span></div>
 <!-- /wp:html -->
 <!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/placeholder-browser.svg" alt="Screenshot del sito Arredamenti Colombo"/></figure>
+<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-arredamenti-colombo.jpg" alt="Screenshot del sito Arredamenti Colombo"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:group -->
@@ -57,10 +57,10 @@
 <!-- wp:group {"className":"","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">studioremarka.it</span></div>
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">cantinaserralta.it</span></div>
 <!-- /wp:html -->
 <!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/placeholder-browser.svg" alt="Screenshot del sito Cantina Serralta"/></figure>
+<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-cantina-serralta.jpg" alt="Screenshot del sito Cantina Serralta"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:group -->
@@ -93,10 +93,10 @@
 <!-- wp:group {"className":"","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">studioremarka.it</span></div>
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">tecnoidraulica.it</span></div>
 <!-- /wp:html -->
 <!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/placeholder-browser.svg" alt="Screenshot del sito TecnoIdraulica"/></figure>
+<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-tecnoidraulica.jpg" alt="Screenshot del sito TecnoIdraulica"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:group -->
@@ -129,10 +129,10 @@
 <!-- wp:group {"className":"","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">studioremarka.it</span></div>
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">studiolegalefontana.it</span></div>
 <!-- /wp:html -->
 <!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/placeholder-browser.svg" alt="Screenshot del sito Studio Legale Fontana"/></figure>
+<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-studio-legale-fontana.jpg" alt="Screenshot del sito Studio Legale Fontana"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:group -->

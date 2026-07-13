@@ -457,6 +457,64 @@
 		setActive(stored);
 	}
 
+	/* ---------- 8. Modulo contatti ----------
+	   Progressive enhancement: без JS форма шлёт обычный POST на
+	   admin-post.php; здесь перехватываем и шлём через fetch на
+	   admin-ajax, показывая успех/ошибку без перезагрузки. */
+	function initContactForm() {
+		document.querySelectorAll('[data-sr-contact-form]').forEach(function (form) {
+			var success = form.parentElement.querySelector('[data-sr-form-success]');
+			var errorEl = form.querySelector('[data-sr-form-error]');
+			var btn = form.querySelector('button[type="submit"]');
+			var cfg = window.remarkaPSI || {};
+			if (!cfg.ajaxUrl || !window.fetch) {
+				return; // остаётся нативный POST-фолбэк
+			}
+
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+				if (errorEl) errorEl.hidden = true;
+				if (btn) {
+					btn.disabled = true;
+					btn.dataset.srLabel = btn.textContent;
+					btn.textContent = 'Invio in corso…';
+				}
+
+				var data = new FormData(form);
+				data.set('action', 'remarka_contact');
+				if (cfg.formNonce) data.set('remarka_nonce', cfg.formNonce);
+
+				window.fetch(cfg.ajaxUrl, { method: 'POST', body: data, credentials: 'same-origin' })
+					.then(function (resp) { return resp.json(); })
+					.then(function (json) {
+						if (json && json.success) {
+							form.hidden = true;
+							if (success) success.hidden = false;
+						} else {
+							var msg = (json && json.data && json.data.message) ||
+								'Invio non riuscito. Riprovate o scriveteci su WhatsApp.';
+							if (errorEl) {
+								errorEl.textContent = msg;
+								errorEl.hidden = false;
+							}
+						}
+					})
+					.catch(function () {
+						if (errorEl) {
+							errorEl.textContent = 'Problema di rete: riprovate tra qualche istante.';
+							errorEl.hidden = false;
+						}
+					})
+					.finally(function () {
+						if (btn) {
+							btn.disabled = false;
+							btn.textContent = btn.dataset.srLabel || 'Invia la richiesta';
+						}
+					});
+			});
+		});
+	}
+
 	onReady(function () {
 		initReveal();
 		initBarre();
@@ -467,5 +525,6 @@
 		initCookieBanner();
 		initWaFab();
 		initLangSwitch();
+		initContactForm();
 	});
 })();

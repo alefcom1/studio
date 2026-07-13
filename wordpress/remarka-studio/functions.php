@@ -68,12 +68,17 @@ function remarka_enqueue_assets(): void {
 		)
 	);
 
-	// Chiave PageSpeed Insights API (Customizer, opzionale): senza chiave la
-	// quota anonima di Google è bassa ma funziona per il traffico iniziale.
+	// Config per il JS: chiave PageSpeed (Customizer, opzionale — senza
+	// chiave la quota anonima di Google è bassa ma basta all'inizio),
+	// endpoint AJAX e nonce del modulo contatti.
 	$psi_key = get_theme_mod( 'remarka_psi_api_key', '' );
 	wp_add_inline_script(
 		'remarka-studio',
-		'window.remarkaPSI = ' . wp_json_encode( array( 'key' => $psi_key ) ) . ';',
+		'window.remarkaPSI = ' . wp_json_encode( array(
+			'key'       => $psi_key,
+			'ajaxUrl'   => admin_url( 'admin-ajax.php' ),
+			'formNonce' => wp_create_nonce( 'remarka_contact' ),
+		) ) . ';',
 		'before'
 	);
 }
@@ -370,6 +375,17 @@ function remarka_customize_register( WP_Customize_Manager $wp_customize ): void 
 		'section'     => 'remarka_contatti',
 		'type'        => 'text',
 	) );
+
+	$wp_customize->add_setting( 'remarka_form_recipient', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_email',
+	) );
+	$wp_customize->add_control( 'remarka_form_recipient', array(
+		'label'       => __( 'Email che riceve le richieste del modulo contatti', 'remarka-studio' ),
+		'description' => __( 'Se vuoto, usa l’email amministratore di WordPress.', 'remarka-studio' ),
+		'section'     => 'remarka_contatti',
+		'type'        => 'email',
+	) );
 }
 add_action( 'customize_register', 'remarka_customize_register' );
 
@@ -523,3 +539,121 @@ function remarka_organization_schema(): void {
 	}
 }
 add_action( 'wp_head', 'remarka_organization_schema' );
+
+/**
+ * ---------- Modulo contatti nativo ----------
+ * Shortcode [remarka_form]: nessun plugin, invio via wp_mail.
+ * Anti-spam: honeypot + nonce + rate-limit per IP (1 invio/60s, transient).
+ * Progressive enhancement: senza JS il form fa POST a admin-post.php e
+ * torna con ?remarka_inviato=1#contatti; con JS remarka.js intercetta
+ * il submit e usa fetch su admin-ajax (stessa validazione server).
+ * Destinatario: Customizer remarka_form_recipient, default admin_email.
+ */
+function remarka_form_recipient(): string {
+	$to = get_theme_mod( 'remarka_form_recipient', '' );
+	return $to && is_email( $to ) ? $to : get_option( 'admin_email' );
+}
+
+function remarka_form_shortcode(): string {
+	$sent = isset( $_GET['remarka_inviato'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	ob_start();
+	?>
+	<form class="sr-contact-form" data-sr-contact-form method="post"
+	      action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" <?php echo $sent ? 'hidden' : ''; ?>>
+		<input type="hidden" name="action" value="remarka_contact">
+		<?php wp_nonce_field( 'remarka_contact', 'remarka_nonce' ); ?>
+		<p class="sr-hp-field" aria-hidden="true"><label>Sito web<input type="text" name="sr_sito" tabindex="-1" autocomplete="off"></label></p>
+		<p><label class="sr-eyebrow" for="sr-nome"><?php esc_html_e( 'Nome e cognome', 'remarka-studio' ); ?></label>
+		<input class="sr-text-input" id="sr-nome" name="sr_nome" type="text" required maxlength="120"></p>
+		<p><label class="sr-eyebrow" for="sr-contatto"><?php esc_html_e( 'Email o telefono', 'remarka-studio' ); ?></label>
+		<input class="sr-text-input" id="sr-contatto" name="sr_contatto" type="text" required maxlength="160"></p>
+		<p><label class="sr-eyebrow" for="sr-messaggio"><?php esc_html_e( 'Messaggio', 'remarka-studio' ); ?></label>
+		<textarea class="sr-text-input" id="sr-messaggio" name="sr_messaggio" rows="4" required maxlength="4000"></textarea></p>
+		<p class="sr-form-error" data-sr-form-error hidden></p>
+		<button type="submit" class="wp-block-button__link wp-element-button" style="width:100%"><?php esc_html_e( 'Invia la richiesta', 'remarka-studio' ); ?></button>
+	</form>
+	<div class="sr-form-success" data-sr-form-success <?php echo $sent ? '' : 'hidden'; ?>>
+		<p class="sr-mono" style="color:var(--sr-verde)"><?php esc_html_e( 'RICHIESTA INVIATA ✓', 'remarka-studio' ); ?></p>
+		<p><?php esc_html_e( 'Grazie. Vi rispondiamo entro un giorno lavorativo con un’analisi o un preventivo chiuso.', 'remarka-studio' ); ?></p>
+	</div>
+	<?php
+	return (string) ob_get_clean();
+}
+add_shortcode( 'remarka_form', 'remarka_form_shortcode' );
+
+/**
+ * Валидация + отправка. Возвращает null при успехе или текст ошибки.
+ * Общая для AJAX и admin-post путей.
+ */
+function remarka_form_process(): ?string {
+	if ( ! isset( $_POST['remarka_nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['remarka_nonce'] ), 'remarka_contact' ) ) {
+		return __( 'Sessione scaduta: ricaricate la pagina e riprovate.', 'remarka-studio' );
+	}
+	if ( ! empty( $_POST['sr_sito'] ) ) { // honeypot: люди это поле не видят.
+		return null; // Боту отвечаем «успехом», письмо не шлём.
+	}
+
+	$ip  = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
+	$key = 'remarka_rl_' . md5( $ip );
+	if ( get_transient( $key ) ) {
+		return __( 'Avete appena inviato una richiesta: attendete un minuto prima di riprovare.', 'remarka-studio' );
+	}
+
+	$nome      = sanitize_text_field( wp_unslash( $_POST['sr_nome'] ?? '' ) );
+	$contatto  = sanitize_text_field( wp_unslash( $_POST['sr_contatto'] ?? '' ) );
+	$messaggio = sanitize_textarea_field( wp_unslash( $_POST['sr_messaggio'] ?? '' ) );
+
+	if ( '' === $nome || '' === $contatto || '' === $messaggio ) {
+		return __( 'Compilate tutti i campi, per favore.', 'remarka-studio' );
+	}
+
+	$body  = "Nome: $nome\n";
+	$body .= "Contatto: $contatto\n\n";
+	$body .= "Messaggio:\n$messaggio\n\n---\n";
+	$body .= 'Pagina: ' . esc_url_raw( wp_get_referer() ?: home_url( '/' ) ) . "\n";
+	$body .= "IP: $ip\n";
+	$body .= 'Data: ' . current_time( 'mysql' ) . "\n";
+
+	$headers = array();
+	if ( is_email( $contatto ) ) {
+		$headers[] = 'Reply-To: ' . $contatto;
+	}
+
+	$ok = wp_mail(
+		remarka_form_recipient(),
+		sprintf( '[remarka.biz] Richiesta di preventivo — %s', $nome ),
+		$body,
+		$headers
+	);
+
+	if ( ! $ok ) {
+		return __( 'Invio non riuscito per un problema tecnico. Scriveteci su WhatsApp o via email.', 'remarka-studio' );
+	}
+
+	set_transient( $key, 1, MINUTE_IN_SECONDS );
+	return null;
+}
+
+function remarka_form_handle_ajax(): void {
+	$error = remarka_form_process();
+	if ( null === $error ) {
+		wp_send_json_success();
+	}
+	wp_send_json_error( array( 'message' => $error ) );
+}
+add_action( 'wp_ajax_remarka_contact', 'remarka_form_handle_ajax' );
+add_action( 'wp_ajax_nopriv_remarka_contact', 'remarka_form_handle_ajax' );
+
+function remarka_form_handle_post(): void {
+	$error    = remarka_form_process();
+	$back     = wp_get_referer() ?: home_url( '/' );
+	$fragment = '#contatti';
+	if ( null === $error ) {
+		wp_safe_redirect( add_query_arg( 'remarka_inviato', '1', strtok( $back, '#' ) ) . $fragment );
+	} else {
+		wp_safe_redirect( add_query_arg( 'remarka_errore', rawurlencode( $error ), strtok( $back, '#' ) ) . $fragment );
+	}
+	exit;
+}
+add_action( 'admin_post_remarka_contact', 'remarka_form_handle_post' );
+add_action( 'admin_post_nopriv_remarka_contact', 'remarka_form_handle_post' );

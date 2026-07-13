@@ -277,6 +277,7 @@ SERVICES = [
 CASES = [
     dict(
         slug='arredamenti-colombo', cliente='Arredamenti Colombo',
+        sito='arredamenticolombo.it',
         titolo='Da 34 a 96 in sei settimane, senza fermare lo showroom',
         settore='Arredo su misura', citta='Lissone (MB)', intervento='Restyling + PWA + SEO',
         anno='2025', key_metric='+41%', prima=34, dopo=96,
@@ -299,6 +300,7 @@ CASES = [
     ),
     dict(
         slug='cantina-serralta', cliente='Cantina Serralta',
+        sito='cantinaserralta.it',
         titolo='Da 41 a 97, con le vendite dirette cresciute del 63% in un anno',
         settore='Vino', citta='Asti', intervento='E-commerce in 3 lingue',
         anno='2025', key_metric='+63%', prima=41, dopo=97,
@@ -321,6 +323,7 @@ CASES = [
     ),
     dict(
         slug='tecnoidraulica', cliente='TecnoIdraulica',
+        sito='tecnoidraulica.it',
         titolo='Tre volte più richieste dal modulo contatti in un trimestre',
         settore='Impianti idraulici', citta='Bergamo', intervento='Sito aziendale IT/DE',
         anno='2025', key_metric='3×', prima=29, dopo=94,
@@ -343,6 +346,7 @@ CASES = [
     ),
     dict(
         slug='studio-legale-fontana', cliente='Studio Legale Fontana',
+        sito='studiolegalefontana.it',
         titolo='Da pagina 3 a pagina 1 su Google, in otto settimane',
         settore='Studio legale', citta='Milano', intervento='Sito vetrina + blog',
         anno='2025', key_metric='Pag. 1', prima=38, dopo=95,
@@ -571,4 +575,67 @@ BLOG_POSTS = [
          titolo='Core Web Vitals nel 2026: cosa misura davvero Google',
          estratto='LCP, INP e CLS spiegati con esempi di negozi e officine, non di startup. E perché il punteggio desktop non conta quasi nulla.',
          corpo="LCP, INP e CLS sono le tre metriche che Google usa per valutare l’esperienza utente di un sito, e per decidere chi mostrare per primo nei risultati di ricerca mobile. In questo articolo le spieghiamo senza gergo tecnico, con esempi reali di negozi e officine — non di startup — e perché il punteggio desktop, su cui si concentrano ancora molte agenzie, conta ormai quasi nulla."),
+
+    # ---- Mese 1 del piano contenuti (piano-contenuti-seo.md §4.3) ----
+    dict(slug='quanto-costa-ecommerce-italia', data='13 LUG 2026',
+         titolo='Quanto costa un e-commerce in Italia nel 2026: le cifre vere',
+         estratto='Dai 6.000 ai 25.000 euro e oltre: cosa cambia davvero tra le fasce, quali costi ricorrenti nessuno mette nel preventivo, e le domande da fare prima di firmare.',
+         corpo="«Quanto costa un e-commerce?» è la domanda con cui inizia quasi ogni nostra prima telefonata. La risposta onesta è una forchetta larga — sul mercato italiano da 6.000 a 25.000 euro e oltre — perché due negozi online con lo stesso numero di prodotti possono nascondere complessità completamente diverse. In questo articolo mettiamo in fila le cifre reali del mercato 2026, i costi che i preventivi tacciono e i tre fattori che spostano davvero il prezzo.",
+         cta=('Vedi il nostro listino e-commerce, prezzi chiusi', '/prezzi/'),
+         sezioni=[
+             dict(titolo='Le fasce di prezzo del mercato italiano',
+                  paragrafi=[
+                      "I listini pubblici delle agenzie italiane nel 2026 raccontano un mercato su tre fasce. Sotto i 3.000 euro si trovano negozi montati su template con configurazione minima: funzionano finché non serve personalizzare il checkout o collegare il gestionale. La fascia centrale — 6.000–15.000 euro — copre un e-commerce professionale su misura: catalogo strutturato, pagamenti multipli, SEO tecnica delle pagine prodotto. Sopra i 15.000 si va verso cataloghi complessi, integrazioni con ERP e logistica, multi-lingua e multi-valuta.",
+                      "Il nostro listino sta nella fascia centrale — € 7.500–14.000, prezzo chiuso nel preventivo — con una differenza contrattuale: PageSpeed 90+ garantito per iscritto e data di consegna con penale. Sono le due voci che nelle offerte concorrenti non troverete quasi mai nero su bianco.",
+                  ]),
+             dict(titolo='I costi che i preventivi non dicono',
+                  paragrafi=[
+                      "Il prezzo di costruzione è metà della storia. Un e-commerce vivo costa ogni anno: hosting adeguato ai picchi, aggiornamenti di sicurezza, commissioni sui pagamenti (tipicamente 1,5–3% a transazione), fatturazione elettronica, e la manutenzione del catalogo. Sul mercato la manutenzione professionale viaggia tra i 500 e i 2.000 euro l’anno: chiedete sempre cosa è incluso e per quanto tempo.",
+                      "Nel nostro caso i primi 12 mesi di assistenza, aggiornamenti e misurazioni mensili sono inclusi nel prezzo di costruzione. Dopo, il canone è facoltativo — oppure il negozio resta a voi così com’è: codice e dati sono vostri dal primo giorno.",
+                  ]),
+             dict(titolo='I tre fattori che spostano il prezzo',
+                  lista=[
+                      'Catalogo: non quanti prodotti avete, ma quante varianti, listini e regole di prezzo (B2B vs B2C) il negozio deve gestire.',
+                      'Integrazioni: gestionale, corrieri, magazzino esterno. Ogni sistema collegato è lavoro di sviluppo e di test, non una casella da spuntare.',
+                      'Lingue e mercati: vendere in Germania non è tradurre le schede — è IVA, spedizioni, resi e testi che un madrelingua deve adattare al mercato.',
+                  ],
+                  paragrafi=[
+                      "Un caso concreto dal nostro registro consegne: per Cantina Serralta (vini, Asti) il catalogo tradotto in tre lingue con checkout in un solo passaggio ha portato +63% di vendite dirette in un anno — e il costo del progetto si è ripagato prima della seconda vendemmia.",
+                  ]),
+             dict(titolo='Le domande da fare prima di firmare',
+                  lista=[
+                      'Il prezzo è chiuso o «indicativo»? Cosa succede se emergono lavori aggiuntivi?',
+                      'La data di consegna è nel contratto? Con quale penale?',
+                      'Chi possiede dominio, codice e dati dei clienti dopo la consegna?',
+                      'La fatturazione elettronica via SDI è inclusa o è un modulo a parte?',
+                      'Quanto carica il sito su mobile — e chi lo garantisce, per iscritto?',
+                  ]),
+         ]),
+    dict(slug='sito-lento-cause-costi', data='13 LUG 2026',
+         titolo='Sito lento: le 7 cause reali (e quanto costa sistemarle)',
+         estratto='Perché un sito carica in 5 secondi nel 2026, quali interventi costano poco e rendono molto, e quando invece conviene rifare la base tecnica.',
+         corpo="Quattro secondi di caricamento su mobile sembrano un dettaglio tecnico. Non lo sono: sono il motivo per cui le campagne portano visite che se ne vanno prima di vedere la prima riga. Dopo decine di audit su siti di PMI italiane, le cause della lentezza sono quasi sempre le stesse sette — e non tutte costano care da sistemare. Eccole, in ordine di frequenza, con l’ordine di grandezza dell’intervento.",
+         cta=('Misura il tuo sito adesso — test gratuito', '/strumenti/test-velocita/'),
+         sezioni=[
+             dict(titolo='Le sette cause, dalla più frequente',
+                  lista=[
+                      'Immagini non ottimizzate: fotografie da 3–8 MB caricate così come escono dal telefono. È la causa №1 e la più economica da correggere.',
+                      'Hosting inadeguato: server condivisi sovraffollati che rispondono in 1–2 secondi prima ancora di iniziare a caricare la pagina.',
+                      'Tema o template sovraccarico: page builder che caricano 2 MB di codice per mostrare tre colonne di testo.',
+                      'Plugin accumulati negli anni: ogni plugin attivo aggiunge codice, richieste e rischi di sicurezza — ne abbiamo contati fino a 60 su un solo sito.',
+                      'Font e script esterni: sei famiglie di caratteri e dieci servizi di tracciamento che bloccano la prima visualizzazione.',
+                      'Nessuna cache configurata: il server ricostruisce da zero ogni pagina, per ogni visitatore, ogni volta.',
+                      'Base tecnica vecchia: versioni PHP obsolete e database mai ottimizzati — qui il singolo intervento non basta più.',
+                  ]),
+             dict(titolo='Cosa costa poco e rende molto',
+                  paragrafi=[
+                      "Le prime due cause — immagini e hosting — si risolvono spesso in giornata e da sole possono dimezzare i tempi di caricamento. La compressione moderna (AVIF/WebP con caricamento progressivo) taglia il peso delle fotografie dell’80% a parità di qualità visibile: sul restyling di Arredamenti Colombo ha valso −82% di peso e un punteggio PageSpeed passato da 34 a 96.",
+                      "Cache e pulizia dei plugin sono il secondo gradino: mezza giornata di lavoro, risultati misurabili subito. Il punto è misurare prima e dopo — non «il sito sembra più veloce», ma un numero documentato.",
+                  ]),
+             dict(titolo='Quando il restyling tecnico conviene davvero',
+                  paragrafi=[
+                      "Se il vostro sito somma le cause 3, 4 e 7 — tema pesante, plugin stratificati, base vecchia — ottimizzare pezzo per pezzo è come cambiare le gomme a un motore fuso: ogni intervento costa e il risultato resta mediocre. In questi casi il restyling tecnico (stessi contenuti, base nuova, redirect 301 per non perdere il posizionamento) parte da € 2.900 e porta il sito sopra i 90 di PageSpeed — garantiti da contratto, non promessi.",
+                      "Il primo passo è gratuito in entrambi i casi: misurate il sito con il nostro test di velocità, oppure chiedete l’analisi completa — un report scritto con le cause, le priorità e un preventivo chiuso.",
+                  ]),
+         ]),
 ]

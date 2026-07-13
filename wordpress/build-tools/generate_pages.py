@@ -19,8 +19,8 @@ sys.path.insert(0, os.path.dirname(__file__))
 from blocks import (  # noqa: E402
     eyebrow, heading, paragraph, buttons, column, columns, group, section,
     raw_html, image, table, details_faq, stat_block, list_rows, checklist,
-    metric_rows, browser_frame, barra, barra_row, pull_quote, chapter,
-    compare_table_row, pattern_header,
+    metric_rows, browser_frame, case_screenshot_src, barra, barra_row,
+    pull_quote, chapter, compare_table_row, pattern_header,
 )
 from data import SERVICES, CASES, TOOLS, CITY, CITIES, BLOG_POSTS, EXPORT_READY, WEB_APP  # noqa: E402
 
@@ -174,7 +174,7 @@ def build_casi_studio_index():
     cards = []
     for c in CASES:
         card_inner = (
-            browser_frame('studioremarka.it', f'Screenshot del sito {c["cliente"]}') +
+            browser_frame(c['sito'], f'Screenshot del sito {c["cliente"]}', src=case_screenshot_src(c['slug'])) +
             raw_html(
                 f'<a href="/casi-studio/{c["slug"]}/" style="color:inherit;text-decoration:none">'
                 f'<h3 class="wp-block-heading" style="margin-top:20px">{c["cliente"]}</h3></a>'
@@ -217,7 +217,7 @@ def build_caso_detail(c):
         classes='sr-section sr-hero',
     )
 
-    screenshot = section(browser_frame('studioremarka.it', f'Screenshot del sito {c["cliente"]}'), classes='sr-section')
+    screenshot = section(browser_frame(c['sito'], f'Screenshot del sito {c["cliente"]}', src=case_screenshot_src(c['slug'])), classes='sr-section')
 
     cap1 = section(chapter('01 — Problema',
                             paragraph(c['problema_testo'], size='base', extra_style='font-size:17px') +
@@ -482,7 +482,7 @@ def build_city(c):
     local_case = next(x for x in CASES if x['slug'] == c['case_slug'])
     caso = section(
         columns([
-            column(browser_frame(c['case_url_label'], f'Screenshot del sito {local_case["cliente"]}'), width='55%'),
+            column(browser_frame(c['case_url_label'], f'Screenshot del sito {local_case["cliente"]}', src=case_screenshot_src(local_case['slug'])), width='55%'),
             column(eyebrow(c['case_eyebrow']) + heading(3, c['case_title'], accent_dot=False) +
                    paragraph(local_case['risultati_testo'], color='grigio', size='base', extra_style='margin-top:12px') +
                    raw_html('<div style="display:flex;flex-direction:column;gap:10px;margin-top:24px">') +
@@ -738,9 +738,27 @@ def build_blog_post(p):
         heading(1, p['titolo'], accent_dot=False, style='clamp(32px,4vw,48px)'),
         classes='sr-section',
     )
+
+    # Полноформатная статья: intro + секции (h2 + абзацы + опц. список).
+    # Короткий формат (только corpo) остаётся для старых заглушек.
+    inner = ''
+    if p.get('sezioni'):
+        inner += paragraph(p['corpo'], size='base', extra_style='font-size:18px;line-height:1.75;max-width:75ch')
+        for sez in p['sezioni']:
+            inner += heading(2, sez['titolo'], style='clamp(24px,2.6vw,32px)')
+            for par in sez.get('paragrafi', []):
+                inner += paragraph(par, size='base', extra_style='font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px')
+            if sez.get('lista'):
+                inner += list_rows(sez['lista'])
+    else:
+        inner += paragraph(p['corpo'], size='base', extra_style='font-size:17px;line-height:1.7')
+
+    if p.get('cta'):
+        label, url = p['cta']
+        inner += raw_html(f'<p class="sr-card-link" style="margin-top:32px"><a href="{url}">{label} →</a></p>')
+
     body = section(
-        paragraph(p['corpo'], size='base', extra_style='font-size:17px;line-height:1.7') +
-        buttons([('← Tutti gli articoli', '/blog/', 'outline')], margin_top='32px'),
+        inner + buttons([('← Tutti gli articoli', '/blog/', 'outline')], margin_top='40px'),
         classes='sr-section',
     )
     write(f'blog-{p["slug"]}', f'Pagina — Articolo: {p["titolo"]}', f'Articolo blog: {p["titolo"]}', hero + body)

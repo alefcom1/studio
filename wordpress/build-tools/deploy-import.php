@@ -169,6 +169,8 @@ $page_map = array(
 	'blog-pwa-per-pmi-quando-app-non-serve'     => array( 'pwa-per-pmi-quando-app-non-serve', 'blog', null ),
 	'blog-quanto-costa-sito-aziendale-italia'   => array( 'quanto-costa-sito-aziendale-italia', 'blog', null ),
 	'blog-core-web-vitals-2026'                 => array( 'core-web-vitals-2026', 'blog', null ),
+	'blog-quanto-costa-ecommerce-italia'        => array( 'quanto-costa-ecommerce-italia', 'blog', null ),
+	'blog-sito-lento-cause-costi'               => array( 'sito-lento-cause-costi', 'blog', null ),
 );
 
 // Le pagine "genitore" (parent=null ma referenziate come parent altrove)

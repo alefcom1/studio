@@ -790,6 +790,48 @@ body.dark-mode .site-description {
   box-shadow: inset 0 0 0 1px var(--sr-oltremare);
 }
 
+/* ---------- Modulo contatti nativo ---------- */
+
+.sr-contact-form p {
+  margin: 0 0 16px;
+}
+
+.sr-contact-form label.sr-eyebrow {
+  display: block;
+  margin: 0 0 8px;
+}
+
+.sr-contact-form .sr-text-input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sr-contact-form textarea.sr-text-input {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* Honeypot: убран от людей, но виден ботам (не display:none —
+   часть спам-ботов пропускает скрытые display:none поля). */
+.sr-hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.sr-form-error {
+  color: #B3261E;
+  font-size: 14px;
+  margin: 0 0 14px;
+}
+
+.sr-form-success p {
+  margin: 0 0 10px;
+}
+
 .sr-tool-pending {
   margin: 20px 0 0;
   font-size: 14px;

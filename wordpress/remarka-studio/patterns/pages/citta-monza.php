@@ -51,7 +51,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">arredamenticolombo.it</span></div>
 <!-- /wp:html -->
 <!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/placeholder-browser.svg" alt="Screenshot del sito Arredamenti Colombo"/></figure>
+<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-arredamenti-colombo.jpg" alt="Screenshot del sito Arredamenti Colombo"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:group -->
