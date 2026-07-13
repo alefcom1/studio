@@ -486,12 +486,19 @@ body.dark-mode .site-description {
   margin-left: 8px;
 }
 
+.sr-browser figure.wp-block-image,
+.sr-browser .wp-block-image {
+  margin: 0;
+}
+
 .sr-browser img {
-  display: block;
-  width: 100%;
+  display: block !important;
+  width: 100% !important;
+  height: auto;
+  min-height: 220px;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  background: var(--sr-traccia);
+  background: var(--sr-traccia) !important;
 }
 
 /* ---------- Таблица цен ---------- */
