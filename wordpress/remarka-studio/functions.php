@@ -47,18 +47,21 @@ function remarka_enqueue_assets(): void {
 		);
 	}
 
+	$css_path = get_stylesheet_directory() . '/assets/css/remarka.css';
+	$js_path  = get_stylesheet_directory() . '/assets/js/remarka.js';
+
 	wp_enqueue_style(
 		'remarka-studio',
 		$dir . '/assets/css/remarka.css',
 		array( 'prespa-style' ),
-		REMARKA_STUDIO_VERSION
+		file_exists( $css_path ) ? (string) filemtime( $css_path ) : REMARKA_STUDIO_VERSION
 	);
 
 	wp_enqueue_script(
 		'remarka-studio',
 		$dir . '/assets/js/remarka.js',
 		array(),
-		REMARKA_STUDIO_VERSION,
+		file_exists( $js_path ) ? (string) filemtime( $js_path ) : REMARKA_STUDIO_VERSION,
 		array(
 			'in_footer' => true,
 			'strategy'  => 'defer',
