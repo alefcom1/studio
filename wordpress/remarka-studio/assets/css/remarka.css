@@ -124,6 +124,17 @@ body.dark-mode .site-description {
   background: var(--sr-oltremare-scuro);
 }
 
+/* Иконка поиска дописывается темой в конец меню программно (не пункт
+   меню, порядком в редакторе меню не двигается) — переставляем визуально
+   через flex order, чтобы CTA «Preventivo» шла последней, после лупы. */
+#masthead .search-icon {
+  order: 1;
+}
+
+#masthead .sr-menu-cta {
+  order: 2;
+}
+
 /* ---------- Типографика ---------- */
 
 .sr-eyebrow,
