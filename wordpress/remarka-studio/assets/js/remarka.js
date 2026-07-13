@@ -190,21 +190,66 @@
 		}, 1500);
 	}
 
-	/* ---------- 5. Demo-виджеты скорости ---------- */
-
-	function hashScore(url, min, range) {
-		var h = 0;
-		for (var i = 0; i < url.length; i++) {
-			h = (h * 31 + url.charCodeAt(i)) >>> 0;
-		}
-		return min + (h % range);
-	}
+	/* ---------- 5. Виджеты скорости: реальный PageSpeed Insights API ----------
+	   Vera Google PSI API (v5, CORS-abilitata, chiamabile dal browser).
+	   Chiave API opzionale via Customizer (window.remarkaPSI.key) — senza
+	   chiave la quota anonima è bassa ma sufficiente per traffico iniziale.
+	   In caso di errore/quota: messaggio onesto, MAI numeri simulati. */
 
 	function itNumber(value, decimals) {
 		return value.toFixed(decimals).replace('.', ',');
 	}
 
-	/** Виджет в hero: собственный балл студии (97) + форма «а у вас?». */
+	function normalizeUrl(raw) {
+		var url = (raw || '').trim();
+		if (!url) {
+			return null;
+		}
+		if (!/^https?:\/\//i.test(url)) {
+			url = 'https://' + url;
+		}
+		try {
+			return new URL(url).href;
+		} catch (err) {
+			return null;
+		}
+	}
+
+	function psiFetch(url) {
+		var endpoint = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed' +
+			'?url=' + encodeURIComponent(url) +
+			'&strategy=mobile&category=performance&locale=it';
+		var key = (window.remarkaPSI && window.remarkaPSI.key) || '';
+		if (key) {
+			endpoint += '&key=' + encodeURIComponent(key);
+		}
+		return window.fetch(endpoint).then(function (resp) {
+			if (!resp.ok) {
+				throw new Error('PSI HTTP ' + resp.status);
+			}
+			return resp.json();
+		}).then(function (data) {
+			var lh = data.lighthouseResult;
+			if (!lh || !lh.categories || !lh.categories.performance) {
+				throw new Error('PSI: risposta senza punteggio');
+			}
+			var audits = lh.audits || {};
+			var field = (data.loadingExperience && data.loadingExperience.metrics) || {};
+			var lcpAudit = audits['largest-contentful-paint'];
+			var clsAudit = audits['cumulative-layout-shift'];
+			var inpField = field.INTERACTION_TO_NEXT_PAINT;
+			return {
+				score: Math.round(lh.categories.performance.score * 100),
+				lcpSec: lcpAudit && typeof lcpAudit.numericValue === 'number' ? lcpAudit.numericValue / 1000 : null,
+				cls: clsAudit && typeof clsAudit.numericValue === 'number' ? clsAudit.numericValue : null,
+				inpMs: inpField && typeof inpField.percentile === 'number' ? inpField.percentile : null
+			};
+		});
+	}
+
+	var PSI_ERROR_MSG = 'Non siamo riusciti a completare il test (il servizio Google potrebbe essere momentaneamente saturo). Riprovate tra qualche minuto — oppure scriveteci: lo facciamo noi e vi mandiamo il report.';
+
+	/** Виджет в hero: собственный балл студии + форма «а у вас?». */
 	function initHeroWidgets() {
 		document.querySelectorAll('[data-sr-hero-form]').forEach(function (form) {
 			var pending = form.querySelector('[data-sr-hero-pending]');
@@ -220,32 +265,40 @@
 					return;
 				}
 				var input = form.querySelector('input[type="text"]');
-				var url = (input.value || '').trim() || 'www.tuosito.it';
+				var url = normalizeUrl(input && input.value);
+				if (!url) {
+					if (input) input.focus();
+					return;
+				}
 				running = true;
 				if (pending) pending.hidden = false;
 				if (result) result.hidden = true;
 				if (fill) fill.style.width = '0%';
 
-				window.setTimeout(function () {
-					var score = hashScore(url, 31, 28);
-					if (pending) pending.hidden = true;
+				psiFetch(url).then(function (m) {
+					if (urlOut) urlOut.textContent = url.replace(/^https?:\/\//, '');
+					if (scoreOut) scoreOut.textContent = String(m.score);
 					if (result) result.hidden = false;
-					if (urlOut) urlOut.textContent = url;
-					if (scoreOut) scoreOut.textContent = String(score);
 					if (fill) {
 						window.requestAnimationFrame(function () {
 							window.requestAnimationFrame(function () {
-								fill.style.width = score + '%';
+								fill.style.width = m.score + '%';
 							});
 						});
 					}
+				}).catch(function () {
+					if (urlOut) urlOut.textContent = PSI_ERROR_MSG;
+					if (scoreOut) scoreOut.textContent = '—';
+					if (result) result.hidden = false;
+				}).finally(function () {
+					if (pending) pending.hidden = true;
 					running = false;
-				}, 1400);
+				});
 			});
 		});
 	}
 
-	/** Виджet strumento «Test velocità»: punteggio + LCP/INP/CLS. */
+	/** Виджет strumento «Test velocità»: punteggio reale + LCP/INP/CLS. */
 	function initToolWidgets() {
 		document.querySelectorAll('[data-sr-tool-form]').forEach(function (form) {
 			var pending = form.querySelector('[data-sr-tool-pending]');
@@ -262,35 +315,34 @@
 				return 'Ottimo punteggio: il sito rispetta gli standard Google per l’esperienza mobile.';
 			}
 
+			var set = function (sel, text) {
+				var el = form.querySelector(sel);
+				if (el) el.textContent = text;
+			};
+
 			form.addEventListener('submit', function (e) {
 				e.preventDefault();
 				if (running) {
 					return;
 				}
 				var input = form.querySelector('input[type="text"]');
-				var url = (input.value || '').trim() || 'www.tuosito.it';
+				var url = normalizeUrl(input && input.value);
+				if (!url) {
+					if (input) input.focus();
+					return;
+				}
 				running = true;
 				if (pending) pending.hidden = false;
 				if (result) result.hidden = true;
 
-				window.setTimeout(function () {
-					var score = hashScore(url, 28, 37);
-					var lcp = Math.max(1.2, 6.2 - score * 0.05);
-					var inp = Math.max(120, 640 - score * 6);
-					var cls = Math.max(0.02, 0.42 - score * 0.004);
+				psiFetch(url).then(function (m) {
+					set('[data-sr-tool-url]', url.replace(/^https?:\/\//, '') + ' — PageSpeed mobile');
+					set('[data-sr-tool-score]', String(m.score));
+					set('[data-sr-tool-verdict]', verdictFor(m.score));
+					set('[data-sr-tool-lcp]', m.lcpSec !== null ? itNumber(m.lcpSec, 1) + ' s' : '—');
+					set('[data-sr-tool-inp]', m.inpMs !== null ? Math.round(m.inpMs) + ' ms' : '—');
+					set('[data-sr-tool-cls]', m.cls !== null ? itNumber(m.cls, 2) : '—');
 
-					var set = function (sel, text) {
-						var el = form.querySelector(sel);
-						if (el) el.textContent = text;
-					};
-					set('[data-sr-tool-url]', url);
-					set('[data-sr-tool-score]', String(score));
-					set('[data-sr-tool-verdict]', verdictFor(score));
-					set('[data-sr-tool-lcp]', itNumber(lcp, 1) + ' s');
-					set('[data-sr-tool-inp]', Math.round(inp) + ' ms');
-					set('[data-sr-tool-cls]', itNumber(cls, 2));
-
-					if (pending) pending.hidden = true;
 					if (result) result.hidden = false;
 
 					var fill = form.querySelector('[data-sr-tool-fill]');
@@ -298,18 +350,25 @@
 						fill.style.width = '0%';
 						window.requestAnimationFrame(function () {
 							window.requestAnimationFrame(function () {
-								fill.style.width = score + '%';
+								fill.style.width = m.score + '%';
 							});
 						});
 					}
+				}).catch(function () {
+					set('[data-sr-tool-url]', '');
+					set('[data-sr-tool-score]', '—');
+					set('[data-sr-tool-verdict]', PSI_ERROR_MSG);
+					set('[data-sr-tool-lcp]', '—');
+					set('[data-sr-tool-inp]', '—');
+					set('[data-sr-tool-cls]', '—');
+					if (result) result.hidden = false;
+				}).finally(function () {
+					if (pending) pending.hidden = true;
 					running = false;
-				}, 1800);
+				});
 			});
 		});
 	}
-	/* TODO produzione: sostituire hashScore()/verdictFor() con una chiamata
-	   server-side alla PageSpeed Insights API (mediana di 3 rilevazioni),
-	   mantenendo lo stesso stato pending 1.4–1.8s e la stessa struttura dati. */
 
 	/* ---------- 6. Cookie banner + WhatsApp FAB ---------- */
 

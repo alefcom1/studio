@@ -3,7 +3,7 @@
  * Title: Pagina — Servizi (elenco)
  * Slug: remarka-studio/servizi-index
  * Categories: remarka-pagine
- * Description: Elenco dei sei servizi con link alle pagine dettaglio.
+ * Description: Elenco dei servizi con link alle pagine dettaglio + linee premium.
  * Viewport Width: 1400
  */
 ?>
@@ -94,6 +94,18 @@
 </div>
 <!-- /wp:group -->
 </div>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Oltre il sito</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Quando serve di più<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"320px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:320px"><div class="sr-card sr-card--carta"><p class="sr-eyebrow">Flagship</p><h3 class="wp-block-heading" style="font-size:22px">Export Ready</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Il sito e la sua versione estera sotto un unico contratto: localizzazione da madrelingua, SEO internazionale, KPI per mercato.</p><p class="sr-card-link" style="margin-top:16px"><a href="/servizi/export-ready/">Scopri →</a></p></div><div class="sr-card sr-card--carta"><p class="sr-eyebrow">Prodotti digitali</p><h3 class="wp-block-heading" style="font-size:22px">Web app su misura</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Aree clienti, configuratori, portali B2B e integrazioni: quando un sito non basta.</p><p class="sr-card-link" style="margin-top:16px"><a href="/servizi/web-app/">Scopri →</a></p></div></div>
 <!-- /wp:group -->
 </section>
 <!-- /wp:group -->

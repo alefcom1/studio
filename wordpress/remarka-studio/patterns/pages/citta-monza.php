@@ -1,21 +1,21 @@
 <?php
 /**
- * Title: Pagina — Città: Milano
- * Slug: remarka-studio/citta-milano
+ * Title: Pagina — Città: Monza
+ * Slug: remarka-studio/citta-monza
  * Categories: remarka-pagine
- * Description: Landing locale «realizzazione siti web milano»: servizi, caso, prezzi, recensioni, FAQ.
+ * Description: Landing locale «realizzazione siti web monza»: servizi, caso, prezzi, recensioni, FAQ.
  * Viewport Width: 1400
  */
 ?>
 <!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">MILANO E PROVINCIA</p>
+<p class="sr-eyebrow">MONZA E BRIANZA</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(38px,4.6vw,64px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Realizzazione siti web a Milano<span class="sr-accent-dot">.</span></h1>
+<h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Realizzazione siti web a Monza<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size">Siti progressivi per PMI di Milano e provincia: PageSpeed 90+ garantito da contratto, consegna a data fissa, prezzo chiuso. Il primo incontro, da voi o in studio, non si paga.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size">Siti progressivi per PMI di Monza e della Brianza: PageSpeed 90+ garantito da contratto, consegna a data fissa, prezzo chiuso. Il primo incontro, da voi in azienda, non si paga.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"28px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button -->
@@ -27,7 +27,7 @@
 </div>
 <!-- /wp:buttons -->
 <!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num sr-counter" style="color:var(--sr-oltremare)">14</span><p style="margin-top:16px;font-weight:500">progetti consegnati a Milano e provincia dal 2023</p></div>
+<div class="sr-stat"><span class="sr-stat__num sr-counter" style="color:var(--sr-oltremare)">8</span><p style="margin-top:16px;font-weight:500">progetti consegnati a Monza e provincia dal 2023</p></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -48,10 +48,10 @@
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
 <div class="wp-block-column" style="flex-basis:55%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">studiolegalefontana.it</span></div>
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">arredamenticolombo.it</span></div>
 <!-- /wp:html -->
 <!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/placeholder-browser.svg" alt="Screenshot del sito Studio Legale Fontana"/></figure>
+<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/placeholder-browser.svg" alt="Screenshot del sito Arredamenti Colombo"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:group -->
@@ -59,28 +59,28 @@
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Un caso da Milano</p>
+<p class="sr-eyebrow">Un caso dalla Brianza</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Studio Legale Fontana, Milano</h3>
+<h3 class="wp-block-heading">Arredamenti Colombo, Lissone</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">In otto settimane lo studio è passato dalla terza alla prima pagina di Google per dodici parole chiave di settore, senza riscrivere un solo articolo.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">Sei settimane dopo la messa online, il punteggio PageSpeed mobile è passato da 34 a 96, con un tempo di caricamento sceso a 1,2 secondi.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div style="display:flex;flex-direction:column;gap:10px;margin-top:24px">
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra" style="height:6px" data-sr-target="38%" data-sr-delay="0" aria-hidden="true"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
+<div class="sr-barra" style="height:6px" data-sr-target="34%" data-sr-delay="0" aria-hidden="true"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra" style="height:6px" data-sr-target="95%" data-sr-delay="150" aria-hidden="true"><div class="sr-barra__fill"></div></div>
+<div class="sr-barra" style="height:6px" data-sr-target="96%" data-sr-delay="150" aria-hidden="true"><div class="sr-barra__fill"></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
 </div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/studio-legale-fontana/">Leggi il caso completo →</a></p>
+<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/arredamenti-colombo/">Leggi il caso completo →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -93,7 +93,7 @@
 <p class="sr-eyebrow">Prezzi chiari, anche qui</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Quanto costa un sito web a Milano<span class="sr-accent-dot">?</span></h2>
+<h2 class="wp-block-heading">Quanto costa un sito web a Monza<span class="sr-accent-dot">?</span></h2>
 <!-- /wp:heading -->
 <!-- wp:html -->
 <div class="sr-servizi-rows" style="margin-top:32px"><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Sito vetrina</span><span class="sr-mono" style="color:var(--sr-oltremare)">€ 1.900–2.800</span></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Sito aziendale</span><span class="sr-mono" style="color:var(--sr-oltremare)">€ 3.900–5.800</span></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">E-commerce</span><span class="sr-mono" style="color:var(--sr-oltremare)">€ 7.500–14.000</span></div></div>
@@ -107,38 +107,20 @@
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
-<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
-<div class="sr-dove-siamo">
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-dove-siamo__map" aria-hidden="true"></div>
-<!-- /wp:html -->
-<!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Dove siamo</p>
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Come lavoriamo con Monza</p>
 <!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p style="margin-top:12px;font-size:16px">Via Andrea Solari 43, 20144 Milano (MI)</p>
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Vicini quanto serve<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:16px;max-width:70ch">A 20 minuti dal nostro studio di Milano: sopralluoghi e incontri in azienda senza costi di trasferta, in tutta la provincia di Monza e Brianza.</p>
 <!-- /wp:paragraph -->
-<!-- wp:html -->
-<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">M2 S. Agostino — 4 min a piedi</p>
-<!-- /wp:html -->
-<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px">Lun–Ven 9:00–18:00</p>
-<!-- /wp:paragraph -->
-<!-- wp:html -->
-<p class="sr-mono" style="margin-top:6px;font-size:14px">+39 02 8736 5412</p>
-<!-- /wp:html -->
-</div>
-<!-- /wp:group -->
-<!-- wp:html -->
-</div>
-<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
-<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Dicono di noi, da Milano e dintorni</p>
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Dicono di noi, da Monza e dintorni</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Recensioni Google verificate<span class="sr-accent-dot">.</span></h2>
@@ -147,27 +129,27 @@
 <p class="sr-mono" style="margin:16px 0 32px;color:var(--sr-oltremare)">★ 4,9 · 47 recensioni</p>
 <!-- /wp:html -->
 <!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"260px"}} -->
-<div class="wp-block-group is-layout-grid" style="--sr-grid-min:260px"><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">★★★★★</p><p style="margin-top:14px;font-size:15.5px;line-height:1.6">«Preventivo chiaro, consegnato il giorno promesso. Il sito carica subito anche in cantiere, dove la rete è quella che è.»</p><p class="sr-mono" style="margin-top:16px;font-size:13px;color:var(--sr-grigio)">Marco T. — impresa edile, Sesto S. Giovanni</p></div><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">★★★★★</p><p style="margin-top:14px;font-size:15.5px;line-height:1.6">«Ci hanno mostrato i numeri del vecchio sito prima di parlare di soldi. Nessuno l’aveva mai fatto.»</p><p class="sr-mono" style="margin-top:16px;font-size:13px;color:var(--sr-grigio)">Elena R. — showroom ceramiche, Milano</p></div><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">★★★★★</p><p style="margin-top:14px;font-size:15.5px;line-height:1.6">«Versione tedesca impeccabile: i clienti di Monaco ordinano dal sito senza scriverci più per chiedere chiarimenti.»</p><p class="sr-mono" style="margin-top:16px;font-size:13px;color:var(--sr-grigio)">Giulia B. — torneria meccanica, Cinisello</p></div></div>
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:260px"><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">★★★★★</p><p style="margin-top:14px;font-size:15.5px;line-height:1.6">«Lo showroom non ha mai chiuso: il sito nuovo è andato online in una notte, con i redirect già pronti.»</p><p class="sr-mono" style="margin-top:16px;font-size:13px;color:var(--sr-grigio)">Paolo C. — arredamenti su misura, Lissone</p></div><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">★★★★★</p><p style="margin-top:14px;font-size:15.5px;line-height:1.6">«Il catalogo si apre anche dove il Wi-Fi non prende. I clienti lo sfogliano in showroom dal telefono.»</p><p class="sr-mono" style="margin-top:16px;font-size:13px;color:var(--sr-grigio)">Andrea M. — cucine componibili, Seregno</p></div><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">★★★★★</p><p style="margin-top:14px;font-size:15.5px;line-height:1.6">«Prezzo chiuso davvero: nessun extra a fine lavori, ed era tutto scritto nel preventivo.»</p><p class="sr-mono" style="margin-top:16px;font-size:13px;color:var(--sr-grigio)">Federica P. — studio dentistico, Monza</p></div></div>
 <!-- /wp:group -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Domande da Milano</p>
+<p class="sr-eyebrow">Domande da Monza</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
-<details class="wp-block-details"><summary>Quanto costa un sito web a Milano?</summary><!-- wp:paragraph -->
-<p>Le agenzie milanesi chiedono in media 2.500–8.000 € per un sito aziendale. I nostri prezzi sono pubblici: vetrina da € 1.900, aziendale da € 3.900, e-commerce da € 7.500 — chiusi nel preventivo, con PageSpeed 90+ e data di consegna scritti nel contratto.</p>
+<details class="wp-block-details"><summary>Quanto costa un sito web a Monza?</summary><!-- wp:paragraph -->
+<p>Gli stessi prezzi pubblici che applichiamo ovunque: vetrina da € 1.900, aziendale da € 3.900, e-commerce da € 7.500 — prezzo chiuso nel preventivo, PageSpeed 90+ e data di consegna nel contratto.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 <!-- wp:details -->
-<details class="wp-block-details"><summary>Lavorate solo su Milano città?</summary><!-- wp:paragraph -->
-<p>No: Milano e tutta la provincia, più Monza e Brianza. Il primo incontro non si paga, da voi o nel nostro studio in zona Solari.</p>
+<details class="wp-block-details"><summary>Venite in azienda in Brianza?</summary><!-- wp:paragraph -->
+<p>Sì: il primo incontro non si paga e lo facciamo volentieri da voi — Lissone, Seregno, Desio, Vimercate, tutta la provincia.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 <!-- wp:details -->
-<details class="wp-block-details"><summary>Serve incontrarsi di persona?</summary><!-- wp:paragraph -->
-<p>Non è obbligatorio: analisi, preventivo e avanzamento lavori passano da videochiamate e da un ambiente di prova online. Ma se siete a Milano, il caffè lo offriamo noi.</p>
+<details class="wp-block-details"><summary>Avete già lavorato con aziende della zona?</summary><!-- wp:paragraph -->
+<p>Sì: il caso più citato del nostro portfolio è proprio a Lissone — Arredamenti Colombo, da 34 a 96 di PageSpeed con +41% di richieste di preventivo.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 </section>

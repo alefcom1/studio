@@ -32,8 +32,11 @@
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 <div class="sr-compare-table"><table><thead><tr><th></th><th>Sito vetrina<br><span>€ 1.900–2.800</span></th><th>Sito aziendale<br><span>€ 3.900–5.800</span></th><th>E-commerce<br><span>€ 7.500–14.000</span></th></tr></thead><tbody><tr><td>Pagine incluse</td><td>5</td><td>15</td><td>Catalogo</td></tr><tr><td>Lingue tradotte da madrelingua</td><td>1</td><td>2</td><td>2</td></tr><tr><td>Design su misura, senza template</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>CMS per aggiornarlo da soli</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>PWA: offline e installabile</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Catalogo, carrello e pagamenti</td><td><span class="sr-no">—</span></td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>SEO tecnica e dati strutturati</td><td>base</td><td>completa</td><td>completa</td></tr><tr><td>PageSpeed 90+ da contratto</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Assistenza inclusa</td><td>12 mesi</td><td>12 mesi</td><td>12 mesi</td></tr><tr><td>Consegna</td><td>3 sett.</td><td>5–7 sett.</td><td>8–10 sett.</td></tr></tbody></table></div>
 <!-- /wp:html -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:28px;max-width:70ch">Per confronto: le agenzie italiane chiedono in media € 2.500–8.000 per un sito aziendale e € 5.000–20.000 per un e-commerce (listini pubblici 2026). Siamo nella stessa fascia — con tre garanzie scritte nel contratto che altrove non trovate.</p>
+<!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size" style="margin-top:24px">Fattura elettronica via SDI. Pagamento in tre tranche: 40 / 40 / 20.</p>
+<p class="has-grigio-color has-text-color has-small-font-size" style="margin-top:16px">Fattura elettronica via SDI. Pagamento in tre tranche: 40 / 40 / 20.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"20px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:20px"><!-- wp:button -->

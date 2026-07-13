@@ -384,10 +384,166 @@ TOOLS = [
          descrizione='Quanto rende tradurre il sito in inglese o tedesco.', has_demo=False),
 ]
 
-CITY = dict(
-    slug='milano', nome='Milano', eyebrow='MILANO E PROVINCIA', progetti=14, dal='2023',
-    indirizzo='Via Andrea Solari 43, 20144 Milano (MI)', metro='M2 S. Agostino — 4 min a piedi',
-    orari='Lun–Ven 9:00–18:00', telefono='+39 02 8736 5412',
+# Городские лендинги. Правило из piano-contenuti-seo.md §2: максимум 6–8
+# содержательных страниц, каждая с локальным кейсом и отзывами с гео-привязкой —
+# никаких клонов с заменой топонима (doorway-риск). У milano есть офис (полный
+# блок «Dove siamo»); остальные города обслуживаются из Милана — честный блок
+# «Serviamo {città} da Milano» вместо выдуманного адреса.
+CITIES = [
+    dict(
+        slug='milano', nome='Milano', eyebrow='MILANO E PROVINCIA', progetti=14, dal='2023',
+        sub='Siti progressivi per PMI di Milano e provincia: PageSpeed 90+ garantito da contratto, consegna a data fissa, prezzo chiuso. Il primo incontro, da voi o in studio, non si paga.',
+        has_office=True,
+        indirizzo='Via Andrea Solari 43, 20144 Milano (MI)', metro='M2 S. Agostino — 4 min a piedi',
+        orari='Lun–Ven 9:00–18:00', telefono='+39 02 8736 5412',
+        case_slug='studio-legale-fontana', case_url_label='studiolegalefontana.it',
+        case_eyebrow='Un caso da Milano', case_title='Studio Legale Fontana, Milano',
+        recensioni=[
+            ('Preventivo chiaro, consegnato il giorno promesso. Il sito carica subito anche in cantiere, dove la rete è quella che è.', 'Marco T. — impresa edile, Sesto S. Giovanni'),
+            ('Ci hanno mostrato i numeri del vecchio sito prima di parlare di soldi. Nessuno l’aveva mai fatto.', 'Elena R. — showroom ceramiche, Milano'),
+            ('Versione tedesca impeccabile: i clienti di Monaco ordinano dal sito senza scriverci più per chiedere chiarimenti.', 'Giulia B. — torneria meccanica, Cinisello'),
+        ],
+        faq=[
+            ('Quanto costa un sito web a Milano?', 'Le agenzie milanesi chiedono in media 2.500–8.000 € per un sito aziendale. I nostri prezzi sono pubblici: vetrina da € 1.900, aziendale da € 3.900, e-commerce da € 7.500 — chiusi nel preventivo, con PageSpeed 90+ e data di consegna scritti nel contratto.'),
+            ('Lavorate solo su Milano città?', 'No: Milano e tutta la provincia, più Monza e Brianza. Il primo incontro non si paga, da voi o nel nostro studio in zona Solari.'),
+            ('Serve incontrarsi di persona?', 'Non è obbligatorio: analisi, preventivo e avanzamento lavori passano da videochiamate e da un ambiente di prova online. Ma se siete a Milano, il caffè lo offriamo noi.'),
+        ],
+    ),
+    dict(
+        slug='monza', nome='Monza', eyebrow='MONZA E BRIANZA', progetti=8, dal='2023',
+        sub='Siti progressivi per PMI di Monza e della Brianza: PageSpeed 90+ garantito da contratto, consegna a data fissa, prezzo chiuso. Il primo incontro, da voi in azienda, non si paga.',
+        has_office=False,
+        vicino='A 20 minuti dal nostro studio di Milano: sopralluoghi e incontri in azienda senza costi di trasferta, in tutta la provincia di Monza e Brianza.',
+        case_slug='arredamenti-colombo', case_url_label='arredamenticolombo.it',
+        case_eyebrow='Un caso dalla Brianza', case_title='Arredamenti Colombo, Lissone',
+        recensioni=[
+            ('Lo showroom non ha mai chiuso: il sito nuovo è andato online in una notte, con i redirect già pronti.', 'Paolo C. — arredamenti su misura, Lissone'),
+            ('Il catalogo si apre anche dove il Wi-Fi non prende. I clienti lo sfogliano in showroom dal telefono.', 'Andrea M. — cucine componibili, Seregno'),
+            ('Prezzo chiuso davvero: nessun extra a fine lavori, ed era tutto scritto nel preventivo.', 'Federica P. — studio dentistico, Monza'),
+        ],
+        faq=[
+            ('Quanto costa un sito web a Monza?', 'Gli stessi prezzi pubblici che applichiamo ovunque: vetrina da € 1.900, aziendale da € 3.900, e-commerce da € 7.500 — prezzo chiuso nel preventivo, PageSpeed 90+ e data di consegna nel contratto.'),
+            ('Venite in azienda in Brianza?', 'Sì: il primo incontro non si paga e lo facciamo volentieri da voi — Lissone, Seregno, Desio, Vimercate, tutta la provincia.'),
+            ('Avete già lavorato con aziende della zona?', 'Sì: il caso più citato del nostro portfolio è proprio a Lissone — Arredamenti Colombo, da 34 a 96 di PageSpeed con +41% di richieste di preventivo.'),
+        ],
+    ),
+    dict(
+        slug='bergamo', nome='Bergamo', eyebrow='BERGAMO E PROVINCIA', progetti=6, dal='2024',
+        sub='Siti progressivi per PMI di Bergamo e provincia: PageSpeed 90+ garantito da contratto, consegna a data fissa, prezzo chiuso. Versione in tedesco tradotta da madrelingua per chi lavora con l’estero.',
+        has_office=False,
+        vicino='Un’ora dal nostro studio di Milano: primo incontro in azienda senza costi, da Bergamo città alle valli. Per il resto: ambiente di prova online e avanzamento visibile ogni venerdì.',
+        case_slug='tecnoidraulica', case_url_label='tecnoidraulica.it',
+        case_eyebrow='Un caso da Bergamo', case_title='TecnoIdraulica, Bergamo',
+        recensioni=[
+            ('I clienti di Bressanone e Merano finalmente trovano tutto in tedesco. Le richieste sono triplicate.', 'Titolare — impianti idraulici, Bergamo'),
+            ('Sito consegnato il giorno scritto nel contratto. Non ci credevamo, è successo.', 'Luca R. — carpenteria metallica, Dalmine'),
+            ('Il modulo contatti ci avvisa su WhatsApp: rispondiamo ai preventivi prima dei concorrenti.', 'Sara V. — serramenti, Treviglio'),
+        ],
+        faq=[
+            ('Quanto costa un sito web a Bergamo?', 'Prezzi pubblici, uguali ovunque: vetrina da € 1.900, aziendale da € 3.900, e-commerce da € 7.500 — chiusi nel preventivo, con PageSpeed 90+ e data di consegna nel contratto.'),
+            ('Fate siti in tedesco per chi lavora con l’estero?', 'Sì, ed è la nostra specialità: le traduzioni le fanno madrelingua del gruppo Remarka (nel settore dal 2001), non un plugin. Il caso TecnoIdraulica è nato così.'),
+            ('Il primo incontro è davvero gratuito?', 'Sì: veniamo noi in azienda, analizziamo il sito attuale e vi lasciamo un report scritto con le priorità. Il preventivo arriva entro 24 ore.'),
+        ],
+    ),
+    dict(
+        slug='brescia', nome='Brescia', eyebrow='BRESCIA E PROVINCIA', progetti=5, dal='2024',
+        sub='Siti progressivi per le PMI manifatturiere di Brescia e provincia: PageSpeed 90+ garantito da contratto, prezzo chiuso, versione in tedesco o inglese tradotta da madrelingua per chi esporta.',
+        has_office=False,
+        vicino='Serviamo Brescia e provincia dal nostro studio di Milano: primo incontro in azienda senza costi di trasferta, poi ambiente di prova online e avanzamento visibile ogni venerdì.',
+        case_slug='tecnoidraulica', case_url_label='tecnoidraulica.it',
+        case_eyebrow='Un caso vicino: Bergamo', case_title='TecnoIdraulica, Bergamo',
+        recensioni=[
+            ('Catalogo tecnico di 400 codici, ora si apre in un secondo. I clienti tedeschi ordinano senza telefonare.', 'Titolare — minuterie metalliche, Lumezzane'),
+            ('Ci hanno fatto vedere i numeri del sito vecchio prima di parlare di prezzo. Serietà rara.', 'Giorgio F. — officina meccanica, Brescia'),
+            ('Preventivo chiuso e data fissa, come promesso. Il sito è online dal giorno concordato.', 'Anna T. — azienda vinicola, Franciacorta'),
+        ],
+        faq=[
+            ('Quanto costa un sito web a Brescia?', 'Prezzi pubblici, uguali ovunque: vetrina da € 1.900, aziendale da € 3.900, e-commerce da € 7.500 — chiusi nel preventivo, con PageSpeed 90+ e data di consegna nel contratto.'),
+            ('Lavorate con aziende manifatturiere ed esportatrici?', 'È il nostro cliente tipo: cataloghi tecnici veloci, dati strutturati per ogni prodotto e versioni in tedesco o inglese tradotte da madrelingua del gruppo Remarka.'),
+            ('Come seguiamo i lavori se siete a Milano?', 'Ambiente di prova online dal primo giorno, avanzamento visibile ogni venerdì, un unico referente. Il primo incontro lo facciamo comunque da voi, gratuitamente.'),
+        ],
+    ),
+    dict(
+        slug='como', nome='Como', eyebrow='COMO E PROVINCIA', progetti=4, dal='2024',
+        sub='Siti progressivi per le PMI di Como e del lago: PageSpeed 90+ garantito da contratto, prezzo chiuso, versioni in inglese e tedesco tradotte da madrelingua per chi lavora con ospiti e clienti esteri.',
+        has_office=False,
+        vicino='Mezz’ora dal nostro studio di Milano: primo incontro da voi senza costi, da Como a Cantù alla sponda del lago. Poi ambiente di prova online e un unico referente.',
+        case_slug='cantina-serralta', case_url_label='cantinaserralta.it',
+        case_eyebrow='Un caso simile: vendere all’estero', case_title='Cantina Serralta, Asti',
+        recensioni=[
+            ('Il sito in inglese e tedesco ha cambiato la stagione: gli ospiti prenotano direttamente, senza portali.', 'Chiara L. — casa vacanze, Menaggio'),
+            ('Da tre secondi a meno di uno: le richieste dal modulo sono raddoppiate in due mesi.', 'Matteo B. — falegnameria, Cantù'),
+            ('Tutto scritto nel preventivo, tutto rispettato. E il sito vola anche in riva al lago.', 'Paola G. — studio commercialista, Como'),
+        ],
+        faq=[
+            ('Quanto costa un sito web a Como?', 'Prezzi pubblici, uguali ovunque: vetrina da € 1.900, aziendale da € 3.900, e-commerce da € 7.500 — chiusi nel preventivo, con PageSpeed 90+ e data di consegna nel contratto.'),
+            ('Fate siti multilingue per il turismo?', 'Sì: inglese e tedesco tradotti da madrelingua del gruppo Remarka (non da un plugin), con SEO internazionale corretta — hreflang, metadati per mercato.'),
+            ('Il primo incontro è gratuito anche fuori Como città?', 'Sì, in tutta la provincia: veniamo noi, analizziamo il sito attuale e vi lasciamo un report scritto. Preventivo chiuso entro 24 ore.'),
+        ],
+    ),
+]
+
+# Обратная совместимость: старый импорт CITY указывает на Милан.
+CITY = CITIES[0]
+
+# Флагман «Export Ready» (линия 2 концепции) и «Web App» (линия 3).
+# Цены — ориентир из concept-sviluppo-studio.md §3, помечены владельцу
+# на подтверждение перед запуском рекламы.
+EXPORT_READY = dict(
+    slug='export-ready',
+    eyebrow='Servizio / Export Ready',
+    hero_title='Il vostro sito funziona anche in tedesco. Misurato, garantito, firmato',
+    hero_sub='Il sito e la sua versione estera sotto un unico contratto: localizzazione da madrelingua, SEO internazionale e KPI per ogni mercato. Nel settore linguistico dal 2001.',
+    hero_stat_value='4', hero_stat_label='Lingue con traduttori madrelingua interni: inglese, tedesco, francese, russo.',
+    problema_heading='Il buco in cui l’export perde soldi',
+    problema_testo='Chi esporta oggi sceglie tra una web agency (che gira le traduzioni a terzi o a un plugin) e un’agenzia di traduzioni (che non costruisce siti né fa SEO internazionale). La responsabilità si spezza sempre a metà — esattamente dove il cliente estero decide se comprare. Remarka è l’unica configurazione in cui ingegneria e localizzazione professionale vivono nella stessa azienda, sotto lo stesso contratto.',
+    garanzie_heading='Garanzie export, nero su bianco',
+    garanzie=[
+        'Localizzazione solo da madrelingua: nomi e qualifiche dei traduttori nel contratto',
+        'Glossario di terminologia del vostro settore: è un deliverable, resta a voi',
+        'Checklist SEO internazionale firmata: hreflang, metadati e URL per ogni mercato, allegata al collaudo',
+        'KPI mensili per ogni mercato, per 12 mesi: traffico, posizioni, richieste',
+    ],
+    formati=[
+        ('One Market', 'a partire da € 12.000', 'Un mercato, una lingua: analisi del mercato target fatta da madrelingua, architettura multilingue, localizzazione completa, SEO internazionale, 12 mesi di KPI.'),
+        ('Multi-Market', '€ 18.000–35.000', 'Più mercati in sequenza pianificata: stessa base tecnica, glossario condiviso, priorità dei mercati decisa sui dati, report comparativo mensile.'),
+    ],
+    processo=[
+        ('01', 'Analisi del mercato target', 'Un madrelingua studia come i vostri clienti cercano nel loro paese: parole, concorrenti, prezzi.'),
+        ('02', 'Architettura multilingue', 'URL, hreflang, x-default, metadati per mercato: la base tecnica che Google richiede.'),
+        ('03', 'Localizzazione, non traduzione', 'Offerta, CTA e moduli adattati al mercato, glossario approvato con voi.'),
+        ('04', 'Lancio e misurazione', 'QA su tre livelli (visivo, funzionale, SEO), poi 12 mesi di KPI mensili per mercato.'),
+    ],
+    faq=[
+        ('Perché non basta un plugin di traduzione?', 'Un plugin traduce parole, non argomenti di vendita. Un cliente tedesco riconosce un testo automatico alla seconda riga — e con lui se ne va la fiducia. I nostri madrelingua sono nel contratto, con nome e qualifica.'),
+        ('Avete davvero i traduttori in casa?', 'Sì: Studio Remarka fa parte del gruppo Remarka, nel settore linguistico dal 2001, con traduttori madrelingua interni per inglese, tedesco, francese e russo.'),
+        ('Come misurate i risultati per mercato?', 'Ogni mercato ha il suo report mensile: posizioni sulle parole chiave locali, traffico organico, richieste dal modulo. Per 12 mesi, inclusi nel prezzo.'),
+    ],
+)
+
+WEB_APP = dict(
+    slug='web-app',
+    eyebrow='Servizio / Web app su misura',
+    hero_title='Quando un sito non basta: web app, aree clienti, configuratori',
+    hero_sub='Portali B2B, cabine clienti, configuratori di prodotto, integrazioni con CRM e gestionale. Costruiti dallo stesso team che sviluppa i prodotti digitali del gruppo Remarka.',
+    hero_stat_value='3', hero_stat_label='Prodotti digitali interni in produzione: piattaforma AI, TMS, servizio documenti.',
+    per_chi_heading='Per chi ha un processo, non solo una vetrina',
+    per_chi=[
+        'Aziende che gestiscono ordini, listini o pratiche via email e vogliono un’area clienti.',
+        'Produttori con prodotti configurabili: un configuratore vende mentre l’ufficio tecnico dorme.',
+        'PMI che devono collegare sito, CRM e gestionale senza reinserire i dati a mano.',
+    ],
+    formati=[
+        ('MVP Sprint', 'a partire da € 15.000', 'Perimetro chiuso, prezzo chiuso, data fissa: la prima versione funzionante del prodotto in 6–10 settimane, pronta per utenti reali.'),
+        ('Product Build', 'da € 25.000', 'Sviluppo per iterazioni con backlog condiviso e rilasci regolari: per prodotti che crescono con il business.'),
+    ],
+    prove_heading='La prova: i nostri prodotti interni',
+    prove_testo='Non solo per i clienti: il gruppo Remarka sviluppa e usa in produzione i propri prodotti digitali — una piattaforma di traduzione AI, un TMS per i progetti linguistici e un servizio di documenti standard. Li pubblichiamo come casi studio con metriche tecniche reali, marchiati «Product Lab».',
+    faq=[
+        ('Quanto costa una web app?', 'Il formato MVP Sprint parte da € 15.000 con perimetro, prezzo e data chiusi nel contratto. Progetti a iterazioni partono da € 25.000. Il preventivo resta chiuso: quello che firmate è quello che pagate.'),
+        ('Meglio una web app o un’app nativa?', 'Per la maggior parte delle PMI, una web app (o PWA) costa una frazione di un’app nativa, non passa dagli store e si aggiorna in un rilascio. L’app nativa serve solo per hardware specifico o notifiche avanzate.'),
+        ('Chi mantiene il prodotto dopo il lancio?', 'Dodici mesi di assistenza inclusi, come per i siti. Dopo, canone facoltativo o consegna completa: codice e documentazione sono vostri dal primo giorno.'),
+    ],
 )
 
 BLOG_POSTS = [

@@ -28,7 +28,7 @@
       <input type="text" placeholder="www.tuosito.it" class="sr-text-input" required />
       <button type="submit" class="wp-block-button__link" style="padding:17px 30px">Avvia il test</button>
     </div>
-  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>Rilevazione in corso — mobile, connessione 4G simulata<span class="sr-blink">…</span></p>
+  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>Rilevazione Google in corso — mobile, può richiedere fino a 30 secondi<span class="sr-blink">…</span></p>
   <div class="sr-tool-result" data-sr-tool-result hidden>
     <p style="margin:0;font-size:14px;color:var(--sr-grigio)" data-sr-tool-url></p>
     <div class="sr-tool-result__score">
@@ -45,7 +45,7 @@
       <div><p class="sr-eyebrow" style="margin-bottom:8px">INP</p><p class="sr-tool-cwv-value sr-mono" data-sr-tool-inp></p><p style="font-size:13.5px;color:var(--sr-grigio)">Reattività del sito al tocco. Sotto i 200 ms è considerato buono.</p></div>
       <div><p class="sr-eyebrow" style="margin-bottom:8px">CLS</p><p class="sr-tool-cwv-value sr-mono" data-sr-tool-cls></p><p style="font-size:13.5px;color:var(--sr-grigio)">Stabilità visiva durante il caricamento. Sotto 0,1 è considerato buono.</p></div>
     </div>
-    <p class="sr-tool-caption sr-mono">Dimostrazione con punteggio simulato. In produzione i risultati arrivano dalla vera Google PageSpeed Insights API, media di tre rilevazioni.</p>
+    <p class="sr-tool-caption sr-mono">Dati reali da Google PageSpeed Insights API — strategia mobile. LCP e CLS da analisi Lighthouse; INP da dati di campo Chrome UX quando disponibili.</p>
   </div>
   </form>
 </div>

@@ -67,6 +67,15 @@ function remarka_enqueue_assets(): void {
 			'strategy'  => 'defer',
 		)
 	);
+
+	// Chiave PageSpeed Insights API (Customizer, opzionale): senza chiave la
+	// quota anonima di Google è bassa ma funziona per il traffico iniziale.
+	$psi_key = get_theme_mod( 'remarka_psi_api_key', '' );
+	wp_add_inline_script(
+		'remarka-studio',
+		'window.remarkaPSI = ' . wp_json_encode( array( 'key' => $psi_key ) ) . ';',
+		'before'
+	);
 }
 add_action( 'wp_enqueue_scripts', 'remarka_enqueue_assets', 20 );
 
@@ -350,6 +359,17 @@ function remarka_customize_register( WP_Customize_Manager $wp_customize ): void 
 		'type'        => 'number',
 		'input_attrs' => array( 'min' => 0, 'max' => 100 ),
 	) );
+
+	$wp_customize->add_setting( 'remarka_psi_api_key', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+	$wp_customize->add_control( 'remarka_psi_api_key', array(
+		'label'       => __( 'Chiave Google PageSpeed Insights API (per test velocità reali; senza chiave la quota è limitata)', 'remarka-studio' ),
+		'description' => __( 'Gratuita: console.cloud.google.com → API e servizi → PageSpeed Insights API → Credenziali.', 'remarka-studio' ),
+		'section'     => 'remarka_contatti',
+		'type'        => 'text',
+	) );
 }
 add_action( 'customize_register', 'remarka_customize_register' );
 
@@ -463,17 +483,43 @@ add_filter( 'nav_menu_css_class', 'remarka_auto_cta_menu_item_class', 10, 2 );
  * появления соответствующих плагинов SEO (Rank Math/Yoast) — см. план.
  */
 function remarka_organization_schema(): void {
-	if ( ! is_front_page() ) {
+	if ( is_front_page() ) {
+		$schema = array(
+			'@context' => 'https://schema.org',
+			'@type'    => 'ProfessionalService',
+			'name'     => 'Studio Remarka',
+			'url'      => home_url( '/' ),
+			'areaServed' => 'IT',
+			'priceRange' => '€€',
+		);
+		echo '<script type="application/ld+json">' . wp_json_encode( $schema ) . '</script>' . "\n";
 		return;
 	}
-	$schema = array(
-		'@context' => 'https://schema.org',
-		'@type'    => 'ProfessionalService',
-		'name'     => 'Studio Remarka',
-		'url'      => home_url( '/' ),
-		'areaServed' => 'IT',
-		'priceRange' => '€€',
-	);
-	echo '<script type="application/ld+json">' . wp_json_encode( $schema ) . '</script>' . "\n";
+
+	// LocalBusiness на городских лендингах (piano-contenuti-seo §4.1):
+	// адрес указываем только миланский (реальный офис), остальные города —
+	// через areaServed, без выдуманных адресов.
+	$city_slugs = array( 'milano' => 'Milano', 'monza' => 'Monza', 'bergamo' => 'Bergamo', 'brescia' => 'Brescia', 'como' => 'Como' );
+	if ( is_page( array_keys( $city_slugs ) ) ) {
+		$slug   = get_post_field( 'post_name', get_queried_object_id() );
+		$schema = array(
+			'@context'   => 'https://schema.org',
+			'@type'      => 'LocalBusiness',
+			'name'       => 'Studio Remarka',
+			'url'        => get_permalink(),
+			'telephone'  => remarka_footer_mod( 'remarka_company_phone' ),
+			'email'      => remarka_footer_mod( 'remarka_company_email' ),
+			'priceRange' => '€€',
+			'address'    => array(
+				'@type'           => 'PostalAddress',
+				'streetAddress'   => 'Via Andrea Solari 43',
+				'postalCode'      => '20144',
+				'addressLocality' => 'Milano',
+				'addressCountry'  => 'IT',
+			),
+			'areaServed' => $city_slugs[ $slug ] ?? 'Lombardia',
+		);
+		echo '<script type="application/ld+json">' . wp_json_encode( $schema ) . '</script>' . "\n";
+	}
 }
 add_action( 'wp_head', 'remarka_organization_schema' );

@@ -63,7 +63,7 @@
     <input id="hero-url" type="text" placeholder="www.tuosito.it" class="sr-text-input" />
     <button type="submit" class="wp-block-button__link" style="padding:13px 22px;font-size:15px;border:1px solid var(--sr-oltremare)">Analizza</button>
   </div>
-  <p class="sr-tool-pending sr-mono" data-sr-hero-pending hidden>Analisi in corso<span class="sr-blink">…</span></p>
+  <p class="sr-tool-pending sr-mono" data-sr-hero-pending hidden>Analisi Google in corso — fino a 30 secondi<span class="sr-blink">…</span></p>
   <div data-sr-hero-result hidden style="margin-top:18px">
     <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
       <span data-sr-hero-url style="font-size:14px;color:var(--sr-grigio);overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></span>

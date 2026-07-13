@@ -135,6 +135,8 @@ $page_map = array(
 	'servizio-restyling-migrazione'        => array( 'restyling-migrazione', 'servizi', null ),
 	'servizio-seo-tecnica'                 => array( 'seo-tecnica', 'servizi', null ),
 	'servizio-siti-multilingue'            => array( 'siti-multilingue', 'servizi', null ),
+	'servizio-export-ready'                => array( 'export-ready', 'servizi', 'Export Ready' ),
+	'servizio-web-app'                     => array( 'web-app', 'servizi', 'Web app su misura' ),
 
 	'casi-studio-index'                    => array( 'casi-studio', null, 'Casi studio' ),
 	'caso-arredamenti-colombo'             => array( 'arredamenti-colombo', 'casi-studio', null ),
@@ -151,6 +153,10 @@ $page_map = array(
 	'strumento-roi-localizzazione'         => array( 'roi-localizzazione', 'strumenti', null ),
 
 	'citta-milano'                         => array( 'milano', null, null ),
+	'citta-monza'                          => array( 'monza', null, null ),
+	'citta-bergamo'                        => array( 'bergamo', null, null ),
+	'citta-brescia'                        => array( 'brescia', null, null ),
+	'citta-como'                           => array( 'como', null, null ),
 	'chi-siamo'                            => array( 'chi-siamo', null, null ),
 	'privacy'                              => array( 'privacy', null, null ),
 	'cookie-policy'                        => array( 'cookie-policy', null, null ),
@@ -370,6 +376,8 @@ remarka_deploy_sync_footer_menu(
 	'footer-studio',
 	array(
 		array( 'title' => 'Siti web a Milano', 'slug' => 'milano' ),
+		array( 'title' => 'Siti web a Monza', 'slug' => 'monza' ),
+		array( 'title' => 'Siti web a Bergamo', 'slug' => 'bergamo' ),
 		array( 'title' => 'Contatti', 'url' => home_url( '/#contatti' ) ),
 		array( 'title' => 'Google Business Profile', 'url' => 'https://business.google.com/' ),
 		array( 'title' => 'Privacy', 'slug' => 'privacy' ),

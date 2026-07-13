@@ -22,7 +22,7 @@ from blocks import (  # noqa: E402
     metric_rows, browser_frame, barra, barra_row, pull_quote, chapter,
     compare_table_row, pattern_header,
 )
-from data import SERVICES, CASES, TOOLS, CITY, BLOG_POSTS  # noqa: E402
+from data import SERVICES, CASES, TOOLS, CITY, CITIES, BLOG_POSTS, EXPORT_READY, WEB_APP  # noqa: E402
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'remarka-studio', 'patterns', 'pages')
 os.makedirs(OUT_DIR, exist_ok=True)
@@ -70,8 +70,25 @@ def build_servizi_index():
         cards.append(group(card, classes='sr-card'))
 
     grid = section(group(''.join(cards), classes='', layout_type='grid', style='300px'), classes='sr-section')
-    write('servizi-index', 'Pagina — Servizi (elenco)', 'Elenco dei sei servizi con link alle pagine dettaglio.',
-          hero + grid)
+
+    # Линии 2 и 3 концепции — отдельный блок «premium» под сеткой базовых услуг.
+    premium_cards = ''.join(
+        f'<div class="sr-card sr-card--carta"><p class="sr-eyebrow">{ey}</p>'
+        f'<h3 class="wp-block-heading" style="font-size:22px">{t}</h3>'
+        f'<p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">{d}</p>'
+        f'<p class="sr-card-link" style="margin-top:16px"><a href="{u}">Scopri →</a></p></div>'
+        for ey, t, d, u in [
+            ('Flagship', 'Export Ready', 'Il sito e la sua versione estera sotto un unico contratto: localizzazione da madrelingua, SEO internazionale, KPI per mercato.', '/servizi/export-ready/'),
+            ('Prodotti digitali', 'Web app su misura', 'Aree clienti, configuratori, portali B2B e integrazioni: quando un sito non basta.', '/servizi/web-app/'),
+        ]
+    )
+    premium = section(
+        eyebrow('Oltre il sito') + heading(2, 'Quando serve di più') +
+        group(premium_cards, classes='', layout_type='grid', style='320px'),
+        classes='sr-section sr-section--bianco',
+    )
+    write('servizi-index', 'Pagina — Servizi (elenco)', 'Elenco dei servizi con link alle pagine dettaglio + linee premium.',
+          hero + grid + premium)
 
 
 def build_servizio(svc):
@@ -280,8 +297,12 @@ def build_prezzi():
 
     table_section = section(
         compare +
+        paragraph('Per confronto: le agenzie italiane chiedono in media € 2.500–8.000 per un sito aziendale '
+                   'e € 5.000–20.000 per un e-commerce (listini pubblici 2026). Siamo nella stessa fascia — '
+                   'con tre garanzie scritte nel contratto che altrove non trovate.',
+                   color='grigio', size='base', extra_style='margin-top:28px;max-width:70ch') +
         paragraph('Fattura elettronica via SDI. Pagamento in tre tranche: 40 / 40 / 20.', color='grigio', size='small',
-                   extra_style='margin-top:24px') +
+                   extra_style='margin-top:16px') +
         buttons([('Richiedi preventivo dettagliato', '/#contatti', None)], margin_top='20px'),
         classes='sr-section',
     )
@@ -347,7 +368,7 @@ def build_strumento_test_velocita():
       <input type="text" placeholder="www.tuosito.it" class="sr-text-input" required />
       <button type="submit" class="wp-block-button__link" style="padding:17px 30px">Avvia il test</button>
     </div>
-  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>Rilevazione in corso — mobile, connessione 4G simulata<span class="sr-blink">…</span></p>
+  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>Rilevazione Google in corso — mobile, può richiedere fino a 30 secondi<span class="sr-blink">…</span></p>
   <div class="sr-tool-result" data-sr-tool-result hidden>
     <p style="margin:0;font-size:14px;color:var(--sr-grigio)" data-sr-tool-url></p>
     <div class="sr-tool-result__score">
@@ -364,7 +385,7 @@ def build_strumento_test_velocita():
       <div><p class="sr-eyebrow" style="margin-bottom:8px">INP</p><p class="sr-tool-cwv-value sr-mono" data-sr-tool-inp></p><p style="font-size:13.5px;color:var(--sr-grigio)">Reattività del sito al tocco. Sotto i 200 ms è considerato buono.</p></div>
       <div><p class="sr-eyebrow" style="margin-bottom:8px">CLS</p><p class="sr-tool-cwv-value sr-mono" data-sr-tool-cls></p><p style="font-size:13.5px;color:var(--sr-grigio)">Stabilità visiva durante il caricamento. Sotto 0,1 è considerato buono.</p></div>
     </div>
-    <p class="sr-tool-caption sr-mono">Dimostrazione con punteggio simulato. In produzione i risultati arrivano dalla vera Google PageSpeed Insights API, media di tre rilevazioni.</p>
+    <p class="sr-tool-caption sr-mono">Dati reali da Google PageSpeed Insights API — strategia mobile. LCP e CLS da analisi Lighthouse; INP da dati di campo Chrome UX quando disponibili.</p>
   </div>
   </form>
 </div>''')
@@ -432,15 +453,15 @@ def build_strumento_placeholder(tool):
           hero + placeholder_section + altri_section)
 
 
-# ---------------------------------------------------------------- Milano
+# ---------------------------------------------------------------- Città
 
-def build_milano():
-    c = CITY
+def build_city(c):
+    """Городской лендинг под «realizzazione siti web {città}». Каждый город —
+    свой кейс, свои отзывы с гео-привязкой и свой FAQ (piano-contenuti-seo §2:
+    содержательные страницы, не клоны)."""
     hero = section(
         eyebrow(c['eyebrow']) + heading(1, f'Realizzazione siti web a {c["nome"]}', style='clamp(38px,4.6vw,64px)') +
-        paragraph(f'Siti progressivi per PMI di {c["nome"]} e provincia: PageSpeed 90+ garantito da contratto, '
-                   'consegna a data fissa, prezzo chiuso. Il primo incontro, da voi o in studio, non si paga.',
-                   color='grigio', size='medium') +
+        paragraph(c['sub'], color='grigio', size='medium') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
                  ('Analizza il tuo sito — gratis', '/strumenti/test-velocita/', 'outline')], margin_top='28px') +
         stat_block(str(c['progetti']), f'progetti consegnati a {c["nome"]} e provincia dal {c["dal"]}', '', counter=True),
@@ -458,64 +479,214 @@ def build_milano():
         classes='sr-section sr-section--bianco',
     )
 
-    local_case = next(x for x in CASES if x['slug'] == 'studio-legale-fontana')
+    local_case = next(x for x in CASES if x['slug'] == c['case_slug'])
     caso = section(
         columns([
-            column(browser_frame('studiolegalefontana.it', f'Screenshot del sito {local_case["cliente"]}'), width='55%'),
-            column(eyebrow(f'Un caso da {c["nome"]}') + heading(3, f'{local_case["cliente"]}, {c["nome"]}', accent_dot=False) +
+            column(browser_frame(c['case_url_label'], f'Screenshot del sito {local_case["cliente"]}'), width='55%'),
+            column(eyebrow(c['case_eyebrow']) + heading(3, c['case_title'], accent_dot=False) +
                    paragraph(local_case['risultati_testo'], color='grigio', size='base', extra_style='margin-top:12px') +
                    raw_html('<div style="display:flex;flex-direction:column;gap:10px;margin-top:24px">') +
                    raw_html(barra(local_case['prima'], muted=True, height=6)) +
                    raw_html(barra(local_case['dopo'], delay=150, height=6)) +
                    raw_html('</div>') +
-                   raw_html(f'<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/">Tutti i casi studio →</a></p>'),
+                   raw_html(f'<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/{local_case["slug"]}/">Leggi il caso completo →</a></p>'),
                    width='45%'),
         ], valign='center'),
         classes='sr-section',
     )
 
-    dove = section(
-        raw_html('<div class="sr-dove-siamo">') +
-        raw_html('<div class="sr-dove-siamo__map" aria-hidden="true"></div>') +
-        group(
-            eyebrow('Dove siamo') +
-            paragraph(c['indirizzo'], extra_style='margin-top:12px;font-size:16px') +
-            raw_html(f'<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">{c["metro"]}</p>') +
-            paragraph(c['orari'], color='grigio', size='base', extra_style='margin-top:16px') +
-            raw_html(f'<p class="sr-mono" style="margin-top:6px;font-size:14px">{c["telefono"]}</p>'),
-            classes='sr-card',
-        ) + raw_html('</div>'),
+    # Прозрачный прайс-блок прямо на городской странице (формат, который
+    # ранжируется по «costo sito web {città}» — см. piano-contenuti-seo §3.A).
+    prezzi_rows = ''.join(
+        f'<div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">{t}</span>'
+        f'<span class="sr-mono" style="color:var(--sr-oltremare)">{p}</span></div>'
+        for t, p in [('Sito vetrina', '€ 1.900–2.800'), ('Sito aziendale', '€ 3.900–5.800'), ('E-commerce', '€ 7.500–14.000')]
+    )
+    prezzi_local = section(
+        eyebrow('Prezzi chiari, anche qui') +
+        heading(2, f'Quanto costa un sito web a {c["nome"]}', dot_char='?') +
+        raw_html(f'<div class="sr-servizi-rows" style="margin-top:32px">{prezzi_rows}</div>') +
+        paragraph('Prezzo chiuso nel preventivo, PageSpeed 90+ e data di consegna scritti nel contratto. Gli stessi prezzi pubblici, ovunque siate.',
+                   color='grigio', size='base', extra_style='margin-top:24px') +
+        raw_html('<p class="sr-card-link" style="margin-top:12px"><a href="/prezzi/">Confronta tutte le tariffe →</a></p>'),
         classes='sr-section sr-section--bianco',
     )
 
-    recensioni_data = [
-        ('Preventivo chiaro, consegnato il giorno promesso. Il sito carica subito anche in cantiere, dove la rete è quella che è.', 'Marco T. — impresa edile, Sesto S. Giovanni'),
-        ('Ci hanno mostrato i numeri del vecchio sito prima di parlare di soldi. Nessuno l’aveva mai fatto.', f'Elena R. — showroom ceramiche, {c["nome"]}'),
-        ('Versione tedesca impeccabile: i clienti di Monaco ordinano dal sito senza scriverci più per chiedere chiarimenti.', 'Giulia B. — torneria meccanica, Cinisello'),
-    ]
+    if c.get('has_office'):
+        dove = section(
+            raw_html('<div class="sr-dove-siamo">') +
+            raw_html('<div class="sr-dove-siamo__map" aria-hidden="true"></div>') +
+            group(
+                eyebrow('Dove siamo') +
+                paragraph(c['indirizzo'], extra_style='margin-top:12px;font-size:16px') +
+                raw_html(f'<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">{c["metro"]}</p>') +
+                paragraph(c['orari'], color='grigio', size='base', extra_style='margin-top:16px') +
+                raw_html(f'<p class="sr-mono" style="margin-top:6px;font-size:14px">{c["telefono"]}</p>'),
+                classes='sr-card',
+            ) + raw_html('</div>'),
+            classes='sr-section',
+        )
+    else:
+        dove = section(
+            eyebrow(f'Come lavoriamo con {c["nome"]}') +
+            heading(2, 'Vicini quanto serve') +
+            paragraph(c['vicino'], color='grigio', size='medium', extra_style='margin-top:16px;max-width:70ch'),
+            classes='sr-section',
+        )
+
     rec_cards = ''.join(
         f'<div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">★★★★★</p>'
         f'<p style="margin-top:14px;font-size:15.5px;line-height:1.6">«{q}»</p>'
         f'<p class="sr-mono" style="margin-top:16px;font-size:13px;color:var(--sr-grigio)">{a}</p></div>'
-        for q, a in recensioni_data
+        for q, a in c['recensioni']
     )
     recensioni = section(
-        eyebrow(f'Dicono di noi, da {c["nome"]}') + heading(2, 'Recensioni Google verificate') +
+        eyebrow(f'Dicono di noi, da {c["nome"]} e dintorni') + heading(2, 'Recensioni Google verificate') +
         raw_html('<p class="sr-mono" style="margin:16px 0 32px;color:var(--sr-oltremare)">★ 4,9 · 47 recensioni</p>') +
         group(rec_cards, classes='', layout_type='grid', style='260px'),
+        classes='sr-section' + ('' if c.get('has_office') else ' sr-section--bianco'),
+    )
+
+    faq = section(
+        eyebrow('Domande da ' + c['nome']) +
+        details_faq(c['faq']),
         classes='sr-section',
     )
 
     cta = section(
         heading(2, 'Parliamo del vostro progetto') +
-        paragraph('Primo incontro gratuito, da voi o in studio. Preventivo chiuso entro 24 ore.',
+        paragraph('Primo incontro gratuito, da voi in azienda. Preventivo chiuso entro 24 ore.',
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
                  ('WhatsApp Business', 'https://wa.me/390000000000', 'whatsapp')], justify='center', margin_top='28px'),
         classes='sr-section sr-dark',
     )
-    write('citta-milano', 'Pagina — Città: Milano', 'Landing di città (template parametrizzabile per altre città).',
-          hero + servizi + caso + dove + recensioni + cta)
+    write(f'citta-{c["slug"]}', f'Pagina — Città: {c["nome"]}',
+          f'Landing locale «realizzazione siti web {c["nome"].lower()}»: servizi, caso, prezzi, recensioni, FAQ.',
+          hero + servizi + caso + prezzi_local + dove + recensioni + faq + cta)
+
+
+# ---------------------------------------------------------------- Export Ready (линия 2)
+
+def build_export_ready():
+    e = EXPORT_READY
+    hero = hero_interno(e['eyebrow'], e['hero_title'], e['hero_sub'],
+                         extra_html=buttons([
+                             ('Richiedi preventivo in 24 ore', '/#contatti', None),
+                             ('Calcola il ROI della localizzazione', '/strumenti/roi-localizzazione/', 'outline'),
+                         ], margin_top='36px'),
+                         stat=(e['hero_stat_value'], e['hero_stat_label']))
+
+    problema = section(
+        columns([
+            column(eyebrow('Il problema') + heading(2, e['problema_heading']), width='38%'),
+            column(paragraph(e['problema_testo'], size='base', extra_style='font-size:17px'), width='62%'),
+        ]),
+        classes='sr-section',
+    )
+
+    garanzie = section(
+        eyebrow('Garanzie') + heading(2, e['garanzie_heading']) + checklist(e['garanzie']),
+        classes='sr-section sr-section--bianco',
+    )
+
+    formati_cards = ''.join(
+        f'<div class="sr-card"><h3 class="wp-block-heading" style="font-size:22px">{nome}</h3>'
+        f'<p class="sr-mono" style="font-size:24px;color:var(--sr-oltremare);margin-top:12px">{prezzo}</p>'
+        f'<p style="margin-top:14px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">{desc}</p></div>'
+        for nome, prezzo, desc in e['formati']
+    )
+    formati = section(
+        eyebrow('Due formati') + heading(2, 'Un mercato o una strategia') +
+        group(formati_cards, classes='', layout_type='grid', style='320px') +
+        paragraph('Prezzo chiuso nel preventivo, come per tutti i nostri servizi. Fattura elettronica, pagamento in tre tranche.',
+                   color='grigio', size='small', extra_style='margin-top:24px'),
+        classes='sr-section',
+    )
+
+    proc_rows = ''.join(
+        f'<div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">{n}</p>'
+        f'<p style="font-weight:500;margin-top:8px">{t}</p>'
+        f'<p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">{d}</p></div>'
+        for n, t, d in e['processo']
+    )
+    processo = section(
+        eyebrow('Come lavoriamo') + heading(2, 'Quattro passaggi, un contratto') +
+        group(proc_rows, classes='', layout_type='grid', style='240px'),
+        classes='sr-section sr-section--bianco',
+    )
+
+    faq = section(
+        eyebrow('Tre domande tipiche') + details_faq(e['faq']),
+        classes='sr-section',
+    )
+
+    cta = section(
+        heading(2, 'Il vostro prossimo mercato parla un’altra lingua', dot_char='?') +
+        paragraph('Analisi gratuita del sito attuale e del mercato target. Preventivo chiuso entro 24 ore.',
+                   color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None)], justify='center', margin_top='28px'),
+        classes='sr-section sr-dark',
+    )
+    write('servizio-export-ready', 'Pagina — Servizio: Export Ready',
+          'Flagship: sito + versione estera sotto un unico contratto, localizzazione da madrelingua, KPI per mercato.',
+          hero + problema + garanzie + formati + processo + faq + cta)
+
+
+# ---------------------------------------------------------------- Web app (линия 3)
+
+def build_web_app():
+    w = WEB_APP
+    hero = hero_interno(w['eyebrow'], w['hero_title'], w['hero_sub'],
+                         extra_html=buttons([
+                             ('Richiedi preventivo in 24 ore', '/#contatti', None),
+                             ('Vedi i casi studio', '/casi-studio/', 'outline'),
+                         ], margin_top='36px'),
+                         stat=(w['hero_stat_value'], w['hero_stat_label']))
+
+    per_chi = section(
+        columns([
+            column(eyebrow('Per chi è') + heading(2, w['per_chi_heading']), width='38%'),
+            column(list_rows(w['per_chi']), width='62%'),
+        ]),
+        classes='sr-section',
+    )
+
+    formati_cards = ''.join(
+        f'<div class="sr-card"><h3 class="wp-block-heading" style="font-size:22px">{nome}</h3>'
+        f'<p class="sr-mono" style="font-size:24px;color:var(--sr-oltremare);margin-top:12px">{prezzo}</p>'
+        f'<p style="margin-top:14px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">{desc}</p></div>'
+        for nome, prezzo, desc in w['formati']
+    )
+    formati = section(
+        eyebrow('Due formati') + heading(2, 'Perimetro chiuso o crescita per iterazioni') +
+        group(formati_cards, classes='', layout_type='grid', style='320px'),
+        classes='sr-section sr-section--bianco',
+    )
+
+    prove = section(
+        columns([
+            column(eyebrow('Product Lab') + heading(2, w['prove_heading']), width='38%'),
+            column(paragraph(w['prove_testo'], size='base', extra_style='font-size:17px'), width='62%'),
+        ]),
+        classes='sr-section',
+    )
+
+    faq = section(
+        eyebrow('Tre domande tipiche') + details_faq(w['faq']),
+        classes='sr-section sr-section--bianco',
+    )
+
+    cta = section(
+        heading(2, 'Raccontateci il processo da automatizzare') +
+        paragraph('Analisi gratuita e un preventivo chiuso: perimetro, prezzo e data, tutti e tre nel contratto.',
+                   color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None)], justify='center', margin_top='28px'),
+        classes='sr-section sr-dark',
+    )
+    write('servizio-web-app', 'Pagina — Servizio: Web app su misura',
+          'Linea Prodotti digitali: web app, aree clienti, configuratori. MVP Sprint e Product Build.',
+          hero + per_chi + formati + prove + faq + cta)
 
 
 # ---------------------------------------------------------------- Chi siamo / legal
@@ -580,6 +751,8 @@ def main():
     build_servizi_index()
     for svc in SERVICES:
         build_servizio(svc)
+    build_export_ready()
+    build_web_app()
 
     print('Casi studio:')
     build_casi_studio_index()
@@ -596,7 +769,8 @@ def main():
         build_strumento_placeholder(tool)
 
     print('Città:')
-    build_milano()
+    for c in CITIES:
+        build_city(c)
 
     print('Chi siamo e pagine legali:')
     build_chi_siamo()
