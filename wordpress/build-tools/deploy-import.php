@@ -256,15 +256,97 @@ $locations = get_registered_nav_menus();
 if ( empty( $locations ) ) {
 	WP_CLI::warning( '  Il tema Prespa non registra location di menu rilevate — assegnare il menu a mano in Aspetto → Menu.' );
 } else {
+	// Preferisce esplicitamente 'menu-1' (location primaria di Prespa) invece
+	// del primo elemento dell'array: da quando il tema registra anche
+	// footer-pagine/footer-studio, "il primo registrato" non è più affidabile
+	// e dipende dall'ordine di caricamento parent/child.
 	$existing_locations = get_theme_mod( 'nav_menu_locations', array() );
-	$first_location      = array_key_first( $locations );
+	$first_location      = isset( $locations['menu-1'] ) ? 'menu-1' : array_key_first( $locations );
 	$existing_locations[ $first_location ] = $menu_id;
 	set_theme_mod( 'nav_menu_locations', $existing_locations );
 	WP_CLI::log( "  menu assegnato alla location '$first_location' ({$locations[$first_location]})" );
-	if ( count( $locations ) > 1 ) {
-		WP_CLI::log( '  altre location disponibili (assegnare a mano se servono): ' . implode( ', ', array_diff( array_keys( $locations ), array( $first_location ) ) ) );
-	}
 }
+
+/* ---------- 4. Menu del footer proprietario ---------- */
+
+WP_CLI::log( "\nMenu footer:" );
+
+function remarka_deploy_sync_footer_menu( string $menu_name, string $location, array $items, bool $force ): void {
+	$menu = wp_get_nav_menu_object( $menu_name );
+	if ( ! $menu ) {
+		$menu_id = wp_create_nav_menu( $menu_name );
+		WP_CLI::log( "  + menu creato: $menu_name (ID $menu_id)" );
+	} else {
+		$menu_id = $menu->term_id;
+		WP_CLI::log( "  = menu già esistente: $menu_name (ID $menu_id)" );
+		if ( $force ) {
+			foreach ( wp_get_nav_menu_items( $menu_id ) as $item ) {
+				wp_delete_post( $item->ID, true );
+			}
+		}
+	}
+
+	$existing_items  = wp_get_nav_menu_items( $menu_id );
+	$existing_titles = $existing_items ? wp_list_pluck( $existing_items, 'title' ) : array();
+
+	foreach ( $items as $item ) {
+		if ( in_array( $item['title'], $existing_titles, true ) ) {
+			continue;
+		}
+		if ( isset( $item['slug'] ) ) {
+			$page = get_page_by_path( $item['slug'], OBJECT, 'page' );
+			if ( ! $page ) {
+				WP_CLI::warning( "    pagina /{$item['slug']}/ non trovata, voce '{$item['title']}' saltata" );
+				continue;
+			}
+			wp_update_nav_menu_item( $menu_id, 0, array(
+				'menu-item-title'     => $item['title'],
+				'menu-item-object-id' => $page->ID,
+				'menu-item-object'    => 'page',
+				'menu-item-type'      => 'post_type',
+				'menu-item-status'    => 'publish',
+			) );
+		} else {
+			wp_update_nav_menu_item( $menu_id, 0, array(
+				'menu-item-title'  => $item['title'],
+				'menu-item-url'    => $item['url'],
+				'menu-item-type'   => 'custom',
+				'menu-item-status' => 'publish',
+			) );
+		}
+	}
+
+	$existing_locations = get_theme_mod( 'nav_menu_locations', array() );
+	$existing_locations[ $location ] = $menu_id;
+	set_theme_mod( 'nav_menu_locations', $existing_locations );
+	WP_CLI::log( "  voci sincronizzate e menu assegnato alla location '$location'" );
+}
+
+remarka_deploy_sync_footer_menu(
+	'Footer — Pagine',
+	'footer-pagine',
+	array(
+		array( 'title' => 'Servizi', 'slug' => 'servizi' ),
+		array( 'title' => 'Casi studio', 'slug' => 'casi-studio' ),
+		array( 'title' => 'Prezzi', 'slug' => 'prezzi' ),
+		array( 'title' => 'Strumenti gratuiti', 'slug' => 'strumenti' ),
+		array( 'title' => 'Blog', 'slug' => 'blog' ),
+	),
+	$force
+);
+
+remarka_deploy_sync_footer_menu(
+	'Footer — Studio',
+	'footer-studio',
+	array(
+		array( 'title' => 'Siti web a Milano', 'slug' => 'milano' ),
+		array( 'title' => 'Contatti', 'url' => home_url( '/#contatti' ) ),
+		array( 'title' => 'Google Business Profile', 'url' => 'https://business.google.com/' ),
+		array( 'title' => 'Privacy', 'slug' => 'privacy' ),
+		array( 'title' => 'Cookie policy', 'slug' => 'cookie-policy' ),
+	),
+	$force
+);
 
 WP_CLI::log( "\nFatto. Pagine create/verificate: " . count( $created_ids ) . ' + Home.' );
 WP_CLI::log( 'Prossimi passi manuali: logo, numero WhatsApp (Personalizza → Remarka — Contatti), permalink "Nome articolo" (Impostazioni → Permalink, se non già attivo), screenshot reali dei casi studio.' );

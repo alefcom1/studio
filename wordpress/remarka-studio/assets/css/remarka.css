@@ -367,6 +367,7 @@ body.dark-mode .site-description {
 }
 
 .sr-barra--h3 { height: 3px; }
+.sr-barra--h4 { height: 4px; }
 .sr-barra--h6 { height: 6px; }
 .sr-barra--h8 { height: 8px; }
 
@@ -962,88 +963,197 @@ body.dark-mode .site-description {
 .sr-counter { font-variant-numeric: tabular-nums; }
 
 /* ---------- Подвал ----------
-   Prespa рендерит #colophon свою разметку (виджеты + info-строка
-   разработчика темы) со своим фоном через инлайн-стиль блока —
-   перебиваем !important, т.к. инлайн-стиль сильнее внешнего класса. */
+   Родной #colophon Prespa (виджеты-заглушки + подпись разработчика темы)
+   прячем целиком и выводим свой через хук wp_footer (см. functions.php,
+   remarka_render_footer) — так безопаснее, чем переписывать footer.php:
+   не трогаем разметку/JS Prespa (поиск, мобильное меню), от которых
+   не имеем полного исходника. */
 
-#colophon.site-footer,
-.site-footer {
-  background: var(--sr-inchiostro) !important;
-  border-top: none;
-  color: var(--sr-carta);
-  padding: clamp(48px, 6vw, 80px) 24px 24px;
+#colophon.site-footer {
+  display: none !important;
 }
 
-.site-footer .footer-content {
-  max-width: 1240px;
-  margin: 0 auto;
+.sr-footer {
+  background: var(--sr-inchiostro);
+  color: rgba(247, 246, 242, 0.7);
 }
 
-.site-footer .social-icons {
-  display: flex;
-  gap: 16px;
-  padding: 0;
-  margin: 0 0 40px;
-  list-style: none;
-}
-
-.site-footer .social-icons a {
-  color: var(--sr-carta);
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-}
-
-.site-footer .social-icons a:hover {
-  opacity: 1;
-}
-
-.site-footer .widget-area {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px 64px;
-  padding-bottom: 32px;
+.sr-footer-cta {
   border-bottom: 1px solid rgba(247, 246, 242, 0.14);
 }
 
-.site-footer .widget-area .wp-block-heading {
-  font-family: var(--sr-font-display);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--sr-carta);
-  margin: 0 0 12px;
+.sr-footer-cta__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 80px) 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.site-footer .widget-area ul {
+.sr-footer-cta__heading {
+  color: var(--sr-carta);
+  font-size: clamp(28px, 3.6vw, 42px);
+  margin: 0;
+}
+
+.sr-footer-cta__heading .sr-accent-dot {
+  color: var(--sr-oltremare-chiaro);
+}
+
+.sr-footer-cta__text {
+  margin: 12px 0 0;
+  max-width: 46ch;
+}
+
+.sr-footer-cta__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.sr-footer-cta__btn {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: var(--sr-radius);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.sr-footer-cta__btn--primary {
+  background: var(--sr-oltremare-chiaro);
+  color: var(--sr-carta);
+}
+
+.sr-footer-cta__btn--primary:hover {
+  background: var(--sr-oltremare);
+}
+
+.sr-footer-cta__btn--outline {
+  border: 1px solid rgba(247, 246, 242, 0.35);
+  color: var(--sr-carta);
+}
+
+.sr-footer-cta__btn--outline:hover {
+  border-color: var(--sr-oltremare-chiaro);
+  color: var(--sr-oltremare-chiaro);
+}
+
+.sr-footer-main__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 64px) 24px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+.sr-footer-col__title {
+  font-family: var(--sr-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9BA3C4;
+  margin: 0 0 16px;
+}
+
+.sr-footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.sr-footer-logo img {
+  height: 26px;
+  width: auto;
+}
+
+.sr-footer-logo span {
+  font-family: var(--sr-font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--sr-carta);
+}
+
+.sr-footer-col--brand p {
+  margin: 0;
+  max-width: 32ch;
+}
+
+.sr-footer-links {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
-.site-footer a {
-  color: var(--sr-traccia);
+.sr-footer-company {
+  margin: 0 0 10px;
 }
 
-.site-footer a:hover {
+.sr-footer-company strong {
+  color: var(--sr-carta);
+}
+
+.sr-footer-col p {
+  margin: 0 0 8px;
+}
+
+.sr-footer a {
+  color: rgba(247, 246, 242, 0.7);
+  text-decoration: none;
+}
+
+.sr-footer a:hover {
   color: var(--sr-oltremare-chiaro);
 }
 
-/* Строка «Спроектировано Nasio Themes / При поддержке WordPress» —
-   брендинг разработчика родительской темы, на клиентском сайте не нужен. */
-.site-footer .site-info {
-  display: none;
+.sr-footer-bottom {
+  border-top: 1px solid rgba(247, 246, 242, 0.14);
+}
+
+.sr-footer-bottom__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px 24px 28px;
+}
+
+.sr-footer-bottom .sr-barra {
+  background: rgba(247, 246, 242, 0.14);
+  margin-bottom: 16px;
+}
+
+.sr-footer-bottom__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+
+@media (max-width: 782px) {
+  .sr-footer-main__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sr-footer-col--brand {
+    grid-column: 1 / -1;
+  }
 }
 
 .sr-footer-score {
   font-family: var(--sr-font-mono);
   font-size: 12px;
-  color: var(--sr-grigio);
+  color: rgba(247, 246, 242, 0.7);
 }
 
 .sr-footer-score b {
-  color: var(--sr-verde);
+  color: var(--sr-oltremare-chiaro);
   font-weight: 400;
 }
 
