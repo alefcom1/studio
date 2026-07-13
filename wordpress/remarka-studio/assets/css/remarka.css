@@ -30,6 +30,39 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ---------- Тёмный режим Prespa: отключаем ----------
+   Бренд Studio Remarka — фиксированная светлая палитра (см.
+   docs/concept-sviluppo-studio.md, «сдержанность: не больше двух фонов»).
+   Родительский переключатель .dark-mode-widget красит теговые
+   селекторы (h1-h6 и т.д.) в белый, но НЕ трогает наши фоны
+   (--sr-carta/--sr-bianco — отдельные токены темы), поэтому при
+   включении получается белый текст на светлом фоне — нечитаемо.
+   Прячем кнопку и подстраховываемся на случай, если класс уже
+   сохранён в localStorage браузера у вернувшегося посетителя. */
+.dark-mode-widget,
+.dark-mode-menu-item {
+  display: none !important;
+}
+
+body.dark-mode {
+  background: var(--sr-carta) !important;
+  color: var(--sr-inchiostro) !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode .wp-block-heading,
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode .site-title a,
+body.dark-mode .site-description {
+  color: var(--sr-inchiostro) !important;
+}
+
 :focus-visible {
   outline: 2px solid var(--sr-oltremare);
   outline-offset: 2px;
@@ -456,6 +489,9 @@ body {
 .sr-browser img {
   display: block;
   width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: var(--sr-traccia);
 }
 
 /* ---------- Таблица цен ---------- */
