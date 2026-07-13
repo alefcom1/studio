@@ -54,6 +54,26 @@ def hero_interno(eyebrow_text, title, sub, extra_html='', stat=None):
 
 # ---------------------------------------------------------------- Servizio
 
+def build_servizi_index():
+    hero = section(eyebrow('Servizi') + heading(1, 'Sei cose che sappiamo fare bene', style='clamp(38px,4.6vw,64px)') +
+                    paragraph('Ogni servizio nasce con lo stesso obiettivo: PageSpeed 90+ da contratto, prezzo chiuso, data fissa.',
+                               color='grigio', size='medium'),
+                    classes='sr-section sr-hero')
+
+    cards = []
+    for svc in SERVICES:
+        card = (
+            heading(3, svc['title'], accent_dot=False) +
+            paragraph(svc['hero_sub'], color='grigio', size='small') +
+            raw_html(f'<p class="sr-card-link" style="margin-top:16px"><a href="/servizi/{svc["slug"]}/">Scopri →</a></p>')
+        )
+        cards.append(group(card, classes='sr-card'))
+
+    grid = section(group(''.join(cards), classes='', layout_type='grid', style='300px'), classes='sr-section')
+    write('servizi-index', 'Pagina — Servizi (elenco)', 'Elenco dei sei servizi con link alle pagine dettaglio.',
+          hero + grid)
+
+
 def build_servizio(svc):
     hero = hero_interno(svc['breadcrumb'], svc['title'], svc['hero_sub'],
                          extra_html=buttons([
@@ -352,6 +372,42 @@ def build_strumento_test_velocita():
           hero + widget_section + cta + altri_section)
 
 
+def build_strumento_placeholder(tool):
+    """Le altre 3 card di /strumenti/ rimandano a pagine reali anche prima che
+    lo strumento sia implementato — placeholder onesto invece di link rotti."""
+    hero = section(
+        eyebrow(f'Strumento gratuito {tool["idx"]}') + heading(1, tool['hero_titolo'], style='clamp(34px,4vw,52px)') +
+        paragraph(tool['hero_sub'], color='grigio', size='medium', extra_style='max-width:100%'),
+        classes='sr-section sr-hero',
+    )
+
+    placeholder = group(
+        eyebrow('In arrivo') +
+        paragraph('Questo strumento è in fase di sviluppo. Nel frattempo richiedete un’analisi gratuita: vi rispondiamo entro un giorno lavorativo.',
+                   size='medium') +
+        buttons([('Richiedi analisi gratuita', '/#contatti', None)], margin_top='20px'),
+        classes='sr-card',
+    )
+    placeholder_section = section(raw_html('<div style="text-align:center;max-width:640px;margin:0 auto">') + placeholder + raw_html('</div>'),
+                                   classes='sr-section')
+
+    altri = [t for t in TOOLS if t['slug'] != tool['slug']]
+    rows = ''.join(
+        f'<div><span class="sr-mono" style="color:var(--sr-oltremare)">{o["idx"]}</span>'
+        f'<a href="/strumenti/{o["slug"]}/" style="color:var(--sr-inchiostro);font-size:15.5px">{o["titolo"]}</a>'
+        f'<span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div>'
+        for o in altri
+    )
+    altri_section = section(
+        eyebrow('Gli altri strumenti gratuiti') + raw_html(f'<div class="sr-servizi-rows">{rows}</div>'),
+        classes='sr-section sr-section--bianco',
+    )
+
+    write(f'strumento-{tool["slug"]}', f'Pagina — Strumento: {tool["titolo"]}',
+          f'Placeholder onesto per lo strumento {tool["titolo"]} (non ancora implementato).',
+          hero + placeholder_section + altri_section)
+
+
 # ---------------------------------------------------------------- Milano
 
 def build_milano():
@@ -490,7 +546,8 @@ def build_blog_post(p):
 
 
 def main():
-    print('Servizio ×6:')
+    print('Servizi:')
+    build_servizi_index()
     for svc in SERVICES:
         build_servizio(svc)
 
@@ -505,6 +562,8 @@ def main():
     print('Strumenti:')
     build_strumenti_index()
     build_strumento_test_velocita()
+    for tool in TOOLS[1:]:
+        build_strumento_placeholder(tool)
 
     print('Città:')
     build_milano()
