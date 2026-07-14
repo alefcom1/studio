@@ -32,7 +32,7 @@
 
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Quanto tempo ci vuole?</summary><!-- wp:paragraph -->
-<p>Da 3 settimane per un sito vetrina a 10 per un e-commerce. La data di consegna è scritta nel contratto: ogni giorno lavorativo di ritardo vale l’1% di sconto.</p>
+<p>Un sito vetrina è online in 2 settimane, un sito aziendale in 3, un e-commerce in 6. La data di consegna è scritta nel contratto: ogni giorno lavorativo di ritardo vale l’1% di sconto.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 

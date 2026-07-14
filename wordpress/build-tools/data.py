@@ -42,7 +42,7 @@ SERVICES = [
             caption='GOOGLE PAGESPEED, MOBILE — RILEVAZIONI DOCUMENTATE',
         ),
         prezzo_range='€ 3.900–5.800',
-        prezzo_lede='Prezzo chiuso nel preventivo, consegna in 5–7 settimane. Fattura elettronica, pagamento in tre tranche.',
+        prezzo_lede='Prezzo chiuso nel preventivo, consegna in 3 settimane. Fattura elettronica, pagamento in tre tranche.',
         prezzo_note=[
             'Numero di pagine e schede prodotto oltre le 15 incluse.',
             'Lingue aggiuntive oltre le due comprese.',
@@ -84,7 +84,7 @@ SERVICES = [
             caption='GOOGLE PAGESPEED, MOBILE — RILEVAZIONI DOCUMENTATE',
         ),
         prezzo_range='€ 7.500–14.000',
-        prezzo_lede='Prezzo chiuso nel preventivo, consegna in 8–10 settimane. Fattura elettronica, pagamento in tre tranche.',
+        prezzo_lede='Prezzo chiuso nel preventivo, consegna in 6 settimane. Fattura elettronica, pagamento in tre tranche.',
         prezzo_note=[
             'Numero di prodotti e varianti oltre il catalogo base.',
             'Integrazioni con corrieri e magazzino esterno.',

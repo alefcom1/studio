@@ -1,5 +1,23 @@
 # Фаза A — перепозиционирование IT + EN: план реализации для агентов
 
+## Статус выполнения
+
+Ветка `claude/new-project-prep-zhmkg5`. Все этапы 1–4 выполнены 14.07.2026.
+
+| Этап | Состав | Коммиты |
+|---|---|---|
+| 1. Копирайт (WP-1) | Финальные тексты IT/EN всех новых/изменяемых блоков → `docs/copy-fase-A.md` | `38ee7b4` (план), `cdf6f39` (copy deck) |
+| 2. Реализация (WP-3…WP-6) | CSS-компоненты, IT-паттерны главной (hero-таймлайн, 4-я гарантия, tre-numeri, week-chips, Lingue e mercati), страница `/prezzi/` с таблицей noi-vs-mercato, полное EN-зеркало | `284e69d` (IT-главная), `c280fc3` (prezzi + EN-зеркало) |
+| 3. Сквозные тесты (WP-7) | `php -l`/CSS/JS-проверки всех изменённых файлов, Playwright-скрины IT/EN главной и prezzi (1440/800/390), регрессия 3-шаговой формы заявки, сквозные грепы на противоречия сроков | этот коммит (consistency pass) |
+| 4. Документация (WP-8) | Статус в `strategia-riposizionamento.md` и `piano-contenuti-seo.md`, устранение найденных противоречий контента (FAQ IT/EN, `consegna in` для siti-aziendali/e-commerce, US-формат цифр в EN FAQ) | этот коммит (consistency pass) |
+
+Итог этапа 3 (устранение противоречий): FAQ (`patterns/faq.php`, `patterns/lang-en/faq.php`) и сервисные
+страницы `siti-aziendali`/`e-commerce` приведены к контрактным срокам 2/3/6 недель; диапазоны PWA (5–8),
+restyling (2–4), SEO tecnica (3–5), multilingue (4–6) и web-app (6–10) **сознательно не тронуты** —
+решение владельца по ним ещё не принято.
+
+---
+
 > Дата: 14.07.2026. Основание: `strategia-riposizionamento.md` (решения Д-1…Д-5),
 > ответы владельца: сроки **подтверждены** (vetrina 2 нед. / aziendale 3 нед. /
 > e-commerce 6 нед., с неустойкой), таблица «noi vs mercato» — **публикуем**,

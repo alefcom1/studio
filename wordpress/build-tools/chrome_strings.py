@@ -244,6 +244,10 @@ CHROME_EXTRA = {
     'Forbici di mercato dai listini pubblici delle web agency italiane, 2026. Analisi completa con le fonti nel nostro blog:': {
         'en': 'Market ranges from the public price lists of Italian web agencies, 2026. Full breakdown with sources on our blog:'},
     '«Quanto costa un sito aziendale in Italia»': {'en': '“How much a business website costs in Italy”'},
+    'Prezzo chiuso nel preventivo, consegna in 3 settimane. Fattura elettronica, pagamento in tre tranche.': {
+        'en': 'Fixed price locked in the quote, delivery in 3 weeks. E-invoicing, payment in three installments.'},
+    'Prezzo chiuso nel preventivo, consegna in 6 settimane. Fattura elettronica, pagamento in tre tranche.': {
+        'en': 'Fixed price locked in the quote, delivery in 6 weeks. E-invoicing, payment in three installments.'},
     # --- Fase A: residui italiani pre-esistenti in chi-siamo (report translate_pages en);
     #     valori identici alla versione EN già committata per evitare regressioni. EN only. ---
     'La nostra sede, in centro a Milano': {'en': 'Our office, in central Milan'},
