@@ -489,6 +489,28 @@ function remarka_render_footer(): void {
 add_action( 'wp_footer', 'remarka_render_footer', 5 );
 
 /**
+ * Yandex.Metrika: счётчик в футере всех страниц сайта.
+ */
+function remarka_yandex_metrika(): void {
+	?>
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+		(function(m,e,t,r,i,k,a){
+			m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();
+			for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+			k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+		})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110723466', 'ym');
+
+		ym(110723466, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/110723466" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+	<?php
+}
+add_action( 'wp_footer', 'remarka_yandex_metrika' );
+
+/**
  * Класс автоматически на пункт меню «Preventivo…»: владельцу не нужно
  * вручную ставить CSS-класс sr-menu-cta в настройках меню (см. #masthead
  * .sr-menu-cta > a в remarka.css).
