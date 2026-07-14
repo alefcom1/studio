@@ -30,7 +30,7 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
-<div class="sr-compare-table"><table><thead><tr><th></th><th>Sito vetrina<br><span>€ 1.900–2.800</span></th><th>Sito aziendale<br><span>€ 3.900–5.800</span></th><th>E-commerce<br><span>€ 7.500–14.000</span></th></tr></thead><tbody><tr><td>Pagine incluse</td><td>5</td><td>15</td><td>Catalogo</td></tr><tr><td>Lingue tradotte da madrelingua</td><td>1</td><td>2</td><td>2</td></tr><tr><td>Design su misura, senza template</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>CMS per aggiornarlo da soli</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>PWA: offline e installabile</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Catalogo, carrello e pagamenti</td><td><span class="sr-no">—</span></td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>SEO tecnica e dati strutturati</td><td>base</td><td>completa</td><td>completa</td></tr><tr><td>PageSpeed 90+ da contratto</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Assistenza inclusa</td><td>12 mesi</td><td>12 mesi</td><td>12 mesi</td></tr><tr><td>Consegna</td><td>3 sett.</td><td>5–7 sett.</td><td>8–10 sett.</td></tr></tbody></table></div>
+<div class="sr-compare-table"><table><thead><tr><th></th><th>Sito vetrina<br><span>€ 1.900–2.800</span></th><th>Sito aziendale<br><span>€ 3.900–5.800</span></th><th>E-commerce<br><span>€ 7.500–14.000</span></th></tr></thead><tbody><tr><td>Pagine incluse</td><td>5</td><td>15</td><td>Catalogo</td></tr><tr><td>Lingue tradotte da madrelingua</td><td>1</td><td>2</td><td>2</td></tr><tr><td>Design su misura, senza template</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>CMS per aggiornarlo da soli</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>PWA: offline e installabile</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Catalogo, carrello e pagamenti</td><td><span class="sr-no">—</span></td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>SEO tecnica e dati strutturati</td><td>base</td><td>completa</td><td>completa</td></tr><tr><td>PageSpeed 90+ da contratto</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Assistenza inclusa</td><td>12 mesi</td><td>12 mesi</td><td>12 mesi</td></tr><tr><td>Consegna</td><td>2 sett.</td><td>3 sett.</td><td>6 sett.</td></tr></tbody></table></div>
 <!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
 <p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:28px;max-width:70ch">Per confronto: le agenzie italiane chiedono in media € 2.500–8.000 per un sito aziendale e € 5.000–20.000 per un e-commerce (listini pubblici 2026). Siamo nella stessa fascia — con tre garanzie scritte nel contratto che altrove non trovate.</p>
@@ -44,6 +44,21 @@
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:heading -->
+<h2 class="wp-block-heading">Prezzi e tempi, accanto a quelli di mercato<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px;max-width:70ch">Le forbici di mercato vengono dai listini pubblici delle web agency italiane (2026). Le nostre cifre sono quelle del contratto.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<div class="sr-market-table" style="margin-top:40px"><table><thead><tr><th>Prodotto</th><th>Prezzo di mercato</th><th class="sr-market-table__uscol">Prezzo Remarka</th><th>Tempi di mercato</th><th class="sr-market-table__uscol">Tempi Remarka</th></tr></thead><tbody><tr><td class="sr-market-table__prod">Sito vetrina</td><td>€ 1.000–3.000</td><td class="sr-market-table__us">€ 1.900–2.800</td><td>2–4 settimane</td><td class="sr-market-table__us">2 settimane</td></tr><tr><td class="sr-market-table__prod">Sito aziendale</td><td>€ 2.500–8.000</td><td class="sr-market-table__us">€ 3.900–5.800</td><td>6–10 settimane</td><td class="sr-market-table__us">3 settimane</td></tr><tr><td class="sr-market-table__prod">E-commerce</td><td>€ 6.000–25.000</td><td class="sr-market-table__us">€ 7.500–14.000</td><td>8–14 settimane</td><td class="sr-market-table__us">6 settimane</td></tr></tbody></table></div>
+<!-- /wp:html -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size" style="margin-top:20px">Forbici di mercato dai listini pubblici delle web agency italiane, 2026. Analisi completa con le fonti nel nostro blog: <a href="/blog/quanto-costa-sito-aziendale-italia/">«Quanto costa un sito aziendale in Italia»</a>.</p>
+<!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->

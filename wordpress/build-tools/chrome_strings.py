@@ -223,6 +223,33 @@ CHROME_EXTRA = {
     '3 sett.': {'en': '3 wks', 'ru': '3 нед.'},
     '5–7 sett.': {'en': '5–7 wks', 'ru': '5–7 нед.'},
     '8–10 sett.': {'en': '8–10 wks', 'ru': '8–10 нед.'},
+    # --- Fase A: prezzi (compare-table delivery + market-table). EN only (RU → fase B). ---
+    '2 sett.': {'en': '2 wks'},
+    '6 sett.': {'en': '6 wks'},
+    'PageSpeed 90+ da contratto': {'en': 'PageSpeed 90+ by contract'},
+    'Prezzi e tempi, accanto a quelli di mercato': {'en': 'Prices and timelines, next to the market’s'},
+    'Le forbici di mercato vengono dai listini pubblici delle web agency italiane (2026). Le nostre cifre sono quelle del contratto.': {
+        'en': 'The market ranges come from the public price lists of Italian web agencies (2026). Our figures are the ones in the contract.'},
+    'Prodotto': {'en': 'Product'},
+    'Prezzo di mercato': {'en': 'Market price'},
+    'Prezzo Remarka': {'en': 'Remarka price'},
+    'Tempi di mercato': {'en': 'Market timeline'},
+    'Tempi Remarka': {'en': 'Remarka timeline'},
+    '2–4 settimane': {'en': '2–4 weeks'},
+    '6–10 settimane': {'en': '6–10 weeks'},
+    '8–14 settimane': {'en': '8–14 weeks'},
+    '2 settimane': {'en': '2 weeks'},
+    '3 settimane': {'en': '3 weeks'},
+    '6 settimane': {'en': '6 weeks'},
+    'Forbici di mercato dai listini pubblici delle web agency italiane, 2026. Analisi completa con le fonti nel nostro blog:': {
+        'en': 'Market ranges from the public price lists of Italian web agencies, 2026. Full breakdown with sources on our blog:'},
+    '«Quanto costa un sito aziendale in Italia»': {'en': '“How much a business website costs in Italy”'},
+    # --- Fase A: residui italiani pre-esistenti in chi-siamo (report translate_pages en);
+    #     valori identici alla versione EN già committata per evitare regressioni. EN only. ---
+    'La nostra sede, in centro a Milano': {'en': 'Our office, in central Milan'},
+    'La sede di Studio Remarka in centro a Milano': {'en': "Studio Remarka's office in central Milan"},
+    'Lo spazio di lavoro dello studio': {'en': 'The studio workspace'},
+    'Ingresso dello studio, civico 12': {'en': 'Studio entrance, number 12'},
     'Altri casi studio →': {'en': 'More case studies →', 'ru': 'Другие кейсы →'},
     'Appunti tecnici, in italiano': {'en': 'Technical notes, in plain language', 'ru': 'Технические заметки, понятным языком'},
     'Arredo su misura · Lissone (MB) · Restyling + PWA + SEO': {

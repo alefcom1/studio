@@ -3,7 +3,7 @@
  * Title: Guarantees — dark section
  * Slug: remarka-studio/en-garanzie-dark
  * Categories: remarka
- * Description: “In black and white”: three contractual guarantees on a dark background.
+ * Description: “In black and white”: four contractual guarantees on a dark background.
  * Viewport Width: 1400
  */
 ?>
@@ -17,11 +17,11 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"medium"} -->
-<p class="has-medium-font-size">Three clauses from our standard contract. Not sales promises: signed obligations.</p>
+<p class="has-medium-font-size">Four clauses from our standard contract. Not marketing promises: signed obligations.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:columns {"className":"sr-cascade","style":{"spacing":{"blockGap":{"left":"32px"},"margin":{"top":"64px"}}}} -->
-<div class="wp-block-columns sr-cascade" style="margin-top:64px"><!-- wp:column {"className":"sr-stat"} -->
+<!-- wp:columns {"className":"sr-cascade sr-garanzie__tiles","style":{"spacing":{"blockGap":{"left":"32px"},"margin":{"top":"64px"}}}} -->
+<div class="wp-block-columns sr-cascade sr-garanzie__tiles" style="margin-top:64px"><!-- wp:column {"className":"sr-stat"} -->
 <div class="wp-block-column sr-stat"><!-- wp:paragraph {"className":"sr-stat__num sr-no-margin"} -->
 <p class="sr-stat__num sr-no-margin">90+</p>
 <!-- /wp:paragraph -->
@@ -51,6 +51,20 @@
 
 <!-- wp:column {"className":"sr-stat"} -->
 <div class="wp-block-column sr-stat"><!-- wp:paragraph {"className":"sr-stat__num sr-no-margin"} -->
+<p class="sr-stat__num sr-no-margin">€ 0</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontWeight":"500"},"spacing":{"margin":{"top":"16px"}}},"textColor":"carta"} -->
+<p class="has-carta-color has-text-color" style="margin-top:16px;font-weight:500">Invoice surprises</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"small"} -->
+<p class="has-small-font-size">The signed price is the final price. Any extra is agreed in writing first — or it’s on us.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"className":"sr-stat"} -->
+<div class="wp-block-column sr-stat"><!-- wp:paragraph {"className":"sr-stat__num sr-no-margin"} -->
 <p class="sr-stat__num sr-no-margin">12 months</p>
 <!-- /wp:paragraph -->
 
@@ -65,6 +79,6 @@
 <!-- /wp:columns -->
 
 <!-- wp:paragraph {"className":"sr-eyebrow","style":{"spacing":{"margin":{"top":"56px"}}}} -->
-<p class="sr-eyebrow" style="margin-top:56px">Excerpt from clauses 4–6 of our standard contract — copy available on request</p>
+<p class="sr-eyebrow" style="margin-top:56px">Excerpt from arts. 4–7 of the standard contract — copy on request</p>
 <!-- /wp:paragraph --></section>
 <!-- /wp:group -->

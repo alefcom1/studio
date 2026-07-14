@@ -289,7 +289,7 @@ def build_prezzi():
         ('SEO tecnica e dati strutturati', ['base', 'completa', 'completa']),
         ('PageSpeed 90+ da contratto', [True, True, True]),
         ('Assistenza inclusa', ['12 mesi', '12 mesi', '12 mesi']),
-        ('Consegna', ['3 sett.', '5–7 sett.', '8–10 sett.']),
+        ('Consegna', ['2 sett.', '3 sett.', '6 sett.']),
     ]
     thead = '<tr>' + ''.join(f'<th>{h}</th>' for h in headers) + '</tr>'
     tbody = ''.join(compare_table_row(label, vals) for label, vals in rows_data)
@@ -304,6 +304,35 @@ def build_prezzi():
         paragraph('Fattura elettronica via SDI. Pagamento in tre tranche: 40 / 40 / 20.', color='grigio', size='small',
                    extra_style='margin-top:16px') +
         buttons([('Richiedi preventivo dettagliato', '/#contatti', None)], margin_top='20px'),
+        classes='sr-section',
+    )
+
+    market_rows = [
+        ('Sito vetrina', '€ 1.000–3.000', '€ 1.900–2.800', '2–4 settimane', '2 settimane'),
+        ('Sito aziendale', '€ 2.500–8.000', '€ 3.900–5.800', '6–10 settimane', '3 settimane'),
+        ('E-commerce', '€ 6.000–25.000', '€ 7.500–14.000', '8–14 settimane', '6 settimane'),
+    ]
+    market_thead = ('<tr><th>Prodotto</th><th>Prezzo di mercato</th>'
+                    '<th class="sr-market-table__uscol">Prezzo Remarka</th>'
+                    '<th>Tempi di mercato</th>'
+                    '<th class="sr-market-table__uscol">Tempi Remarka</th></tr>')
+    market_tbody = ''.join(
+        f'<tr><td class="sr-market-table__prod">{prod}</td>'
+        f'<td>{mprice}</td><td class="sr-market-table__us">{rprice}</td>'
+        f'<td>{mtime}</td><td class="sr-market-table__us">{rtime}</td></tr>'
+        for prod, mprice, rprice, mtime, rtime in market_rows
+    )
+    market = section(
+        heading(2, 'Prezzi e tempi, accanto a quelli di mercato') +
+        paragraph('Le forbici di mercato vengono dai listini pubblici delle web agency italiane (2026). '
+                   'Le nostre cifre sono quelle del contratto.',
+                   color='grigio', size='medium', extra_style='margin-top:12px;max-width:70ch') +
+        raw_html(f'<div class="sr-market-table" style="margin-top:40px"><table><thead>{market_thead}</thead>'
+                 f'<tbody>{market_tbody}</tbody></table></div>') +
+        paragraph('Forbici di mercato dai listini pubblici delle web agency italiane, 2026. '
+                   'Analisi completa con le fonti nel nostro blog: '
+                   '<a href="/blog/quanto-costa-sito-aziendale-italia/">«Quanto costa un sito aziendale in Italia»</a>.',
+                   color='grigio', size='small', extra_style='margin-top:20px'),
         classes='sr-section',
     )
 
@@ -328,7 +357,7 @@ def build_prezzi():
     )
     write('prezzi', 'Pagina — Prezzi (completa)',
           'Pagina prezzi con tabella comparativa completa (min-width 840px, scroll orizzontale su mobile).',
-          hero + table_section + variazioni + cta)
+          hero + table_section + market + variazioni + cta)
 
 
 # ---------------------------------------------------------------- Strumenti

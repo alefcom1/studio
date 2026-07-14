@@ -1,31 +1,54 @@
 <?php
 /**
- * Title: Pricing — teaser table
+ * Title: Pricing — teaser table market vs Remarka
  * Slug: remarka-studio/en-prezzi-teaser
  * Categories: remarka
- * Description: Table with three plans, a note on the fixed price and a CTA.
+ * Description: Compact market/Remarka table (price+timeline), a note on the fixed price and a CTA.
  * Viewport Width: 1400
  */
 ?>
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Pricing</p>
+<p class="sr-eyebrow">Prices</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Transparent pricing. No surprises along the way<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Prices and timelines, next to the market<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 
-<!-- wp:group {"className":"sr-price-table","style":{"spacing":{"margin":{"top":"56px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group sr-price-table" style="margin-top:56px"><!-- wp:table -->
-<figure class="wp-block-table"><table><thead><tr><th>Plan</th><th>Who it’s for</th><th>Timeline</th><th>Price</th></tr></thead><tbody><tr><td>Brochure site</td><td>A professional presence: five pages, one language, contact form.</td><td>3 wks</td><td>€ 1.900–2.800</td></tr><tr><td>Corporate site</td><td>Fifteen pages, two languages, CMS and full technical SEO.</td><td>5–7 wks</td><td>€ 3.900–5.800</td></tr><tr><td>E-commerce</td><td>Catalog, payments, integrated e-invoicing.</td><td>8–10 wks</td><td>€ 7.500–14.000</td></tr></tbody></table></figure>
-<!-- /wp:table --></div>
+<!-- wp:group {"className":"sr-market-table sr-market-table--compact","style":{"spacing":{"margin":{"top":"48px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-market-table sr-market-table--compact" style="margin-top:48px"><!-- wp:html -->
+<table>
+<thead><tr>
+<th>Product</th>
+<th>Market</th>
+<th class="sr-market-table__uscol">Remarka</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="sr-market-table__prod">Brochure site</td>
+<td>€ 1,000–3,000<span class="sr-market-table__sub">2–4 wks</span></td>
+<td class="sr-market-table__us">€ 1,900–2,800<span class="sr-market-table__sub">2 wks</span></td>
+</tr>
+<tr>
+<td class="sr-market-table__prod">Business website</td>
+<td>€ 2,500–8,000<span class="sr-market-table__sub">6–10 wks</span></td>
+<td class="sr-market-table__us">€ 3,900–5,800<span class="sr-market-table__sub">3 wks</span></td>
+</tr>
+<tr>
+<td class="sr-market-table__prod">E-commerce</td>
+<td>€ 6,000–25,000<span class="sr-market-table__sub">8–14 wks</span></td>
+<td class="sr-market-table__us">€ 7,500–14,000<span class="sr-market-table__sub">6 wks</span></td>
+</tr>
+</tbody>
+</table>
+<!-- /wp:html --></div>
 <!-- /wp:group -->
 
 <!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"margin":{"top":"28px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center" style="margin-top:28px"><!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%"><!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">The quote is a fixed price: what you sign is what you pay.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Remarka prices are fixed: what you sign is what you pay.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
