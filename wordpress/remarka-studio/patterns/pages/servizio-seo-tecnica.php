@@ -120,7 +120,7 @@
 <div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">€ 1.800–3.500</div>
 <!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:14px;max-width:60ch">Prezzo chiuso nel preventivo, consegna in 3–5 settimane. Fattura elettronica, pagamento in tre tranche.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:14px;max-width:60ch">Prezzo chiuso nel preventivo, consegna in 3 settimane. Fattura elettronica, pagamento in tre tranche.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p style="margin-top:28px;font-weight:500;font-size:16px">Cosa fa variare il prezzo</p>

@@ -248,6 +248,14 @@ CHROME_EXTRA = {
         'en': 'Fixed price locked in the quote, delivery in 3 weeks. E-invoicing, payment in three installments.'},
     'Prezzo chiuso nel preventivo, consegna in 6 settimane. Fattura elettronica, pagamento in tre tranche.': {
         'en': 'Fixed price locked in the quote, delivery in 6 weeks. E-invoicing, payment in three installments.'},
+    # --- Fase A: tightened delivery timelines (PWA, restyling, technical SEO,
+    #     multilingual, web app). EN only (RU → fase B). ---
+    'Prezzo chiuso nel preventivo, consegna in 4 settimane. Fattura elettronica, pagamento in tre tranche.': {
+        'en': 'Fixed price locked in the quote, delivery in 4 weeks. E-invoicing, payment in three installments.'},
+    'In media 3 settimane, con un ambiente di prova visibile fin dalla prima settimana.': {
+        'en': 'On average 3 weeks, with a staging environment you can see from the first week.'},
+    'Perimetro chiuso, prezzo chiuso, data fissa: la prima versione funzionante del prodotto in 6–8 settimane, pronta per utenti reali.': {
+        'en': 'Fixed scope, fixed price, fixed date: the first working version of your product in 6–8 weeks, ready for real users.'},
     # --- Fase A: residui italiani pre-esistenti in chi-siamo (report translate_pages en);
     #     valori identici alla versione EN già committata per evitare regressioni. EN only. ---
     'La nostra sede, in centro a Milano': {'en': 'Our office, in central Milan'},

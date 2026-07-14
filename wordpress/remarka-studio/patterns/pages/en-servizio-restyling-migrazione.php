@@ -120,7 +120,7 @@
 <div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">€ 2,900–4,800</div>
 <!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:14px;max-width:60ch">Fixed price locked in the quote, delivery in 2–4 weeks. E-invoicing, payment in three installments.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:14px;max-width:60ch">Fixed price locked in the quote, delivery in 3 weeks. E-invoicing, payment in three installments.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p style="margin-top:28px;font-weight:500;font-size:16px">What changes the price</p>
@@ -145,7 +145,7 @@
 <div style="border-top:1px solid var(--sr-inchiostro);padding-top:20px"><h3 class="wp-block-heading" style="font-size:18px">Do I have to rewrite my content?</h3><p style="margin-top:10px;font-size:15px;color:var(--sr-grigio)">No, the technical rebuild keeps your existing content; we update it only on request.</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div style="border-top:1px solid var(--sr-inchiostro);padding-top:20px"><h3 class="wp-block-heading" style="font-size:18px">How long does the migration take?</h3><p style="margin-top:10px;font-size:15px;color:var(--sr-grigio)">On average 2–4 weeks, with a staging environment you can see from the first week.</p></div>
+<div style="border-top:1px solid var(--sr-inchiostro);padding-top:20px"><h3 class="wp-block-heading" style="font-size:18px">How long does the migration take?</h3><p style="margin-top:10px;font-size:15px;color:var(--sr-grigio)">On average 3 weeks, with a staging environment you can see from the first week.</p></div>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

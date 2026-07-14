@@ -120,7 +120,7 @@
 <div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">€ 2.900–4.800</div>
 <!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:14px;max-width:60ch">Prezzo chiuso nel preventivo, consegna in 2–4 settimane. Fattura elettronica, pagamento in tre tranche.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:14px;max-width:60ch">Prezzo chiuso nel preventivo, consegna in 3 settimane. Fattura elettronica, pagamento in tre tranche.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p style="margin-top:28px;font-weight:500;font-size:16px">Cosa fa variare il prezzo</p>
@@ -145,7 +145,7 @@
 <div style="border-top:1px solid var(--sr-inchiostro);padding-top:20px"><h3 class="wp-block-heading" style="font-size:18px">Devo riscrivere i contenuti?</h3><p style="margin-top:10px;font-size:15px;color:var(--sr-grigio)">No, il restyling tecnico mantiene i contenuti esistenti; li aggiorniamo solo su richiesta.</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div style="border-top:1px solid var(--sr-inchiostro);padding-top:20px"><h3 class="wp-block-heading" style="font-size:18px">Quanto dura la migrazione?</h3><p style="margin-top:10px;font-size:15px;color:var(--sr-grigio)">In media 2–4 settimane, con un ambiente di prova visibile fin dalla prima settimana.</p></div>
+<div style="border-top:1px solid var(--sr-inchiostro);padding-top:20px"><h3 class="wp-block-heading" style="font-size:18px">Quanto dura la migrazione?</h3><p style="margin-top:10px;font-size:15px;color:var(--sr-grigio)">In media 3 settimane, con un ambiente di prova visibile fin dalla prima settimana.</p></div>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

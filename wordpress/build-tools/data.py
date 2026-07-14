@@ -126,7 +126,7 @@ SERVICES = [
             caption='GOOGLE PAGESPEED, MOBILE — MEDIA DI 3 RILEVAZIONI',
         ),
         prezzo_range='€ 4.900–7.200',
-        prezzo_lede='Prezzo chiuso nel preventivo, consegna in 5–8 settimane. Fattura elettronica, pagamento in tre tranche.',
+        prezzo_lede='Prezzo chiuso nel preventivo, consegna in 4 settimane. Fattura elettronica, pagamento in tre tranche.',
         prezzo_note=[
             'Funzionalità offline richieste oltre le pagine base.',
             'Notifiche push e integrazioni native aggiuntive.',
@@ -168,7 +168,7 @@ SERVICES = [
             caption='GOOGLE PAGESPEED, MOBILE — MEDIA DI 3 RILEVAZIONI',
         ),
         prezzo_range='€ 2.900–4.800',
-        prezzo_lede='Prezzo chiuso nel preventivo, consegna in 2–4 settimane. Fattura elettronica, pagamento in tre tranche.',
+        prezzo_lede='Prezzo chiuso nel preventivo, consegna in 3 settimane. Fattura elettronica, pagamento in tre tranche.',
         prezzo_note=[
             'Numero di pagine da migrare oltre le prime 20.',
             'Complessità delle integrazioni esistenti da mantenere.',
@@ -178,7 +178,7 @@ SERVICES = [
         faq=[
             ('Perdo il posizionamento su Google?', 'No, impostiamo redirect 301 corretti per ogni URL esistente prima di andare online.'),
             ('Devo riscrivere i contenuti?', 'No, il restyling tecnico mantiene i contenuti esistenti; li aggiorniamo solo su richiesta.'),
-            ('Quanto dura la migrazione?', 'In media 2–4 settimane, con un ambiente di prova visibile fin dalla prima settimana.'),
+            ('Quanto dura la migrazione?', 'In media 3 settimane, con un ambiente di prova visibile fin dalla prima settimana.'),
         ],
     ),
     dict(
@@ -210,7 +210,7 @@ SERVICES = [
             caption='GOOGLE PAGESPEED, MOBILE — RILEVAZIONI DOCUMENTATE',
         ),
         prezzo_range='€ 1.800–3.500',
-        prezzo_lede='Prezzo chiuso nel preventivo, consegna in 3–5 settimane. Fattura elettronica, pagamento in tre tranche.',
+        prezzo_lede='Prezzo chiuso nel preventivo, consegna in 3 settimane. Fattura elettronica, pagamento in tre tranche.',
         prezzo_note=[
             'Numero di pagine da ottimizzare oltre le prime 20.',
             'Presenza di contenuti multilingua da trattare.',
@@ -252,7 +252,7 @@ SERVICES = [
             caption='GOOGLE PAGESPEED, MOBILE — RILEVAZIONI DOCUMENTATE',
         ),
         prezzo_range='€ 3.200–5.500',
-        prezzo_lede='Prezzo chiuso nel preventivo, consegna in 4–6 settimane. Fattura elettronica, pagamento in tre tranche.',
+        prezzo_lede='Prezzo chiuso nel preventivo, consegna in 4 settimane. Fattura elettronica, pagamento in tre tranche.',
         prezzo_note=[
             'Numero di lingue aggiuntive oltre le due comprese.',
             'Volume di contenuti da tradurre oltre le pagine base.',
@@ -538,7 +538,7 @@ WEB_APP = dict(
         'PMI che devono collegare sito, CRM e gestionale senza reinserire i dati a mano.',
     ],
     formati=[
-        ('MVP Sprint', 'a partire da € 15.000', 'Perimetro chiuso, prezzo chiuso, data fissa: la prima versione funzionante del prodotto in 6–10 settimane, pronta per utenti reali.'),
+        ('MVP Sprint', 'a partire da € 15.000', 'Perimetro chiuso, prezzo chiuso, data fissa: la prima versione funzionante del prodotto in 6–8 settimane, pronta per utenti reali.'),
         ('Product Build', 'da € 25.000', 'Sviluppo per iterazioni con backlog condiviso e rilasci regolari: per prodotti che crescono con il business.'),
     ],
     prove_heading='La prova: i nostri prodotti interni',
