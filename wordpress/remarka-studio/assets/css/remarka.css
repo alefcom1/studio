@@ -217,6 +217,23 @@ body.dark-mode .site-description {
   position: relative;
 }
 
+/* Ogni sezione è full-bleed (sfondo bordo a bordo), ma il contenuto va
+   centrato e limitato a 1240px con un margine minimo — i pattern usano
+   "layout":"constrained" del block editor, ma quando il contenuto viene
+   iniettato via post_content lo stile di centratura generato da WP core
+   non è affidabile, quindi lo ricreiamo esplicitamente qui (stesso schema
+   già usato per .sr-footer-*__inner). */
+.sr-section > :not(.sr-watermark),
+.sr-section--bianco > :not(.sr-watermark),
+.is-style-sr-section > :not(.sr-watermark) {
+  box-sizing: border-box;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
 .sr-section--bianco,
 .is-style-sr-section--bianco {
   background: var(--sr-bianco);
@@ -239,6 +256,16 @@ body.dark-mode .site-description {
 .sr-dark .is-style-sr-eyebrow,
 .is-style-sr-dark .is-style-sr-eyebrow {
   color: #9BA3C4;
+}
+
+/* Titolo automatico di Prespa (.entry-title, template pagina): ogni nostra
+   pagina ha già il proprio H1 nel contenuto (pattern hero-home/hero-interno),
+   quindi il titolo del tema sopra è sempre un doppione — visibile soprattutto
+   sulle home EN/RU, dove il post_title (usato per <title>/meta) è una frase
+   diversa dall'H1 del pattern. Non tocca gli articoli (post_type post), solo
+   le nostre Pagine. */
+body.page .entry-title {
+  display: none;
 }
 
 /* Фон-сетка героя */
