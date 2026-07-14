@@ -327,7 +327,11 @@ foreach ( $ordered as $pattern_slug ) {
  * compare più in $page_map. Qui cerchiamo tutte le pagine con il meta
  * _remarka_generated il cui slug non è (più) nella mappa corrente e le
  * spostiamo nel cestino, solo con --force (stessa cautela dell'update). */
-$current_slugs = wp_list_pluck( $page_map, 0 );
+// 'home', 'en', 'ru' sono create al §1/§1b con percorso proprio e non
+// figurano mai in $page_map: senza questa protezione ogni run con --force
+// le classifica come "orfane" e le cestina (bug osservato: homepage sparita
+// dopo il deploy multilingua).
+$current_slugs = array_merge( wp_list_pluck( $page_map, 0 ), array( 'home', 'en', 'ru' ) );
 $orphans       = get_posts( array(
 	'post_type'   => 'page',
 	'post_status' => 'any',

@@ -169,6 +169,18 @@ wp eval-file /var/www/alefcom/data/www/remarka.biz/wp-content/themes/remarka-stu
 > файлы темы → запустить
 > `deploy-import.php -- --force`.
 
+> ⚠️ **Баг (исправлен): `REMARKA_FORCE=1` мог унести в корзину саму Home**
+> (и языковые главные `/en/`, `/ru/`). Раздел «2b. Pulizia pagine orfane»
+> считает страницу «осиротевшей» и удаляет её, если её slug не встречается
+> в `$page_map` — а Home/`en`/`ru` создаются отдельным путём (§1/§1b) и в
+> `$page_map` никогда не попадали. Итог при первом же `--force`-деплое с
+> расширившимся списком страниц (мультиязычный релиз): Home пропала,
+> большинство URL стали отдавать 404 (главная была `page_on_front`, её
+> исчезновение ломает и роутинг). Исправлено в коммите после этого —
+> `home`, `en`, `ru` теперь всегда в списке защищённых slug'ов. Если после
+> обновления кода `deploy-import.php` всё ещё видно похожее поведение,
+> см. диагностику/восстановление ниже.
+
 ## После импорта — ручные шаги
 
 1. Внешний вид → Настроить → загрузить логотип (астериск), настроить меню
@@ -194,4 +206,34 @@ wp theme list --allow-root --path=/var/www/alefcom/data/www/remarka.biz
 # логи nginx/php при ошибках 500 после активации темы
 tail -50 /var/log/nginx/error.log
 wp eval 'error_reporting(E_ALL); ini_set("display_errors",1);' --allow-root --path=/var/www/alefcom/data/www/remarka.biz
+```
+
+### Пропала главная страница / почти всё 404 после `--force`-деплоя
+
+```bash
+# 1. Home в корзине?
+wp post list --post_status=trash --post_type=page \
+   --allow-root --path=/var/www/alefcom/data/www/remarka.biz
+
+# 2. что сейчас установлено как главная
+wp option get show_on_front --allow-root --path=/var/www/alefcom/data/www/remarka.biz
+wp option get page_on_front --allow-root --path=/var/www/alefcom/data/www/remarka.biz
+
+# 3. если Home (post_name=home) в корзине — восстановить и переустановить как главную
+wp post update <ID> --post_status=publish --allow-root --path=/var/www/alefcom/data/www/remarka.biz
+wp option update show_on_front page --allow-root --path=/var/www/alefcom/data/www/remarka.biz
+wp option update page_on_front <ID> --allow-root --path=/var/www/alefcom/data/www/remarka.biz
+
+# 4. то же самое проверить для 'en' и 'ru' (главные языковых разделов),
+#    если /en/ или /ru/ отдают 404 — они тоже могли попасть в корзину
+wp post list --post_status=trash --post_type=page --name=en \
+   --allow-root --path=/var/www/alefcom/data/www/remarka.biz
+wp post list --post_status=trash --post_type=page --name=ru \
+   --allow-root --path=/var/www/alefcom/data/www/remarka.biz
+
+# 5. после восстановления — освежить постоянные ссылки
+wp rewrite flush --allow-root --path=/var/www/alefcom/data/www/remarka.biz
+
+# 6. обновить deploy-import.php в теме на исправленную версию и перезапустить,
+#    чтобы больше ни одна защищённая страница не попала под нож при следующем --force
 ```
