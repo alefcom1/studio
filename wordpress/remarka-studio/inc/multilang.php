@@ -110,6 +110,22 @@ function remarka_lang_switch_config(): void {
 }
 add_action( 'wp_head', 'remarka_lang_switch_config', 4 );
 
+/* ---------- Breadcrumb Rank Math: voce "Home" localizzata per URL ----------
+ * Con locale WordPress in russo, l'etichetta "Home" del breadcrumb diventa
+ * "Главная" anche sulle pagine italiane. Qui forziamo l'etichetta e il link
+ * della prima voce in base alla lingua del percorso (it→/, en→/en/, ru→/ru/),
+ * indipendentemente dal locale del sito. Attivo solo se Rank Math è presente. */
+function remarka_breadcrumb_localize_home( $crumbs ) {
+	if ( is_array( $crumbs ) && ! empty( $crumbs[0] ) && is_array( $crumbs[0] ) ) {
+		$lang        = remarka_current_lang();
+		$home_paths  = array( 'it' => '/', 'en' => '/en/', 'ru' => '/ru/' );
+		$crumbs[0][0] = remarka_str( 'breadcrumb_home' );
+		$crumbs[0][1] = home_url( $home_paths[ $lang ] ?? '/' );
+	}
+	return $crumbs;
+}
+add_filter( 'rank_math/frontend/breadcrumb/items', 'remarka_breadcrumb_localize_home' );
+
 /* ---------- Redirect 301 dai vecchi URL piatti EN/RU ---------- */
 
 /**
@@ -274,6 +290,7 @@ function remarka_str( string $key ): string {
 		'form_err_file_tipo' => array( 'it' => 'Formato file non ammesso. Usa PDF, DOC, PNG o JPG.', 'en' => 'File type not allowed. Use PDF, DOC, PNG or JPG.', 'ru' => 'Недопустимый тип файла. Используйте PDF, DOC, PNG или JPG.' ),
 		'form_err_file_dim' => array( 'it' => 'Il file supera 8 MB. Caricane uno più leggero.', 'en' => 'The file exceeds 8 MB. Upload a smaller one.', 'ru' => 'Файл больше 8 МБ. Загрузите меньше.' ),
 		'footer_citta'     => array( 'it' => 'Dove operiamo', 'en' => 'Where we work', 'ru' => 'Где мы работаем' ),
+		'breadcrumb_home'  => array( 'it' => 'Home', 'en' => 'Home', 'ru' => 'Главная' ),
 	);
 	$lang = remarka_current_lang();
 	return $table[ $key ][ $lang ] ?? $table[ $key ]['it'] ?? $key;
