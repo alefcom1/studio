@@ -112,6 +112,16 @@ $home_sections = array(
 	'hero-home', 'trust-strip', 'tre-numeri', 'manifesto', 'lingue-mercati', 'servizi-cards', 'caso-evidenza',
 	'come-lavoriamo', 'garanzie-dark', 'prezzi-teaser', 'strumenti-cards', 'faq', 'contatti',
 );
+
+/*
+ * RU-воронка самодостаточна (фаза B): собственный набор и порядок секций
+ * главной, не зеркалит IT/EN (niente lingue-mercati/strumenti-cards; al loro
+ * posto vyhod-evropa e seo-lingue). Vedi piano-implementazione-fase-B.md §1 Б-1/Б-2.
+ */
+$home_sections_ru = array(
+	'hero-home', 'trust-strip', 'vyhod-evropa', 'tre-numeri', 'manifesto', 'seo-lingue', 'servizi-cards',
+	'caso-evidenza', 'come-lavoriamo', 'garanzie-dark', 'prezzi-teaser', 'faq', 'contatti',
+);
 $home_content = '';
 foreach ( $home_sections as $slug ) {
 	$file = "$patterns_dir/$slug.php";
@@ -138,9 +148,10 @@ $lang_homes = array(
 	'ru' => array( 'dir' => 'lang-ru', 'title' => 'Studio Remarka — Студия веб-разработки в Милане' ),
 );
 foreach ( $lang_homes as $lang_slug => $cfg ) {
-	$lang_dir     = $patterns_dir . '/' . $cfg['dir'];
-	$lang_content = '';
-	foreach ( $home_sections as $slug ) {
+	$lang_dir      = $patterns_dir . '/' . $cfg['dir'];
+	$lang_content  = '';
+	$lang_sections = ( 'ru' === $lang_slug ) ? $home_sections_ru : $home_sections;
+	foreach ( $lang_sections as $slug ) {
 		$file = "$lang_dir/$slug.php";
 		if ( ! file_exists( $file ) ) {
 			WP_CLI::warning( "  [$lang_slug] sezione mancante: $slug.php" );

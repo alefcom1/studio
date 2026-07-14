@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Манифест — кто мы и что мы делаем
+ * Title: Манифест — два мира, одна команда
  * Slug: remarka-studio/ru-manifesto
  * Categories: remarka
- * Description: Тёмная редакционная секция: история студии, список услуг и ключевые цифры.
+ * Description: Тёмная редакционная секция: история группы Remarka, Милан + Москва/Краснодар, список услуг и ключевые цифры.
  * Viewport Width: 1400
  */
 ?>
@@ -17,11 +17,11 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(34px,4.4vw,60px)","lineHeight":"1.05"}}} -->
-<h2 class="wp-block-heading" style="font-size:clamp(34px,4.4vw,60px);line-height:1.05">Веб как подписанный контракт<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading" style="font-size:clamp(34px,4.4vw,60px);line-height:1.05">Два мира, одна команда<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"sr-manifesto__lead"} -->
-<p class="sr-manifesto__lead">Студия Ремарка выросла из группы Remarka — языкового агентства, работающего с 2001 года. К точности, с которой мы переводим каждое слово, мы добавили ту же дисциплину в цифрах, важных онлайн: <b>скорость, сроки, цена</b>. Измеренные, а не обещанные. Записанные в договор, а не в презентацию.</p>
+<p class="sr-manifesto__lead">Студия Ремарка выросла из группы Remarka — бюро переводов, работающего с 2001 года. К точности, с которой мы 25 лет переводим каждое слово, мы добавили ту же дисциплину в цифре: <b>сроки, цена, качество</b>. Милан — там, где ваши клиенты; Москва и Краснодар — там, где вас понимают с полуслова. Одна команда держит обе стороны.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:columns {"className":"sr-manifesto__cols"} -->
@@ -31,11 +31,11 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Двадцать лет работы с языками научили нас одному: доверие строится на проверяемых деталях, а не на обещаниях. Тот же метод мы применяем в веб-разработке.</p>
+<p>Двадцать пять лет работы с языками научили нас одному: доверие строится на проверяемых деталях, а не на обещаниях. Тот же метод мы перенесли в веб-разработку.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Мы работаем с малым и средним бизнесом, которому нужен сайт, действительно приносящий заявки, — а не цифровой каталог, обновляемый раз в год. Каждый проект начинается с технического анализа и заканчивается цифрами, которые вы можете проверить сами.</p>
+<p>Мы работаем с бизнесом, который выходит на рынок Италии и Европы или уже работает там и хочет расти. Каждый проект начинается с анализа и заканчивается цифрами, которые вы проверяете сами.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -77,15 +77,15 @@
 <!-- wp:html -->
 <div class="sr-manifesto__stats">
 <div class="sr-manifesto__stat"><span class="n">2001</span><span class="l">Год основания группы Remarka</span></div>
-<div class="sr-manifesto__stat"><span class="n">4</span><span class="l">Родных языка в каждом проекте</span></div>
-<div class="sr-manifesto__stat"><span class="n">90+</span><span class="l">PageSpeed, гарантированный договором</span></div>
+<div class="sr-manifesto__stat"><span class="n">9</span><span class="l">Языков в работе студии</span></div>
+<div class="sr-manifesto__stat"><span class="n">±0 дней</span><span class="l">Просрочки по договору</span></div>
 <div class="sr-manifesto__stat"><span class="n">24 ч</span><span class="l">Фиксированная смета после звонка</span></div>
 </div>
 <!-- /wp:html -->
 
 <!-- wp:buttons {"className":"sr-manifesto__cta"} -->
 <div class="wp-block-buttons sr-manifesto__cta"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/ru/#contatti">Обсудим ваш проект →</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/ru/#contatti">Обсудить ваш проект →</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></section>
 <!-- /wp:group -->

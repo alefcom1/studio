@@ -3,7 +3,7 @@
  * Title: Услуги — шесть карточек
  * Slug: remarka-studio/ru-servizi-cards
  * Categories: remarka
- * Description: Шапка с микрозаголовком и сетка из шести карточек услуг со ссылками.
+ * Description: Шапка с эйбрау и сетка из шести карточек услуг под аудиторию выхода в Италию и Европу; PWA заменена на SEO-продвижение.
  * Viewport Width: 1400
  */
 ?>
@@ -13,7 +13,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Шесть вещей, которые мы умеем делать хорошо<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Всё для присутствия в Италии и Европе<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 
 <!-- wp:group {"className":"sr-cascade","style":{"spacing":{"blockGap":"20px","margin":{"top":"56px"}}},"layout":{"type":"grid","minimumColumnWidth":"300px"}} -->
@@ -23,7 +23,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Понятная структура и загрузка меньше секунды — для тех, чей бизнес живёт заявками.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Пять–пятнадцать страниц под европейского покупателя: понятная структура, форма заявки, юридическая часть под ЕС.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
@@ -37,7 +37,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Быстрые каталоги и оформление заказа без лишних шагов, со встроенными электронными счетами-фактурами.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Каталог, оплата и оформление в один шаг, электронный счёт (инвойс) — готово к продажам в Италии и ЕС.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
@@ -47,25 +47,39 @@
 
 <!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
 <div class="wp-block-group sr-card"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Прогрессивные сайты PWA</h3>
+<h3 class="wp-block-heading">Многоязычные сайты</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Сайт, который ведёт себя как приложение: устанавливается, работает даже офлайн, открывается мгновенно.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Итальянский, английский, немецкий, французский — тексты носителей, а не плагин. Бюро переводов с 2001 года.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
-<p class="sr-card-link sr-no-margin"><a href="/ru/uslugi/pwa-sajty/">Подробнее →</a></p>
+<p class="sr-card-link sr-no-margin"><a href="/ru/uslugi/mnogojazychnye-sajty/">Подробнее →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
 <div class="wp-block-group sr-card"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Рестайлинг и миграция</h3>
+<h3 class="wp-block-heading">SEO-продвижение</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Ваш текущий сайт, собранный заново: тот же контент, втрое выше скорость.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Google страны назначения плюс русскоязычная и диаспорная аудитория. Техника, семантика, локальные справочники.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
+<p class="sr-card-link sr-no-margin"><a href="/ru/uslugi/seo-prodvizhenie/">Подробнее →</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-card"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Редизайн и миграция</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Ваш нынешний сайт, собранный заново под рынок ЕС: тот же контент, втрое выше скорость, без потери позиций.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
@@ -75,29 +89,15 @@
 
 <!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
 <div class="wp-block-group sr-card"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Техническая SEO</h3>
+<h3 class="wp-block-heading">Техническое SEO</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Структура, данные и Core Web Vitals в порядке ещё до того, как написан контент.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Скорость, структура и разметка в порядке ещё до контента: PageSpeed 90+ гарантирован договором.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
 <p class="sr-card-link sr-no-margin"><a href="/ru/uslugi/tehnicheskoe-seo/">Подробнее →</a></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group sr-card"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Многоязычные сайты</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Четыре языка в переводе носителей: группа Remarka занимается этим с 2001 года.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
-<p class="sr-card-link sr-no-margin"><a href="/ru/uslugi/mnogojazychnye-sajty/">Подробнее →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></section>

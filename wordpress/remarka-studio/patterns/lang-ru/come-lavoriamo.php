@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Как мы работаем — пять шагов
+ * Title: Как мы работаем — три недели
  * Slug: remarka-studio/ru-come-lavoriamo
  * Categories: remarka
- * Description: Пять пронумерованных шагов с длительностью на общей чёрной линии.
+ * Description: Пять шагов, сгруппированных чипами трёх недель; примечание об удалённой работе на русском.
  * Viewport Width: 1400
  */
 ?>
@@ -13,78 +13,70 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Пять шагов, одна дата<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Три недели, день за днём<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 
-<!-- wp:columns {"className":"is-style-sr-steps sr-cascade","style":{"spacing":{"blockGap":{"left":"24px"},"margin":{"top":"56px"}}}} -->
-<div class="wp-block-columns is-style-sr-steps sr-cascade" style="margin-top:56px"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:paragraph {"className":"sr-step__head sr-no-margin"} -->
-<p class="sr-step__head sr-no-margin"><span class="sr-step-num">01</span><span class="sr-step-tag">2 ДНЯ</span></p>
+<!-- wp:columns {"className":"sr-weeks sr-cascade"} -->
+<div class="wp-block-columns sr-weeks sr-cascade"><!-- wp:column {"className":"sr-week"} -->
+<div class="wp-block-column sr-week"><!-- wp:paragraph {"className":"sr-week-chip sr-no-margin"} -->
+<p class="sr-week-chip sr-no-margin">Неделя 1</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
-<h3 class="wp-block-heading" style="margin-top:14px">Анализ</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Технический отчёт о текущем сайте — с приоритетами и измеримыми целями.</p>
-<!-- /wp:paragraph --></div>
+<!-- wp:html -->
+<div class="sr-week__steps">
+<div class="sr-week__step">
+<p class="sr-step__head sr-no-margin"><span class="sr-step-num">01</span><span class="sr-step-tag">Дни 1–2</span></p>
+<h4>Анализ</h4>
+<p>Технический разбор задачи и рынка — с приоритетами и измеримыми целями.</p>
+</div>
+<div class="sr-week__step">
+<p class="sr-step__head sr-no-margin"><span class="sr-step-num">02</span><span class="sr-step-tag">24 часа</span></p>
+<h4>Фиксированная смета</h4>
+<p>Окончательная цена и дата запуска — прописаны в договоре.</p>
+</div>
+<div class="sr-week__step">
+<p class="sr-step__head sr-no-margin"><span class="sr-step-num">03</span><span class="sr-step-tag">Дни 3–5</span></p>
+<h4>Дизайн</h4>
+<p>Кликабельный прототип, который вы согласуете постранично, — не статичные PDF.</p>
+</div>
+</div>
+<!-- /wp:html --></div>
 <!-- /wp:column -->
 
-<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:paragraph {"className":"sr-step__head sr-no-margin"} -->
-<p class="sr-step__head sr-no-margin"><span class="sr-step-num">02</span><span class="sr-step-tag">24 ЧАСА</span></p>
+<!-- wp:column {"className":"sr-week"} -->
+<div class="wp-block-column sr-week"><!-- wp:paragraph {"className":"sr-week-chip sr-no-margin"} -->
+<p class="sr-week-chip sr-no-margin">Неделя 2</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
-<h3 class="wp-block-heading" style="margin-top:14px">Фиксированная смета</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Окончательная цена и дата сдачи — прописаны в договоре.</p>
-<!-- /wp:paragraph --></div>
+<!-- wp:html -->
+<div class="sr-week__steps">
+<div class="sr-week__step">
+<p class="sr-step__head sr-no-margin"><span class="sr-step-num">04</span><span class="sr-step-tag">Дни 6–10</span></p>
+<h4>Разработка</h4>
+<p>Сайт на тестовой площадке, прогресс виден каждую пятницу.</p>
+</div>
+</div>
+<!-- /wp:html --></div>
 <!-- /wp:column -->
 
-<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:paragraph {"className":"sr-step__head sr-no-margin"} -->
-<p class="sr-step__head sr-no-margin"><span class="sr-step-num">03</span><span class="sr-step-tag">1–2 НЕДЕЛИ</span></p>
+<!-- wp:column {"className":"sr-week"} -->
+<div class="wp-block-column sr-week"><!-- wp:paragraph {"className":"sr-week-chip sr-no-margin"} -->
+<p class="sr-week-chip sr-no-margin">Неделя 3</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
-<h3 class="wp-block-heading" style="margin-top:14px">Дизайн</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Кликабельный прототип, который вы согласуете постранично, — не статичные PDF.</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:column -->
-
-<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:paragraph {"className":"sr-step__head sr-no-margin"} -->
-<p class="sr-step__head sr-no-margin"><span class="sr-step-num">04</span><span class="sr-step-tag">2–4 НЕДЕЛИ</span></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
-<h3 class="wp-block-heading" style="margin-top:14px">Разработка</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Сайт на тестовой площадке, прогресс виден каждую пятницу.</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:column -->
-
-<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:paragraph {"className":"sr-step__head sr-no-margin"} -->
-<p class="sr-step__head sr-no-margin"><span class="sr-step-num">05</span><span class="sr-step-tag">12 МЕСЯЦЕВ</span></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
-<h3 class="wp-block-heading" style="margin-top:14px">Сдача и поддержка</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Обучение работе с сайтом, ежемесячные замеры и поддержка включены.</p>
-<!-- /wp:paragraph --></div>
+<!-- wp:html -->
+<div class="sr-week__steps">
+<div class="sr-week__step">
+<p class="sr-step__head sr-no-margin"><span class="sr-step-num">05</span><span class="sr-step-tag">Дни 11–15 · 12 месяцев</span></p>
+<h4>Запуск и поддержка</h4>
+<p>Локализация носителями, обучение, ежемесячные замеры и поддержка включены.</p>
+</div>
+</div>
+<!-- /wp:html --></div>
 <!-- /wp:column --></div>
-<!-- /wp:columns --></section>
+<!-- /wp:columns -->
+
+<!-- wp:paragraph {"className":"sr-eyebrow","style":{"spacing":{"margin":{"top":"44px"}}}} -->
+<p class="sr-eyebrow" style="margin-top:44px">Сроки корпоративного сайта. Визитка — 2 недели, интернет-магазин — 6. Вся работа удалённая: где бы вы ни были в ЕС или СНГ, созвоны — на русском.</p>
+<!-- /wp:paragraph --></section>
 <!-- /wp:group -->

@@ -600,6 +600,16 @@ body.page .entry-title {
   color: var(--sr-oltremare);
 }
 
+/* mono-индекс карточки (01/02/03) — используется в vyhod-evropa (RU) */
+.sr-feat-num {
+  font-family: var(--sr-font-mono);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--sr-oltremare);
+  margin: 0 0 20px;
+  display: block;
+}
+
 /* ---------- Stat-блоки («tre numeri», garanzie) ---------- */
 
 .sr-stat {
