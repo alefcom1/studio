@@ -318,6 +318,142 @@ body.page .entry-title {
   to { transform: rotate(360deg); }
 }
 
+/* ---------- Manifesto (sezione editoriale scura in home) ---------- */
+.sr-manifesto {
+  overflow: hidden;
+}
+
+.sr-manifesto__lead {
+  max-width: 760px;
+  font-size: clamp(20px, 2.2vw, 27px);
+  line-height: 1.5;
+  color: var(--sr-carta);
+  margin: 28px 0 0;
+  font-weight: 400;
+}
+
+.sr-manifesto__lead b {
+  color: var(--sr-oltremare-chiaro);
+  font-weight: 500;
+}
+
+.sr-manifesto__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  margin-top: 64px;
+  padding-top: 52px;
+  border-top: 1px solid rgba(247, 246, 242, 0.14);
+}
+
+.sr-manifesto__coltitle {
+  font-family: var(--sr-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9BA3C4;
+  margin: 0 0 22px;
+}
+
+.sr-manifesto__narr p {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(247, 246, 242, 0.72);
+}
+
+.sr-svc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sr-svc-list li {
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(247, 246, 242, 0.09);
+}
+
+.sr-svc-list li:first-child {
+  padding-top: 0;
+}
+
+.sr-svc-list__num {
+  font-family: var(--sr-font-mono);
+  font-size: 13px;
+  color: var(--sr-oltremare-chiaro);
+  padding-top: 3px;
+  min-width: 24px;
+}
+
+.sr-svc-list__t {
+  color: var(--sr-carta);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.sr-svc-list__d {
+  color: rgba(247, 246, 242, 0.6);
+  font-size: 14px;
+  display: block;
+  margin-top: 3px;
+  line-height: 1.5;
+}
+
+.sr-svc-list__badge {
+  font-family: var(--sr-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sr-oltremare-chiaro);
+  border: 1px solid rgba(91, 115, 232, 0.5);
+  border-radius: 100px;
+  padding: 2px 8px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.sr-manifesto__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(247, 246, 242, 0.14);
+}
+
+.sr-manifesto__stat .n {
+  font-family: var(--sr-font-mono);
+  font-size: clamp(30px, 3.4vw, 42px);
+  color: var(--sr-carta);
+  line-height: 1;
+  display: block;
+}
+
+.sr-manifesto__stat .l {
+  color: rgba(247, 246, 242, 0.6);
+  font-size: 13px;
+  display: block;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+.sr-manifesto__cta {
+  margin-top: 56px;
+}
+
+@media (max-width: 860px) {
+  .sr-manifesto__cols {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .sr-manifesto__stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+
 /* ---------- Кнопки (поверх core button) ---------- */
 
 .wp-block-button__link {
