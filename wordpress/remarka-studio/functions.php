@@ -81,6 +81,14 @@ function remarka_enqueue_assets(): void {
 			'key'       => $psi_key,
 			'ajaxUrl'   => admin_url( 'admin-ajax.php' ),
 			'formNonce' => wp_create_nonce( 'remarka_contact' ),
+		) ) . ';'
+		. 'window.remarkaForm = ' . wp_json_encode( array(
+			'step'    => remarka_str( 'form_step' ),
+			'of'      => remarka_str( 'form_di' ),
+			'back'    => remarka_str( 'form_indietro' ),
+			'next'    => remarka_str( 'form_continua' ),
+			'sending' => remarka_str( 'form_invio_corso' ),
+			'choose'  => remarka_str( 'form_err_scelta' ),
 		) ) . ';',
 		'before'
 	);
@@ -697,23 +705,136 @@ function remarka_form_recipient(): string {
 	return $to && is_email( $to ) ? $to : get_option( 'admin_email' );
 }
 
+/**
+ * Etichette CANONICHE (in italiano) delle opzioni del modulo: usate sia per
+ * validare il valore inviato (whitelist) sia per comporre l'email verso lo
+ * studio, che resta sempre in italiano a prescindere dalla lingua del
+ * visitatore. Chiave = value inviato dal radio.
+ */
+function remarka_form_canonical(): array {
+	return array(
+		'tipo' => array(
+			'siti-aziendali' => 'Sito aziendale',
+			'e-commerce'     => 'E-commerce',
+			'siti-pwa'       => 'Sito progressivo (PWA)',
+			'restyling'      => 'Restyling e migrazione',
+			'multilingue'    => 'Sito multilingue',
+			'web-app'        => 'Web app su misura',
+			'export-ready'   => 'Export Ready',
+			'non-so'         => 'Non lo so ancora',
+		),
+		'budget' => array(
+			'lt-3k'       => 'Meno di € 3.000',
+			'3-8k'        => '€ 3.000 – 8.000',
+			'8-15k'       => '€ 8.000 – 15.000',
+			'15-35k'      => '€ 15.000 – 35.000',
+			'gt-35k'      => 'Oltre € 35.000',
+			'da-definire' => 'Da definire',
+		),
+		'tempi' => array(
+			'subito'    => 'Il prima possibile',
+			'1-2-mesi'  => 'Entro 1–2 mesi',
+			'3-6-mesi'  => 'Fra 3–6 mesi',
+			'valutando' => 'Sto solo valutando',
+		),
+	);
+}
+
+/**
+ * Etichette LOCALIZZATE per il rendering dei radio, nella lingua corrente.
+ * Stesse chiavi (value) di remarka_form_canonical(); su IT coincidono.
+ */
+function remarka_form_options( string $group ): array {
+	$lang = remarka_current_lang();
+	$maps = array(
+		'tipo' => array(
+			'en' => array( 'siti-aziendali' => 'Business website', 'e-commerce' => 'E-commerce', 'siti-pwa' => 'Progressive web app (PWA)', 'restyling' => 'Redesign & migration', 'multilingue' => 'Multilingual website', 'web-app' => 'Custom web app', 'export-ready' => 'Export Ready', 'non-so' => 'Not sure yet' ),
+			'ru' => array( 'siti-aziendali' => 'Корпоративный сайт', 'e-commerce' => 'Интернет-магазин', 'siti-pwa' => 'Прогрессивный сайт (PWA)', 'restyling' => 'Редизайн и миграция', 'multilingue' => 'Многоязычный сайт', 'web-app' => 'Веб-приложение', 'export-ready' => 'Export Ready', 'non-so' => 'Пока не знаю' ),
+		),
+		'budget' => array(
+			'en' => array( 'lt-3k' => 'Under € 3,000', '3-8k' => '€ 3,000 – 8,000', '8-15k' => '€ 8,000 – 15,000', '15-35k' => '€ 15,000 – 35,000', 'gt-35k' => 'Over € 35,000', 'da-definire' => 'To be defined' ),
+			'ru' => array( 'lt-3k' => 'До € 3 000', '3-8k' => '€ 3 000 – 8 000', '8-15k' => '€ 8 000 – 15 000', '15-35k' => '€ 15 000 – 35 000', 'gt-35k' => 'Более € 35 000', 'da-definire' => 'Обсудим' ),
+		),
+		'tempi' => array(
+			'en' => array( 'subito' => 'As soon as possible', '1-2-mesi' => 'Within 1–2 months', '3-6-mesi' => 'In 3–6 months', 'valutando' => 'Just exploring' ),
+			'ru' => array( 'subito' => 'Как можно скорее', '1-2-mesi' => 'В течение 1–2 месяцев', '3-6-mesi' => 'Через 3–6 месяцев', 'valutando' => 'Просто оцениваю' ),
+		),
+	);
+	if ( 'it' !== $lang && isset( $maps[ $group ][ $lang ] ) ) {
+		return $maps[ $group ][ $lang ];
+	}
+	return remarka_form_canonical()[ $group ];
+}
+
+/** Rende un gruppo di radio (card o pill). */
+function remarka_form_radio_group( string $name, string $group, string $style ): void {
+	$wrap = 'card' === $style ? 'sr-choice-grid' : 'sr-pill-group';
+	echo '<div class="' . esc_attr( $wrap ) . '">';
+	foreach ( remarka_form_options( $group ) as $value => $label ) {
+		if ( 'card' === $style ) {
+			printf(
+				'<label class="sr-choice"><input type="radio" class="sr-choice__input" name="%1$s" value="%2$s" required><span class="sr-choice__tick"></span><span>%3$s</span></label>',
+				esc_attr( $name ), esc_attr( $value ), esc_html( $label )
+			);
+		} else {
+			printf(
+				'<label class="sr-pill"><input type="radio" class="sr-pill__input" name="%1$s" value="%2$s" required><span>%3$s</span></label>',
+				esc_attr( $name ), esc_attr( $value ), esc_html( $label )
+			);
+		}
+	}
+	echo '</div>';
+}
+
 function remarka_form_shortcode(): string {
 	$sent = isset( $_GET['remarka_inviato'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	ob_start();
 	?>
-	<form class="sr-contact-form" data-sr-contact-form method="post"
+	<form class="sr-contact-form sr-stepform" data-sr-contact-form method="post" enctype="multipart/form-data"
 	      action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" <?php echo $sent ? 'hidden' : ''; ?>>
 		<input type="hidden" name="action" value="remarka_contact">
 		<?php wp_nonce_field( 'remarka_contact', 'remarka_nonce' ); ?>
 		<p class="sr-hp-field" aria-hidden="true"><label>Sito web<input type="text" name="sr_sito" tabindex="-1" autocomplete="off"></label></p>
-		<p><label class="sr-eyebrow" for="sr-nome"><?php echo esc_html( remarka_str( 'form_nome' ) ); ?></label>
-		<input class="sr-text-input" id="sr-nome" name="sr_nome" type="text" required maxlength="120"></p>
-		<p><label class="sr-eyebrow" for="sr-contatto"><?php echo esc_html( remarka_str( 'form_contatto' ) ); ?></label>
-		<input class="sr-text-input" id="sr-contatto" name="sr_contatto" type="text" required maxlength="160"></p>
-		<p><label class="sr-eyebrow" for="sr-messaggio"><?php echo esc_html( remarka_str( 'form_messaggio' ) ); ?></label>
-		<textarea class="sr-text-input" id="sr-messaggio" name="sr_messaggio" rows="4" required maxlength="4000"></textarea></p>
+
+		<div class="sr-form-progress" data-sr-progress hidden>
+			<span class="sr-form-progress__label" data-sr-progress-label></span>
+			<div class="sr-form-progress__bar"><div class="sr-form-progress__fill" data-sr-progress-fill></div></div>
+		</div>
+
+		<fieldset class="sr-step" data-sr-step>
+			<legend class="sr-step__q"><?php echo esc_html( remarka_str( 'form_q_tipo' ) ); ?></legend>
+			<p class="sr-step__hint"><?php echo esc_html( remarka_str( 'form_q_tipo_hint' ) ); ?></p>
+			<?php remarka_form_radio_group( 'sr_tipo', 'tipo', 'card' ); ?>
+		</fieldset>
+
+		<fieldset class="sr-step" data-sr-step>
+			<legend class="sr-step__q"><?php echo esc_html( remarka_str( 'form_q_budget' ) ); ?></legend>
+			<p class="sr-step__hint"><?php echo esc_html( remarka_str( 'form_q_budget_hint' ) ); ?></p>
+			<span class="sr-field-label"><?php echo esc_html( remarka_str( 'form_lbl_budget' ) ); ?></span>
+			<?php remarka_form_radio_group( 'sr_budget', 'budget', 'pill' ); ?>
+			<span class="sr-field-label"><?php echo esc_html( remarka_str( 'form_lbl_tempi' ) ); ?></span>
+			<?php remarka_form_radio_group( 'sr_tempi', 'tempi', 'pill' ); ?>
+		</fieldset>
+
+		<fieldset class="sr-step" data-sr-step>
+			<legend class="sr-step__q"><?php echo esc_html( remarka_str( 'form_q_contatti' ) ); ?></legend>
+			<p class="sr-step__hint"><?php echo esc_html( remarka_str( 'form_q_contatti_hint' ) ); ?></p>
+			<p><label class="sr-field-label" for="sr-nome"><?php echo esc_html( remarka_str( 'form_nome' ) ); ?></label>
+			<input class="sr-text-input" id="sr-nome" name="sr_nome" type="text" required maxlength="120"></p>
+			<p><label class="sr-field-label" for="sr-contatto"><?php echo esc_html( remarka_str( 'form_contatto' ) ); ?></label>
+			<input class="sr-text-input" id="sr-contatto" name="sr_contatto" type="text" required maxlength="160"></p>
+			<p><label class="sr-field-label" for="sr-messaggio"><?php echo esc_html( remarka_str( 'form_messaggio' ) ); ?> <span class="sr-optional"><?php echo esc_html( remarka_str( 'form_msg_opt' ) ); ?></span></label>
+			<textarea class="sr-text-input" id="sr-messaggio" name="sr_messaggio" rows="3" maxlength="4000"></textarea></p>
+			<span class="sr-field-label"><?php echo esc_html( remarka_str( 'form_lbl_file' ) ); ?> <span class="sr-optional"><?php echo esc_html( remarka_str( 'form_file_opt' ) ); ?></span></span>
+			<label class="sr-upload" data-sr-upload>
+				<input type="file" class="sr-upload__input" name="sr_file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg">
+				<span class="sr-upload__text" data-sr-upload-text><b><?php echo esc_html( remarka_str( 'form_upload_drag' ) ); ?></b> <?php echo esc_html( remarka_str( 'form_upload_or' ) ); ?></span>
+				<span class="sr-upload__hint"><?php echo esc_html( remarka_str( 'form_upload_hint' ) ); ?></span>
+			</label>
+		</fieldset>
+
 		<p class="sr-form-error" data-sr-form-error hidden></p>
-		<button type="submit" class="wp-block-button__link wp-element-button" style="width:100%"><?php echo esc_html( remarka_str( 'form_invia' ) ); ?></button>
+		<button type="submit" class="wp-block-button__link wp-element-button" style="width:100%" data-sr-submit><?php echo esc_html( remarka_str( 'form_invia_finale' ) ); ?></button>
 	</form>
 	<div class="sr-form-success" data-sr-form-success <?php echo $sent ? '' : 'hidden'; ?>>
 		<p class="sr-mono" style="color:var(--sr-verde)"><?php echo esc_html( remarka_str( 'form_inviata' ) ); ?></p>
@@ -746,14 +867,54 @@ function remarka_form_process(): ?string {
 	$contatto  = sanitize_text_field( wp_unslash( $_POST['sr_contatto'] ?? '' ) );
 	$messaggio = sanitize_textarea_field( wp_unslash( $_POST['sr_messaggio'] ?? '' ) );
 
-	if ( '' === $nome || '' === $contatto || '' === $messaggio ) {
+	// Opzioni a scelta: validate contro la whitelist canonica; il messaggio
+	// è facoltativo (il tipo di progetto è già una descrizione della richiesta).
+	$canon = remarka_form_canonical();
+	$tipo_v   = sanitize_key( $_POST['sr_tipo'] ?? '' );
+	$budget_v = sanitize_key( $_POST['sr_budget'] ?? '' );
+	$tempi_v  = sanitize_key( $_POST['sr_tempi'] ?? '' );
+
+	if ( '' === $nome || '' === $contatto
+		|| ! isset( $canon['tipo'][ $tipo_v ] )
+		|| ! isset( $canon['budget'][ $budget_v ] )
+		|| ! isset( $canon['tempi'][ $tempi_v ] ) ) {
 		return remarka_str( 'form_err_campi' );
 	}
 
-	$body  = "Nome: $nome\n";
+	// Allegato facoltativo: validato e passato a wp_mail come file temporaneo,
+	// MAI salvato nella Media Library né servito dal sito (privacy delle
+	// richieste). Cancellato subito dopo l'invio.
+	$attachments   = array();
+	$tmp_to_delete = null;
+	if ( isset( $_FILES['sr_file'] ) && ! empty( $_FILES['sr_file']['name'] )
+		&& isset( $_FILES['sr_file']['error'] ) && UPLOAD_ERR_NO_FILE !== (int) $_FILES['sr_file']['error'] ) {
+		$file = $_FILES['sr_file']; // phpcs:ignore
+		if ( UPLOAD_ERR_OK !== (int) $file['error'] || (int) $file['size'] > 8 * MB_IN_BYTES ) {
+			return remarka_str( 'form_err_file_dim' );
+		}
+		$ext     = strtolower( pathinfo( sanitize_file_name( $file['name'] ), PATHINFO_EXTENSION ) );
+		$allowed = array( 'pdf', 'doc', 'docx', 'png', 'jpg', 'jpeg' );
+		if ( ! in_array( $ext, $allowed, true ) || ! is_uploaded_file( $file['tmp_name'] ) ) {
+			return remarka_str( 'form_err_file_tipo' );
+		}
+		$safe = sanitize_file_name( $file['name'] );
+		$dest = trailingslashit( get_temp_dir() ) . wp_unique_filename( get_temp_dir(), $safe );
+		if ( move_uploaded_file( $file['tmp_name'], $dest ) ) {
+			$attachments[]  = $dest;
+			$tmp_to_delete  = $dest;
+			$allegato_nome  = $safe;
+		}
+	}
+
+	$body  = 'Tipo di progetto: ' . $canon['tipo'][ $tipo_v ] . "\n";
+	$body .= 'Budget: ' . $canon['budget'][ $budget_v ] . "\n";
+	$body .= 'Tempi: ' . $canon['tempi'][ $tempi_v ] . "\n\n";
+	$body .= "Nome: $nome\n";
 	$body .= "Contatto: $contatto\n\n";
-	$body .= "Messaggio:\n$messaggio\n\n---\n";
+	$body .= 'Messaggio:' . "\n" . ( '' !== $messaggio ? $messaggio : '(nessun messaggio)' ) . "\n\n";
+	$body .= 'Allegato: ' . ( isset( $allegato_nome ) ? $allegato_nome : 'nessuno' ) . "\n---\n";
 	$body .= 'Pagina: ' . esc_url_raw( wp_get_referer() ?: home_url( '/' ) ) . "\n";
+	$body .= 'Lingua: ' . remarka_current_lang() . "\n";
 	$body .= "IP: $ip\n";
 	$body .= 'Data: ' . current_time( 'mysql' ) . "\n";
 
@@ -764,10 +925,15 @@ function remarka_form_process(): ?string {
 
 	$ok = wp_mail(
 		remarka_form_recipient(),
-		sprintf( '[remarka.biz] Richiesta di preventivo — %s', $nome ),
+		sprintf( '[remarka.biz] Richiesta di preventivo — %s (%s)', $nome, $canon['tipo'][ $tipo_v ] ),
 		$body,
-		$headers
+		$headers,
+		$attachments
 	);
+
+	if ( $tmp_to_delete && file_exists( $tmp_to_delete ) ) {
+		wp_delete_file( $tmp_to_delete );
+	}
 
 	if ( ! $ok ) {
 		return remarka_str( 'form_err_tecnico' );

@@ -442,15 +442,97 @@
 	   Progressive enhancement: без JS форма шлёт обычный POST на
 	   admin-post.php; здесь перехватываем и шлём через fetch на
 	   admin-ajax, показывая успех/ошибку без перезагрузки. */
+	/* Многошаговость формы: показываем один fieldset[data-sr-step] за раз,
+	   валидируем шаг перед переходом, ведём полоску прогресса. Без JS все
+	   шаги видны и форма шлётся одним POST — фолбэк не ломается. */
+	function initStepForm(form, i18n, errorEl) {
+		var steps = form.querySelectorAll('[data-sr-step]');
+		var submitBtn = form.querySelector('[data-sr-submit]');
+		var progress = form.querySelector('[data-sr-progress]');
+		var pFill = form.querySelector('[data-sr-progress-fill]');
+		var pLabel = form.querySelector('[data-sr-progress-label]');
+		if (steps.length < 2 || !submitBtn) return;
+
+		var cur = 0;
+		var nav = document.createElement('div');
+		nav.className = 'sr-form-nav';
+		var back = document.createElement('button');
+		back.type = 'button';
+		back.className = 'sr-form-back';
+		back.textContent = i18n.back || '← Indietro';
+		var next = document.createElement('button');
+		next.type = 'button';
+		next.className = 'wp-block-button__link';
+		next.textContent = i18n.next || 'Continua →';
+		nav.appendChild(back);
+		nav.appendChild(next);
+		form.insertBefore(nav, errorEl);
+
+		function showErr(msg) { if (errorEl) { errorEl.textContent = msg; errorEl.hidden = false; } }
+		function hideErr() { if (errorEl) errorEl.hidden = true; }
+
+		function validStep(step) {
+			var groups = {};
+			step.querySelectorAll('input[type="radio"]').forEach(function (r) {
+				if (!(r.name in groups)) groups[r.name] = false;
+				if (r.checked) groups[r.name] = true;
+			});
+			for (var g in groups) { if (!groups[g]) { showErr(i18n.choose || 'Seleziona un’opzione.'); return false; } }
+			var invalid = null;
+			step.querySelectorAll('input:not([type="radio"]), textarea, select').forEach(function (f) {
+				if (!invalid && !f.checkValidity()) invalid = f;
+			});
+			if (invalid) { if (invalid.reportValidity) invalid.reportValidity(); return false; }
+			return true;
+		}
+
+		function show(n) {
+			steps.forEach(function (s, idx) { s.hidden = idx !== n; });
+			var last = n === steps.length - 1;
+			back.style.visibility = n === 0 ? 'hidden' : 'visible';
+			next.hidden = last;
+			submitBtn.hidden = !last;
+			if (progress) {
+				progress.hidden = false;
+				if (pFill) pFill.style.width = ((n + 1) / steps.length * 100) + '%';
+				if (pLabel) pLabel.textContent = (i18n.step || 'Passo') + ' ' + (n + 1) + ' ' + (i18n.of || 'di') + ' ' + steps.length;
+			}
+			var focusable = steps[n].querySelector('input, textarea, select');
+			if (focusable && n > 0) { try { focusable.focus({ preventScroll: true }); } catch (err) {} }
+		}
+
+		next.addEventListener('click', function () { if (validStep(steps[cur])) { hideErr(); cur++; show(cur); } });
+		back.addEventListener('click', function () { if (cur > 0) { hideErr(); cur--; show(cur); } });
+		show(0);
+	}
+
 	function initContactForm() {
 		document.querySelectorAll('[data-sr-contact-form]').forEach(function (form) {
 			var success = form.parentElement.querySelector('[data-sr-form-success]');
 			var errorEl = form.querySelector('[data-sr-form-error]');
 			var btn = form.querySelector('button[type="submit"]');
 			var cfg = window.remarkaPSI || {};
-			if (!cfg.ajaxUrl || !window.fetch) {
-				return; // остаётся нативный POST-фолбэк
+			var i18n = window.remarkaForm || {};
+
+			// Отражаем имя выбранного файла в зоне загрузки.
+			var fileInput = form.querySelector('.sr-upload__input');
+			var uploadText = form.querySelector('[data-sr-upload-text]');
+			if (fileInput && uploadText) {
+				var uploadOrig = uploadText.innerHTML;
+				fileInput.addEventListener('change', function () {
+					if (fileInput.files && fileInput.files.length) {
+						uploadText.textContent = fileInput.files[0].name;
+					} else {
+						uploadText.innerHTML = uploadOrig;
+					}
+				});
 			}
+
+			if (!cfg.ajaxUrl || !window.fetch) {
+				return; // остаётся нативный POST-фолбэк (все шаги видны)
+			}
+
+			initStepForm(form, i18n, errorEl);
 
 			form.addEventListener('submit', function (e) {
 				e.preventDefault();
@@ -458,7 +540,7 @@
 				if (btn) {
 					btn.disabled = true;
 					btn.dataset.srLabel = btn.textContent;
-					btn.textContent = 'Invio in corso…';
+					btn.textContent = i18n.sending || 'Invio in corso…';
 				}
 
 				var data = new FormData(form);

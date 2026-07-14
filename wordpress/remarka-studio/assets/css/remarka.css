@@ -1055,6 +1055,262 @@ body.page .entry-title {
   margin: 0 0 14px;
 }
 
+/* ---------- Modulo preventivo a step ---------- */
+/* L'attributo [hidden] deve vincere anche sui bottoni: .wp-block-button__link
+   ha display:inline-block da WP core, che altrimenti sovrascrive [hidden]. */
+.sr-stepform [hidden] {
+  display: none !important;
+}
+
+.sr-stepform fieldset.sr-step {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.sr-form-progress {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 26px;
+}
+
+.sr-form-progress__label {
+  font-family: var(--sr-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sr-grigio);
+  white-space: nowrap;
+}
+
+.sr-form-progress__bar {
+  height: 3px;
+  background: var(--sr-traccia);
+  border-radius: 2px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sr-form-progress__fill {
+  height: 100%;
+  background: var(--sr-oltremare);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.sr-step__q {
+  font-family: var(--sr-font-display);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--sr-inchiostro);
+  margin: 0 0 4px;
+  padding: 0;
+}
+
+.sr-step__hint {
+  font-size: 14px;
+  color: var(--sr-grigio);
+  margin: 0 0 20px;
+}
+
+.sr-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.sr-choice {
+  border: 1px solid var(--sr-bordo);
+  border-radius: 8px;
+  padding: 14px 15px;
+  cursor: pointer;
+  background: #fff;
+  font-size: 15px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--sr-inchiostro);
+}
+
+.sr-choice:hover {
+  border-color: var(--sr-oltremare-chiaro);
+}
+
+.sr-choice:has(.sr-choice__input:checked) {
+  border-color: var(--sr-oltremare);
+  background: rgba(36, 64, 200, 0.05);
+  box-shadow: inset 0 0 0 1px var(--sr-oltremare);
+}
+
+.sr-choice__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sr-choice__tick {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--sr-bordo);
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+
+.sr-choice:has(.sr-choice__input:checked) .sr-choice__tick {
+  border-color: var(--sr-oltremare);
+  background: var(--sr-oltremare);
+}
+
+.sr-choice:has(.sr-choice__input:checked) .sr-choice__tick::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.sr-choice__input:focus-visible + .sr-choice__tick {
+  outline: 2px solid var(--sr-oltremare);
+  outline-offset: 2px;
+}
+
+.sr-field-label {
+  font-family: var(--sr-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sr-grigio);
+  display: block;
+  margin: 22px 0 10px;
+}
+
+.sr-step__hint + .sr-field-label,
+.sr-step .sr-field-label:first-of-type {
+  margin-top: 0;
+}
+
+.sr-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sr-pill {
+  border: 1px solid var(--sr-bordo);
+  border-radius: 100px;
+  padding: 9px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  background: #fff;
+  color: var(--sr-inchiostro);
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.sr-pill:hover {
+  border-color: var(--sr-oltremare-chiaro);
+}
+
+.sr-pill:has(.sr-pill__input:checked) {
+  border-color: var(--sr-oltremare);
+  background: var(--sr-oltremare);
+  color: #fff;
+}
+
+.sr-pill__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sr-pill:has(.sr-pill__input:focus-visible) {
+  outline: 2px solid var(--sr-oltremare);
+  outline-offset: 2px;
+}
+
+.sr-optional {
+  color: var(--sr-grigio);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--sr-font-body);
+  font-size: 12px;
+}
+
+.sr-upload {
+  display: block;
+  border: 1.5px dashed var(--sr-bordo);
+  border-radius: 8px;
+  padding: 18px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--sr-grigio);
+  font-size: 14px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+  margin-top: 8px;
+}
+
+.sr-upload:hover {
+  border-color: var(--sr-oltremare-chiaro);
+  color: var(--sr-inchiostro);
+}
+
+.sr-upload__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.sr-upload__text {
+  display: block;
+}
+
+.sr-upload__text b {
+  color: var(--sr-oltremare);
+  font-weight: 500;
+}
+
+.sr-upload__hint {
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.sr-form-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.sr-form-nav .wp-block-button__link {
+  margin: 0;
+}
+
+.sr-form-back {
+  background: none;
+  border: 0;
+  color: var(--sr-grigio);
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  padding: 8px 4px;
+}
+
+.sr-form-back:hover {
+  color: var(--sr-inchiostro);
+}
+
+@media (max-width: 520px) {
+  .sr-choice-grid { grid-template-columns: 1fr; }
+}
+
 .sr-form-success p {
   margin: 0 0 10px;
 }
