@@ -627,6 +627,23 @@ body.page .entry-title {
   margin: 8px 0 0;
 }
 
+/* ---------- Garanzie a 4 tasselli («Nero su bianco») ----------
+   Con 4 tasselli il numero mono va rimpicciolito, altrimenti l'ultima
+   cifra ("12 mesi") va a capo e disallinea la didascalia. Fix limitato
+   al wrapper della sezione garanzie (non tocca .sr-stat altrove, es.
+   tre-numeri a 3 colonne). Su mobile, dove i tasselli tornano 2×2,
+   la dimensione piena torna leggibile. */
+
+.sr-garanzie__tiles .sr-stat__num {
+  font-size: clamp(46px, 4.4vw, 64px);
+}
+
+@media (max-width: 782px) {
+  .sr-garanzie__tiles .sr-stat__num {
+    font-size: clamp(56px, 10vw, 72px);
+  }
+}
+
 /* ---------- La barra dei cento ---------- */
 
 .sr-barra {
@@ -736,6 +753,54 @@ body.page .entry-title {
   color: var(--sr-grigio);
 }
 
+/* ---------- Timeline «21 giorni» (widget hero) ---------- */
+
+.sr-timeline__title {
+  font-family: var(--sr-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sr-grigio);
+  margin: 0 0 22px;
+  line-height: 1.4;
+}
+
+.sr-timeline__row { margin-top: 22px; }
+.sr-timeline__row:first-of-type { margin-top: 0; }
+
+.sr-timeline__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 9px;
+}
+
+.sr-timeline__label {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--sr-inchiostro);
+}
+
+.sr-timeline__wk {
+  font-family: var(--sr-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--sr-grigio);
+  white-space: nowrap;
+}
+
+.sr-timeline__foot {
+  margin: 26px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--sr-bordo);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--sr-grigio);
+}
+
+.sr-timeline__foot b { color: var(--sr-inchiostro); font-weight: 500; }
+
 /* ---------- Браузерная рамка скриншотов ---------- */
 
 .sr-browser {
@@ -828,6 +893,142 @@ body.page .entry-title {
   font-size: 17px;
   text-align: right;
   white-space: nowrap;
+}
+
+/* ---------- Tabella «noi vs mercato» ---------- */
+
+.sr-market-table { overflow-x: auto; }
+
+.sr-market-table table {
+  min-width: 820px;
+  width: 100%;
+  background: var(--sr-bianco);
+  border: 1px solid var(--sr-bordo);
+  border-collapse: collapse;
+}
+
+.sr-market-table th {
+  font-family: var(--sr-font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sr-grigio);
+  text-align: left;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--sr-bordo);
+  white-space: nowrap;
+}
+
+.sr-market-table th.sr-market-table__uscol {
+  color: var(--sr-inchiostro);
+  background: rgba(36, 64, 200, 0.04);
+}
+
+.sr-market-table td {
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--sr-bordo);
+  vertical-align: baseline;
+  font-family: var(--sr-font-mono);
+  font-size: 15px;
+  color: var(--sr-grigio);
+  white-space: nowrap;
+}
+
+.sr-market-table tr:last-child td { border-bottom: none; }
+
+.sr-market-table td.sr-market-table__prod {
+  font-family: var(--sr-font-display);
+  font-weight: 500;
+  font-size: 19px;
+  color: var(--sr-inchiostro);
+  white-space: normal;
+}
+
+.sr-market-table td.sr-market-table__us {
+  color: var(--sr-inchiostro);
+  font-weight: 500;
+  background: rgba(36, 64, 200, 0.04);
+}
+
+/* teaser compatto (home): 3 colonne, prezzo+tempi uniti */
+.sr-market-table--compact table { min-width: 520px; }
+
+.sr-market-table--compact td,
+.sr-market-table--compact th {
+  padding: 18px 22px;
+  white-space: normal;
+}
+
+.sr-market-table--compact td.sr-market-table__us { font-size: 15px; }
+
+.sr-market-table--compact .sr-market-table__sub {
+  display: block;
+  font-size: 12.5px;
+  color: var(--sr-grigio);
+  margin-top: 4px;
+  letter-spacing: 0.02em;
+}
+
+.sr-market-table--compact td.sr-market-table__us .sr-market-table__sub {
+  color: var(--sr-oltremare);
+}
+
+/* ---------- Lingue e mercati ---------- */
+
+.sr-langs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 48px;
+  margin-top: 8px;
+}
+
+.sr-langs__group {
+  border-top: 1px solid var(--sr-inchiostro);
+  padding: 26px 0 4px;
+}
+
+.sr-langs__market {
+  font-family: var(--sr-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sr-grigio);
+  margin: 0 0 16px;
+}
+
+.sr-langs__codes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sr-langs__code {
+  font-family: var(--sr-font-mono);
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  color: var(--sr-inchiostro);
+  position: relative;
+}
+
+.sr-langs__code:not(:last-child)::after {
+  content: "·";
+  position: absolute;
+  right: -10px;
+  color: var(--sr-bordo);
+}
+
+.sr-dark .sr-langs__group { border-top-color: rgba(247, 246, 242, 0.2); }
+.sr-dark .sr-langs__market { color: #9BA3C4; }
+.sr-dark .sr-langs__code { color: var(--sr-carta); }
+.sr-dark .sr-langs__code:not(:last-child)::after { color: rgba(247, 246, 242, 0.28); }
+
+@media (max-width: 860px) {
+  .sr-langs { grid-template-columns: 1fr; gap: 0; }
 }
 
 /* ---------- Righe con lettera mono (per chi è / cosa fa variare) ---------- */
@@ -1455,6 +1656,60 @@ body.page .entry-title {
   font-size: 12px;
   letter-spacing: 0.08em;
   color: var(--sr-grigio);
+}
+
+/* ---------- Settimane a chip (come lavoriamo) ---------- */
+
+.sr-weeks {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 24px;
+  border-top: 1px solid var(--sr-inchiostro);
+  margin-top: 56px;
+}
+
+.sr-week { padding-top: 24px; }
+
+.sr-week-chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--sr-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sr-oltremare);
+  border: 1px solid var(--sr-bordo);
+  border-radius: 100px;
+  padding: 6px 13px;
+}
+
+.sr-week__steps { display: grid; gap: 30px; margin-top: 24px; }
+.sr-week__step .sr-step__head { margin: 0; }
+
+.sr-week__step h4 {
+  font-family: var(--sr-font-display);
+  font-weight: 500;
+  font-size: 19px;
+  color: var(--sr-inchiostro);
+  margin: 12px 0 0;
+  line-height: 1.2;
+}
+
+.sr-week__step p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--sr-grigio);
+}
+
+@media (max-width: 860px) {
+  .sr-weeks { grid-template-columns: 1fr; gap: 0; }
+  .sr-week {
+    border-top: 1px solid var(--sr-bordo);
+    padding-top: 28px;
+    margin-top: 28px;
+  }
+  .sr-week:first-child { border-top: none; margin-top: 0; }
 }
 
 /* ---------- FAQ через core details ---------- */

@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Hero — Home con widget velocità
+ * Title: Hero — Home con timeline 21 giorni
  * Slug: remarka-studio/hero-home
  * Categories: remarka
- * Description: Hero principale: titolo, sottotitolo, due CTA e card con punteggio PageSpeed animato.
+ * Description: Hero principale: titolo, sottotitolo, due CTA e card con la timeline delle 3 settimane.
  * Viewport Width: 1400
  */
 ?>
@@ -19,11 +19,11 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading">Siti veloci che vendono<span class="sr-accent-dot">.</span></h1>
+<h1 class="wp-block-heading">Il sito nuovo in 3 settimane. A prezzo chiuso<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"medium","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size">Progettiamo siti progressivi per PMI italiane: PageSpeed 90+ garantito da contratto, consegna a data fissa, prezzo chiuso.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size">Consegna a data fissa con penale in contratto, prezzo bloccato alla firma, PageSpeed 90+ garantito. Siti in quattro lingue con redattori madrelingua, dal 2001.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"36px"}}}} -->
@@ -34,48 +34,39 @@
 <!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="#contatti">Preventivo in 24 ore</a></div>
 <!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:paragraph {"className":"sr-mono","style":{"spacing":{"margin":{"top":"18px"}}},"fontSize":"small","textColor":"grigio"} -->
+<p class="has-grigio-color has-text-color has-small-font-size sr-mono" style="margin-top:18px">3 settimane: sito aziendale. Vetrina: 2. E-commerce: 6.</p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group sr-card"><!-- wp:paragraph {"className":"sr-eyebrow sr-no-margin"} -->
-<p class="sr-eyebrow sr-no-margin">Google PageSpeed — mobile</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sr-score-line"} -->
-<p class="sr-score-line"><span class="sr-score-num sr-counter">97</span><span class="sr-score-of">/ 100</span></p>
+<div class="wp-block-group sr-card"><!-- wp:paragraph {"className":"sr-timeline__title sr-no-margin"} -->
+<p class="sr-timeline__title sr-no-margin">Dalla firma all'online — 21 giorni</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->
-<div class="sr-barra" data-sr-target="97%" data-sr-delay="400" role="img" aria-label="Punteggio 97 su 100" style="margin-top:18px"><div class="sr-barra__fill"></div><span class="sr-barra__tick" style="left:90%"></span></div>
-<div class="sr-score-scale" aria-hidden="true"><span>0</span><span>50</span><span>100</span></div>
+<div class="sr-timeline">
+<div class="sr-timeline__row">
+<div class="sr-timeline__head"><span class="sr-timeline__label">Analisi e design</span><span class="sr-timeline__wk">Settimana 1</span></div>
+<div class="sr-barra sr-barra--h6" data-sr-target="33%"><div class="sr-barra__fill"></div></div>
+</div>
+<div class="sr-timeline__row">
+<div class="sr-timeline__head"><span class="sr-timeline__label">Sviluppo</span><span class="sr-timeline__wk">Settimana 2</span></div>
+<div class="sr-barra sr-barra--h6" data-sr-target="66%"><div class="sr-barra__fill"></div></div>
+</div>
+<div class="sr-timeline__row">
+<div class="sr-timeline__head"><span class="sr-timeline__label">Contenuti, test, online</span><span class="sr-timeline__wk">Settimana 3</span></div>
+<div class="sr-barra sr-barra--h6" data-sr-target="100%"><div class="sr-barra__fill"></div></div>
+</div>
+</div>
 <!-- /wp:html -->
 
-<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Punteggio medio dei siti che consegniamo. Garantito da contratto.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:html -->
-<form data-sr-hero-form style="margin-top:24px;border-top:1px solid var(--sr-bordo);padding-top:24px">
-  <label for="hero-url" class="sr-eyebrow" style="display:block;margin-bottom:10px">E il vostro sito quanto fa?</label>
-  <div class="sr-tool-row">
-    <input id="hero-url" type="text" placeholder="www.tuosito.it" class="sr-text-input" />
-    <button type="submit" class="wp-block-button__link" style="padding:13px 22px;font-size:15px;border:1px solid var(--sr-oltremare)">Analizza</button>
-  </div>
-  <p class="sr-tool-pending sr-mono" data-sr-hero-pending hidden>Analisi Google in corso — fino a 30 secondi<span class="sr-blink">…</span></p>
-  <div data-sr-hero-result hidden style="margin-top:18px">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
-      <span data-sr-hero-url style="font-size:14px;color:var(--sr-grigio);overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></span>
-      <span data-sr-hero-score class="sr-mono" style="font-size:28px;color:var(--sr-inchiostro)"></span>
-    </div>
-    <div class="sr-barra sr-barra--h8" style="margin-top:8px">
-      <div class="sr-barra__fill sr-barra__fill--muted" data-sr-hero-fill style="width:0%"></div>
-    </div>
-    <p style="margin:12px 0 0;font-size:14px;line-height:1.5;color:var(--sr-grigio)">Margine di miglioramento: con un sito progressivo garantiamo <span class="sr-mono" style="color:var(--sr-verde)">90+</span> da contratto.</p>
-  </div>
-</form>
-<!-- /wp:html --></div>
+<!-- wp:paragraph {"className":"sr-timeline__foot"} -->
+<p class="sr-timeline__foot">La data è nel contratto: <strong>ogni giorno lavorativo di ritardo vale l'1% di sconto.</strong></p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>
