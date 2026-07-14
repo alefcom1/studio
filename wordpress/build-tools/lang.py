@@ -45,10 +45,13 @@ CASES_SLUGS = {
 }
 
 TOOLS_SLUGS = {
-    'test-velocita':      {'en': 'speed-test',       'ru': 'test-skorosti'},
-    'check-gdpr':         {'en': 'gdpr-check',       'ru': 'proverka-gdpr'},
-    'analisi-seo':        {'en': 'seo-audit',        'ru': 'seo-audit'},
-    'roi-localizzazione': {'en': 'localization-roi', 'ru': 'roi-lokalizacii'},
+    'test-velocita':          {'en': 'speed-test',           'ru': 'test-skorosti'},
+    'check-gdpr':             {'en': 'gdpr-check',           'ru': 'proverka-gdpr'},
+    'analisi-seo':            {'en': 'seo-audit',            'ru': 'seo-audit'},
+    'roi-localizzazione':     {'en': 'localization-roi',     'ru': 'roi-lokalizacii'},
+    'verifica-accessibilita': {'en': 'accessibility-check',  'ru': 'proverka-dostupnosti'},
+    'sito-pronto-ai':         {'en': 'ai-readiness',         'ru': 'gotovnost-k-ii'},
+    'impatto-co2':            {'en': 'website-carbon',       'ru': 'uglerodnyj-sled'},
 }
 
 BLOG_SLUGS = {

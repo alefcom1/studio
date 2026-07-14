@@ -129,6 +129,9 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Numero di prodotti e varianti oltre il catalogo base.</span></div><div><span class="sr-mono">b</span><span>Integrazioni con corrieri e magazzino esterno.</span></div><div><span class="sr-mono">c</span><span>Metodi di pagamento aggiuntivi oltre carta, PayPal e bonifico.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
+<p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/verifica-accessibilita/">Obbligo di accessibilità (EAA dal 2025): verifica il vostro sito →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/prezzi/">Confronta tutte le tariffe →</a></p>
 <!-- /wp:html -->
 </section>

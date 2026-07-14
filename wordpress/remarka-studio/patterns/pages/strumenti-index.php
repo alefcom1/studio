@@ -41,13 +41,13 @@
 <p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/02</p>
 <!-- /wp:html -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Check GDPR e cookie</h3>
+<h3 class="wp-block-heading">Analisi SEO on-page</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Banner, informative e consensi: cosa manca per essere a norma.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Titoli, struttura e dati mancanti sulla pagina che conta di più.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/check-gdpr/">Prova →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/analisi-seo/">Prova →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -56,13 +56,13 @@
 <p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/03</p>
 <!-- /wp:html -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Analisi SEO on-page</h3>
+<h3 class="wp-block-heading">Check GDPR e cookie</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Titoli, struttura e dati mancanti sulla pagina che conta di più.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Banner, informative e consensi: cosa manca per essere a norma.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/analisi-seo/">Prova →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/check-gdpr/">Prova →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -78,6 +78,51 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/roi-localizzazione/">Prova →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/05</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Verifica accessibilità</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Le barriere di accessibilità più comuni, misurate con Google.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/verifica-accessibilita/">Prova →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/06</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Sito pronto per l’AI</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">llms.txt, crawler AI, dati strutturati e sitemap: quattro segnali.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/sito-pronto-ai/">Prova →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/07</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Impatto CO₂</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Quanta CO₂ produce ogni visita — e quanta all’anno.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/impatto-co2/">Prova →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

@@ -3,7 +3,7 @@
  * Title: Pagina — Strumento: Test velocità
  * Slug: remarka-studio/strumento-test-velocita
  * Categories: remarka-pagine
- * Description: Strumento interattivo con demo di analisi PageSpeed (punteggio, LCP/INP/CLS simulati).
+ * Description: Strumento gratuito Test velocità: widget interattivo, come funziona, FAQ, CTA.
  * Viewport Width: 1400
  */
 ?>
@@ -15,14 +15,14 @@
 <h1 class="wp-block-heading" style="font-size:clamp(34px,4vw,52px)">Test velocità sito web: il punteggio reale di Google<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:100%">Punteggio Google PageSpeed e le tre metriche che lo determinano, spiegate in italiano. Senza registrazione.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:100%">Punteggio Google PageSpeed e le tre metriche che lo determinano — LCP, INP, CLS — spiegate in italiano. Strategia mobile, dati reali dall’API di Google. Senza registrazione.</p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 
-<div class="sr-tool-widget sr-card">
+<div class="sr-tool-widget sr-card" data-sr-tool="speed" data-sr-locale="it">
   <form data-sr-tool-form>
     <div class="sr-tool-row">
       <input type="text" placeholder="www.tuosito.it" class="sr-text-input" required />
@@ -52,16 +52,52 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Come funziona</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Tre passaggi, nessuna registrazione<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Incollate l’indirizzo</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Scrivete l’URL del sito: la home o la pagina interna che porta più visite.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Misuriamo con Google</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Interroghiamo l’API PageSpeed Insights in strategia mobile — gli stessi dati che Google usa per il posizionamento.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Leggete cosa frena il sito</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Punteggio 0–100 e le tre metriche Core Web Vitals spiegate in italiano, senza gergo tecnico.</p></div></div>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Tre domande tipiche</p>
+<!-- /wp:paragraph -->
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Il punteggio è quello vero di Google?</summary><!-- wp:paragraph -->
+<p>Sì: arriva dall’API ufficiale PageSpeed Insights, strategia mobile. È lo stesso motore che trovate su pagespeed.web.dev.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Perché misurate solo il mobile?</summary><!-- wp:paragraph -->
+<p>Perché Google indicizza e classifica in base alla versione mobile del sito. Il punteggio desktop, più alto quasi ovunque, conta poco per il posizionamento.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Un punteggio basso danneggia le vendite?</summary><!-- wp:paragraph -->
+<p>Sotto i 50, gran parte dei visitatori da mobile abbandona prima del caricamento completo: le campagne portano clic che non diventano richieste.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+</section>
+<!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-dark"><!-- wp:heading -->
-<h2 class="wp-block-heading">Vuoi che sistemiamo noi questi problemi<span class="sr-accent-dot">?</span></h2>
+<h2 class="wp-block-heading">Vogliamo sistemare noi questi problemi<span class="sr-accent-dot">?</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px">Report gratuito con le cause, le priorità e un preventivo chiuso: 90+ garantito da contratto.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px">Report gratuito con le cause, le priorità e un preventivo chiuso: PageSpeed 90+ garantito da contratto.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"28px"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi l’analisi completa</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/servizi/seo-tecnica/">Scopri la SEO tecnica</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
@@ -72,7 +108,7 @@
 <p class="sr-eyebrow">Gli altri strumenti gratuiti</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div class="sr-servizi-rows"><div><span class="sr-mono" style="color:var(--sr-oltremare)">/02</span><a href="/strumenti/check-gdpr/" style="color:var(--sr-inchiostro);font-size:15.5px">Check GDPR e cookie</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/03</span><a href="/strumenti/analisi-seo/" style="color:var(--sr-inchiostro);font-size:15.5px">Analisi SEO on-page</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/04</span><a href="/strumenti/roi-localizzazione/" style="color:var(--sr-inchiostro);font-size:15.5px">ROI localizzazione</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div></div>
+<div class="sr-servizi-rows"><div><span class="sr-mono" style="color:var(--sr-oltremare)">/02</span><a href="/strumenti/analisi-seo/" style="color:var(--sr-inchiostro);font-size:15.5px">Analisi SEO on-page</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/03</span><a href="/strumenti/check-gdpr/" style="color:var(--sr-inchiostro);font-size:15.5px">Check GDPR e cookie</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/04</span><a href="/strumenti/roi-localizzazione/" style="color:var(--sr-inchiostro);font-size:15.5px">ROI localizzazione</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/05</span><a href="/strumenti/verifica-accessibilita/" style="color:var(--sr-inchiostro);font-size:15.5px">Verifica accessibilità</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/06</span><a href="/strumenti/sito-pronto-ai/" style="color:var(--sr-inchiostro);font-size:15.5px">Sito pronto per l’AI</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/07</span><a href="/strumenti/impatto-co2/" style="color:var(--sr-inchiostro);font-size:15.5px">Impatto CO₂</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->

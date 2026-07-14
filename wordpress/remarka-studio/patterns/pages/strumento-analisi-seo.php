@@ -3,44 +3,98 @@
  * Title: Pagina — Strumento: Analisi SEO on-page
  * Slug: remarka-studio/strumento-analisi-seo
  * Categories: remarka-pagine
- * Description: Placeholder onesto per lo strumento Analisi SEO on-page (non ancora implementato).
+ * Description: Strumento gratuito Analisi SEO on-page: widget interattivo, come funziona, FAQ, CTA.
  * Viewport Width: 1400
  */
 ?>
 <!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Strumento gratuito /03</p>
+<p class="sr-eyebrow">Strumento gratuito /02</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(34px,4vw,52px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(34px,4vw,52px)">Analisi SEO della vostra pagina.<span class="sr-accent-dot">.</span></h1>
+<h1 class="wp-block-heading" style="font-size:clamp(34px,4vw,52px)">Analisi SEO on-page: cosa vede Google sulla vostra pagina<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:100%">Controlliamo titoli, struttura e dati mancanti sulla pagina che conta di più per il vostro business.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:100%">Titolo, struttura dei contenuti e dati mancanti sulla pagina che conta di più per il vostro business. Punteggio SEO di Google e le correzioni concrete, in italiano. Senza registrazione.</p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
-<div style="text-align:center;max-width:640px;margin:0 auto">
+
+<div class="sr-tool-widget sr-card" data-sr-tool="seo" data-sr-locale="it"
+     data-label-suffix=" — SEO on-page"
+     data-verdict-good="Ottimo: le basi SEO on-page sono a posto."
+     data-verdict-mid="SEO nella media: ci sono correzioni concrete da fare."
+     data-verdict-poor="SEO on-page carente: è la priorità da sistemare."
+     data-audits-empty="Nessun problema SEO rilevante rilevato."
+     data-err="Non siamo riusciti a completare l’analisi. Riprovate tra qualche minuto.">
+  <form data-sr-tool-form>
+    <div class="sr-tool-row"><input type="text" placeholder="www.tuosito.it" class="sr-text-input" required /><button type="submit" class="wp-block-button__link" style="padding:17px 30px">Analizza la SEO</button></div>
+  </form>
+  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>Analisi Google in corso<span class="sr-blink">…</span></p>
+  <div class="sr-tool-result" data-sr-tool-result hidden>
+    <p style="margin:0;font-size:14px;color:var(--sr-grigio)" data-sr-tool-url></p>
+    <div class="sr-tool-result__score">
+      <span class="sr-mono" data-sr-tool-score>0</span><span class="sr-mono" style="font-size:18px;color:var(--sr-grigio)">/100</span>
+    </div>
+    <div class="sr-barra" style="height:10px"><div class="sr-barra__fill" data-sr-tool-fill style="width:0%"></div><span class="sr-barra__tick" style="left:90%"></span></div>
+    <p style="margin-top:20px;font-size:15.5px;color:var(--sr-grigio)" data-sr-tool-verdict></p>
+    <ul class="sr-tool-audits" data-sr-tool-audits></ul>
+  </div>
+</div>
 <!-- /wp:html -->
-<!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">In arrivo</p>
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Come funziona</p>
 <!-- /wp:paragraph -->
-<!-- wp:paragraph {"fontSize":"medium"} -->
-<p class="has-medium-font-size">Questo strumento è in fase di sviluppo. Nel frattempo richiedete un’analisi gratuita: vi rispondiamo entro un giorno lavorativo.</p>
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Tre passaggi, nessuna registrazione<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Scegliete la pagina giusta</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Non per forza la home: la pagina che deve posizionarsi — un servizio, una scheda, un articolo.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Google la analizza</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Usiamo la categoria SEO di Lighthouse via API PageSpeed: titoli, meta description, tag, link e struttura.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Vedete cosa correggere</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Punteggio 0–100 e la lista degli elementi on-page da sistemare, in ordine di priorità.</p></div></div>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Tre domande tipiche</p>
 <!-- /wp:paragraph -->
-<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"20px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:20px"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi analisi gratuita</a></div>
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Questa analisi fa posizionare il sito?</summary><!-- wp:paragraph -->
+<p>Da sola no: verifica le basi tecniche on-page (titoli, struttura, dati). Il posizionamento dipende anche da contenuti e autorevolezza, che richiedono tempo.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Che differenza c’è con l’analisi dei contenuti?</summary><!-- wp:paragraph -->
+<p>Qui controlliamo la parte tecnica della pagina, quella che Google legge. La qualità dei testi è un lavoro separato, che facciamo con copywriter partner.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Analizza tutto il sito?</summary><!-- wp:paragraph -->
+<p>No: una pagina alla volta, quella che indicate. È l’unità su cui Google valuta la pertinenza per una ricerca.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-dark"><!-- wp:heading -->
+<h2 class="wp-block-heading">Vogliamo sistemare noi la SEO tecnica<span class="sr-accent-dot">?</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px">Audit completo, dati strutturati e Core Web Vitals a posto: PageSpeed 90+ garantito da contratto.</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"28px"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/servizi/seo-tecnica/">Scopri la SEO tecnica</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/strumenti/sito-pronto-ai/">Verifica se il sito è pronto per l’AI</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
-</div>
-<!-- /wp:group -->
-<!-- wp:html -->
-</div>
-<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -48,7 +102,7 @@
 <p class="sr-eyebrow">Gli altri strumenti gratuiti</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div class="sr-servizi-rows"><div><span class="sr-mono" style="color:var(--sr-oltremare)">/01</span><a href="/strumenti/test-velocita/" style="color:var(--sr-inchiostro);font-size:15.5px">Test velocità</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/02</span><a href="/strumenti/check-gdpr/" style="color:var(--sr-inchiostro);font-size:15.5px">Check GDPR e cookie</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/04</span><a href="/strumenti/roi-localizzazione/" style="color:var(--sr-inchiostro);font-size:15.5px">ROI localizzazione</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div></div>
+<div class="sr-servizi-rows"><div><span class="sr-mono" style="color:var(--sr-oltremare)">/01</span><a href="/strumenti/test-velocita/" style="color:var(--sr-inchiostro);font-size:15.5px">Test velocità</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/03</span><a href="/strumenti/check-gdpr/" style="color:var(--sr-inchiostro);font-size:15.5px">Check GDPR e cookie</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/04</span><a href="/strumenti/roi-localizzazione/" style="color:var(--sr-inchiostro);font-size:15.5px">ROI localizzazione</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/05</span><a href="/strumenti/verifica-accessibilita/" style="color:var(--sr-inchiostro);font-size:15.5px">Verifica accessibilità</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/06</span><a href="/strumenti/sito-pronto-ai/" style="color:var(--sr-inchiostro);font-size:15.5px">Sito pronto per l’AI</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/07</span><a href="/strumenti/impatto-co2/" style="color:var(--sr-inchiostro);font-size:15.5px">Impatto CO₂</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->

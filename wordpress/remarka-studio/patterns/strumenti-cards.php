@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Strumenti gratuiti — quattro card
+ * Title: Strumenti gratuiti — sette card
  * Slug: remarka-studio/strumenti-cards
  * Categories: remarka
- * Description: Quattro card strumenti con indice mono e link.
+ * Description: Sette card strumenti con indice mono e link.
  * Viewport Width: 1400
  */
 ?>
@@ -41,24 +41,6 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
-<h3 class="wp-block-heading" style="margin-top:14px">Check GDPR e cookie</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Banner, informative e consensi: cosa manca per essere a norma.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
-<p class="sr-card-link sr-no-margin"><a href="/strumenti/check-gdpr/">Prova →</a></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
-<div class="wp-block-group sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-mono sr-no-margin","style":{"typography":{"fontSize":"12px"}},"textColor":"oltremare"} -->
-<p class="sr-mono sr-no-margin has-oltremare-color has-text-color" style="font-size:12px">/03</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
 <h3 class="wp-block-heading" style="margin-top:14px">Analisi SEO on-page</h3>
 <!-- /wp:heading -->
 
@@ -68,6 +50,24 @@
 
 <!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
 <p class="sr-card-link sr-no-margin"><a href="/strumenti/analisi-seo/">Prova →</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-mono sr-no-margin","style":{"typography":{"fontSize":"12px"}},"textColor":"oltremare"} -->
+<p class="sr-mono sr-no-margin has-oltremare-color has-text-color" style="font-size:12px">/03</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:14px">Check GDPR e cookie</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Banner, informative e consensi: cosa manca per essere a norma.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
+<p class="sr-card-link sr-no-margin"><a href="/strumenti/check-gdpr/">Prova →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -86,6 +86,60 @@
 
 <!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
 <p class="sr-card-link sr-no-margin"><a href="/strumenti/roi-localizzazione/">Prova →</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-mono sr-no-margin","style":{"typography":{"fontSize":"12px"}},"textColor":"oltremare"} -->
+<p class="sr-mono sr-no-margin has-oltremare-color has-text-color" style="font-size:12px">/05</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:14px">Verifica accessibilità</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Le barriere di accessibilità più comuni, misurate con Google.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
+<p class="sr-card-link sr-no-margin"><a href="/strumenti/verifica-accessibilita/">Prova →</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-mono sr-no-margin","style":{"typography":{"fontSize":"12px"}},"textColor":"oltremare"} -->
+<p class="sr-mono sr-no-margin has-oltremare-color has-text-color" style="font-size:12px">/06</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:14px">Sito pronto per l’AI</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">llms.txt, crawler AI, dati strutturati e sitemap: quattro segnali.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
+<p class="sr-card-link sr-no-margin"><a href="/strumenti/sito-pronto-ai/">Prova →</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-mono sr-no-margin","style":{"typography":{"fontSize":"12px"}},"textColor":"oltremare"} -->
+<p class="sr-mono sr-no-margin has-oltremare-color has-text-color" style="font-size:12px">/07</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:14px">Impatto CO₂</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Quanta CO₂ produce ogni visita — e quanta all’anno.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
+<p class="sr-card-link sr-no-margin"><a href="/strumenti/impatto-co2/">Prova →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></section>

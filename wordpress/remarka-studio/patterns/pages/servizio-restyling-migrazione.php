@@ -129,6 +129,9 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Numero di pagine da migrare oltre le prime 20.</span></div><div><span class="sr-mono">b</span><span>Complessità delle integrazioni esistenti da mantenere.</span></div><div><span class="sr-mono">c</span><span>Necessità di redesign grafico oltre alla base tecnica.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
+<p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/impatto-co2/">Misura l’impatto CO₂ del sito attuale →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/prezzi/">Confronta tutte le tariffe →</a></p>
 <!-- /wp:html -->
 </section>

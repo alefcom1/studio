@@ -129,6 +129,9 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Numero di lingue aggiuntive oltre le due comprese.</span></div><div><span class="sr-mono">b</span><span>Volume di contenuti da tradurre oltre le pagine base.</span></div><div><span class="sr-mono">c</span><span>Necessità di revisione periodica dopo la consegna.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
+<p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/roi-localizzazione/">Calcola il ROI della localizzazione →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/prezzi/">Confronta tutte le tariffe →</a></p>
 <!-- /wp:html -->
 </section>

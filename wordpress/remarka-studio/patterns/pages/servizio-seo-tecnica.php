@@ -129,6 +129,9 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Numero di pagine da ottimizzare oltre le prime 20.</span></div><div><span class="sr-mono">b</span><span>Presenza di contenuti multilingua da trattare.</span></div><div><span class="sr-mono">c</span><span>Storico tecnico da correggere prima di intervenire.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
+<p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/analisi-seo/">Analizza la SEO on-page della vostra pagina →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/sito-pronto-ai/">Verifica se il sito è pronto per l’AI →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/prezzi/">Confronta tutte le tariffe →</a></p>
 <!-- /wp:html -->
 </section>

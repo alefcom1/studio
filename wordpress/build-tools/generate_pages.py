@@ -52,7 +52,27 @@ def hero_interno(eyebrow_text, title, sub, extra_html='', stat=None):
     return section(inner, classes='sr-section sr-hero')
 
 
-# ---------------------------------------------------------------- Servizio
+# Link contestuali servizio → strumento gratuito (perelinkovka T2). Una riga
+# sobria dentro la sezione prezzo del servizio, senza rompere la struttura.
+SERVICE_TOOL_LINKS = {
+    'siti-aziendali':       [('Obbligo di accessibilità (EAA dal 2025): verifica il vostro sito', '/strumenti/verifica-accessibilita/')],
+    'e-commerce':           [('Obbligo di accessibilità (EAA dal 2025): verifica il vostro sito', '/strumenti/verifica-accessibilita/')],
+    'restyling-migrazione': [('Misura l’impatto CO₂ del sito attuale', '/strumenti/impatto-co2/')],
+    'seo-tecnica':          [('Analizza la SEO on-page della vostra pagina', '/strumenti/analisi-seo/'),
+                             ('Verifica se il sito è pronto per l’AI', '/strumenti/sito-pronto-ai/')],
+    'siti-multilingue':     [('Calcola il ROI della localizzazione', '/strumenti/roi-localizzazione/')],
+}
+
+
+def _service_tool_links_html(slug):
+    links = SERVICE_TOOL_LINKS.get(slug)
+    if not links:
+        return ''
+    return ''.join(
+        f'<p class="sr-card-link" style="margin-top:12px"><a href="{url}">{label} →</a></p>'
+        for label, url in links
+    )
+
 
 def build_servizi_index():
     hero = section(eyebrow('Servizi') + heading(1, 'Sei cose che sappiamo fare bene', style='clamp(38px,4.6vw,64px)') +
@@ -134,6 +154,7 @@ def build_servizio(svc):
         paragraph(svc['prezzo_lede'], color='grigio', size='base', extra_style='margin-top:14px;max-width:60ch') +
         paragraph('Cosa fa variare il prezzo', extra_style='margin-top:28px;font-weight:500;font-size:16px') +
         list_rows(svc['prezzo_note']) +
+        raw_html(_service_tool_links_html(svc['slug'])) +
         raw_html('<p class="sr-card-link" style="margin-top:20px"><a href="/prezzi/">Confronta tutte le tariffe →</a></p>'),
         classes='sr-section sr-section--bianco',
     )
@@ -382,16 +403,20 @@ def build_strumenti_index():
     write('strumenti-index', 'Pagina — Strumenti (elenco)', 'Elenco dei quattro strumenti gratuiti.', hero + grid)
 
 
-def build_strumento_test_velocita():
-    t = TOOLS[0]
-    hero = section(
-        eyebrow(f'Strumento gratuito {t["idx"]}') + heading(1, t['hero_titolo'], style='clamp(34px,4vw,52px)') +
-        paragraph(t['hero_sub'], color='grigio', size='medium', extra_style='max-width:100%'),
-        classes='sr-section sr-hero',
-    )
+# Markup del widget per tipo di strumento — segue STRETTAMENTE il contratto
+# data-* dichiarato in assets/js/remarka.js (blocco "CONTRATTO DATA-ATTRIBUTI").
+# Ogni pagina IT porta le proprie stringhe di verdetto/etichetta nei data-*,
+# con data-sr-locale="it". Riferimento markup: scratchpad/t1_widgets.html.
 
-    widget = raw_html(f'''
-<div class="sr-tool-widget sr-card">
+_TOOL_INPUT = ('<div class="sr-tool-row">'
+               '<input type="text" placeholder="www.tuosito.it" class="sr-text-input" required />'
+               '<button type="submit" class="wp-block-button__link" style="padding:17px 30px">{btn}</button>'
+               '</div>')
+
+
+def _widget_speed():
+    return '''
+<div class="sr-tool-widget sr-card" data-sr-tool="speed" data-sr-locale="it">
   <form data-sr-tool-form>
     <div class="sr-tool-row">
       <input type="text" placeholder="www.tuosito.it" class="sr-text-input" required />
@@ -417,53 +442,215 @@ def build_strumento_test_velocita():
     <p class="sr-tool-caption sr-mono">Dati reali da Google PageSpeed Insights API — strategia mobile. LCP e CLS da analisi Lighthouse; INP da dati di campo Chrome UX quando disponibili.</p>
   </div>
   </form>
-</div>''')
-
-    widget_section = section(widget, classes='sr-section')
-
-    cta = section(
-        heading(2, 'Vuoi che sistemiamo noi questi problemi', dot_char='?') +
-        paragraph('Report gratuito con le cause, le priorità e un preventivo chiuso: 90+ garantito da contratto.',
-                   color='grigio', size='medium', extra_style='margin-top:12px') +
-        buttons([("Richiedi l’analisi completa", '/#contatti', None)], justify='center', margin_top='28px'),
-        classes='sr-section sr-dark',
-    )
-
-    altri = TOOLS[1:]
-    rows = ''.join(
-        f'<div><span class="sr-mono" style="color:var(--sr-oltremare)">{o["idx"]}</span>'
-        f'<a href="/strumenti/{o["slug"]}/" style="color:var(--sr-inchiostro);font-size:15.5px">{o["titolo"]}</a>'
-        f'<span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div>'
-        for o in altri
-    )
-    altri_section = section(
-        eyebrow('Gli altri strumenti gratuiti') + raw_html(f'<div class="sr-servizi-rows">{rows}</div>'),
-        classes='sr-section sr-section--bianco',
-    )
-
-    write('strumento-test-velocita', 'Pagina — Strumento: Test velocità',
-          'Strumento interattivo con demo di analisi PageSpeed (punteggio, LCP/INP/CLS simulati).',
-          hero + widget_section + cta + altri_section)
+</div>'''
 
 
-def build_strumento_placeholder(tool):
-    """Le altre 3 card di /strumenti/ rimandano a pagine reali anche prima che
-    lo strumento sia implementato — placeholder onesto invece di link rotti."""
+def _widget_score(tipo, btn, pending, suffix, verdict_good, verdict_mid, verdict_poor,
+                  audits_empty, disclaimer=''):
+    disc = (f'\n      <p class="sr-disclaimer">{disclaimer}</p>' if disclaimer else '')
+    return f'''
+<div class="sr-tool-widget sr-card" data-sr-tool="{tipo}" data-sr-locale="it"
+     data-label-suffix="{suffix}"
+     data-verdict-good="{verdict_good}"
+     data-verdict-mid="{verdict_mid}"
+     data-verdict-poor="{verdict_poor}"
+     data-audits-empty="{audits_empty}"
+     data-err="Non siamo riusciti a completare l’analisi. Riprovate tra qualche minuto.">
+  <form data-sr-tool-form>
+    {_TOOL_INPUT.format(btn=btn)}
+  </form>
+  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>{pending}<span class="sr-blink">…</span></p>
+  <div class="sr-tool-result" data-sr-tool-result hidden>
+    <p style="margin:0;font-size:14px;color:var(--sr-grigio)" data-sr-tool-url></p>
+    <div class="sr-tool-result__score">
+      <span class="sr-mono" data-sr-tool-score>0</span><span class="sr-mono" style="font-size:18px;color:var(--sr-grigio)">/100</span>
+    </div>
+    <div class="sr-barra" style="height:10px"><div class="sr-barra__fill" data-sr-tool-fill style="width:0%"></div><span class="sr-barra__tick" style="left:90%"></span></div>
+    <p style="margin-top:20px;font-size:15.5px;color:var(--sr-grigio)" data-sr-tool-verdict></p>
+    <ul class="sr-tool-audits" data-sr-tool-audits></ul>{disc}
+  </div>
+</div>'''
+
+
+def _widget_co2():
+    return '''
+<div class="sr-tool-widget sr-card" data-sr-tool="co2" data-sr-locale="it"
+     data-co2-average="0.8" data-co2-visits="10000"
+     data-label-unit-year="kg CO₂e / anno"
+     data-verdict-good="Sotto la media del web: pagina leggera, bene così."
+     data-verdict-mid="Vicino alla media del web: c’è margine per alleggerire."
+     data-verdict-poor="Sopra la media del web: pagina pesante, conviene ottimizzare."
+     data-err="Non siamo riusciti a misurare il peso della pagina. Riprovate.">
+  <form data-sr-tool-form>
+    <div class="sr-tool-row">
+      <input type="text" placeholder="www.tuosito.it" class="sr-text-input" required />
+      <button type="submit" class="wp-block-button__link" style="padding:17px 30px">Misura l’impatto</button>
+    </div>
+  </form>
+  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>Misurazione in corso<span class="sr-blink">…</span></p>
+  <div class="sr-tool-result" data-sr-tool-result hidden>
+    <p style="margin:0;font-size:14px;color:var(--sr-grigio)" data-sr-tool-url></p>
+    <div class="sr-tool-result__score">
+      <span class="sr-mono" data-sr-tool-grams>0 g</span>
+    </div>
+    <div class="sr-barra" style="height:10px;margin-top:8px"><div class="sr-barra__fill" data-sr-tool-fill style="width:0%"></div><span class="sr-barra__tick" style="left:50%"></span></div>
+    <p style="margin-top:20px;font-size:15.5px;color:var(--sr-grigio)" data-sr-tool-verdict></p>
+    <div class="sr-tool-cwv">
+      <div><p class="sr-eyebrow" style="margin-bottom:8px">Peso pagina</p><p class="sr-tool-cwv-value sr-mono" data-sr-tool-weight></p></div>
+      <div><p class="sr-eyebrow" style="margin-bottom:8px">Stima annua</p><p class="sr-tool-cwv-value sr-mono" data-sr-tool-year></p></div>
+    </div>
+    <p class="sr-tool-caption sr-mono">Modello Sustainable Web Design (co2.js, Apache-2.0). Stima per visita; anno calcolato su 10.000 visite/mese.</p>
+  </div>
+</div>'''
+
+
+def _widget_gdpr():
+    return '''
+<div class="sr-tool-widget sr-card" data-sr-tool="gdpr" data-sr-locale="it"
+     data-label-cmp-yes="Cookie banner rilevato" data-label-cmp-no="Nessun cookie banner rilevato"
+     data-label-policy-yes="Link a privacy/cookie policy presente" data-label-policy-no="Nessun link a privacy/cookie policy"
+     data-label-trackers-clean="Nessun tracker nell’HTML iniziale"
+     data-label-trackers-flag="Tracker attivi senza banner"
+     data-label-trackers-ok="Tracker presenti (con banner)"
+     data-label-external="{n} domini esterni caricano script"
+     data-err="Non siamo riusciti a leggere il sito. Riprovate tra qualche minuto.">
+  <form data-sr-tool-form>
+    <div class="sr-tool-row">
+      <input type="text" placeholder="www.tuosito.it" class="sr-text-input" required />
+      <button type="submit" class="wp-block-button__link" style="padding:17px 30px">Controlla il sito</button>
+    </div>
+  </form>
+  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>Lettura del sito in corso<span class="sr-blink">…</span></p>
+  <div class="sr-tool-result" data-sr-tool-result hidden>
+    <ul class="sr-gdpr-rows">
+      <li><span class="sr-gdpr-key">Cookie banner</span><span data-sr-tool-cmp data-sr-flag></span></li>
+      <li><span class="sr-gdpr-key">Policy</span><span data-sr-tool-policy data-sr-flag></span></li>
+      <li><span class="sr-gdpr-key">Tracker</span><span data-sr-tool-trackers data-sr-flag></span></li>
+      <li><span class="sr-gdpr-key">Script esterni</span><span data-sr-tool-external data-sr-flag></span></li>
+    </ul>
+    <p class="sr-disclaimer" data-sr-tool-disclaimer>Verifica indicativa, non una consulenza legale. Un audit GDPR completo richiede la verifica manuale di cookie, finalità e basi giuridiche.</p>
+  </div>
+</div>'''
+
+
+def _widget_ai():
+    return '''
+<div class="sr-tool-widget sr-card" data-sr-tool="ai" data-sr-locale="it"
+     data-label-yes="Sì" data-label-no="No" data-label-partial="Parziale"
+     data-err="Non siamo riusciti a leggere il sito. Riprovate tra qualche minuto.">
+  <form data-sr-tool-form>
+    <div class="sr-tool-row">
+      <input type="text" placeholder="www.tuosito.it" class="sr-text-input" required />
+      <button type="submit" class="wp-block-button__link" style="padding:17px 30px">Verifica la prontezza AI</button>
+    </div>
+  </form>
+  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>Verifica in corso<span class="sr-blink">…</span></p>
+  <div class="sr-tool-result" data-sr-tool-result hidden>
+    <div class="sr-tool-result__score">
+      <span class="sr-mono" data-sr-tool-score>0/4</span>
+    </div>
+    <ul class="sr-gdpr-rows">
+      <li><span class="sr-gdpr-key">llms.txt</span><span data-sr-tool-llms data-sr-flag></span></li>
+      <li><span class="sr-gdpr-key">Crawler AI</span><span data-sr-tool-robots data-sr-flag></span></li>
+      <li><span class="sr-gdpr-key">JSON-LD</span><span data-sr-tool-jsonld data-sr-flag></span></li>
+      <li><span class="sr-gdpr-key">Sitemap</span><span data-sr-tool-sitemap data-sr-flag></span></li>
+    </ul>
+    <p class="sr-tool-caption sr-mono">Controlla llms.txt, l’accesso dei crawler AI (GPTBot, ClaudeBot, PerplexityBot, Google-Extended), i dati strutturati JSON-LD e la sitemap.</p>
+  </div>
+</div>'''
+
+
+def _widget_roi():
+    return '''
+<div class="sr-tool-widget sr-card" data-sr-tool="roi" data-sr-locale="it" data-roi-currency="€">
+  <form data-sr-tool-form>
+    <div class="sr-roi-grid">
+      <label>Visite / mese<input type="number" class="sr-text-input" data-sr-roi-visits value="10000" min="0"></label>
+      <label>Quota estera (%)<input type="number" class="sr-text-input" data-sr-roi-foreign value="20" min="0" max="100"></label>
+      <label>Conversione (%)<input type="number" class="sr-text-input" data-sr-roi-conv value="2" min="0" max="100" step="0.1"></label>
+      <label>Scontrino medio (€)<input type="number" class="sr-text-input" data-sr-roi-order value="80" min="0"></label>
+      <label>Boost localizzazione (%)<input type="number" class="sr-text-input" data-sr-roi-boost value="40" min="0"></label>
+    </div>
+    <div class="sr-tool-row" style="margin-top:16px">
+      <button type="submit" class="wp-block-button__link" style="padding:15px 28px">Ricalcola</button>
+    </div>
+  </form>
+  <div class="sr-tool-result" data-sr-tool-result hidden>
+    <div class="sr-roi-out">
+      <div><p class="sr-eyebrow" style="margin-bottom:6px">Ricavo aggiuntivo / mese</p><p class="sr-mono" data-sr-roi-monthly>—</p></div>
+      <div><p class="sr-eyebrow" style="margin-bottom:6px">Ricavo aggiuntivo / anno</p><p class="sr-mono" data-sr-roi-annual>—</p></div>
+    </div>
+    <p class="sr-disclaimer">Stima indicativa. Il boost di localizzazione (+40% conservativo) deriva da dati CSA Research sull’acquisto in lingua madre.</p>
+  </div>
+</div>'''
+
+
+def build_tool_widget(tool):
+    tipo = tool['tipo']
+    if tipo == 'speed':
+        return _widget_speed()
+    if tipo == 'seo':
+        return _widget_score('seo', 'Analizza la SEO', 'Analisi Google in corso', ' — SEO on-page',
+                             'Ottimo: le basi SEO on-page sono a posto.',
+                             'SEO nella media: ci sono correzioni concrete da fare.',
+                             'SEO on-page carente: è la priorità da sistemare.',
+                             'Nessun problema SEO rilevante rilevato.')
+    if tipo == 'a11y':
+        return _widget_score('a11y', 'Verifica l’accessibilità', 'Analisi in corso', ' — accessibilità',
+                             'Ottimo: le barriere principali sono già rimosse.',
+                             'Accessibilità nella media: alcune barriere restano.',
+                             'Accessibilità carente: barriere importanti per gli utenti.',
+                             'Nessuna barriera rilevante rilevata.',
+                             disclaimer='Controllo automatico (Lighthouse): copre parte dei criteri WCAG 2.1 AA. La conformità EAA richiede anche verifica manuale.')
+    if tipo == 'co2':
+        return _widget_co2()
+    if tipo == 'gdpr':
+        return _widget_gdpr()
+    if tipo == 'ai':
+        return _widget_ai()
+    if tipo == 'roi':
+        return _widget_roi()
+    raise ValueError(f'tipo strumento sconosciuto: {tipo}')
+
+
+def build_tool(tool):
+    """Pagina completa di uno strumento: hero, widget (per tipo, contratto T1),
+    «Come funziona» (3 passi), FAQ (3), CTA verso il servizio pertinente,
+    blocco «Gli altri strumenti gratuiti» (gli altri 6)."""
     hero = section(
         eyebrow(f'Strumento gratuito {tool["idx"]}') + heading(1, tool['hero_titolo'], style='clamp(34px,4vw,52px)') +
         paragraph(tool['hero_sub'], color='grigio', size='medium', extra_style='max-width:100%'),
         classes='sr-section sr-hero',
     )
 
-    placeholder = group(
-        eyebrow('In arrivo') +
-        paragraph('Questo strumento è in fase di sviluppo. Nel frattempo richiedete un’analisi gratuita: vi rispondiamo entro un giorno lavorativo.',
-                   size='medium') +
-        buttons([('Richiedi analisi gratuita', '/#contatti', None)], margin_top='20px'),
-        classes='sr-card',
+    widget_section = section(raw_html(build_tool_widget(tool)), classes='sr-section')
+
+    passi = ''.join(
+        f'<div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">{i:02d}</p>'
+        f'<p style="font-weight:500;margin-top:8px">{t}</p>'
+        f'<p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">{d}</p></div>'
+        for i, (t, d) in enumerate(tool['come_funziona'], start=1)
     )
-    placeholder_section = section(raw_html('<div style="text-align:center;max-width:640px;margin:0 auto">') + placeholder + raw_html('</div>'),
-                                   classes='sr-section')
+    come_funziona = section(
+        eyebrow('Come funziona') + heading(2, 'Tre passaggi, nessuna registrazione') +
+        group(passi, classes='', layout_type='grid', style='240px'),
+        classes='sr-section sr-section--bianco',
+    )
+
+    faq = section(
+        eyebrow('Tre domande tipiche') + details_faq(tool['faq']),
+        classes='sr-section',
+    )
+
+    cta_data = tool['cta']
+    cta_heading = cta_data['heading'].rstrip()
+    cta_dot = '?' if cta_heading.endswith('?') else '.'
+    cta = section(
+        heading(2, cta_heading.rstrip('?.'), dot_char=cta_dot) +
+        paragraph(cta_data['testo'], color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons(cta_data['buttons'], justify='center', margin_top='28px'),
+        classes='sr-section sr-dark',
+    )
 
     altri = [t for t in TOOLS if t['slug'] != tool['slug']]
     rows = ''.join(
@@ -478,8 +665,8 @@ def build_strumento_placeholder(tool):
     )
 
     write(f'strumento-{tool["slug"]}', f'Pagina — Strumento: {tool["titolo"]}',
-          f'Placeholder onesto per lo strumento {tool["titolo"]} (non ancora implementato).',
-          hero + placeholder_section + altri_section)
+          f'Strumento gratuito {tool["titolo"]}: widget interattivo, come funziona, FAQ, CTA.',
+          hero + widget_section + come_funziona + faq + cta + altri_section)
 
 
 # ---------------------------------------------------------------- Città
@@ -819,9 +1006,8 @@ def main():
 
     print('Strumenti:')
     build_strumenti_index()
-    build_strumento_test_velocita()
-    for tool in TOOLS[1:]:
-        build_strumento_placeholder(tool)
+    for tool in TOOLS:
+        build_tool(tool)
 
     print('Città:')
     for c in CITIES:

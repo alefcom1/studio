@@ -1571,6 +1571,119 @@ body.page .entry-title {
   opacity: 0.8;
 }
 
+/* ---------- Widget strumenti Lab (seo/a11y, gdpr, ai, co2, roi) ---------- */
+
+/* Lista audit falliti (SEO / accessibilità) */
+.sr-tool-audits {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+
+.sr-tool-audits li {
+  padding: 9px 0;
+  border-top: 1px solid var(--sr-bordo);
+  font-size: 14.5px;
+}
+
+/* Semaforo a righe (GDPR / AI): chiave mono + esito con pallino di stato */
+.sr-gdpr-rows {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+
+.sr-gdpr-rows li {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 11px 0;
+  border-top: 1px solid var(--sr-bordo);
+  font-size: 14.5px;
+}
+
+.sr-gdpr-rows .sr-gdpr-key {
+  flex: 0 0 auto;
+  min-width: 120px;
+  font-family: var(--sr-font-mono);
+  font-size: 12px;
+  color: var(--sr-grigio);
+}
+
+[data-sr-flag] {
+  position: relative;
+  padding-left: 20px;
+}
+
+[data-sr-flag]::before {
+  content: "\25CF"; /* ● */
+  position: absolute;
+  left: 0;
+  color: var(--sr-bordo);
+}
+
+[data-sr-flag="good"]::before { color: #1a8f4a; }
+[data-sr-flag="warn"]::before { color: #c98a00; }
+[data-sr-flag="bad"]::before  { color: #cc3333; }
+
+/* Calcolatore ROI localizzazione */
+.sr-roi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.sr-roi-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--sr-grigio);
+}
+
+/* Il campo eredita flex:1 1 200px da .sr-text-input (pensato per la riga URL
+   orizzontale): dentro la label a colonna crescerebbe in altezza. Qui lo
+   riportiamo ad altezza naturale, larghezza piena. */
+.sr-roi-grid .sr-text-input {
+  flex: 0 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sr-roi-out {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--sr-bordo);
+}
+
+.sr-roi-out .sr-mono {
+  font-size: 30px;
+  color: var(--sr-inchiostro);
+}
+
+/* Disclaimer onesto (GDPR/ROI/accessibilità) */
+.sr-disclaimer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--sr-grigio);
+  opacity: 0.85;
+}
+
+@media (max-width: 520px) {
+  .sr-roi-grid {
+    grid-template-columns: 1fr;
+  }
+  .sr-roi-out {
+    gap: 20px;
+  }
+  .sr-gdpr-rows .sr-gdpr-key {
+    min-width: 92px;
+  }
+}
+
 .sr-blink {
   animation: sr-blink 1s ease infinite;
 }

@@ -195,6 +195,9 @@ $page_map = array(
 	'strumento-check-gdpr'                 => array( 'check-gdpr', 'strumenti', null ),
 	'strumento-analisi-seo'                => array( 'analisi-seo', 'strumenti', null ),
 	'strumento-roi-localizzazione'         => array( 'roi-localizzazione', 'strumenti', null ),
+	'strumento-verifica-accessibilita'     => array( 'verifica-accessibilita', 'strumenti', null ),
+	'strumento-sito-pronto-ai'             => array( 'sito-pronto-ai', 'strumenti', null ),
+	'strumento-impatto-co2'                => array( 'impatto-co2', 'strumenti', null ),
 
 	'citta-milano'                         => array( 'milano', null, null ),
 	'citta-monza'                          => array( 'monza', null, null ),
