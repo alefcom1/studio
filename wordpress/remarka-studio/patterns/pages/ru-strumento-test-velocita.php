@@ -22,10 +22,14 @@
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 
-<div class="sr-tool-widget sr-card">
+<div class="sr-tool-widget sr-card" data-sr-tool="speed" data-sr-locale="ru"
+     data-label-suffix=" — PageSpeed на мобильных"
+     data-verdict-good="Отличный результат: сайт соответствует стандартам Google для мобильного опыта."
+     data-verdict-mid="Сайт на среднем уровне, но далёк от рекомендуемых Google стандартов. Есть конкретные, измеримые возможности для улучшения."
+     data-verdict-poor="Сайт медленный на мобильных: большинство посетителей уходит, не дождавшись полной загрузки. Технический редизайн — приоритет.">
   <form data-sr-tool-form>
     <div class="sr-tool-row">
-      <input type="text" placeholder="www.tuosito.it" class="sr-text-input" required />
+      <input type="text" placeholder="www.vashsajt.ru" class="sr-text-input" required />
       <button type="submit" class="wp-block-button__link" style="padding:17px 30px">Запустить тест</button>
     </div>
   <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>Идёт замер Google — мобильная версия, до 30 секунд<span class="sr-blink">…</span></p>
@@ -52,6 +56,39 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Как это работает</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Три шага, без регистрации<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Вставьте адрес</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Укажите URL сайта: главную страницу или внутреннюю, которая приносит больше всего визитов.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Измеряем через Google</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Обращаемся к API PageSpeed Insights в мобильной стратегии — к тем же данным, которые Google использует для ранжирования.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Смотрите, что тормозит сайт</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Оценка 0–100 и три метрики Core Web Vitals, объяснённые понятным языком, без технического жаргона.</p></div></div>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Три частых вопроса</p>
+<!-- /wp:paragraph -->
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Это настоящая оценка Google?</summary><!-- wp:paragraph -->
+<p>Да: она приходит из официального API PageSpeed Insights, мобильная стратегия. Это тот же движок, что и на pagespeed.web.dev.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Почему измеряете только мобильную версию?</summary><!-- wp:paragraph -->
+<p>Потому что Google индексирует и ранжирует сайт по его мобильной версии. Оценка для десктопа, почти всегда более высокая, мало влияет на позиции.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Низкая оценка вредит продажам?</summary><!-- wp:paragraph -->
+<p>Ниже 50 баллов большая часть мобильных посетителей уходит, не дождавшись полной загрузки: рекламные кампании приносят клики, которые не превращаются в заявки.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+</section>
+<!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-dark"><!-- wp:heading -->
 <h2 class="wp-block-heading">Хотите, чтобы эти проблемы устранили мы<span class="sr-accent-dot">?</span></h2>
@@ -63,6 +100,9 @@
 <div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/ru/#contatti">Запросить полный анализ</a></div>
 <!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/uslugi/tehnicheskoe-seo/">Смотреть техническое SEO</a></div>
+<!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
 </section>
@@ -72,7 +112,7 @@
 <p class="sr-eyebrow">Другие бесплатные инструменты</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div class="sr-servizi-rows"><div><span class="sr-mono" style="color:var(--sr-oltremare)">/02</span><a href="/ru/instrumenty/proverka-gdpr/" style="color:var(--sr-inchiostro);font-size:15.5px">Проверка GDPR и cookie</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/03</span><a href="/ru/instrumenty/seo-audit/" style="color:var(--sr-inchiostro);font-size:15.5px">SEO-анализ страницы</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/04</span><a href="/ru/instrumenty/roi-lokalizacii/" style="color:var(--sr-inchiostro);font-size:15.5px">ROI локализации</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div></div>
+<div class="sr-servizi-rows"><div><span class="sr-mono" style="color:var(--sr-oltremare)">/02</span><a href="/ru/instrumenty/proverka-gdpr/" style="color:var(--sr-inchiostro);font-size:15.5px">Проверка GDPR и cookie</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/03</span><a href="/ru/instrumenty/seo-audit/" style="color:var(--sr-inchiostro);font-size:15.5px">SEO-анализ страницы</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/04</span><a href="/ru/instrumenty/roi-lokalizacii/" style="color:var(--sr-inchiostro);font-size:15.5px">ROI локализации</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/05</span><a href="/ru/instrumenty/proverka-dostupnosti/" style="color:var(--sr-inchiostro);font-size:15.5px">Проверка доступности</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/06</span><a href="/ru/instrumenty/gotovnost-k-ii/" style="color:var(--sr-inchiostro);font-size:15.5px">Готовность к ИИ</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div><div><span class="sr-mono" style="color:var(--sr-oltremare)">/07</span><a href="/ru/instrumenty/uglerodnyj-sled/" style="color:var(--sr-inchiostro);font-size:15.5px">Углеродный след</a><span class="sr-mono" style="color:var(--sr-oltremare)">→</span></div></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->

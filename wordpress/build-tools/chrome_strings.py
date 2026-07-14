@@ -399,3 +399,304 @@ CHROME_SEO = {
         'en': 'Website speed test: your real Google score'},
 }
 CHROME.update(CHROME_SEO)
+
+# Remarka Lab — sette strumenti (fase T3): copy editoriale EN dei tre nuovi
+# strumenti, delle tre schede rianimate, del widget test-velocità (data-*) e
+# delle carte strumenti-index/cross-link servizi. Solo 'en' — il RU è scritto
+# a mano nelle pagine ru-strumento-*.php (regola piano-strumenti-lab §3).
+CHROME_TOOLS = {
+    # ---- ricorrenti su tutte le pagine-strumento ----
+    'Come funziona': {'en': 'How it works'},
+    'Tre passaggi, nessuna registrazione': {'en': 'Three steps, no sign-up'},
+    'Tre domande tipiche': {'en': 'Three common questions'},
+    'Strumento gratuito /05': {'en': 'Free tool /05'},
+    'Strumento gratuito /06': {'en': 'Free tool /06'},
+    'Strumento gratuito /07': {'en': 'Free tool /07'},
+    'Inserite l’indirizzo': {'en': 'Enter the address'},
+    'Inserite l’indirizzo del sito': {'en': 'Enter the website address'},
+
+    # ---- etichette-link canoniche (index, home-cards, "altri strumenti") ----
+    'Test velocità': {'en': 'Speed test'},
+    'Analisi SEO on-page': {'en': 'On-page SEO analysis'},
+    'Check GDPR e cookie': {'en': 'GDPR and cookie check'},
+    'ROI localizzazione': {'en': 'Localization ROI'},
+    'Verifica accessibilità': {'en': 'Accessibility check'},
+    'Sito pronto per l’AI': {'en': 'AI readiness check'},
+    'Impatto CO₂': {'en': 'CO₂ impact'},
+    'Le barriere di accessibilità più comuni, misurate con Google.': {
+        'en': 'The most common accessibility barriers, measured with Google.'},
+    'llms.txt, crawler AI, dati strutturati e sitemap: quattro segnali.': {
+        'en': 'llms.txt, AI crawlers, structured data and sitemap: four signals.'},
+    'Quanta CO₂ produce ogni visita — e quanta all’anno.': {
+        'en': 'How much CO₂ each visit produces — and how much per year.'},
+
+    # ---- cross-link dai servizi verso gli strumenti ----
+    'Obbligo di accessibilità (EAA dal 2025): verifica il vostro sito →': {
+        'en': 'Accessibility is now a legal duty (EAA from 2025): check your website →'},
+    'Misura l’impatto CO₂ del sito attuale →': {
+        'en': 'Measure your current website’s CO₂ impact →'},
+    'Analizza la SEO on-page della vostra pagina →': {
+        'en': 'Analyze the on-page SEO of your page →'},
+    'Verifica se il sito è pronto per l’AI →': {
+        'en': 'Check if your website is ready for AI →'},
+    'Verifica se il sito è pronto per l’AI': {'en': 'Check if your website is ready for AI'},
+    'Calcola il ROI della localizzazione →': {
+        'en': 'Calculate your localization ROI →'},
+
+    # ---- test-velocità: data-* del widget (aggiunti in T3 per i18n) ----
+    ' — PageSpeed mobile': {'en': ' — PageSpeed mobile'},
+    'Ottimo punteggio: il sito rispetta gli standard Google per l’esperienza mobile.': {
+        'en': 'Great score: the website meets Google’s standards for the mobile experience.'},
+    'Il sito è nella media, ma lontano dagli standard consigliati da Google. Ci sono margini di miglioramento concreti e misurabili.': {
+        'en': 'The website is average, but far from the standards Google recommends. There is concrete, measurable room to improve.'},
+    'Il sito è lento su mobile: la maggior parte dei visitatori abbandona prima del caricamento completo. Un restyling tecnico è la priorità.': {
+        'en': 'The website is slow on mobile: most visitors leave before it finishes loading. A technical rebuild is the priority.'},
+    'Punteggio Google PageSpeed e le tre metriche che lo determinano — LCP, INP, CLS — spiegate in italiano. Strategia mobile, dati reali dall’API di Google. Senza registrazione.': {
+        'en': 'Your real Google PageSpeed score and the three metrics behind it — LCP, INP, CLS — explained in plain English. Mobile strategy, real data from Google’s API. No sign-up.'},
+    'Scrivete l’URL del sito: la home o la pagina interna che porta più visite.': {
+        'en': 'Enter the website URL: the homepage or the internal page that gets the most visits.'},
+    'Misuriamo con Google': {'en': 'We measure it with Google'},
+    'Interroghiamo l’API PageSpeed Insights in strategia mobile — gli stessi dati che Google usa per il posizionamento.': {
+        'en': 'We query the PageSpeed Insights API in mobile strategy — the same data Google uses for ranking.'},
+    'Leggete cosa frena il sito': {'en': 'See what’s slowing the website down'},
+    'Punteggio 0–100 e le tre metriche Core Web Vitals spiegate in italiano, senza gergo tecnico.': {
+        'en': 'A 0–100 score and the three Core Web Vitals explained in plain English, no technical jargon.'},
+    'Il punteggio è quello vero di Google?': {'en': 'Is this Google’s real score?'},
+    'Sì: arriva dall’API ufficiale PageSpeed Insights, strategia mobile. È lo stesso motore che trovate su pagespeed.web.dev.': {
+        'en': 'Yes: it comes from the official PageSpeed Insights API, mobile strategy. It’s the same engine you’ll find on pagespeed.web.dev.'},
+    'Perché misurate solo il mobile?': {'en': 'Why do you only measure mobile?'},
+    'Perché Google indicizza e classifica in base alla versione mobile del sito. Il punteggio desktop, più alto quasi ovunque, conta poco per il posizionamento.': {
+        'en': 'Because Google indexes and ranks based on the mobile version of the website. The desktop score, higher almost everywhere, counts for little in rankings.'},
+    'Un punteggio basso danneggia le vendite?': {'en': 'Does a low score hurt sales?'},
+    'Sotto i 50, gran parte dei visitatori da mobile abbandona prima del caricamento completo: le campagne portano clic che non diventano richieste.': {
+        'en': 'Below 50, most mobile visitors leave before the page finishes loading: campaigns bring clicks that never become inquiries.'},
+    'Report gratuito con le cause, le priorità e un preventivo chiuso: PageSpeed 90+ garantito da contratto.': {
+        'en': 'A free report with the causes, the priorities and a fixed quote: PageSpeed 90+ guaranteed by contract.'},
+
+    # ---- strumento-analisi-seo ----
+    'Analisi SEO on-page: cosa vede Google sulla vostra pagina': {
+        'en': 'On-page SEO analysis: what Google sees on your page'},
+    'Titolo, struttura dei contenuti e dati mancanti sulla pagina che conta di più per il vostro business. Punteggio SEO di Google e le correzioni concrete, in italiano. Senza registrazione.': {
+        'en': 'Title, content structure and missing data on the page that matters most to your business. Your Google SEO score and concrete fixes, explained in plain English. No sign-up.'},
+    'Analizza la SEO': {'en': 'Analyze the SEO'},
+    'Analisi Google in corso': {'en': 'Google analysis in progress'},
+    'Scegliete la pagina giusta': {'en': 'Pick the right page'},
+    'Non per forza la home: la pagina che deve posizionarsi — un servizio, una scheda, un articolo.': {
+        'en': 'Not necessarily the homepage: the page that needs to rank — a service, a product page, an article.'},
+    'Google la analizza': {'en': 'Google analyzes it'},
+    'Usiamo la categoria SEO di Lighthouse via API PageSpeed: titoli, meta description, tag, link e struttura.': {
+        'en': 'We use Lighthouse’s SEO category via the PageSpeed API: titles, meta descriptions, tags, links and structure.'},
+    'Vedete cosa correggere': {'en': 'See what to fix'},
+    'Punteggio 0–100 e la lista degli elementi on-page da sistemare, in ordine di priorità.': {
+        'en': 'A 0–100 score and the list of on-page elements to fix, in priority order.'},
+    'Questa analisi fa posizionare il sito?': {'en': 'Will this analysis get my site ranking?'},
+    'Da sola no: verifica le basi tecniche on-page (titoli, struttura, dati). Il posizionamento dipende anche da contenuti e autorevolezza, che richiedono tempo.': {
+        'en': 'Not on its own: it checks the technical on-page basics (titles, structure, data). Rankings also depend on content and authority, which take time to build.'},
+    'Che differenza c’è con l’analisi dei contenuti?': {'en': 'How is this different from content analysis?'},
+    'Qui controlliamo la parte tecnica della pagina, quella che Google legge. La qualità dei testi è un lavoro separato, che facciamo con copywriter partner.': {
+        'en': 'Here we check the technical side of the page — the part Google reads. Copy quality is a separate job, one we do with partner copywriters.'},
+    'Analizza tutto il sito?': {'en': 'Does it analyze the whole website?'},
+    'No: una pagina alla volta, quella che indicate. È l’unità su cui Google valuta la pertinenza per una ricerca.': {
+        'en': 'No: one page at a time, whichever you enter. That’s the unit Google uses to judge relevance for a search.'},
+    'Vogliamo sistemare noi la SEO tecnica': {'en': 'Want us to handle your technical SEO'},
+    'Audit completo, dati strutturati e Core Web Vitals a posto: PageSpeed 90+ garantito da contratto.': {
+        'en': 'A full audit, structured data and Core Web Vitals sorted: PageSpeed 90+ guaranteed by contract.'},
+    'Scopri la SEO tecnica': {'en': 'Discover technical SEO'},
+    'Analizza la SEO on-page': {'en': 'Analyze the on-page SEO'},
+    ' — SEO on-page': {'en': ' — on-page SEO'},
+    'Ottimo: le basi SEO on-page sono a posto.': {'en': 'Great: the on-page SEO basics are in place.'},
+    'SEO nella media: ci sono correzioni concrete da fare.': {'en': 'Average SEO: there are concrete fixes to make.'},
+    'SEO on-page carente: è la priorità da sistemare.': {'en': 'Weak on-page SEO: it’s the priority to fix.'},
+    'Nessun problema SEO rilevante rilevato.': {'en': 'No significant SEO issues found.'},
+    'Non siamo riusciti a completare l’analisi. Riprovate tra qualche minuto.': {
+        'en': 'We couldn’t complete the analysis. Please try again in a few minutes.'},
+
+    # ---- strumento-check-gdpr ----
+    'Il vostro sito è a norma GDPR?': {'en': 'Is your website GDPR compliant?'},
+    'Controlliamo banner cookie, informative e tracker attivi prima del consenso: quattro verifiche per capire cosa manca. È una verifica indicativa, non una consulenza legale.': {
+        'en': 'We check the cookie banner, privacy notices and trackers active before consent: four checks to see what’s missing. It’s an indicative check, not legal advice.'},
+    'Controlla il sito': {'en': 'Check the website'},
+    'Lettura del sito in corso': {'en': 'Reading the website'},
+    'Verifica indicativa, non una consulenza legale. Un audit GDPR completo richiede la verifica manuale di cookie, finalità e basi giuridiche.': {
+        'en': 'An indicative check, not legal advice. A full GDPR audit requires a manual review of cookies, purposes and legal bases.'},
+    'Leggiamo la home page dal nostro server, come farebbe un visitatore alla prima apertura.': {
+        'en': 'We read the homepage from our server, the way a first-time visitor would.'},
+    'Quattro controlli automatici': {'en': 'Four automatic checks'},
+    'Cerchiamo il cookie banner (CMP), i link a privacy e cookie policy, i tracker caricati prima del consenso e i domini esterni.': {
+        'en': 'We look for the cookie banner (CMP), links to the privacy and cookie policy, trackers loaded before consent, and external domains.'},
+    'Semaforo, non sentenza': {'en': 'A traffic light, not a verdict'},
+    'Ogni punto è verde, giallo o rosso: segnaliamo i problemi evidenti, non un audit legale completo.': {
+        'en': 'Each point is green, yellow or red: we flag the obvious issues, not a full legal audit.'},
+    'È un parere legale?': {'en': 'Is this legal advice?'},
+    'No, ed è importante dirlo: è una verifica automatica indicativa, non una consulenza legale. Segnala i problemi tecnici evidenti; la conformità piena va valutata da un consulente privacy.': {
+        'en': 'No, and it’s important to say so: this is an indicative automatic check, not legal advice. It flags the obvious technical issues; full compliance should be assessed by a privacy consultant.'},
+    'Cosa vuol dire «tracker senza banner»?': {'en': 'What does “trackers without a banner” mean?'},
+    'Che nell’HTML iniziale della pagina troviamo strumenti di tracciamento (Google Analytics, Meta Pixel e simili) attivi prima che l’utente accetti. È il segnale rosso più frequente sui siti italiani.': {
+        'en': 'That the page’s initial HTML already contains tracking tools (Google Analytics, Meta Pixel and similar) active before the user consents. It’s the most common red flag on Italian websites.'},
+    'Perché il Garante è così severo sui cookie?': {'en': 'Why is Italy’s data protection authority so strict on cookies?'},
+    'Perché il consenso deve essere libero, informato e documentabile: rifiutare deve essere facile quanto accettare, e nessun tracker pubblicitario può partire prima del sì.': {
+        'en': 'Because consent must be free, informed and provable: refusing must be as easy as accepting, and no advertising tracker can fire before the user says yes.'},
+    'Vogliamo mettere il sito a norma': {'en': 'Want us to bring the website into compliance'},
+    'Banner, informative e consensi conformi al Garante, inclusi in ogni sito aziendale che consegniamo.': {
+        'en': 'A compliant banner, notices and consent flow, included in every business website we deliver.'},
+    'Scopri i siti aziendali': {'en': 'See business websites'},
+    'Richiedi un’analisi': {'en': 'Request an analysis'},
+    'Cookie banner': {'en': 'Cookie banner'},
+    'Policy': {'en': 'Policy'},
+    'Tracker': {'en': 'Trackers'},
+    'Script esterni': {'en': 'External scripts'},
+    'Cookie banner rilevato': {'en': 'Cookie banner detected'},
+    'Nessun cookie banner rilevato': {'en': 'No cookie banner detected'},
+    'Link a privacy/cookie policy presente': {'en': 'Link to a privacy/cookie policy present'},
+    'Nessun link a privacy/cookie policy': {'en': 'No link to a privacy/cookie policy'},
+    'Nessun tracker nell’HTML iniziale': {'en': 'No trackers in the initial HTML'},
+    'Tracker attivi senza banner': {'en': 'Active trackers without a banner'},
+    'Tracker presenti (con banner)': {'en': 'Trackers present (with banner)'},
+    '{n} domini esterni caricano script': {'en': '{n} external domains load scripts'},
+    'Non siamo riusciti a leggere il sito. Riprovate tra qualche minuto.': {
+        'en': 'We couldn’t read the website. Please try again in a few minutes.'},
+
+    # ---- strumento-impatto-co2 ----
+    'Impatto CO₂ del vostro sito web': {'en': 'Your website’s CO₂ impact'},
+    'Ogni visita al sito consuma energia e produce CO₂. Misuriamo il peso della vostra pagina e stimiamo le emissioni per visita e all’anno, con il modello Sustainable Web Design. Un sito leggero è anche un sito veloce.': {
+        'en': 'Every website visit consumes energy and produces CO₂. We measure your page weight and estimate emissions per visit and per year, using the Sustainable Web Design model. A lighter website is also a faster one.'},
+    'Misura l’impatto': {'en': 'Measure the impact'},
+    'Misurazione in corso': {'en': 'Measuring'},
+    'Peso pagina': {'en': 'Page weight'},
+    'Stima annua': {'en': 'Annual estimate'},
+    'Modello Sustainable Web Design (co2.js, Apache-2.0). Stima per visita; anno calcolato su 10.000 visite/mese.': {
+        'en': 'Sustainable Web Design model (co2.js, Apache-2.0). Per-visit estimate; the annual figure is based on 10,000 visits/month.'},
+    'La pagina da misurare: di solito la home, la più visitata.': {
+        'en': 'The page to measure: usually the homepage, the most visited one.'},
+    'Pesiamo la pagina': {'en': 'We weigh the page'},
+    'Con l’API PageSpeed misuriamo i byte totali che il browser deve scaricare per mostrare la pagina.': {
+        'en': 'Using the PageSpeed API we measure the total bytes the browser must download to show the page.'},
+    'Stima delle emissioni': {'en': 'Emissions estimate'},
+    'Applichiamo il modello Sustainable Web Design (co2.js) e otteniamo i grammi di CO₂e per visita, il confronto con la media del web e la stima annua.': {
+        'en': 'We apply the Sustainable Web Design model (co2.js) and get the grams of CO₂e per visit, a comparison with the web average, and the annual estimate.'},
+    'Come calcolate le emissioni?': {'en': 'How do you calculate emissions?'},
+    'Con il modello Sustainable Web Design della Green Web Foundation (libreria co2.js, Apache-2.0): dal peso della pagina all’energia consumata, fino ai grammi di CO₂e. È una stima con coefficienti medi mondiali.': {
+        'en': 'With the Green Web Foundation’s Sustainable Web Design model (the co2.js library, Apache-2.0): from page weight to energy consumed, down to grams of CO₂e. It’s an estimate using global average coefficients.'},
+    'Perché un sito leggero inquina meno?': {'en': 'Why does a lighter website pollute less?'},
+    'Perché ogni byte trasferito consuma energia — nel data center, nella rete, sul vostro dispositivo. Meno peso significa meno energia, meno emissioni e, come effetto collaterale, un sito più veloce.': {
+        'en': 'Because every byte transferred consumes energy — in the data center, on the network, on your device. Less weight means less energy, fewer emissions and, as a side effect, a faster website.'},
+    'La stima annua da dove viene?': {'en': 'Where does the annual estimate come from?'},
+    'Moltiplichiamo le emissioni per visita per un traffico di riferimento di 10.000 visite al mese. Cambiando il traffico reale del vostro sito, cambia la stima proporzionalmente.': {
+        'en': 'We multiply the per-visit emissions by a reference traffic of 10,000 visits a month. Change it to your website’s real traffic and the estimate scales proportionally.'},
+    'Vogliamo alleggerire il sito': {'en': 'Want to lighten up the website'},
+    'Immagini ottimizzate, base tecnica pulita, meno peso a parità di contenuti: meno CO₂ e PageSpeed 90+ da contratto.': {
+        'en': 'Optimized images, a clean technical foundation, less weight for the same content: less CO₂ and PageSpeed 90+ by contract.'},
+    'Misura la velocità': {'en': 'Measure your speed'},
+    'kg CO₂e / anno': {'en': 'kg CO₂e / year'},
+    'Sotto la media del web: pagina leggera, bene così.': {'en': 'Below the web average: a light page, well done.'},
+    'Vicino alla media del web: c’è margine per alleggerire.': {'en': 'Close to the web average: there’s room to trim it down.'},
+    'Sopra la media del web: pagina pesante, conviene ottimizzare.': {'en': 'Above the web average: a heavy page, worth optimizing.'},
+    'Non siamo riusciti a misurare il peso della pagina. Riprovate.': {
+        'en': 'We couldn’t measure the page weight. Please try again.'},
+
+    # ---- strumento-roi-localizzazione ----
+    'Quanto rende tradurre il vostro sito': {'en': 'What translating your website is worth'},
+    'Una stima di quanto potreste guadagnare traducendo il sito in inglese o tedesco: bastano cinque numeri della vostra attività. Il calcolo resta sul vostro dispositivo. È una stima, non una promessa.': {
+        'en': 'An estimate of what you could gain by translating your website into English or German: just five numbers about your business. The calculation stays on your device. It’s an estimate, not a promise.'},
+    'Visite / mese': {'en': 'Visits / month'},
+    'Quota estera (%)': {'en': 'Foreign share (%)'},
+    'Conversione (%)': {'en': 'Conversion rate (%)'},
+    'Scontrino medio (€)': {'en': 'Average order value (€)'},
+    'Boost localizzazione (%)': {'en': 'Localization boost (%)'},
+    'Ricalcola': {'en': 'Recalculate'},
+    'Ricavo aggiuntivo / mese': {'en': 'Extra revenue / month'},
+    'Ricavo aggiuntivo / anno': {'en': 'Extra revenue / year'},
+    'Stima indicativa. Il boost di localizzazione (+40% conservativo) deriva da dati CSA Research sull’acquisto in lingua madre.': {
+        'en': 'An indicative estimate. The localization boost (+40% conservative) is based on CSA Research data on shopping in one’s native language.'},
+    'Inserite i vostri numeri': {'en': 'Enter your numbers'},
+    'Visite mensili, quota di pubblico estero, tasso di conversione, scontrino medio. Se non li avete precisi, partite dalle stime.': {
+        'en': 'Monthly visits, share of foreign visitors, conversion rate, average order value. If you don’t have exact figures, start with estimates.'},
+    'Applichiamo il boost di localizzazione': {'en': 'We apply the localization boost'},
+    'Sul pubblico estero applichiamo un incremento prudente di conversione (+40%), dai dati CSA Research sull’acquisto in lingua madre.': {
+        'en': 'On foreign visitors we apply a conservative conversion increase (+40%), based on CSA Research data on buying in one’s native language.'},
+    'Leggete il ricavo potenziale': {'en': 'See the potential revenue'},
+    'Il calcolatore mostra il ricavo aggiuntivo stimato al mese e all’anno. Cambiate i numeri e vedete subito come si muove.': {
+        'en': 'The calculator shows the estimated extra revenue per month and per year. Change the numbers and watch it move instantly.'},
+    'Da dove viene il «+40%»?': {'en': 'Where does the “+40%” come from?'},
+    'Dalle ricerche CSA Research: la larga maggioranza dei consumatori compra più volentieri, e più spesso, nella propria lingua. Il 40% è un valore prudente, che potete modificare.': {
+        'en': 'From CSA Research: the large majority of consumers buy more willingly, and more often, in their own language. 40% is a conservative figure, and you can change it.'},
+    'È una previsione garantita?': {'en': 'Is this a guaranteed forecast?'},
+    'No: è una stima per ordini di grandezza, utile a capire se vale la pena approfondire. I risultati reali dipendono dal mercato, dall’offerta e dalla qualità della traduzione.': {
+        'en': 'No: it’s a ballpark estimate, useful for deciding whether it’s worth digging deeper. Real results depend on the market, the offer and translation quality.'},
+    'Perché tradurre da madrelingua e non con un plugin?': {'en': 'Why translate with a native speaker and not a plugin?'},
+    'Perché un cliente estero riconosce un testo automatico alla seconda riga — e con lui se ne va la fiducia. Nel gruppo Remarka la traduzione la fanno madrelingua, dal 2001.': {
+        'en': 'Because a foreign customer spots machine-translated text by the second line — and trust leaves with them. At the Remarka group, translation has been done by native speakers since 2001.'},
+    'Vogliamo tradurre il sito sul serio': {'en': 'Want to translate the website properly'},
+    'Traduzione professionale da madrelingua e SEO internazionale corretta dal primo giorno — non un plugin.': {
+        'en': 'Professional translation by native speakers and correct international SEO from day one — not a plugin.'},
+
+    # ---- strumento-sito-pronto-ai ----
+    'Il vostro sito è pronto per l’AI?': {'en': 'Is your website ready for AI?'},
+    'Quando ChatGPT, Claude o Perplexity leggono il web, trovano il vostro sito? Controlliamo quattro segnali: llms.txt, accesso dei crawler AI, dati strutturati e sitemap. Senza registrazione.': {
+        'en': 'When ChatGPT, Claude or Perplexity read the web, do they find your website? We check four signals: llms.txt, AI crawler access, structured data and sitemap. No sign-up.'},
+    'Verifica la prontezza AI': {'en': 'Check AI readiness'},
+    'Verifica in corso': {'en': 'Checking'},
+    'Crawler AI': {'en': 'AI crawlers'},
+    'Controlla llms.txt, l’accesso dei crawler AI (GPTBot, ClaudeBot, PerplexityBot, Google-Extended), i dati strutturati JSON-LD e la sitemap.': {
+        'en': 'Checks llms.txt, AI crawler access (GPTBot, ClaudeBot, PerplexityBot, Google-Extended), JSON-LD structured data and the sitemap.'},
+    'Leggiamo dal nostro server alcuni file pubblici e l’HTML della home page.': {
+        'en': 'We read a few public files and the homepage HTML from our server.'},
+    'Quattro verifiche': {'en': 'Four checks'},
+    'Cerchiamo il file llms.txt, controlliamo se robots.txt lascia passare i crawler AI (GPTBot, ClaudeBot, PerplexityBot, Google-Extended), i dati strutturati JSON-LD e la sitemap.': {
+        'en': 'We look for the llms.txt file, check whether robots.txt lets AI crawlers through (GPTBot, ClaudeBot, PerplexityBot, Google-Extended), plus JSON-LD structured data and the sitemap.'},
+    'Punteggio N su 4': {'en': 'Score N out of 4'},
+    'Un semaforo per ogni segnale e un punteggio complessivo, con le indicazioni su cosa aggiungere per farsi trovare e citare dai modelli.': {
+        'en': 'A traffic light for each signal and an overall score, with guidance on what to add to get found and cited by AI models.'},
+    'Cos’è il file llms.txt?': {'en': 'What is the llms.txt file?'},
+    'Una proposta di standard: un file di testo in Markdown che riassume ai modelli AI cosa contiene il sito e come citarlo, come fa robots.txt per i motori di ricerca. È giovane, ma sempre più diffuso.': {
+        'en': 'A proposed standard: a Markdown text file that tells AI models what the website contains and how to cite it, the way robots.txt does for search engines. It’s young, but increasingly common.'},
+    'Conviene far entrare i crawler AI?': {'en': 'Should you let AI crawlers in?'},
+    'Dipende dagli obiettivi: bloccarli protegge i contenuti, ma vi esclude dalle risposte generate. Per la maggior parte delle aziende, essere citati da ChatGPT o Perplexity è visibilità in più.': {
+        'en': 'It depends on your goals: blocking them protects your content, but excludes you from generated answers. For most businesses, being cited by ChatGPT or Perplexity is extra visibility.'},
+    'I dati strutturati servono ancora?': {'en': 'Is structured data still worth it?'},
+    'Sì, più che mai: i dati JSON-LD (schema.org) aiutano sia Google sia i modelli AI a capire chi siete, cosa offrite e a chi. Sono la base di ogni buona indicizzazione.': {
+        'en': 'Yes, more than ever: JSON-LD data (schema.org) helps both Google and AI models understand who you are, what you offer and to whom. It’s the foundation of good indexing.'},
+    'Vogliamo preparare il sito per l’AI': {'en': 'Want to get the website ready for AI'},
+    'Dati strutturati, file corretti e struttura leggibile dalle macchine: fa parte della SEO tecnica che consegniamo.': {
+        'en': 'Structured data, the right files and a machine-readable structure: it’s part of the technical SEO we deliver.'},
+    'Sì': {'en': 'Yes'},
+    'No': {'en': 'No'},
+    'Parziale': {'en': 'Partial'},
+
+    # ---- strumento-verifica-accessibilita ----
+    'Verifica accessibilità: il vostro sito è usabile da tutti?': {
+        'en': 'Accessibility check: is your website usable by everyone?'},
+    'Controlliamo con Google le barriere di accessibilità più comuni — contrasti, etichette, struttura. Dal 28 giugno 2025 l’European Accessibility Act rende l’accessibilità un obbligo per molti siti. Senza registrazione.': {
+        'en': 'We use Google to check the most common accessibility barriers — contrast, labels, structure. Since 28 June 2025 the European Accessibility Act makes accessibility a legal duty for many websites. No sign-up.'},
+    'Verifica l’accessibilità': {'en': 'Check accessibility'},
+    'Analisi in corso': {'en': 'Analyzing'},
+    'Controllo automatico (Lighthouse): copre parte dei criteri WCAG 2.1 AA. La conformità EAA richiede anche verifica manuale.': {
+        'en': 'Automatic check (Lighthouse): it covers part of the WCAG 2.1 AA criteria. Full EAA compliance also requires a manual review.'},
+    'La pagina da controllare: la home o una pagina di servizio, dove passano più utenti.': {
+        'en': 'The page to check: the homepage or a service page, wherever most users land.'},
+    'Analisi Lighthouse': {'en': 'Lighthouse analysis'},
+    'Usiamo la categoria Accessibilità di Lighthouse via API PageSpeed: contrasti, testi alternativi, etichette dei moduli, struttura dei titoli.': {
+        'en': 'We use Lighthouse’s Accessibility category via the PageSpeed API: contrast, alt text, form labels, heading structure.'},
+    'Vedete le barriere da rimuovere': {'en': 'See the barriers to remove'},
+    'Punteggio 0–100 e la lista dei problemi rilevati, in italiano. Un controllo automatico copre parte dei criteri WCAG, non tutti.': {
+        'en': 'A 0–100 score and the list of issues found, explained in plain English. An automatic check covers part of the WCAG criteria, not all of them.'},
+    'Cos’è l’European Accessibility Act?': {'en': 'What is the European Accessibility Act?'},
+    'Una direttiva europea (EAA) applicata in Italia dal 28 giugno 2025: molti siti di aziende che vendono a consumatori devono essere accessibili secondo lo standard WCAG 2.1 livello AA. È un obbligo, con alcune esenzioni per le microimprese.': {
+        'en': 'A European directive (EAA), in force in Italy since 28 June 2025: many websites of businesses selling to consumers must be accessible to the WCAG 2.1 level AA standard. It’s a legal duty, with some exemptions for microenterprises.'},
+    'Questo test basta per essere conformi?': {'en': 'Is this test enough to be compliant?'},
+    'No: un controllo automatico intercetta una parte dei criteri WCAG. La conformità piena richiede anche verifica manuale — navigazione da tastiera, screen reader, contenuti. È un ottimo punto di partenza, non un certificato.': {
+        'en': 'No: an automatic check catches only part of the WCAG criteria. Full compliance also requires manual testing — keyboard navigation, screen readers, content. It’s a great starting point, not a certificate.'},
+    'Riguarda anche la mia azienda?': {'en': 'Does this apply to my business too?'},
+    'Se vendete beni o servizi a consumatori online (e-commerce, banche, trasporti, servizi), con ogni probabilità sì. Le microimprese che offrono servizi hanno esenzioni: meglio verificare caso per caso.': {
+        'en': 'If you sell goods or services to consumers online (e-commerce, banking, transport, services), most likely yes. Microenterprises offering services have exemptions: it’s best to check case by case.'},
+    'Vogliamo rendere il sito accessibile': {'en': 'Want to make the website accessible'},
+    'Verifichiamo le barriere una per una — automatiche e manuali — e le sistemiamo secondo lo standard WCAG 2.1 AA.': {
+        'en': 'We check the barriers one by one — automatic and manual — and fix them to the WCAG 2.1 AA standard.'},
+    'Richiedi una verifica di accessibilità': {'en': 'Request an accessibility check'},
+    ' — accessibilità': {'en': ' — accessibility'},
+    'Ottimo: le barriere principali sono già rimosse.': {'en': 'Great: the main barriers are already removed.'},
+    'Accessibilità nella media: alcune barriere restano.': {'en': 'Average accessibility: some barriers remain.'},
+    'Accessibilità carente: barriere importanti per gli utenti.': {'en': 'Poor accessibility: significant barriers for users.'},
+    'Nessuna barriera rilevante rilevata.': {'en': 'No significant barriers found.'},
+}
+CHROME.update(CHROME_TOOLS)

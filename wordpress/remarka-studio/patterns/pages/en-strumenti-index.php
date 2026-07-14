@@ -41,13 +41,13 @@
 <p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/02</p>
 <!-- /wp:html -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">GDPR and cookie check</h3>
+<h3 class="wp-block-heading">On-page SEO analysis</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Banner, policies, and consents: what’s missing to be compliant.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Titles, structure, and missing data on the page that matters most.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="/en/tools/gdpr-check/">Try it →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="/en/tools/seo-audit/">Try it →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -56,13 +56,13 @@
 <p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/03</p>
 <!-- /wp:html -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">On-page SEO analysis</h3>
+<h3 class="wp-block-heading">GDPR and cookie check</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Titles, structure, and missing data on the page that matters most.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Banner, policies, and consents: what’s missing to be compliant.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="/en/tools/seo-audit/">Try it →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="/en/tools/gdpr-check/">Try it →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -78,6 +78,51 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/en/tools/localization-roi/">Try it →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/05</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Accessibility check</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">The most common accessibility barriers, measured with Google.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/en/tools/accessibility-check/">Try it →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/06</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">AI readiness check</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">llms.txt, AI crawlers, structured data and sitemap: four signals.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/en/tools/ai-readiness/">Try it →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/07</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">CO₂ impact</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">How much CO₂ each visit produces — and how much per year.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/en/tools/website-carbon/">Try it →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

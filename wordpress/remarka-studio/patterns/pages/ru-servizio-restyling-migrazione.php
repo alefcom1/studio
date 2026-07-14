@@ -129,6 +129,9 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Число страниц для переноса сверх первых 20.</span></div><div><span class="sr-mono">b</span><span>Сложность существующих интеграций, которые нужно сохранить.</span></div><div><span class="sr-mono">c</span><span>Необходимость графического редизайна помимо технической базы.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
+<p class="sr-card-link" style="margin-top:12px"><a href="/ru/instrumenty/uglerodnyj-sled/">Измерить углеродный след текущего сайта →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/ru/ceny/">Сравнить все тарифы →</a></p>
 <!-- /wp:html -->
 </section>

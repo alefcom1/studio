@@ -129,6 +129,9 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Number of pages to migrate beyond the first 20.</span></div><div><span class="sr-mono">b</span><span>Complexity of the existing integrations to preserve.</span></div><div><span class="sr-mono">c</span><span>Graphic redesign needed on top of the technical foundation.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
+<p class="sr-card-link" style="margin-top:12px"><a href="/en/tools/website-carbon/">Measure your current website’s CO₂ impact →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/en/pricing/">Compare all plans →</a></p>
 <!-- /wp:html -->
 </section>

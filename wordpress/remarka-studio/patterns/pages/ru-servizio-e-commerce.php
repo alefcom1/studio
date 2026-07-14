@@ -129,6 +129,9 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Число товаров и вариантов сверх базового каталога.</span></div><div><span class="sr-mono">b</span><span>Интеграции с курьерскими службами и внешним складом.</span></div><div><span class="sr-mono">c</span><span>Способы оплаты сверх карты, PayPal и банковского перевода.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
+<p class="sr-card-link" style="margin-top:12px"><a href="/ru/instrumenty/proverka-dostupnosti/">Обязательная доступность (EAA с 2025 года): проверьте свой сайт →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/ru/ceny/">Сравнить все тарифы →</a></p>
 <!-- /wp:html -->
 </section>

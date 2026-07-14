@@ -22,7 +22,11 @@
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 
-<div class="sr-tool-widget sr-card" data-sr-tool="speed" data-sr-locale="it">
+<div class="sr-tool-widget sr-card" data-sr-tool="speed" data-sr-locale="it"
+     data-label-suffix=" — PageSpeed mobile"
+     data-verdict-good="Ottimo punteggio: il sito rispetta gli standard Google per l’esperienza mobile."
+     data-verdict-mid="Il sito è nella media, ma lontano dagli standard consigliati da Google. Ci sono margini di miglioramento concreti e misurabili."
+     data-verdict-poor="Il sito è lento su mobile: la maggior parte dei visitatori abbandona prima del caricamento completo. Un restyling tecnico è la priorità.">
   <form data-sr-tool-form>
     <div class="sr-tool-row">
       <input type="text" placeholder="www.tuosito.it" class="sr-text-input" required />

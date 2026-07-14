@@ -109,6 +109,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
 <p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:70ch">Выход на европейский рынок — это не только дизайн. Cookie-баннер с равноценной кнопкой отказа, политика конфиденциальности и правовые страницы под GDPR, данные на серверах в ЕС, электронный счёт (инвойс) для итальянских контрагентов. Всё это входит в проект, а не появляется отдельной строкой в счёте потом.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:20px"><a href="/ru/instrumenty/proverka-dostupnosti/">Бесплатно проверить доступность вашего текущего сайта →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->

@@ -129,6 +129,9 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Число страниц и карточек товара сверх 15 включённых.</span></div><div><span class="sr-mono">b</span><span>Дополнительные языки сверх двух включённых.</span></div><div><span class="sr-mono">c</span><span>Интеграции с учётной системой, CRM или внешними прайс-листами.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
+<p class="sr-card-link" style="margin-top:12px"><a href="/ru/instrumenty/proverka-dostupnosti/">Обязательная доступность (EAA с 2025 года): проверьте свой сайт →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/ru/ceny/">Сравнить все тарифы →</a></p>
 <!-- /wp:html -->
 </section>

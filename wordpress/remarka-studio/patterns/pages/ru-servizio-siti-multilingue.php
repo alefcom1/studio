@@ -129,6 +129,9 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Число дополнительных языков сверх двух включённых.</span></div><div><span class="sr-mono">b</span><span>Объём контента для перевода сверх базовых страниц.</span></div><div><span class="sr-mono">c</span><span>Необходимость регулярной вычитки после сдачи.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
+<p class="sr-card-link" style="margin-top:12px"><a href="/ru/instrumenty/roi-lokalizacii/">Рассчитать ROI локализации →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/ru/ceny/">Сравнить все тарифы →</a></p>
 <!-- /wp:html -->
 </section>

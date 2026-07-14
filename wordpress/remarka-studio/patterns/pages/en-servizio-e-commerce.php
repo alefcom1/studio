@@ -129,6 +129,9 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Number of products and variants beyond the base catalog.</span></div><div><span class="sr-mono">b</span><span>Integrations with carriers and external warehouses.</span></div><div><span class="sr-mono">c</span><span>Additional payment methods beyond card, PayPal, and bank transfer.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
+<p class="sr-card-link" style="margin-top:12px"><a href="/en/tools/accessibility-check/">Accessibility is now a legal duty (EAA from 2025): check your website →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/en/pricing/">Compare all plans →</a></p>
 <!-- /wp:html -->
 </section>

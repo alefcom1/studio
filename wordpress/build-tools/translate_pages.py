@@ -102,7 +102,17 @@ def build_href_map(lang_code):
 
 
 TEXT_NODE = re.compile(r'>([^<>]+)<')
-ATTRS = re.compile(r'\b(alt|aria-label|placeholder)="([^"]+)"')
+# alt/aria-label/placeholder: attributi visibili classici. data-verdict-*/
+# data-label-*/data-err/data-audits-empty/data-caption*: stringhe dei widget
+# strumenti (Remarka Lab, vedi contratto in assets/js/remarka.js prima di
+# toolLocale()) — ogni pagina per-lingua porta le proprie in data-*, il JS le
+# legge a runtime. data-sr-locale NON è qui: è un codice lingua tecnico,
+# sostituito a parte (deterministico, non passa dal dizionario).
+ATTRS = re.compile(
+    r'\b(alt|aria-label|placeholder|data-verdict-[a-z]+|data-label-[a-z-]+|'
+    r'data-err|data-audits-empty|data-caption[a-z-]*)="([^"]+)"'
+)
+SR_LOCALE = re.compile(r'data-sr-locale="it"')
 HEADER_LINE = re.compile(r'^( \* (?:Title|Description): )(.+)$', re.M)
 
 # Явно нетекстовые узлы: цифры, пунктуация, домены, метки-цифры.
@@ -174,6 +184,10 @@ def translate_file(path, d, href_map, lang_code, report):
 
     src = HEADER_LINE.sub(tr_header, src)
     src = re.sub(r'( \* Slug: remarka-studio/)', rf'\g<1>{lang_code}-', src)
+
+    # data-sr-locale="it" → codice lingua della pagina — deterministico,
+    # fuori dal dizionario (non è testo editoriale, è l'API dei widget).
+    src = SR_LOCALE.sub(f'data-sr-locale="{lang_code}"', src)
 
     if lang_code == 'en':
         # Американский формат чисел в видимом тексте: сначала десятичные

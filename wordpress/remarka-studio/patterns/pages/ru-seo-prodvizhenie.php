@@ -73,6 +73,9 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:20px"><a href="/ru/instrumenty/seo-audit/">Бесплатно проверить SEO вашей страницы →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/instrumenty/gotovnost-k-ii/">Проверить готовность сайта к ИИ-поиску →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->

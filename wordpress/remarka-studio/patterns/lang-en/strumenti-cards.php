@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Free tools — four cards
+ * Title: Free tools — seven cards
  * Slug: remarka-studio/en-strumenti-cards
  * Categories: remarka
- * Description: Four tool cards with mono index and links.
+ * Description: Seven tool cards with mono index and links.
  * Viewport Width: 1400
  */
 ?>
@@ -86,6 +86,60 @@
 
 <!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
 <p class="sr-card-link sr-no-margin"><a href="/en/tools/localization-roi/">Try it →</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-mono sr-no-margin","style":{"typography":{"fontSize":"12px"}},"textColor":"oltremare"} -->
+<p class="sr-mono sr-no-margin has-oltremare-color has-text-color" style="font-size:12px">/05</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:14px">Accessibility check</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">The most common accessibility barriers, measured with Google.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
+<p class="sr-card-link sr-no-margin"><a href="/en/tools/accessibility-check/">Try it →</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-mono sr-no-margin","style":{"typography":{"fontSize":"12px"}},"textColor":"oltremare"} -->
+<p class="sr-mono sr-no-margin has-oltremare-color has-text-color" style="font-size:12px">/06</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:14px">AI readiness check</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">llms.txt, AI crawlers, structured data and sitemap: four signals.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
+<p class="sr-card-link sr-no-margin"><a href="/en/tools/ai-readiness/">Try it →</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-mono sr-no-margin","style":{"typography":{"fontSize":"12px"}},"textColor":"oltremare"} -->
+<p class="sr-mono sr-no-margin has-oltremare-color has-text-color" style="font-size:12px">/07</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:14px">CO₂ impact</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">How much CO₂ each visit produces — and how much per year.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
+<p class="sr-card-link sr-no-margin"><a href="/en/tools/website-carbon/">Try it →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></section>

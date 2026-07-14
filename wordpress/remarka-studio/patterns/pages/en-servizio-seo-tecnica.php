@@ -129,6 +129,9 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Number of pages to optimize beyond the first 20.</span></div><div><span class="sr-mono">b</span><span>Multilingual content to be handled.</span></div><div><span class="sr-mono">c</span><span>Technical legacy issues to fix before starting.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
+<p class="sr-card-link" style="margin-top:12px"><a href="/en/tools/seo-audit/">Analyze the on-page SEO of your page →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/en/tools/ai-readiness/">Check if your website is ready for AI →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/en/pricing/">Compare all plans →</a></p>
 <!-- /wp:html -->
 </section>
