@@ -17,7 +17,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(38px, 4.6vw, 64px)">Il vostro sito funziona anche in tedesco. Misurato, garantito, firmato<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">Il sito e la sua versione estera sotto un unico contratto: localizzazione da madrelingua, SEO internazionale e KPI per ogni mercato. Nel settore linguistico dal 2001.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">Un sito web per l’export vero: il sito nella lingua del cliente e la sua versione estera sotto un unico contratto, con localizzazione da madrelingua, SEO internazionale e KPI per ogni mercato. Nel settore linguistico dal 2001.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"36px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:36px"><!-- wp:button -->
@@ -66,7 +66,7 @@
 <p class="sr-eyebrow">Garanzie</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Garanzie export, nero su bianco<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Un sito web per l’export, garantito nero su bianco<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Localizzazione solo da madrelingua: nomi e qualifiche dei traduttori nel contratto</span></div><div><span class="sr-mono">✓</span><span>Glossario di terminologia del vostro settore: è un deliverable, resta a voi</span></div><div><span class="sr-mono">✓</span><span>Checklist SEO internazionale firmata: hreflang, metadati e URL per ogni mercato, allegata al collaudo</span></div><div><span class="sr-mono">✓</span><span>KPI mensili per ogni mercato, per 12 mesi: traffico, posizioni, richieste</span></div></div>

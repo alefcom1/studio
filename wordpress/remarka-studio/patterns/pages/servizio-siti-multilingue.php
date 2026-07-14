@@ -17,7 +17,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(38px, 4.6vw, 64px)">Quattro lingue tradotte da madrelingua, non da un plugin<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">Dal 2001 è il mestiere del gruppo Remarka: traduzione professionale, non automatica, con SEO multilingue corretta fin dal primo giorno.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">Un sito web multilingua è il mestiere del gruppo Remarka dal 2001: traduzione professionale, non automatica, con SEO multilingue corretta fin dal primo giorno.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"36px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:36px"><!-- wp:button -->
@@ -47,7 +47,7 @@
 <p class="sr-eyebrow">Per chi è</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Per chi vende oltre confine, non solo in italiano<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Un sito web multilingua per chi vende oltre confine, non solo in italiano<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 </div>
 <!-- /wp:column -->

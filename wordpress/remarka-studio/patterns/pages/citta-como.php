@@ -36,7 +36,7 @@
 <p class="sr-eyebrow">Cosa facciamo</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Sei servizi, un’unica garanzia<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Realizzazione siti web a Como, e non solo<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:html -->
 <div class="sr-servizi-rows" style="margin-top:32px"><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Siti aziendali</span><a href="/servizi/siti-aziendali/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">E-commerce</span><a href="/servizi/e-commerce/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Siti progressivi PWA</span><a href="/servizi/siti-pwa/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Restyling e migrazione</span><a href="/servizi/restyling-migrazione/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">SEO tecnica</span><a href="/servizi/seo-tecnica/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Siti multilingue</span><a href="/servizi/siti-multilingue/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div></div>
@@ -51,7 +51,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">cantinaserralta.it</span></div>
 <!-- /wp:html -->
 <!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-cantina-serralta.jpg" alt="Screenshot del sito Cantina Serralta"/></figure>
+<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-cantina-serralta.jpg" alt="Realizzazione siti web a Como: il sito di Cantina Serralta"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:group -->

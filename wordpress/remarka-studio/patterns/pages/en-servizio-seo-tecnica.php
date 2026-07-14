@@ -17,7 +17,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(38px, 4.6vw, 64px)">Structure and data in order, before a word of content is written<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">Core Web Vitals, structured data, and correct sitemaps: the technical side of SEO, the part copywriting alone can’t fix.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">Core Web Vitals, structured data and correct sitemaps: this is technical SEO, the part copywriting alone can’t fix.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"36px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:36px"><!-- wp:button -->
@@ -47,7 +47,7 @@
 <p class="sr-eyebrow">Who it’s for</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">For sites with good content and poor visibility<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Technical SEO for sites with good content and poor visibility<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 </div>
 <!-- /wp:column -->

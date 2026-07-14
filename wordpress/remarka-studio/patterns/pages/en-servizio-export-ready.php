@@ -17,7 +17,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(38px, 4.6vw, 64px)">Your website works in German too. Measured, guaranteed, signed<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">Your site and its international version under a single contract: native-speaker localization, international SEO, and KPIs for every market. In the language business since 2001.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">A real export website: your site in the customer’s language and its foreign version under a single contract, with native-speaker localization, international SEO and KPIs for every market. In the language business since 2001.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"36px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:36px"><!-- wp:button -->
@@ -66,7 +66,7 @@
 <p class="sr-eyebrow">Guarantees</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Export guarantees, in black and white<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">An export website, guaranteed in black and white<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Localization by native speakers only: translators’ names and credentials in the contract</span></div><div><span class="sr-mono">✓</span><span>A glossary of your industry’s terminology: it’s a deliverable, and it stays with you</span></div><div><span class="sr-mono">✓</span><span>Signed international SEO checklist: hreflang, metadata, and URLs for every market, attached to the acceptance report</span></div><div><span class="sr-mono">✓</span><span>Monthly KPIs for every market, for 12 months: traffic, rankings, inquiries</span></div></div>

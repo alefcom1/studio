@@ -17,7 +17,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(38px, 4.6vw, 64px)">The online store that doesn’t lose customers at checkout<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">Fast catalog, one-step checkout, built-in e-invoicing: designed for businesses that sell, not just get browsed.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">E-commerce website with a fast catalog, one-step checkout and built-in e-invoicing: designed for businesses that sell, not just get browsed.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"36px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:36px"><!-- wp:button -->
@@ -47,7 +47,7 @@
 <p class="sr-eyebrow">Who it’s for</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">For businesses serious about selling, not just displaying<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">An e-commerce website for businesses serious about selling, not just displaying<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 </div>
 <!-- /wp:column -->

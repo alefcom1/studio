@@ -502,16 +502,24 @@ def build_city(c):
         f'<a href="/servizi/{s["slug"]}/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div>'
         for s in SERVICES
     )
+    # H2 con la parola chiave locale (SEO on-page): Milano ha una chiave
+    # propria («web agency Milano»), gli altri la forma naturale del servizio.
+    servizi_heading = (f'Web agency {c["nome"]}: sei servizi, una garanzia'
+                       if c['slug'] == 'milano'
+                       else f'Realizzazione siti web a {c["nome"]}, e non solo')
     servizi = section(
-        eyebrow('Cosa facciamo') + heading(2, 'Sei servizi, un’unica garanzia') +
+        eyebrow('Cosa facciamo') + heading(2, servizi_heading) +
         raw_html(f'<div class="sr-servizi-rows" style="margin-top:32px">{servizi_rows}</div>'),
         classes='sr-section sr-section--bianco',
     )
 
     local_case = next(x for x in CASES if x['slug'] == c['case_slug'])
+    case_alt = (f'Web agency {c["nome"]}: il sito di {local_case["cliente"]}'
+                if c['slug'] == 'milano'
+                else f'Realizzazione siti web a {c["nome"]}: il sito di {local_case["cliente"]}')
     caso = section(
         columns([
-            column(browser_frame(c['case_url_label'], f'Screenshot del sito {local_case["cliente"]}', src=case_screenshot_src(local_case['slug'])), width='55%'),
+            column(browser_frame(c['case_url_label'], case_alt, src=case_screenshot_src(local_case['slug'])), width='55%'),
             column(eyebrow(c['case_eyebrow']) + heading(3, c['case_title'], accent_dot=False) +
                    paragraph(local_case['risultati_testo'], color='grigio', size='base', extra_style='margin-top:12px') +
                    raw_html('<div style="display:flex;flex-direction:column;gap:10px;margin-top:24px">') +

@@ -13,17 +13,17 @@
 |---|---|---|---|
 | `/` · `/en/` | realizzazione siti web | business website | ✅ (eyebrow, FAQ, alt) |
 | `/prezzi/` · `/en/pricing/` | quanto costa un sito web | website cost | ✅ (интро-вопрос) |
-| `/servizi/siti-aziendali/` | sito web aziendale | business website design | агент |
-| `/servizi/e-commerce/` | realizzazione siti e-commerce | e-commerce website | агент |
-| `/servizi/siti-pwa/` | progressive web app | progressive web app | агент |
-| `/servizi/restyling-migrazione/` | rifacimento sito web | website redesign | агент |
-| `/servizi/seo-tecnica/` | SEO tecnica | technical SEO | агент |
-| `/servizi/siti-multilingue/` | sito web multilingua | multilingual website | агент |
-| `/servizi/export-ready/` | sito web per l'export | export website | агент |
-| `/servizi/web-app/` | sviluppo web app | custom web app | агент |
-| `/milano/` | web agency Milano | (city IT-only) | агент |
-| `/monza/ /bergamo/ /brescia/ /como/` | realizzazione siti web ‹città› | — | агент |
-| `/strumenti/test-velocita/` | test velocità sito web | website speed test | агент |
+| `/servizi/siti-aziendali/` | sito web aziendale | business website design | ✅ (hero-sub, H2 «per chi») |
+| `/servizi/e-commerce/` | realizzazione siti e-commerce | e-commerce website | ✅ (hero-sub, H2 «per chi») |
+| `/servizi/siti-pwa/` | progressive web app | progressive web app | ✅ (hero-sub, H2 «per chi») |
+| `/servizi/restyling-migrazione/` | rifacimento sito web | website redesign | ✅ (hero-sub, H2 «per chi») |
+| `/servizi/seo-tecnica/` | SEO tecnica | technical SEO | ✅ (eyebrow, hero-sub, H2 «per chi») |
+| `/servizi/siti-multilingue/` | sito web multilingua | multilingual website | ✅ (hero-sub, H2 «per chi») |
+| `/servizi/export-ready/` | sito web per l'export | export website | ✅ (hero-sub, H2 «garanzie») |
+| `/servizi/web-app/` | sviluppo web app | custom web app | ✅ (hero-sub, H2 «per chi») |
+| `/milano/` | web agency Milano | (city IT-only, EN: web agency Milan) | ✅ (eyebrow, H2 servizi, alt) |
+| `/monza/ /bergamo/ /brescia/ /como/` | realizzazione siti web ‹città› | — | ✅ (H1, H2 servizi, alt) |
+| `/strumenti/test-velocita/` | test velocità sito web | website speed test | ✅ (H1) |
 | блог-статьи | целевой запрос из заголовка (уже заложен при написании) | то же | ✅ с рождения |
 | `/chi-siamo/`, `/casi-studio/` | брендовые — фокус-ключ не задавать, оценку RM игнорировать | — | — |
 

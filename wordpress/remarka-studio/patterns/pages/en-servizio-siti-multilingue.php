@@ -17,7 +17,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(38px, 4.6vw, 64px)">Four languages translated by native speakers, not by a plugin<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">The Remarka group’s trade since 2001: professional translation, not machine translation, with multilingual SEO done right from day one.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">A multilingual website has been the Remarka group’s trade since 2001: professional translation, not machine translation, with multilingual SEO done right from day one.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"36px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:36px"><!-- wp:button -->
@@ -47,7 +47,7 @@
 <p class="sr-eyebrow">Who it’s for</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">For businesses that sell across borders, not just in Italian<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">A multilingual website for businesses that sell across borders, not just in Italian<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 </div>
 <!-- /wp:column -->

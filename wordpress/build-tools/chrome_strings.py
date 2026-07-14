@@ -344,3 +344,58 @@ CHROME_EXTRA = {
     '★ 4,9 · 47 recensioni': {'en': '★ 4.9 · 47 reviews', 'ru': '★ 4,9 · 47 отзывов'},
 }
 CHROME.update(CHROME_EXTRA)
+
+# On-page SEO pass (fase A): stringhe IT ritoccate per le parole chiave di
+# focus. Solo 'en' — il RU è fase B e non si rigenera qui.
+CHROME_SEO = {
+    # servizio-siti-aziendali — «sito web aziendale» / «business website design»
+    'Un sito web aziendale di quindici pagine, due lingue e un CMS per aggiornarlo da soli. Progettato per trasformare le visite in richieste di preventivo.': {
+        'en': 'Business website design: fifteen pages, two languages and a CMS you update yourselves. Built to turn visits into quote requests.'},
+    'Un sito web aziendale per chi vive di richieste, non di clic': {
+        'en': 'Business website design for those who live on inquiries, not clicks'},
+    # servizio-e-commerce — «realizzazione siti e-commerce» / «e-commerce website»
+    'Realizzazione siti e-commerce con catalogo veloce, checkout in un passaggio e fatturazione elettronica integrata: pensata per chi vende, non solo per chi naviga.': {
+        'en': 'E-commerce website with a fast catalog, one-step checkout and built-in e-invoicing: designed for businesses that sell, not just get browsed.'},
+    'Realizzazione siti e-commerce per chi vende sul serio, non solo espone': {
+        'en': 'An e-commerce website for businesses serious about selling, not just displaying'},
+    # servizio-siti-pwa — «progressive web app»
+    'Una progressive web app installabile, che funziona offline e si apre all’istante anche alla decima visita: senza i costi e i tempi di App Store e Play Store.': {
+        'en': 'A progressive web app: installable, works offline, opens instantly even on the tenth visit — without the costs and timelines of the App Store and Play Store.'},
+    'Una progressive web app per chi ha clienti che tornano, non solo che passano': {
+        'en': 'A progressive web app for businesses with customers who come back, not just pass by'},
+    # servizio-restyling-migrazione — «rifacimento sito web» / «website redesign»
+    'Rifacimento sito web senza perdere posizionamento e senza riscrivere i contenuti: cambia solo la base tecnica, e cambia in meglio.': {
+        'en': 'Website redesign with no rankings lost and no content to rewrite: only the technical foundation changes, and it changes for the better.'},
+    'Rifacimento sito web per chi ha già i contenuti giusti, e la tecnologia sbagliata': {
+        'en': 'Website redesign for businesses with the right content and the wrong technology'},
+    # servizio-seo-tecnica — «SEO tecnica» / «technical SEO»
+    'Core Web Vitals, dati strutturati e sitemap corretti: è la SEO tecnica, quella che il copywriting da solo non risolve.': {
+        'en': 'Core Web Vitals, structured data and correct sitemaps: this is technical SEO, the part copywriting alone can’t fix.'},
+    'La SEO tecnica per chi ha buoni contenuti e scarsa visibilità': {
+        'en': 'Technical SEO for sites with good content and poor visibility'},
+    # servizio-siti-multilingue — «sito web multilingua» / «multilingual website»
+    'Un sito web multilingua è il mestiere del gruppo Remarka dal 2001: traduzione professionale, non automatica, con SEO multilingue corretta fin dal primo giorno.': {
+        'en': 'A multilingual website has been the Remarka group’s trade since 2001: professional translation, not machine translation, with multilingual SEO done right from day one.'},
+    'Un sito web multilingua per chi vende oltre confine, non solo in italiano': {
+        'en': 'A multilingual website for businesses that sell across borders, not just in Italian'},
+    # servizio-export-ready — «sito web per l’export» / «export website»
+    'Un sito web per l’export vero: il sito nella lingua del cliente e la sua versione estera sotto un unico contratto, con localizzazione da madrelingua, SEO internazionale e KPI per ogni mercato. Nel settore linguistico dal 2001.': {
+        'en': 'A real export website: your site in the customer’s language and its foreign version under a single contract, with native-speaker localization, international SEO and KPIs for every market. In the language business since 2001.'},
+    'Un sito web per l’export, garantito nero su bianco': {
+        'en': 'An export website, guaranteed in black and white'},
+    # servizio-web-app — «sviluppo web app» / «custom web app»
+    'Sviluppo web app su misura: portali B2B, cabine clienti, configuratori di prodotto, integrazioni con CRM e gestionale. Costruiti dallo stesso team che sviluppa i prodotti digitali del gruppo Remarka.': {
+        'en': 'Custom web app development: B2B portals, client dashboards, product configurators, CRM and ERP integrations. Built by the same team that develops the Remarka group’s own digital products.'},
+    'Sviluppo web app per chi ha un processo, non solo una vetrina': {
+        'en': 'Custom web app for businesses with a process, not just a storefront'},
+    # citta-milano — «web agency Milano» / «web agency Milan»
+    'Web agency Milano': {'en': 'Web agency Milan'},
+    'Web agency Milano: sei servizi, una garanzia': {
+        'en': 'Web agency Milan: six services, one guarantee'},
+    'Web agency Milano: il sito di Studio Legale Fontana': {
+        'en': 'Web agency Milan: the Studio Legale Fontana website'},
+    # strumento-test-velocita — «test velocità sito web» / «website speed test»
+    'Test velocità sito web: il punteggio reale di Google': {
+        'en': 'Website speed test: your real Google score'},
+}
+CHROME.update(CHROME_SEO)

@@ -17,9 +17,9 @@ SERVICES = [
         slug='siti-aziendali', title='Siti aziendali',
         breadcrumb='Servizio / Siti aziendali',
         hero_title='Il sito aziendale che carica in un secondo',
-        hero_sub='Quindici pagine, due lingue, CMS per aggiornarlo da soli. Progettato per trasformare visite in richieste di preventivo.',
+        hero_sub='Un sito web aziendale di quindici pagine, due lingue e un CMS per aggiornarlo da soli. Progettato per trasformare le visite in richieste di preventivo.',
         hero_stat_value='1,1 s', hero_stat_label='Caricamento medio (LCP) dei siti aziendali consegnati nel 2025.',
-        per_chi_heading='Per chi vive di richieste, non di clic',
+        per_chi_heading='Un sito web aziendale per chi vive di richieste, non di clic',
         per_chi=[
             'PMI manifatturiere con cataloghi tecnici e clienti B2B che confrontano fornitori.',
             'Studi professionali e società di servizi che vivono di reputazione e primo contatto.',
@@ -59,9 +59,9 @@ SERVICES = [
         slug='e-commerce', title='E-commerce',
         breadcrumb='Servizio / E-commerce',
         hero_title='Il negozio online che non perde clienti nel checkout',
-        hero_sub='Catalogo veloce, checkout in un passaggio, fatturazione elettronica integrata: pensato per chi vende, non solo per chi naviga.',
+        hero_sub='Realizzazione siti e-commerce con catalogo veloce, checkout in un passaggio e fatturazione elettronica integrata: pensata per chi vende, non solo per chi naviga.',
         hero_stat_value='1,4 s', hero_stat_label='Caricamento medio (LCP) degli e-commerce consegnati nel 2025.',
-        per_chi_heading='Per chi vende sul serio, non solo espone',
+        per_chi_heading='Realizzazione siti e-commerce per chi vende sul serio, non solo espone',
         per_chi=[
             'Attività che vendono online ma perdono clienti proprio nel checkout.',
             'Negozi fisici pronti ad aprire un canale e-commerce senza improvvisare.',
@@ -101,9 +101,9 @@ SERVICES = [
         slug='siti-pwa', title='Siti progressivi PWA',
         breadcrumb='Servizio / Siti progressivi PWA',
         hero_title="Un sito che si apre come un’app, senza passare dagli store",
-        hero_sub="Installabile, funziona offline, si apre all’istante anche alla decima visita: senza i costi e i tempi di App Store e Play Store.",
+        hero_sub="Una progressive web app installabile, che funziona offline e si apre all’istante anche alla decima visita: senza i costi e i tempi di App Store e Play Store.",
         hero_stat_value='0,9 s', hero_stat_label='Caricamento medio (LCP) delle PWA consegnate nel 2025.',
-        per_chi_heading='Per chi ha clienti che tornano, non solo che passano',
+        per_chi_heading='Una progressive web app per chi ha clienti che tornano, non solo che passano',
         per_chi=[
             'Attività con clienti che tornano spesso a consultare il sito.',
             "Chi vuole un’app senza i costi e le revisioni di App Store e Play Store.",
@@ -143,9 +143,9 @@ SERVICES = [
         slug='restyling-migrazione', title='Restyling e migrazione',
         breadcrumb='Servizio / Restyling e migrazione',
         hero_title='Il vostro sito, ricostruito: stessi contenuti, il triplo della velocità',
-        hero_sub='Nessun posizionamento perso, nessun contenuto da riscrivere: solo la base tecnica cambia, e cambia in meglio.',
+        hero_sub='Rifacimento sito web senza perdere posizionamento e senza riscrivere i contenuti: cambia solo la base tecnica, e cambia in meglio.',
         hero_stat_value='1,2 s', hero_stat_label='Caricamento medio (LCP) dei restyling consegnati nel 2025.',
-        per_chi_heading='Per chi ha già i contenuti giusti, e la tecnologia sbagliata',
+        per_chi_heading='Rifacimento sito web per chi ha già i contenuti giusti, e la tecnologia sbagliata',
         per_chi=[
             'Chi ha un sito lento ma non vuole perdere posizionamento SEO faticosamente conquistato.',
             'Attività con contenuti validi ma una tecnologia costruita più di cinque anni fa.',
@@ -185,9 +185,9 @@ SERVICES = [
         slug='seo-tecnica', title='SEO tecnica',
         breadcrumb='Servizio / SEO tecnica',
         hero_title='Struttura e dati a posto, prima ancora di scrivere i contenuti',
-        hero_sub='Core Web Vitals, dati strutturati e sitemap corretti: la parte tecnica della SEO, quella che il copywriting da sola non risolve.',
+        hero_sub='Core Web Vitals, dati strutturati e sitemap corretti: è la SEO tecnica, quella che il copywriting da solo non risolve.',
         hero_stat_value='90+', hero_stat_label='Punteggio Core Web Vitals garantito da contratto.',
-        per_chi_heading='Per chi ha buoni contenuti e scarsa visibilità',
+        per_chi_heading='La SEO tecnica per chi ha buoni contenuti e scarsa visibilità',
         per_chi=[
             'Siti con buoni contenuti ma scarsa visibilità su Google.',
             'Chi ha già investito in copywriting senza vedere risultati in classifica.',
@@ -227,9 +227,9 @@ SERVICES = [
         slug='siti-multilingue', title='Siti multilingue',
         breadcrumb='Servizio / Siti multilingue',
         hero_title='Quattro lingue tradotte da madrelingua, non da un plugin',
-        hero_sub="Dal 2001 è il mestiere del gruppo Remarka: traduzione professionale, non automatica, con SEO multilingue corretta fin dal primo giorno.",
+        hero_sub="Un sito web multilingua è il mestiere del gruppo Remarka dal 2001: traduzione professionale, non automatica, con SEO multilingue corretta fin dal primo giorno.",
         hero_stat_value='4', hero_stat_label='Lingue native disponibili: italiano, inglese, tedesco, francese.',
-        per_chi_heading='Per chi vende oltre confine, non solo in italiano',
+        per_chi_heading='Un sito web multilingua per chi vende oltre confine, non solo in italiano',
         per_chi=[
             'Aziende che esportano o accolgono clienti stranieri.',
             'Attività turistiche con visitatori internazionali.',
@@ -371,7 +371,7 @@ CASES = [
 
 TOOLS = [
     dict(slug='test-velocita', idx='/01', titolo='Test velocità',
-         hero_titolo='Test di velocità del vostro sito',
+         hero_titolo='Test velocità sito web: il punteggio reale di Google',
          hero_sub='Punteggio Google PageSpeed e le tre metriche che lo determinano, spiegate in italiano. Senza registrazione.',
          descrizione='Il PageSpeed reale del vostro sito, spiegato in italiano.', has_demo=True),
     dict(slug='check-gdpr', idx='/02', titolo='Check GDPR e cookie',
@@ -395,7 +395,7 @@ TOOLS = [
 # «Serviamo {città} da Milano» вместо выдуманного адреса.
 CITIES = [
     dict(
-        slug='milano', nome='Milano', eyebrow='MILANO E PROVINCIA', progetti=14, dal='2023',
+        slug='milano', nome='Milano', eyebrow='Web agency Milano', progetti=14, dal='2023',
         sub='Siti progressivi per PMI di Milano e provincia: PageSpeed 90+ garantito da contratto, consegna a data fissa, prezzo chiuso. Il primo incontro, da voi o in studio, non si paga.',
         has_office=True,
         indirizzo='Via Andrea Solari 43, 20144 Milano (MI)', metro='M2 S. Agostino — 4 min a piedi',
@@ -497,11 +497,11 @@ EXPORT_READY = dict(
     slug='export-ready',
     eyebrow='Servizio / Export Ready',
     hero_title='Il vostro sito funziona anche in tedesco. Misurato, garantito, firmato',
-    hero_sub='Il sito e la sua versione estera sotto un unico contratto: localizzazione da madrelingua, SEO internazionale e KPI per ogni mercato. Nel settore linguistico dal 2001.',
+    hero_sub='Un sito web per l’export vero: il sito nella lingua del cliente e la sua versione estera sotto un unico contratto, con localizzazione da madrelingua, SEO internazionale e KPI per ogni mercato. Nel settore linguistico dal 2001.',
     hero_stat_value='4', hero_stat_label='Lingue con traduttori madrelingua interni: inglese, tedesco, francese, russo.',
     problema_heading='Il buco in cui l’export perde soldi',
     problema_testo='Chi esporta oggi sceglie tra una web agency (che gira le traduzioni a terzi o a un plugin) e un’agenzia di traduzioni (che non costruisce siti né fa SEO internazionale). La responsabilità si spezza sempre a metà — esattamente dove il cliente estero decide se comprare. Remarka è l’unica configurazione in cui ingegneria e localizzazione professionale vivono nella stessa azienda, sotto lo stesso contratto.',
-    garanzie_heading='Garanzie export, nero su bianco',
+    garanzie_heading='Un sito web per l’export, garantito nero su bianco',
     garanzie=[
         'Localizzazione solo da madrelingua: nomi e qualifiche dei traduttori nel contratto',
         'Glossario di terminologia del vostro settore: è un deliverable, resta a voi',
@@ -529,9 +529,9 @@ WEB_APP = dict(
     slug='web-app',
     eyebrow='Servizio / Web app su misura',
     hero_title='Quando un sito non basta: web app, aree clienti, configuratori',
-    hero_sub='Portali B2B, cabine clienti, configuratori di prodotto, integrazioni con CRM e gestionale. Costruiti dallo stesso team che sviluppa i prodotti digitali del gruppo Remarka.',
+    hero_sub='Sviluppo web app su misura: portali B2B, cabine clienti, configuratori di prodotto, integrazioni con CRM e gestionale. Costruiti dallo stesso team che sviluppa i prodotti digitali del gruppo Remarka.',
     hero_stat_value='3', hero_stat_label='Prodotti digitali interni in produzione: piattaforma AI, TMS, servizio documenti.',
-    per_chi_heading='Per chi ha un processo, non solo una vetrina',
+    per_chi_heading='Sviluppo web app per chi ha un processo, non solo una vetrina',
     per_chi=[
         'Aziende che gestiscono ordini, listini o pratiche via email e vogliono un’area clienti.',
         'Produttori con prodotti configurabili: un configuratore vende mentre l’ufficio tecnico dorme.',

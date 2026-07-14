@@ -9,7 +9,7 @@
 ?>
 <!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">MILAN AND PROVINCE</p>
+<p class="sr-eyebrow">Web agency Milan</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(38px,4.6vw,64px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Website development in Milan<span class="sr-accent-dot">.</span></h1>
@@ -36,7 +36,7 @@
 <p class="sr-eyebrow">What we do</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Six services, one guarantee<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Web agency Milan: six services, one guarantee<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:html -->
 <div class="sr-servizi-rows" style="margin-top:32px"><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Business websites</span><a href="/en/services/business-websites/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">E-commerce</span><a href="/en/services/e-commerce/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Progressive websites (PWA)</span><a href="/en/services/progressive-web-apps/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Rebuild and migration</span><a href="/en/services/redesign-migration/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Technical SEO</span><a href="/en/services/technical-seo/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Multilingual websites</span><a href="/en/services/multilingual-websites/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div></div>
@@ -51,7 +51,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">studiolegalefontana.it</span></div>
 <!-- /wp:html -->
 <!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-studio-legale-fontana.jpg" alt="Screenshot of the Studio Legale Fontana website"/></figure>
+<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-studio-legale-fontana.jpg" alt="Web agency Milan: the Studio Legale Fontana website"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:group -->

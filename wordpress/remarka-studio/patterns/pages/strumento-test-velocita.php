@@ -12,7 +12,7 @@
 <p class="sr-eyebrow">Strumento gratuito /01</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(34px,4vw,52px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(34px,4vw,52px)">Test di velocità del vostro sito<span class="sr-accent-dot">.</span></h1>
+<h1 class="wp-block-heading" style="font-size:clamp(34px,4vw,52px)">Test velocità sito web: il punteggio reale di Google<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
 <p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:100%">Punteggio Google PageSpeed e le tre metriche che lo determinano, spiegate in italiano. Senza registrazione.</p>

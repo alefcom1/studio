@@ -12,7 +12,7 @@
 <p class="sr-eyebrow">Free tool /01</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(34px,4vw,52px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(34px,4vw,52px)">Speed test for your website<span class="sr-accent-dot">.</span></h1>
+<h1 class="wp-block-heading" style="font-size:clamp(34px,4vw,52px)">Website speed test: your real Google score<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
 <p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:100%">Your Google PageSpeed score and the three metrics behind it, explained in plain English. No sign-up required.</p>
