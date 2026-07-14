@@ -62,6 +62,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">The method</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">What this AI-readiness check actually verifies<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">As with the GDPR check, it’s our own server that reads a few public files from your site and the HTML of your home page, without going through Google. We run four checks: we look for the llms.txt file, check whether robots.txt lets the model crawlers through (OpenAI’s GPTBot, ClaudeBot, PerplexityBot, Google-Extended), detect JSON-LD structured data on the page, and check for a sitemap. The result is a readiness score out of four.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">It’s worth knowing what this test doesn’t promise. It checks that the technical signals are there, not that ChatGPT or Perplexity will actually cite you: that also depends on the quality and authority of your content, which no tool measures automatically. And since llms.txt is a young standard, its absence isn’t yet a serious mistake: it’s one more opportunity to be read well by machines. Read the score as a list of opportunities, not as a failing grade.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Reading the result</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How to read your readiness score out of 4<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Each signal is worth one point and has its own traffic light. Four out of four means your site gives AI models every handhold they need to understand and cite it. Two or three out of four is the most common situation: llms.txt is almost always the missing piece, sometimes structured data too. Zero or one out of four deserves attention, especially if robots.txt is blocking AI crawlers: in that case you’re left out of generated answers, possibly without having decided to be.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">One clarification to avoid needless alarm. Blocking AI crawlers isn’t a flaw in itself: it’s a legitimate choice if you want to protect your content. The test flags it so you know that door is closed, not to tell you you’re wrong. For most businesses, though, being cited by an AI assistant is extra visibility, not a risk: it’s worth weighing with open eyes.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Three common questions</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -79,6 +109,24 @@
 <p>Yes, more than ever: JSON-LD data (schema.org) helps both Google and AI models understand who you are, what you offer and to whom. It’s the foundation of good indexing.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">How to improve</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How to get found and cited by AI models<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Getting ready for AI doesn’t take an overhaul: it’s largely the same signals that help you with Google, plus a few new ones.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Publish an llms.txt file</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">A simple Markdown text file at the root of your site that sums up who you are and what you offer: it’s the map that models are happy to read.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Open the door to the right crawlers</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">In robots.txt, allow access to GPTBot, ClaudeBot, PerplexityBot and Google-Extended if you want to appear in generated answers.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Add structured data</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">JSON-LD schema.org markup states your name, location, offer and services explicitly: it’s the foundation both Google and AI models use to understand you.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Keep your sitemap up to date</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">A complete XML sitemap helps crawlers find every page; make sure your content is readable text, not just images.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">State facts explicitly</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">State clearly what you do, where, and for whom: models cite what they understand unambiguously, not what they have to guess at.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/en/services/technical-seo/">We’ll prepare it for you: it’s part of our technical SEO service →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->

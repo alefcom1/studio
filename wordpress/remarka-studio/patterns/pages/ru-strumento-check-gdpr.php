@@ -64,6 +64,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Метод</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Что именно проверяет наш GDPR-тест<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">В отличие от тестов на движке Google, здесь вашу главную страницу читает наш собственный сервер — ровно так, как её увидел бы посетитель при первом открытии, до единого клика. На полученном HTML выполняются четыре автоматические проверки: есть ли баннер cookie (CMP — Iubenda, Cookiebot, Complianz и подобные), находятся ли ссылки на privacy policy и cookie policy, стартуют ли счётчики и пиксели до согласия и какие внешние домены страница вызывает.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Скажем сразу, потому что это важно: перед вами не юридическое заключение. Это ориентировочная техническая проверка — она ловит очевидные проблемы, за которые европейские регуляторы наказывают чаще всего, но не заменяет консультанта по защите данных. Тест не видит, что происходит после нажатия «Принять», не оценивает ваши журналы согласий и не читает тексты уведомлений построчно. Это хорошая отправная точка, а не сертификат соответствия.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Как читать результат</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как читать светофор соответствия<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Каждый пункт получает свой цвет, и цвет стоит воспринимать буквально. Зелёный — сигнал на месте и в порядке. Жёлтый — что-то есть, но требует ручной проверки: например, политика опубликована, но может оказаться неполной. Красный — не хватает важного элемента или, хуже, трекеры работают без баннера, который должен ими управлять. Общая картина важнее любого отдельного кружка.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Самый частый красный сигнал — «трекеры без баннера»: Google Analytics или пиксель Meta, зашитые прямо в исходный HTML и срабатывающие до согласия пользователя. Именно за это надзорные органы ЕС штрафуют решительнее всего — а для компании, выходящей на европейский рынок, такой штраф особенно обиден. Жёлтый же обычно не беда: чаще всего достаточно дополнить или обновить уже существующее уведомление.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Три частых вопроса</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -81,6 +111,24 @@
 <p>Потому что согласие должно быть свободным, информированным и подтверждаемым: отказаться должно быть так же просто, как согласиться, а ни один рекламный трекер не может запускаться до того, как пользователь скажет «да».</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Как улучшить</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как привести cookie и согласия в порядок<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Практическое соответствие складывается из нескольких правил — но соблюдать нужно каждое из них.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Поставьте CMP, которая реально блокирует</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Серьёзный баннер не просто появляется на экране: он не даёт трекерам стартовать, пока пользователь не согласился. В этом разница между «выглядеть по правилам» и «работать по правилам».</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Сделайте отказ таким же простым, как согласие</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Кнопка «Отклонить» должна весить столько же, сколько «Принять», и стоять на том же экране: без cookie wall и без квеста ради права сказать «нет».</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Опубликуйте полные уведомления</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Понятные и актуальные privacy policy и cookie policy, которые легко найти: что вы собираете, зачем и с кем этим делитесь.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Сделайте согласие доказуемым</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Храните запись о каждом согласии — когда и на что оно дано, — чтобы предъявить её по запросу: «да» должно быть свободным, осознанным и отслеживаемым.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Запускайте трекеры после «да»</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Аналитика, пиксели и тепловые карты включаются только после принятия, по условию: до согласия страница обязана оставаться чистой.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/ru/uslugi/korporativnye-sajty/">Мы включаем это в каждый корпоративный сайт →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/blog/cookie-banner-trebovanija-2026/">Разбор по теме: требования к cookie-баннеру в 2026 году →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->

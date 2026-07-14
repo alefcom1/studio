@@ -60,6 +60,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">The method</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">What this on-page SEO audit actually checks<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Here too the engine is Google: we use Lighthouse’s SEO category through the PageSpeed API, in mobile strategy. In a few seconds, Lighthouse reads the page the way a crawler would and checks the technical on-page elements: whether the title exists and is unique, the meta description, correct tags, descriptive link text, indexability, readability on a phone screen. The result is a 0–100 score with a precise list of what fails the check.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">It’s worth being clear about the boundaries. This test looks at the technical structure of a single page, not the quality of your writing, not the links other sites give you, not the authority that builds up over time. It doesn’t predict what position you’ll rank in, and it doesn’t study your competitors on your keywords. It’s a check of the foundations: if they’re crooked, not even the best copy pays off; if they’re solid, you’ve cleared the technical obstacles out of the way.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Reading the result</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How to interpret your Google SEO score<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">From 90 up, the technical basics are in order and you can focus on content and reputation. Between 50 and 89 there are still concrete fixes to make — often a missing title or a duplicate description — that are quick to sort out. Below 50, something is standing in the way of indexing: that’s the priority, before anything else. Read the list of warnings from top to bottom: it’s already sorted by impact.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Watch out for two common misreadings. A perfect score doesn’t mean “first on Google”: it only means the page is technically readable, and ranking comes with content and time. And a warning on a minor tag isn’t an emergency: tell the problems that block indexing apart from the cosmetic ones, and start with the former.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Three common questions</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -77,6 +107,24 @@
 <p>No: one page at a time, whichever you enter. That’s the unit Google uses to judge relevance for a search.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">How to improve</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How to improve your on-page rankings<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Technical on-page SEO comes down to a few things done well, repeated on every page that matters.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">A title and description built for the page</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Write a unique, descriptive title for every page and a meta description that invites the click: they’re the first thing a searcher sees.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">A clean heading hierarchy</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">One single H1, then H2s and H3s ordered by topic: they help both Google and readers grasp the page’s structure at a glance.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Add structured data</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Schema.org markup in JSON-LD tells search engines who you are and what you offer, and makes you eligible for rich results.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Take care of internal links and URLs</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Link your pages to each other with clear anchor text and keep addresses short and readable: structure matters as much as content.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Keep your sitemap and robots file in order</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">An up-to-date XML sitemap and a correct robots.txt guide the crawler; if your site has multiple languages, add hreflang tags.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/en/services/technical-seo/">Want us to fix it for you? See our technical SEO service →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/en/blog/core-web-vitals-2026/">Read more: Core Web Vitals in 2026 →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->

@@ -700,3 +700,251 @@ CHROME_TOOLS = {
     'Nessuna barriera rilevante rilevata.': {'en': 'No significant barriers found.'},
 }
 CHROME.update(CHROME_TOOLS)
+
+# Sezioni SEO L2 delle 7 pagine strumenti (metodologia / lettura del
+# risultato / come migliorare) — coppie IT→EN per il conveyor EN.
+CHROME_TOOLS_L2 = {
+    # Due residui T3 sfuggiti all'euristica ITALIAN_HINT (nessuna parola
+    # frequente nel testo) — scoperti al rendering delle pagine EN.
+    'Incollate l’indirizzo': {'en': 'Paste in the address'},
+    'Vogliamo sistemare noi questi problemi': {'en': 'Want us to fix these problems'},
+    'Il metodo': {'en': 'The method'},
+    'Leggere il risultato': {'en': 'Reading the result'},
+    'Come migliorare': {'en': 'How to improve'},
+    'Cosa misura davvero questo test dei tempi di caricamento': {
+        'en': 'What this website loading-speed test actually measures'},
+    'Dietro il punteggio c’è un motore solo: l’API PageSpeed Insights di Google, la stessa che alimenta pagespeed.web.dev. Interroghiamo Lighthouse in strategia mobile, perché è la versione del sito che Google usa per posizionarvi. Il numero da 0 a 100 nasce in laboratorio, con un telefono e una connessione simulati e standardizzati: così due misurazioni della stessa pagina restano confrontabili nel tempo. Dove il vostro sito riceve abbastanza traffico reale, aggiungiamo anche i Core Web Vitals raccolti sul campo dagli utenti veri di Chrome.': {
+        'en': 'There’s only one engine behind the score: Google’s PageSpeed Insights API, the same one that powers pagespeed.web.dev. We query Lighthouse in mobile strategy, because that’s the version of your site Google uses to rank you. The 0–100 number is born in a lab, with a simulated phone and connection kept standard: that way two measurements of the same page stay comparable over time. Where your site gets enough real traffic, we also add the Core Web Vitals collected in the field from actual Chrome users.'},
+    'È giusto sapere cosa questo test non guarda. Non giudica la qualità dei testi, non conta i link in entrata, non misura la sicurezza del server né quanto vendete: pesa solo l’esperienza di caricamento di una singola pagina. Un punteggio alto non è la promessa di un primo posto su Google, ma una base tecnica sana su cui tutto il resto lavora meglio. Preferiamo dirlo chiaro: è la fotografia precisa di un aspetto, non la diagnosi completa del sito.': {
+        'en': 'It’s only fair to say what this test doesn’t look at. It doesn’t judge the quality of your copy, doesn’t count inbound links, doesn’t measure server security or how much you sell: it only weighs the loading experience of a single page. A high score isn’t a promise of a first-place ranking on Google, but a healthy technical base that everything else works better on. We’d rather say it plainly: it’s a precise snapshot of one aspect, not a complete diagnosis of your site.'},
+    'Come leggere il punteggio delle prestazioni del sito': {
+        'en': 'How to read your website’s performance score'},
+    'Il risultato si legge come un semaforo. Da 90 a 100 siete in fascia verde: la pagina compare in fretta anche in mobilità, sul 4G di città come ai bordi della copertura. Tra 50 e 89 la velocità è nella media del web italiano, con margini concreti di guadagno. Sotto 50 siete nel rosso: buona parte dei visitatori da smartphone se ne va prima che appaia la prima riga, e ogni euro investito in pubblicità rende molto meno.': {
+        'en': 'Read the result like a traffic light. From 90 to 100 you’re in the green zone: the page appears quickly even on the move, on city 4G as well as at the edge of coverage. Between 50 and 89, speed is around the average for the Italian web, with concrete room to gain. Below 50 you’re in the red: a good share of mobile visitors leave before the first line even appears, and every euro spent on advertising returns much less.'},
+    'Due falsi allarmi ricorrenti. Il valore oscilla di qualche punto tra una prova e l’altra: è normale, dipende dai server di misura di Google, non dal vostro sito — contano i grandi salti, non i due punti di scarto. E non spaventatevi se il desktop segna 95 e il mobile 40: quasi tutti i siti hanno questo divario, ma è il mobile a decidere la classifica. Guardate sempre quel numero.': {
+        'en': 'Two recurring false alarms. The value swings by a few points between one run and the next: that’s normal, it depends on Google’s measuring servers, not your site — the big jumps matter, not a two-point gap. And don’t panic if desktop scores 95 while mobile scores 40: almost every site has this gap, but it’s mobile that decides your ranking. Always watch that number.'},
+    'Come velocizzare il sito web: cinque interventi concreti': {
+        'en': 'How to speed up your website: five concrete fixes'},
+    'Un punteggio basso nasce quasi sempre dalle stesse cause, e le prime sono anche le più economiche da correggere.': {
+        'en': 'A low score almost always comes from the same handful of causes, and the first ones are also the cheapest to fix.'},
+    'Alleggerite le immagini': {'en': 'Lighten your images'},
+    'Convertite le fotografie in WebP o AVIF e attivate il caricamento differito: è la causa numero uno della lentezza e spesso, da sola, dimezza i tempi di attesa.': {
+        'en': 'Convert photos to WebP or AVIF and turn on lazy loading: it’s the number-one cause of slowness, and on its own it often cuts waiting times in half.'},
+    'Attivate la cache': {'en': 'Turn on caching'},
+    'Una cache di pagina e del browser evita al server di ricostruire tutto a ogni visita: mezza giornata di lavoro, risultato misurabile da subito.': {
+        'en': 'Page and browser caching stop the server from rebuilding everything on every visit: half a day of work, with results you can measure right away.'},
+    'Sfoltite CSS e JavaScript': {'en': 'Trim your CSS and JavaScript'},
+    'Portate in linea il CSS critico, rimandate il resto e togliete gli script di terze parti che non servono: meno codice da eseguire, prima visualizzazione più rapida.': {
+        'en': 'Inline the critical CSS, defer the rest, and remove third-party scripts you don’t need: less code to run, a faster first paint.'},
+    'Scegliete un hosting all’altezza': {'en': 'Choose hosting that’s up to the job'},
+    'Un server condiviso e sovraffollato risponde in un secondo prima ancora di iniziare: un hosting adeguato, con una CDN davanti, taglia quell’attesa iniziale.': {
+        'en': 'An overcrowded shared server takes a full second to respond before it even starts loading the page: proper hosting, with a CDN in front of it, cuts that initial wait.'},
+    'Controllate i font': {'en': 'Keep your fonts in check'},
+    'Limitate le famiglie di caratteri, precaricate quelle essenziali e usate font-display swap, così il testo appare subito invece di restare invisibile.': {
+        'en': 'Limit the number of typefaces, preload the essential ones, and use font-display: swap, so text shows up immediately instead of staying invisible.'},
+    'Vogliamo intervenire noi: scopri il restyling tecnico →': {
+        'en': 'Want us to fix it for you? See our technical redesign service →'},
+    'Approfondisci: le 7 cause reali di un sito lento →': {
+        'en': 'Read more: the 7 real causes of a slow website →'},
+    'Che cosa controlla davvero l’audit SEO della pagina': {
+        'en': 'What this on-page SEO audit actually checks'},
+    'Anche qui il motore è Google: usiamo la categoria SEO di Lighthouse attraverso l’API PageSpeed, in strategia mobile. In pochi secondi Lighthouse legge la pagina come farebbe il crawler e verifica gli elementi tecnici on-page: presenza e unicità del title, meta description, tag corretti, testi dei link descrittivi, indicizzabilità, leggibilità sullo schermo del telefono. Ne esce un punteggio da 0 a 100 con l’elenco puntuale di ciò che non supera il controllo.': {
+        'en': 'Here too the engine is Google: we use Lighthouse’s SEO category through the PageSpeed API, in mobile strategy. In a few seconds, Lighthouse reads the page the way a crawler would and checks the technical on-page elements: whether the title exists and is unique, the meta description, correct tags, descriptive link text, indexability, readability on a phone screen. The result is a 0–100 score with a precise list of what fails the check.'},
+    'Vale la pena chiarire i confini. Questo esame guarda la struttura tecnica di una singola pagina, non la qualità dei contenuti, non i link che altri siti vi dedicano, non l’autorevolezza che si costruisce nel tempo. Non prevede in che posizione finirete, né studia la concorrenza sulle vostre parole chiave. È il controllo delle fondamenta: se sono storte, nemmeno il testo migliore rende; se sono a posto, avete tolto di mezzo gli ostacoli tecnici.': {
+        'en': 'It’s worth being clear about the boundaries. This test looks at the technical structure of a single page, not the quality of your writing, not the links other sites give you, not the authority that builds up over time. It doesn’t predict what position you’ll rank in, and it doesn’t study your competitors on your keywords. It’s a check of the foundations: if they’re crooked, not even the best copy pays off; if they’re solid, you’ve cleared the technical obstacles out of the way.'},
+    'Come interpretare il punteggio SEO di Google': {
+        'en': 'How to interpret your Google SEO score'},
+    'Da 90 in su le basi tecniche sono in ordine e potete concentrarvi su contenuti e reputazione. Tra 50 e 89 restano correzioni concrete — spesso un title mancante o una description duplicata — che si sistemano in fretta. Sotto 50 c’è qualcosa che ostacola l’indicizzazione: è la priorità, prima di ogni altra cosa. Leggete la lista degli avvisi dall’alto verso il basso: è già ordinata per impatto.': {
+        'en': 'From 90 up, the technical basics are in order and you can focus on content and reputation. Between 50 and 89 there are still concrete fixes to make — often a missing title or a duplicate description — that are quick to sort out. Below 50, something is standing in the way of indexing: that’s the priority, before anything else. Read the list of warnings from top to bottom: it’s already sorted by impact.'},
+    'Attenzione a due letture sbagliate. Un punteggio pieno non vuol dire «primi su Google»: significa solo che la pagina è tecnicamente leggibile, e il posizionamento arriva con contenuti e tempo. E un avviso su un tag secondario non è un’emergenza: distinguete i problemi che bloccano l’indicizzazione da quelli cosmetici, e partite dai primi.': {
+        'en': 'Watch out for two common misreadings. A perfect score doesn’t mean “first on Google”: it only means the page is technically readable, and ranking comes with content and time. And a warning on a minor tag isn’t an emergency: tell the problems that block indexing apart from the cosmetic ones, and start with the former.'},
+    'Come migliorare il posizionamento on-page': {'en': 'How to improve your on-page rankings'},
+    'La SEO tecnica on-page è fatta di poche cose fatte bene, ripetute su ogni pagina che conta.': {
+        'en': 'Technical on-page SEO comes down to a few things done well, repeated on every page that matters.'},
+    'Un title e una description su misura': {'en': 'A title and description built for the page'},
+    'Scrivete per ogni pagina un titolo unico e descrittivo e una meta description che invita al clic: sono la prima cosa che vede chi cerca.': {
+        'en': 'Write a unique, descriptive title for every page and a meta description that invites the click: they’re the first thing a searcher sees.'},
+    'Una gerarchia di titoli pulita': {'en': 'A clean heading hierarchy'},
+    'Un solo H1, poi H2 e H3 ordinati per argomento: aiutano Google e i lettori a capire la struttura della pagina in un colpo d’occhio.': {
+        'en': 'One single H1, then H2s and H3s ordered by topic: they help both Google and readers grasp the page’s structure at a glance.'},
+    'Aggiungete i dati strutturati': {'en': 'Add structured data'},
+    'Il markup schema.org in JSON-LD dice ai motori chi siete e cosa offrite, e vi rende idonei ai risultati arricchiti.': {
+        'en': 'Schema.org markup in JSON-LD tells search engines who you are and what you offer, and makes you eligible for rich results.'},
+    'Curate link interni e URL': {'en': 'Take care of internal links and URLs'},
+    'Collegate le pagine tra loro con testi di ancoraggio chiari e mantenete indirizzi brevi e leggibili: la struttura conta quanto il contenuto.': {
+        'en': 'Link your pages to each other with clear anchor text and keep addresses short and readable: structure matters as much as content.'},
+    'Tenete in ordine sitemap e robots': {'en': 'Keep your sitemap and robots file in order'},
+    'Una sitemap XML aggiornata e un robots.txt corretto guidano il crawler; se il sito è in più lingue, aggiungete i tag hreflang.': {
+        'en': 'An up-to-date XML sitemap and a correct robots.txt guide the crawler; if your site has multiple languages, add hreflang tags.'},
+    'Vogliamo sistemarla noi: scopri la SEO tecnica →': {
+        'en': 'Want us to fix it for you? See our technical SEO service →'},
+    'Approfondisci: i Core Web Vitals nel 2026 →': {'en': 'Read more: Core Web Vitals in 2026 →'},
+    'Cosa verifica davvero questo controllo cookie': {
+        'en': 'What this cookie compliance check actually verifies'},
+    'A differenza dei test basati su Google, qui è il nostro server a leggere la home page del vostro sito, esattamente come la vedrebbe un visitatore alla prima apertura, prima di qualsiasi clic. Su quell’HTML facciamo quattro controlli automatici: cerchiamo il banner dei cookie (la CMP: Iubenda, Cookiebot, Complianz e simili), i collegamenti a privacy e cookie policy, gli strumenti di tracciamento che partono prima del consenso e i domini esterni che la pagina richiama.': {
+        'en': 'Unlike the Google-based tests, here it’s our own server that reads your website’s home page, exactly as a visitor would see it on first landing, before any click. On that HTML we run four automatic checks: we look for the cookie banner (the CMP: Iubenda, Cookiebot, Complianz and similar tools), links to the privacy and cookie policies, tracking tools that fire before consent, and the external domains the page calls.'},
+    'Diciamolo subito, perché conta: non è un parere legale. È una verifica tecnica indicativa, che intercetta i problemi evidenti — quelli che il Garante contesta più spesso — ma non sostituisce un consulente privacy. Non legge cosa accade dopo che l’utente accetta, non valuta i vostri registri dei consensi, non esamina le informative riga per riga. È un ottimo punto di partenza per capire dove intervenire, non un certificato di conformità.': {
+        'en': 'Let’s say it upfront, because it matters: this is not legal advice. It’s an indicative technical check that catches the obvious problems — the ones Italy’s Data Protection Authority challenges most often — but it doesn’t replace a privacy consultant. It doesn’t see what happens after the user accepts, doesn’t evaluate your consent records, and doesn’t examine your policies line by line. It’s a great starting point to see where to act, not a certificate of compliance.'},
+    'Come leggere il semaforo di conformità': {'en': 'How to read your compliance traffic light'},
+    'Ogni punto riceve un colore, e il colore va preso per quello che è. Verde: il segnale è presente e a posto. Giallo: qualcosa c’è ma va verificato a mano — per esempio una policy che esiste ma potrebbe essere incompleta. Rosso: manca un elemento importante o, peggio, ci sono tracker attivi senza un banner che li governi. Il quadro d’insieme conta più del singolo pallino.': {
+        'en': 'Every checkpoint gets a colour, and the colour should be read for exactly what it is. Green: the signal is present and correct. Yellow: something is there but needs a manual check — a policy that exists but might be incomplete, for instance. Red: an important element is missing or, worse, there are active trackers with no banner governing them. The overall picture matters more than any single dot.'},
+    'Il rosso più frequente sui siti italiani è «tracker senza banner»: Google Analytics o il Pixel di Meta che si attivano nell’HTML iniziale, prima del sì dell’utente. È anche l’errore che il Garante sanziona con più decisione. Un giallo, invece, di solito non è un’emergenza: spesso basta completare o aggiornare un’informativa già presente.': {
+        'en': 'The most common red flag on Italian websites is “trackers without a banner”: Google Analytics or the Meta Pixel firing in the initial HTML, before the user has said yes. It’s also the mistake Italy’s Data Protection Authority penalises most decisively. A yellow, on the other hand, is usually not an emergency: often it just takes completing or updating a policy that’s already there.'},
+    'Come mettere a norma il consenso e i cookie': {
+        'en': 'How to bring your consent and cookies up to standard'},
+    'La conformità pratica si costruisce con pochi accorgimenti, ma vanno rispettati tutti.': {
+        'en': 'Practical compliance is built from a handful of measures, but every one of them has to be respected.'},
+    'Installate una CMP che blocca davvero': {'en': 'Install a CMP that actually blocks trackers'},
+    'Un banner serio non deve solo comparire: deve impedire ai tracker di partire finché l’utente non ha accettato. È la differenza tra sembrare a norma ed esserlo.': {
+        'en': 'A proper banner shouldn’t just appear: it has to stop trackers from firing until the user has accepted. That’s the difference between looking compliant and being compliant.'},
+    'Rendete il rifiuto facile quanto l’assenso': {'en': 'Make refusing as easy as accepting'},
+    'Il pulsante «Rifiuta» deve avere lo stesso peso di «Accetta», sulla stessa schermata: niente cookie wall, niente percorsi a ostacoli per dire di no.': {
+        'en': 'The “Reject” button must carry the same visual weight as “Accept”, on the same screen: no cookie walls, no obstacle course for saying no.'},
+    'Pubblicate informative complete': {'en': 'Publish complete policies'},
+    'Privacy policy e cookie policy chiare, aggiornate e facili da trovare: devono dire cosa raccogliete, perché e con chi lo condividete.': {
+        'en': 'Clear, up-to-date privacy and cookie policies that are easy to find: they need to state what you collect, why, and who you share it with.'},
+    'Rendete il consenso documentabile': {'en': 'Make consent provable'},
+    'Conservate la prova di ogni consenso — quando, per cosa — così da poterla mostrare se richiesto: il sì deve essere libero, informato e tracciabile.': {
+        'en': 'Keep a record of every consent — when, for what — so you can show it if asked: the yes has to be freely given, informed and traceable.'},
+    'Caricate i tracker dopo il sì': {'en': 'Load trackers only after the yes'},
+    'Analytics, pixel e mappe di calore vanno attivati solo dopo l’accettazione, in modo condizionato: prima del consenso la pagina deve restare pulita.': {
+        'en': 'Analytics, pixels and heatmaps should only activate after acceptance, conditionally: before consent, the page has to stay clean.'},
+    'Lo includiamo in ogni sito aziendale che consegniamo →': {
+        'en': 'We include it in every business website we deliver →'},
+    'Approfondisci: la checklist cookie 2026 del Garante →': {
+        'en': 'Read more: the 2026 cookie checklist from Italy’s Data Protection Authority →'},
+    'Come funziona davvero questa stima del ROI': {'en': 'How this ROI estimate actually works'},
+    'Questo strumento non interroga alcun server e non guarda il vostro sito: è un calcolatore che gira interamente sul vostro dispositivo, e i numeri che inserite non lasciano il browser. Prende cinque dati della vostra attività — visite mensili, quota di pubblico estero, tasso di conversione, scontrino medio — e li combina con un incremento di conversione applicato alla sola fetta di visitatori stranieri.': {
+        'en': 'This tool doesn’t query any server and doesn’t look at your website: it’s a calculator that runs entirely on your device, and the numbers you enter never leave your browser. It takes five figures from your business — monthly visits, share of foreign visitors, conversion rate, average order value — and combines them with a conversion boost applied only to the slice of foreign visitors.'},
+    'Quell’incremento, un prudente +40%, viene dalle ricerche CSA Research: la larga maggioranza delle persone compra più volentieri, e più spesso, nella propria lingua. È un valore di partenza, non una legge fisica: potete modificarlo. E qui sta anche il limite onesto dello strumento — è una stima per ordini di grandezza, non una previsione garantita. Non conosce il vostro mercato, la vostra offerta né la qualità della traduzione, che sono poi ciò che fa la differenza vera.': {
+        'en': 'That boost, a conservative +40%, comes from CSA Research: the large majority of people buy more willingly, and more often, in their own language. It’s a starting value, not a law of physics: you can change it. And that’s also the tool’s honest limit — it’s an order-of-magnitude estimate, not a guaranteed forecast. It doesn’t know your market, your offer, or the quality of your translation, which is what really makes the difference.'},
+    'Come interpretare il ricavo potenziale stimato': {
+        'en': 'How to interpret the estimated potential revenue'},
+    'Il risultato va letto come una forchetta, non come una cifra al centesimo. Serve a rispondere a una sola domanda: vale la pena approfondire la traduzione del sito, sì o no? Se il ricavo aggiuntivo stimato all’anno copre comodamente il costo di un progetto multilingue, il segnale è chiaro. Se è modesto, forse il vostro pubblico estero è ancora troppo piccolo perché l’investimento si ripaghi in fretta.': {
+        'en': 'Read the result as a range, not as a figure down to the cent. It exists to answer a single question: is it worth looking further into translating your website, yes or no? If the estimated extra revenue per year comfortably covers the cost of a multilingual project, the signal is clear. If it’s modest, your foreign audience may still be too small for the investment to pay off quickly.'},
+    'Muovete i numeri e osservate come reagisce la stima: è lì che il calcolatore diventa utile. Alzando la quota di visitatori esteri o lo scontrino medio, il ricavo cresce in fretta, e questo vi dice quali leve pesano di più nel vostro caso. Ricordate che tutto parte dalle vostre cifre: se sono ottimistiche, lo sarà anche il risultato. Meglio partire da stime prudenti.': {
+        'en': 'Move the numbers around and watch how the estimate reacts: that’s where the calculator becomes useful. Raise the share of foreign visitors or the average order value, and revenue climbs quickly — which tells you which levers matter most in your case. Remember it all starts from your own figures: if they’re optimistic, so will the result be. Better to start from conservative estimates.'},
+    'Come aumentare il rendimento della traduzione': {
+        'en': 'How to increase the return on translating your website'},
+    'Tradurre un sito rende, ma solo se è fatto per vendere e non per figurare.': {
+        'en': 'Translating a website pays off, but only if it’s done to sell, not just to look good.'},
+    'Traducete da madrelingua, non con un plugin': {
+        'en': 'Translate with native speakers, not a plugin'},
+    'Un cliente estero riconosce un testo automatico alla seconda riga, e con lui se ne va la fiducia. La traduzione professionale è ciò che trasforma la visita in ordine.': {
+        'en': 'A foreign customer spots machine-translated text by the second line, and trust leaves with them. Professional translation is what turns a visit into an order.'},
+    'Localizzate, non solo tradurre': {'en': 'Localise, don’t just translate'},
+    'Adattate offerta, inviti all’azione, valuta e formati al mercato di arrivo: vendere in Germania non è tradurre le schede, è parlare come parla quel mercato.': {
+        'en': 'Adapt your offer, calls to action, currency and formats to the target market: selling in Germany isn’t about translating product pages, it’s about speaking the way that market speaks.'},
+    'Impostate la SEO internazionale': {'en': 'Set up international SEO'},
+    'Ogni lingua ha bisogno dei suoi URL, dei tag hreflang e dei metadati dedicati, altrimenti Google non capisce a chi mostrare quale versione.': {
+        'en': 'Every language needs its own URLs, hreflang tags and dedicated metadata, otherwise Google can’t tell who to show which version to.'},
+    'Partite dal mercato con più domanda': {'en': 'Start with the market with the most demand'},
+    'Non tutte le lingue rendono uguale: cominciate da dove i dati mostrano già interesse, poi allargate mercato per mercato.': {
+        'en': 'Not every language pays off equally: start where the data already shows interest, then expand market by market.'},
+    'Curate anche il dopo-vendita': {'en': 'Take care of after-sales too'},
+    'Moduli, email di conferma e assistenza nella lingua del cliente: la fiducia si conferma dopo l’acquisto, non solo prima.': {
+        'en': 'Forms, confirmation emails and support in the customer’s language: trust is confirmed after the purchase, not only before it.'},
+    'Vogliamo tradurlo sul serio: scopri i siti multilingue →': {
+        'en': 'Want it translated properly? See our multilingual websites service →'},
+    'Approfondisci: costi e tempi di un sito in quattro lingue →': {
+        'en': 'Read more: the costs and timeline of a website in four languages →'},
+    'Cosa controlla davvero questo test di accessibilità': {
+        'en': 'What this website accessibility test actually checks'},
+    'Il motore è la categoria Accessibilità di Lighthouse, richiamata via API PageSpeed: gli stessi controlli automatici che Google mette a disposizione degli sviluppatori. In pochi secondi la pagina viene esaminata su decine di regole tecniche — contrasto tra testo e sfondo, testi alternativi delle immagini, etichette dei campi nei moduli, ordine dei titoli, uso corretto degli attributi ARIA — e ne esce un punteggio da 0 a 100 con l’elenco delle barriere rilevate.': {
+        'en': 'The engine is Lighthouse’s Accessibility category, called through the PageSpeed API: the same automatic checks Google makes available to developers. In a few seconds the page is examined against dozens of technical rules — contrast between text and background, image alt text, form field labels, heading order, correct use of ARIA attributes — producing a 0–100 score with the list of barriers found.'},
+    'Serve chiarezza sui limiti, perché qui è facile illudersi. Un controllo automatico intercetta soltanto una parte dei criteri WCAG 2.1 AA: cattura ciò che una macchina sa misurare, non ciò che va provato da una persona. Non verifica la navigazione da tastiera, l’esperienza con uno screen reader, la chiarezza dei contenuti per chi ha difficoltà cognitive. È il primo gradino verso la conformità richiesta dall’European Accessibility Act, non il certificato finale.': {
+        'en': 'It’s worth being clear about the limits, because it’s easy to fool yourself here. An automatic check only catches part of the WCAG 2.1 AA criteria: it captures what a machine can measure, not what a person needs to test. It doesn’t check keyboard navigation, the experience with a screen reader, or how clear your content is for people with cognitive difficulties. It’s the first step toward the compliance required by the European Accessibility Act, not the final certificate.'},
+    'Come leggere il punteggio e le barriere rilevate': {
+        'en': 'How to read the score and the barriers found'},
+    'Il numero da 0 a 100 dice quanto la pagina supera i controlli automatici: più è alto, meno ostacoli evidenti restano. Ma il punteggio conta meno dell’elenco che lo accompagna. Ogni voce è una barriera concreta per una persona reale — un contrasto troppo debole per chi ci vede poco, un pulsante senza etichetta per chi usa uno screen reader. Partite da quelle, non dal totale.': {
+        'en': 'The 0–100 number tells you how well the page passes the automatic checks: the higher it is, the fewer obvious obstacles remain. But the score matters less than the list that comes with it. Each entry is a concrete barrier for a real person — contrast too weak for someone with low vision, a button with no label for someone using a screen reader. Start from those, not from the total.'},
+    'Un avvertimento sui falsi sensi di sicurezza: anche un 100 pieno non significa «sito conforme». Vuol dire che avete superato i test che una macchina può fare, e sono circa un terzo dei problemi possibili. Il resto — tastiera, lettori di schermo, contenuti — si verifica a mano. Prendete quindi un punteggio alto come una buona base, non come un traguardo raggiunto.': {
+        'en': 'A warning against false confidence: even a perfect 100 doesn’t mean “compliant website”. It means you’ve passed the tests a machine can run, which cover roughly a third of the possible issues. The rest — keyboard, screen readers, content — has to be checked by hand. So treat a high score as a good foundation, not as a finish line already crossed.'},
+    'Come rendere il sito accessibile a tutti': {
+        'en': 'How to make your website accessible to everyone'},
+    'Molte barriere cadono con correzioni semplici, che migliorano l’esperienza di chiunque, non solo di chi ha una disabilità.': {
+        'en': 'Many barriers fall with simple fixes that improve the experience for everyone, not just for people with disabilities.'},
+    'Aumentate il contrasto': {'en': 'Increase your contrast'},
+    'Testo e sfondo devono avere un rapporto di contrasto di almeno 4,5:1: il grigio chiaro elegante sullo schermo del designer diventa illeggibile al sole o per chi ci vede poco.': {
+        'en': 'Text and background need a contrast ratio of at least 4.5:1: the elegant light grey that looks fine on a designer’s screen becomes unreadable in sunlight or for people with low vision.'},
+    'Descrivete le immagini': {'en': 'Describe your images'},
+    'Ogni immagine informativa ha bisogno di un testo alternativo che ne racconti il contenuto: è ciò che uno screen reader legge a chi non può vederla.': {
+        'en': 'Every informative image needs alt text describing its content: it’s what a screen reader reads out to someone who can’t see it.'},
+    'Etichettate i moduli': {'en': 'Label your forms'},
+    'Ogni campo deve avere un’etichetta esplicita e collegata: «Nome», «Email», «Messaggio», non solo un testo grigio che sparisce appena si scrive.': {
+        'en': 'Every field needs an explicit, properly linked label — “Name”, “Email”, “Message” — not just grey placeholder text that vanishes as soon as you start typing.'},
+    'Ordinate titoli e focus': {'en': 'Put your headings and focus order in order'},
+    'Una gerarchia di titoli coerente e un percorso navigabile da tastiera, con il focus sempre visibile, rendono la pagina usabile anche senza mouse.': {
+        'en': 'A consistent heading hierarchy and a keyboard-navigable path, with focus always visible, make the page usable even without a mouse.'},
+    'Non affidatevi solo al colore': {'en': 'Don’t rely on colour alone'},
+    'Un errore segnalato solo in rosso è invisibile a chi non distingue i colori: affiancate sempre un’icona o un testo che spieghi cosa succede.': {
+        'en': 'An error flagged only in red is invisible to someone who can’t distinguish colours: always pair it with an icon or text explaining what’s happening.'},
+    'Vogliamo sistemarle noi: l’accessibilità è inclusa nei siti aziendali →': {
+        'en': 'Want us to fix them for you? Accessibility is included in our business websites →'},
+    'Cosa verifica davvero questo controllo di prontezza AI': {
+        'en': 'What this AI-readiness check actually verifies'},
+    'Come per il controllo GDPR, è il nostro server a leggere alcuni file pubblici del vostro sito e l’HTML della home, senza passare da Google. Facciamo quattro verifiche: cerchiamo il file llms.txt, controlliamo se il robots.txt lascia passare i crawler dei modelli (GPTBot di OpenAI, ClaudeBot, PerplexityBot, Google-Extended), rileviamo i dati strutturati JSON-LD nella pagina e la presenza di una sitemap. Ne esce un punteggio di prontezza su quattro.': {
+        'en': 'As with the GDPR check, it’s our own server that reads a few public files from your site and the HTML of your home page, without going through Google. We run four checks: we look for the llms.txt file, check whether robots.txt lets the model crawlers through (OpenAI’s GPTBot, ClaudeBot, PerplexityBot, Google-Extended), detect JSON-LD structured data on the page, and check for a sitemap. The result is a readiness score out of four.'},
+    'È utile sapere cosa il test non promette. Verifica che i segnali tecnici ci siano, non che ChatGPT o Perplexity vi citino davvero: quello dipende anche dalla qualità e dall’autorevolezza dei contenuti, che nessuno strumento misura in automatico. E poiché llms.txt è uno standard giovane, la sua assenza non è ancora un errore grave: è un’occasione in più di farsi leggere bene dalle macchine. Leggete il punteggio come una lista di opportunità, non come una bocciatura.': {
+        'en': 'It’s worth knowing what this test doesn’t promise. It checks that the technical signals are there, not that ChatGPT or Perplexity will actually cite you: that also depends on the quality and authority of your content, which no tool measures automatically. And since llms.txt is a young standard, its absence isn’t yet a serious mistake: it’s one more opportunity to be read well by machines. Read the score as a list of opportunities, not as a failing grade.'},
+    'Come leggere il punteggio di prontezza su 4': {
+        'en': 'How to read your readiness score out of 4'},
+    'Ogni segnale vale un punto e ha il suo semaforo. Quattro su quattro significa che il sito offre alle intelligenze artificiali tutti gli appigli per capirlo e citarlo. Due o tre su quattro è la situazione più comune: manca quasi sempre llms.txt, a volte i dati strutturati. Zero o uno su quattro merita attenzione, soprattutto se il robots.txt blocca i crawler AI: in quel caso restate fuori dalle risposte generate, magari senza averlo deciso.': {
+        'en': 'Each signal is worth one point and has its own traffic light. Four out of four means your site gives AI models every handhold they need to understand and cite it. Two or three out of four is the most common situation: llms.txt is almost always the missing piece, sometimes structured data too. Zero or one out of four deserves attention, especially if robots.txt is blocking AI crawlers: in that case you’re left out of generated answers, possibly without having decided to be.'},
+    'Una precisazione che evita allarmi inutili. Bloccare i crawler AI non è un difetto in sé: è una scelta legittima, se volete proteggere i contenuti. Il test lo segnala perché sappiate che quella porta è chiusa, non per dirvi che sbagliate. Per la maggior parte delle aziende, però, essere citati da un assistente AI è visibilità in più, non un rischio: vale la pena valutarlo con consapevolezza.': {
+        'en': 'One clarification to avoid needless alarm. Blocking AI crawlers isn’t a flaw in itself: it’s a legitimate choice if you want to protect your content. The test flags it so you know that door is closed, not to tell you you’re wrong. For most businesses, though, being cited by an AI assistant is extra visibility, not a risk: it’s worth weighing with open eyes.'},
+    'Come farsi trovare e citare dai modelli AI': {'en': 'How to get found and cited by AI models'},
+    'Prepararsi all’AI non richiede stravolgimenti: sono gli stessi segnali che aiutano anche Google, più qualche novità.': {
+        'en': 'Getting ready for AI doesn’t take an overhaul: it’s largely the same signals that help you with Google, plus a few new ones.'},
+    'Pubblicate un file llms.txt': {'en': 'Publish an llms.txt file'},
+    'Un semplice file di testo in Markdown, nella radice del sito, che riassume chi siete e cosa offrite: è la mappa che i modelli leggono volentieri.': {
+        'en': 'A simple Markdown text file at the root of your site that sums up who you are and what you offer: it’s the map that models are happy to read.'},
+    'Aprite le porte ai crawler giusti': {'en': 'Open the door to the right crawlers'},
+    'Nel robots.txt consentite l’accesso a GPTBot, ClaudeBot, PerplexityBot e Google-Extended, se volete comparire nelle risposte generate.': {
+        'en': 'In robots.txt, allow access to GPTBot, ClaudeBot, PerplexityBot and Google-Extended if you want to appear in generated answers.'},
+    'Il markup JSON-LD schema.org dice in modo esplicito nome, sede, offerta e servizi: è la base che sia Google sia le AI usano per capirvi.': {
+        'en': 'JSON-LD schema.org markup states your name, location, offer and services explicitly: it’s the foundation both Google and AI models use to understand you.'},
+    'Tenete la sitemap aggiornata': {'en': 'Keep your sitemap up to date'},
+    'Una sitemap XML completa aiuta i crawler a trovare tutte le pagine; assicuratevi che i contenuti siano testo leggibile, non solo immagini.': {
+        'en': 'A complete XML sitemap helps crawlers find every page; make sure your content is readable text, not just images.'},
+    'Scrivete fatti espliciti': {'en': 'State facts explicitly'},
+    'Dichiarate con chiarezza cosa fate, dove e per chi: i modelli citano ciò che capiscono senza ambiguità, non ciò che devono indovinare.': {
+        'en': 'State clearly what you do, where, and for whom: models cite what they understand unambiguously, not what they have to guess at.'},
+    'Lo prepariamo noi: fa parte della SEO tecnica →': {
+        'en': 'We’ll prepare it for you: it’s part of our technical SEO service →'},
+    'Come stimiamo davvero le emissioni della pagina': {
+        'en': 'How we actually estimate your website’s carbon emissions'},
+    'Il calcolo parte da un dato concreto e misurabile: con l’API PageSpeed pesiamo tutti i byte che il browser deve scaricare per mostrare la vostra pagina. Su quel peso applichiamo il modello Sustainable Web Design della Green Web Foundation — le stesse formule della libreria open source co2.js — che traduce i byte trasferiti in energia consumata lungo la catena (data center, rete, dispositivo) e infine in grammi di CO₂ equivalente per visita.': {
+        'en': 'The calculation starts from a concrete, measurable figure: with the PageSpeed API we weigh every byte the browser has to download to show your page. On that weight we apply the Green Web Foundation’s Sustainable Web Design model — the same formulas as the open-source co2.js library — which translates transferred bytes into energy consumed along the chain (data centre, network, device) and finally into grams of CO₂ equivalent per visit.'},
+    'È una stima, ed è giusto trattarla come tale. Il modello usa coefficienti medi mondiali per l’intensità energetica e per il mix elettrico: non conosce l’energia reale del vostro hosting né il comportamento esatto di ogni visitatore. Non è una misura certificata di impronta ambientale, ma un ordine di grandezza affidabile e confrontabile. Il pregio è che si lega a un fatto tecnico — il peso — su cui potete davvero intervenire.': {
+        'en': 'It’s an estimate, and it’s only fair to treat it as one. The model uses global average coefficients for energy intensity and the electricity mix: it doesn’t know the real energy source of your hosting or the exact behaviour of each visitor. It isn’t a certified measurement of environmental footprint, but a reliable, comparable order of magnitude. Its strength is that it ties back to a technical fact — page weight — that you can genuinely act on.'},
+    'Come leggere i grammi di CO₂ per visita': {
+        'en': 'How to read your website’s CO₂ grams per visit'},
+    'Il numero chiave è la CO₂ equivalente per singola visita, che confrontiamo con la media del web, intorno agli 0,8 grammi. Sotto quella soglia siete tra i siti leggeri; sensibilmente sopra, la pagina è più pesante della media e c’è margine per alleggerirla. La stima annua moltiplica quel valore per un traffico di riferimento: cambiando le visite reali del vostro sito, l’impatto cresce o cala in proporzione.': {
+        'en': 'The key number is the CO₂ equivalent per single visit, which we compare against the web average, around 0.8 grams. Below that threshold you’re among the lighter sites; noticeably above it, your page is heavier than average and there’s room to lighten it. The annual estimate multiplies that value by a reference traffic figure: change it to your site’s real visits, and the impact grows or shrinks proportionally.'},
+    'Il confronto conta più del valore assoluto. Pochi grammi per visita sembrano nulla, ma moltiplicati per decine di migliaia di visite al mese diventano una cifra concreta, e soprattutto sono lo specchio di una pagina pesante: quasi sempre chi inquina di più è anche chi carica più lentamente. Leggete quindi l’impatto come un secondo indicatore delle prestazioni, non solo come una questione ambientale.': {
+        'en': 'The comparison matters more than the absolute value. A few grams per visit look like nothing, but multiplied by tens of thousands of visits a month they become a real figure — and above all, they mirror a heavy page: the sites that pollute more are almost always the ones that load more slowly, too. So read the impact as a second performance indicator, not only as an environmental issue.'},
+    'Come ridurre l’impronta di carbonio del sito': {
+        'en': 'How to reduce your website’s carbon footprint'},
+    'Ridurre le emissioni e velocizzare il sito sono la stessa cosa: entrambe passano dal tagliare peso inutile.': {
+        'en': 'Cutting emissions and speeding up your site are the same job: both come down to trimming unnecessary weight.'},
+    'Le fotografie sono quasi sempre la voce più pesante: convertitele in WebP o AVIF con caricamento differito e taglierete gran parte dei byte, e quindi delle emissioni.': {
+        'en': 'Photos are almost always the heaviest line item: convert them to WebP or AVIF with lazy loading, and you’ll cut most of the bytes — and the emissions — right there.'},
+    'Riducete script e font': {'en': 'Cut down scripts and fonts'},
+    'Ogni libreria di terze parti e ogni famiglia di caratteri in più è energia trasferita a ogni visita: tenete solo ciò che serve davvero.': {
+        'en': 'Every extra third-party library and every additional typeface is energy transferred on every visit: keep only what you truly need.'},
+    'Sfruttate cache e CDN': {'en': 'Make the most of caching and a CDN'},
+    'Una buona cache e una rete di distribuzione evitano di trasferire gli stessi contenuti mille volte: meno traffico ripetuto, meno consumo.': {
+        'en': 'Good caching and a content delivery network avoid transferring the same content a thousand times over: less repeated traffic, less consumption.'},
+    'Scegliete un hosting verde': {'en': 'Choose green hosting'},
+    'Un provider alimentato da energia rinnovabile abbassa l’intensità di carbonio di ogni byte servito: è la leva più semplice per un effetto immediato.': {
+        'en': 'A provider running on renewable energy lowers the carbon intensity of every byte served: it’s the simplest lever for an immediate effect.'},
+    'Preferite un design sobrio': {'en': 'Favour a sober design'},
+    'Niente video in riproduzione automatica o animazioni pesanti dove non servono: un’estetica pulita consuma meno e, spesso, comunica meglio.': {
+        'en': 'No autoplaying video or heavy animation where it isn’t needed: a clean aesthetic consumes less and, often, communicates better.'},
+    'Vogliamo alleggerirlo noi: scopri il restyling tecnico →': {
+        'en': 'Want us to lighten it for you? See our technical redesign service →'},
+    'Approfondisci: le 7 cause di un sito lento →': {
+        'en': 'Read more: the 7 causes of a slow website →'},
+}
+CHROME.update(CHROME_TOOLS_L2)

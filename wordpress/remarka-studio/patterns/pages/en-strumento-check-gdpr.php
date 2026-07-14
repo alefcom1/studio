@@ -64,6 +64,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">The method</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">What this cookie compliance check actually verifies<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Unlike the Google-based tests, here it’s our own server that reads your website’s home page, exactly as a visitor would see it on first landing, before any click. On that HTML we run four automatic checks: we look for the cookie banner (the CMP: Iubenda, Cookiebot, Complianz and similar tools), links to the privacy and cookie policies, tracking tools that fire before consent, and the external domains the page calls.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Let’s say it upfront, because it matters: this is not legal advice. It’s an indicative technical check that catches the obvious problems — the ones Italy’s Data Protection Authority challenges most often — but it doesn’t replace a privacy consultant. It doesn’t see what happens after the user accepts, doesn’t evaluate your consent records, and doesn’t examine your policies line by line. It’s a great starting point to see where to act, not a certificate of compliance.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Reading the result</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How to read your compliance traffic light<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Every checkpoint gets a colour, and the colour should be read for exactly what it is. Green: the signal is present and correct. Yellow: something is there but needs a manual check — a policy that exists but might be incomplete, for instance. Red: an important element is missing or, worse, there are active trackers with no banner governing them. The overall picture matters more than any single dot.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The most common red flag on Italian websites is “trackers without a banner”: Google Analytics or the Meta Pixel firing in the initial HTML, before the user has said yes. It’s also the mistake Italy’s Data Protection Authority penalises most decisively. A yellow, on the other hand, is usually not an emergency: often it just takes completing or updating a policy that’s already there.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Three common questions</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -81,6 +111,24 @@
 <p>Because consent must be free, informed and provable: refusing must be as easy as accepting, and no advertising tracker can fire before the user says yes.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">How to improve</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How to bring your consent and cookies up to standard<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Practical compliance is built from a handful of measures, but every one of them has to be respected.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Install a CMP that actually blocks trackers</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">A proper banner shouldn’t just appear: it has to stop trackers from firing until the user has accepted. That’s the difference between looking compliant and being compliant.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Make refusing as easy as accepting</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">The “Reject” button must carry the same visual weight as “Accept”, on the same screen: no cookie walls, no obstacle course for saying no.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Publish complete policies</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Clear, up-to-date privacy and cookie policies that are easy to find: they need to state what you collect, why, and who you share it with.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Make consent provable</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Keep a record of every consent — when, for what — so you can show it if asked: the yes has to be freely given, informed and traceable.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Load trackers only after the yes</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Analytics, pixels and heatmaps should only activate after acceptance, conditionally: before consent, the page has to stay clean.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/en/services/business-websites/">We include it in every business website we deliver →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/en/blog/cookie-banner-compliance-italy-2026/">Read more: the 2026 cookie checklist from Italy’s Data Protection Authority →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->

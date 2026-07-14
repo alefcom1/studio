@@ -62,6 +62,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Метод</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как мы проверяем готовность сайта к ИИ<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Как и в GDPR-тесте, публичные файлы вашего сайта и HTML главной страницы читает наш собственный сервер — без посредничества Google. Проверки четыре: ищем файл llms.txt, смотрим, пропускает ли robots.txt краулеры языковых моделей (GPTBot от OpenAI, ClaudeBot, PerplexityBot, Google-Extended), находим структурированные данные JSON-LD на странице и проверяем наличие sitemap. Итог — балл готовности из четырёх.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Полезно знать и то, чего тест не обещает. Он подтверждает, что технические сигналы на месте, — но не то, что ChatGPT или Perplexity действительно станут вас цитировать: это зависит ещё и от качества и авторитетности содержания, которые автоматически не измеряются. А поскольку llms.txt — стандарт молодой, его отсутствие пока не ошибка, а упущенная возможность понравиться машинам. Читайте балл как список возможностей, а не как приговор.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Как читать результат</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как понимать балл готовности из четырёх<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Каждый сигнал стоит один балл и имеет свой светофор. Четыре из четырёх — сайт даёт искусственному интеллекту все зацепки, чтобы понять его и процитировать. Два или три из четырёх — самая частая картина: почти всегда не хватает llms.txt, иногда структурированных данных. Ноль или один — повод присмотреться, особенно если robots.txt закрывает дорогу AI-краулерам: тогда вы выпадаете из генерируемых ответов, возможно, даже не приняв такого решения.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Одно уточнение против лишней тревоги. Блокировать AI-краулеры — не дефект, а законный выбор, если вы хотите защитить контент. Тест отмечает это, чтобы вы знали: эта дверь закрыта, — а не чтобы объявить вас неправыми. Впрочем, для большинства компаний упоминание в ответах ИИ-ассистента — дополнительная видимость, а не риск. Особенно на новом рынке, где вас ещё никто не ищет по имени.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Три частых вопроса</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -79,6 +109,24 @@
 <p>Да, как никогда: данные JSON-LD (schema.org) помогают и Google, и AI-моделям понять, кто вы, что предлагаете и для кого. Это основа любой качественной индексации.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Как улучшить</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как попасть в ответы ChatGPT и Perplexity<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Подготовка к ИИ не требует перестройки: это во многом те же сигналы, что помогают и в Google, плюс пара новых.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Опубликуйте файл llms.txt</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Простой текстовый файл в формате Markdown в корне сайта, который коротко объясняет, кто вы и что предлагаете: карта, которую модели читают охотно.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Откройте дверь нужным краулерам</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">В robots.txt разрешите доступ GPTBot, ClaudeBot, PerplexityBot и Google-Extended, если хотите появляться в генерируемых ответах.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Добавьте структурированные данные</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Разметка JSON-LD schema.org явно называет имя, адрес, предложение и услуги: на неё опираются и Google, и языковые модели.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Держите sitemap свежей</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Полная XML-карта помогает краулерам найти все страницы; следите, чтобы содержание было текстом, а не только картинками.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Пишите факты явно</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Чётко говорите, что вы делаете, где и для кого: модели цитируют то, что понимают без догадок, а не то, что приходится домысливать.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/ru/uslugi/tehnicheskoe-seo/">Подготовим сайт мы: это часть технического SEO →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/uslugi/seo-prodvizhenie/">Видимость в Google и в ответах ИИ: SEO-продвижение в Европе →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->

@@ -61,6 +61,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">The method</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">What this website accessibility test actually checks<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The engine is Lighthouse’s Accessibility category, called through the PageSpeed API: the same automatic checks Google makes available to developers. In a few seconds the page is examined against dozens of technical rules — contrast between text and background, image alt text, form field labels, heading order, correct use of ARIA attributes — producing a 0–100 score with the list of barriers found.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">It’s worth being clear about the limits, because it’s easy to fool yourself here. An automatic check only catches part of the WCAG 2.1 AA criteria: it captures what a machine can measure, not what a person needs to test. It doesn’t check keyboard navigation, the experience with a screen reader, or how clear your content is for people with cognitive difficulties. It’s the first step toward the compliance required by the European Accessibility Act, not the final certificate.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Reading the result</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How to read the score and the barriers found<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The 0–100 number tells you how well the page passes the automatic checks: the higher it is, the fewer obvious obstacles remain. But the score matters less than the list that comes with it. Each entry is a concrete barrier for a real person — contrast too weak for someone with low vision, a button with no label for someone using a screen reader. Start from those, not from the total.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">A warning against false confidence: even a perfect 100 doesn’t mean “compliant website”. It means you’ve passed the tests a machine can run, which cover roughly a third of the possible issues. The rest — keyboard, screen readers, content — has to be checked by hand. So treat a high score as a good foundation, not as a finish line already crossed.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Three common questions</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -78,6 +108,24 @@
 <p>If you sell goods or services to consumers online (e-commerce, banking, transport, services), most likely yes. Microenterprises offering services have exemptions: it’s best to check case by case.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">How to improve</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How to make your website accessible to everyone<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Many barriers fall with simple fixes that improve the experience for everyone, not just for people with disabilities.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Increase your contrast</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Text and background need a contrast ratio of at least 4.5:1: the elegant light grey that looks fine on a designer’s screen becomes unreadable in sunlight or for people with low vision.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Describe your images</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Every informative image needs alt text describing its content: it’s what a screen reader reads out to someone who can’t see it.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Label your forms</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Every field needs an explicit, properly linked label — “Name”, “Email”, “Message” — not just grey placeholder text that vanishes as soon as you start typing.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Put your headings and focus order in order</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">A consistent heading hierarchy and a keyboard-navigable path, with focus always visible, make the page usable even without a mouse.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Don’t rely on colour alone</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">An error flagged only in red is invisible to someone who can’t distinguish colours: always pair it with an icon or text explaining what’s happening.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/en/services/business-websites/">Want us to fix them for you? Accessibility is included in our business websites →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->

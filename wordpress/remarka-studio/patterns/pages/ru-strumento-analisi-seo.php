@@ -60,6 +60,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Метод</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Что проверяет SEO-аудит страницы на самом деле<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Движок здесь тоже гугловский: категория SEO анализатора Lighthouse, вызванная через API PageSpeed в мобильной стратегии. За несколько секунд Lighthouse читает страницу так, как её прочитал бы поисковый робот, и проверяет технические элементы: наличие и уникальность title, мета-описание, корректность тегов, осмысленные тексты ссылок, индексируемость, читаемость на экране телефона. На выходе — балл от 0 до 100 и точный список того, что проверку не прошло.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Стоит честно очертить границы. Этот аудит смотрит на техническое устройство одной страницы — не на качество текстов, не на ссылки с других сайтов, не на авторитет домена, который копится годами. Он не предскажет вашу позицию в выдаче и не изучит конкурентов по вашим запросам. Это проверка фундамента: если он кривой, не сработает даже лучший текст; если ровный — технические препятствия с дороги убраны, дальше дело за содержанием.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Как читать результат</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как понимать SEO-оценку Google<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">От 90 и выше — техническая база в порядке, можно спокойно заниматься контентом и репутацией. От 50 до 89 — остались конкретные недочёты, чаще всего пропавший title или продублированное описание: чинится быстро. Ниже 50 — что-то мешает самой индексации, и это приоритет номер один. Список предупреждений читайте сверху вниз: он уже отсортирован по влиянию на результат.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Две типичные ошибки чтения. Максимальный балл не означает «мы первые в Google» — он означает лишь, что страница технически читаема; позиции приходят с содержанием и временем. А предупреждение о второстепенном теге — не катастрофа: отделяйте проблемы, блокирующие индексацию, от косметических и начинайте с первых.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Три частых вопроса</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -77,6 +107,24 @@
 <p>Нет: одну страницу за раз — ту, что вы указали. Именно по странице Google оценивает релевантность запросу.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Как улучшить</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как улучшить внутреннюю оптимизацию страницы<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Техническое SEO страницы — это несколько вещей, сделанных аккуратно и повторённых на каждой странице, которая приносит клиентов.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Свой title и description для каждой страницы</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Уникальный, говорящий заголовок и мета-описание, которое приглашает кликнуть: это первое, что видит человек в результатах поиска.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Чистая иерархия заголовков</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Один H1, затем H2 и H3 по темам: так и Google, и читатель схватывают структуру страницы с первого взгляда.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Структурированные данные</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Разметка schema.org в формате JSON-LD объясняет поисковикам, кто вы и что предлагаете, и открывает дорогу к расширенным сниппетам.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Внутренние ссылки и адреса</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Связывайте страницы понятными текстами ссылок и держите URL короткими и читаемыми: структура работает на позиции не меньше, чем текст.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Порядок в sitemap и robots</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Свежая XML-карта сайта и корректный robots.txt ведут робота за руку; для многоязычного сайта добавьте теги hreflang.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/ru/uslugi/tehnicheskoe-seo/">Хотите, чтобы техникой занялись мы: техническое SEO →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/uslugi/seo-prodvizhenie/">Продвижение в Google Италии и Европы — как мы это делаем →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/blog/core-web-vitals-2026/">Разбор по теме: Core Web Vitals в 2026 году →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->

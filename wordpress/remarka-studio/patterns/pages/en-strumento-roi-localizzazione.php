@@ -60,6 +60,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">The method</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How this ROI estimate actually works<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">This tool doesn’t query any server and doesn’t look at your website: it’s a calculator that runs entirely on your device, and the numbers you enter never leave your browser. It takes five figures from your business — monthly visits, share of foreign visitors, conversion rate, average order value — and combines them with a conversion boost applied only to the slice of foreign visitors.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">That boost, a conservative +40%, comes from CSA Research: the large majority of people buy more willingly, and more often, in their own language. It’s a starting value, not a law of physics: you can change it. And that’s also the tool’s honest limit — it’s an order-of-magnitude estimate, not a guaranteed forecast. It doesn’t know your market, your offer, or the quality of your translation, which is what really makes the difference.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Reading the result</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How to interpret the estimated potential revenue<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Read the result as a range, not as a figure down to the cent. It exists to answer a single question: is it worth looking further into translating your website, yes or no? If the estimated extra revenue per year comfortably covers the cost of a multilingual project, the signal is clear. If it’s modest, your foreign audience may still be too small for the investment to pay off quickly.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Move the numbers around and watch how the estimate reacts: that’s where the calculator becomes useful. Raise the share of foreign visitors or the average order value, and revenue climbs quickly — which tells you which levers matter most in your case. Remember it all starts from your own figures: if they’re optimistic, so will the result be. Better to start from conservative estimates.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Three common questions</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -77,6 +107,24 @@
 <p>Because a foreign customer spots machine-translated text by the second line — and trust leaves with them. At the Remarka group, translation has been done by native speakers since 2001.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">How to improve</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How to increase the return on translating your website<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Translating a website pays off, but only if it’s done to sell, not just to look good.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Translate with native speakers, not a plugin</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">A foreign customer spots machine-translated text by the second line, and trust leaves with them. Professional translation is what turns a visit into an order.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Localise, don’t just translate</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Adapt your offer, calls to action, currency and formats to the target market: selling in Germany isn’t about translating product pages, it’s about speaking the way that market speaks.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Set up international SEO</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Every language needs its own URLs, hreflang tags and dedicated metadata, otherwise Google can’t tell who to show which version to.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Start with the market with the most demand</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Not every language pays off equally: start where the data already shows interest, then expand market by market.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Take care of after-sales too</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Forms, confirmation emails and support in the customer’s language: trust is confirmed after the purchase, not only before it.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/en/services/multilingual-websites/">Want it translated properly? See our multilingual websites service →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/en/blog/website-four-languages-costs/">Read more: the costs and timeline of a website in four languages →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->

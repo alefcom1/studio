@@ -70,6 +70,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Метод</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Что на самом деле измеряет проверка скорости сайта<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">За оценкой стоит один-единственный движок — API Google PageSpeed Insights, тот же, что работает на pagespeed.web.dev. Мы запускаем Lighthouse в мобильной стратегии, потому что именно мобильную версию Google берёт за основу при ранжировании. Число от 0 до 100 рождается в «лаборатории»: эмулируется один и тот же смартфон и одна и та же сеть, поэтому два замера одной страницы можно честно сравнивать между собой. А если у сайта достаточно реального трафика, к лабораторным цифрам добавляются Core Web Vitals, собранные у настоящих пользователей Chrome.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Не менее важно понимать, чего этот тест не делает. Он не оценивает качество текстов, не считает внешние ссылки, не проверяет безопасность сервера и не знает, сколько вы продаёте: он взвешивает только опыт загрузки одной конкретной страницы. Высокий балл — не обещание первой строчки в Google, а здоровый технический фундамент, на котором всё остальное работает лучше. Мы предпочитаем говорить об этом прямо: перед вами точный снимок одного аспекта, а не полный диагноз сайта.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Как читать результат</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как читать оценку скорости загрузки<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Результат читается как светофор. От 90 до 100 — зелёная зона: страница появляется быстро даже в движении, на городском 4G и на краю зоны покрытия. От 50 до 89 — средний уровень для европейского веба, с ощутимым запасом для роста. Ниже 50 — красная зона: заметная часть посетителей со смартфонов уходит, не дождавшись первой строки, а каждый евро, вложенный в рекламу, приносит заметно меньше.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Два ложных повода для паники. Оценка гуляет на несколько баллов от замера к замеру — это нормально: так работают измерительные серверы Google, ваш сайт ни при чём. Важны большие скачки, а не разница в два балла. И не пугайтесь, если десктоп показывает 95, а мобильный — 40: такой разрыв есть почти у всех, но позиции в поиске решает именно мобильная цифра. Смотрите всегда на неё.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Три частых вопроса</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -87,6 +117,24 @@
 <p>Ниже 50 баллов большая часть мобильных посетителей уходит, не дождавшись полной загрузки: рекламные кампании приносят клики, которые не превращаются в заявки.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Как улучшить</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как ускорить сайт: пять шагов, которые работают<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Низкий балл почти всегда объясняется одними и теми же причинами — и первые из них исправляются дешевле всего.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Облегчите изображения</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Переведите фотографии в WebP или AVIF и включите отложенную загрузку: это причина номер один медленных сайтов, и часто одна она сокращает время ожидания вдвое.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Включите кэширование</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Кэш страниц и браузера избавляет сервер от необходимости собирать всё заново при каждом визите: полдня работы — и результат виден в первом же замере.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Проредите CSS и JavaScript</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Вынесите критический CSS в страницу, отложите остальное и уберите сторонние скрипты, которые ничего не делают: меньше кода — быстрее первая отрисовка.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Выберите хостинг по задаче</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Перегруженный виртуальный хостинг тратит секунду ещё до начала загрузки: нормальный сервер с CDN впереди срезает это стартовое ожидание.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Наведите порядок в шрифтах</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Ограничьте число гарнитур, предзагрузите основные и включите font-display: swap — текст появится сразу, а не после загрузки всех файлов.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/ru/uslugi/redizajn-i-migracija/">Хотите, чтобы ускорением занялись мы: редизайн и миграция →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/blog/medlennyj-sajt-prichiny/">Разбор по теме: семь причин медленного сайта →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->

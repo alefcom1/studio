@@ -60,6 +60,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Метод</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как устроен калькулятор ROI локализации<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Этот инструмент не обращается ни к какому серверу и не заглядывает на ваш сайт: калькулятор работает целиком на вашем устройстве, и введённые числа не покидают браузер. Он берёт пять показателей вашего бизнеса — визиты в месяц, долю зарубежной аудитории, конверсию, средний чек — и применяет прирост конверсии только к той части посетителей, которая приходит из-за рубежа.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Сам прирост — осторожные +40% — взят из исследований CSA Research: подавляющее большинство людей охотнее и чаще покупает на родном языке. Это стартовое значение, а не закон природы: его можно менять. Здесь же и честная граница инструмента — это оценка порядка величин, а не гарантированный прогноз. Калькулятор не знает ваш рынок, ваше предложение и качество будущего перевода, а именно они в итоге решают дело.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Как читать результат</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как понимать оценку дополнительной выручки<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Результат — это вилка, а не сумма с точностью до цента. Он отвечает на один вопрос: стоит ли всерьёз заниматься переводом сайта. Если расчётная дополнительная выручка за год уверенно перекрывает стоимость многоязычного проекта — у нас он начинается от € 3 200, — сигнал ясный. Если цифра скромная, зарубежная аудитория, возможно, пока слишком мала, чтобы вложение быстро окупилось.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Подвигайте числа и посмотрите, как отзывается оценка, — именно в этот момент калькулятор становится полезным. Увеличьте долю иностранных посетителей или средний чек — выручка растёт быстро, и вы видите, какие рычаги в вашем случае весят больше. Помните: всё начинается с ваших собственных цифр. Если они оптимистичны, оптимистичным будет и результат. Лучше исходить из осторожных оценок.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Три частых вопроса</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -77,6 +107,24 @@
 <p>Потому что зарубежный клиент узнаёт машинный перевод уже на второй строке — а вместе с этим уходит и доверие. В группе Remarka перевод делают носители языка с 2001 года.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Как улучшить</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как повысить отдачу от перевода сайта<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Перевод сайта окупается — но только когда он сделан, чтобы продавать, а не чтобы «быть».</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Переводите у носителей, а не плагином</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Иностранный клиент распознаёт машинный текст со второй строчки — и вместе с ним уходит доверие. Профессиональный перевод и превращает визит в заказ.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Локализуйте, а не просто переводите</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Предложение, призывы к действию, валюта и форматы — под рынок назначения: продавать в Италии значит говорить так, как говорит итальянский рынок.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Настройте международное SEO</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Каждому языку — свои URL, теги hreflang и метаданные, иначе Google не поймёт, кому какую версию показывать.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Начните с рынка, где уже есть спрос</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Языки окупаются по-разному: стартуйте там, где данные уже показывают интерес, и расширяйтесь рынок за рынком.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Позаботьтесь о послепродажной части</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Формы, письма-подтверждения и поддержка на языке клиента: доверие подтверждается после покупки, а не только до неё.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/ru/uslugi/mnogojazychnye-sajty/">Хотите перевод, который продаёт: многоязычные сайты →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/uslugi/sajt-dlya-evropy/">Выходите на рынок Италии и Европы? Начните с сайта →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/blog/sajt-na-4-jazykah/">Разбор по теме: сайт на четырёх языках — цены и сроки →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->

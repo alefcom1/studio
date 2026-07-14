@@ -67,6 +67,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Метод</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как мы оцениваем выбросы CO₂ страницы<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Расчёт начинается с конкретной, измеримой величины: через API PageSpeed мы взвешиваем все байты, которые браузер должен скачать, чтобы показать вашу страницу. К этому весу применяется модель Sustainable Web Design от Green Web Foundation — те же формулы, что в открытой библиотеке co2.js: переданные байты превращаются в энергию, потраченную по всей цепочке (дата-центр, сеть, устройство), и в итоге — в граммы CO₂-эквивалента на один визит.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Это оценка, и относиться к ней стоит именно так. Модель использует среднемировые коэффициенты энергоёмкости и электрического баланса: она не знает, чем на самом деле питается ваш хостинг и как ведёт себя каждый посетитель. Это не сертифицированный замер экологического следа, а надёжный и сравнимый порядок величин. Его сила в том, что он привязан к техническому факту — весу страницы, — на который вы действительно можете повлиять.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Как читать результат</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как понимать граммы CO₂ на визит<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Ключевое число — CO₂-эквивалент одного визита, который мы сравниваем со средним по вебу, около 0,8 грамма. Ниже порога — вы среди лёгких сайтов; заметно выше — страница тяжелее средней, и её есть куда облегчать. Годовая оценка умножает это значение на условный трафик: подставьте реальные визиты вашего сайта, и итог вырастет или уменьшится пропорционально.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Сравнение важнее абсолютной цифры. Несколько граммов на визит кажутся мелочью, но умноженные на десятки тысяч визитов в месяц складываются в ощутимую величину — и главное, они зеркало тяжёлой страницы: кто сильнее «дымит», тот почти всегда и грузится медленнее. Поэтому читайте след как второй индикатор производительности, а не только как экологический показатель.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Три частых вопроса</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -84,6 +114,24 @@
 <p>Умножаем выбросы на визит на условный трафик в 10 000 визитов в месяц. Если подставить реальный трафик вашего сайта, оценка изменится пропорционально.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Как улучшить</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Как сократить цифровой след вашей страницы<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Снижать выбросы и ускорять сайт — одна и та же работа: обе сводятся к удалению лишнего веса.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Облегчите изображения</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Фотографии почти всегда самая тяжёлая статья: конвертируйте их в WebP или AVIF с отложенной загрузкой — уйдёт большая часть байтов, а с ними и выбросов.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Сократите скрипты и шрифты</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Каждая сторонняя библиотека и каждая лишняя гарнитура — энергия, расходуемая при каждом визите: оставьте только то, что действительно работает.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Используйте кэш и CDN</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Хороший кэш и сеть доставки контента избавляют от передачи одного и того же тысячи раз: меньше повторного трафика — меньше потребления.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Выберите «зелёный» хостинг</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Провайдер на возобновляемой энергии снижает углеродную цену каждого отданного байта: самый простой рычаг с немедленным эффектом.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Предпочитайте сдержанный дизайн</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Без автозапуска видео и тяжёлых анимаций там, где они не нужны: чистая эстетика расходует меньше — и часто говорит убедительнее.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/ru/uslugi/redizajn-i-migracija/">Хотите, чтобы сайт облегчили мы: редизайн и миграция →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/blog/medlennyj-sajt-prichiny/">Разбор по теме: семь причин медленного сайта →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->
