@@ -196,8 +196,9 @@
 	   chiave la quota anonima è bassa ma sufficiente per traffico iniziale.
 	   In caso di errore/quota: messaggio onesto, MAI numeri simulati. */
 
-	function itNumber(value, decimals) {
-		return value.toFixed(decimals).replace('.', ',');
+	function itNumber(value, decimals, locale) {
+		var s = value.toFixed(decimals);
+		return locale === 'en' ? s : s.replace('.', ',');
 	}
 
 	function normalizeUrl(raw) {
@@ -507,14 +508,15 @@
 	function initSpeedTool(root) {
 		var shell = toolShell(root);
 		onUrlSubmit(shell, function (url) {
-			return psiFetch(url, toolLocale(root)).then(function (m) {
+			var locale = toolLocale(root);
+			return psiFetch(url, locale).then(function (m) {
 				var score = m.scores.perf;
 				setText(root, '[data-sr-tool-url]', url.replace(/^https?:\/\//, '') + txt(root, 'data-label-suffix', ' — PageSpeed mobile'));
 				setText(root, '[data-sr-tool-score]', score === null ? '—' : String(score));
 				setText(root, '[data-sr-tool-verdict]', speedVerdict(root, score));
-				setText(root, '[data-sr-tool-lcp]', m.lcpSec !== null ? itNumber(m.lcpSec, 1) + ' s' : '—');
+				setText(root, '[data-sr-tool-lcp]', m.lcpSec !== null ? itNumber(m.lcpSec, 1, locale) + ' s' : '—');
 				setText(root, '[data-sr-tool-inp]', m.inpMs !== null ? Math.round(m.inpMs) + ' ms' : '—');
-				setText(root, '[data-sr-tool-cls]', m.cls !== null ? itNumber(m.cls, 2) : '—');
+				setText(root, '[data-sr-tool-cls]', m.cls !== null ? itNumber(m.cls, 2, locale) : '—');
 				if (score !== null) animateFill(root, '[data-sr-tool-fill]', score);
 			});
 		});
@@ -576,7 +578,8 @@
 	function initCo2Tool(root) {
 		var shell = toolShell(root);
 		onUrlSubmit(shell, function (url) {
-			return psiFetch(url, toolLocale(root)).then(function (m) {
+			var locale = toolLocale(root);
+			return psiFetch(url, locale).then(function (m) {
 				if (m.byteWeight === null) { throw new Error('CO2: peso non disponibile'); }
 				var grams = co2PerVisitGrams(m.byteWeight);
 				var mb = m.byteWeight / (1024 * 1024);
@@ -585,9 +588,9 @@
 				var yearKg = grams * visits * 12 / 1000;
 
 				setText(root, '[data-sr-tool-url]', url.replace(/^https?:\/\//, ''));
-				setText(root, '[data-sr-tool-grams]', itNumber(grams, 2) + ' g');
-				setText(root, '[data-sr-tool-weight]', itNumber(mb, 2) + ' MB');
-				setText(root, '[data-sr-tool-year]', itNumber(yearKg, 0) + ' ' + txt(root, 'data-label-unit-year', 'kg CO₂e / anno'));
+				setText(root, '[data-sr-tool-grams]', itNumber(grams, 2, locale) + ' g');
+				setText(root, '[data-sr-tool-weight]', itNumber(mb, 2, locale) + ' MB');
+				setText(root, '[data-sr-tool-year]', itNumber(yearKg, 0, locale) + ' ' + txt(root, 'data-label-unit-year', 'kg CO₂e / anno'));
 
 				var verdict;
 				if (grams <= avg) verdict = txt(root, 'data-verdict-good', 'Sotto la media del web: buon lavoro.');
@@ -764,6 +767,8 @@
 		var form = root.matches && root.matches('[data-sr-tool-form]') ? root : (root.querySelector('[data-sr-tool-form]') || root);
 		var result = root.querySelector('[data-sr-tool-result]');
 		var currency = txt(root, 'data-roi-currency', '€');
+		var locale = toolLocale(root);
+		var numLocale = locale === 'en' ? 'en-US' : (locale === 'ru' ? 'ru-RU' : 'it-IT');
 
 		function num(sel) {
 			var el = form.querySelector(sel);
@@ -771,7 +776,7 @@
 			return isNaN(v) ? 0 : v;
 		}
 		function money(v) {
-			return currency + ' ' + Math.round(v).toLocaleString('it-IT');
+			return currency + ' ' + Math.round(v).toLocaleString(numLocale);
 		}
 		function recalc() {
 			var visits = num('[data-sr-roi-visits]');

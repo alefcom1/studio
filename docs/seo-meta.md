@@ -24,6 +24,10 @@
 | `/milano/` | web agency Milano | (city IT-only, EN: web agency Milan) | ✅ (eyebrow, H2 servizi, alt) |
 | `/monza/ /bergamo/ /brescia/ /como/` | realizzazione siti web ‹città› | — | ✅ (H1, H2 servizi, alt) |
 | `/strumenti/test-velocita/` | test velocità sito web | website speed test | ✅ (H1) |
+| `/strumenti/analisi-seo/` · `/strumenti/check-gdpr/` · `/strumenti/roi-localizzazione/` | analisi SEO gratuita / check GDPR e cookie / ROI localizzazione | free SEO audit / GDPR & cookie check / localization ROI | ✅ живой виджет (T2, вышли из «In arrivo» — ключи/мета этих 3 отдельно не проработаны в этой сессии) |
+| `/strumenti/verifica-accessibilita/` | verifica accessibilità sito | website accessibility check | ✅ (H1, hero-sub, come funziona, FAQ) — см. «Инструменты (Lab)» ниже |
+| `/strumenti/sito-pronto-ai/` | sito pronto per l'AI (llms.txt) | AI readiness check (llms.txt) | ✅ (H1, hero-sub, come funziona, FAQ) — см. «Инструменты (Lab)» ниже |
+| `/strumenti/impatto-co2/` | impronta di carbonio sito web | website carbon footprint | ✅ (H1, hero-sub, come funziona, FAQ) — см. «Инструменты (Lab)» ниже |
 | блог-статьи | целевой запрос из заголовка (уже заложен при написании) | то же | ✅ с рождения |
 | `/chi-siamo/`, `/casi-studio/` | брендовые — фокус-ключ не задавать, оценку RM игнорировать | — | — |
 
@@ -60,6 +64,86 @@ Density») набивкой, точный ключ в каждом H2, «Content
 
 ---
 
+## Инструменты (Lab) — 3 новых, IT/EN/RU
+
+> Добавлено по итогам T1–T3 «Remarka Lab» (см. `docs/piano-strumenti-lab.md`).
+> Тексты Title/Description основаны на реальном H1/hero-подзаголовке/FAQ
+> паттернов страниц (`patterns/pages/strumento-*.php`,
+> `patterns/pages/en-strumento-*.php`, `patterns/pages/ru-strumento-*.php`),
+> цифры и факты не выдуманы. Остальные 4 инструмента (`test-velocita`,
+> `analisi-seo`, `check-gdpr`, `roi-localizzazione` и их EN/RU-слаги) теперь
+> тоже полностью «живые» (не заглушки) — их фокус-ключи/Title/Description
+> в этой сессии не прорабатывались, статус см. в таблицах выше.
+
+### Карта фокус-ключей — 3 новых инструмента (IT/EN)
+
+| Страница | Focus Keyword IT | Focus Keyword EN | Контент подтянут |
+|---|---|---|---|
+| `/strumenti/verifica-accessibilita/` · `/en/tools/accessibility-check/` | verifica accessibilità sito | website accessibility check | ✅ (H1, hero-sub, come funziona, FAQ) |
+| `/strumenti/sito-pronto-ai/` · `/en/tools/ai-readiness/` | sito pronto per l'AI (llms.txt) | AI readiness check (llms.txt) | ✅ (H1, hero-sub, come funziona, FAQ) |
+| `/strumenti/impatto-co2/` · `/en/tools/website-carbon/` | impronta di carbonio sito web | website carbon footprint | ✅ (H1, hero-sub, come funziona, FAQ) |
+
+### Карта фокус-ключей — те же 3 инструмента (RU)
+
+| Страница | Focus Keyword RU | Контент подтянут |
+|---|---|---|
+| `/ru/instrumenty/proverka-dostupnosti/` | проверка доступности сайта | ✅ (H1, hero-sub, «как это работает», FAQ) |
+| `/ru/instrumenty/gotovnost-k-ii/` | готовность сайта к ИИ (llms.txt) | ✅ (H1, hero-sub, «как это работает», FAQ) |
+| `/ru/instrumenty/uglerodnyj-sled/` | углеродный след сайта | ✅ (H1, hero-sub, «как это работает», FAQ) |
+
+### IT — `/strumenti/verifica-accessibilita/`
+
+- **Title:** `Verifica accessibilità sito web (EAA) | Studio Remarka`
+- **Description:** `Test gratuito con Google Lighthouse: punteggio 0–100 e barriere secondo WCAG 2.1 AA, obbligo dell'European Accessibility Act. Senza registrazione.`
+
+### IT — `/strumenti/sito-pronto-ai/`
+
+- **Title:** `Il sito è pronto per l'AI? Test llms.txt | Studio Remarka`
+- **Description:** `Verifichiamo llms.txt, accesso crawler AI, dati strutturati JSON-LD e sitemap: punteggio di prontezza AI su 4, gratis e senza registrazione.`
+
+### IT — `/strumenti/impatto-co2/`
+
+- **Title:** `Impronta di carbonio del sito web | Studio Remarka`
+- **Description:** `Misuriamo il peso della pagina e stimiamo le emissioni di CO₂ per visita e all'anno con il modello Sustainable Web Design. Test gratuito, senza registrazione.`
+
+### EN — `/en/tools/accessibility-check/`
+
+- **Title:** `Website Accessibility Check (WCAG/EAA) | Studio Remarka`
+- **Description:** `Free accessibility test powered by Google Lighthouse: 0–100 score and the barriers to fix under the WCAG 2.1 AA standard required by the EU Accessibility Act.`
+
+### EN — `/en/tools/ai-readiness/`
+
+- **Title:** `AI Readiness Check: is your site AI-ready? | Studio Remarka`
+- **Description:** `We check llms.txt, AI crawler access, JSON-LD structured data and your sitemap: a free AI-readiness score out of 4. No sign-up.`
+
+### EN — `/en/tools/website-carbon/`
+
+- **Title:** `Website Carbon Footprint Calculator | Studio Remarka`
+- **Description:** `Measure your page weight and estimate CO₂ emissions per visit and per year with the Sustainable Web Design model (co2.js). Free test, no sign-up required.`
+
+### RU — `/ru/instrumenty/proverka-dostupnosti/`
+
+- **Title:** `Проверка доступности сайта (WCAG/EAA) | Studio Remarka`
+- **Description:** `Бесплатный тест доступности на основе Google Lighthouse: оценка 0–100 и барьеры по стандарту WCAG 2.1 AA, обязательному по European Accessibility Act.`
+
+### RU — `/ru/instrumenty/gotovnost-k-ii/`
+
+- **Title:** `Готов ли сайт к ИИ? Проверка llms.txt | Studio Remarka`
+- **Description:** `Проверяем llms.txt, доступ AI-краулеров, структурированные данные JSON-LD и sitemap: оценка готовности к ИИ из 4. Бесплатно, без регистрации.`
+
+### RU — `/ru/instrumenty/uglerodnyj-sled/`
+
+- **Title:** `Углеродный след сайта — калькулятор CO₂ | Studio Remarka`
+- **Description:** `Измеряем вес страницы и оцениваем выбросы CO₂ на визит и за год по модели Sustainable Web Design (co2.js). Бесплатный тест, без регистрации.`
+
+**Проверка длин.** Title (лимит ≤60): IT accessibilità — 54, IT AI — 57, IT CO₂ — 50,
+EN accessibility — 55, EN AI — 59, EN CO₂ — 52, RU accessibility — 54, RU AI — 54,
+RU CO₂ — 56 — все ≤60. Description (лимит ≤160): IT accessibilità — 146, IT AI — 140,
+IT CO₂ — 158, EN accessibility — 158, EN AI — 127, EN CO₂ — 154, RU accessibility — 150,
+RU AI — 141, RU CO₂ — 140 — все ≤160.
+
+---
+
 ## RU-версия (фаза B)
 
 > Источник текстов — `docs/copy-fase-B.md`, Часть 3 «SEO-мета» (главная и оба
@@ -78,6 +162,10 @@ Density») набивкой, точный ключ в каждом H2, «Content
 | `/ru/uslugi/sajt-dlya-evropy/` | сайт для бизнеса в Италии | ✅ (H1, hero-sub, секция 1) |
 | `/ru/uslugi/seo-prodvizhenie/` | SEO-продвижение в Италии | ✅ (H1, hero-sub, секция 1) |
 | `/ru/ceny/` | сколько стоит сайт | ✅ (H1/lead уже отвечают на вопрос, таблица цен) |
+| `/ru/instrumenty/test-skorosti/` · `/ru/instrumenty/proverka-gdpr/` · `/ru/instrumenty/seo-audit/` · `/ru/instrumenty/roi-lokalizacii/` | тест скорости сайта / проверка GDPR и cookie / SEO-анализ страницы / ROI локализации | ✅ живой виджет (T3, вышли из заглушек — ключи/мета этих 4 отдельно не проработаны в этой сессии) |
+| `/ru/instrumenty/proverka-dostupnosti/` | проверка доступности сайта | ✅ (H1, hero-sub, «как это работает», FAQ) — см. «Инструменты (Lab)» ниже |
+| `/ru/instrumenty/gotovnost-k-ii/` | готовность сайта к ИИ (llms.txt) | ✅ (H1, hero-sub, «как это работает», FAQ) — см. «Инструменты (Lab)» ниже |
+| `/ru/instrumenty/uglerodnyj-sled/` | углеродный след сайта | ✅ (H1, hero-sub, «как это работает», FAQ) — см. «Инструменты (Lab)» ниже |
 
 ### `/ru/`
 
