@@ -40,7 +40,18 @@
 
 <!-- wp:paragraph -->
 <p>Один ответственный от начала до конца, видимый прогресс каждую пятницу, поддержка включена на двенадцать месяцев. Никаких сюрпризов в счёте.</p>
-<!-- /wp:paragraph --></div>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div class="sr-office">
+<p class="sr-office__cap">Наша студия, Милан</p>
+<div class="sr-office__grid">
+<figure class="sr-office__item sr-office__item--facade"><img src="/wp-content/themes/remarka-studio/assets/img/studio-facciata.webp" alt="Офис Studio Remarka в центре Милана" loading="lazy"/></figure>
+<figure class="sr-office__item sr-office__item--interno"><img src="/wp-content/themes/remarka-studio/assets/img/studio-interno.webp" alt="Рабочее пространство студии" loading="lazy"/></figure>
+<figure class="sr-office__item sr-office__item--ingresso"><img src="/wp-content/themes/remarka-studio/assets/img/studio-ingresso.webp" alt="Вход в студию, дом 12" loading="lazy"/></figure>
+</div>
+</div>
+<!-- /wp:html --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"className":"sr-manifesto__svc"} -->

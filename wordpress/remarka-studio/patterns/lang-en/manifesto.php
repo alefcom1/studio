@@ -40,7 +40,18 @@
 
 <!-- wp:paragraph -->
 <p>One point of contact from start to finish, visible progress every Friday, support included for twelve months. No surprises on the invoice.</p>
-<!-- /wp:paragraph --></div>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div class="sr-office">
+<p class="sr-office__cap">Our studio, Milan</p>
+<div class="sr-office__grid">
+<figure class="sr-office__item sr-office__item--facade"><img src="/wp-content/themes/remarka-studio/assets/img/studio-facciata.webp" alt="Studio Remarka's office in central Milan" loading="lazy"/></figure>
+<figure class="sr-office__item sr-office__item--interno"><img src="/wp-content/themes/remarka-studio/assets/img/studio-interno.webp" alt="The studio workspace" loading="lazy"/></figure>
+<figure class="sr-office__item sr-office__item--ingresso"><img src="/wp-content/themes/remarka-studio/assets/img/studio-ingresso.webp" alt="Studio entrance, number 12" loading="lazy"/></figure>
+</div>
+</div>
+<!-- /wp:html --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"className":"sr-manifesto__svc"} -->

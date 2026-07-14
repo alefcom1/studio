@@ -19,3 +19,15 @@
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
+<div class="sr-office">
+<p class="sr-office__cap">La nostra sede, in centro a Milano</p>
+<div class="sr-office__grid">
+<figure class="sr-office__item sr-office__item--facade"><img src="/wp-content/themes/remarka-studio/assets/img/studio-facciata.webp" alt="La sede di Studio Remarka in centro a Milano" loading="lazy"/></figure>
+<figure class="sr-office__item sr-office__item--interno"><img src="/wp-content/themes/remarka-studio/assets/img/studio-interno.webp" alt="Lo spazio di lavoro dello studio" loading="lazy"/></figure>
+<figure class="sr-office__item sr-office__item--ingresso"><img src="/wp-content/themes/remarka-studio/assets/img/studio-ingresso.webp" alt="Ingresso dello studio, civico 12" loading="lazy"/></figure>
+</div>
+</div>
+<!-- /wp:html --></section>
+<!-- /wp:group -->

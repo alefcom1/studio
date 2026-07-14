@@ -617,13 +617,20 @@ function remarka_yandex_metrika(): void {
 add_action( 'wp_footer', 'remarka_yandex_metrika' );
 
 /**
- * Класс автоматически на пункт меню «Preventivo…»: владельцу не нужно
- * вручную ставить CSS-класс sr-menu-cta в настройках меню (см. #masthead
- * .sr-menu-cta > a в remarka.css).
+ * Класс автоматически на пункт меню-CTA («Preventivo…» / «Get a quote…» /
+ * «Смета…»): владельцу не нужно вручную ставить CSS-класс sr-menu-cta в
+ * настройках меню (см. #masthead .sr-menu-cta > a в remarka.css). Совпадение
+ * по метке на всех трёх языках; mb_stripos — чтобы корректно ловить кириллицу.
+ * Стиль применяется только в шапке (#masthead), поэтому одноимённые пункты в
+ * футере, если и получат класс, визуально не изменятся.
  */
 function remarka_auto_cta_menu_item_class( array $classes, WP_Post $item ): array {
-	if ( false !== stripos( $item->title, 'Preventivo' ) ) {
-		$classes[] = 'sr-menu-cta';
+	$needles = array( 'Preventivo', 'quote', 'Смета' );
+	foreach ( $needles as $needle ) {
+		if ( false !== mb_stripos( (string) $item->title, $needle ) ) {
+			$classes[] = 'sr-menu-cta';
+			break;
+		}
 	}
 	return $classes;
 }
