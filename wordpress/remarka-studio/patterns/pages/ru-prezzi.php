@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Прозрачные цены. Без сюрпризов по ходу проекта<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size">Таблица ниже открыта для всех; смета, которую вы подписываете, — это фиксированная цена. Если по ходу проекта нужно что-то ещё, это согласуется заранее и письменно.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size">Сколько стоит сайт? Таблица ниже открыта для всех; смета, которую вы подписываете, — это фиксированная цена. Если по ходу проекта нужно что-то ещё, это согласуется заранее и письменно.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div style="margin-top:40px;max-width:600px">
@@ -30,10 +30,10 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
-<div class="sr-compare-table"><table><thead><tr><th></th><th>Сайт-визитка<br><span>€ 1.900–2.800</span></th><th>Корпоративный сайт<br><span>€ 3.900–5.800</span></th><th>Интернет-магазины<br><span>€ 7.500–14.000</span></th></tr></thead><tbody><tr><td>Страниц включено</td><td>5</td><td>15</td><td>Каталог</td></tr><tr><td>Языки в переводе носителей</td><td>1</td><td>2</td><td>2</td></tr><tr><td>Дизайн с нуля, без шаблонов</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>CMS для самостоятельных правок</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>PWA: офлайн и установка на телефон</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Каталог, корзина и оплата</td><td><span class="sr-no">—</span></td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Техническое SEO и структурированные данные</td><td>база</td><td>полное</td><td>полное</td></tr><tr><td>PageSpeed 90+ da contratto</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Поддержка включена</td><td>12 месяцев</td><td>12 месяцев</td><td>12 месяцев</td></tr><tr><td>Срок сдачи</td><td>3 нед.</td><td>5–7 нед.</td><td>8–10 нед.</td></tr></tbody></table></div>
+<div class="sr-compare-table"><table><thead><tr><th></th><th>Сайт-визитка<br><span>€ 1 900–2 800</span></th><th>Корпоративный сайт<br><span>€ 3 900–5 800</span></th><th>Интернет-магазины<br><span>€ 7 500–14 000</span></th></tr></thead><tbody><tr><td>Страниц включено</td><td>5</td><td>15</td><td>Каталог</td></tr><tr><td>Языки в переводе носителей</td><td>1</td><td>2</td><td>2</td></tr><tr><td>Дизайн с нуля, без шаблонов</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>CMS для самостоятельных правок</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>PWA: офлайн и установка на телефон</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Каталог, корзина и оплата</td><td><span class="sr-no">—</span></td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Техническое SEO и структурированные данные</td><td>база</td><td>полное</td><td>полное</td></tr><tr><td>PageSpeed 90+ da contratto</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Поддержка включена</td><td>12 месяцев</td><td>12 месяцев</td><td>12 месяцев</td></tr><tr><td>Срок сдачи</td><td>2 нед.</td><td>3 нед.</td><td>6 нед.</td></tr></tbody></table></div>
 <!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:28px;max-width:70ch">Для сравнения: итальянские агентства просят в среднем € 2.500–8.000 за корпоративный сайт и € 5.000–20.000 за интернет-магазин (открытые прайсы 2026 года). Мы в той же вилке — но с тремя письменными гарантиями в договоре, которых больше нигде нет.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:28px;max-width:70ch">Для сравнения: итальянские агентства просят в среднем € 2 500–8 000 за корпоративный сайт и € 5 000–20 000 за интернет-магазин (открытые прайсы 2026 года). Мы в той же вилке — но с тремя письменными гарантиями в договоре, которых больше нигде нет.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size" style="margin-top:16px">Электронный счёт-фактура через SDI. Оплата тремя траншами: 40 / 40 / 20.</p>
@@ -44,6 +44,21 @@
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:heading -->
+<h2 class="wp-block-heading">Цены и сроки — рядом с рыночными<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px;max-width:70ch">Рыночные вилки — из открытых прайсов итальянских веб-студий (2026). Наши цифры — это цифры договора. Оплата в евро, инвойс для юрлиц ЕС.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<div class="sr-market-table" style="margin-top:40px"><table><thead><tr><th>Продукт</th><th>Цена рынка</th><th class="sr-market-table__uscol">Цена Remarka</th><th>Сроки рынка</th><th class="sr-market-table__uscol">Сроки Remarka</th></tr></thead><tbody><tr><td class="sr-market-table__prod">Сайт-визитка</td><td>€ 1 000–3 000</td><td class="sr-market-table__us">€ 1 900–2 800</td><td>2–4 недели</td><td class="sr-market-table__us">2 недели</td></tr><tr><td class="sr-market-table__prod">Корпоративный сайт</td><td>€ 2 500–8 000</td><td class="sr-market-table__us">€ 3 900–5 800</td><td>6–10 недель</td><td class="sr-market-table__us">3 недели</td></tr><tr><td class="sr-market-table__prod">Интернет-магазин</td><td>€ 6 000–25 000</td><td class="sr-market-table__us">€ 7 500–14 000</td><td>8–14 недель</td><td class="sr-market-table__us">6 недель</td></tr></tbody></table></div>
+<!-- /wp:html -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size" style="margin-top:20px">Рыночные вилки — из открытых прайсов итальянских веб-студий, 2026. Полный разбор с источниками в блоге: <a href="/ru/blog/skolko-stoit-sajt-v-italii/">«Сколько стоит сайт в Италии»</a>.</p>
+<!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->

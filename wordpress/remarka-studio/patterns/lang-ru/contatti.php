@@ -19,7 +19,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium","style":{"spacing":{"margin":{"top":"18px"}}}} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:18px">Бесплатный анализ текущего сайта или окончательный расчёт стоимости за 24 часа. Выберите удобный канал.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:18px">Бесплатный анализ или окончательный расчёт стоимости за 24 часа. Выберите удобный канал.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"className":"sr-btn-whatsapp","style":{"spacing":{"margin":{"top":"32px"}}}} -->
@@ -30,6 +30,10 @@
 
 <!-- wp:paragraph {"className":"sr-eyebrow","style":{"spacing":{"margin":{"top":"16px"}}}} -->
 <p class="sr-eyebrow" style="margin-top:16px">Пн–Пт 9:00–18:00 · Ответ в течение рабочего дня</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-eyebrow","style":{"spacing":{"margin":{"top":"10px"}}}} -->
+<p class="sr-eyebrow" style="margin-top:10px">Оплата: банковский перевод (счета в ЕС и России) или PayPal</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 

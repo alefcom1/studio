@@ -120,7 +120,7 @@
 <div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">€ 3.200–5.500</div>
 <!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:14px;max-width:60ch">Цена фиксируется в смете, сдача за 4–6 недель. Электронный счёт-фактура, оплата тремя платежами.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:14px;max-width:60ch">Цена фиксируется в смете, сдача за 4 недели. Электронный счёт-фактура, оплата тремя платежами.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p style="margin-top:28px;font-weight:500;font-size:16px">Из чего складывается цена</p>

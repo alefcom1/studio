@@ -265,6 +265,8 @@ $page_map = array(
 	'ru-servizio-siti-multilingue'                 => array( 'mnogojazychnye-sajty', 'ru/uslugi', null ),
 	'ru-servizio-export-ready'                     => array( 'export-ready', 'ru/uslugi', null ),
 	'ru-servizio-web-app'                          => array( 'veb-prilozhenija', 'ru/uslugi', null ),
+	'ru-sajt-dlya-evropy'                          => array( 'sajt-dlya-evropy', 'ru/uslugi', 'Сайт для выхода на рынок Италии и Европы' ),
+	'ru-seo-prodvizhenie'                          => array( 'seo-prodvizhenie', 'ru/uslugi', 'SEO-продвижение в Италии и Европе' ),
 	'ru-caso-arredamenti-colombo'                  => array( 'arredamenti-colombo', 'ru/kejsy', null ),
 	'ru-caso-cantina-serralta'                     => array( 'cantina-serralta', 'ru/kejsy', null ),
 	'ru-caso-tecnoidraulica'                       => array( 'tecnoidraulica', 'ru/kejsy', null ),
@@ -568,6 +570,8 @@ remarka_deploy_sync_footer_menu( 'Menu RU — Remarka', '', array(
 
 remarka_deploy_sync_footer_menu( 'Footer RU — Страницы', '', array(
 	array( 'title' => 'Услуги', 'slug' => 'ru/uslugi' ),
+	array( 'title' => 'Сайт для выхода на рынок Европы', 'slug' => 'ru/uslugi/sajt-dlya-evropy' ),
+	array( 'title' => 'SEO-продвижение', 'slug' => 'ru/uslugi/seo-prodvizhenie' ),
 	array( 'title' => 'Кейсы', 'slug' => 'ru/kejsy' ),
 	array( 'title' => 'Цены', 'slug' => 'ru/ceny' ),
 	array( 'title' => 'Бесплатные инструменты', 'slug' => 'ru/instrumenty' ),

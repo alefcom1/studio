@@ -120,7 +120,7 @@
 <div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">€ 2.900–4.800</div>
 <!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:14px;max-width:60ch">Цена фиксируется в смете, сдача за 2–4 недели. Электронный счёт-фактура, оплата тремя платежами.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:14px;max-width:60ch">Цена фиксируется в смете, сдача за 3 недели. Электронный счёт-фактура, оплата тремя платежами.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p style="margin-top:28px;font-weight:500;font-size:16px">Из чего складывается цена</p>
@@ -145,7 +145,7 @@
 <div style="border-top:1px solid var(--sr-inchiostro);padding-top:20px"><h3 class="wp-block-heading" style="font-size:18px">Придётся переписывать контент?</h3><p style="margin-top:10px;font-size:15px;color:var(--sr-grigio)">Нет, технический редизайн сохраняет существующий контент; обновляем его только по запросу.</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div style="border-top:1px solid var(--sr-inchiostro);padding-top:20px"><h3 class="wp-block-heading" style="font-size:18px">Сколько длится миграция?</h3><p style="margin-top:10px;font-size:15px;color:var(--sr-grigio)">В среднем 2–4 недели, с тестовой средой, доступной уже с первой недели.</p></div>
+<div style="border-top:1px solid var(--sr-inchiostro);padding-top:20px"><h3 class="wp-block-heading" style="font-size:18px">Сколько длится миграция?</h3><p style="margin-top:10px;font-size:15px;color:var(--sr-grigio)">В среднем 3 недели, с тестовой средой, доступной уже с первой недели.</p></div>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
