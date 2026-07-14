@@ -67,6 +67,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Il metodo</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Come stimiamo davvero le emissioni della pagina<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Il calcolo parte da un dato concreto e misurabile: con l’API PageSpeed pesiamo tutti i byte che il browser deve scaricare per mostrare la vostra pagina. Su quel peso applichiamo il modello Sustainable Web Design della Green Web Foundation — le stesse formule della libreria open source co2.js — che traduce i byte trasferiti in energia consumata lungo la catena (data center, rete, dispositivo) e infine in grammi di CO₂ equivalente per visita.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">È una stima, ed è giusto trattarla come tale. Il modello usa coefficienti medi mondiali per l’intensità energetica e per il mix elettrico: non conosce l’energia reale del vostro hosting né il comportamento esatto di ogni visitatore. Non è una misura certificata di impronta ambientale, ma un ordine di grandezza affidabile e confrontabile. Il pregio è che si lega a un fatto tecnico — il peso — su cui potete davvero intervenire.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Leggere il risultato</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Come leggere i grammi di CO₂ per visita<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Il numero chiave è la CO₂ equivalente per singola visita, che confrontiamo con la media del web, intorno agli 0,8 grammi. Sotto quella soglia siete tra i siti leggeri; sensibilmente sopra, la pagina è più pesante della media e c’è margine per alleggerirla. La stima annua moltiplica quel valore per un traffico di riferimento: cambiando le visite reali del vostro sito, l’impatto cresce o cala in proporzione.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Il confronto conta più del valore assoluto. Pochi grammi per visita sembrano nulla, ma moltiplicati per decine di migliaia di visite al mese diventano una cifra concreta, e soprattutto sono lo specchio di una pagina pesante: quasi sempre chi inquina di più è anche chi carica più lentamente. Leggete quindi l’impatto come un secondo indicatore delle prestazioni, non solo come una questione ambientale.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Tre domande tipiche</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -84,6 +114,24 @@
 <p>Moltiplichiamo le emissioni per visita per un traffico di riferimento di 10.000 visite al mese. Cambiando il traffico reale del vostro sito, cambia la stima proporzionalmente.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Come migliorare</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Come ridurre l’impronta di carbonio del sito<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Ridurre le emissioni e velocizzare il sito sono la stessa cosa: entrambe passano dal tagliare peso inutile.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Alleggerite le immagini</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Le fotografie sono quasi sempre la voce più pesante: convertitele in WebP o AVIF con caricamento differito e taglierete gran parte dei byte, e quindi delle emissioni.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Riducete script e font</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Ogni libreria di terze parti e ogni famiglia di caratteri in più è energia trasferita a ogni visita: tenete solo ciò che serve davvero.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Sfruttate cache e CDN</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Una buona cache e una rete di distribuzione evitano di trasferire gli stessi contenuti mille volte: meno traffico ripetuto, meno consumo.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Scegliete un hosting verde</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Un provider alimentato da energia rinnovabile abbassa l’intensità di carbonio di ogni byte servito: è la leva più semplice per un effetto immediato.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Preferite un design sobrio</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Niente video in riproduzione automatica o animazioni pesanti dove non servono: un’estetica pulita consuma meno e, spesso, comunica meglio.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/servizi/restyling-migrazione/">Vogliamo alleggerirlo noi: scopri il restyling tecnico →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/blog/sito-lento-cause-costi/">Approfondisci: le 7 cause di un sito lento →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->

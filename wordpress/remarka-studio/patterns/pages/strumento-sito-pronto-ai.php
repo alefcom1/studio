@@ -62,6 +62,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Il metodo</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Cosa verifica davvero questo controllo di prontezza AI<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Come per il controllo GDPR, è il nostro server a leggere alcuni file pubblici del vostro sito e l’HTML della home, senza passare da Google. Facciamo quattro verifiche: cerchiamo il file llms.txt, controlliamo se il robots.txt lascia passare i crawler dei modelli (GPTBot di OpenAI, ClaudeBot, PerplexityBot, Google-Extended), rileviamo i dati strutturati JSON-LD nella pagina e la presenza di una sitemap. Ne esce un punteggio di prontezza su quattro.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">È utile sapere cosa il test non promette. Verifica che i segnali tecnici ci siano, non che ChatGPT o Perplexity vi citino davvero: quello dipende anche dalla qualità e dall’autorevolezza dei contenuti, che nessuno strumento misura in automatico. E poiché llms.txt è uno standard giovane, la sua assenza non è ancora un errore grave: è un’occasione in più di farsi leggere bene dalle macchine. Leggete il punteggio come una lista di opportunità, non come una bocciatura.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Leggere il risultato</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Come leggere il punteggio di prontezza su 4<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Ogni segnale vale un punto e ha il suo semaforo. Quattro su quattro significa che il sito offre alle intelligenze artificiali tutti gli appigli per capirlo e citarlo. Due o tre su quattro è la situazione più comune: manca quasi sempre llms.txt, a volte i dati strutturati. Zero o uno su quattro merita attenzione, soprattutto se il robots.txt blocca i crawler AI: in quel caso restate fuori dalle risposte generate, magari senza averlo deciso.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Una precisazione che evita allarmi inutili. Bloccare i crawler AI non è un difetto in sé: è una scelta legittima, se volete proteggere i contenuti. Il test lo segnala perché sappiate che quella porta è chiusa, non per dirvi che sbagliate. Per la maggior parte delle aziende, però, essere citati da un assistente AI è visibilità in più, non un rischio: vale la pena valutarlo con consapevolezza.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Tre domande tipiche</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -79,6 +109,24 @@
 <p>Sì, più che mai: i dati JSON-LD (schema.org) aiutano sia Google sia i modelli AI a capire chi siete, cosa offrite e a chi. Sono la base di ogni buona indicizzazione.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Come migliorare</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Come farsi trovare e citare dai modelli AI<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Prepararsi all’AI non richiede stravolgimenti: sono gli stessi segnali che aiutano anche Google, più qualche novità.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Pubblicate un file llms.txt</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Un semplice file di testo in Markdown, nella radice del sito, che riassume chi siete e cosa offrite: è la mappa che i modelli leggono volentieri.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Aprite le porte ai crawler giusti</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Nel robots.txt consentite l’accesso a GPTBot, ClaudeBot, PerplexityBot e Google-Extended, se volete comparire nelle risposte generate.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Aggiungete i dati strutturati</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Il markup JSON-LD schema.org dice in modo esplicito nome, sede, offerta e servizi: è la base che sia Google sia le AI usano per capirvi.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Tenete la sitemap aggiornata</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Una sitemap XML completa aiuta i crawler a trovare tutte le pagine; assicuratevi che i contenuti siano testo leggibile, non solo immagini.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Scrivete fatti espliciti</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Dichiarate con chiarezza cosa fate, dove e per chi: i modelli citano ciò che capiscono senza ambiguità, non ciò che devono indovinare.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/servizi/seo-tecnica/">Lo prepariamo noi: fa parte della SEO tecnica →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->

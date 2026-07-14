@@ -61,6 +61,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Il metodo</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Cosa controlla davvero questo test di accessibilità<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Il motore è la categoria Accessibilità di Lighthouse, richiamata via API PageSpeed: gli stessi controlli automatici che Google mette a disposizione degli sviluppatori. In pochi secondi la pagina viene esaminata su decine di regole tecniche — contrasto tra testo e sfondo, testi alternativi delle immagini, etichette dei campi nei moduli, ordine dei titoli, uso corretto degli attributi ARIA — e ne esce un punteggio da 0 a 100 con l’elenco delle barriere rilevate.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Serve chiarezza sui limiti, perché qui è facile illudersi. Un controllo automatico intercetta soltanto una parte dei criteri WCAG 2.1 AA: cattura ciò che una macchina sa misurare, non ciò che va provato da una persona. Non verifica la navigazione da tastiera, l’esperienza con uno screen reader, la chiarezza dei contenuti per chi ha difficoltà cognitive. È il primo gradino verso la conformità richiesta dall’European Accessibility Act, non il certificato finale.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Leggere il risultato</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Come leggere il punteggio e le barriere rilevate<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Il numero da 0 a 100 dice quanto la pagina supera i controlli automatici: più è alto, meno ostacoli evidenti restano. Ma il punteggio conta meno dell’elenco che lo accompagna. Ogni voce è una barriera concreta per una persona reale — un contrasto troppo debole per chi ci vede poco, un pulsante senza etichetta per chi usa uno screen reader. Partite da quelle, non dal totale.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Un avvertimento sui falsi sensi di sicurezza: anche un 100 pieno non significa «sito conforme». Vuol dire che avete superato i test che una macchina può fare, e sono circa un terzo dei problemi possibili. Il resto — tastiera, lettori di schermo, contenuti — si verifica a mano. Prendete quindi un punteggio alto come una buona base, non come un traguardo raggiunto.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Tre domande tipiche</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
@@ -78,6 +108,24 @@
 <p>Se vendete beni o servizi a consumatori online (e-commerce, banche, trasporti, servizi), con ogni probabilità sì. Le microimprese che offrono servizi hanno esenzioni: meglio verificare caso per caso.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Come migliorare</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Come rendere il sito accessibile a tutti<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px">Molte barriere cadono con correzioni semplici, che migliorano l’esperienza di chiunque, non solo di chi ha una disabilità.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Aumentate il contrasto</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Testo e sfondo devono avere un rapporto di contrasto di almeno 4,5:1: il grigio chiaro elegante sullo schermo del designer diventa illeggibile al sole o per chi ci vede poco.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Descrivete le immagini</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Ogni immagine informativa ha bisogno di un testo alternativo che ne racconti il contenuto: è ciò che uno screen reader legge a chi non può vederla.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Etichettate i moduli</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Ogni campo deve avere un’etichetta esplicita e collegata: «Nome», «Email», «Messaggio», non solo un testo grigio che sparisce appena si scrive.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Ordinate titoli e focus</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Una gerarchia di titoli coerente e un percorso navigabile da tastiera, con il focus sempre visibile, rendono la pagina usabile anche senza mouse.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Non affidatevi solo al colore</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Un errore segnalato solo in rosso è invisibile a chi non distingue i colori: affiancate sempre un’icona o un testo che spieghi cosa succede.</p></div></div>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/servizi/siti-aziendali/">Vogliamo sistemarle noi: l’accessibilità è inclusa nei siti aziendali →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->

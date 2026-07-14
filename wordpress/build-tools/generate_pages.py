@@ -637,9 +637,50 @@ def build_tool(tool):
         classes='sr-section sr-section--bianco',
     )
 
+    # Sezione metodologia: cosa misura (davvero) il test — motore e segnali.
+    m_h2, m_paras = tool['metodologia']
+    metodologia = section(
+        eyebrow('Il metodo') + heading(2, m_h2) +
+        ''.join(paragraph(p, size='base', extra_style='font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px')
+                for p in m_paras),
+        classes='sr-section',
+    )
+
+    # Sezione lettura del risultato: punteggi, fasce, falsi allarmi.
+    l_h2, l_paras = tool['lettura']
+    lettura = section(
+        eyebrow('Leggere il risultato') + heading(2, l_h2) +
+        ''.join(paragraph(p, size='base', extra_style='font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px')
+                for p in l_paras),
+        classes='sr-section sr-section--bianco',
+    )
+
     faq = section(
         eyebrow('Tre domande tipiche') + details_faq(tool['faq']),
         classes='sr-section',
+    )
+
+    # Sezione «come migliorare»: metodi concreti a griglia + link contestuali
+    # (servizio + articolo blog). Va dopo la FAQ, prima della CTA.
+    mig = tool['migliorare']
+    mig_cards = ''.join(
+        f'<div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">{i:02d}</p>'
+        f'<p style="font-weight:500;margin-top:8px">{t}</p>'
+        f'<p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">{d}</p></div>'
+        for i, (t, d) in enumerate(mig['punti'], start=1)
+    )
+    mig_links = ''.join(
+        f'<p class="sr-card-link" style="margin-top:12px"><a href="{url}">{label} →</a></p>'
+        for label, url in mig['links']
+    )
+    migliorare = section(
+        eyebrow('Come migliorare') + heading(2, mig['h2']) +
+        paragraph(mig['intro'], color='grigio', size='base',
+                  extra_style='font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px') +
+        group(mig_cards, classes='', layout_type='grid', style='240px') +
+        raw_html(f'<div style="margin-top:24px;display:flex;flex-direction:column;'
+                 f'gap:8px;align-items:flex-start">{mig_links}</div>'),
+        classes='sr-section sr-section--bianco',
     )
 
     cta_data = tool['cta']
@@ -666,7 +707,7 @@ def build_tool(tool):
 
     write(f'strumento-{tool["slug"]}', f'Pagina — Strumento: {tool["titolo"]}',
           f'Strumento gratuito {tool["titolo"]}: widget interattivo, come funziona, FAQ, CTA.',
-          hero + widget_section + come_funziona + faq + cta + altri_section)
+          hero + widget_section + come_funziona + metodologia + lettura + faq + migliorare + cta + altri_section)
 
 
 # ---------------------------------------------------------------- Città
