@@ -163,9 +163,10 @@ body.dark-mode .site-description {
   padding: 5px 6px;
   background: none;
   border: none;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid transparent !important;
   color: var(--sr-grigio);
   cursor: pointer;
+  text-decoration: none;
 }
 
 #masthead .sr-lang-switch__btn:hover {
@@ -174,7 +175,7 @@ body.dark-mode .site-description {
 
 #masthead .sr-lang-switch__btn--active {
   color: var(--sr-inchiostro);
-  border-bottom-color: var(--sr-oltremare);
+  border-bottom-color: var(--sr-oltremare) !important;
 }
 
 /* ---------- Типографика ---------- */

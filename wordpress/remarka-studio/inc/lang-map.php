@@ -1,0 +1,42 @@
+<?php
+/**
+ * Автогенерировано build-tools/lang.py — НЕ редактировать вручную.
+ * Карта соответствия путей страниц IT ↔ EN ↔ RU (без ведущего слеша).
+ */
+return array(
+	array( 'it' => '', 'en' => 'en', 'ru' => 'ru' ),
+	array( 'it' => 'servizi', 'en' => 'en/services', 'ru' => 'ru/uslugi' ),
+	array( 'it' => 'casi-studio', 'en' => 'en/case-studies', 'ru' => 'ru/kejsy' ),
+	array( 'it' => 'strumenti', 'en' => 'en/tools', 'ru' => 'ru/instrumenty' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog' ),
+	array( 'it' => 'prezzi', 'en' => 'en/pricing', 'ru' => 'ru/ceny' ),
+	array( 'it' => 'milano', 'en' => 'en/milan', 'ru' => 'ru/milan' ),
+	array( 'it' => 'chi-siamo', 'en' => 'en/about', 'ru' => 'ru/o-studii' ),
+	array( 'it' => 'privacy', 'en' => 'en/privacy', 'ru' => 'ru/privacy' ),
+	array( 'it' => 'cookie-policy', 'en' => 'en/cookie-policy', 'ru' => 'ru/cookie-policy' ),
+	array( 'it' => 'cookie-preferenze', 'en' => 'en/cookie-preferences', 'ru' => 'ru/cookie-preferences' ),
+	array( 'it' => 'servizi/siti-aziendali', 'en' => 'en/services/business-websites', 'ru' => 'ru/uslugi/korporativnye-sajty' ),
+	array( 'it' => 'servizi/e-commerce', 'en' => 'en/services/e-commerce', 'ru' => 'ru/uslugi/internet-magaziny' ),
+	array( 'it' => 'servizi/siti-pwa', 'en' => 'en/services/progressive-web-apps', 'ru' => 'ru/uslugi/pwa-sajty' ),
+	array( 'it' => 'servizi/restyling-migrazione', 'en' => 'en/services/redesign-migration', 'ru' => 'ru/uslugi/redizajn-i-migracija' ),
+	array( 'it' => 'servizi/seo-tecnica', 'en' => 'en/services/technical-seo', 'ru' => 'ru/uslugi/tehnicheskoe-seo' ),
+	array( 'it' => 'servizi/siti-multilingue', 'en' => 'en/services/multilingual-websites', 'ru' => 'ru/uslugi/mnogojazychnye-sajty' ),
+	array( 'it' => 'servizi/export-ready', 'en' => 'en/services/export-ready', 'ru' => 'ru/uslugi/export-ready' ),
+	array( 'it' => 'servizi/web-app', 'en' => 'en/services/custom-web-apps', 'ru' => 'ru/uslugi/veb-prilozhenija' ),
+	array( 'it' => 'casi-studio/arredamenti-colombo', 'en' => 'en/case-studies/arredamenti-colombo', 'ru' => 'ru/kejsy/arredamenti-colombo' ),
+	array( 'it' => 'casi-studio/cantina-serralta', 'en' => 'en/case-studies/cantina-serralta', 'ru' => 'ru/kejsy/cantina-serralta' ),
+	array( 'it' => 'casi-studio/tecnoidraulica', 'en' => 'en/case-studies/tecnoidraulica', 'ru' => 'ru/kejsy/tecnoidraulica' ),
+	array( 'it' => 'casi-studio/studio-legale-fontana', 'en' => 'en/case-studies/studio-legale-fontana', 'ru' => 'ru/kejsy/studio-legale-fontana' ),
+	array( 'it' => 'strumenti/test-velocita', 'en' => 'en/tools/speed-test', 'ru' => 'ru/instrumenty/test-skorosti' ),
+	array( 'it' => 'strumenti/check-gdpr', 'en' => 'en/tools/gdpr-check', 'ru' => 'ru/instrumenty/proverka-gdpr' ),
+	array( 'it' => 'strumenti/analisi-seo', 'en' => 'en/tools/seo-audit', 'ru' => 'ru/instrumenty/seo-audit' ),
+	array( 'it' => 'strumenti/roi-localizzazione', 'en' => 'en/tools/localization-roi', 'ru' => 'ru/instrumenty/roi-lokalizacii' ),
+	array( 'it' => 'blog/sito-quattro-lingue-costi-tempi', 'en' => 'en/blog/website-four-languages-costs', 'ru' => 'ru/blog/sajt-na-4-jazykah' ),
+	array( 'it' => 'blog/cookie-banner-checklist-garante-2026', 'en' => 'en/blog/cookie-banner-compliance-italy-2026', 'ru' => 'ru/blog/cookie-banner-trebovanija-2026' ),
+	array( 'it' => 'blog/migrare-wordpress-senza-perdere-seo', 'en' => 'en/blog/migrate-wordpress-without-losing-seo', 'ru' => 'ru/blog/migracija-wordpress-bez-poteri-seo' ),
+	array( 'it' => 'blog/pwa-per-pmi-quando-app-non-serve', 'en' => 'en/blog/pwa-for-smbs', 'ru' => 'ru/blog/pwa-dlja-biznesa' ),
+	array( 'it' => 'blog/quanto-costa-sito-aziendale-italia', 'en' => 'en/blog/business-website-cost-italy', 'ru' => 'ru/blog/skolko-stoit-sajt-v-italii' ),
+	array( 'it' => 'blog/core-web-vitals-2026', 'en' => 'en/blog/core-web-vitals-2026', 'ru' => 'ru/blog/core-web-vitals-2026' ),
+	array( 'it' => 'blog/quanto-costa-ecommerce-italia', 'en' => 'en/blog/ecommerce-cost-italy-2026', 'ru' => 'ru/blog/skolko-stoit-internet-magazin' ),
+	array( 'it' => 'blog/sito-lento-cause-costi', 'en' => 'en/blog/slow-website-causes-fixes', 'ru' => 'ru/blog/medlennyj-sajt-prichiny' ),
+);

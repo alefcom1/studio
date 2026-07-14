@@ -1,0 +1,111 @@
+<?php
+/**
+ * Title: Pagina — Servizi (elenco)
+ * Slug: remarka-studio/ru-servizi-index
+ * Categories: remarka-pagine
+ * Description: Elenco dei servizi con link alle pagine dettaglio + linee premium.
+ * Viewport Width: 1400
+ */
+?>
+<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Услуги</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(38px,4.6vw,64px)"}}} -->
+<h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Шесть вещей, которые мы умеем делать хорошо<span class="sr-accent-dot">.</span></h1>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size">Каждая услуга строится вокруг одного обещания: PageSpeed 90+ по договору, фиксированная цена, фиксированный срок.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"300px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:300px"><!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Корпоративные сайты</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Пятнадцать страниц, два языка, CMS для самостоятельного обновления. Спроектирован так, чтобы превращать визиты в заявки на расчёт стоимости.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/ru/uslugi/korporativnye-sajty/">Подробнее →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Интернет-магазины</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Быстрый каталог, оформление заказа в один шаг, встроенные электронные счета-фактуры: для тех, кто продаёт, а не просто показывает товар.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/ru/uslugi/internet-magaziny/">Подробнее →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Прогрессивные сайты PWA</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Устанавливается, работает офлайн, открывается мгновенно и на десятый визит: без расходов и сроков App Store и Play Store.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/ru/uslugi/pwa-sajty/">Подробнее →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Редизайн и миграция</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Ни потерянных позиций, ни текстов на переписывание: меняется только техническая база — и меняется к лучшему.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/ru/uslugi/redizajn-i-migracija/">Подробнее →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Техническая SEO</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Core Web Vitals, структурированные данные и корректный sitemap: техническая часть SEO — та, которую одним копирайтингом не решить.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/ru/uslugi/tehnicheskoe-seo/">Подробнее →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Многоязычные сайты</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Этим ремеслом группа Remarka живёт с 2001 года: профессиональный перевод, не машинный, с корректной многоязычной SEO с первого дня.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/ru/uslugi/mnogojazychnye-sajty/">Подробнее →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Больше, чем сайт</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Когда нужно больше<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"320px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:320px"><div class="sr-card sr-card--carta"><p class="sr-eyebrow">Флагман</p><h3 class="wp-block-heading" style="font-size:22px">Export Ready</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Сайт и его зарубежная версия по одному договору: локализация носителями, международное SEO, KPI по каждому рынку.</p><p class="sr-card-link" style="margin-top:16px"><a href="/ru/uslugi/export-ready/">Подробнее →</a></p></div><div class="sr-card sr-card--carta"><p class="sr-eyebrow">Цифровые продукты</p><h3 class="wp-block-heading" style="font-size:22px">Веб-приложения на заказ</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Личные кабинеты, конфигураторы, B2B-порталы и интеграции: когда сайта уже недостаточно.</p><p class="sr-card-link" style="margin-top:16px"><a href="/ru/uslugi/veb-prilozhenija/">Подробнее →</a></p></div></div>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->

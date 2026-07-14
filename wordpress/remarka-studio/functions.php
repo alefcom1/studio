@@ -12,6 +12,9 @@ defined( 'ABSPATH' ) || exit;
 
 define( 'REMARKA_STUDIO_VERSION', '1.0.0' );
 
+// Мультиязычный рантайм (/en/, /ru/): язык, hreflang, строки, меню.
+require_once get_stylesheet_directory() . '/inc/multilang.php';
+
 /**
  * Есть ли локальные шрифты? Маркер — главный woff2 Clash Display.
  * Пока владелец не положил файлы в assets/fonts, тема грузит CDN
@@ -149,11 +152,16 @@ add_action( 'init', 'remarka_pattern_category', 5 );
  * тем же способом, каким это делает ядро для основной папки.
  */
 function remarka_register_page_patterns(): void {
-	$dir = get_stylesheet_directory() . '/patterns/pages';
-	if ( ! is_dir( $dir ) ) {
-		return;
+	$base  = get_stylesheet_directory() . '/patterns';
+	$files = array();
+	// pages — полные страницы (IT + en-/ru- переводы);
+	// lang-en / lang-ru — переведённые секции Home.
+	foreach ( array( 'pages', 'lang-en', 'lang-ru' ) as $sub ) {
+		if ( is_dir( "$base/$sub" ) ) {
+			$files = array_merge( $files, glob( "$base/$sub/*.php" ) ?: array() );
+		}
 	}
-	foreach ( glob( $dir . '/*.php' ) as $file ) {
+	foreach ( $files as $file ) {
 		$data = get_file_data( $file, array(
 			'title'         => 'Title',
 			'slug'          => 'Slug',
@@ -268,18 +276,18 @@ function remarka_footer_widgets(): void {
 	<div class="sr-cookie-banner" data-sr-cookie-banner hidden>
 		<div class="sr-cookie-banner__inner">
 			<p class="sr-cookie-banner__text">
-				<?php esc_html_e( "Usiamo solo cookie tecnici necessari al funzionamento del sito. Nessuna profilazione, nessun tracciamento pubblicitario.", 'remarka-studio' ); ?>
-				<a href="<?php echo esc_url( home_url( '/cookie-preferenze/' ) ); ?>"><?php esc_html_e( 'Preferenze', 'remarka-studio' ); ?></a>
+				<?php echo esc_html( remarka_str( 'cookie_testo' ) ); ?>
+				<a href="<?php echo esc_url( home_url( '/cookie-preferenze/' ) ); ?>"><?php echo esc_html( remarka_str( 'cookie_preferenze' ) ); ?></a>
 				·
-				<a href="<?php echo esc_url( home_url( '/cookie-policy/' ) ); ?>"><?php esc_html_e( 'Cookie policy', 'remarka-studio' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/cookie-policy/' ) ); ?>"><?php echo esc_html( remarka_str( 'cookie_policy' ) ); ?></a>
 			</p>
 			<div class="sr-cookie-banner__actions">
-				<button type="button" class="sr-cookie-btn" data-sr-cookie-choice="rejected"><?php esc_html_e( 'Rifiuta', 'remarka-studio' ); ?></button>
-				<button type="button" class="sr-cookie-btn" data-sr-cookie-choice="accepted"><?php esc_html_e( 'Accetta', 'remarka-studio' ); ?></button>
+				<button type="button" class="sr-cookie-btn" data-sr-cookie-choice="rejected"><?php echo esc_html( remarka_str( 'cookie_rifiuta' ) ); ?></button>
+				<button type="button" class="sr-cookie-btn" data-sr-cookie-choice="accepted"><?php echo esc_html( remarka_str( 'cookie_accetta' ) ); ?></button>
 			</div>
 		</div>
 	</div>
-	<a href="https://wa.me/<?php echo $phone; ?>" class="sr-wa-fab" data-sr-wa-fab target="_blank" rel="noopener noreferrer" aria-label="<?php esc_attr_e( 'Scrivici su WhatsApp', 'remarka-studio' ); ?>">
+	<a href="https://wa.me/<?php echo $phone; ?>" class="sr-wa-fab" data-sr-wa-fab target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( remarka_str( 'wa_label' ) ); ?>">
 		<svg width="30" height="30" viewBox="0 0 32 32" fill="#FFFFFF" aria-hidden="true"><path d="M16.003 3C9.377 3 4 8.373 4 15c0 2.294.638 4.437 1.746 6.264L4 29l7.94-1.708A11.93 11.93 0 0 0 16.003 27C22.63 27 28 21.627 28 15S22.63 3 16.003 3Zm6.98 16.998c-.294.826-1.457 1.512-2.386 1.71-.634.135-1.462.243-4.248-.911-3.562-1.475-5.855-5.086-6.033-5.322-.177-.236-1.44-1.916-1.44-3.655 0-1.74.913-2.594 1.237-2.95.324-.354.708-.443.944-.443.236 0 .472.002.678.012.217.011.508-.082.795.607.294.708.998 2.447 1.086 2.625.088.177.147.384.03.62-.118.236-.177.383-.35.59-.177.207-.37.463-.53.62-.177.176-.36.367-.155.72.206.354.914 1.51 1.963 2.446 1.348 1.202 2.485 1.575 2.838 1.751.353.177.56.147.766-.088.207-.236.884-1.03 1.12-1.383.235-.354.47-.295.795-.177.324.118 2.06.972 2.414 1.148.353.177.588.265.677.412.088.147.088.855-.206 1.68Z"/></svg>
 	</a>
 	<?php
@@ -409,12 +417,12 @@ function remarka_render_footer(): void {
 		<div class="sr-footer-cta">
 			<div class="sr-footer-cta__inner">
 				<div>
-					<h2 class="sr-footer-cta__heading"><?php echo esc_html( remarka_footer_mod( 'remarka_footer_cta_heading' ) ); ?><span class="sr-accent-dot">.</span></h2>
-					<p class="sr-footer-cta__text"><?php echo esc_html( remarka_footer_mod( 'remarka_footer_cta_text' ) ); ?></p>
+					<h2 class="sr-footer-cta__heading"><?php echo esc_html( remarka_footer_text( 'remarka_footer_cta_heading', 'cta_heading' ) ); ?><span class="sr-accent-dot">.</span></h2>
+					<p class="sr-footer-cta__text"><?php echo esc_html( remarka_footer_text( 'remarka_footer_cta_text', 'cta_text' ) ); ?></p>
 				</div>
 				<div class="sr-footer-cta__buttons">
-					<a class="sr-footer-cta__btn sr-footer-cta__btn--primary" href="<?php echo esc_url( remarka_footer_link_url( 'remarka_footer_cta_btn1_url', '/#contatti' ) ); ?>"><?php echo esc_html( remarka_footer_mod( 'remarka_footer_cta_btn1_label' ) ); ?></a>
-					<a class="sr-footer-cta__btn sr-footer-cta__btn--outline" href="<?php echo esc_url( remarka_footer_link_url( 'remarka_footer_cta_btn2_url', '/' ) ); ?>"><?php echo esc_html( remarka_footer_mod( 'remarka_footer_cta_btn2_label' ) ); ?></a>
+					<a class="sr-footer-cta__btn sr-footer-cta__btn--primary" href="<?php echo esc_url( remarka_footer_link_url( 'remarka_footer_cta_btn1_url', '/#contatti' ) ); ?>"><?php echo esc_html( remarka_footer_text( 'remarka_footer_cta_btn1_label', 'cta_btn1' ) ); ?></a>
+					<a class="sr-footer-cta__btn sr-footer-cta__btn--outline" href="<?php echo esc_url( remarka_footer_link_url( 'remarka_footer_cta_btn2_url', '/' ) ); ?>"><?php echo esc_html( remarka_footer_text( 'remarka_footer_cta_btn2_label', 'cta_btn2' ) ); ?></a>
 				</div>
 			</div>
 		</div>
@@ -423,11 +431,11 @@ function remarka_render_footer(): void {
 			<div class="sr-footer-main__inner">
 				<div class="sr-footer-col sr-footer-col--brand">
 					<div class="sr-footer-logo"><?php the_custom_logo(); ?><span><?php bloginfo( 'name' ); ?></span></div>
-					<p><?php echo esc_html( remarka_footer_mod( 'remarka_footer_tagline' ) ); ?></p>
+					<p><?php echo esc_html( remarka_footer_text( 'remarka_footer_tagline', 'footer_tagline' ) ); ?></p>
 				</div>
 
 				<div class="sr-footer-col">
-					<p class="sr-footer-col__title"><?php esc_html_e( 'Pagine', 'remarka-studio' ); ?></p>
+					<p class="sr-footer-col__title"><?php echo esc_html( remarka_str( 'footer_pagine' ) ); ?></p>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'footer-pagine',
@@ -440,7 +448,7 @@ function remarka_render_footer(): void {
 				</div>
 
 				<div class="sr-footer-col">
-					<p class="sr-footer-col__title"><?php esc_html_e( 'Studio', 'remarka-studio' ); ?></p>
+					<p class="sr-footer-col__title"><?php echo esc_html( remarka_str( 'footer_studio' ) ); ?></p>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'footer-studio',
@@ -453,7 +461,7 @@ function remarka_render_footer(): void {
 				</div>
 
 				<div class="sr-footer-col">
-					<p class="sr-footer-col__title"><?php esc_html_e( 'Dati societari', 'remarka-studio' ); ?></p>
+					<p class="sr-footer-col__title"><?php echo esc_html( remarka_str( 'footer_dati' ) ); ?></p>
 					<p class="sr-footer-company">
 						<strong><?php echo esc_html( remarka_footer_mod( 'remarka_company_name' ) ); ?></strong><br>
 						<?php echo nl2br( esc_html( remarka_footer_mod( 'remarka_company_address' ) ) ); ?>
@@ -470,8 +478,8 @@ function remarka_render_footer(): void {
 			<div class="sr-footer-bottom__inner">
 				<div class="sr-barra sr-barra--h4" data-sr-target="<?php echo esc_attr( $score ); ?>%" aria-hidden="true"><div class="sr-barra__fill"></div></div>
 				<div class="sr-footer-bottom__row">
-					<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( remarka_footer_mod( 'remarka_company_name' ) ); ?> — <?php esc_html_e( 'Tutti i diritti riservati', 'remarka-studio' ); ?></span>
-					<span class="sr-footer-score"><?php esc_html_e( 'Punteggio PageSpeed medio', 'remarka-studio' ); ?>: <b><?php echo esc_html( $score ); ?></b>/100</span>
+					<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( remarka_footer_mod( 'remarka_company_name' ) ); ?> — <?php echo esc_html( remarka_str( 'footer_diritti' ) ); ?></span>
+					<span class="sr-footer-score"><?php echo esc_html( remarka_str( 'footer_pagespeed' ) ); ?>: <b><?php echo esc_html( $score ); ?></b>/100</span>
 				</div>
 			</div>
 		</div>
@@ -563,18 +571,18 @@ function remarka_form_shortcode(): string {
 		<input type="hidden" name="action" value="remarka_contact">
 		<?php wp_nonce_field( 'remarka_contact', 'remarka_nonce' ); ?>
 		<p class="sr-hp-field" aria-hidden="true"><label>Sito web<input type="text" name="sr_sito" tabindex="-1" autocomplete="off"></label></p>
-		<p><label class="sr-eyebrow" for="sr-nome"><?php esc_html_e( 'Nome e cognome', 'remarka-studio' ); ?></label>
+		<p><label class="sr-eyebrow" for="sr-nome"><?php echo esc_html( remarka_str( 'form_nome' ) ); ?></label>
 		<input class="sr-text-input" id="sr-nome" name="sr_nome" type="text" required maxlength="120"></p>
-		<p><label class="sr-eyebrow" for="sr-contatto"><?php esc_html_e( 'Email o telefono', 'remarka-studio' ); ?></label>
+		<p><label class="sr-eyebrow" for="sr-contatto"><?php echo esc_html( remarka_str( 'form_contatto' ) ); ?></label>
 		<input class="sr-text-input" id="sr-contatto" name="sr_contatto" type="text" required maxlength="160"></p>
-		<p><label class="sr-eyebrow" for="sr-messaggio"><?php esc_html_e( 'Messaggio', 'remarka-studio' ); ?></label>
+		<p><label class="sr-eyebrow" for="sr-messaggio"><?php echo esc_html( remarka_str( 'form_messaggio' ) ); ?></label>
 		<textarea class="sr-text-input" id="sr-messaggio" name="sr_messaggio" rows="4" required maxlength="4000"></textarea></p>
 		<p class="sr-form-error" data-sr-form-error hidden></p>
-		<button type="submit" class="wp-block-button__link wp-element-button" style="width:100%"><?php esc_html_e( 'Invia la richiesta', 'remarka-studio' ); ?></button>
+		<button type="submit" class="wp-block-button__link wp-element-button" style="width:100%"><?php echo esc_html( remarka_str( 'form_invia' ) ); ?></button>
 	</form>
 	<div class="sr-form-success" data-sr-form-success <?php echo $sent ? '' : 'hidden'; ?>>
-		<p class="sr-mono" style="color:var(--sr-verde)"><?php esc_html_e( 'RICHIESTA INVIATA ✓', 'remarka-studio' ); ?></p>
-		<p><?php esc_html_e( 'Grazie. Vi rispondiamo entro un giorno lavorativo con un’analisi o un preventivo chiuso.', 'remarka-studio' ); ?></p>
+		<p class="sr-mono" style="color:var(--sr-verde)"><?php echo esc_html( remarka_str( 'form_inviata' ) ); ?></p>
+		<p><?php echo esc_html( remarka_str( 'form_grazie' ) ); ?></p>
 	</div>
 	<?php
 	return (string) ob_get_clean();
@@ -587,7 +595,7 @@ add_shortcode( 'remarka_form', 'remarka_form_shortcode' );
  */
 function remarka_form_process(): ?string {
 	if ( ! isset( $_POST['remarka_nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['remarka_nonce'] ), 'remarka_contact' ) ) {
-		return __( 'Sessione scaduta: ricaricate la pagina e riprovate.', 'remarka-studio' );
+		return remarka_str( 'form_err_sessione' );
 	}
 	if ( ! empty( $_POST['sr_sito'] ) ) { // honeypot: люди это поле не видят.
 		return null; // Боту отвечаем «успехом», письмо не шлём.
@@ -596,7 +604,7 @@ function remarka_form_process(): ?string {
 	$ip  = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
 	$key = 'remarka_rl_' . md5( $ip );
 	if ( get_transient( $key ) ) {
-		return __( 'Avete appena inviato una richiesta: attendete un minuto prima di riprovare.', 'remarka-studio' );
+		return remarka_str( 'form_err_ratelimit' );
 	}
 
 	$nome      = sanitize_text_field( wp_unslash( $_POST['sr_nome'] ?? '' ) );
@@ -604,7 +612,7 @@ function remarka_form_process(): ?string {
 	$messaggio = sanitize_textarea_field( wp_unslash( $_POST['sr_messaggio'] ?? '' ) );
 
 	if ( '' === $nome || '' === $contatto || '' === $messaggio ) {
-		return __( 'Compilate tutti i campi, per favore.', 'remarka-studio' );
+		return remarka_str( 'form_err_campi' );
 	}
 
 	$body  = "Nome: $nome\n";
@@ -627,7 +635,7 @@ function remarka_form_process(): ?string {
 	);
 
 	if ( ! $ok ) {
-		return __( 'Invio non riuscito per un problema tecnico. Scriveteci su WhatsApp o via email.', 'remarka-studio' );
+		return remarka_str( 'form_err_tecnico' );
 	}
 
 	set_transient( $key, 1, MINUTE_IN_SECONDS );

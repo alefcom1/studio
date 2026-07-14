@@ -55,14 +55,22 @@ function remarka_deploy_read_pattern( string $file ): array {
 	return array( $data['title'], $content );
 }
 
-/** Crea (o aggiorna, se --force e già gestita da noi) una pagina. Ritorna l'ID. */
-function remarka_deploy_upsert_page( string $slug, string $title, string $content, int $parent_id = 0, bool $force = false ): int {
-	$existing = get_page_by_path( $slug, OBJECT, 'page' );
+/**
+ * Crea (o aggiorna, se --force e già gestita da noi) una pagina. Ritorna l'ID.
+ * $path — percorso COMPLETO della pagina (es. 'servizi/e-commerce'): con gli
+ * alberi linguistici gli slug si ripetono tra lingue (en/blog, ru/blog),
+ * quindi il controllo di esistenza deve usare il percorso, non lo slug —
+ * get_page_by_path() con il solo slug non trova le pagine annidate e i
+ * rilanci creerebbero duplicati 'slug-2'.
+ */
+function remarka_deploy_upsert_page( string $path, string $title, string $content, int $parent_id = 0, bool $force = false ): int {
+	$slug     = basename( $path );
+	$existing = get_page_by_path( $path, OBJECT, 'page' );
 
 	if ( $existing ) {
 		$managed = get_post_meta( $existing->ID, '_remarka_generated', true );
 		if ( ! $force || ! $managed ) {
-			WP_CLI::log( "  = saltata (esiste già): /$slug/" );
+			WP_CLI::log( "  = saltata (esiste già): /$path/" );
 			return $existing->ID;
 		}
 		wp_update_post( array(
@@ -71,7 +79,7 @@ function remarka_deploy_upsert_page( string $slug, string $title, string $conten
 			'post_content' => $content,
 			'post_parent'  => $parent_id,
 		) );
-		WP_CLI::log( "  ↻ aggiornata: /$slug/" );
+		WP_CLI::log( "  ↻ aggiornata: /$path/" );
 		return $existing->ID;
 	}
 
@@ -85,12 +93,12 @@ function remarka_deploy_upsert_page( string $slug, string $title, string $conten
 	), true );
 
 	if ( is_wp_error( $id ) ) {
-		WP_CLI::warning( "  ✗ errore creando /$slug/: " . $id->get_error_message() );
+		WP_CLI::warning( "  ✗ errore creando /$path/: " . $id->get_error_message() );
 		return 0;
 	}
 
 	update_post_meta( $id, '_remarka_generated', 'v1' );
-	WP_CLI::log( "  + creata: /$slug/ (ID $id)" );
+	WP_CLI::log( "  + creata: /$path/ (ID $id)" );
 	return $id;
 }
 
@@ -119,6 +127,31 @@ $home_id = remarka_deploy_upsert_page( 'home', 'Home', $home_content, 0, $force 
 update_option( 'show_on_front', 'page' );
 update_option( 'page_on_front', $home_id );
 WP_CLI::log( "  homepage statica impostata su ID $home_id" );
+
+/* ---------- 1b. Home EN e RU: stesse sezioni dai pattern tradotti ----------
+ * Le versioni linguistiche vivono come alberi di pagine annidate sotto
+ * /en/ e /ru/ (vedi inc/multilang.php). La pagina 'en'/'ru' È la home
+ * della lingua; le sezioni tradotte stanno in patterns/lang-{en,ru}. */
+
+$lang_homes = array(
+	'en' => array( 'dir' => 'lang-en', 'title' => 'Studio Remarka — Web development studio in Milan' ),
+	'ru' => array( 'dir' => 'lang-ru', 'title' => 'Studio Remarka — Студия веб-разработки в Милане' ),
+);
+foreach ( $lang_homes as $lang_slug => $cfg ) {
+	$lang_dir     = $patterns_dir . '/' . $cfg['dir'];
+	$lang_content = '';
+	foreach ( $home_sections as $slug ) {
+		$file = "$lang_dir/$slug.php";
+		if ( ! file_exists( $file ) ) {
+			WP_CLI::warning( "  [$lang_slug] sezione mancante: $slug.php" );
+			continue;
+		}
+		list( , $content ) = remarka_deploy_read_pattern( $file );
+		$lang_content      .= $content . "\n";
+	}
+	$lid = remarka_deploy_upsert_page( $lang_slug, $cfg['title'], $lang_content, 0, $force );
+	WP_CLI::log( "  home /$lang_slug/ pronta (ID $lid)" );
+}
 
 /* ---------- 2. Pagine dai pattern in /patterns/pages ---------- */
 
@@ -171,11 +204,87 @@ $page_map = array(
 	'blog-core-web-vitals-2026'                 => array( 'core-web-vitals-2026', 'blog', null ),
 	'blog-quanto-costa-ecommerce-italia'        => array( 'quanto-costa-ecommerce-italia', 'blog', null ),
 	'blog-sito-lento-cause-costi'               => array( 'sito-lento-cause-costi', 'blog', null ),
+
+	// ---- Albero EN (genitore = percorso completo) ----
+	'en-servizi-index'                             => array( 'services', 'en', 'Services' ),
+	'en-casi-studio-index'                         => array( 'case-studies', 'en', 'Case studies' ),
+	'en-strumenti-index'                           => array( 'tools', 'en', 'Tools' ),
+	'en-blog-index'                                => array( 'blog', 'en', 'Blog' ),
+	'en-servizio-siti-aziendali'                   => array( 'business-websites', 'en/services', null ),
+	'en-servizio-e-commerce'                       => array( 'e-commerce', 'en/services', null ),
+	'en-servizio-siti-pwa'                         => array( 'progressive-web-apps', 'en/services', null ),
+	'en-servizio-restyling-migrazione'             => array( 'redesign-migration', 'en/services', null ),
+	'en-servizio-seo-tecnica'                      => array( 'technical-seo', 'en/services', null ),
+	'en-servizio-siti-multilingue'                 => array( 'multilingual-websites', 'en/services', null ),
+	'en-servizio-export-ready'                     => array( 'export-ready', 'en/services', null ),
+	'en-servizio-web-app'                          => array( 'custom-web-apps', 'en/services', null ),
+	'en-caso-arredamenti-colombo'                  => array( 'arredamenti-colombo', 'en/case-studies', null ),
+	'en-caso-cantina-serralta'                     => array( 'cantina-serralta', 'en/case-studies', null ),
+	'en-caso-tecnoidraulica'                       => array( 'tecnoidraulica', 'en/case-studies', null ),
+	'en-caso-studio-legale-fontana'                => array( 'studio-legale-fontana', 'en/case-studies', null ),
+	'en-strumento-test-velocita'                   => array( 'speed-test', 'en/tools', null ),
+	'en-strumento-check-gdpr'                      => array( 'gdpr-check', 'en/tools', null ),
+	'en-strumento-analisi-seo'                     => array( 'seo-audit', 'en/tools', null ),
+	'en-strumento-roi-localizzazione'              => array( 'localization-roi', 'en/tools', null ),
+	'en-blog-sito-quattro-lingue-costi-tempi'      => array( 'website-four-languages-costs', 'en/blog', null ),
+	'en-blog-cookie-banner-checklist-garante-2026' => array( 'cookie-banner-compliance-italy-2026', 'en/blog', null ),
+	'en-blog-migrare-wordpress-senza-perdere-seo'  => array( 'migrate-wordpress-without-losing-seo', 'en/blog', null ),
+	'en-blog-pwa-per-pmi-quando-app-non-serve'     => array( 'pwa-for-smbs', 'en/blog', null ),
+	'en-blog-quanto-costa-sito-aziendale-italia'   => array( 'business-website-cost-italy', 'en/blog', null ),
+	'en-blog-core-web-vitals-2026'                 => array( 'core-web-vitals-2026', 'en/blog', null ),
+	'en-blog-quanto-costa-ecommerce-italia'        => array( 'ecommerce-cost-italy-2026', 'en/blog', null ),
+	'en-blog-sito-lento-cause-costi'               => array( 'slow-website-causes-fixes', 'en/blog', null ),
+	'en-prezzi'                                    => array( 'pricing', 'en', null ),
+	'en-citta-milano'                              => array( 'milan', 'en', null ),
+	'en-chi-siamo'                                 => array( 'about', 'en', null ),
+	'en-privacy'                                   => array( 'privacy', 'en', null ),
+	'en-cookie-policy'                             => array( 'cookie-policy', 'en', null ),
+	'en-cookie-preferenze'                         => array( 'cookie-preferences', 'en', null ),
+
+	// ---- Albero RU (genitore = percorso completo) ----
+	'ru-servizi-index'                             => array( 'uslugi', 'ru', 'Услуги' ),
+	'ru-casi-studio-index'                         => array( 'kejsy', 'ru', 'Кейсы' ),
+	'ru-strumenti-index'                           => array( 'instrumenty', 'ru', 'Инструменты' ),
+	'ru-blog-index'                                => array( 'blog', 'ru', 'Блог' ),
+	'ru-servizio-siti-aziendali'                   => array( 'korporativnye-sajty', 'ru/uslugi', null ),
+	'ru-servizio-e-commerce'                       => array( 'internet-magaziny', 'ru/uslugi', null ),
+	'ru-servizio-siti-pwa'                         => array( 'pwa-sajty', 'ru/uslugi', null ),
+	'ru-servizio-restyling-migrazione'             => array( 'redizajn-i-migracija', 'ru/uslugi', null ),
+	'ru-servizio-seo-tecnica'                      => array( 'tehnicheskoe-seo', 'ru/uslugi', null ),
+	'ru-servizio-siti-multilingue'                 => array( 'mnogojazychnye-sajty', 'ru/uslugi', null ),
+	'ru-servizio-export-ready'                     => array( 'export-ready', 'ru/uslugi', null ),
+	'ru-servizio-web-app'                          => array( 'veb-prilozhenija', 'ru/uslugi', null ),
+	'ru-caso-arredamenti-colombo'                  => array( 'arredamenti-colombo', 'ru/kejsy', null ),
+	'ru-caso-cantina-serralta'                     => array( 'cantina-serralta', 'ru/kejsy', null ),
+	'ru-caso-tecnoidraulica'                       => array( 'tecnoidraulica', 'ru/kejsy', null ),
+	'ru-caso-studio-legale-fontana'                => array( 'studio-legale-fontana', 'ru/kejsy', null ),
+	'ru-strumento-test-velocita'                   => array( 'test-skorosti', 'ru/instrumenty', null ),
+	'ru-strumento-check-gdpr'                      => array( 'proverka-gdpr', 'ru/instrumenty', null ),
+	'ru-strumento-analisi-seo'                     => array( 'seo-audit', 'ru/instrumenty', null ),
+	'ru-strumento-roi-localizzazione'              => array( 'roi-lokalizacii', 'ru/instrumenty', null ),
+	'ru-blog-sito-quattro-lingue-costi-tempi'      => array( 'sajt-na-4-jazykah', 'ru/blog', null ),
+	'ru-blog-cookie-banner-checklist-garante-2026' => array( 'cookie-banner-trebovanija-2026', 'ru/blog', null ),
+	'ru-blog-migrare-wordpress-senza-perdere-seo'  => array( 'migracija-wordpress-bez-poteri-seo', 'ru/blog', null ),
+	'ru-blog-pwa-per-pmi-quando-app-non-serve'     => array( 'pwa-dlja-biznesa', 'ru/blog', null ),
+	'ru-blog-quanto-costa-sito-aziendale-italia'   => array( 'skolko-stoit-sajt-v-italii', 'ru/blog', null ),
+	'ru-blog-core-web-vitals-2026'                 => array( 'core-web-vitals-2026', 'ru/blog', null ),
+	'ru-blog-quanto-costa-ecommerce-italia'        => array( 'skolko-stoit-internet-magazin', 'ru/blog', null ),
+	'ru-blog-sito-lento-cause-costi'               => array( 'medlennyj-sajt-prichiny', 'ru/blog', null ),
+	'ru-prezzi'                                    => array( 'ceny', 'ru', null ),
+	'ru-citta-milano'                              => array( 'milan', 'ru', null ),
+	'ru-chi-siamo'                                 => array( 'o-studii', 'ru', null ),
+	'ru-privacy'                                   => array( 'privacy', 'ru', null ),
+	'ru-cookie-policy'                             => array( 'cookie-policy', 'ru', null ),
+	'ru-cookie-preferenze'                         => array( 'cookie-preferences', 'ru', null ),
 );
 
 // Le pagine "genitore" (parent=null ma referenziate come parent altrove)
 // vanno create per prime: separiamo in due passate.
-$parent_keys = array( 'servizi-index', 'casi-studio-index', 'strumenti-index', 'blog-index' );
+$parent_keys = array(
+	'servizi-index', 'casi-studio-index', 'strumenti-index', 'blog-index',
+	'en-servizi-index', 'en-casi-studio-index', 'en-strumenti-index', 'en-blog-index',
+	'ru-servizi-index', 'ru-casi-studio-index', 'ru-strumenti-index', 'ru-blog-index',
+);
 $ordered     = array_merge(
 	$parent_keys,
 	array_diff( array_keys( $page_map ), $parent_keys )
@@ -189,17 +298,25 @@ foreach ( $ordered as $pattern_slug ) {
 		WP_CLI::warning( "  pattern mancante: $pattern_slug.php" );
 		continue;
 	}
-	list( $page_slug, $parent_key, $title_override ) = $page_map[ $pattern_slug ];
+	list( $page_slug, $parent_path, $title_override ) = $page_map[ $pattern_slug ];
 	list( $pattern_title, $content ) = remarka_deploy_read_pattern( $file );
 
 	$title = $title_override ?: preg_replace( '/^Pagina — (Servizio: |Caso: |Città: |Articolo: |Strumento: )?/u', '', $pattern_title );
-	// $parent_key in $page_map è lo SLUG della pagina genitore (es. 'servizi'),
-	// quindi $created_ids va indicizzato per slug pagina, non per slug pattern —
-	// altrimenti il lookup fallisce sempre e post_parent resta 0.
-	$parent_id = $parent_key ? ( $created_ids[ $parent_key ] ?? 0 ) : 0;
+	// $parent_path è il PERCORSO completo del genitore ('servizi',
+	// 'en/services', ...). Risoluzione: prima le pagine create in questo
+	// stesso run, poi il database (per i genitori 'en'/'ru' creati al §1b).
+	$parent_id = 0;
+	if ( $parent_path ) {
+		$parent_id = $created_ids[ $parent_path ]
+			?? ( ( $p = get_page_by_path( $parent_path, OBJECT, 'page' ) ) ? $p->ID : 0 );
+		if ( ! $parent_id ) {
+			WP_CLI::warning( "  genitore non trovato: $parent_path (per $page_slug)" );
+		}
+	}
 
-	$id = remarka_deploy_upsert_page( $page_slug, $title, $content, $parent_id, $force );
-	$created_ids[ $page_slug ] = $id;
+	$full_path = $parent_path ? "$parent_path/$page_slug" : $page_slug;
+	$id        = remarka_deploy_upsert_page( $full_path, $title, $content, $parent_id, $force );
+	$created_ids[ $full_path ] = $id;
 }
 
 /* ---------- 2b. Pulizia pagine orfane ----------
@@ -354,10 +471,16 @@ function remarka_deploy_sync_footer_menu( string $menu_name, string $location, a
 		}
 	}
 
-	$existing_locations = get_theme_mod( 'nav_menu_locations', array() );
-	$existing_locations[ $location ] = $menu_id;
-	set_theme_mod( 'nav_menu_locations', $existing_locations );
-	WP_CLI::log( "  voci sincronizzate e menu assegnato alla location '$location'" );
+	if ( '' !== $location ) {
+		$existing_locations = get_theme_mod( 'nav_menu_locations', array() );
+		$existing_locations[ $location ] = $menu_id;
+		set_theme_mod( 'nav_menu_locations', $existing_locations );
+		WP_CLI::log( "  voci sincronizzate e menu assegnato alla location '$location'" );
+	} else {
+		// Menu linguistici: nessuna location — vengono sostituiti a runtime
+		// per nome da remarka_swap_menu_by_lang() (inc/multilang.php).
+		WP_CLI::log( '  voci sincronizzate (menu per lingua, senza location)' );
+	}
 }
 
 remarka_deploy_sync_footer_menu(
@@ -387,6 +510,62 @@ remarka_deploy_sync_footer_menu(
 	),
 	$force
 );
+
+/* ---------- 5. Menu per lingua (EN/RU) ----------
+ * Senza location: inc/multilang.php li sostituisce a runtime per NOME —
+ * i nomi qui devono combaciare con remarka_lang_menu_name(). */
+
+WP_CLI::log( "\nMenu EN/RU:" );
+
+remarka_deploy_sync_footer_menu( 'Menu EN — Remarka', '', array(
+	array( 'title' => 'Services', 'slug' => 'en/services' ),
+	array( 'title' => 'Case studies', 'slug' => 'en/case-studies' ),
+	array( 'title' => 'Pricing', 'slug' => 'en/pricing' ),
+	array( 'title' => 'Tools', 'slug' => 'en/tools' ),
+	array( 'title' => 'Blog', 'slug' => 'en/blog' ),
+	array( 'title' => 'Get a quote in 24 hours', 'url' => home_url( '/en/#contatti' ) ),
+), $force );
+
+remarka_deploy_sync_footer_menu( 'Footer EN — Pages', '', array(
+	array( 'title' => 'Services', 'slug' => 'en/services' ),
+	array( 'title' => 'Case studies', 'slug' => 'en/case-studies' ),
+	array( 'title' => 'Pricing', 'slug' => 'en/pricing' ),
+	array( 'title' => 'Free tools', 'slug' => 'en/tools' ),
+	array( 'title' => 'Blog', 'slug' => 'en/blog' ),
+), $force );
+
+remarka_deploy_sync_footer_menu( 'Footer EN — Studio', '', array(
+	array( 'title' => 'Websites in Milan', 'slug' => 'en/milan' ),
+	array( 'title' => 'Contact us', 'url' => home_url( '/en/#contatti' ) ),
+	array( 'title' => 'Google Business Profile', 'url' => 'https://business.google.com/' ),
+	array( 'title' => 'Privacy', 'slug' => 'en/privacy' ),
+	array( 'title' => 'Cookie policy', 'slug' => 'en/cookie-policy' ),
+), $force );
+
+remarka_deploy_sync_footer_menu( 'Menu RU — Remarka', '', array(
+	array( 'title' => 'Услуги', 'slug' => 'ru/uslugi' ),
+	array( 'title' => 'Кейсы', 'slug' => 'ru/kejsy' ),
+	array( 'title' => 'Цены', 'slug' => 'ru/ceny' ),
+	array( 'title' => 'Инструменты', 'slug' => 'ru/instrumenty' ),
+	array( 'title' => 'Блог', 'slug' => 'ru/blog' ),
+	array( 'title' => 'Смета за 24 часа', 'url' => home_url( '/ru/#contatti' ) ),
+), $force );
+
+remarka_deploy_sync_footer_menu( 'Footer RU — Страницы', '', array(
+	array( 'title' => 'Услуги', 'slug' => 'ru/uslugi' ),
+	array( 'title' => 'Кейсы', 'slug' => 'ru/kejsy' ),
+	array( 'title' => 'Цены', 'slug' => 'ru/ceny' ),
+	array( 'title' => 'Бесплатные инструменты', 'slug' => 'ru/instrumenty' ),
+	array( 'title' => 'Блог', 'slug' => 'ru/blog' ),
+), $force );
+
+remarka_deploy_sync_footer_menu( 'Footer RU — Студия', '', array(
+	array( 'title' => 'Сайты в Милане', 'slug' => 'ru/milan' ),
+	array( 'title' => 'Контакты', 'url' => home_url( '/ru/#contatti' ) ),
+	array( 'title' => 'Google Business Profile', 'url' => 'https://business.google.com/' ),
+	array( 'title' => 'Privacy', 'slug' => 'ru/privacy' ),
+	array( 'title' => 'Политика cookie', 'slug' => 'ru/cookie-policy' ),
+), $force );
 
 WP_CLI::log( "\nFatto. Pagine create/verificate: " . count( $created_ids ) . ' + Home.' );
 WP_CLI::log( 'Prossimi passi manuali: logo, numero WhatsApp (Personalizza → Remarka — Contatti), permalink "Nome articolo" (Impostazioni → Permalink, se non già attivo), screenshot reali dei casi studio.' );

@@ -1,0 +1,27 @@
+<?php
+/**
+ * Title: Pagina — Blog (elenco)
+ * Slug: remarka-studio/ru-blog-index
+ * Categories: remarka-pagine
+ * Description: Elenco articoli, riga data + titolo + estratto.
+ * Viewport Width: 1400
+ */
+?>
+<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Blog</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(38px,4.6vw,64px)"}}} -->
+<h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Технические заметки, понятным языком<span class="sr-accent-dot">.</span></h1>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size">Никакого маркетинга под видом статей: только то, чему мы учимся, сдавая быстрые сайты.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
+<a href="/ru/blog/sajt-na-4-jazykah/" class="sr-blog-row" style="color:inherit"><span class="sr-blog-date">05 МАЯ 2026</span><span class="sr-blog-body"><span style="font-family:var(--sr-font-display);font-weight:500;font-size:26px">Сайт на четырёх языках: цены, сроки и ошибки, которых стоит избегать</span><span style="font-size:15.5px;color:var(--sr-grigio)">Когда машинного перевода достаточно, а когда он стоит вам клиентов. С реальными ценами за язык и кейсом экспорта в Германию.</span></span></a><a href="/ru/blog/cookie-banner-trebovanija-2026/" class="sr-blog-row" style="color:inherit"><span class="sr-blog-date">08 АПР 2026</span><span class="sr-blog-body"><span style="font-family:var(--sr-font-display);font-weight:500;font-size:26px">Cookie-баннер по правилам: чек-лист регулятора Garante на 2026 год</span><span style="font-size:15.5px;color:var(--sr-grigio)">«Отклонить» наравне с «Принять», никаких cookie wall, документируемое согласие. Что проверить на вашем сайте — пункт за пунктом.</span></span></a><a href="/ru/blog/migracija-wordpress-bez-poteri-seo/" class="sr-blog-row" style="color:inherit"><span class="sr-blog-date">17 МАР 2026</span><span class="sr-blog-body"><span style="font-family:var(--sr-font-display);font-weight:500;font-size:26px">Переезд с WordPress без потери позиций в Google</span><span style="font-size:15.5px;color:var(--sr-grigio)">Редиректы, структура URL и что происходит в первые шесть недель. Протокол, который мы применяем на каждой миграции.</span></span></a><a href="/ru/blog/pwa-dlja-biznesa/" class="sr-blog-row" style="color:inherit"><span class="sr-blog-date">24 ФЕВ 2026</span><span class="sr-blog-body"><span style="font-family:var(--sr-font-display);font-weight:500;font-size:26px">PWA для малого и среднего бизнеса: когда приложение не нужно</span><span style="font-size:15.5px;color:var(--sr-grigio)">Прогрессивный сайт устанавливается, работает офлайн и стоит впятеро дешевле нативного приложения. Три случая, когда он действительно оправдан.</span></span></a><a href="/ru/blog/skolko-stoit-sajt-v-italii/" class="sr-blog-row" style="color:inherit"><span class="sr-blog-date">03 ФЕВ 2026</span><span class="sr-blog-body"><span style="font-family:var(--sr-font-display);font-weight:500;font-size:26px">Сколько стоит корпоративный сайт в Италии: настоящие цены</span><span style="font-size:15.5px;color:var(--sr-grigio)">От 800 до 50.000 евро: чем на самом деле различаются ценовые сегменты и какие вопросы задать, прежде чем подписывать любую смету.</span></span></a><a href="/ru/blog/core-web-vitals-2026/" class="sr-blog-row" style="color:inherit"><span class="sr-blog-date">12 ЯНВ 2026</span><span class="sr-blog-body"><span style="font-family:var(--sr-font-display);font-weight:500;font-size:26px">Core Web Vitals в 2026 году: что на самом деле измеряет Google</span><span style="font-size:15.5px;color:var(--sr-grigio)">LCP, INP и CLS на примерах магазинов и мастерских, а не стартапов. И почему десктопная оценка почти ничего не значит.</span></span></a><a href="/ru/blog/skolko-stoit-internet-magazin/" class="sr-blog-row" style="color:inherit"><span class="sr-blog-date">13 ИЮЛ 2026</span><span class="sr-blog-body"><span style="font-family:var(--sr-font-display);font-weight:500;font-size:26px">Сколько стоит интернет-магазин в Италии в 2026 году: настоящие цифры</span><span style="font-size:15.5px;color:var(--sr-grigio)">От 6.000 до 25.000 евро и выше: чем на самом деле различаются сегменты, какие регулярные расходы никто не вносит в смету и какие вопросы задать перед подписью.</span></span></a><a href="/ru/blog/medlennyj-sajt-prichiny/" class="sr-blog-row" style="color:inherit"><span class="sr-blog-date">13 ИЮЛ 2026</span><span class="sr-blog-body"><span style="font-family:var(--sr-font-display);font-weight:500;font-size:26px">Медленный сайт: 7 настоящих причин (и сколько стоит их устранить)</span><span style="font-size:15.5px;color:var(--sr-grigio)">Почему сайт в 2026 году грузится 5 секунд, какие работы стоят немного, а дают много, и когда выгоднее пересобрать техническую базу.</span></span></a>
+<!-- /wp:html -->
+</section>
+<!-- /wp:group -->

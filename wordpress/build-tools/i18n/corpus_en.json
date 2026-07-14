@@ -1,0 +1,881 @@
+{
+ "SERVICES": [
+  {
+   "slug": "siti-aziendali",
+   "title": "Business websites",
+   "breadcrumb": "Service / Business websites",
+   "hero_title": "The business website that loads in one second",
+   "hero_sub": "Fifteen pages, two languages, a CMS you update yourselves. Built to turn visits into quote requests.",
+   "hero_stat_value": "1,1 s",
+   "hero_stat_label": "Average load time (LCP) across business websites delivered in 2025.",
+   "per_chi_heading": "For businesses that live on inquiries, not clicks",
+   "per_chi": [
+    "Manufacturing SMBs with technical catalogs and B2B clients who compare suppliers.",
+    "Professional firms and service companies that live on reputation and first contact.",
+    "Companies with customers abroad: the English or German version is translated by native speakers, included."
+   ],
+   "include_heading": "Everything spelled out in the quote",
+   "include": [
+    "Up to 15 pages, structured around your funnel",
+    "Two languages included, translated by native speakers",
+    "CMS: you update copy and photos yourselves",
+    "Full technical SEO and structured data",
+    "GDPR: compliant banner, policies, and consents",
+    "PageSpeed 90+ guaranteed by contract",
+    "Contact form with instant notifications",
+    "12 months of support and monthly measurements"
+   ],
+   "mini_caso": {
+    "cliente": "TecnoIdraulica",
+    "citta": "Bergamo",
+    "prima": 29,
+    "dopo": 94,
+    "link_slug": "tecnoidraulica",
+    "testo": "Business website in Italian and German for an installer with clients in South Tyrol. Three times more inquiries from the contact form in the first quarter.",
+    "caption": "GOOGLE PAGESPEED, MOBILE — DOCUMENTED MEASUREMENTS"
+   },
+   "prezzo_range": "€ 3.900–5.800",
+   "prezzo_lede": "Fixed price locked in the quote, delivery in 5–7 weeks. E-invoicing, payment in three installments.",
+   "prezzo_note": [
+    "Number of pages and product pages beyond the 15 included.",
+    "Additional languages beyond the two included.",
+    "Integrations with your ERP, CRM, or external price lists."
+   ],
+   "faq_heading": "Three common questions",
+   "faq": [
+    [
+     "Can we keep our current copy?",
+     "Yes. We review it free of charge during the analysis phase and tell you what is worth rewriting, and why."
+    ],
+    [
+     "Does the domain stay ours?",
+     "Always. Domain, hosting, and code are registered in your name from day one. No lock-in with the studio."
+    ],
+    [
+     "What happens after the 12 months of support?",
+     "An optional annual plan, with the same scope. Or the site stays with you as is: it is yours."
+    ]
+   ]
+  },
+  {
+   "slug": "e-commerce",
+   "title": "E-commerce",
+   "breadcrumb": "Service / E-commerce",
+   "hero_title": "The online store that doesn’t lose customers at checkout",
+   "hero_sub": "Fast catalog, one-step checkout, built-in e-invoicing: designed for businesses that sell, not just get browsed.",
+   "hero_stat_value": "1,4 s",
+   "hero_stat_label": "Average load time (LCP) across e-commerce sites delivered in 2025.",
+   "per_chi_heading": "For businesses serious about selling, not just displaying",
+   "per_chi": [
+    "Businesses selling online that lose customers right at checkout.",
+    "Brick-and-mortar stores ready to open an e-commerce channel without improvising.",
+    "Anyone who needs automatic e-invoicing, not a plugin to chase after."
+   ],
+   "include_heading": "Everything spelled out in the quote",
+   "include": [
+    "Unlimited product catalog with variants",
+    "One-step checkout",
+    "Card, PayPal, and bank transfer payments",
+    "E-invoicing via SDI (Italian exchange system), built in",
+    "Inventory and shipping management",
+    "Technical SEO for product pages",
+    "PageSpeed 90+ guaranteed by contract",
+    "12 months of support and monthly measurements"
+   ],
+   "mini_caso": {
+    "cliente": "Cantina Serralta",
+    "citta": "Asti",
+    "prima": 41,
+    "dopo": 97,
+    "link_slug": "cantina-serralta",
+    "testo": "Wine catalog translated into three languages with a one-step checkout: direct sales from the site grew 63% in one year.",
+    "caption": "GOOGLE PAGESPEED, MOBILE — DOCUMENTED MEASUREMENTS"
+   },
+   "prezzo_range": "€ 7.500–14.000",
+   "prezzo_lede": "Fixed price locked in the quote, delivery in 8–10 weeks. E-invoicing, payment in three installments.",
+   "prezzo_note": [
+    "Number of products and variants beyond the base catalog.",
+    "Integrations with carriers and external warehouses.",
+    "Additional payment methods beyond card, PayPal, and bank transfer."
+   ],
+   "faq_heading": "Three common questions",
+   "faq": [
+    [
+     "Do you handle e-invoicing too?",
+     "Yes, every order automatically generates an SDI-compliant electronic invoice."
+    ],
+    [
+     "Can I sell abroad as well?",
+     "Yes, the catalog supports multiple languages and multiple currencies on request."
+    ],
+    [
+     "Do the domain and customer data stay ours?",
+     "Always. Domain, order database, and code are registered in your name from day one."
+    ]
+   ]
+  },
+  {
+   "slug": "siti-pwa",
+   "title": "Progressive websites (PWA)",
+   "breadcrumb": "Service / Progressive websites (PWA)",
+   "hero_title": "A website that opens like an app, without going through the app stores",
+   "hero_sub": "Installable, works offline, opens instantly even on the tenth visit — without the costs and timelines of the App Store and Play Store.",
+   "hero_stat_value": "0,9 s",
+   "hero_stat_label": "Average load time (LCP) across PWAs delivered in 2025.",
+   "per_chi_heading": "For businesses with customers who come back, not just pass by",
+   "per_chi": [
+    "Businesses whose customers return often to consult the site.",
+    "Anyone who wants an app without App Store and Play Store costs and review cycles.",
+    "Services that must work well even on a weak connection, on a job site or in a showroom."
+   ],
+   "include_heading": "Everything spelled out in the quote",
+   "include": [
+    "Installs on smartphones like an app",
+    "Works offline for pages already visited",
+    "Optional push notifications",
+    "Instant loading after the first visit",
+    "Service worker configured and tested",
+    "Full technical SEO and structured data",
+    "PageSpeed 90+ guaranteed by contract",
+    "12 months of support and monthly measurements"
+   ],
+   "mini_caso": {
+    "cliente": "Arredamenti Colombo",
+    "citta": "Lissone (MB)",
+    "prima": 34,
+    "dopo": 96,
+    "link_slug": "arredamenti-colombo",
+    "testo": "The catalog opens instantly and stays available offline in the showroom: +41% quote requests in six months.",
+    "caption": "GOOGLE PAGESPEED, MOBILE — AVERAGE OF 3 MEASUREMENTS"
+   },
+   "prezzo_range": "€ 4.900–7.200",
+   "prezzo_lede": "Fixed price locked in the quote, delivery in 5–8 weeks. E-invoicing, payment in three installments.",
+   "prezzo_note": [
+    "Offline features requested beyond the base pages.",
+    "Push notifications and additional native integrations.",
+    "Number of pages and sections beyond those included."
+   ],
+   "faq_heading": "Three common questions",
+   "faq": [
+    [
+     "Does it need to be published on the app stores?",
+     "No, it installs straight from the browser: no Apple or Google review required."
+    ],
+    [
+     "Does it work on every smartphone?",
+     "Yes, it is compatible with iOS and Android through any modern browser."
+    ],
+    [
+     "Can I move from an existing website to a PWA?",
+     "Yes, it is a technical rebuild that we keep transparent to search engines."
+    ]
+   ]
+  },
+  {
+   "slug": "restyling-migrazione",
+   "title": "Rebuild and migration",
+   "breadcrumb": "Service / Rebuild and migration",
+   "hero_title": "Your website, rebuilt: same content, three times the speed",
+   "hero_sub": "No rankings lost, no content to rewrite: only the technical foundation changes, and it changes for the better.",
+   "hero_stat_value": "1,2 s",
+   "hero_stat_label": "Average load time (LCP) across rebuilds delivered in 2025.",
+   "per_chi_heading": "For businesses with the right content and the wrong technology",
+   "per_chi": [
+    "Anyone with a slow site who doesn’t want to lose hard-won SEO rankings.",
+    "Businesses with solid content on a technical foundation built more than five years ago.",
+    "Anyone quoted a full redesign that costs far more than what is actually needed."
+   ],
+   "include_heading": "Everything spelled out in the quote",
+   "include": [
+    "Technical audit of the current site",
+    "Migration of existing content",
+    "301 redirects to preserve SEO rankings",
+    "New high-performance technical foundation",
+    "Image and font optimization",
+    "Before/after comparison test on PageSpeed",
+    "PageSpeed 90+ guaranteed by contract",
+    "12 months of support and monthly measurements"
+   ],
+   "mini_caso": {
+    "cliente": "Arredamenti Colombo",
+    "citta": "Lissone (MB)",
+    "prima": 34,
+    "dopo": 96,
+    "link_slug": "arredamenti-colombo",
+    "testo": "Same content, same navigation structure customers were used to: only the technical foundation changed, with 301 redirects on every existing URL.",
+    "caption": "GOOGLE PAGESPEED, MOBILE — AVERAGE OF 3 MEASUREMENTS"
+   },
+   "prezzo_range": "€ 2.900–4.800",
+   "prezzo_lede": "Fixed price locked in the quote, delivery in 2–4 weeks. E-invoicing, payment in three installments.",
+   "prezzo_note": [
+    "Number of pages to migrate beyond the first 20.",
+    "Complexity of the existing integrations to preserve.",
+    "Graphic redesign needed on top of the technical foundation."
+   ],
+   "faq_heading": "Three common questions",
+   "faq": [
+    [
+     "Will I lose my Google rankings?",
+     "No, we set up correct 301 redirects for every existing URL before going live."
+    ],
+    [
+     "Do I have to rewrite my content?",
+     "No, the technical rebuild keeps your existing content; we update it only on request."
+    ],
+    [
+     "How long does the migration take?",
+     "On average 2–4 weeks, with a staging environment you can see from the first week."
+    ]
+   ]
+  },
+  {
+   "slug": "seo-tecnica",
+   "title": "Technical SEO",
+   "breadcrumb": "Service / Technical SEO",
+   "hero_title": "Structure and data in order, before a word of content is written",
+   "hero_sub": "Core Web Vitals, structured data, and correct sitemaps: the technical side of SEO, the part copywriting alone can’t fix.",
+   "hero_stat_value": "90+",
+   "hero_stat_label": "Core Web Vitals score guaranteed by contract.",
+   "per_chi_heading": "For sites with good content and poor visibility",
+   "per_chi": [
+    "Sites with good content but poor visibility on Google.",
+    "Anyone who has already invested in copywriting without seeing results in the rankings.",
+    "Businesses competing in crowded local markets, where every position counts."
+   ],
+   "include_heading": "Everything spelled out in the quote",
+   "include": [
+    "Complete technical SEO audit",
+    "Structured data (schema.org) for every page type",
+    "Core Web Vitals optimization",
+    "Optimized XML sitemap and robots file",
+    "URL structure and content hierarchy",
+    "Meta title and description optimization",
+    "Monthly ranking report",
+    "PageSpeed 90+ guaranteed by contract"
+   ],
+   "mini_caso": {
+    "cliente": "Studio Legale Fontana",
+    "citta": "Milan",
+    "prima": 38,
+    "dopo": 95,
+    "link_slug": "studio-legale-fontana",
+    "testo": "Brochure site with an industry blog, fixed on the technical side: from page 3 to page 1 on Google for twelve industry keywords in eight weeks.",
+    "caption": "GOOGLE PAGESPEED, MOBILE — DOCUMENTED MEASUREMENTS"
+   },
+   "prezzo_range": "€ 1.800–3.500",
+   "prezzo_lede": "Fixed price locked in the quote, delivery in 3–5 weeks. E-invoicing, payment in three installments.",
+   "prezzo_note": [
+    "Number of pages to optimize beyond the first 20.",
+    "Multilingual content to be handled.",
+    "Technical legacy issues to fix before starting."
+   ],
+   "faq_heading": "Three common questions",
+   "faq": [
+    [
+     "How soon do results show?",
+     "Technical improvements are immediate; Google rankings take 6–10 weeks on average."
+    ],
+    [
+     "Do you write content too?",
+     "This is a technical service; for copywriting we work with partner copywriters on request."
+    ],
+    [
+     "Do you do local SEO?",
+     "Yes, we include Google Business Profile optimization where relevant."
+    ]
+   ]
+  },
+  {
+   "slug": "siti-multilingue",
+   "title": "Multilingual websites",
+   "breadcrumb": "Service / Multilingual websites",
+   "hero_title": "Four languages translated by native speakers, not by a plugin",
+   "hero_sub": "The Remarka group’s trade since 2001: professional translation, not machine translation, with multilingual SEO done right from day one.",
+   "hero_stat_value": "4",
+   "hero_stat_label": "Native languages available: Italian, English, German, French.",
+   "per_chi_heading": "For businesses that sell across borders, not just in Italian",
+   "per_chi": [
+    "Companies that export or serve foreign customers.",
+    "Tourism businesses with international visitors.",
+    "Anyone who has relied on unprofessional machine translation so far — and whose customers noticed."
+   ],
+   "include_heading": "Everything spelled out in the quote",
+   "include": [
+    "Professional translation by native speakers (not a plugin)",
+    "Up to 4 languages: Italian, English, German, French",
+    "Persistent language selector",
+    "Multilingual SEO with correct hreflang",
+    "Content localized, not just translated",
+    "Linguistic review by the Remarka group",
+    "PageSpeed 90+ guaranteed by contract",
+    "12 months of support and monthly measurements"
+   ],
+   "mini_caso": {
+    "cliente": "Cantina Serralta",
+    "citta": "Asti",
+    "prima": 41,
+    "dopo": 97,
+    "link_slug": "cantina-serralta",
+    "testo": "With the catalog translated into three languages by the Remarka group’s native speakers, direct sales from the site grew 63% in one year.",
+    "caption": "GOOGLE PAGESPEED, MOBILE — DOCUMENTED MEASUREMENTS"
+   },
+   "prezzo_range": "€ 3.200–5.500",
+   "prezzo_lede": "Fixed price locked in the quote, delivery in 4–6 weeks. E-invoicing, payment in three installments.",
+   "prezzo_note": [
+    "Number of additional languages beyond the two included.",
+    "Volume of content to translate beyond the base pages.",
+    "Periodic review needed after delivery."
+   ],
+   "faq_heading": "Three common questions",
+   "faq": [
+    [
+     "Are the translations machine-generated?",
+     "No, they are done by native-speaker translators from the Remarka group, not by automatic plugins."
+    ],
+    [
+     "Can I add a language later?",
+     "Yes, the multilingual structure is built to add new languages without rebuilding the site."
+    ],
+    [
+     "Does SEO work in every language?",
+     "Yes, each language has dedicated URLs and hreflang tags so Google indexes it correctly."
+    ]
+   ]
+  }
+ ],
+ "CASES": [
+  {
+   "slug": "arredamenti-colombo",
+   "cliente": "Arredamenti Colombo",
+   "sito": "arredamenticolombo.it",
+   "titolo": "From 34 to 96 in six weeks, without stopping the showroom",
+   "settore": "Custom furniture",
+   "citta": "Lissone (MB)",
+   "intervento": "Rebuild + PWA + SEO",
+   "anno": "2025",
+   "key_metric": "+41%",
+   "prima": 34,
+   "dopo": 96,
+   "caption": "GOOGLE PAGESPEED, MOBILE — AVERAGE OF 3 MEASUREMENTS",
+   "problema_testo": "The 2019 site loaded full photo galleries on every page: 4,1 seconds of average wait on mobile, where 78% of visits came from. Quote requests came in almost exclusively by phone, and local campaigns brought visits that left before seeing the first sofa.",
+   "problema_stats": [
+    [
+     "4,1 s",
+     "average load time on mobile"
+    ],
+    [
+     "68%",
+     "bounce rate from local campaigns"
+    ],
+    [
+     "1,2%",
+     "of visits turning into inquiries"
+    ]
+   ],
+   "soluzione_testo": "Six weeks, showroom online the whole time: the new site grew on a staging environment and went to production overnight, redirects already in place.",
+   "soluzione_interventi": [
+    "PWA architecture: the catalog opens instantly and stays available even offline, in the showroom.",
+    "Photos recompressed to AVIF with progressive loading: −82% file weight with no visible loss of quality.",
+    "One page for every type of work, with structured data: “arredamenti su misura Lissone” from page 3 to page 1.",
+    "Two-step quote request, with instant notification to the showroom via WhatsApp Business."
+   ],
+   "risultati_testo": "Six weeks after going live, the mobile PageSpeed score had climbed from 34 to 96, with load time down to 1,2 seconds.",
+   "risultati_stats": [
+    [
+     "1,2 s",
+     "mobile load time (down from 4,1 s)"
+    ],
+    [
+     "+41%",
+     "quote requests in six months"
+    ],
+    [
+     "Page 1",
+     "for “arredamenti su misura Lissone”"
+    ]
+   ],
+   "quote": "Before, the site was a slow business card. Now it’s the fastest salesperson we have.",
+   "attribuzione": "Paolo Colombo — owner, Arredamenti Colombo S.r.l."
+  },
+  {
+   "slug": "cantina-serralta",
+   "cliente": "Cantina Serralta",
+   "sito": "cantinaserralta.it",
+   "titolo": "From 41 to 97, with direct sales up 63% in one year",
+   "settore": "Wine",
+   "citta": "Asti",
+   "intervento": "E-commerce in 3 languages",
+   "anno": "2025",
+   "key_metric": "+63%",
+   "prima": 41,
+   "dopo": 97,
+   "caption": "GOOGLE PAGESPEED, MOBILE — DOCUMENTED MEASUREMENTS",
+   "problema_testo": "The old store took over 6 seconds to load product pages, with a four-step checkout and no foreign-language version for the international customers who emailed before every order. Cart abandonment hovered near 70%.",
+   "problema_stats": [
+    [
+     "6,1 s",
+     "average product page load time"
+    ],
+    [
+     "4",
+     "steps to complete an order"
+    ],
+    [
+     "0",
+     "languages besides Italian"
+    ]
+   ],
+   "soluzione_testo": "Catalog rebuilt on a high-performance technical foundation, checkout cut to a single step, professional English and German translation by the Remarka group’s native speakers.",
+   "soluzione_interventi": [
+    "Wine catalog with variants (format, vintage) and deferred image loading",
+    "One-step checkout with card, PayPal, and bank transfer payments",
+    "E-invoicing via SDI (Italian exchange system) generated automatically for every order",
+    "Professional English and German translation, not an automatic plugin"
+   ],
+   "risultati_testo": "In one year, with the site translated and the checkout simplified, direct sales from the site grew 63% — no intermediaries.",
+   "risultati_stats": [
+    [
+     "41 → 97",
+     "mobile PageSpeed score"
+    ],
+    [
+     "+63%",
+     "direct sales from the site in one year"
+    ],
+    [
+     "3",
+     "languages available, translated by native speakers"
+    ]
+   ],
+   "quote": "The old site was losing us international orders already in the cart. Now customers who write in German find everything in German — and they order.",
+   "attribuzione": "Owner, Cantina Serralta"
+  },
+  {
+   "slug": "tecnoidraulica",
+   "cliente": "TecnoIdraulica",
+   "sito": "tecnoidraulica.it",
+   "titolo": "Three times more contact form inquiries in one quarter",
+   "settore": "Plumbing systems",
+   "citta": "Bergamo",
+   "intervento": "Business website IT/DE",
+   "anno": "2025",
+   "key_metric": "3×",
+   "prima": 29,
+   "dopo": 94,
+   "caption": "GOOGLE PAGESPEED, MOBILE — DOCUMENTED MEASUREMENTS",
+   "problema_testo": "TecnoIdraulica’s previous site was a single static page in Italian, with no trackable contact form and no version at all for the German-speaking customers of South Tyrol, who already accounted for a quarter of revenue.",
+   "problema_stats": [
+    [
+     "1",
+     "page in total, no page per type of job"
+    ],
+    [
+     "0",
+     "languages besides Italian"
+    ],
+    [
+     "5,4 s",
+     "average load time on mobile"
+    ]
+   ],
+   "soluzione_testo": "A business website with a page for every type of job, translated into German by the Remarka group’s native speakers, with a contact form that notifies in real time via WhatsApp Business.",
+   "soluzione_interventi": [
+    "A page-based structure for every type of system and job",
+    "German version translated by a native speaker, not machine-generated",
+    "Contact form with instant notifications via WhatsApp Business",
+    "Local technical SEO for searches in South Tyrol"
+   ],
+   "risultati_testo": "In the first quarter after launch, contact form inquiries tripled — much of it from the German version.",
+   "risultati_stats": [
+    [
+     "29 → 94",
+     "mobile PageSpeed score"
+    ],
+    [
+     "3×",
+     "contact form inquiries in the quarter"
+    ],
+    [
+     "2",
+     "languages: Italian and German"
+    ]
+   ],
+   "quote": "Customers in Bressanone and Merano finally find everything in German. Inquiries tripled without our changing a single fitting in how we work.",
+   "attribuzione": "Owner, TecnoIdraulica"
+  },
+  {
+   "slug": "studio-legale-fontana",
+   "cliente": "Studio Legale Fontana",
+   "sito": "studiolegalefontana.it",
+   "titolo": "From page 3 to page 1 on Google, in eight weeks",
+   "settore": "Law firm",
+   "citta": "Milan",
+   "intervento": "Brochure site + blog",
+   "anno": "2025",
+   "key_metric": "Page 1",
+   "prima": 38,
+   "dopo": 95,
+   "caption": "GOOGLE PAGESPEED, MOBILE — DOCUMENTED MEASUREMENTS",
+   "problema_testo": "Studio Legale Fontana’s industry blog was well written, but the site had no structured data and no updated sitemap. The result: page three on Google for the twelve keywords that brought in the most inquiries.",
+   "problema_stats": [
+    [
+     "3rd page",
+     "average ranking on Google"
+    ],
+    [
+     "0",
+     "structured data in place"
+    ],
+    [
+     "2,6 s",
+     "mobile load time"
+    ]
+   ],
+   "soluzione_testo": "A targeted technical intervention on SEO and Core Web Vitals — without touching a word of the existing content — plus Google Business Profile optimization.",
+   "soluzione_interventi": [
+    "Schema.org structured data for the firm and every blog article",
+    "Core Web Vitals optimization up to PageSpeed 95",
+    "XML sitemap and revised URL structure",
+    "Google Business Profile optimization"
+   ],
+   "risultati_testo": "In eight weeks the firm went from the third to the first page of Google for twelve industry keywords, without rewriting a single article.",
+   "risultati_stats": [
+    [
+     "38 → 95",
+     "mobile PageSpeed score"
+    ],
+    [
+     "Page 1",
+     "on Google for 12 industry keywords"
+    ],
+    [
+     "12",
+     "keywords brought to page one"
+    ]
+   ],
+   "quote": "We didn’t change a word of the blog. Just the technical side, and in two months we were on page one.",
+   "attribuzione": "Managing partner, Studio Legale Fontana"
+  }
+ ],
+ "TOOLS": [
+  {
+   "slug": "test-velocita",
+   "idx": "/01",
+   "titolo": "Speed test",
+   "hero_titolo": "Speed test for your website",
+   "hero_sub": "Your Google PageSpeed score and the three metrics behind it, explained in plain English. No sign-up required.",
+   "descrizione": "Your site’s real PageSpeed score, explained in plain English.",
+   "has_demo": true
+  },
+  {
+   "slug": "check-gdpr",
+   "idx": "/02",
+   "titolo": "GDPR and cookie check",
+   "hero_titolo": "Is your website GDPR-compliant?",
+   "hero_sub": "We check your cookie banner, privacy policies, and consents: what’s missing to comply with the Italian Data Protection Authority (Garante).",
+   "descrizione": "Banner, policies, and consents: what’s missing to be compliant.",
+   "has_demo": false
+  },
+  {
+   "slug": "analisi-seo",
+   "idx": "/03",
+   "titolo": "On-page SEO analysis",
+   "hero_titolo": "SEO analysis of your page.",
+   "hero_sub": "We check titles, structure, and missing data on the page that matters most to your business.",
+   "descrizione": "Titles, structure, and missing data on the page that matters most.",
+   "has_demo": false
+  },
+  {
+   "slug": "roi-localizzazione",
+   "idx": "/04",
+   "titolo": "Localization ROI",
+   "hero_titolo": "What translating your website is worth.",
+   "hero_sub": "We estimate what translating your site into English or German could return for your business.",
+   "descrizione": "What translating your site into English or German returns.",
+   "has_demo": false
+  }
+ ],
+ "CITY_MILANO": {
+  "slug": "milano",
+  "nome": "Milan",
+  "eyebrow": "MILAN AND PROVINCE",
+  "progetti": 14,
+  "dal": "2023",
+  "sub": "Progressive websites for SMBs in Milan and its province: PageSpeed 90+ guaranteed by contract, fixed delivery date, fixed price. The first meeting — at your office or ours — is free.",
+  "has_office": true,
+  "indirizzo": "Via Andrea Solari 43, 20144 Milano (MI)",
+  "metro": "M2 S. Agostino — a 4-minute walk",
+  "orari": "Mon–Fri 9:00–18:00",
+  "telefono": "+39 02 8736 5412",
+  "case_slug": "studio-legale-fontana",
+  "case_url_label": "studiolegalefontana.it",
+  "case_eyebrow": "A case from Milan",
+  "case_title": "Studio Legale Fontana, Milan",
+  "recensioni": [
+   [
+    "Clear quote, delivered on the day promised. The site loads instantly even on the job site, where the signal is what it is.",
+    "Marco T. — construction company, Sesto S. Giovanni"
+   ],
+   [
+    "They showed us the numbers on our old site before talking money. No one had ever done that.",
+    "Elena R. — ceramics showroom, Milan"
+   ],
+   [
+    "Impeccable German version: our Munich clients now order from the site without emailing us for clarification.",
+    "Giulia B. — precision machining shop, Cinisello"
+   ]
+  ],
+  "faq": [
+   [
+    "How much does a website cost in Milan?",
+    "Milan agencies charge an average of 2.500–8.000 € for a business website. Our prices are public: brochure sites from € 1.900, business websites from € 3.900, e-commerce from € 7.500 — fixed in the quote, with PageSpeed 90+ and the delivery date written into the contract."
+   ],
+   [
+    "Do you only work in the city of Milan?",
+    "No: Milan and the whole province, plus Monza and Brianza. The first meeting is free, at your office or at our studio in the Solari district."
+   ],
+   [
+    "Do we need to meet in person?",
+    "It’s not required: analysis, quote, and progress reviews all run through video calls and an online staging environment. But if you’re in Milan, the coffee is on us."
+   ]
+  ]
+ },
+ "EXPORT_READY": {
+  "slug": "export-ready",
+  "eyebrow": "Service / Export Ready",
+  "hero_title": "Your website works in German too. Measured, guaranteed, signed",
+  "hero_sub": "Your site and its international version under a single contract: native-speaker localization, international SEO, and KPIs for every market. In the language business since 2001.",
+  "hero_stat_value": "4",
+  "hero_stat_label": "Languages with in-house native translators: English, German, French, Russian.",
+  "problema_heading": "The gap where exports lose money",
+  "problema_testo": "Exporters today choose between a web agency (which hands translations off to third parties or a plugin) and a translation agency (which builds neither websites nor international SEO). Responsibility always splits down the middle — exactly where your foreign customer decides whether to buy. Remarka is the only setup where engineering and professional localization live inside the same company, under the same contract.",
+  "garanzie_heading": "Export guarantees, in black and white",
+  "garanzie": [
+   "Localization by native speakers only: translators’ names and credentials in the contract",
+   "A glossary of your industry’s terminology: it’s a deliverable, and it stays with you",
+   "Signed international SEO checklist: hreflang, metadata, and URLs for every market, attached to the acceptance report",
+   "Monthly KPIs for every market, for 12 months: traffic, rankings, inquiries"
+  ],
+  "formati": [
+   [
+    "One Market",
+    "from € 12.000",
+    "One market, one language: target-market analysis by a native speaker, multilingual architecture, full localization, international SEO, 12 months of KPIs."
+   ],
+   [
+    "Multi-Market",
+    "€ 18.000–35.000",
+    "Several markets in a planned sequence: same technical foundation, shared glossary, market priorities set by the data, monthly comparative report."
+   ]
+  ],
+  "processo": [
+   [
+    "01",
+    "Target market analysis",
+    "A native speaker studies how your customers search in their own country: words, competitors, prices."
+   ],
+   [
+    "02",
+    "Multilingual architecture",
+    "URLs, hreflang, x-default, per-market metadata: the technical foundation Google requires."
+   ],
+   [
+    "03",
+    "Localization, not translation",
+    "Offer, CTAs, and forms adapted to the market, with a glossary approved with you."
+   ],
+   [
+    "04",
+    "Launch and measurement",
+    "Three-level QA (visual, functional, SEO), then 12 months of monthly KPIs per market."
+   ]
+  ],
+  "faq": [
+   [
+    "Why isn’t a translation plugin enough?",
+    "A plugin translates words, not selling points. A German customer spots machine-generated copy by the second line — and trust leaves with them. Our native speakers are in the contract, with name and credentials."
+   ],
+   [
+    "Do you really have translators in-house?",
+    "Yes: Studio Remarka is part of the Remarka group, in the language business since 2001, with in-house native translators for English, German, French, and Russian."
+   ],
+   [
+    "How do you measure results per market?",
+    "Each market gets its own monthly report: rankings on local keywords, organic traffic, form inquiries. For 12 months, included in the price."
+   ]
+  ]
+ },
+ "WEB_APP": {
+  "slug": "web-app",
+  "eyebrow": "Service / Custom web apps",
+  "hero_title": "When a website isn’t enough: web apps, client areas, configurators",
+  "hero_sub": "B2B portals, client dashboards, product configurators, CRM and ERP integrations. Built by the same team that develops the Remarka group’s own digital products.",
+  "hero_stat_value": "3",
+  "hero_stat_label": "Internal digital products in production: AI platform, TMS, document service.",
+  "per_chi_heading": "For businesses with a process, not just a storefront",
+  "per_chi": [
+   "Companies managing orders, price lists, or case files by email that want a client area.",
+   "Manufacturers with configurable products: a configurator keeps selling while the technical office sleeps.",
+   "SMBs that need to connect website, CRM, and ERP without re-entering data by hand."
+  ],
+  "formati": [
+   [
+    "MVP Sprint",
+    "from € 15.000",
+    "Fixed scope, fixed price, fixed date: the first working version of your product in 6–10 weeks, ready for real users."
+   ],
+   [
+    "Product Build",
+    "from € 25.000",
+    "Iterative development with a shared backlog and regular releases: for products that grow with the business."
+   ]
+  ],
+  "prove_heading": "The proof: our own internal products",
+  "prove_testo": "Not just for clients: the Remarka group builds and runs its own digital products in production — an AI translation platform, a TMS for language projects, and a standard-documents service. We publish them as case studies with real technical metrics, under the “Product Lab” label.",
+  "faq": [
+   [
+    "How much does a web app cost?",
+    "The MVP Sprint format starts at € 15.000, with scope, price, and date fixed in the contract. Iterative projects start at € 25.000. The quote stays fixed: what you sign is what you pay."
+   ],
+   [
+    "Web app or native app?",
+    "For most SMBs, a web app (or PWA) costs a fraction of a native app, skips the app stores, and updates in a single release. A native app only makes sense for specific hardware or advanced notifications."
+   ],
+   [
+    "Who maintains the product after launch?",
+    "Twelve months of support included, same as our websites. After that, an optional plan or a full handover: code and documentation are yours from day one."
+   ]
+  ]
+ },
+ "BLOG_POSTS": [
+  {
+   "slug": "sito-quattro-lingue-costi-tempi",
+   "data": "05 MAY 2026",
+   "titolo": "A website in four languages: costs, timelines, and the mistakes to avoid",
+   "estratto": "When machine translation is enough, and when it costs you customers. With real per-language prices and an export case from Germany.",
+   "corpo": "Machine translation is fine for a menu or opening hours. It is not fine for a technical product page or a sales page, where one slip in register costs you a customer before they even write. In this article we explain when machine translation makes sense, when you need a native speaker, and what really changes in per-language costs and timelines, with a real case of exporting to Germany."
+  },
+  {
+   "slug": "cookie-banner-checklist-garante-2026",
+   "data": "08 APR 2026",
+   "titolo": "Compliant cookie banners: the Garante’s 2026 checklist",
+   "estratto": "“Reject” as prominent as “Accept,” no cookie walls, provable consent. What to check on your website, point by point.",
+   "corpo": "The Italian Data Protection Authority (Garante) requires the “Reject” button in a cookie banner to carry the same visual weight as “Accept,” and consent to be provable over time. Simple rules — yet ignored by most of the Italian websites we analyze. Here is the point-by-point checklist we use to audit a site, and how we build our own banners to be compliant from day one."
+  },
+  {
+   "slug": "migrare-wordpress-senza-perdere-seo",
+   "data": "17 MAR 2026",
+   "titolo": "Migrating off WordPress without losing your Google rankings",
+   "estratto": "Redirects, URL structure, and what happens in the first six weeks. The protocol we use on every migration.",
+   "corpo": "Every technical migration risks throwing away years of organic rankings. In this article we walk through the audit, URL-mapping, and 301-redirect protocol we apply before every WordPress migration, what we monitor in the first six weeks after the switch, and a real case where rankings held steady."
+  },
+  {
+   "slug": "pwa-per-pmi-quando-app-non-serve",
+   "data": "24 FEB 2026",
+   "titolo": "PWAs for SMBs: when you don’t need an app",
+   "estratto": "A progressive website installs, works offline, and costs a fifth of a native app. The three cases where it truly pays off.",
+   "corpo": "Building a native app costs on average 15.000–30.000 euros and requires separate maintenance for iOS and Android. A progressive website (PWA) delivers installability, notifications, and offline use at a fraction of the cost, with no app store review. In this article, the three concrete cases where a PWA truly pays off for an Italian SMB — and the two where a native app is still the right call."
+  },
+  {
+   "slug": "quanto-costa-sito-aziendale-italia",
+   "data": "03 FEB 2026",
+   "titolo": "What a business website costs in Italy: the real prices",
+   "estratto": "From 800 to 50.000 euros: what actually changes between price tiers, and the questions to ask before signing any quote.",
+   "corpo": "The Italian website market is fragmented and far from transparent: prices run from 800 euros for DIY site builders to 50.000 euros at large agencies. In this article we map, honestly, what you get at every price tier — including ours — and the questions to ask before signing any quote."
+  },
+  {
+   "slug": "core-web-vitals-2026",
+   "data": "12 JAN 2026",
+   "titolo": "Core Web Vitals in 2026: what Google actually measures",
+   "estratto": "LCP, INP, and CLS explained with examples from stores and workshops, not startups. And why the desktop score barely matters.",
+   "corpo": "LCP, INP, and CLS are the three metrics Google uses to judge a site’s user experience — and to decide who shows up first in mobile search results. In this article we explain them without technical jargon, with real examples from stores and workshops — not startups — and why the desktop score many agencies still focus on barely matters anymore."
+  },
+  {
+   "slug": "quanto-costa-ecommerce-italia",
+   "data": "13 JUL 2026",
+   "titolo": "What an e-commerce site costs in Italy in 2026: the real numbers",
+   "estratto": "From 6.000 to 25.000 euros and up: what actually changes between tiers, the recurring costs no one puts in the quote, and the questions to ask before signing.",
+   "corpo": "“How much does an e-commerce site cost?” is how almost every first phone call with us begins. The honest answer is a wide range — 6.000 to 25.000 euros and up on the Italian market — because two online stores with the same number of products can hide completely different levels of complexity. In this article we lay out the real 2026 market figures, the costs that quotes keep quiet about, and the three factors that actually move the price.",
+   "cta": [
+    "See our e-commerce price list — fixed prices",
+    "/prezzi/"
+   ],
+   "sezioni": [
+    {
+     "titolo": "The Italian market’s price tiers",
+     "paragrafi": [
+      "Public price lists from Italian agencies in 2026 describe a market in three tiers. Under 3.000 euros you get stores assembled on templates with minimal configuration: they work until you need to customize the checkout or connect your ERP. The middle tier — 6.000–15.000 euros — covers a professional, custom-built e-commerce site: a structured catalog, multiple payment methods, technical SEO on product pages. Above 15.000 you move into complex catalogs, ERP and logistics integrations, multiple languages and currencies.",
+      "Our price list sits in the middle tier — € 7.500–14.000, fixed in the quote — with one contractual difference: PageSpeed 90+ guaranteed in writing and a delivery date backed by a penalty clause. Those are the two items you will almost never find in competing offers in black and white."
+     ]
+    },
+    {
+     "titolo": "The costs quotes don’t mention",
+     "paragrafi": [
+      "The build price is half the story. A live e-commerce site costs money every year: hosting sized for traffic peaks, security updates, payment fees (typically 1,5–3% per transaction), e-invoicing, and catalog maintenance. On the market, professional maintenance runs between 500 and 2.000 euros a year: always ask what is included, and for how long.",
+      "In our case, the first 12 months of support, updates, and monthly measurements are included in the build price. After that, the plan is optional — or the store stays with you as is: code and data are yours from day one."
+     ]
+    },
+    {
+     "titolo": "The three factors that move the price",
+     "lista": [
+      "Catalog: not how many products you have, but how many variants, price lists, and pricing rules (B2B vs B2C) the store has to handle.",
+      "Integrations: ERP, carriers, external warehouses. Every connected system is development and testing work, not a box to check.",
+      "Languages and markets: selling in Germany isn’t translating product pages — it’s VAT, shipping, returns, and copy a native speaker has to adapt to the market."
+     ],
+     "paragrafi": [
+      "A concrete case from our delivery log: for Cantina Serralta (wine, Asti), a catalog translated into three languages with a one-step checkout brought +63% direct sales in one year — and the project paid for itself before the second harvest."
+     ]
+    },
+    {
+     "titolo": "The questions to ask before signing",
+     "lista": [
+      "Is the price fixed or “indicative”? What happens if extra work comes up?",
+      "Is the delivery date in the contract? With what penalty?",
+      "Who owns the domain, code, and customer data after delivery?",
+      "Is e-invoicing via SDI included, or is it a separate module?",
+      "How fast does the site load on mobile — and who guarantees it, in writing?"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "sito-lento-cause-costi",
+   "data": "13 JUL 2026",
+   "titolo": "Slow website: the 7 real causes (and what fixing them costs)",
+   "estratto": "Why a site still takes 5 seconds to load in 2026, which fixes cost little and return a lot, and when rebuilding the technical foundation is the better call.",
+   "corpo": "Four seconds of load time on mobile sounds like a technical detail. It isn’t: it’s the reason your campaigns bring visits that leave before reading the first line. After dozens of audits on Italian SMB websites, the causes of slowness are almost always the same seven — and not all of them are expensive to fix. Here they are, in order of frequency, with the order of magnitude of the fix.",
+   "cta": [
+    "Measure your site now — free test",
+    "/strumenti/test-velocita/"
+   ],
+   "sezioni": [
+    {
+     "titolo": "The seven causes, most frequent first",
+     "lista": [
+      "Unoptimized images: 3–8 MB photos uploaded straight from the phone. The no. 1 cause, and the cheapest to fix.",
+      "Inadequate hosting: overcrowded shared servers that take 1–2 seconds to respond before the page even starts loading.",
+      "Bloated theme or template: page builders loading 2 MB of code to display three columns of text.",
+      "Plugins piled up over the years: every active plugin adds code, requests, and security risk — we have counted up to 60 on a single site.",
+      "External fonts and scripts: six font families and ten tracking services blocking the first paint.",
+      "No caching configured: the server rebuilds every page from scratch, for every visitor, every time.",
+      "An aging technical foundation: obsolete PHP versions and never-optimized databases — at this point, no single fix is enough."
+     ]
+    },
+    {
+     "titolo": "What costs little and returns a lot",
+     "paragrafi": [
+      "The first two causes — images and hosting — can often be fixed within a day and can halve load times on their own. Modern compression (AVIF/WebP with progressive loading) cuts photo weight by 80% with no visible loss of quality: on the Arredamenti Colombo rebuild it was worth −82% in file weight and a PageSpeed score that went from 34 to 96.",
+      "Caching and plugin cleanup are the second step: half a day’s work, measurable results right away. The point is to measure before and after — not “the site feels faster,” but a documented number."
+     ]
+    },
+    {
+     "titolo": "When a technical rebuild actually pays off",
+     "paragrafi": [
+      "If your site combines causes 3, 4, and 7 — heavy theme, layered plugins, aging foundation — optimizing piece by piece is like putting new tires on a blown engine: every fix costs money and the result stays mediocre. In these cases a technical rebuild (same content, new foundation, 301 redirects so rankings are not lost) starts at € 2.900 and takes the site above 90 on PageSpeed — guaranteed by contract, not promised.",
+      "Either way, the first step is free: measure your site with our speed test, or request the full analysis — a written report with causes, priorities, and a fixed-price quote."
+     ]
+    }
+   ]
+  }
+ ]
+}
