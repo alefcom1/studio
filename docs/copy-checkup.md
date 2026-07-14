@@ -332,7 +332,7 @@ Il submit porta a `/strumenti/check-up-completo/?url=…&autostart=1`.
   - I tre interventi prioritari con le contromisure
   - «Cosa faremmo noi» e i riferimenti di Studio Remarka
 - Placeholder campo e-mail: `nome@vostraazienda.it`
-- Checkbox consenso (obbligatorio): `Ho letto la privacy policy e acconsento all'invio del report e a essere ricontattato.` (link «privacy policy» → `/privacy-policy/`)
+- Checkbox consenso (obbligatorio): `Ho letto la privacy policy e acconsento all'invio del report e a essere ricontattato.` (link «privacy policy» → `/privacy/`)
 - Checkbox facoltativo (monitoraggio futuro): `Inviatemi ogni mese il monitoraggio dei Core Web Vitals di questo sito.`
 - Bottone: `Inviatemi il report PDF`
 - Messaggio di successo: `Fatto. Il report è in viaggio verso la vostra casella: se non arriva entro qualche minuto, controllate lo spam o scriveteci.`
@@ -509,7 +509,7 @@ Testi statici in italiano; i valori fra `{…}` sono dinamici (M3).
 - Text: `We send you the complete analysis: one page per dimension, every issue found and the fixes ranked by impact.`
 - PDF contains: The health score with the seven traffic lights · A page per dimension: score, what we found, what to do · The three priority fixes with countermeasures · «What we would do» and Studio Remarka's details.
 - E-mail placeholder: `name@yourcompany.com`
-- Consent (required): `I have read the privacy policy and consent to receiving the report and being contacted.` (link → `/en/privacy-policy/`)
+- Consent (required): `I have read the privacy policy and consent to receiving the report and being contacted.` (link → `/en/privacy/`)
 - Optional: `Send me the monthly Core Web Vitals monitoring for this site.`
 - Button: `Send me the PDF report`
 - Success: `Done. The report is on its way to your inbox: if it doesn't arrive within a few minutes, check spam or drop us a line.`
@@ -664,7 +664,7 @@ Google ranking promise; accessibility follows WCAG 2.1 AA as required by the EAA
 - Текст: `Пришлём анализ целиком: по странице на каждое из семи измерений, все найденные проблемы и рекомендации по степени влияния.`
 - Что внутри PDF: Оценка здоровья с семью светофорами · Страница на каждое измерение: балл, что нашли, что делать · Три приоритетные задачи с мерами · «Что сделали бы мы» и реквизиты Студии Ремарка.
 - Плейсхолдер e-mail: `imya@vashakompaniya.ru`
-- Согласие (обязательно): `Я прочитал политику конфиденциальности и согласен на отправку отчёта и на обратную связь.` (ссылка → `/ru/privacy-policy/`)
+- Согласие (обязательно): `Я прочитал политику конфиденциальности и согласен на отправку отчёта и на обратную связь.` (ссылка → `/ru/privacy/`)
 - Необязательно: `Присылайте мне ежемесячный мониторинг Core Web Vitals этого сайта.`
 - Кнопка: `Прислать отчёт в PDF`
 - Успех: `Готово. Отчёт уже в пути к вашей почте: если не придёт за пару минут, проверьте спам или напишите нам.`
