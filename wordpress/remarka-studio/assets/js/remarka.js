@@ -215,10 +215,23 @@
 		}
 	}
 
-	function psiFetch(url) {
+	/**
+	 * Chiamata unica a PageSpeed Insights su tre categorie (performance,
+	 * accessibility, seo) + estrazione byte-weight e audit falliti localizzati.
+	 * `locale` (it|en|ru) fa restituire a Google i titoli degli audit tradotti.
+	 * Ritorna:
+	 *   scores: {perf, a11y, seo}   (0–100 o null)
+	 *   byteWeight: numericValue di total-byte-weight (byte) o null
+	 *   lcpSec / inpMs / cls        (metriche Core Web Vitals)
+	 *   audits: {a11y:[{id,title,score}], seo:[…]}  (falliti score<0.9, peggiori prima)
+	 */
+	function psiFetch(url, locale) {
+		locale = locale || 'it';
 		var endpoint = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed' +
 			'?url=' + encodeURIComponent(url) +
-			'&strategy=mobile&category=performance&locale=it';
+			'&strategy=mobile' +
+			'&category=PERFORMANCE&category=ACCESSIBILITY&category=SEO' +
+			'&locale=' + encodeURIComponent(locale);
 		var key = (window.remarkaPSI && window.remarkaPSI.key) || '';
 		if (key) {
 			endpoint += '&key=' + encodeURIComponent(key);
@@ -230,19 +243,56 @@
 			return resp.json();
 		}).then(function (data) {
 			var lh = data.lighthouseResult;
-			if (!lh || !lh.categories || !lh.categories.performance) {
+			if (!lh || !lh.categories) {
 				throw new Error('PSI: risposta senza punteggio');
 			}
+			var cats = lh.categories;
 			var audits = lh.audits || {};
+
+			function catScore(c) {
+				return c && typeof c.score === 'number' ? Math.round(c.score * 100) : null;
+			}
+
+			function topAudits(cat) {
+				var out = [];
+				if (!cat || !cat.auditRefs) {
+					return out;
+				}
+				cat.auditRefs.forEach(function (ref) {
+					var a = audits[ref.id];
+					if (!a || typeof a.score !== 'number' || a.score >= 0.9) {
+						return;
+					}
+					var mode = a.scoreDisplayMode;
+					if (mode === 'notApplicable' || mode === 'informative' || mode === 'manual') {
+						return;
+					}
+					out.push({ id: ref.id, title: a.title || ref.id, score: a.score });
+				});
+				out.sort(function (a, b) { return a.score - b.score; });
+				return out;
+			}
+
 			var field = (data.loadingExperience && data.loadingExperience.metrics) || {};
 			var lcpAudit = audits['largest-contentful-paint'];
 			var clsAudit = audits['cumulative-layout-shift'];
 			var inpField = field.INTERACTION_TO_NEXT_PAINT;
+			var byteAudit = audits['total-byte-weight'];
+
 			return {
-				score: Math.round(lh.categories.performance.score * 100),
+				scores: {
+					perf: catScore(cats.performance),
+					a11y: catScore(cats.accessibility),
+					seo: catScore(cats.seo)
+				},
+				byteWeight: byteAudit && typeof byteAudit.numericValue === 'number' ? byteAudit.numericValue : null,
 				lcpSec: lcpAudit && typeof lcpAudit.numericValue === 'number' ? lcpAudit.numericValue / 1000 : null,
 				cls: clsAudit && typeof clsAudit.numericValue === 'number' ? clsAudit.numericValue : null,
-				inpMs: inpField && typeof inpField.percentile === 'number' ? inpField.percentile : null
+				inpMs: inpField && typeof inpField.percentile === 'number' ? inpField.percentile : null,
+				audits: {
+					a11y: topAudits(cats.accessibility),
+					seo: topAudits(cats.seo)
+				}
 			};
 		});
 	}
@@ -275,14 +325,15 @@
 				if (result) result.hidden = true;
 				if (fill) fill.style.width = '0%';
 
-				psiFetch(url).then(function (m) {
+				psiFetch(url, toolLocale(form)).then(function (m) {
+					var score = m.scores.perf;
 					if (urlOut) urlOut.textContent = url.replace(/^https?:\/\//, '');
-					if (scoreOut) scoreOut.textContent = String(m.score);
+					if (scoreOut) scoreOut.textContent = score === null ? '—' : String(score);
 					if (result) result.hidden = false;
-					if (fill) {
+					if (fill && score !== null) {
 						window.requestAnimationFrame(function () {
 							window.requestAnimationFrame(function () {
-								fill.style.width = m.score + '%';
+								fill.style.width = score + '%';
 							});
 						});
 					}
@@ -298,75 +349,484 @@
 		});
 	}
 
-	/** Виджет strumento «Test velocità»: punteggio reale + LCP/INP/CLS. */
-	function initToolWidgets() {
-		document.querySelectorAll('[data-sr-tool-form]').forEach(function (form) {
-			var pending = form.querySelector('[data-sr-tool-pending]');
-			var result = form.querySelector('[data-sr-tool-result]');
-			var running = false;
+	/* ============================================================================
+	 * Remarka Lab — motore dei 7 strumenti gratuiti.
+	 *
+	 * DISPATCHER: initToolWidgets() cerca ogni contenitore [data-sr-tool="…"] e
+	 * inizializza il modulo giusto (speed|seo|a11y|co2|gdpr|ai|roi). Retro-
+	 * compatibilità: un <form data-sr-tool-form> senza wrapper [data-sr-tool] è
+	 * trattato come 'speed' (la pagina test-velocità esistente non si rompe).
+	 *
+	 * ─────────────────────────────────────────────────────────────────────────
+	 * CONTRATTO DATA-ATTRIBUTI (API tra questo JS e le pagine — per T2)
+	 * ─────────────────────────────────────────────────────────────────────────
+	 * Tutte le stringhe visibili nei risultati si LEGGONO dai data-* del
+	 * contenitore-widget (ogni pagina per-lingua porta le proprie): se assenti,
+	 * fallback in italiano qui sotto. Il tipo si sceglie con data-sr-tool.
+	 *
+	 * COMUNE a tutti:
+	 *   data-sr-tool="speed|seo|a11y|co2|gdpr|ai|roi"   (obbligatorio sul wrapper)
+	 *   data-sr-locale="it|en|ru"        locale PSI (default: window.remarkaPSI.locale|it)
+	 *   [data-sr-tool-form]              il <form> (input url + submit)
+	 *   input[type=text]                 campo URL
+	 *   [data-sr-tool-pending]           messaggio "in corso" (hidden di default)
+	 *   [data-sr-tool-result]            contenitore risultato (hidden di default)
+	 *   data-err                         messaggio d'errore fetch (fallback PSI_ERROR_MSG)
+	 *
+	 * SCORE-BASED (speed, seo, a11y): barra 0–100 + verdetto.
+	 *   [data-sr-tool-url]     riga sopra il punteggio (etichetta url)
+	 *   [data-sr-tool-score]   numero 0–100
+	 *   [data-sr-tool-fill]    .sr-barra__fill (larghezza = score%)
+	 *   [data-sr-tool-verdict] testo del verdetto
+	 *   data-verdict-good / data-verdict-mid / data-verdict-poor  (soglie 90 / 50)
+	 *   data-label-suffix      suffisso della riga url (es. " — PageSpeed mobile")
+	 *   speed extra: [data-sr-tool-lcp] [data-sr-tool-inp] [data-sr-tool-cls]
+	 *   seo/a11y extra: [data-sr-tool-audits] <ul> dove elenca gli audit falliti (≤6)
+	 *     data-audits-empty  testo se non ci sono audit falliti
+	 *
+	 * CO2 (data-sr-tool="co2"):
+	 *   [data-sr-tool-grams]    g CO₂e / visita
+	 *   [data-sr-tool-weight]   peso pagina (MB)
+	 *   [data-sr-tool-year]     kg CO₂e / anno (su data-co2-visits, default 10000/mese)
+	 *   [data-sr-tool-verdict]  verdetto vs media
+	 *   [data-sr-tool-fill]     barra (grammi vs 2× media = 100%)
+	 *   data-co2-average        media di confronto in g (default 0.8)
+	 *   data-co2-visits         visite/mese per la stima annua (default 10000)
+	 *   data-verdict-good/-mid/-poor  (sotto media / vicino / sopra)
+	 *   data-label-unit-year    etichetta unità annua (default "kg CO₂e / anno")
+	 *
+	 * GDPR (data-sr-tool="gdpr"): semaforo a 4 punti (euristica, non parere legale).
+	 *   [data-sr-tool-cmp]      esito CMP           [data-sr-tool-policy]  esito policy
+	 *   [data-sr-tool-trackers] esito tracker       [data-sr-tool-external] n. domini esterni
+	 *   ogni riga può avere un [data-sr-flag] impostato a good|warn|bad (per CSS)
+	 *   data-label-cmp-yes / data-label-cmp-no
+	 *   data-label-policy-yes / data-label-policy-no
+	 *   data-label-trackers-clean / data-label-trackers-flag / data-label-trackers-ok
+	 *   data-label-external      template (usa {n})
+	 *   [data-sr-tool-disclaimer] (statico nella pagina, non toccato dal JS)
+	 *
+	 * AI (data-sr-tool="ai"): punteggio N/4.
+	 *   [data-sr-tool-score]    "N/4"
+	 *   [data-sr-tool-llms] [data-sr-tool-robots] [data-sr-tool-jsonld] [data-sr-tool-sitemap]
+	 *   ogni riga [data-sr-flag]=good|warn|bad
+	 *   data-label-yes / data-label-no / data-label-partial
+	 *
+	 * ROI (data-sr-tool="roi"): calcolatore puro, nessuna rete.
+	 *   input[data-sr-roi-visits] [data-sr-roi-foreign] [data-sr-roi-conv]
+	 *        [data-sr-roi-order] [data-sr-roi-boost]
+	 *   [data-sr-tool-result]   (mostrato sempre)
+	 *   [data-sr-roi-annual]    ricavo/anno stimato
+	 *   [data-sr-roi-monthly]   ricavo/mese stimato
+	 *   data-roi-currency       simbolo (default "€")
+	 * ========================================================================== */
 
-			function verdictFor(score) {
-				if (score < 50) {
-					return 'Il sito è lento su mobile: la maggior parte dei visitatori abbandona prima del caricamento completo. Un restyling tecnico è la priorità.';
-				}
-				if (score < 90) {
-					return 'Il sito è nella media, ma lontano dagli standard consigliati da Google. Ci sono margini di miglioramento concreti e misurabili.';
-				}
-				return 'Ottimo punteggio: il sito rispetta gli standard Google per l’esperienza mobile.';
-			}
+	function toolLocale(el) {
+		var attr = el && el.getAttribute && el.getAttribute('data-sr-locale');
+		return attr || (window.remarkaPSI && window.remarkaPSI.locale) || 'it';
+	}
 
-			var set = function (sel, text) {
-				var el = form.querySelector(sel);
-				if (el) el.textContent = text;
-			};
+	function txt(root, name, fallback) {
+		var v = root && root.getAttribute ? root.getAttribute(name) : null;
+		return (v === null || v === '') ? fallback : v;
+	}
 
-			form.addEventListener('submit', function (e) {
-				e.preventDefault();
-				if (running) {
-					return;
-				}
-				var input = form.querySelector('input[type="text"]');
-				var url = normalizeUrl(input && input.value);
-				if (!url) {
-					if (input) input.focus();
-					return;
-				}
-				running = true;
-				if (pending) pending.hidden = false;
-				if (result) result.hidden = true;
+	function q(root, sel) { return root.querySelector(sel); }
 
-				psiFetch(url).then(function (m) {
-					set('[data-sr-tool-url]', url.replace(/^https?:\/\//, '') + ' — PageSpeed mobile');
-					set('[data-sr-tool-score]', String(m.score));
-					set('[data-sr-tool-verdict]', verdictFor(m.score));
-					set('[data-sr-tool-lcp]', m.lcpSec !== null ? itNumber(m.lcpSec, 1) + ' s' : '—');
-					set('[data-sr-tool-inp]', m.inpMs !== null ? Math.round(m.inpMs) + ' ms' : '—');
-					set('[data-sr-tool-cls]', m.cls !== null ? itNumber(m.cls, 2) : '—');
+	function setText(root, sel, text) {
+		var el = root.querySelector(sel);
+		if (el) el.textContent = text;
+	}
 
-					if (result) result.hidden = false;
+	function animateFill(root, sel, pct) {
+		var fill = root.querySelector(sel);
+		if (!fill) return;
+		fill.style.width = '0%';
+		window.requestAnimationFrame(function () {
+			window.requestAnimationFrame(function () {
+				fill.style.width = Math.max(0, Math.min(100, pct)) + '%';
+			});
+		});
+	}
 
-					var fill = form.querySelector('[data-sr-tool-fill]');
-					if (fill) {
-						fill.style.width = '0%';
-						window.requestAnimationFrame(function () {
-							window.requestAnimationFrame(function () {
-								fill.style.width = m.score + '%';
-							});
-						});
-					}
-				}).catch(function () {
-					set('[data-sr-tool-url]', '');
-					set('[data-sr-tool-score]', '—');
-					set('[data-sr-tool-verdict]', PSI_ERROR_MSG);
-					set('[data-sr-tool-lcp]', '—');
-					set('[data-sr-tool-inp]', '—');
-					set('[data-sr-tool-cls]', '—');
-					if (result) result.hidden = false;
-				}).finally(function () {
-					if (pending) pending.hidden = true;
+	function scoreVerdict(root, score) {
+		if (score === null) return '';
+		if (score < 50) return txt(root, 'data-verdict-poor', 'Punteggio basso: è la priorità da sistemare.');
+		if (score < 90) return txt(root, 'data-verdict-mid', 'Nella media, ma lontano dagli standard consigliati: ci sono margini concreti.');
+		return txt(root, 'data-verdict-good', 'Ottimo: il sito rispetta gli standard consigliati.');
+	}
+
+	/** Ricava il form e prepara pending/result/running per i moduli con rete. */
+	function toolShell(root) {
+		var form = root.matches && root.matches('[data-sr-tool-form]') ? root : (root.querySelector('[data-sr-tool-form]') || root);
+		return {
+			root: root,
+			form: form,
+			pending: root.querySelector('[data-sr-tool-pending]'),
+			result: root.querySelector('[data-sr-tool-result]'),
+			errMsg: txt(root, 'data-err', PSI_ERROR_MSG)
+		};
+	}
+
+	function onUrlSubmit(shell, handler) {
+		var running = false;
+		shell.form.addEventListener('submit', function (e) {
+			e.preventDefault();
+			if (running) return;
+			var input = shell.form.querySelector('input[type="text"], input[type="url"]');
+			var url = normalizeUrl(input && input.value);
+			if (!url) { if (input) input.focus(); return; }
+			running = true;
+			if (shell.pending) shell.pending.hidden = false;
+			if (shell.result) shell.result.hidden = true;
+			Promise.resolve()
+				.then(function () { return handler(url); })
+				.then(function () { if (shell.result) shell.result.hidden = false; })
+				.catch(function () { showToolError(shell); })
+				.then(function () {
+					if (shell.pending) shell.pending.hidden = true;
 					running = false;
 				});
+		});
+	}
+
+	function showToolError(shell) {
+		setText(shell.root, '[data-sr-tool-verdict]', shell.errMsg);
+		setText(shell.root, '[data-sr-tool-url]', '');
+		if (shell.result) shell.result.hidden = false;
+	}
+
+	/* ---------- Modulo: velocità (PageSpeed performance) ---------- */
+	function speedVerdict(root, score) {
+		// Fallback identici alla copy live di /strumenti/test-velocita/.
+		if (score === null) return '';
+		if (score < 50) return txt(root, 'data-verdict-poor', 'Il sito è lento su mobile: la maggior parte dei visitatori abbandona prima del caricamento completo. Un restyling tecnico è la priorità.');
+		if (score < 90) return txt(root, 'data-verdict-mid', 'Il sito è nella media, ma lontano dagli standard consigliati da Google. Ci sono margini di miglioramento concreti e misurabili.');
+		return txt(root, 'data-verdict-good', 'Ottimo punteggio: il sito rispetta gli standard Google per l’esperienza mobile.');
+	}
+
+	function initSpeedTool(root) {
+		var shell = toolShell(root);
+		onUrlSubmit(shell, function (url) {
+			return psiFetch(url, toolLocale(root)).then(function (m) {
+				var score = m.scores.perf;
+				setText(root, '[data-sr-tool-url]', url.replace(/^https?:\/\//, '') + txt(root, 'data-label-suffix', ' — PageSpeed mobile'));
+				setText(root, '[data-sr-tool-score]', score === null ? '—' : String(score));
+				setText(root, '[data-sr-tool-verdict]', speedVerdict(root, score));
+				setText(root, '[data-sr-tool-lcp]', m.lcpSec !== null ? itNumber(m.lcpSec, 1) + ' s' : '—');
+				setText(root, '[data-sr-tool-inp]', m.inpMs !== null ? Math.round(m.inpMs) + ' ms' : '—');
+				setText(root, '[data-sr-tool-cls]', m.cls !== null ? itNumber(m.cls, 2) : '—');
+				if (score !== null) animateFill(root, '[data-sr-tool-fill]', score);
 			});
+		});
+	}
+
+	/* ---------- Modulo: SEO / accessibilità (PSI category + lista audit) ---------- */
+	function initLighthouseTool(root, kind) {
+		var shell = toolShell(root);
+		var scoreKey = kind === 'seo' ? 'seo' : 'a11y';
+		onUrlSubmit(shell, function (url) {
+			return psiFetch(url, toolLocale(root)).then(function (m) {
+				var score = m.scores[scoreKey];
+				setText(root, '[data-sr-tool-url]', url.replace(/^https?:\/\//, '') + txt(root, 'data-label-suffix', ''));
+				setText(root, '[data-sr-tool-score]', score === null ? '—' : String(score));
+				setText(root, '[data-sr-tool-verdict]', scoreVerdict(root, score));
+				if (score !== null) animateFill(root, '[data-sr-tool-fill]', score);
+
+				var list = q(root, '[data-sr-tool-audits]');
+				if (list) {
+					list.innerHTML = '';
+					var items = (m.audits[scoreKey] || []).slice(0, 6);
+					if (!items.length) {
+						var li0 = document.createElement('li');
+						li0.textContent = txt(root, 'data-audits-empty', 'Nessun problema rilevante rilevato.');
+						list.appendChild(li0);
+					} else {
+						items.forEach(function (a) {
+							var li = document.createElement('li');
+							li.textContent = a.title;
+							list.appendChild(li);
+						});
+					}
+				}
+			});
+		});
+	}
+
+	/* ---------- Modulo: impatto CO₂ ----------
+	 * Modello Sustainable Web Design (co2.js, The Green Web Foundation,
+	 * Apache-2.0). Coefficienti SWD:
+	 *   KWH_PER_GB = 0,81 ; ripartizione device/network/datacenter/production
+	 *   0,52/0,14/0,15/0,19 (somma 1,0) ; cache first/return 0,75 e 0,25×0,02.
+	 * Intensità di rete globale (media WORLD) = 472,94 gCO₂e/kWh
+	 * (data/output/average-intensities.js). Host "grey" (caso peggiore):
+	 * i quattro segmenti condividono la stessa intensità → il calcolo si
+	 * riduce a energia×intensità. Fonte: github.com/thegreenwebfoundation/co2.js */
+	var CO2_KWH_PER_GB = 0.81;
+	var CO2_GRID_INTENSITY = 472.94; // gCO₂e/kWh (media WORLD, co2.js)
+	var CO2_CACHE_FACTOR = 0.75 + 0.25 * 0.02; // = 0,755 (per-visita)
+
+	function co2PerVisitGrams(bytes) {
+		var energyKwh = (bytes / 1e9) * CO2_KWH_PER_GB * CO2_CACHE_FACTOR;
+		return energyKwh * CO2_GRID_INTENSITY; // segmenti sommano a 1,0 (grey)
+	}
+	function co2PerByteGrams(bytes) { // caricamento pieno, senza cache
+		return (bytes / 1e9) * CO2_KWH_PER_GB * CO2_GRID_INTENSITY;
+	}
+
+	function initCo2Tool(root) {
+		var shell = toolShell(root);
+		onUrlSubmit(shell, function (url) {
+			return psiFetch(url, toolLocale(root)).then(function (m) {
+				if (m.byteWeight === null) { throw new Error('CO2: peso non disponibile'); }
+				var grams = co2PerVisitGrams(m.byteWeight);
+				var mb = m.byteWeight / (1024 * 1024);
+				var avg = parseFloat(txt(root, 'data-co2-average', '0.8')) || 0.8;
+				var visits = parseFloat(txt(root, 'data-co2-visits', '10000')) || 10000;
+				var yearKg = grams * visits * 12 / 1000;
+
+				setText(root, '[data-sr-tool-url]', url.replace(/^https?:\/\//, ''));
+				setText(root, '[data-sr-tool-grams]', itNumber(grams, 2) + ' g');
+				setText(root, '[data-sr-tool-weight]', itNumber(mb, 2) + ' MB');
+				setText(root, '[data-sr-tool-year]', itNumber(yearKg, 0) + ' ' + txt(root, 'data-label-unit-year', 'kg CO₂e / anno'));
+
+				var verdict;
+				if (grams <= avg) verdict = txt(root, 'data-verdict-good', 'Sotto la media del web: buon lavoro.');
+				else if (grams <= avg * 1.5) verdict = txt(root, 'data-verdict-mid', 'Vicino alla media del web: c’è margine per alleggerire.');
+				else verdict = txt(root, 'data-verdict-poor', 'Sopra la media del web: la pagina è pesante, conviene ottimizzare.');
+				setText(root, '[data-sr-tool-verdict]', verdict);
+
+				animateFill(root, '[data-sr-tool-fill]', grams / (avg * 2) * 100);
+			});
+		});
+	}
+
+	/* ---------- Modulo: GDPR (euristica onesta, non parere legale) ---------- */
+	var GDPR_CMPS = ['iubenda', 'cookiebot', 'complianz', 'onetrust', 'cookieyes', 'borlabs', 'klaro'];
+	var GDPR_TRACKERS = [
+		{ re: /gtag\(|googletagmanager\.com|google-analytics\.com|gtag\/js|\bga\(/i, name: 'Google Analytics / gtag' },
+		{ re: /connect\.facebook\.net|fbevents\.js|fbq\(/i, name: 'Meta Pixel' },
+		{ re: /clarity\.ms|clarity\("|window\.clarity/i, name: 'Microsoft Clarity' },
+		{ re: /static\.hotjar\.com|hotjar\.com|hj\(/i, name: 'Hotjar' }
+	];
+
+	function setFlag(root, sel, flag) {
+		var el = q(root, sel);
+		if (el) el.setAttribute('data-sr-flag', flag);
+	}
+
+	function initGdprTool(root) {
+		var shell = toolShell(root);
+		onUrlSubmit(shell, function (url) {
+			return toolFetch(url, 'html').then(function (data) {
+				var html = data.body || '';
+				var lower = html.toLowerCase();
+
+				// 1. CMP
+				var cmp = null;
+				GDPR_CMPS.forEach(function (name) { if (!cmp && lower.indexOf(name) !== -1) cmp = name; });
+				setText(root, '[data-sr-tool-cmp]', cmp
+					? txt(root, 'data-label-cmp-yes', 'Cookie banner rilevato') + ' (' + cmp + ')'
+					: txt(root, 'data-label-cmp-no', 'Nessun cookie banner rilevato'));
+				setFlag(root, '[data-sr-tool-cmp]', cmp ? 'good' : 'bad');
+
+				// 2. Link privacy/cookie policy
+				var hasPolicy = /href=["'][^"']*(privacy|cookie|informativa)[^"']*["']/i.test(html) ||
+					/(privacy policy|cookie policy|informativa (sulla )?privacy)/i.test(html);
+				setText(root, '[data-sr-tool-policy]', hasPolicy
+					? txt(root, 'data-label-policy-yes', 'Link a privacy/cookie policy presente')
+					: txt(root, 'data-label-policy-no', 'Nessun link a privacy/cookie policy'));
+				setFlag(root, '[data-sr-tool-policy]', hasPolicy ? 'good' : 'bad');
+
+				// 3. Tracker nell'HTML grezzo (prima del consenso)
+				var found = [];
+				GDPR_TRACKERS.forEach(function (t) { if (t.re.test(html)) found.push(t.name); });
+				var trackFlag, trackText;
+				if (found.length && !cmp) {
+					trackFlag = 'bad';
+					trackText = txt(root, 'data-label-trackers-flag', 'Tracker attivi senza banner') + ': ' + found.join(', ');
+				} else if (found.length) {
+					trackFlag = 'warn';
+					trackText = txt(root, 'data-label-trackers-ok', 'Tracker presenti (con banner)') + ': ' + found.join(', ');
+				} else {
+					trackFlag = 'good';
+					trackText = txt(root, 'data-label-trackers-clean', 'Nessun tracker nell’HTML iniziale');
+				}
+				setText(root, '[data-sr-tool-trackers]', trackText);
+				setFlag(root, '[data-sr-tool-trackers]', trackFlag);
+
+				// 4. Domini esterni degli script
+				var domains = {};
+				var re = /<script[^>]+src=["']https?:\/\/([^\/"']+)/gi, mm;
+				while ((mm = re.exec(html)) !== null) { domains[mm[1].toLowerCase()] = true; }
+				var n = Object.keys(domains).length;
+				var tmpl = txt(root, 'data-label-external', '{n} domini esterni caricano script');
+				setText(root, '[data-sr-tool-external]', tmpl.replace('{n}', String(n)));
+				setFlag(root, '[data-sr-tool-external]', n === 0 ? 'good' : (n <= 5 ? 'warn' : 'bad'));
+			});
+		});
+	}
+
+	/* ---------- Modulo: pronto per l'AI (llms.txt / robots / JSON-LD / sitemap) ---------- */
+	var AI_CRAWLERS = ['GPTBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended'];
+
+	function robotsAllows(robots, agent) {
+		// Ritorna 'blocked' | 'allowed' | 'unmentioned' per uno user-agent.
+		var lines = robots.split(/\r?\n/);
+		var inBlock = false, disallowAll = false, mentioned = false;
+		for (var i = 0; i < lines.length; i++) {
+			var line = lines[i].replace(/#.*$/, '').trim();
+			if (!line) continue;
+			var ua = line.match(/^user-agent:\s*(.+)$/i);
+			if (ua) {
+				var val = ua[1].trim();
+				if (val.toLowerCase() === agent.toLowerCase()) { inBlock = true; mentioned = true; }
+				else { inBlock = false; }
+				continue;
+			}
+			if (inBlock) {
+				var dis = line.match(/^disallow:\s*(.*)$/i);
+				if (dis) { if (dis[1].trim() === '/') disallowAll = true; }
+			}
+		}
+		if (!mentioned) return 'unmentioned';
+		return disallowAll ? 'blocked' : 'allowed';
+	}
+
+	function initAiTool(root) {
+		var shell = toolShell(root);
+		onUrlSubmit(shell, function (url) {
+			var checks = { llms: false, robots: 'unmentioned', jsonld: false, sitemap: false };
+			var jobs = [
+				toolFetch(url, 'path:llms.txt').then(function (d) {
+					checks.llms = d.status === 200 && /#/.test(d.body || '');
+				}, function () {}),
+				toolFetch(url, 'path:robots.txt').then(function (d) {
+					checks.robotsRaw = d.status === 200 ? (d.body || '') : '';
+				}, function () { checks.robotsRaw = ''; }),
+				toolFetch(url, 'html').then(function (d) {
+					var body = d.body || '';
+					var types = [];
+					var re = /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi, mm;
+					while ((mm = re.exec(body)) !== null) {
+						try {
+							var json = JSON.parse(mm[1].trim());
+							var arr = Array.isArray(json) ? json : [json];
+							arr.forEach(function (o) { if (o && o['@type']) types.push(String(o['@type'])); });
+						} catch (e) { /* JSON-LD malformato: conta comunque come presente */ types.push('?'); }
+					}
+					checks.jsonld = /application\/ld\+json/i.test(body);
+					checks.jsonldTypes = types;
+				}, function () {}),
+				toolFetch(url, 'path:sitemap.xml').then(function (d) {
+					checks.sitemap = d.status === 200 && /<(urlset|sitemapindex)/i.test(d.body || '');
+				}, function () {})
+			];
+			return Promise.all(jobs).then(function () {
+				checks.robots = checks.robotsRaw
+					? (function () {
+						var anyBlocked = false, anyMentioned = false;
+						AI_CRAWLERS.forEach(function (c) {
+							var s = robotsAllows(checks.robotsRaw, c);
+							if (s !== 'unmentioned') anyMentioned = true;
+							if (s === 'blocked') anyBlocked = true;
+						});
+						return anyBlocked ? 'blocked' : (anyMentioned ? 'allowed' : 'unmentioned');
+					})()
+					: 'unmentioned';
+
+				var yes = txt(root, 'data-label-yes', 'Sì');
+				var no = txt(root, 'data-label-no', 'No');
+				var partial = txt(root, 'data-label-partial', 'Parziale');
+
+				setText(root, '[data-sr-tool-llms]', checks.llms ? yes : no);
+				setFlag(root, '[data-sr-tool-llms]', checks.llms ? 'good' : 'bad');
+
+				// robots "buono" = crawler AI non bloccati
+				var robotsGood = checks.robots !== 'blocked';
+				setText(root, '[data-sr-tool-robots]', checks.robots === 'blocked' ? no : (checks.robots === 'allowed' ? yes : partial));
+				setFlag(root, '[data-sr-tool-robots]', checks.robots === 'blocked' ? 'bad' : (checks.robots === 'allowed' ? 'good' : 'warn'));
+
+				var jsonldTxt = checks.jsonld ? (yes + (checks.jsonldTypes && checks.jsonldTypes.length ? ' (' + checks.jsonldTypes.slice(0, 4).join(', ') + ')' : '')) : no;
+				setText(root, '[data-sr-tool-jsonld]', jsonldTxt);
+				setFlag(root, '[data-sr-tool-jsonld]', checks.jsonld ? 'good' : 'bad');
+
+				setText(root, '[data-sr-tool-sitemap]', checks.sitemap ? yes : no);
+				setFlag(root, '[data-sr-tool-sitemap]', checks.sitemap ? 'good' : 'bad');
+
+				var n = (checks.llms ? 1 : 0) + (robotsGood ? 1 : 0) + (checks.jsonld ? 1 : 0) + (checks.sitemap ? 1 : 0);
+				setText(root, '[data-sr-tool-score]', n + '/4');
+			});
+		});
+	}
+
+	/* ---------- Modulo: ROI localizzazione (calcolatore, nessuna rete) ---------- */
+	function initRoiTool(root) {
+		var form = root.matches && root.matches('[data-sr-tool-form]') ? root : (root.querySelector('[data-sr-tool-form]') || root);
+		var result = root.querySelector('[data-sr-tool-result]');
+		var currency = txt(root, 'data-roi-currency', '€');
+
+		function num(sel) {
+			var el = form.querySelector(sel);
+			var v = el ? parseFloat(String(el.value).replace(',', '.')) : 0;
+			return isNaN(v) ? 0 : v;
+		}
+		function money(v) {
+			return currency + ' ' + Math.round(v).toLocaleString('it-IT');
+		}
+		function recalc() {
+			var visits = num('[data-sr-roi-visits]');
+			var foreign = num('[data-sr-roi-foreign]') / 100;
+			var conv = num('[data-sr-roi-conv]') / 100;
+			var order = num('[data-sr-roi-order]');
+			var boost = num('[data-sr-roi-boost]') / 100;
+			var foreignVisitors = visits * foreign;
+			var extraMonthly = foreignVisitors * conv * boost * order;
+			setText(root, '[data-sr-roi-monthly]', money(extraMonthly));
+			setText(root, '[data-sr-roi-annual]', money(extraMonthly * 12));
+			if (result) result.hidden = false;
+		}
+		if (form) {
+			form.addEventListener('submit', function (e) { e.preventDefault(); recalc(); });
+			form.addEventListener('input', recalc);
+			recalc();
+		}
+	}
+
+	/** POST server-side fetch (endpoint remarka_tool_fetch) → {ok,status,body}. */
+	function toolFetch(url, mode) {
+		var cfg = window.remarkaPSI || {};
+		if (!cfg.ajaxUrl || !window.fetch) {
+			return Promise.reject(new Error('toolFetch non disponibile'));
+		}
+		var data = new FormData();
+		data.set('action', 'remarka_tool_fetch');
+		data.set('nonce', cfg.toolsNonce || '');
+		data.set('url', url);
+		data.set('mode', mode || 'html');
+		return window.fetch(cfg.ajaxUrl, { method: 'POST', body: data, credentials: 'same-origin' })
+			.then(function (r) { return r.json(); })
+			.then(function (json) {
+				if (json && json.success && json.data) { return json.data; }
+				throw new Error((json && json.data && json.data.message) || 'fetch_failed');
+			});
+	}
+
+	/** Dispatcher: inizializza ogni widget in base a data-sr-tool. */
+	function initToolWidgets() {
+		document.querySelectorAll('[data-sr-tool]').forEach(function (root) {
+			switch (root.getAttribute('data-sr-tool')) {
+				case 'speed': initSpeedTool(root); break;
+				case 'seo': initLighthouseTool(root, 'seo'); break;
+				case 'a11y': initLighthouseTool(root, 'a11y'); break;
+				case 'co2': initCo2Tool(root); break;
+				case 'gdpr': initGdprTool(root); break;
+				case 'ai': initAiTool(root); break;
+				case 'roi': initRoiTool(root); break;
+			}
+		});
+		// Retro-compatibilità: form velocità senza wrapper [data-sr-tool].
+		document.querySelectorAll('[data-sr-tool-form]').forEach(function (form) {
+			if (!form.closest('[data-sr-tool]')) { initSpeedTool(form); }
 		});
 	}
 

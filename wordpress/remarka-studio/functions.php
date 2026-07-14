@@ -78,9 +78,11 @@ function remarka_enqueue_assets(): void {
 	wp_add_inline_script(
 		'remarka-studio',
 		'window.remarkaPSI = ' . wp_json_encode( array(
-			'key'       => $psi_key,
-			'ajaxUrl'   => admin_url( 'admin-ajax.php' ),
-			'formNonce' => wp_create_nonce( 'remarka_contact' ),
+			'key'        => $psi_key,
+			'ajaxUrl'    => admin_url( 'admin-ajax.php' ),
+			'formNonce'  => wp_create_nonce( 'remarka_contact' ),
+			'toolsNonce' => wp_create_nonce( 'remarka_tools' ),
+			'locale'     => remarka_current_lang(),
 		) ) . ';'
 		. 'window.remarkaForm = ' . wp_json_encode( array(
 			'step'    => remarka_str( 'form_step' ),
@@ -965,4 +967,222 @@ function remarka_form_handle_post(): void {
 	exit;
 }
 add_action( 'admin_post_remarka_contact', 'remarka_form_handle_post' );
+
+/* ============================================================================
+ * Remarka Lab — endpoint di fetch server-side per gli strumenti (GDPR/AI).
+ *
+ * Il browser non può leggere HTML/robots.txt/llms.txt di siti terzi (CORS):
+ * lo scarichiamo qui, con difesa SSRF completa, e restituiamo il corpo grezzo
+ * al client che lo analizza. NON è un proxy generico: schemi/porte/IP/redirect
+ * sono tutti verificati; solo contenuti testuali; corpo troncato.
+ *
+ * Le funzioni pure (validazione URL, resolve host, IP privati, fetch con
+ * redirect manuale) sono estraibili singolarmente per lo stub-harness di test.
+ * ========================================================================== */
+
+/**
+ * Blocca un IP se non è pubblico (privato/riservato/loopback/link-local, sia
+ * IPv4 sia IPv6). Copre 127/8, 10/8, 172.16/12, 192.168/16, 169.254/16, 0/8,
+ * ::1, fc00::/7, fe80::/10 e tutti i range riservati IANA.
+ */
+function remarka_tool_is_blocked_ip( $ip ) {
+	if ( ! filter_var( $ip, FILTER_VALIDATE_IP ) ) {
+		return true; // non è un IP valido → blocca per sicurezza.
+	}
+	// NO_PRIV_RANGE|NO_RES_RANGE → false quando l'IP è privato o riservato.
+	if ( ! filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE ) ) {
+		return true;
+	}
+	return false;
+}
+
+/** Risolve un host in lista di IP (A + AAAA). IP-literal → restituito così com'è. */
+function remarka_tool_resolve_host( $host ) {
+	if ( filter_var( $host, FILTER_VALIDATE_IP ) ) {
+		return array( $host );
+	}
+	$ips = array();
+	$v4  = gethostbynamel( $host );
+	if ( is_array( $v4 ) ) {
+		$ips = array_merge( $ips, $v4 );
+	}
+	$v6 = dns_get_record( $host, DNS_AAAA );
+	if ( is_array( $v6 ) ) {
+		foreach ( $v6 as $rec ) {
+			if ( ! empty( $rec['ipv6'] ) ) {
+				$ips[] = $rec['ipv6'];
+			}
+		}
+	}
+	return $ips;
+}
+
+/**
+ * Valida un singolo URL: schema http/https, porta 80/443, host che risolve in
+ * un IP pubblico. Ritorna array(ok, error, host, ips).
+ */
+function remarka_tool_check_url( $url ) {
+	$parts = parse_url( $url );
+	if ( ! is_array( $parts ) || empty( $parts['scheme'] ) || empty( $parts['host'] ) ) {
+		return array( 'ok' => false, 'error' => 'url_non_valido' );
+	}
+	$scheme = strtolower( $parts['scheme'] );
+	if ( 'http' !== $scheme && 'https' !== $scheme ) {
+		return array( 'ok' => false, 'error' => 'schema_non_ammesso' );
+	}
+	$port = isset( $parts['port'] ) ? (int) $parts['port'] : ( 'https' === $scheme ? 443 : 80 );
+	if ( 80 !== $port && 443 !== $port ) {
+		return array( 'ok' => false, 'error' => 'porta_non_ammessa' );
+	}
+	$host = $parts['host'];
+	$ips  = remarka_tool_resolve_host( $host );
+	if ( empty( $ips ) ) {
+		return array( 'ok' => false, 'error' => 'host_non_risolto' );
+	}
+	foreach ( $ips as $ip ) {
+		if ( remarka_tool_is_blocked_ip( $ip ) ) {
+			return array( 'ok' => false, 'error' => 'ip_privato_o_riservato' );
+		}
+	}
+	return array( 'ok' => true, 'host' => $host, 'ips' => $ips );
+}
+
+/** Risolve una Location di redirect (assoluta o relativa) contro l'URL base. */
+function remarka_tool_resolve_redirect( $base, $location ) {
+	$location = trim( $location );
+	if ( preg_match( '#^https?://#i', $location ) ) {
+		return $location;
+	}
+	$p = parse_url( $base );
+	if ( ! is_array( $p ) || empty( $p['scheme'] ) || empty( $p['host'] ) ) {
+		return $location;
+	}
+	$origin = $p['scheme'] . '://' . $p['host'] . ( isset( $p['port'] ) ? ':' . $p['port'] : '' );
+	if ( '' !== $location && '/' === $location[0] ) {
+		return $origin . $location;
+	}
+	$dir = isset( $p['path'] ) ? preg_replace( '#/[^/]*$#', '/', $p['path'] ) : '/';
+	return $origin . $dir . $location;
+}
+
+/** Content-Type accettati: testuali. text/* più i formati XML/JSON testuali
+ *  (necessari per sitemap.xml / feed / JSON-LD). Nota: la spec chiedeva text/*;
+ *  esteso ai tipi XML testuali per supportare path:sitemap.xml. */
+function remarka_tool_ct_allowed( $ct ) {
+	if ( '' === $ct ) {
+		return true; // alcuni server non mandano Content-Type: non blocchiamo.
+	}
+	$ct = strtolower( $ct );
+	if ( 0 === strpos( $ct, 'text/' ) ) {
+		return true;
+	}
+	foreach ( array( 'application/xml', 'application/xhtml+xml', 'application/json', 'application/rss+xml', 'application/atom+xml', 'application/ld+json' ) as $ok ) {
+		if ( 0 === strpos( $ct, $ok ) ) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/**
+ * Scarica un URL in sicurezza: loop manuale di redirect (max 3), ogni hop
+ * ri-verificato (SSRF su ogni destinazione), timeout 8s, corpo ≤512KB, solo
+ * Content-Type testuali. Ritorna array(ok, status, body, error).
+ */
+function remarka_tool_safe_fetch( $url, $max_redirects = 3 ) {
+	$current = $url;
+	$limit   = 512 * 1024;
+	for ( $hop = 0; $hop <= $max_redirects; $hop++ ) {
+		$check = remarka_tool_check_url( $current );
+		if ( empty( $check['ok'] ) ) {
+			return array( 'ok' => false, 'status' => 0, 'body' => '', 'error' => $check['error'] );
+		}
+		$resp = wp_remote_get( $current, array(
+			'timeout'             => 8,
+			'redirection'         => 0,
+			'limit_response_size' => $limit,
+			'user-agent'          => 'RemarkaLab/1.0 (+https://remarka.biz)',
+			'headers'             => array( 'Accept' => 'text/html,text/plain,application/xml,*/*' ),
+		) );
+		if ( is_wp_error( $resp ) ) {
+			return array( 'ok' => false, 'status' => 0, 'body' => '', 'error' => 'richiesta_fallita' );
+		}
+		$status = (int) wp_remote_retrieve_response_code( $resp );
+		if ( $status >= 300 && $status < 400 ) {
+			$location = wp_remote_retrieve_header( $resp, 'location' );
+			if ( '' === $location ) {
+				return array( 'ok' => false, 'status' => $status, 'body' => '', 'error' => 'redirect_senza_destinazione' );
+			}
+			$current = remarka_tool_resolve_redirect( $current, $location );
+			continue; // ricomincia: il prossimo giro ri-valida l'host.
+		}
+		$ct = wp_remote_retrieve_header( $resp, 'content-type' );
+		if ( ! remarka_tool_ct_allowed( $ct ) ) {
+			return array( 'ok' => false, 'status' => $status, 'body' => '', 'error' => 'content_type_non_testuale' );
+		}
+		$body = (string) wp_remote_retrieve_body( $resp );
+		if ( strlen( $body ) > $limit ) {
+			$body = substr( $body, 0, $limit );
+		}
+		return array( 'ok' => true, 'status' => $status, 'body' => $body, 'error' => '' );
+	}
+	return array( 'ok' => false, 'status' => 0, 'body' => '', 'error' => 'troppi_redirect' );
+}
+
+/** Costruisce l'URL bersaglio dal mode: html (url intero) | path:<file>. */
+function remarka_tool_target_url( $url, $mode ) {
+	if ( 0 === strpos( $mode, 'path:' ) ) {
+		$path    = substr( $mode, 5 );
+		$allowed = array( 'llms.txt', 'robots.txt', 'sitemap.xml' );
+		if ( ! in_array( $path, $allowed, true ) ) {
+			return array( 'ok' => false, 'error' => 'path_non_ammesso' );
+		}
+		$p = parse_url( $url );
+		if ( ! is_array( $p ) || empty( $p['scheme'] ) || empty( $p['host'] ) ) {
+			return array( 'ok' => false, 'error' => 'url_non_valido' );
+		}
+		$origin = strtolower( $p['scheme'] ) . '://' . $p['host'] . ( isset( $p['port'] ) ? ':' . (int) $p['port'] : '' );
+		return array( 'ok' => true, 'url' => $origin . '/' . $path );
+	}
+	return array( 'ok' => true, 'url' => $url );
+}
+
+/** Handler AJAX: nonce + rate-limit 10/min/IP + fetch sicuro → JSON {ok,status,body}. */
+function remarka_tool_fetch_handler(): void {
+	if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'remarka_tools' ) ) {
+		wp_send_json_error( array( 'message' => 'sessione scaduta' ), 403 );
+	}
+
+	$ip    = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
+	$key   = 'remarka_tl_' . md5( $ip );
+	$count = (int) get_transient( $key );
+	if ( $count >= 10 ) {
+		wp_send_json_error( array( 'message' => 'troppe richieste, riprovate tra un minuto' ), 429 );
+	}
+	set_transient( $key, $count + 1, MINUTE_IN_SECONDS );
+
+	$url  = esc_url_raw( wp_unslash( $_POST['url'] ?? '' ) );
+	$mode = sanitize_text_field( wp_unslash( $_POST['mode'] ?? 'html' ) );
+	if ( '' === $url ) {
+		wp_send_json_error( array( 'message' => 'url mancante' ), 400 );
+	}
+
+	$target = remarka_tool_target_url( $url, $mode );
+	if ( empty( $target['ok'] ) ) {
+		wp_send_json_error( array( 'message' => $target['error'] ), 400 );
+	}
+
+	$result = remarka_tool_safe_fetch( $target['url'] );
+	if ( empty( $result['ok'] ) ) {
+		wp_send_json_error( array( 'message' => $result['error'], 'status' => $result['status'] ), 200 );
+	}
+
+	wp_send_json_success( array(
+		'ok'     => true,
+		'status' => $result['status'],
+		'body'   => $result['body'],
+	) );
+}
+add_action( 'wp_ajax_remarka_tool_fetch', 'remarka_tool_fetch_handler' );
+add_action( 'wp_ajax_nopriv_remarka_tool_fetch', 'remarka_tool_fetch_handler' );
 add_action( 'admin_post_nopriv_remarka_contact', 'remarka_form_handle_post' );
