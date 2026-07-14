@@ -118,16 +118,13 @@
 <p class="sr-eyebrow">Dove siamo</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
-<p style="margin-top:12px;font-size:16px">Via Andrea Solari 43, 20144 Milano (MI)</p>
+<p style="margin-top:12px;font-size:16px">Vicolo Privato Lavandai, 2a, 20144 Milano (MI)</p>
 <!-- /wp:paragraph -->
-<!-- wp:html -->
-<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">M2 S. Agostino — 4 min a piedi</p>
-<!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
 <p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px">Lun–Ven 9:00–18:00</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-mono" style="margin-top:6px;font-size:14px">+39 02 8736 5412</p>
+<p class="sr-mono" style="margin-top:6px;font-size:14px">+39 347 83 11141</p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -184,7 +181,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi preventivo in 24 ore</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"sr-btn-whatsapp"} -->
-<div class="wp-block-button sr-btn-whatsapp"><a class="wp-block-button__link wp-element-button" href="https://wa.me/390000000000" target="_blank" rel="noopener noreferrer">WhatsApp Business</a></div>
+<div class="wp-block-button sr-btn-whatsapp"><a class="wp-block-button__link wp-element-button" href="https://api.whatsapp.com/send?phone=393478311141&amp;text=" target="_blank" rel="noopener noreferrer">WhatsApp Business</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

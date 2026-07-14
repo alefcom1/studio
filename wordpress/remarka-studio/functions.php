@@ -259,19 +259,27 @@ add_action( 'wp_footer', 'remarka_deregister_wp_embed' );
 /**
  * Cookie banner (GDPR, Rifiuta = Accetta по весу) и WhatsApp FAB —
  * сайтвайд, без необходимости вставлять паттерн на каждую страницу.
- * Номер WhatsApp настраивается через customizer (remarka_whatsapp_number)
- * или константу REMARKA_WHATSAPP_NUMBER; заглушка — 390000000000.
+ * Numero WhatsApp per lingua (IT/EN condividono lo stesso, RU ha il suo),
+ * configurabile da Customizer o dalla costante REMARKA_WHATSAPP_NUMBER
+ * (quest'ultima ha sempre la precedenza, indipendentemente dalla lingua).
  */
 function remarka_whatsapp_number(): string {
 	if ( defined( 'REMARKA_WHATSAPP_NUMBER' ) ) {
 		return REMARKA_WHATSAPP_NUMBER;
 	}
-	$opt = get_theme_mod( 'remarka_whatsapp_number', '' );
-	return $opt ? $opt : '390000000000';
+	if ( 'ru' === remarka_current_lang() ) {
+		return get_theme_mod( 'remarka_whatsapp_number_ru', '79182630013' );
+	}
+	return get_theme_mod( 'remarka_whatsapp_number', '393478311141' );
+}
+
+/** Link WhatsApp pronto per l'uso in un href, numero della lingua corrente. */
+function remarka_whatsapp_link(): string {
+	return 'https://api.whatsapp.com/send?phone=' . rawurlencode( remarka_whatsapp_number() ) . '&text=';
 }
 
 function remarka_footer_widgets(): void {
-	$phone = esc_attr( remarka_whatsapp_number() );
+	$wa_link = esc_url( remarka_whatsapp_link() );
 	?>
 	<div class="sr-cookie-banner" data-sr-cookie-banner hidden>
 		<div class="sr-cookie-banner__inner">
@@ -287,7 +295,7 @@ function remarka_footer_widgets(): void {
 			</div>
 		</div>
 	</div>
-	<a href="https://wa.me/<?php echo $phone; ?>" class="sr-wa-fab" data-sr-wa-fab target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( remarka_str( 'wa_label' ) ); ?>">
+	<a href="<?php echo $wa_link; ?>" class="sr-wa-fab" data-sr-wa-fab target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( remarka_str( 'wa_label' ) ); ?>">
 		<svg width="30" height="30" viewBox="0 0 32 32" fill="#FFFFFF" aria-hidden="true"><path d="M16.003 3C9.377 3 4 8.373 4 15c0 2.294.638 4.437 1.746 6.264L4 29l7.94-1.708A11.93 11.93 0 0 0 16.003 27C22.63 27 28 21.627 28 15S22.63 3 16.003 3Zm6.98 16.998c-.294.826-1.457 1.512-2.386 1.71-.634.135-1.462.243-4.248-.911-3.562-1.475-5.855-5.086-6.033-5.322-.177-.236-1.44-1.916-1.44-3.655 0-1.74.913-2.594 1.237-2.95.324-.354.708-.443.944-.443.236 0 .472.002.678.012.217.011.508-.082.795.607.294.708.998 2.447 1.086 2.625.088.177.147.384.03.62-.118.236-.177.383-.35.59-.177.207-.37.463-.53.62-.177.176-.36.367-.155.72.206.354.914 1.51 1.963 2.446 1.348 1.202 2.485 1.575 2.838 1.751.353.177.56.147.766-.088.207-.236.884-1.03 1.12-1.383.235-.354.47-.295.795-.177.324.118 2.06.972 2.414 1.148.353.177.588.265.677.412.088.147.088.855-.206 1.68Z"/></svg>
 	</a>
 	<?php
@@ -309,11 +317,10 @@ add_action( 'wp_footer', 'remarka_footer_widgets' );
 function remarka_footer_field_defs(): array {
 	return array(
 		'remarka_company_name'          => array( 'section' => 'remarka_contatti', 'label' => 'Ragione sociale', 'type' => 'text', 'default' => 'Studio Remarka S.r.l.' ),
-		'remarka_company_address'       => array( 'section' => 'remarka_contatti', 'label' => 'Indirizzo (usare Invio per andare a capo)', 'type' => 'textarea', 'default' => "Via Andrea Solari 43\n20144 Milano (MI)" ),
-		'remarka_company_piva'          => array( 'section' => 'remarka_contatti', 'label' => 'Partita IVA', 'type' => 'text', 'default' => 'IT 01234567890' ),
-		'remarka_company_pec'           => array( 'section' => 'remarka_contatti', 'label' => 'PEC', 'type' => 'text', 'default' => 'studioremarka@pec.it' ),
-		'remarka_company_email'         => array( 'section' => 'remarka_contatti', 'label' => 'Email di contatto', 'type' => 'email', 'default' => 'info@studioremarka.it' ),
-		'remarka_company_phone'         => array( 'section' => 'remarka_contatti', 'label' => 'Telefono', 'type' => 'text', 'default' => '+39 02 8736 5412' ),
+		'remarka_company_address'       => array( 'section' => 'remarka_contatti', 'label' => 'Indirizzo (usare Invio per andare a capo)', 'type' => 'textarea', 'default' => "Milano, 20144, Vicolo Privato Lavandai, 2a\nTorino, 10153, Corso Regina Margherita, 94\nRoma, 00196, Via Flaminia, 122" ),
+		'remarka_company_piva'          => array( 'section' => 'remarka_contatti', 'label' => 'Partita IVA', 'type' => 'text', 'default' => 'GE 302230994' ),
+		'remarka_company_email'         => array( 'section' => 'remarka_contatti', 'label' => 'Email di contatto', 'type' => 'email', 'default' => 'info@remarka.biz' ),
+		'remarka_company_phone'         => array( 'section' => 'remarka_contatti', 'label' => 'Telefono/WhatsApp', 'type' => 'text', 'default' => '+39 347 83 11141' ),
 		'remarka_footer_tagline'        => array( 'section' => 'remarka_footer_cta', 'label' => 'Descrizione breve sotto il logo', 'type' => 'textarea', 'default' => 'Siti progressivi per PMI italiane. Parte del gruppo Remarka, nel settore linguistico e digitale dal 2001.' ),
 		'remarka_footer_cta_heading'    => array( 'section' => 'remarka_footer_cta', 'label' => 'Titolo banner', 'type' => 'text', 'default' => 'Parliamo del vostro sito' ),
 		'remarka_footer_cta_text'       => array( 'section' => 'remarka_footer_cta', 'label' => 'Sottotitolo banner', 'type' => 'textarea', 'default' => 'Analisi gratuita del sito attuale, preventivo chiuso entro 24 ore dalla chiamata.' ),
@@ -336,13 +343,24 @@ function remarka_customize_register( WP_Customize_Manager $wp_customize ): void 
 		'priority' => 30,
 	) );
 	$wp_customize->add_setting( 'remarka_whatsapp_number', array(
-		'default'           => '390000000000',
+		'default'           => '393478311141',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
 	$wp_customize->add_control( 'remarka_whatsapp_number', array(
-		'label'   => __( 'Numero WhatsApp Business (solo cifre, con prefisso 39...)', 'remarka-studio' ),
-		'section' => 'remarka_contatti',
-		'type'    => 'text',
+		'label'       => __( 'Numero WhatsApp — IT/EN (solo cifre, con prefisso internazionale)', 'remarka-studio' ),
+		'description' => __( 'Usato dal bottone WhatsApp fluttuante su tutte le pagine in italiano e inglese.', 'remarka-studio' ),
+		'section'     => 'remarka_contatti',
+		'type'        => 'text',
+	) );
+	$wp_customize->add_setting( 'remarka_whatsapp_number_ru', array(
+		'default'           => '79182630013',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+	$wp_customize->add_control( 'remarka_whatsapp_number_ru', array(
+		'label'       => __( 'Numero WhatsApp — RU (solo cifre, con prefisso internazionale)', 'remarka-studio' ),
+		'description' => __( 'Usato dal bottone WhatsApp fluttuante sulle pagine in russo.', 'remarka-studio' ),
+		'section'     => 'remarka_contatti',
+		'type'        => 'text',
 	) );
 
 	$wp_customize->add_section( 'remarka_footer_cta', array(
@@ -410,8 +428,57 @@ function remarka_footer_link_url( string $theme_mod_key, string $default ): stri
 	return preg_match( '#^https?://#i', $value ) ? $value : home_url( $value );
 }
 
+/**
+ * Dati societari per lingua: in IT vengono da Customizer (li modifica il
+ * titolare), in EN/RU sono fissi — stessa scelta già fatta per i testi del
+ * banner footer in remarka_footer_text(), perché RU è un soggetto giuridico
+ * diverso (Студия Ремарка, non Studio Remarka S.r.l.) con un proprio schema
+ * di identificativi fiscali (ИНН/ОГРНИП invece di partita IVA).
+ * 'tax' è un elenco di coppie [etichetta, valore] per gestire in modo
+ * uniforme sia il caso a una riga (P.IVA/VAT) sia quello a due (ИНН+ОГРНИП).
+ */
+function remarka_company_lang_data(): array {
+	$lang = remarka_current_lang();
+
+	if ( 'ru' === $lang ) {
+		return array(
+			'name'    => 'Студия Ремарка',
+			'address' => "125009, Москва, Глинищевский пер., д. 6, оф. 2\n350000, Краснодар, ул. Кузнечная, 6, офис 4",
+			'tax'     => array(
+				array( 'ИНН', '231149349191' ),
+				array( 'ОГРНИП', '323237500359402' ),
+			),
+			'email'         => 'info@remarka.biz',
+			'phone_display' => '+7 918 263 00 13',
+		);
+	}
+
+	if ( 'en' === $lang ) {
+		return array(
+			'name'    => remarka_footer_mod( 'remarka_company_name' ),
+			'address' => "Milan, 20144, Vicolo Privato Lavandai, 2a\nTurin, 10153, Corso Regina Margherita, 94\nRome, 00196, Via Flaminia, 122",
+			'tax'     => array(
+				array( 'VAT', remarka_footer_mod( 'remarka_company_piva' ) ),
+			),
+			'email'         => remarka_footer_mod( 'remarka_company_email' ),
+			'phone_display' => remarka_footer_mod( 'remarka_company_phone' ),
+		);
+	}
+
+	return array(
+		'name'    => remarka_footer_mod( 'remarka_company_name' ),
+		'address' => remarka_footer_mod( 'remarka_company_address' ),
+		'tax'     => array(
+			array( 'P.IVA', remarka_footer_mod( 'remarka_company_piva' ) ),
+		),
+		'email'         => remarka_footer_mod( 'remarka_company_email' ),
+		'phone_display' => remarka_footer_mod( 'remarka_company_phone' ),
+	);
+}
+
 function remarka_render_footer(): void {
-	$score = (int) get_theme_mod( 'remarka_footer_pagespeed_score', 95 );
+	$score   = (int) get_theme_mod( 'remarka_footer_pagespeed_score', 95 );
+	$company = remarka_company_lang_data();
 	?>
 	<footer class="sr-footer">
 		<div class="sr-footer-cta">
@@ -463,13 +530,14 @@ function remarka_render_footer(): void {
 				<div class="sr-footer-col">
 					<p class="sr-footer-col__title"><?php echo esc_html( remarka_str( 'footer_dati' ) ); ?></p>
 					<p class="sr-footer-company">
-						<strong><?php echo esc_html( remarka_footer_mod( 'remarka_company_name' ) ); ?></strong><br>
-						<?php echo nl2br( esc_html( remarka_footer_mod( 'remarka_company_address' ) ) ); ?>
+						<strong><?php echo esc_html( $company['name'] ); ?></strong><br>
+						<?php echo nl2br( esc_html( $company['address'] ) ); ?>
 					</p>
-					<p class="sr-mono">P.IVA <?php echo esc_html( remarka_footer_mod( 'remarka_company_piva' ) ); ?></p>
-					<p>PEC <?php echo esc_html( remarka_footer_mod( 'remarka_company_pec' ) ); ?></p>
-					<p><a href="mailto:<?php echo esc_attr( remarka_footer_mod( 'remarka_company_email' ) ); ?>"><?php echo esc_html( remarka_footer_mod( 'remarka_company_email' ) ); ?></a></p>
-					<p><?php echo esc_html( remarka_footer_mod( 'remarka_company_phone' ) ); ?></p>
+					<?php foreach ( $company['tax'] as list( $tax_label, $tax_value ) ) : ?>
+						<p class="sr-mono"><?php echo esc_html( $tax_label ); ?> <?php echo esc_html( $tax_value ); ?></p>
+					<?php endforeach; ?>
+					<p><a href="mailto:<?php echo esc_attr( $company['email'] ); ?>"><?php echo esc_html( $company['email'] ); ?></a></p>
+					<p><?php echo esc_html( remarka_str( 'footer_tel' ) ); ?>: <a href="<?php echo esc_url( remarka_whatsapp_link() ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html( $company['phone_display'] ); ?></a></p>
 				</div>
 			</div>
 		</div>
@@ -478,7 +546,7 @@ function remarka_render_footer(): void {
 			<div class="sr-footer-bottom__inner">
 				<div class="sr-barra sr-barra--h4" data-sr-target="<?php echo esc_attr( $score ); ?>%" aria-hidden="true"><div class="sr-barra__fill"></div></div>
 				<div class="sr-footer-bottom__row">
-					<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( remarka_footer_mod( 'remarka_company_name' ) ); ?> — <?php echo esc_html( remarka_str( 'footer_diritti' ) ); ?></span>
+					<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( $company['name'] ); ?> — <?php echo esc_html( remarka_str( 'footer_diritti' ) ); ?></span>
 					<span class="sr-footer-score"><?php echo esc_html( remarka_str( 'footer_pagespeed' ) ); ?>: <b><?php echo esc_html( $score ); ?></b>/100</span>
 				</div>
 			</div>
@@ -558,7 +626,7 @@ function remarka_organization_schema(): void {
 			'priceRange' => '€€',
 			'address'    => array(
 				'@type'           => 'PostalAddress',
-				'streetAddress'   => 'Via Andrea Solari 43',
+				'streetAddress'   => 'Vicolo Privato Lavandai, 2a',
 				'postalCode'      => '20144',
 				'addressLocality' => 'Milano',
 				'addressCountry'  => 'IT',

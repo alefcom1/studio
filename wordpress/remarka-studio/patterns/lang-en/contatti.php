@@ -24,7 +24,7 @@
 
 <!-- wp:buttons {"className":"sr-btn-whatsapp","style":{"spacing":{"margin":{"top":"32px"}}}} -->
 <div class="wp-block-buttons sr-btn-whatsapp" style="margin-top:32px"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://wa.me/390000000000" target="_blank" rel="noopener noreferrer">WhatsApp Business — number to be added</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://api.whatsapp.com/send?phone=393478311141&amp;text=" target="_blank" rel="noopener noreferrer">WhatsApp — +39 347 83 11141</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
