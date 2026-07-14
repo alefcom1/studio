@@ -1692,6 +1692,280 @@ body.page .entry-title {
   50% { opacity: 0.15; }
 }
 
+/* ---------- Check-up completo: schermo risultati (docs/copy-checkup.md §5.1) ----------
+   Mobile-first: regole base pensate per 390px, il desktop arriva via
+   min-width. Stesso problema di [hidden] già visto in .sr-stepform: i
+   bottoni (.wp-block-button__link) hanno display:inline-block da WP core,
+   che altrimenti vince su [hidden]. */
+
+.sr-checkup [hidden] {
+  display: none !important;
+}
+
+.sr-checkup {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sr-checkup-composite {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.sr-gauge {
+  position: relative;
+  flex: 0 0 auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(var(--sr-bordo) 0 0%, var(--sr-traccia) 0% 100%);
+}
+
+.sr-gauge::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  background: var(--sr-carta);
+}
+
+.sr-gauge__num {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  font-family: var(--sr-font-mono);
+}
+
+.sr-gauge__num-value {
+  font-size: clamp(32px, 9vw, 40px);
+  line-height: 1;
+  color: var(--sr-inchiostro);
+}
+
+.sr-gauge__num-suffix {
+  font-size: 13px;
+  color: var(--sr-grigio);
+}
+
+.sr-checkup-url {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--sr-grigio);
+}
+
+.sr-checkup-label {
+  margin: 8px 0 0;
+  font-size: clamp(24px, 6vw, 34px);
+  line-height: 1.15;
+}
+
+.sr-checkup-method-note {
+  margin-top: 12px;
+  max-width: 60ch;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--sr-grigio);
+}
+
+.sr-checkup-calc {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--sr-grigio);
+}
+
+.sr-checkup-incomplete {
+  padding: 24px;
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  background: var(--sr-bianco);
+}
+
+.sr-checkup-incomplete h3 {
+  margin: 0 0 8px;
+}
+
+.sr-checkup-incomplete p {
+  margin: 0 0 18px;
+  color: var(--sr-grigio);
+}
+
+/* ---------- Griglia delle 7 dimensioni ---------- */
+
+.sr-dim-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.sr-dim-card {
+  padding: 22px;
+}
+
+.sr-dim-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.sr-dim-card__weight {
+  font-family: var(--sr-font-mono);
+  font-size: 11px;
+  color: var(--sr-grigio);
+  white-space: nowrap;
+}
+
+.sr-dim-card__score {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 12px;
+  font-family: var(--sr-font-mono);
+}
+
+.sr-dim-card__score-value {
+  font-size: 34px;
+  line-height: 1;
+  color: var(--sr-inchiostro);
+}
+
+.sr-dim-card__score-suffix {
+  font-size: 14px;
+  color: var(--sr-grigio);
+}
+
+.sr-dim-card__extra {
+  margin-left: auto;
+  font-size: 12.5px;
+  color: var(--sr-grigio);
+}
+
+.sr-dim-card__word {
+  margin: 16px 0 0;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.sr-dim-card__findings {
+  margin: 6px 0 0;
+  font-size: 13.5px;
+  color: var(--sr-grigio);
+  line-height: 1.5;
+}
+
+.sr-dim-card__engine {
+  margin: 12px 0 0;
+  font-size: 11px;
+  color: var(--sr-grigio);
+}
+
+/* ---------- «I 3 interventi che pesano di più» ---------- */
+
+.sr-priorities__row {
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  border-top: 1px solid var(--sr-bordo);
+}
+
+.sr-priorities__row:last-child {
+  border-bottom: 1px solid var(--sr-bordo);
+}
+
+.sr-priorities__idx {
+  flex: 0 0 auto;
+  font-size: 18px;
+  color: var(--sr-oltremare);
+}
+
+.sr-priorities__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 15.5px;
+}
+
+.sr-priorities__desc {
+  margin: 6px 0 0;
+  color: var(--sr-grigio);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* ---------- Form e-mail «report completo in PDF» ---------- */
+
+.sr-checkup-lead {
+  padding: 26px;
+}
+
+.sr-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--sr-grigio);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.sr-consent input {
+  flex: 0 0 auto;
+  margin-top: 3px;
+}
+
+.sr-consent a {
+  color: var(--sr-oltremare);
+}
+
+@media (min-width: 560px) {
+  .sr-dim-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .sr-checkup-composite {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+  .sr-gauge {
+    width: 184px;
+    height: 184px;
+  }
+  .sr-gauge::before {
+    inset: 21px;
+  }
+  .sr-gauge__num-value {
+    font-size: 54px;
+  }
+  .sr-priorities__idx {
+    font-size: 20px;
+  }
+  .sr-priorities__title {
+    font-size: 16px;
+  }
+  .sr-priorities__desc {
+    font-size: 14.5px;
+  }
+  .sr-checkup-lead {
+    padding: 34px;
+  }
+}
+
+@media (min-width: 900px) {
+  .sr-dim-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
 /* ---------- Righe blog ---------- */
 
 .sr-blog-row {

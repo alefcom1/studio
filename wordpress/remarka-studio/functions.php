@@ -694,6 +694,88 @@ function remarka_organization_schema(): void {
 add_action( 'wp_head', 'remarka_organization_schema' );
 
 /**
+ * WebApplication + FAQPage (JSON-LD) sulla pagina «Check-up completo del sito»
+ * (docs/copy-checkup.md §5.2, scope M2). Non duplica l'Organization già
+ * emessa da remarka_organization_schema() (solo su home/città): qui il
+ * `provider` resta un riferimento minimo, ancorato ai dati reali del
+ * Customizer (nessun indirizzo/numero inventato). Niente aggregateRating:
+ * il titolare ha escluso recensioni/valutazioni fittizie per questo strumento.
+ */
+function remarka_checkup_tool_schema(): void {
+	if ( ! is_page( 'check-up-completo' ) ) {
+		return;
+	}
+
+	$app = array(
+		'@context'            => 'https://schema.org',
+		'@type'               => 'WebApplication',
+		'name'                => 'Check-up completo del sito',
+		'url'                 => get_permalink(),
+		'applicationCategory' => 'BusinessApplication',
+		'operatingSystem'     => 'Web',
+		'inLanguage'          => 'it',
+		'isAccessibleForFree' => true,
+		'offers'              => array(
+			'@type'         => 'Offer',
+			'price'         => '0',
+			'priceCurrency' => 'EUR',
+		),
+		'featureList'         => array(
+			'Prestazioni (Google PageSpeed Insights)',
+			'SEO (Google PageSpeed Insights)',
+			'Accessibilità (Google PageSpeed Insights)',
+			'Privacy e cookie (verifica indicativa)',
+			'Best practice (Google PageSpeed Insights)',
+			'Pronto per l’AI (4 segnali tecnici)',
+			'Impatto CO₂ (modello Sustainable Web Design)',
+		),
+		'provider'            => array(
+			'@type' => 'Organization',
+			'name'  => remarka_footer_mod( 'remarka_company_name' ),
+			'url'   => home_url( '/' ),
+			'email' => remarka_footer_mod( 'remarka_company_email' ),
+		),
+	);
+	echo '<script type="application/ld+json">' . wp_json_encode( $app ) . '</script>' . "\n";
+
+	// Le 3 FAQ della pagina (docs/copy-checkup.md §2.2) — testo statico,
+	// identico a quello reso da details_faq() nel pattern generato.
+	$faq = array(
+		array(
+			'q' => 'Il punteggio è quello vero di Google?',
+			'a' => 'Per prestazioni, SEO, accessibilità e best practice sì: arrivano dall’API ufficiale PageSpeed Insights, strategia mobile. Privacy, prontezza AI e CO₂ sono nostre verifiche, con il metodo dichiarato in ogni sezione.',
+		),
+		array(
+			'q' => 'Il check-up GDPR sostituisce un consulente privacy?',
+			'a' => 'No. È una verifica tecnica indicativa a quattro segnali: intercetta i problemi evidenti — banner assente, tracker prima del consenso — ma non è un parere legale e non sostituisce un consulente.',
+		),
+		array(
+			'q' => 'Cosa ricevo nel report PDF che non vedo già a schermo?',
+			'a' => 'A schermo vedete il punteggio, i sette semafori e le tre priorità. Nel PDF trovate una pagina per dimensione con tutte le criticità rilevate, le raccomandazioni operative in ordine di impatto e cosa faremmo noi, con i nostri riferimenti aziendali.',
+		),
+	);
+	$faq_schema = array(
+		'@context'   => 'https://schema.org',
+		'@type'      => 'FAQPage',
+		'mainEntity' => array_map(
+			static function ( array $item ): array {
+				return array(
+					'@type'          => 'Question',
+					'name'           => $item['q'],
+					'acceptedAnswer' => array(
+						'@type' => 'Answer',
+						'text'  => $item['a'],
+					),
+				);
+			},
+			$faq
+		),
+	);
+	echo '<script type="application/ld+json">' . wp_json_encode( $faq_schema ) . '</script>' . "\n";
+}
+add_action( 'wp_head', 'remarka_checkup_tool_schema' );
+
+/**
  * ---------- Modulo contatti nativo ----------
  * Shortcode [remarka_form]: nessun plugin, invio via wp_mail.
  * Anti-spam: honeypot + nonce + rate-limit per IP (1 invio/60s, transient).

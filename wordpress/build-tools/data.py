@@ -370,12 +370,44 @@ CASES = [
 ]
 
 # Sette strumenti gratuiti di /strumenti/ (Remarka Lab). Campo `tipo` = modulo
-# JS del widget (speed|seo|a11y|co2|gdpr|ai|roi), letto dal generatore per
-# rendere la markup corretta secondo il contratto data-* di remarka.js.
+# JS del widget (speed|seo|a11y|co2|gdpr|ai|roi|checkup), letto dal generatore
+# per rendere la markup corretta secondo il contratto data-* di remarka.js.
 # `come_funziona`: 3 passi (titolo, testo). `faq`: 3 (domanda, risposta).
 # `cta`: blocco finale scuro che rimanda al servizio a pagamento pertinente.
 # Tono: numeri, «voi», disclaimer onesti (GDPR indicativo/non legale; ROI stima).
+#
+# 'check-up-completo' (tipo 'checkup', M2 — docs/piano-checkup-sito.md) è
+# l'ottavo strumento, featured: orchestra le altre sette misure in un unico
+# punteggio «Salute del sito». Testi presi alla lettera da
+# docs/copy-checkup.md §2.2/§2.3 (fonte unica per M2/M3). Non ha 'migliorare'
+# (build_tool tratta la chiave come opzionale per questo tipo).
 TOOLS = [
+    dict(slug='check-up-completo', idx='/00', tipo='checkup', titolo='Check-up completo',
+         hero_titolo='Il check-up completo del vostro sito web',
+         hero_sub='Sette strumenti gratuiti in una sola analisi. Incollate l’indirizzo: in meno di un minuto vedete un punteggio di salute da 0 a 100, i sette semafori che lo compongono e i tre interventi più urgenti. La misura è quella vera di Google PageSpeed Insights, affiancata dalle nostre verifiche su privacy e prontezza AI. Il report completo, pagina per pagina, ve lo inviamo in PDF.',
+         descrizione='Sette strumenti gratuiti in una sola analisi.', has_demo=True,
+         come_funziona=[
+             ('Incollate l’indirizzo', 'La home o la pagina che porta più visite. Nessuna registrazione, nessun dato di pagamento.'),
+             ('Analizziamo su sette fronti', 'Un’unica interrogazione all’API Google PageSpeed (prestazioni, SEO, accessibilità, best practice) più le nostre verifiche su privacy/cookie e prontezza AI, letti dal nostro server come farebbe un visitatore.'),
+             ('Leggete il punteggio e le priorità', 'Salute 0–100, i sette semafori spiegati in italiano e i tre interventi che pesano di più. Il report completo arriva in PDF.'),
+         ],
+         faq=[
+             ('Il punteggio è quello vero di Google?', 'Per prestazioni, SEO, accessibilità e best practice sì: arrivano dall’API ufficiale PageSpeed Insights, strategia mobile. Privacy, prontezza AI e CO₂ sono nostre verifiche, con il metodo dichiarato in ogni sezione.'),
+             ('Il check-up GDPR sostituisce un consulente privacy?', 'No. È una verifica tecnica indicativa a quattro segnali: intercetta i problemi evidenti — banner assente, tracker prima del consenso — ma non è un parere legale e non sostituisce un consulente.'),
+             ('Cosa ricevo nel report PDF che non vedo già a schermo?', 'A schermo vedete il punteggio, i sette semafori e le tre priorità. Nel PDF trovate una pagina per dimensione con tutte le criticità rilevate, le raccomandazioni operative in ordine di impatto e cosa faremmo noi, con i nostri riferimenti aziendali.'),
+         ],
+         metodologia=('Che cosa misura davvero il check-up completo', [
+             'Dietro il punteggio non c’è una scatola nera. Quattro delle sette dimensioni — prestazioni, SEO, accessibilità e best practice — arrivano dall’API PageSpeed Insights di Google, la stessa che alimenta pagespeed.web.dev: interroghiamo Lighthouse in strategia mobile, perché è la versione del sito che Google usa per posizionarvi. Le altre tre le calcoliamo noi: la conformità privacy la leggiamo dall’HTML della pagina (banner, informative, tracker prima del consenso), la prontezza AI da quattro segnali tecnici — llms.txt, accesso ai crawler, dati strutturati, sitemap — e l’impronta di CO₂ dal peso reale della pagina, con il modello Sustainable Web Design.',
+             'Ogni dimensione entra nel voto con un peso dichiarato: le prestazioni valgono di più (25 su 100), la CO₂ di meno (5). È giusto sapere anche cosa il check-up non fa: non è un parere legale sulla privacy — è una verifica indicativa a quattro segnali — e non promette una posizione su Google. È la fotografia tecnica precisa del vostro sito, non una promessa di vendita.',
+         ]),
+         lettura=('Come si legge lo stato di salute del sito', [
+             'Il punteggio di salute è la media pesata dei sette semafori, non un voto a sensazione. Si legge come un semaforo: da 90 in su siete in fascia verde (eccellente), da 75 a 89 è buono, tra 50 e 74 c’è margine concreto, sotto 50 è critico e diventa la priorità. Ogni dimensione porta lo stesso codice colore, così capite in un colpo d’occhio dove il sito è solido e dove perde punti.',
+             'Due letture da evitare. Un voto alto non significa «primi su Google»: significa che le fondamenta tecniche sono sane. E se una misura risulta «N/D» non è un guasto del vostro sito: a volte Google è saturo, a volte il sito rifiuta la lettura automatica. In quel caso calcoliamo la salute sulle misure riuscite e ve lo diciamo con chiarezza.',
+         ]),
+         cta=dict(heading='Vogliamo sistemare noi le priorità?',
+                  testo='Dal punteggio al preventivo: analizziamo il report insieme e vi diamo un piano d’intervento a prezzo chiuso, con PageSpeed 90+ garantito da contratto.',
+                  buttons=[('Richiedi la consulenza — gratis', '/#contatti', None),
+                           ('Vedi tutti gli strumenti', '/strumenti/', 'outline')])),
     dict(slug='test-velocita', idx='/01', tipo='speed', titolo='Test velocità',
          hero_titolo='Test velocità sito web: il punteggio reale di Google',
          hero_sub='Punteggio Google PageSpeed e le tre metriche che lo determinano — LCP, INP, CLS — spiegate in italiano. Strategia mobile, dati reali dall’API di Google. Senza registrazione.',

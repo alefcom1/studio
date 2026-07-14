@@ -217,11 +217,14 @@
 	}
 
 	/**
-	 * Chiamata unica a PageSpeed Insights su tre categorie (performance,
-	 * accessibility, seo) + estrazione byte-weight e audit falliti localizzati.
-	 * `locale` (it|en|ru) fa restituire a Google i titoli degli audit tradotti.
+	 * Chiamata unica a PageSpeed Insights su quattro categorie (performance,
+	 * accessibility, seo, best-practices) + estrazione byte-weight e audit
+	 * falliti localizzati. `locale` (it|en|ru) fa restituire a Google i titoli
+	 * degli audit tradotti. La 4ª categoria (BEST_PRACTICES) serve al check-up
+	 * completo (docs/copy-checkup.md §1.1): un'unica chiamata PSI copre 4 delle
+	 * 7 dimensioni, più il byte-weight per il modulo CO₂.
 	 * Ritorna:
-	 *   scores: {perf, a11y, seo}   (0–100 o null)
+	 *   scores: {perf, a11y, seo, bp}   (0–100 o null)
 	 *   byteWeight: numericValue di total-byte-weight (byte) o null
 	 *   lcpSec / inpMs / cls        (metriche Core Web Vitals)
 	 *   audits: {a11y:[{id,title,score}], seo:[…]}  (falliti score<0.9, peggiori prima)
@@ -231,7 +234,7 @@
 		var endpoint = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed' +
 			'?url=' + encodeURIComponent(url) +
 			'&strategy=mobile' +
-			'&category=PERFORMANCE&category=ACCESSIBILITY&category=SEO' +
+			'&category=PERFORMANCE&category=ACCESSIBILITY&category=SEO&category=BEST_PRACTICES' +
 			'&locale=' + encodeURIComponent(locale);
 		var key = (window.remarkaPSI && window.remarkaPSI.key) || '';
 		if (key) {
@@ -284,7 +287,8 @@
 				scores: {
 					perf: catScore(cats.performance),
 					a11y: catScore(cats.accessibility),
-					seo: catScore(cats.seo)
+					seo: catScore(cats.seo),
+					bp: catScore(cats['best-practices'])
 				},
 				byteWeight: byteAudit && typeof byteAudit.numericValue === 'number' ? byteAudit.numericValue : null,
 				lcpSec: lcpAudit && typeof lcpAudit.numericValue === 'number' ? lcpAudit.numericValue / 1000 : null,
@@ -354,7 +358,7 @@
 	 * Remarka Lab — motore dei 7 strumenti gratuiti.
 	 *
 	 * DISPATCHER: initToolWidgets() cerca ogni contenitore [data-sr-tool="…"] e
-	 * inizializza il modulo giusto (speed|seo|a11y|co2|gdpr|ai|roi). Retro-
+	 * inizializza il modulo giusto (speed|seo|a11y|co2|gdpr|ai|roi|checkup). Retro-
 	 * compatibilità: un <form data-sr-tool-form> senza wrapper [data-sr-tool] è
 	 * trattato come 'speed' (la pagina test-velocità esistente non si rompe).
 	 *
@@ -366,7 +370,7 @@
 	 * fallback in italiano qui sotto. Il tipo si sceglie con data-sr-tool.
 	 *
 	 * COMUNE a tutti:
-	 *   data-sr-tool="speed|seo|a11y|co2|gdpr|ai|roi"   (obbligatorio sul wrapper)
+	 *   data-sr-tool="speed|seo|a11y|co2|gdpr|ai|roi|checkup"   (obbligatorio sul wrapper)
 	 *   data-sr-locale="it|en|ru"        locale PSI (default: window.remarkaPSI.locale|it)
 	 *   [data-sr-tool-form]              il <form> (input url + submit)
 	 *   input[type=text]                 campo URL
@@ -617,54 +621,83 @@
 		if (el) el.setAttribute('data-sr-flag', flag);
 	}
 
+	/**
+	 * Funzione pura (nessun accesso al DOM): legge l'HTML grezzo della pagina
+	 * (via remarka_tool_fetch) e ne estrae i 4 segnali GDPR. Riutilizzata da
+	 * initGdprTool (rendering pagina strumento) e dall'orchestratore check-up
+	 * (docs/copy-checkup.md §1.2 — stessi 4 segnali, pesi diversi).
+	 * Ritorna: { cmp: string|null, hasPolicy: bool, trackersFound: string[], externalCount: int }
+	 */
+	function runGdprCheck(url) {
+		return toolFetch(url, 'html').then(function (data) {
+			var html = data.body || '';
+			var lower = html.toLowerCase();
+
+			var cmp = null;
+			GDPR_CMPS.forEach(function (name) { if (!cmp && lower.indexOf(name) !== -1) cmp = name; });
+
+			var hasPolicy = /href=["'][^"']*(privacy|cookie|informativa)[^"']*["']/i.test(html) ||
+				/(privacy policy|cookie policy|informativa (sulla )?privacy)/i.test(html);
+
+			var trackersFound = [];
+			GDPR_TRACKERS.forEach(function (t) { if (t.re.test(html)) trackersFound.push(t.name); });
+
+			var domains = {};
+			var re = /<script[^>]+src=["']https?:\/\/([^\/"']+)/gi, mm;
+			while ((mm = re.exec(html)) !== null) { domains[mm[1].toLowerCase()] = true; }
+
+			return { cmp: cmp, hasPolicy: hasPolicy, trackersFound: trackersFound, externalCount: Object.keys(domains).length };
+		});
+	}
+
+	/** Deriva i 4 flag good|warn|bad dai segnali grezzi (stessa logica per pagina strumento e check-up). */
+	function gdprSignalFlags(sig) {
+		var trackFlag;
+		if (sig.trackersFound.length && !sig.cmp) {
+			trackFlag = 'bad';
+		} else if (sig.trackersFound.length) {
+			trackFlag = 'warn';
+		} else {
+			trackFlag = 'good';
+		}
+		return {
+			cmpFlag: sig.cmp ? 'good' : 'bad',
+			policyFlag: sig.hasPolicy ? 'good' : 'bad',
+			trackFlag: trackFlag,
+			externalFlag: sig.externalCount === 0 ? 'good' : (sig.externalCount <= 5 ? 'warn' : 'bad')
+		};
+	}
+
 	function initGdprTool(root) {
 		var shell = toolShell(root);
 		onUrlSubmit(shell, function (url) {
-			return toolFetch(url, 'html').then(function (data) {
-				var html = data.body || '';
-				var lower = html.toLowerCase();
+			return runGdprCheck(url).then(function (sig) {
+				var flags = gdprSignalFlags(sig);
 
-				// 1. CMP
-				var cmp = null;
-				GDPR_CMPS.forEach(function (name) { if (!cmp && lower.indexOf(name) !== -1) cmp = name; });
-				setText(root, '[data-sr-tool-cmp]', cmp
-					? txt(root, 'data-label-cmp-yes', 'Cookie banner rilevato') + ' (' + cmp + ')'
+				setText(root, '[data-sr-tool-cmp]', sig.cmp
+					? txt(root, 'data-label-cmp-yes', 'Cookie banner rilevato') + ' (' + sig.cmp + ')'
 					: txt(root, 'data-label-cmp-no', 'Nessun cookie banner rilevato'));
-				setFlag(root, '[data-sr-tool-cmp]', cmp ? 'good' : 'bad');
+				setFlag(root, '[data-sr-tool-cmp]', flags.cmpFlag);
 
-				// 2. Link privacy/cookie policy
-				var hasPolicy = /href=["'][^"']*(privacy|cookie|informativa)[^"']*["']/i.test(html) ||
-					/(privacy policy|cookie policy|informativa (sulla )?privacy)/i.test(html);
-				setText(root, '[data-sr-tool-policy]', hasPolicy
+				setText(root, '[data-sr-tool-policy]', sig.hasPolicy
 					? txt(root, 'data-label-policy-yes', 'Link a privacy/cookie policy presente')
 					: txt(root, 'data-label-policy-no', 'Nessun link a privacy/cookie policy'));
-				setFlag(root, '[data-sr-tool-policy]', hasPolicy ? 'good' : 'bad');
+				setFlag(root, '[data-sr-tool-policy]', flags.policyFlag);
 
-				// 3. Tracker nell'HTML grezzo (prima del consenso)
-				var found = [];
-				GDPR_TRACKERS.forEach(function (t) { if (t.re.test(html)) found.push(t.name); });
-				var trackFlag, trackText;
-				if (found.length && !cmp) {
-					trackFlag = 'bad';
-					trackText = txt(root, 'data-label-trackers-flag', 'Tracker attivi senza banner') + ': ' + found.join(', ');
-				} else if (found.length) {
-					trackFlag = 'warn';
-					trackText = txt(root, 'data-label-trackers-ok', 'Tracker presenti (con banner)') + ': ' + found.join(', ');
+				var trackText;
+				if (flags.trackFlag === 'bad') {
+					trackText = txt(root, 'data-label-trackers-flag', 'Tracker attivi senza banner') + ': ' + sig.trackersFound.join(', ');
+				} else if (flags.trackFlag === 'warn') {
+					trackText = txt(root, 'data-label-trackers-ok', 'Tracker presenti (con banner)') + ': ' + sig.trackersFound.join(', ');
 				} else {
-					trackFlag = 'good';
 					trackText = txt(root, 'data-label-trackers-clean', 'Nessun tracker nell’HTML iniziale');
 				}
 				setText(root, '[data-sr-tool-trackers]', trackText);
-				setFlag(root, '[data-sr-tool-trackers]', trackFlag);
+				setFlag(root, '[data-sr-tool-trackers]', flags.trackFlag);
 
-				// 4. Domini esterni degli script
-				var domains = {};
-				var re = /<script[^>]+src=["']https?:\/\/([^\/"']+)/gi, mm;
-				while ((mm = re.exec(html)) !== null) { domains[mm[1].toLowerCase()] = true; }
-				var n = Object.keys(domains).length;
 				var tmpl = txt(root, 'data-label-external', '{n} domini esterni caricano script');
-				setText(root, '[data-sr-tool-external]', tmpl.replace('{n}', String(n)));
-				setFlag(root, '[data-sr-tool-external]', n === 0 ? 'good' : (n <= 5 ? 'warn' : 'bad'));
+				setText(root, '[data-sr-tool-external]', tmpl.replace('{n}', String(sig.externalCount)));
+				setFlag(root, '[data-sr-tool-external]', flags.externalFlag);
 			});
 		});
 	}
@@ -695,48 +728,60 @@
 		return disallowAll ? 'blocked' : 'allowed';
 	}
 
+	/**
+	 * Funzione pura: le 4 verifiche di prontezza AI (llms.txt, robots, JSON-LD,
+	 * sitemap), senza toccare il DOM. Riutilizzata da initAiTool e
+	 * dall'orchestratore check-up (docs/copy-checkup.md §1.2 — stessi 4
+	 * segnali, pesi diversi: JSON-LD 30 · sitemap 25 · robots 25 · llms 20).
+	 * Ritorna: { llms: bool, robots: 'blocked'|'allowed'|'unmentioned', jsonld: bool, jsonldTypes: string[], sitemap: bool }
+	 */
+	function runAiCheck(url) {
+		var checks = { llms: false, robotsRaw: '', jsonld: false, jsonldTypes: [], sitemap: false };
+		var jobs = [
+			toolFetch(url, 'path:llms.txt').then(function (d) {
+				checks.llms = d.status === 200 && /#/.test(d.body || '');
+			}, function () {}),
+			toolFetch(url, 'path:robots.txt').then(function (d) {
+				checks.robotsRaw = d.status === 200 ? (d.body || '') : '';
+			}, function () { checks.robotsRaw = ''; }),
+			toolFetch(url, 'html').then(function (d) {
+				var body = d.body || '';
+				var types = [];
+				var re = /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi, mm;
+				while ((mm = re.exec(body)) !== null) {
+					try {
+						var json = JSON.parse(mm[1].trim());
+						var arr = Array.isArray(json) ? json : [json];
+						arr.forEach(function (o) { if (o && o['@type']) types.push(String(o['@type'])); });
+					} catch (e) { /* JSON-LD malformato: conta comunque come presente */ types.push('?'); }
+				}
+				checks.jsonld = /application\/ld\+json/i.test(body);
+				checks.jsonldTypes = types;
+			}, function () {}),
+			toolFetch(url, 'path:sitemap.xml').then(function (d) {
+				checks.sitemap = d.status === 200 && /<(urlset|sitemapindex)/i.test(d.body || '');
+			}, function () {})
+		];
+		return Promise.all(jobs).then(function () {
+			var robots = checks.robotsRaw
+				? (function () {
+					var anyBlocked = false, anyMentioned = false;
+					AI_CRAWLERS.forEach(function (c) {
+						var s = robotsAllows(checks.robotsRaw, c);
+						if (s !== 'unmentioned') anyMentioned = true;
+						if (s === 'blocked') anyBlocked = true;
+					});
+					return anyBlocked ? 'blocked' : (anyMentioned ? 'allowed' : 'unmentioned');
+				})()
+				: 'unmentioned';
+			return { llms: checks.llms, robots: robots, jsonld: checks.jsonld, jsonldTypes: checks.jsonldTypes, sitemap: checks.sitemap };
+		});
+	}
+
 	function initAiTool(root) {
 		var shell = toolShell(root);
 		onUrlSubmit(shell, function (url) {
-			var checks = { llms: false, robots: 'unmentioned', jsonld: false, sitemap: false };
-			var jobs = [
-				toolFetch(url, 'path:llms.txt').then(function (d) {
-					checks.llms = d.status === 200 && /#/.test(d.body || '');
-				}, function () {}),
-				toolFetch(url, 'path:robots.txt').then(function (d) {
-					checks.robotsRaw = d.status === 200 ? (d.body || '') : '';
-				}, function () { checks.robotsRaw = ''; }),
-				toolFetch(url, 'html').then(function (d) {
-					var body = d.body || '';
-					var types = [];
-					var re = /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi, mm;
-					while ((mm = re.exec(body)) !== null) {
-						try {
-							var json = JSON.parse(mm[1].trim());
-							var arr = Array.isArray(json) ? json : [json];
-							arr.forEach(function (o) { if (o && o['@type']) types.push(String(o['@type'])); });
-						} catch (e) { /* JSON-LD malformato: conta comunque come presente */ types.push('?'); }
-					}
-					checks.jsonld = /application\/ld\+json/i.test(body);
-					checks.jsonldTypes = types;
-				}, function () {}),
-				toolFetch(url, 'path:sitemap.xml').then(function (d) {
-					checks.sitemap = d.status === 200 && /<(urlset|sitemapindex)/i.test(d.body || '');
-				}, function () {})
-			];
-			return Promise.all(jobs).then(function () {
-				checks.robots = checks.robotsRaw
-					? (function () {
-						var anyBlocked = false, anyMentioned = false;
-						AI_CRAWLERS.forEach(function (c) {
-							var s = robotsAllows(checks.robotsRaw, c);
-							if (s !== 'unmentioned') anyMentioned = true;
-							if (s === 'blocked') anyBlocked = true;
-						});
-						return anyBlocked ? 'blocked' : (anyMentioned ? 'allowed' : 'unmentioned');
-					})()
-					: 'unmentioned';
-
+			return runAiCheck(url).then(function (checks) {
 				var yes = txt(root, 'data-label-yes', 'Sì');
 				var no = txt(root, 'data-label-no', 'No');
 				var partial = txt(root, 'data-label-partial', 'Parziale');
@@ -797,6 +842,397 @@
 		}
 	}
 
+	/* ============================================================================
+	 * Modulo: check-up completo (orchestratore) — docs/copy-checkup.md §1/§2.3.
+	 *
+	 * Esegue in parallelo le misure delle altre 7 dimensioni (1 chiamata PSI
+	 * copre prestazioni/SEO/accessibilità/best-practice + byte-weight per la
+	 * CO₂; GDPR e AI via remarka_tool_fetch), applica il modello di scoring del
+	 * copy deck (pesi 25/20/15/15/10/10/5, normalizzazione GDPR/AI/CO₂,
+	 * soglie 90/75/50, degrado con rinormalizzazione, guardia di validità
+	 * ≥4/7 e almeno Prestazioni|SEO) e disegna lo schermo dei risultati.
+	 *
+	 * CONTRATTO DATA-ATTRIBUTI (estensione al contratto generale sopra):
+	 *   [data-sr-tool="checkup"]     wrapper (data-sr-locale come gli altri)
+	 *   [data-sr-dim="perf|seo|a11y|gdpr|bp|ai|co2"]  una per le 7 card;
+	 *     dentro ciascuna: .sr-eyebrow (etichetta, letta anche per le
+	 *     priorità), [data-sr-tool-score], [data-sr-tool-fill],
+	 *     [data-sr-dim-word] (verdetto, riceve data-sr-flag),
+	 *     [data-sr-tool-verdict] (rilievo 1 riga), [data-sr-dim-extra]
+	 *     (opzionale, solo AI: "N / 4 segnali").
+	 *   data-verdict-0..3            sui singoli [data-sr-dim] — le 4 frasi di
+	 *                                 rilievo (Eccellente/Buono/Da migliorare/
+	 *                                 Critico), fallback IT in CHECKUP_FINDINGS.
+	 *   data-word-0..3               sul wrapper — le 4 etichette di verdetto.
+	 *   data-composite-0..3          sul wrapper — le 4 etichette del composito.
+	 *   [data-sr-checkup-incomplete] banner «check-up incompleto» (guardia).
+	 *   [data-sr-checkup-retry]      bottone «Riprova» dentro il banner.
+	 *   [data-sr-checkup-composite] [data-sr-checkup-priorities-wrap]
+	 *   [data-sr-checkup-form-wrap]  sezioni nascoste quando la guardia fallisce.
+	 *   [data-sr-gauge] [data-sr-gauge-num] [data-sr-checkup-label]
+	 *   [data-sr-checkup-url] [data-sr-checkup-calc] [data-sr-checkup-priorities]
+	 *   [data-sr-checkup-report-form] [data-sr-checkup-consent]
+	 *   [data-sr-checkup-consent-monthly] [data-sr-checkup-success] [data-sr-checkup-error]
+	 * ========================================================================== */
+
+	var CHECKUP_WEIGHTS = { perf: 25, seo: 20, a11y: 15, gdpr: 15, bp: 10, ai: 10, co2: 5 };
+	var CHECKUP_ORDER = ['perf', 'seo', 'a11y', 'gdpr', 'bp', 'ai', 'co2'];
+	var CHECKUP_WORDS = ['Eccellente', 'Buono', 'Da migliorare', 'Critico'];
+	var CHECKUP_COMPOSITE_LABELS = ['Sito in salute eccellente', 'Sito in buona salute', 'Sito da migliorare', 'Sito a rischio'];
+	// Fallback IT verbatim da docs/copy-checkup.md §2.3 (usato solo se la pagina
+	// non porta i data-verdict-0..3 sulla card — le pagine EN/RU di M4 li avranno propri).
+	var CHECKUP_FINDINGS = {
+		perf: ['Il sito è rapido su mobile: rispetta gli standard Google.',
+			'Velocità buona; restano margini misurabili su qualche pagina.',
+			'Nella media del web, ma lontano dagli standard consigliati.',
+			'Il sito è lento su mobile: gran parte dei visitatori abbandona prima del caricamento.'],
+		seo: ['Basi tecniche on-page in ordine: nessun ostacolo all’indicizzazione.',
+			'Struttura solida; poche correzioni per completare le basi.',
+			'Alcuni elementi on-page mancano o sono duplicati.',
+			'Qualcosa ostacola l’indicizzazione: da sistemare prima di tutto.'],
+		a11y: ['Poche o nessuna barriera: sito fruibile secondo WCAG 2.1 AA.',
+			'Buon livello; restano barriere minori da rimuovere.',
+			'Diverse barriere rilevate: contrasti, etichette, navigazione.',
+			'Barriere gravi: il sito è difficile da usare per molte persone (obbligo EAA).'],
+		gdpr: ['Banner, informative e tracker in ordine nell’HTML iniziale.',
+			'Impianto presente; un paio di punti da verificare a mano.',
+			'Mancano elementi o alcuni tracker vanno governati meglio.',
+			'Tracker attivi senza banner o policy assenti: rischio concreto col Garante.'],
+		bp: ['Sito tecnicamente pulito: HTTPS, console senza errori, librerie aggiornate.',
+			'Buon livello tecnico; qualche avviso da chiudere.',
+			'Diversi avvisi tecnici: sicurezza, errori console, immagini.',
+			'Problemi tecnici diffusi che indeboliscono affidabilità e sicurezza.'],
+		ai: ['4 segnali su 4: il sito è leggibile e citabile dai modelli AI.',
+			'3 segnali su 4: manca poco alla piena prontezza AI.',
+			'2 segnali su 4: dati strutturati o sitemap da completare.',
+			'0–1 segnali: i modelli AI faticano a leggere e citare il sito.'],
+		co2: ['Pagina leggera: emissioni sotto la media del web.',
+			'Vicino alla media; c’è margine per alleggerire.',
+			'Sopra la media: la pagina è pesante da caricare.',
+			'Molto sopra la media: pagina pesante, costo ambientale e di velocità.']
+	};
+	var CHECKUP_NA_TEXT = 'Non siamo riusciti a misurare questo aspetto: il sito ha rifiutato la lettura o il servizio Google era saturo.';
+	var CHECKUP_GAUGE_COLORS = { good: '#1a8f4a', warn: '#c98a00', bad: '#cc3333', na: '#DDDBD4' };
+
+	function checkupLevel(score) {
+		if (score >= 90) return 0;
+		if (score >= 75) return 1;
+		if (score >= 50) return 2;
+		return 3;
+	}
+	function checkupFlagForLevel(level) {
+		return level <= 1 ? 'good' : (level === 2 ? 'warn' : 'bad');
+	}
+
+	/** GDPR: punti 0/0,5/1 per flag, pesati come da docs/copy-checkup.md §1.2. */
+	function gdprScoreFromFlags(flags) {
+		function f(flag) { return flag === 'good' ? 1 : (flag === 'warn' ? 0.5 : 0); }
+		return Math.round(35 * f(flags.cmpFlag) + 30 * f(flags.trackFlag) + 20 * f(flags.policyFlag) + 15 * f(flags.externalFlag));
+	}
+
+	/** AI: somma dei pesi dei segnali positivi (JSON-LD 30 · sitemap 25 · robots 25 · llms 20). */
+	function aiScoreFromSignals(sig) {
+		var s = 0;
+		if (sig.jsonld) s += 30;
+		if (sig.sitemap) s += 25;
+		if (sig.robots !== 'blocked') s += 25;
+		if (sig.llms) s += 20;
+		return s;
+	}
+
+	/** CO₂: rampa lineare 0,4g→100 · 0,8g→67 · 1,6g→0 (clamp 0–100). */
+	function co2ScoreFromGrams(g) {
+		return Math.max(0, Math.min(100, Math.round(100 * (1.6 - g) / 1.2)));
+	}
+
+	/** Composito pesato sulle sole dimensioni disponibili + guardia di validità (§1.5). */
+	function checkupComposite(scores) {
+		var sumW = 0, sumWS = 0, n = 0, hasPerfOrSeo = false;
+		CHECKUP_ORDER.forEach(function (k) {
+			var s = scores[k];
+			if (s === null || s === undefined) return;
+			sumW += CHECKUP_WEIGHTS[k];
+			sumWS += CHECKUP_WEIGHTS[k] * s;
+			n++;
+			if (k === 'perf' || k === 'seo') hasPerfOrSeo = true;
+		});
+		var valid = n >= 4 && hasPerfOrSeo;
+		return { composite: (valid && sumW > 0) ? Math.round(sumWS / sumW) : null, measured: n, valid: valid };
+	}
+
+	/** Orchestratore: 1 psiFetch (4 categorie + byte-weight) + GDPR + AI, in parallelo, tollerante ai fallimenti parziali. */
+	function runCheckup(url, locale) {
+		var jobs = [
+			psiFetch(url, locale).catch(function () { return null; }),
+			runGdprCheck(url).catch(function () { return null; }),
+			runAiCheck(url).catch(function () { return null; })
+		];
+		return Promise.all(jobs).then(function (res) {
+			var m = res[0], gdprSig = res[1], aiSig = res[2];
+			var scores = { perf: null, seo: null, a11y: null, bp: null, gdpr: null, ai: null, co2: null };
+			var extra = {};
+			if (m) {
+				scores.perf = m.scores.perf;
+				scores.seo = m.scores.seo;
+				scores.a11y = m.scores.a11y;
+				scores.bp = m.scores.bp;
+				if (m.byteWeight !== null) {
+					extra.co2Grams = co2PerVisitGrams(m.byteWeight);
+					scores.co2 = co2ScoreFromGrams(extra.co2Grams);
+				}
+			}
+			if (gdprSig) {
+				extra.gdprFlags = gdprSignalFlags(gdprSig);
+				scores.gdpr = gdprScoreFromFlags(extra.gdprFlags);
+			}
+			if (aiSig) {
+				extra.aiCount = (aiSig.llms ? 1 : 0) + (aiSig.robots !== 'blocked' ? 1 : 0) + (aiSig.jsonld ? 1 : 0) + (aiSig.sitemap ? 1 : 0);
+				scores.ai = aiScoreFromSignals(aiSig);
+			}
+			var comp = checkupComposite(scores);
+			return { url: url, scores: scores, extra: extra, composite: comp.composite, measured: comp.measured, valid: comp.valid };
+		});
+	}
+
+	function renderCheckupPriorities(root, dims) {
+		var container = q(root, '[data-sr-checkup-priorities]');
+		if (!container) return;
+		container.innerHTML = '';
+		var candidates = dims.filter(function (d) { return d.score !== null; });
+		candidates.sort(function (a, b) { return (b.weight * (100 - b.score)) - (a.weight * (100 - a.score)); });
+		candidates.slice(0, 3).forEach(function (d, i) {
+			var row = document.createElement('div');
+			row.className = 'sr-priorities__row';
+			var idxEl = document.createElement('span');
+			idxEl.className = 'sr-mono sr-priorities__idx';
+			idxEl.textContent = '0' + (i + 1);
+			var body = document.createElement('div');
+			var title = document.createElement('p');
+			title.className = 'sr-priorities__title';
+			title.setAttribute('data-sr-flag', d.flag);
+			title.textContent = d.label + ' · ' + d.word;
+			var desc = document.createElement('p');
+			desc.className = 'sr-priorities__desc';
+			desc.textContent = d.finding;
+			body.appendChild(title);
+			body.appendChild(desc);
+			row.appendChild(idxEl);
+			row.appendChild(body);
+			container.appendChild(row);
+		});
+	}
+
+	function renderCheckupResults(root, result) {
+		var dims = [];
+		root.querySelectorAll('[data-sr-dim]').forEach(function (card) {
+			var key = card.getAttribute('data-sr-dim');
+			var score = result.scores[key];
+			var eyebrowEl = card.querySelector('.sr-eyebrow');
+			var label = eyebrowEl ? eyebrowEl.textContent : key;
+			var scoreEl = card.querySelector('[data-sr-tool-score]');
+			var fillEl = card.querySelector('[data-sr-tool-fill]');
+			var wordEl = card.querySelector('[data-sr-dim-word]');
+			var findingEl = card.querySelector('[data-sr-tool-verdict]');
+			var extraEl = card.querySelector('[data-sr-dim-extra]');
+
+			if (score === null || score === undefined) {
+				if (scoreEl) scoreEl.textContent = '—';
+				if (fillEl) fillEl.style.width = '0%';
+				if (wordEl) { wordEl.textContent = 'N/D'; wordEl.removeAttribute('data-sr-flag'); }
+				if (findingEl) findingEl.textContent = txt(root, 'data-na-text', CHECKUP_NA_TEXT);
+				if (extraEl) extraEl.textContent = '';
+				dims.push({ key: key, label: label, score: null, weight: CHECKUP_WEIGHTS[key] });
+				return;
+			}
+
+			var level = checkupLevel(score);
+			var flag = checkupFlagForLevel(level);
+			var word = txt(root, 'data-word-' + level, CHECKUP_WORDS[level]);
+			var finding = txt(card, 'data-verdict-' + level, CHECKUP_FINDINGS[key][level]);
+
+			if (scoreEl) scoreEl.textContent = String(score);
+			if (fillEl) animateFill(card, '[data-sr-tool-fill]', score);
+			if (wordEl) { wordEl.textContent = word; wordEl.setAttribute('data-sr-flag', flag); }
+			if (findingEl) findingEl.textContent = finding;
+			if (extraEl) {
+				if (key === 'ai') {
+					extraEl.textContent = (result.extra.aiCount || 0) + txt(root, 'data-ai-suffix', ' / 4 segnali');
+				} else {
+					extraEl.textContent = '';
+				}
+			}
+			dims.push({ key: key, label: label, score: score, weight: CHECKUP_WEIGHTS[key], flag: flag, word: word, finding: finding });
+		});
+
+		renderCheckupPriorities(root, dims);
+
+		var incompleteEl = q(root, '[data-sr-checkup-incomplete]');
+		var compositeEl = q(root, '[data-sr-checkup-composite]');
+		var prioritiesWrap = q(root, '[data-sr-checkup-priorities-wrap]');
+		var formWrap = q(root, '[data-sr-checkup-form-wrap]');
+
+		if (!result.valid) {
+			if (incompleteEl) incompleteEl.hidden = false;
+			if (compositeEl) compositeEl.hidden = true;
+			if (prioritiesWrap) prioritiesWrap.hidden = true;
+			if (formWrap) formWrap.hidden = true;
+			return;
+		}
+
+		if (incompleteEl) incompleteEl.hidden = true;
+		if (compositeEl) compositeEl.hidden = false;
+		if (prioritiesWrap) prioritiesWrap.hidden = false;
+		if (formWrap) formWrap.hidden = false;
+
+		var compLevel = checkupLevel(result.composite);
+		var compFlag = checkupFlagForLevel(compLevel);
+		var gaugeNum = q(root, '[data-sr-gauge-num]');
+		if (gaugeNum) gaugeNum.textContent = String(result.composite);
+		var gauge = q(root, '[data-sr-gauge]');
+		if (gauge) {
+			var color = CHECKUP_GAUGE_COLORS[compFlag] || CHECKUP_GAUGE_COLORS.na;
+			gauge.style.background = 'conic-gradient(' + color + ' 0 ' + result.composite + '%, var(--sr-traccia) ' + result.composite + '% 100%)';
+		}
+		var labelEl = q(root, '[data-sr-checkup-label]');
+		if (labelEl) labelEl.textContent = txt(root, 'data-composite-' + compLevel, CHECKUP_COMPOSITE_LABELS[compLevel]);
+
+		var urlEl = q(root, '[data-sr-checkup-url]');
+		if (urlEl) {
+			var domain = result.url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+			var now = new Date();
+			var day = String(now.getDate()).padStart(2, '0'), month = String(now.getMonth() + 1).padStart(2, '0');
+			urlEl.textContent = domain + txt(root, 'data-label-suffix', ' — analisi mobile') + ' · ' + day + '.' + month + '.' + now.getFullYear();
+		}
+
+		var calcEl = q(root, '[data-sr-checkup-calc]');
+		if (calcEl) {
+			var tmpl = txt(root, 'data-calc-note', 'Calcolato su {n} misurazioni su 7.');
+			calcEl.textContent = tmpl.replace('{n}', String(result.measured));
+		}
+	}
+
+	/** Form richiesta report PDF: valida lato client, assembla il payload JSON e
+	 * lo invia all'azione AJAX `remarka_tool_report`. L'handler server-side
+	 * (dompdf + wp_mail + CPT sr_lead) è compito di M3: finché non esiste,
+	 * questa richiesta fallisce onestamente e la UI mostra l'errore, senza
+	 * fingere un successo. */
+	function initCheckupReportForm(root, getLastResult) {
+		var form = q(root, '[data-sr-checkup-report-form]');
+		if (!form) return;
+		var successEl = q(root, '[data-sr-checkup-success]');
+		var errorEl = q(root, '[data-sr-checkup-error]');
+
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+			if (successEl) successEl.hidden = true;
+			if (errorEl) errorEl.hidden = true;
+
+			var result = getLastResult();
+			var emailInput = form.querySelector('input[type="email"]');
+			var consentInput = q(root, '[data-sr-checkup-consent]');
+			if (!result || !emailInput || !emailInput.checkValidity() || !consentInput || !consentInput.checked) {
+				if (emailInput && emailInput.reportValidity) emailInput.reportValidity();
+				return;
+			}
+
+			// TODO(M3, remarka_tool_report): implementare l'handler AJAX server-side
+			// (nonce remarka_tools già disponibile; dompdf per il PDF; wp_mail per
+			// l'invio; CPT sr_lead per il lead). Il payload sotto è già pronto,
+			// cap 64 KB lato server come da piano-checkup-sito.md.
+			var monthlyInput = q(root, '[data-sr-checkup-consent-monthly]');
+			var payload = {
+				url: result.url,
+				locale: toolLocale(root),
+				composite: result.composite,
+				measured: result.measured,
+				scores: result.scores,
+				ts: new Date().toISOString()
+			};
+
+			var cfg = window.remarkaPSI || {};
+			if (!cfg.ajaxUrl || !window.fetch) {
+				if (errorEl) errorEl.hidden = false;
+				return;
+			}
+			var btn = form.querySelector('button[type="submit"]');
+			if (btn) btn.disabled = true;
+
+			var data = new FormData();
+			data.set('action', 'remarka_tool_report');
+			data.set('nonce', cfg.toolsNonce || '');
+			data.set('email', emailInput.value);
+			data.set('consent', '1');
+			data.set('consent_monthly', monthlyInput && monthlyInput.checked ? '1' : '0');
+			data.set('payload', JSON.stringify(payload).slice(0, 65536));
+
+			window.fetch(cfg.ajaxUrl, { method: 'POST', body: data, credentials: 'same-origin' })
+				.then(function (r) { return r.json(); })
+				.then(function (json) {
+					if (json && json.success) {
+						form.hidden = true;
+						if (successEl) successEl.hidden = false;
+					} else if (errorEl) {
+						errorEl.hidden = false;
+					}
+				})
+				.catch(function () { if (errorEl) errorEl.hidden = false; })
+				.finally(function () { if (btn) btn.disabled = false; });
+		});
+	}
+
+	/** Precompila e avvia da `?url=…&autostart=1` (submit del blocco home). */
+	function checkupMaybeAutostart(shell) {
+		var params;
+		try {
+			params = new URLSearchParams(window.location.search);
+		} catch (e) {
+			return;
+		}
+		var urlParam = params.get('url');
+		if (!urlParam) return;
+		var input = shell.form.querySelector('input[type="text"]');
+		if (input) input.value = urlParam;
+		if (params.get('autostart') === '1') {
+			window.setTimeout(function () {
+				if (shell.form.requestSubmit) {
+					shell.form.requestSubmit();
+					return;
+				}
+				var ev = null;
+				try { ev = new Event('submit', { cancelable: true }); } catch (e2) { /* ambienti molto vecchi */ }
+				if (ev) shell.form.dispatchEvent(ev);
+			}, 0);
+		}
+	}
+
+	function initCheckupTool(root) {
+		var shell = toolShell(root);
+		var lastResult = null;
+
+		function run(url) {
+			return runCheckup(url, toolLocale(root)).then(function (result) {
+				lastResult = result;
+				renderCheckupResults(root, result);
+			});
+		}
+
+		onUrlSubmit(shell, run);
+		initCheckupReportForm(root, function () { return lastResult; });
+
+		var retryBtn = q(root, '[data-sr-checkup-retry]');
+		if (retryBtn) {
+			retryBtn.addEventListener('click', function () {
+				var input = shell.form.querySelector('input[type="text"]');
+				var url = normalizeUrl(input && input.value);
+				if (!url) return;
+				if (shell.pending) shell.pending.hidden = false;
+				run(url).finally(function () { if (shell.pending) shell.pending.hidden = true; });
+			});
+		}
+
+		checkupMaybeAutostart(shell);
+	}
+
 	/** POST server-side fetch (endpoint remarka_tool_fetch) → {ok,status,body}. */
 	function toolFetch(url, mode) {
 		var cfg = window.remarkaPSI || {};
@@ -827,6 +1263,7 @@
 				case 'gdpr': initGdprTool(root); break;
 				case 'ai': initAiTool(root); break;
 				case 'roi': initRoiTool(root); break;
+				case 'checkup': initCheckupTool(root); break;
 			}
 		});
 		// Retro-compatibilità: form velocità senza wrapper [data-sr-tool].
@@ -1043,6 +1480,28 @@
 		});
 	}
 
+	/* ---------- 9. Blocco home check-up completo ----------
+	   Non è un widget [data-sr-tool]: non misura nulla in home, si limita a
+	   normalizzare l'URL e mandare alla pagina check-up con ?url=…&autostart=1
+	   (patterns/checkup-home.php). L'analisi vera parte lì (initCheckupTool). */
+	function initCheckupHomeForm() {
+		document.querySelectorAll('[data-sr-checkup-home]').forEach(function (form) {
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+				var input = form.querySelector('input[type="text"]');
+				var url = normalizeUrl(input && input.value);
+				if (!url) {
+					if (input) input.focus();
+					return;
+				}
+				// URL IT hardcoded (M2, unico blocco home esistente): M4 dovrà
+				// leggere il percorso giusto per EN/RU (es. da window.remarkaLang)
+				// quando aggiungerà i blocchi home tradotti.
+				window.location.href = '/strumenti/check-up-completo/?url=' + encodeURIComponent(url) + '&autostart=1';
+			});
+		});
+	}
+
 	onReady(function () {
 		initReveal();
 		initBarre();
@@ -1050,6 +1509,7 @@
 		initPrespaFallback();
 		initHeroWidgets();
 		initToolWidgets();
+		initCheckupHomeForm();
 		initCookieBanner();
 		initWaFab();
 		initLangSwitch();

@@ -109,7 +109,7 @@ WP_CLI::log( '=================================' );
 
 WP_CLI::log( "\nHome:" );
 $home_sections = array(
-	'hero-home', 'trust-strip', 'tre-numeri', 'manifesto', 'lingue-mercati', 'servizi-cards', 'caso-evidenza',
+	'hero-home', 'checkup-home', 'trust-strip', 'tre-numeri', 'manifesto', 'lingue-mercati', 'servizi-cards', 'caso-evidenza',
 	'come-lavoriamo', 'garanzie-dark', 'prezzi-teaser', 'strumenti-cards', 'faq', 'contatti',
 );
 
@@ -191,6 +191,7 @@ $page_map = array(
 	'prezzi'                               => array( 'prezzi', null, null ),
 
 	'strumenti-index'                      => array( 'strumenti', null, 'Strumenti' ),
+	'strumento-check-up-completo'          => array( 'check-up-completo', 'strumenti', null ),
 	'strumento-test-velocita'              => array( 'test-velocita', 'strumenti', null ),
 	'strumento-check-gdpr'                 => array( 'check-gdpr', 'strumenti', null ),
 	'strumento-analisi-seo'                => array( 'analisi-seo', 'strumenti', null ),

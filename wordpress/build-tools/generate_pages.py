@@ -388,8 +388,25 @@ def build_strumenti_index():
                     paragraph('Strumenti professionali, gratuiti, senza registrazione.', color='grigio', size='medium'),
                     classes='sr-section sr-hero')
 
+    # Check-up completo: posizione featured, prima della griglia dei singoli
+    # strumenti (docs/piano-checkup-sito.md, scope M2).
+    checkup = next(t for t in TOOLS if t['tipo'] == 'checkup')
+    altri = [t for t in TOOLS if t['tipo'] != 'checkup']
+
+    featured = section(
+        raw_html(
+            '<div class="sr-card sr-card--carta" style="border-color:var(--sr-oltremare)">'
+            '<p class="sr-eyebrow" style="color:var(--sr-oltremare)">Novità · gratuito</p>'
+            f'<h3 class="wp-block-heading" style="margin-top:10px">{checkup["titolo"]}</h3>'
+            f'<p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">{checkup["descrizione"]}</p>'
+            f'<p class="sr-card-link" style="margin-top:18px"><a href="/strumenti/{checkup["slug"]}/">Prova →</a></p>'
+            '</div>'
+        ),
+        classes='sr-section sr-section--bianco',
+    )
+
     cards = []
-    for t in TOOLS:
+    for t in altri:
         card = (
             raw_html(f'<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">{t["idx"]}</p>') +
             heading(3, t['titolo'], accent_dot=False) +
@@ -400,7 +417,8 @@ def build_strumenti_index():
 
     grid = section(group(''.join(cards), classes='', layout_type='grid', style='240px'),
                     classes='sr-section sr-section--bianco')
-    write('strumenti-index', 'Pagina — Strumenti (elenco)', 'Elenco dei quattro strumenti gratuiti.', hero + grid)
+    write('strumenti-index', 'Pagina — Strumenti (elenco)',
+          'Elenco degli otto strumenti gratuiti, con il check-up completo in evidenza.', hero + featured + grid)
 
 
 # Markup del widget per tipo di strumento — segue STRETTAMENTE il contratto
@@ -585,6 +603,153 @@ def _widget_roi():
 </div>'''
 
 
+# Le 7 dimensioni del check-up completo, nell'ordine del peso (docs/copy-checkup.md
+# §1.1/§2.3): (chiave-JS, etichetta, "Peso N", didascalia motore, 4 frasi di
+# rilievo Eccellente/Buono/Da migliorare/Critico). Le 4 frasi diventano gli
+# attributi data-verdict-0..3 letti da remarka.js (initCheckupTool).
+_CHECKUP_DIMS = [
+    ('perf', 'Prestazioni', 'Peso 25', 'Google PageSpeed', [
+        'Il sito è rapido su mobile: rispetta gli standard Google.',
+        'Velocità buona; restano margini misurabili su qualche pagina.',
+        'Nella media del web, ma lontano dagli standard consigliati.',
+        'Il sito è lento su mobile: gran parte dei visitatori abbandona prima del caricamento.',
+    ]),
+    ('seo', 'SEO', 'Peso 20', 'Google PageSpeed', [
+        'Basi tecniche on-page in ordine: nessun ostacolo all’indicizzazione.',
+        'Struttura solida; poche correzioni per completare le basi.',
+        'Alcuni elementi on-page mancano o sono duplicati.',
+        'Qualcosa ostacola l’indicizzazione: da sistemare prima di tutto.',
+    ]),
+    ('a11y', 'Accessibilità', 'Peso 15', 'WCAG 2.1 / EAA', [
+        'Poche o nessuna barriera: sito fruibile secondo WCAG 2.1 AA.',
+        'Buon livello; restano barriere minori da rimuovere.',
+        'Diverse barriere rilevate: contrasti, etichette, navigazione.',
+        'Barriere gravi: il sito è difficile da usare per molte persone (obbligo EAA).',
+    ]),
+    ('gdpr', 'Privacy e cookie', 'Peso 15', 'Verifica indicativa · non legale', [
+        'Banner, informative e tracker in ordine nell’HTML iniziale.',
+        'Impianto presente; un paio di punti da verificare a mano.',
+        'Mancano elementi o alcuni tracker vanno governati meglio.',
+        'Tracker attivi senza banner o policy assenti: rischio concreto col Garante.',
+    ]),
+    ('bp', 'Best practice', 'Peso 10', 'Google PageSpeed', [
+        'Sito tecnicamente pulito: HTTPS, console senza errori, librerie aggiornate.',
+        'Buon livello tecnico; qualche avviso da chiudere.',
+        'Diversi avvisi tecnici: sicurezza, errori console, immagini.',
+        'Problemi tecnici diffusi che indeboliscono affidabilità e sicurezza.',
+    ]),
+    ('ai', 'Pronto per l’AI', 'Peso 10', '4 segnali tecnici', [
+        '4 segnali su 4: il sito è leggibile e citabile dai modelli AI.',
+        '3 segnali su 4: manca poco alla piena prontezza AI.',
+        '2 segnali su 4: dati strutturati o sitemap da completare.',
+        '0–1 segnali: i modelli AI faticano a leggere e citare il sito.',
+    ]),
+    ('co2', 'Impatto CO₂', 'Peso 5', 'Modello SWD', [
+        'Pagina leggera: emissioni sotto la media del web.',
+        'Vicino alla media; c’è margine per alleggerire.',
+        'Sopra la media: la pagina è pesante da caricare.',
+        'Molto sopra la media: pagina pesante, costo ambientale e di velocità.',
+    ]),
+]
+
+
+def _checkup_dim_card(key, label, weight, engine, verdicts):
+    extra = '<span class="sr-dim-card__extra" data-sr-dim-extra></span>' if key == 'ai' else ''
+    verdict_attrs = ' '.join(f'data-verdict-{i}="{v}"' for i, v in enumerate(verdicts))
+    return f'''<div class="sr-card sr-dim-card" data-sr-dim="{key}" {verdict_attrs}>
+  <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">{label}</p><span class="sr-dim-card__weight">{weight}</span></div>
+  <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span>{extra}</div>
+  <div class="sr-barra" style="height:8px;margin-top:12px"><div class="sr-barra__fill" data-sr-tool-fill style="width:0%"></div></div>
+  <p class="sr-dim-card__word" data-sr-dim-word></p>
+  <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
+  <p class="sr-dim-card__engine sr-mono">{engine}</p>
+</div>'''
+
+
+def _widget_checkup():
+    cards = ''.join(_checkup_dim_card(*d) for d in _CHECKUP_DIMS)
+    return f'''
+<div class="sr-tool-widget sr-card sr-checkup" data-sr-tool="checkup" data-sr-locale="it"
+     data-word-0="Eccellente" data-word-1="Buono" data-word-2="Da migliorare" data-word-3="Critico"
+     data-composite-0="Sito in salute eccellente" data-composite-1="Sito in buona salute"
+     data-composite-2="Sito da migliorare" data-composite-3="Sito a rischio"
+     data-label-suffix=" — analisi mobile"
+     data-calc-note="Calcolato su {{n}} misurazioni su 7."
+     data-na-text="Non siamo riusciti a misurare questo aspetto: il sito ha rifiutato la lettura o il servizio Google era saturo."
+     data-err="Non siamo riusciti a completare il check-up. Riprovate tra qualche minuto.">
+  <form data-sr-tool-form>
+    <div class="sr-tool-row">
+      <input type="text" placeholder="www.ilvostrosito.it" class="sr-text-input" required />
+      <button type="submit" class="wp-block-button__link" style="padding:17px 30px">Analizza il sito — gratis</button>
+    </div>
+  </form>
+  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>Analisi in corso su sette fronti — può richiedere fino a 30 secondi<span class="sr-blink">…</span></p>
+
+  <div class="sr-tool-result" data-sr-tool-result hidden>
+
+    <div class="sr-checkup-incomplete" data-sr-checkup-incomplete hidden>
+      <h3 class="wp-block-heading">Check-up incompleto</h3>
+      <p>Riprovate tra qualche minuto: alcune misure non hanno risposto (il servizio Google potrebbe essere saturo, oppure il sito ha rifiutato la lettura).</p>
+      <button type="button" class="wp-block-button__link" data-sr-checkup-retry>Riprova</button>
+    </div>
+
+    <div data-sr-checkup-composite>
+      <p class="sr-eyebrow">Salute del sito</p>
+      <div class="sr-checkup-composite">
+        <div class="sr-gauge" data-sr-gauge>
+          <div class="sr-gauge__num"><span class="sr-gauge__num-value" data-sr-gauge-num>0</span><span class="sr-gauge__num-suffix">/100</span></div>
+        </div>
+        <div>
+          <p class="sr-mono sr-checkup-url" data-sr-checkup-url></p>
+          <h2 class="wp-block-heading sr-checkup-label" data-sr-checkup-label></h2>
+          <p class="sr-checkup-method-note">Media pesata di 7 misure. Prestazioni, SEO, accessibilità e best practice arrivano da Google PageSpeed Insights; privacy, prontezza AI e impatto CO₂ dalle verifiche di Studio Remarka.</p>
+          <p class="sr-mono sr-checkup-calc" data-sr-checkup-calc></p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px">
+      <p class="sr-eyebrow">Le sette misure</p>
+      <h2 class="wp-block-heading" style="font-size:clamp(24px,2.4vw,32px)">Sette semafori, un punteggio</h2>
+      <div class="sr-dim-grid" style="margin-top:24px">{cards}</div>
+    </div>
+
+    <div data-sr-checkup-priorities-wrap style="margin-top:32px">
+      <p class="sr-eyebrow">Le priorità</p>
+      <h2 class="wp-block-heading" style="font-size:clamp(24px,2.4vw,32px)">I 3 interventi che pesano di più</h2>
+      <p style="margin:8px 0 20px;color:var(--sr-grigio);font-size:15.5px">Ordinati per impatto sul punteggio: quanto guadagnereste sistemandoli.</p>
+      <div class="sr-priorities" data-sr-checkup-priorities></div>
+    </div>
+
+    <div data-sr-checkup-form-wrap style="margin-top:32px">
+      <div class="sr-card sr-checkup-lead">
+        <p class="sr-eyebrow">Report completo</p>
+        <h2 class="wp-block-heading" style="font-size:clamp(22px,2.6vw,28px)">Il report completo, in PDF</h2>
+        <p style="margin-top:10px;color:var(--sr-grigio);font-size:15.5px;line-height:1.6">Vi inviamo l’analisi integrale: una pagina per ognuna delle sette dimensioni, tutte le criticità rilevate e le raccomandazioni in ordine di impatto.</p>
+        <ul class="sr-tool-audits" style="margin-top:18px">
+          <li>Il punteggio di salute con i sette semafori</li>
+          <li>Una pagina per dimensione: punteggio, cosa abbiamo trovato, cosa fare</li>
+          <li>I tre interventi prioritari con le contromisure</li>
+          <li>«Cosa faremmo noi» e i riferimenti di Studio Remarka</li>
+        </ul>
+        <form data-sr-checkup-report-form style="margin-top:24px">
+          <div class="sr-tool-row">
+            <input type="email" placeholder="nome@vostraazienda.it" class="sr-text-input" required />
+            <button type="submit" class="wp-block-button__link" style="padding:15px 26px">Inviatemi il report PDF</button>
+          </div>
+          <label class="sr-consent"><input type="checkbox" data-sr-checkup-consent required /><span>Ho letto la <a href="/privacy/">privacy policy</a> e acconsento all’invio del report e a essere ricontattato.</span></label>
+          <label class="sr-consent"><input type="checkbox" data-sr-checkup-consent-monthly /><span>Inviatemi ogni mese il monitoraggio dei Core Web Vitals di questo sito.</span></label>
+          <p class="sr-mono" data-sr-checkup-success hidden style="margin-top:16px;color:var(--sr-verde)">Fatto. Il report è in viaggio verso la vostra casella: se non arriva entro qualche minuto, controllate lo spam o scriveteci.</p>
+          <p class="sr-form-error" data-sr-checkup-error hidden>Non siamo riusciti a inviare il report. Riprovate tra poco o scriveteci: ve lo mandiamo a mano.</p>
+        </form>
+        <p class="sr-mono" style="margin-top:20px;font-size:11px;color:var(--sr-grigio);opacity:.85">Niente spam. Usiamo l’indirizzo solo per il report ed eventuale ricontatto. Studio Remarka S.r.l., P.IVA GE 302230994.</p>
+      </div>
+    </div>
+
+  </div>
+</div>'''
+
+
 def build_tool_widget(tool):
     tipo = tool['tipo']
     if tipo == 'speed':
@@ -610,15 +775,21 @@ def build_tool_widget(tool):
         return _widget_ai()
     if tipo == 'roi':
         return _widget_roi()
+    if tipo == 'checkup':
+        return _widget_checkup()
     raise ValueError(f'tipo strumento sconosciuto: {tipo}')
 
 
 def build_tool(tool):
     """Pagina completa di uno strumento: hero, widget (per tipo, contratto T1),
     «Come funziona» (3 passi), FAQ (3), CTA verso il servizio pertinente,
-    blocco «Gli altri strumenti gratuiti» (gli altri 6)."""
+    blocco «Gli altri strumenti gratuiti» (gli altri 6).
+    Il check-up completo (tipo 'checkup') è l'orchestratore delle altre 7
+    misure: eyebrow dedicato invece di «Strumento gratuito /NN» e nessuna
+    sezione «Come migliorare» (non prevista dal copy deck — docs/copy-checkup.md)."""
+    eyebrow_text = 'Check-up completo · gratuito' if tool['tipo'] == 'checkup' else f'Strumento gratuito {tool["idx"]}'
     hero = section(
-        eyebrow(f'Strumento gratuito {tool["idx"]}') + heading(1, tool['hero_titolo'], style='clamp(34px,4vw,52px)') +
+        eyebrow(eyebrow_text) + heading(1, tool['hero_titolo'], style='clamp(34px,4vw,52px)') +
         paragraph(tool['hero_sub'], color='grigio', size='medium', extra_style='max-width:100%'),
         classes='sr-section sr-hero',
     )
@@ -661,27 +832,32 @@ def build_tool(tool):
     )
 
     # Sezione «come migliorare»: metodi concreti a griglia + link contestuali
-    # (servizio + articolo blog). Va dopo la FAQ, prima della CTA.
-    mig = tool['migliorare']
-    mig_cards = ''.join(
-        f'<div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">{i:02d}</p>'
-        f'<p style="font-weight:500;margin-top:8px">{t}</p>'
-        f'<p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">{d}</p></div>'
-        for i, (t, d) in enumerate(mig['punti'], start=1)
-    )
-    mig_links = ''.join(
-        f'<p class="sr-card-link" style="margin-top:12px"><a href="{url}">{label} →</a></p>'
-        for label, url in mig['links']
-    )
-    migliorare = section(
-        eyebrow('Come migliorare') + heading(2, mig['h2']) +
-        paragraph(mig['intro'], color='grigio', size='base',
-                  extra_style='font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px') +
-        group(mig_cards, classes='', layout_type='grid', style='240px') +
-        raw_html(f'<div style="margin-top:24px;display:flex;flex-direction:column;'
-                 f'gap:8px;align-items:flex-start">{mig_links}</div>'),
-        classes='sr-section sr-section--bianco',
-    )
+    # (servizio + articolo blog). Va dopo la FAQ, prima della CTA. Opzionale:
+    # il check-up completo non ne ha una propria nel copy deck (orchestra le
+    # 7 sezioni «migliorare» già presenti nelle pagine dei singoli strumenti).
+    mig = tool.get('migliorare')
+    if mig:
+        mig_cards = ''.join(
+            f'<div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">{i:02d}</p>'
+            f'<p style="font-weight:500;margin-top:8px">{t}</p>'
+            f'<p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">{d}</p></div>'
+            for i, (t, d) in enumerate(mig['punti'], start=1)
+        )
+        mig_links = ''.join(
+            f'<p class="sr-card-link" style="margin-top:12px"><a href="{url}">{label} →</a></p>'
+            for label, url in mig['links']
+        )
+        migliorare = section(
+            eyebrow('Come migliorare') + heading(2, mig['h2']) +
+            paragraph(mig['intro'], color='grigio', size='base',
+                      extra_style='font-size:17px;line-height:1.75;max-width:75ch;margin-top:12px') +
+            group(mig_cards, classes='', layout_type='grid', style='240px') +
+            raw_html(f'<div style="margin-top:24px;display:flex;flex-direction:column;'
+                     f'gap:8px;align-items:flex-start">{mig_links}</div>'),
+            classes='sr-section sr-section--bianco',
+        )
+    else:
+        migliorare = ''
 
     cta_data = tool['cta']
     cta_heading = cta_data['heading'].rstrip()
