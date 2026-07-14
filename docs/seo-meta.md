@@ -1,7 +1,36 @@
-# SEO-мета после перепозиционирования (фаза A)
+# SEO-мета и фокус-ключи после перепозиционирования
 
-> Вставляется вручную: админка → страница → панель Rank Math → «Edit Snippet».
-> Title ≤ 60 знаков, Description ≤ 160. RU-мета появится в фазе B.
+> Вставляется вручную: админка → страница → панель Rank Math → «Edit Snippet»
+> (Title ≤ 60, Description ≤ 160) + поле **Focus Keyword** — из таблицы ниже.
+> Оценка Rank Math — чек-лист против фокус-ключа: без заданного ключа она
+> всегда ~20/100 и ничего не говорит о реальном SEO. Владелец правит
+> мету/заголовки сам; контент под ключи подтягивается кодом (см. статус).
+> RU-мета появится с фазой B (главная + лендинги уже в copy-fase-B.md).
+
+## Карта фокус-ключей (IT / EN)
+
+| Страница | Focus Keyword IT | Focus Keyword EN | Контент подтянут |
+|---|---|---|---|
+| `/` · `/en/` | realizzazione siti web | business website | ✅ (eyebrow, FAQ, alt) |
+| `/prezzi/` · `/en/pricing/` | quanto costa un sito web | website cost | ✅ (интро-вопрос) |
+| `/servizi/siti-aziendali/` | sito web aziendale | business website design | агент |
+| `/servizi/e-commerce/` | realizzazione siti e-commerce | e-commerce website | агент |
+| `/servizi/siti-pwa/` | progressive web app | progressive web app | агент |
+| `/servizi/restyling-migrazione/` | rifacimento sito web | website redesign | агент |
+| `/servizi/seo-tecnica/` | SEO tecnica | technical SEO | агент |
+| `/servizi/siti-multilingue/` | sito web multilingua | multilingual website | агент |
+| `/servizi/export-ready/` | sito web per l'export | export website | агент |
+| `/servizi/web-app/` | sviluppo web app | custom web app | агент |
+| `/milano/` | web agency Milano | (city IT-only) | агент |
+| `/monza/ /bergamo/ /brescia/ /como/` | realizzazione siti web ‹città› | — | агент |
+| `/strumenti/test-velocita/` | test velocità sito web | website speed test | агент |
+| блог-статьи | целевой запрос из заголовка (уже заложен при написании) | то же | ✅ с рождения |
+| `/chi-siamo/`, `/casi-studio/` | брендовые — фокус-ключ не задавать, оценку RM игнорировать | — | — |
+
+Что сознательно НЕ делаем по чек-листу Rank Math: плотность 1% («Keyword
+Density») набивкой, точный ключ в каждом H2, «Content AI» (платный апселл) —
+это ухудшает премиальный копирайт и не влияет на Google. Целевой ориентир
+после простановки ключей: 75–90/100.
 
 ## Главная `/` (IT)
 

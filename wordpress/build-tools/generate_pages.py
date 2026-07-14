@@ -268,7 +268,7 @@ def build_caso_detail(c):
 def build_prezzi():
     hero = section(
         eyebrow('Prezzi') + heading(1, 'Prezzi trasparenti. Nessuna sorpresa in corso d’opera', style='clamp(38px,4.6vw,64px)') +
-        paragraph('La tabella qui sotto è pubblica; il preventivo che firmate è un prezzo chiuso. '
+        paragraph('Quanto costa un sito web? La tabella qui sotto è pubblica; il preventivo che firmate è un prezzo chiuso. '
                    'Se in corso d’opera serve altro, si concorda prima, per iscritto.',
                    color='grigio', size='medium') +
         raw_html('<div style="margin-top:40px;max-width:600px">') +

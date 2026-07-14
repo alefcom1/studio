@@ -64,9 +64,9 @@ CHROME = {
         'en': 'Plumbing systems · Bergamo · Business website IT/DE',
         'ru': 'Сантехнические системы · Бергамо · Корпоративный сайт IT/DE',
     },
-    'La tabella qui sotto è pubblica; il preventivo che firmate è un prezzo chiuso. Se in corso d’opera serve altro, si concorda prima, per iscritto.': {
-        'en': 'The table below is public; the quote you sign is a fixed price. If anything extra comes up mid-project, it’s agreed first — in writing.',
-        'ru': 'Таблица ниже открыта для всех; смета, которую вы подписываете, — это фиксированная цена. Если по ходу проекта нужно что-то ещё, это согласуется заранее и письменно.',
+    'Quanto costa un sito web? La tabella qui sotto è pubblica; il preventivo che firmate è un prezzo chiuso. Se in corso d’opera serve altro, si concorda prima, per iscritto.': {
+        'en': 'How much does a website cost? The table below is public; the quote you sign is a fixed price. If anything extra comes up mid-project, it’s agreed first — in writing.',
+        'ru': 'Сколько стоит сайт? Таблица ниже открыта для всех; смета, которую вы подписываете, — это фиксированная цена. Если по ходу проекта нужно что-то ещё, это согласуется заранее и письменно.',
     },
     'Leggi il caso completo →': {'en': 'Read the full case study →', 'ru': 'Читать кейс целиком →'},
     'Leggi il caso →': {'en': 'Read the case study →', 'ru': 'Читать кейс →'},

@@ -15,7 +15,7 @@
 <!-- wp:columns {"verticalAlignment":"center","className":"sr-cascade","style":{"spacing":{"blockGap":{"left":"56px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Studio di sviluppo web</p>
+<p class="sr-eyebrow">Realizzazione siti web — Milano</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":1} -->

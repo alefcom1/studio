@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Transparent prices. No surprises mid-project<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size">The table below is public; the quote you sign is a fixed price. If anything extra comes up mid-project, it’s agreed first — in writing.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size">How much does a website cost? The table below is public; the quote you sign is a fixed price. If anything extra comes up mid-project, it’s agreed first — in writing.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div style="margin-top:40px;max-width:600px">

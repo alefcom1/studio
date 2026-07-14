@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Prezzi trasparenti. Nessuna sorpresa in corso d’opera<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size">La tabella qui sotto è pubblica; il preventivo che firmate è un prezzo chiuso. Se in corso d’opera serve altro, si concorda prima, per iscritto.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size">Quanto costa un sito web? La tabella qui sotto è pubblica; il preventivo che firmate è un prezzo chiuso. Se in corso d’opera serve altro, si concorda prima, per iscritto.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div style="margin-top:40px;max-width:600px">
