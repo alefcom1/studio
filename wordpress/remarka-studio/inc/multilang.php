@@ -237,6 +237,7 @@ function remarka_str( string $key ): string {
 		'cookie_accetta'   => array( 'it' => 'Accetta', 'en' => 'Accept', 'ru' => 'Принять' ),
 		'wa_label'         => array( 'it' => 'Scrivici su WhatsApp', 'en' => 'Message us on WhatsApp', 'ru' => 'Написать нам в WhatsApp' ),
 		'footer_tel'       => array( 'it' => 'Tel./WhatsApp', 'en' => 'Phone/WhatsApp', 'ru' => 'Тел./WhatsApp' ),
+		'footer_citta'     => array( 'it' => 'Dove operiamo', 'en' => 'Where we work', 'ru' => 'Где мы работаем' ),
 	);
 	$lang = remarka_current_lang();
 	return $table[ $key ][ $lang ] ?? $table[ $key ]['it'] ?? $key;

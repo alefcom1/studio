@@ -1241,6 +1241,57 @@ body.page .entry-title {
   margin-bottom: 16px;
 }
 
+/* Fascia "Dove operiamo" — cross-link tra le landing città (evita orfane). */
+.sr-footer-cities {
+  border-top: 1px solid rgba(247, 246, 242, 0.14);
+}
+
+.sr-footer-cities__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 22px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 14px 28px;
+}
+
+.sr-footer-cities__label {
+  font-family: var(--sr-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9BA3C4;
+}
+
+.sr-footer-cities__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+}
+
+.sr-footer-cities__list a {
+  color: rgba(247, 246, 242, 0.82);
+  text-decoration: none;
+  font-size: 15px;
+  position: relative;
+  transition: color 0.18s ease;
+}
+
+.sr-footer-cities__list a:hover {
+  color: var(--sr-oltremare-chiaro);
+}
+
+.sr-footer-cities__list li:not(:last-child) a::after {
+  content: "·";
+  position: absolute;
+  right: -15px;
+  color: rgba(247, 246, 242, 0.28);
+}
+
 .sr-footer-bottom__row {
   display: flex;
   flex-wrap: wrap;

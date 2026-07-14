@@ -476,9 +476,34 @@ function remarka_company_lang_data(): array {
 	);
 }
 
+/**
+ * Città con una landing dedicata, per lingua. Le pagine città esistono in
+ * italiano (Milano + provincia lombarda); in EN/RU solo Milano è tradotta
+ * (le altre sono escluse dalla traduzione, vedi build-tools). Ritorna
+ * [etichetta => URL]. Usata dalla fascia "Dove operiamo" nel footer, che
+ * fa anche da cross-link tra le landing (altrimenti orfane).
+ */
+function remarka_cities_for_lang(): array {
+	switch ( remarka_current_lang() ) {
+		case 'en':
+			return array( 'Milan' => home_url( '/en/milan/' ) );
+		case 'ru':
+			return array( 'Милан' => home_url( '/ru/milan/' ) );
+		default:
+			return array(
+				'Milano'  => home_url( '/milano/' ),
+				'Monza'   => home_url( '/monza/' ),
+				'Bergamo' => home_url( '/bergamo/' ),
+				'Brescia' => home_url( '/brescia/' ),
+				'Como'    => home_url( '/como/' ),
+			);
+	}
+}
+
 function remarka_render_footer(): void {
 	$score   = (int) get_theme_mod( 'remarka_footer_pagespeed_score', 95 );
 	$company = remarka_company_lang_data();
+	$cities  = remarka_cities_for_lang();
 	?>
 	<footer class="sr-footer">
 		<div class="sr-footer-cta">
@@ -541,6 +566,19 @@ function remarka_render_footer(): void {
 				</div>
 			</div>
 		</div>
+
+		<?php if ( count( $cities ) > 1 ) : ?>
+		<div class="sr-footer-cities">
+			<div class="sr-footer-cities__inner">
+				<span class="sr-footer-cities__label"><?php echo esc_html( remarka_str( 'footer_citta' ) ); ?></span>
+				<ul class="sr-footer-cities__list">
+					<?php foreach ( $cities as $label => $url ) : ?>
+						<li><a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $label ); ?></a></li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+		</div>
+		<?php endif; ?>
 
 		<div class="sr-footer-bottom">
 			<div class="sr-footer-bottom__inner">
