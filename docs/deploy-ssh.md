@@ -181,6 +181,17 @@ wp eval-file /var/www/alefcom/data/www/remarka.biz/wp-content/themes/remarka-stu
 > обновления кода `deploy-import.php` всё ещё видно похожее поведение,
 > см. диагностику/восстановление ниже.
 
+> ℹ️ **С фазы B у RU-главной собственный набор секций.** `deploy-import.php`
+> теперь содержит отдельный список `$home_sections_ru` (13 секций из
+> `patterns/lang-ru/`: hero-home, trust-strip, vyhod-evropa, tre-numeri,
+> manifesto, seo-lingue, servizi-cards, caso-evidenza, come-lavoriamo,
+> garanzie-dark, prezzi-teaser, faq, contatti) — RU-воронка самодостаточна и
+> не зеркалит IT/EN (без `lingue-mercati`/`strumenti-cards`, вместо них
+> `vyhod-evropa`/`seo-lingue`). Из-за этого предупреждение
+> «`[ru] sezione mancante: lingue-mercati.php`», которое раньше появлялось
+> при каждом деплое (RU использовал общий IT-список секций), больше не
+> выводится — это ожидаемо, не повод искать регрессию.
+
 ## После импорта — ручные шаги
 
 1. Внешний вид → Настроить → загрузить логотип (астериск), настроить меню

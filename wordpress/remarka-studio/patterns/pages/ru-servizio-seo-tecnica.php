@@ -117,7 +117,7 @@
 <p class="sr-eyebrow">Цена</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">€ 1.800–3.500</div>
+<div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">€ 1 800–3 500</div>
 <!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
 <p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:14px;max-width:60ch">Цена фиксируется в смете, сдача за 3 недели. Электронный счёт-фактура, оплата тремя платежами.</p>
