@@ -208,6 +208,49 @@ tail -50 /var/log/nginx/error.log
 wp eval 'error_reporting(E_ALL); ini_set("display_errors",1);' --allow-root --path=/var/www/alefcom/data/www/remarka.biz
 ```
 
+### Дубли EN/RU в корне сайта (без /en//ru/) — найдены через Screaming Frog orphan-report
+
+Во время инцидента с пропавшей Home (14.07.2026) резолвинг родителя `en`/`ru`
+на секунду сломался в середине прогона — весь EN/RU-комплект страниц создался
+**один раз в корне** (`/services/business-websites/` вместо
+`/en/services/business-websites/`, и так далее для всего дерева, включая
+`/pricing/`, `/uslugi/`, `/kejsy/`, `/instrumenty/`, `/blog/<en-или-ru-slug>/`
+и т.д.). Позже, после фикса, скрипт создал **второй, уже правильно
+вложенный** комплект под `en`/`ru` — но старый в корне остался висеть, потому
+что «зачистка осиротевших страниц» в deploy-import.php сверяет только голый
+`post_name`, а не полный путь: `services` в корне и `services` под `en`
+неотличимы друг от друга для этой проверки.
+
+Обнаруживается это по отчёту типа Screaming Frog «Orphan pages» (страницы,
+которые есть в sitemap, но на которые нет ни одной внутренней ссылки) —
+все дубли-сироты попадают именно туда.
+
+**Признак**: страницы с `post_parent = 0` и `post_date`, совпадающим с
+моментом сбоя (в данном случае `2026-07-14 06:21:05`/`06:21:06`), у которых
+slug совпадает со slug'ом настоящей страницы под `en`/`ru`.
+
+```bash
+# найти дубли по временному окну инцидента (подставить свою дату/время сбоя)
+wp post list --post_type=page --post_status=publish \
+  --date_query='[{"after":"2026-07-14 06:21:04","before":"2026-07-14 06:21:07","inclusive":true}]' \
+  --fields=ID,post_parent,post_name,post_title \
+  --allow-root --path=/var/www/alefcom/data/www/remarka.biz
+
+# после проверки списка — в корзину (обратимо, не hard delete)
+wp post list --post_type=page --post_status=publish \
+  --date_query='[{"after":"2026-07-14 06:21:04","before":"2026-07-14 06:21:07","inclusive":true}]' \
+  --field=ID --allow-root --path=/var/www/alefcom/data/www/remarka.biz \
+  | xargs -I{} wp post update {} --post_status=trash --allow-root --path=/var/www/alefcom/data/www/remarka.biz
+```
+
+Чтобы старые проиндексированные плоские URL не превращались в 404,
+`inc/multilang.php` теперь содержит `remarka_redirect_legacy_flat_urls()` —
+301-редирект, построенный автоматически из `inc/lang-map.php` (для каждого
+en/ru-пути минус языковой префикс). Работает независимо от того, снесены ли
+уже дубли-сироты из базы — редирект перехватывает запрос на `template_redirect`
+раньше рендера страницы. Не требует ручного списка URL — синхронизирован с
+`lang.py` автоматически.
+
 ### Пропала главная страница / почти всё 404 после `--force`-деплоя
 
 ```bash

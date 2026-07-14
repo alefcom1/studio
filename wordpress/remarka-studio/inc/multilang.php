@@ -110,6 +110,55 @@ function remarka_lang_switch_config(): void {
 }
 add_action( 'wp_head', 'remarka_lang_switch_config', 4 );
 
+/* ---------- Redirect 301 dai vecchi URL piatti EN/RU ---------- */
+
+/**
+ * Durante il deploy del 14-07-2026 (risoluzione del genitore en/ru fallita
+ * per un incidente separato), l'intero albero EN/RU venne creato una volta
+ * in radice (es. /services/business-websites/ invece di
+ * /en/services/business-websites/) e la pulizia orfani non lo vede: verifica
+ * solo lo slug nudo, non il percorso completo, quindi "services" in radice
+ * risulta indistinguibile da "services" sotto /en/. Quei duplicati vengono
+ * cestinati manualmente (vedi docs/deploy-ssh.md); qui restano solo i
+ * redirect 301, per chi ha già indicizzato/salvato i vecchi URL piatti.
+ * Costruita da inc/lang-map.php: un URL piatto esiste solo se coincide con
+ * un percorso en/ru meno il proprio prefisso di lingua — non serve una
+ * lista scritta a mano, resta sincronizzata con lang.py.
+ */
+function remarka_legacy_flat_redirect_map(): array {
+	static $map = null;
+	if ( null !== $map ) {
+		return $map;
+	}
+	$map = array(
+		// URL creati prima di questo progetto (post_name già percent-encoded
+		// in DB per gli slug non latini — così arriva anche da wp_parse_url()).
+		'%d0%b3%d0%bb%d0%b0%d0%b2%d0%bd%d0%b0%d1%8f' => '',        // главная
+		'%d0%b1%d0%bb%d0%be%d0%b3'                   => 'en/blog', // блог
+		'sample-page'                                => '',
+	);
+	foreach ( remarka_lang_map() as $row ) {
+		foreach ( array( 'en', 'ru' ) as $lang ) {
+			$path = $row[ $lang ];
+			$flat = preg_replace( '#^' . $lang . '/#', '', (string) $path );
+			if ( $path && $flat !== $path && ! isset( $map[ $flat ] ) ) {
+				$map[ $flat ] = $path;
+			}
+		}
+	}
+	return $map;
+}
+
+function remarka_redirect_legacy_flat_urls(): void {
+	$path = strtolower( remarka_current_path() );
+	$map  = remarka_legacy_flat_redirect_map();
+	if ( isset( $map[ $path ] ) ) {
+		wp_safe_redirect( home_url( '/' . $map[ $path ] . ( $map[ $path ] ? '/' : '' ) ), 301 );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'remarka_redirect_legacy_flat_urls', 1 );
+
 /* ---------- Подмена меню по языку ---------- */
 
 function remarka_lang_menu_name( string $location, string $lang ): ?string {
