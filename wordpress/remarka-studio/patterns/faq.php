@@ -38,7 +38,7 @@
 
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Emettete fattura elettronica?</summary><!-- wp:paragraph -->
-<p>Sì. Siamo una S.r.l. italiana con P.IVA verificabile: fattura elettronica via SDI, pagamenti tracciabili, nessun acconto superiore al 40%.</p>
+<p>Sì. Siamo una S.r.l. italiana con P.IVA verificabile: fattura elettronica via SDI, pagamenti tracciabili, acconto del 50% all&#8217;avvio e saldo del 50% alla consegna.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 

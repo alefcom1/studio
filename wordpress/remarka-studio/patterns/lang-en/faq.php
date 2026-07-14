@@ -38,7 +38,7 @@
 
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Do you issue electronic invoices?</summary><!-- wp:paragraph -->
-<p>Yes. We are an Italian S.r.l. with a verifiable VAT no.: e-invoicing via SDI (Italian exchange system), traceable payments, no deposit above 40%.</p>
+<p>Yes. We are an Italian S.r.l. with a verifiable VAT no.: e-invoicing via SDI (Italian exchange system), traceable payments: 50% deposit to start, the remaining 50% on delivery.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
