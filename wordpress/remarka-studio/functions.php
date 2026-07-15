@@ -77,11 +77,15 @@ function remarka_enqueue_assets(): void {
 	// Config per il JS: chiave PageSpeed (Customizer, opzionale — senza
 	// chiave la quota anonima di Google è bassa ma basta all'inizio),
 	// endpoint AJAX e nonce del modulo contatti.
-	$psi_key = get_theme_mod( 'remarka_psi_api_key', '' );
+	/*
+	 * La chiave PSI NON viene più stampata nel sorgente della pagina: la via
+	 * diretta del browser va senza chiave (quota condivisa anonima, quando
+	 * c'è), e al fallimento il JS ripiega sul proxy remarka_tool_psi, dove la
+	 * chiave vive solo lato PHP. Così nessuno può rubarla e bruciare la quota.
+	 */
 	wp_add_inline_script(
 		'remarka-studio',
 		'window.remarkaPSI = ' . wp_json_encode( array(
-			'key'        => $psi_key,
 			'ajaxUrl'    => admin_url( 'admin-ajax.php' ),
 			'formNonce'  => wp_create_nonce( 'remarka_contact' ),
 			'toolsNonce' => wp_create_nonce( 'remarka_tools' ),
