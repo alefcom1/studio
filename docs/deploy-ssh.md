@@ -332,6 +332,103 @@ wp option delete _transient_timeout_remarka_tl_<md5-ip> \
 Это ожидаемое поведение простого IP-лимита, не баг; при жалобах пользователя
 на 429 стоит уточнить, не сидит ли он за общим корпоративным/мобильным IP.
 
+### Check-up: PDF-отчёты и лиды
+
+Эндпоинт `remarka_tool_report` (`wp_ajax_remarka_tool_report` /
+`wp_ajax_nopriv_remarka_tool_report` в `functions.php`,
+`remarka_tool_report_handler`) отправляет на e-mail PDF-отчёт check-up
+completo и сохраняет лид. Порядок проверок в хендлере: nonce `remarka_tools`
+→ honeypot (`sr_checkup_hp`, тихий успех без действий) → rate-limit по IP
+(transient `remarka_rpt_` + `md5($ip)`, **3 запроса/час**, отдельный от
+`remarka_tl_` у `remarka_tool_fetch`) → email/`consent` обязательны → JSON
+`payload` санифицируется (`remarka_tool_report_sanitize_payload`: whitelist
+ключей, числа клампятся 0–100, `url` только http/https, `locale`
+whitelist `it|en|ru`). Композит и «measured» из клиента **игнорируются** —
+пересчитываются на сервере из `scores` (`remarka_checkup_composite`), чтобы
+PDF был внутренне непротиворечив, даже если клиент прислал что-то другое.
+
+**Библиотека PDF:** `wordpress/remarka-studio/lib/dompdf/` — бандл dompdf
+3.1.5 + php-font-lib 1.0.2 + php-svg-lib 1.0.2 + masterminds/html5 2.10.1 +
+sabberworm/php-css-parser 9.4.0 + подмножество thecodingmachine/safe 3.4.0
+(только 4 функции, реально используемые css-parser — не все ~80 upstream).
+Версии и лицензии — `lib/dompdf/VERSIONS.md`. Автолоадер собственный
+(`lib/dompdf/autoload.php`, PSR-4 вручную), не composer — тема не тянет
+`vendor/` на проде. Шрифты — только 3 файла DejaVu (Sans, Sans-Bold,
+SansMono; кириллица из коробки) в `lib/dompdf/dompdf/lib/fonts/`;
+регистрируются в **писуемый** кэш-каталог `wp-content/uploads/checkup-reports/fonts/`
+при каждой генерации (`FontMetrics::registerFont()` пишет туда, не в тему).
+
+**Шаблон/копирайт отчёта:** `inc/checkup-report-pdf.php` —
+`remarka_checkup_render_html()` (12-страничный HTML, IT/EN/RU verbatim из
+`docs/copy-checkup.md` §2.5/3.5/4.5) → `remarka_checkup_render_pdf()`
+(конвертация в PDF). Рантайм-проверка расширений PHP —
+`remarka_checkup_pdf_missing_extensions()`: `dom`, `mbstring`, `gd`; если
+хоть одного нет — эндпоинт отвечает JSON `{success:false, code:"pdf_unavailable"}`
+(HTTP 500), а не падает фатально:
+
+```bash
+php -m | grep -Ei '^(dom|mbstring|gd)$'
+# если чего-то не хватает на проде (обычно PHP-FPM собран без модуля):
+apt list --installed 2>/dev/null | grep -Ei 'php.*-(dom|mbstring|gd)'
+# Debian/Ubuntu: sudo apt install php-dom php-mbstring php-gd && systemctl restart php*-fpm
+```
+
+Файл PDF пишется временно в `wp-content/uploads/checkup-reports/`
+(имя случайное, `wp_generate_password()`), с `index.php`-заглушкой в папке
+против листинга директории; после `wp_mail()` с вложением файл **удаляется**
+(`wp_delete_file()`) — на диске не остаётся копий отчётов, только e-mail
+у получателя.
+
+**Лиды — CPT `sr_lead`** (приватный: `public => false`, виден в админке
+только `manage_options`, пункт меню «Lead check-up»). Список:
+`Site → Lead check-up`, колонки Email · Sito · Punteggio · Lingua ·
+Monitoraggio · Data. **Удаление лида из админки — это полное удаление
+данных** (post + все post_meta: email, url, punteggio, locale, consenso
+monitoraggio): используйте это как ответ на запрос об удалении по GDPR, без
+дополнительных шагов.
+
+```bash
+# lead via WP-CLI (email/url/punteggio/lingua sono post_meta)
+wp post list --post_type=sr_lead --allow-root \
+  --path=/var/www/alefcom/data/www/remarka.biz \
+  --fields=ID,post_title,post_date
+wp post meta list <ID> --allow-root --path=/var/www/alefcom/data/www/remarka.biz
+```
+
+**Curl-диагностика эндпоинта.** Проверка ordine dei controlli: nonce viene
+verificato **prima** di tutto il resto — con un nonce finto si resta sempre
+a 403, quindi per vedere 400/429 serve un nonce reale, con cookie di sessione
+anonima coerenti (li tiene un cookie-jar):
+
+```bash
+JAR=/tmp/remarka-cookies.txt
+
+# 403 — nonce inventato (nessun cookie/nonce reale necessario)
+curl -s -o /dev/null -w '%{http_code}\n' https://remarka.biz/wp-admin/admin-ajax.php \
+  -d action=remarka_tool_report -d nonce=INVALIDO -d email=x -d consent=1
+# → 403
+
+# nonce reale: scaricare la pagina check-up e leggerlo da window.remarkaPSI
+# (stesso cookie-jar, altrimenti il nonce non sarà valido per le richieste dopo)
+NONCE=$(curl -s -c "$JAR" https://remarka.biz/strumenti/check-up-completo/ \
+  | grep -oE '"toolsNonce":"[a-f0-9]+"' | head -1 | grep -oE '[a-f0-9]+$')
+echo "nonce=$NONCE"
+
+# 400 — email non valida (nonce reale, consenso presente)
+curl -s -b "$JAR" -o /dev/null -w '%{http_code}\n' https://remarka.biz/wp-admin/admin-ajax.php \
+  -d action=remarka_tool_report -d "nonce=$NONCE" -d email=non-una-email -d consent=1
+# → 400 {"code":"invalid_email"}
+
+# 429 — rate-limit: 4 richieste di fila dallo stesso IP entro un'ora
+# (l'incremento del contatore avviene subito dopo il controllo del limite,
+# quindi anche richieste poi respinte per email/payload contano nel conteggio)
+for i in 1 2 3 4; do
+  curl -s -b "$JAR" -o /dev/null -w '%{http_code}\n' https://remarka.biz/wp-admin/admin-ajax.php \
+    -d action=remarka_tool_report -d "nonce=$NONCE" -d email=non-una-email -d consent=1
+done
+# → 400, 400, 400, 429 (il 4° scatta sul rate-limit, code=rate_limit)
+```
+
 ### Пропала главная страница / почти всё 404 после `--force`-деплоя
 
 ```bash

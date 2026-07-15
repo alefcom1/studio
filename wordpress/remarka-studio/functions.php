@@ -15,6 +15,9 @@ define( 'REMARKA_STUDIO_VERSION', '1.0.0' );
 // Мультиязычный рантайм (/en/, /ru/): язык, hreflang, строки, меню.
 require_once get_stylesheet_directory() . '/inc/multilang.php';
 
+// Check-up completo: copy deck del report PDF + rendering dompdf (M3).
+require_once get_stylesheet_directory() . '/inc/checkup-report-pdf.php';
+
 /**
  * Есть ли локальные шрифты? Маркер — главный woff2 Clash Display.
  * Пока владелец не положил файлы в assets/fonts, тема грузит CDN
@@ -1268,3 +1271,254 @@ function remarka_tool_fetch_handler(): void {
 add_action( 'wp_ajax_remarka_tool_fetch', 'remarka_tool_fetch_handler' );
 add_action( 'wp_ajax_nopriv_remarka_tool_fetch', 'remarka_tool_fetch_handler' );
 add_action( 'admin_post_nopriv_remarka_contact', 'remarka_form_handle_post' );
+
+/* ============================================================================
+ * Check-up completo — CPT lead + endpoint report PDF (M3).
+ * ========================================================================== */
+
+/**
+ * CPT privato: base dei lead del check-up. Non pubblico (`public => false`),
+ * niente archivio/rewrite, visibile solo in admin a chi ha `manage_options`
+ * (stesso ruolo del titolare). Cancellare un lead dalla lista WP lo elimina
+ * per sempre — post + tutti i suoi post_meta — il che *è* la cancellazione
+ * GDPR su richiesta dell'interessato: nessun soft-delete nascosto altrove.
+ */
+function remarka_register_sr_lead_cpt(): void {
+	register_post_type(
+		'sr_lead',
+		array(
+			'labels'           => array(
+				'name'          => 'Lead check-up',
+				'singular_name' => 'Lead check-up',
+				'menu_name'     => 'Lead check-up',
+				'add_new_item'  => 'Nuovo lead',
+				'edit_item'     => 'Lead check-up',
+				'search_items'  => 'Cerca lead',
+				'not_found'     => 'Nessun lead trovato',
+			),
+			'public'           => false,
+			'show_ui'          => true,
+			'show_in_menu'     => true,
+			'show_in_rest'     => false,
+			'menu_icon'        => 'dashicons-clipboard',
+			'capability_type'  => 'page',
+			'capabilities'     => array(
+				'edit_post'          => 'manage_options',
+				'read_post'          => 'manage_options',
+				'delete_post'        => 'manage_options',
+				'edit_posts'         => 'manage_options',
+				'edit_others_posts'  => 'manage_options',
+				'publish_posts'      => 'manage_options',
+				'read_private_posts' => 'manage_options',
+				'delete_posts'       => 'manage_options',
+			),
+			'map_meta_cap'     => true,
+			'supports'         => array( 'title' ),
+			'has_archive'      => false,
+			'rewrite'          => false,
+			'exclude_from_search' => true,
+		)
+	);
+}
+add_action( 'init', 'remarka_register_sr_lead_cpt' );
+
+/** Colonne della lista lead in admin: Email · Sito · Punteggio · Lingua · Monitoraggio · Data. */
+function remarka_sr_lead_columns( array $columns ): array {
+	$new           = array();
+	$new['cb']     = $columns['cb'] ?? '';
+	$new['title']  = 'Email';
+	$new['sr_url'] = 'Sito';
+	$new['sr_score']      = 'Punteggio';
+	$new['sr_locale']     = 'Lingua';
+	$new['sr_monitoring'] = 'Monitoraggio';
+	$new['date']          = $columns['date'] ?? 'Data';
+	return $new;
+}
+add_filter( 'manage_edit-sr_lead_columns', 'remarka_sr_lead_columns' );
+
+function remarka_sr_lead_column_content( string $column, int $post_id ): void {
+	switch ( $column ) {
+		case 'sr_url':
+			echo esc_html( (string) get_post_meta( $post_id, 'sr_url', true ) );
+			break;
+		case 'sr_score':
+			$score = get_post_meta( $post_id, 'sr_composite', true );
+			echo '' === $score ? '—' : esc_html( $score . '/100' );
+			break;
+		case 'sr_locale':
+			echo esc_html( strtoupper( (string) get_post_meta( $post_id, 'sr_locale', true ) ) );
+			break;
+		case 'sr_monitoring':
+			echo get_post_meta( $post_id, 'sr_consent_monthly', true ) ? '✓' : '—';
+			break;
+	}
+}
+add_action( 'manage_sr_lead_posts_custom_column', 'remarka_sr_lead_column_content', 10, 2 );
+
+/** Assicura un index.php-заглушка nella cartella upload dei report (niente directory listing). */
+function remarka_checkup_reports_dir_guard( string $dir ): void {
+	$index = trailingslashit( $dir ) . 'index.php';
+	if ( ! file_exists( $index ) ) {
+		file_put_contents( $index, "<?php\n// Silence is golden.\n" ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_file_put_contents
+	}
+}
+
+/** Salva il lead nel CPT dopo l'invio riuscito del report PDF. */
+function remarka_checkup_save_lead( string $email, array $data, array $comp, bool $consent_monthly ): void {
+	$post_id = wp_insert_post(
+		array(
+			'post_type'   => 'sr_lead',
+			'post_title'  => $email . ' — ' . date_i18n( 'd.m.Y H:i' ),
+			'post_status' => 'publish',
+		),
+		true
+	);
+	if ( is_wp_error( $post_id ) || ! $post_id ) {
+		return;
+	}
+	update_post_meta( $post_id, 'sr_email', $email );
+	update_post_meta( $post_id, 'sr_url', $data['url'] );
+	update_post_meta( $post_id, 'sr_composite', $comp['composite'] );
+	update_post_meta( $post_id, 'sr_locale', $data['locale'] );
+	update_post_meta( $post_id, 'sr_consent_monthly', $consent_monthly ? 1 : 0 );
+}
+
+/** Whitelist delle 7 chiavi punteggio ammesse nel payload JSON del client. */
+function remarka_checkup_score_keys(): array {
+	return array( 'perf', 'seo', 'a11y', 'gdpr', 'bp', 'ai', 'co2' );
+}
+
+/**
+ * Sanifica il payload JSON mandato dal client — cappato a 64KB già lato JS,
+ * ma qui riverificato server-side perché non ci si fida mai del client:
+ * whitelist delle chiavi, punteggi clampati a interi 0-100 (o null se
+ * mancanti/non numerici — stessa semantica "N/D" del client), url ristretto
+ * a http/https, locale whitelisted it|en|ru (fallback it). `composite` e
+ * `measured` mandati dal client sono ignorati: si ricalcolano sempre da
+ * `scores` in remarka_checkup_composite(), per coerenza interna del PDF.
+ */
+function remarka_tool_report_sanitize_payload( string $raw ): ?array {
+	if ( strlen( $raw ) > 65536 ) {
+		return null;
+	}
+	$decoded = json_decode( $raw, true );
+	if ( ! is_array( $decoded ) ) {
+		return null;
+	}
+
+	$url_raw = is_string( $decoded['url'] ?? null ) ? $decoded['url'] : '';
+	$url     = esc_url_raw( $url_raw, array( 'http', 'https' ) );
+	if ( '' === $url || ! preg_match( '#^https?://[^/]+#i', $url ) ) {
+		return null;
+	}
+
+	$locale = sanitize_key( (string) ( $decoded['locale'] ?? '' ) );
+	if ( ! in_array( $locale, array( 'it', 'en', 'ru' ), true ) ) {
+		$locale = 'it';
+	}
+
+	$scores_in = is_array( $decoded['scores'] ?? null ) ? $decoded['scores'] : array();
+	$scores    = array();
+	foreach ( remarka_checkup_score_keys() as $dim_key ) {
+		$val = $scores_in[ $dim_key ] ?? null;
+		if ( is_numeric( $val ) ) {
+			$scores[ $dim_key ] = (int) max( 0, min( 100, round( (float) $val ) ) );
+		} else {
+			$scores[ $dim_key ] = null;
+		}
+	}
+
+	return array(
+		'url'    => $url,
+		'locale' => $locale,
+		'scores' => $scores,
+	);
+}
+
+/**
+ * Handler AJAX `remarka_tool_report`: invia il report PDF via e-mail.
+ * Ordine dei controlli (non negoziabile): nonce → honeypot (successo muto,
+ * niente PDF/lead) → rate-limit IP (3/ora, transient separato da tool_fetch)
+ * → e-mail valida + consenso obbligatorio → payload sanificato → PDF →
+ * wp_mail con allegato → lead nel CPT sr_lead. Ogni uscita è JSON con un
+ * `code` macchina-leggibile; i testi di successo/errore li rende il JS (M2).
+ */
+function remarka_tool_report_handler(): void {
+	if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'remarka_tools' ) ) {
+		wp_send_json_error( array( 'message' => 'sessione scaduta', 'code' => 'nonce' ), 403 );
+	}
+
+	if ( ! empty( $_POST['sr_checkup_hp'] ) ) { // honeypot: i bot lo compilano, le persone no.
+		wp_send_json_success( array( 'ok' => true ) );
+	}
+
+	$ip    = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
+	$key   = 'remarka_rpt_' . md5( $ip );
+	$count = (int) get_transient( $key );
+	if ( $count >= 3 ) {
+		wp_send_json_error( array( 'message' => 'troppe richieste, riprovate tra un\'ora', 'code' => 'rate_limit' ), 429 );
+	}
+	set_transient( $key, $count + 1, HOUR_IN_SECONDS );
+
+	$email = sanitize_email( wp_unslash( $_POST['email'] ?? '' ) );
+	if ( '' === $email || ! is_email( $email ) ) {
+		wp_send_json_error( array( 'message' => 'email non valida', 'code' => 'invalid_email' ), 400 );
+	}
+	if ( empty( $_POST['consent'] ) ) {
+		wp_send_json_error( array( 'message' => 'consenso mancante', 'code' => 'consent_required' ), 400 );
+	}
+	$consent_monthly = ! empty( $_POST['consent_monthly'] );
+
+	$raw = wp_unslash( $_POST['payload'] ?? '' );
+	$data = is_string( $raw ) && '' !== $raw ? remarka_tool_report_sanitize_payload( $raw ) : null;
+	if ( null === $data ) {
+		wp_send_json_error( array( 'message' => 'payload non valido', 'code' => 'invalid_payload' ), 400 );
+	}
+
+	$missing_ext = remarka_checkup_pdf_missing_extensions();
+	if ( ! empty( $missing_ext ) ) {
+		wp_send_json_error( array( 'message' => 'servizio PDF non disponibile', 'code' => 'pdf_unavailable' ), 500 );
+	}
+
+	$data['consent_monthly'] = $consent_monthly;
+	$data['date_display']    = date_i18n( 'd.m.Y' );
+
+	$pdf = remarka_checkup_render_pdf( $data, $data['locale'] );
+	if ( null === $pdf || '' === $pdf ) {
+		wp_send_json_error( array( 'message' => 'generazione PDF fallita', 'code' => 'pdf_failed' ), 500 );
+	}
+
+	$domain = preg_replace( '#^https?://#i', '', $data['url'] );
+	$domain = rtrim( (string) $domain, '/' );
+
+	$upload_dir = wp_upload_dir();
+	$dir        = trailingslashit( $upload_dir['basedir'] ) . 'checkup-reports';
+	wp_mkdir_p( $dir );
+	remarka_checkup_reports_dir_guard( $dir );
+
+	$path = trailingslashit( $dir ) . 'checkup-' . wp_generate_password( 16, false, false ) . '.pdf';
+	if ( false === file_put_contents( $path, $pdf ) ) { // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_file_put_contents
+		wp_send_json_error( array( 'message' => 'salvataggio PDF fallito', 'code' => 'pdf_write_failed' ), 500 );
+	}
+
+	$comp    = remarka_checkup_composite( $data['scores'] );
+	$subject = remarka_checkup_email_subject( $data['locale'], $domain );
+	$body    = remarka_checkup_email_body( $data['locale'], $domain, $comp['composite'] );
+	$headers = array( 'Reply-To: ' . remarka_form_recipient() );
+
+	$ok = wp_mail( $email, $subject, $body, $headers, array( $path ) );
+
+	if ( file_exists( $path ) ) {
+		wp_delete_file( $path );
+	}
+
+	if ( ! $ok ) {
+		wp_send_json_error( array( 'message' => 'invio fallito', 'code' => 'mail_failed' ), 500 );
+	}
+
+	remarka_checkup_save_lead( $email, $data, $comp, $consent_monthly );
+
+	wp_send_json_success( array( 'ok' => true ) );
+}
+add_action( 'wp_ajax_remarka_tool_report', 'remarka_tool_report_handler' );
+add_action( 'wp_ajax_nopriv_remarka_tool_report', 'remarka_tool_report_handler' );

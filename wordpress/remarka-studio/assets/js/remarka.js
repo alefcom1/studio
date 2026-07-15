@@ -873,6 +873,7 @@
 	 *   [data-sr-checkup-url] [data-sr-checkup-calc] [data-sr-checkup-priorities]
 	 *   [data-sr-checkup-report-form] [data-sr-checkup-consent]
 	 *   [data-sr-checkup-consent-monthly] [data-sr-checkup-success] [data-sr-checkup-error]
+	 *   input[name=sr_checkup_hp] (honeypot, .sr-hp-field — invisibile via CSS)
 	 * ========================================================================== */
 
 	var CHECKUP_WEIGHTS = { perf: 25, seo: 20, a11y: 15, gdpr: 15, bp: 10, ai: 10, co2: 5 };
@@ -1112,10 +1113,9 @@
 	}
 
 	/** Form richiesta report PDF: valida lato client, assembla il payload JSON e
-	 * lo invia all'azione AJAX `remarka_tool_report`. L'handler server-side
-	 * (dompdf + wp_mail + CPT sr_lead) è compito di M3: finché non esiste,
-	 * questa richiesta fallisce onestamente e la UI mostra l'errore, senza
-	 * fingere un successo. */
+	 * lo invia all'azione AJAX `remarka_tool_report` (handler server-side in
+	 * functions.php: nonce + honeypot + rate-limit + dompdf + wp_mail + CPT
+	 * sr_lead, M3). */
 	function initCheckupReportForm(root, getLastResult) {
 		var form = q(root, '[data-sr-checkup-report-form]');
 		if (!form) return;
@@ -1135,10 +1135,6 @@
 				return;
 			}
 
-			// TODO(M3, remarka_tool_report): implementare l'handler AJAX server-side
-			// (nonce remarka_tools già disponibile; dompdf per il PDF; wp_mail per
-			// l'invio; CPT sr_lead per il lead). Il payload sotto è già pronto,
-			// cap 64 KB lato server come da piano-checkup-sito.md.
 			var monthlyInput = q(root, '[data-sr-checkup-consent-monthly]');
 			var payload = {
 				url: result.url,
@@ -1157,12 +1153,14 @@
 			var btn = form.querySelector('button[type="submit"]');
 			if (btn) btn.disabled = true;
 
+			var hpInput = form.querySelector('[name="sr_checkup_hp"]');
 			var data = new FormData();
 			data.set('action', 'remarka_tool_report');
 			data.set('nonce', cfg.toolsNonce || '');
 			data.set('email', emailInput.value);
 			data.set('consent', '1');
 			data.set('consent_monthly', monthlyInput && monthlyInput.checked ? '1' : '0');
+			data.set('sr_checkup_hp', hpInput ? hpInput.value : '');
 			data.set('payload', JSON.stringify(payload).slice(0, 65536));
 
 			window.fetch(cfg.ajaxUrl, { method: 'POST', body: data, credentials: 'same-origin' })
