@@ -119,7 +119,7 @@ $home_sections = array(
  * posto vyhod-evropa e seo-lingue). Vedi piano-implementazione-fase-B.md §1 Б-1/Б-2.
  */
 $home_sections_ru = array(
-	'hero-home', 'trust-strip', 'vyhod-evropa', 'tre-numeri', 'manifesto', 'seo-lingue', 'servizi-cards',
+	'hero-home', 'checkup-home', 'trust-strip', 'vyhod-evropa', 'tre-numeri', 'manifesto', 'seo-lingue', 'servizi-cards',
 	'caso-evidenza', 'come-lavoriamo', 'garanzie-dark', 'prezzi-teaser', 'faq', 'contatti',
 );
 $home_content = '';
@@ -237,6 +237,7 @@ $page_map = array(
 	'en-caso-cantina-serralta'                     => array( 'cantina-serralta', 'en/case-studies', null ),
 	'en-caso-tecnoidraulica'                       => array( 'tecnoidraulica', 'en/case-studies', null ),
 	'en-caso-studio-legale-fontana'                => array( 'studio-legale-fontana', 'en/case-studies', null ),
+	'en-strumento-check-up-completo'               => array( 'full-site-checkup', 'en/tools', 'Full site check-up' ),
 	'en-strumento-test-velocita'                   => array( 'speed-test', 'en/tools', 'Speed test' ),
 	'en-strumento-check-gdpr'                      => array( 'gdpr-check', 'en/tools', 'GDPR & cookie check' ),
 	'en-strumento-analisi-seo'                     => array( 'seo-audit', 'en/tools', 'SEO audit' ),
@@ -278,6 +279,7 @@ $page_map = array(
 	'ru-caso-cantina-serralta'                     => array( 'cantina-serralta', 'ru/kejsy', null ),
 	'ru-caso-tecnoidraulica'                       => array( 'tecnoidraulica', 'ru/kejsy', null ),
 	'ru-caso-studio-legale-fontana'                => array( 'studio-legale-fontana', 'ru/kejsy', null ),
+	'ru-strumento-check-up-completo'               => array( 'polnaya-proverka-sajta', 'ru/instrumenty', 'Полная проверка сайта' ),
 	'ru-strumento-test-velocita'                   => array( 'test-skorosti', 'ru/instrumenty', 'Тест скорости' ),
 	'ru-strumento-check-gdpr'                      => array( 'proverka-gdpr', 'ru/instrumenty', 'Проверка GDPR и cookie' ),
 	'ru-strumento-analisi-seo'                     => array( 'seo-audit', 'ru/instrumenty', 'SEO-аудит' ),

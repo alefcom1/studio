@@ -3,7 +3,7 @@
  * Title: Pagina — Strumenti (elenco)
  * Slug: remarka-studio/ru-strumenti-index
  * Categories: remarka-pagine
- * Description: Elenco dei quattro strumenti gratuiti.
+ * Description: Список восьми бесплатных инструментов, с полной проверкой сайта в выделенной карточке.
  * Viewport Width: 1400
  */
 ?>
@@ -17,6 +17,12 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
 <p class="has-grigio-color has-text-color has-medium-font-size">Профессиональные инструменты — бесплатно и без регистрации.</p>
 <!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:html -->
+<div class="sr-card sr-card--carta" style="border-color:var(--sr-oltremare)"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">Новинка · бесплатно</p><h3 class="wp-block-heading" style="margin-top:10px">Полная проверка сайта</h3><p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">Семь бесплатных инструментов в одном анализе.</p><p class="sr-card-link" style="margin-top:18px"><a href="/ru/instrumenty/polnaya-proverka-sajta/">Попробовать →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->

@@ -3,7 +3,7 @@
  * Title: Pagina — Strumenti (elenco)
  * Slug: remarka-studio/en-strumenti-index
  * Categories: remarka-pagine
- * Description: Elenco dei quattro strumenti gratuiti.
+ * Description: Elenco degli otto strumenti gratuiti, con il check-up completo in evidenza.
  * Viewport Width: 1400
  */
 ?>
@@ -17,6 +17,12 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
 <p class="has-grigio-color has-text-color has-medium-font-size">Professional tools, free, no sign-up.</p>
 <!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:html -->
+<div class="sr-card sr-card--carta" style="border-color:var(--sr-oltremare)"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">New · free</p><h3 class="wp-block-heading" style="margin-top:10px">Full check-up</h3><p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">Seven free tools in a single analysis.</p><p class="sr-card-link" style="margin-top:18px"><a href="/en/tools/full-site-checkup/">Try it →</a></p></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->

@@ -154,7 +154,57 @@ best-practices 10 · ai-readiness 10 · co2 5. Каждое измерение �
   tutti verdi. 3 PDF di esempio renderizzati in scratchpad
   (`m3_report_it.pdf`/`_en.pdf`/`_ru.pdf`, ~76–86 KB l'uno, verificati
   pagina per pagina via rendering PNG).
-- M4 — очередь: pagine EN/RU (`/en/tools/full-site-checkup/`,
-  `/ru/instrumenty/polnaya-proverka-sajta/`), CHROME-pair, blocco home
-  EN/RU, QA screenshot 390/1440, regressione 7 strumenti + home, docs +
-  pacchetto deploy.
+- **M4 — completato (15.07.2026). Feature «Check-up completo del sito»
+  terminata su tutti e 3 le lingue.** EN: `python3 translate_pages.py en`
+  (dizionario esteso di ~170 coppie `CHROME_CHECKUP` in `chrome_strings.py`,
+  ATTRS regex di `translate_pages.py` estesa a `data-word-*`/
+  `data-composite-*`/`data-verdict-[0-9]`/`data-calc-note`/`data-na-text`/
+  `data-ai-suffix` — mancavano nel contratto M2, individuate confrontando
+  ogni nodo di `strumento-check-up-completo.php` col dizionario prima del
+  run) → `en-strumento-check-up-completo.php` + `en-strumenti-index.php`
+  (card in evidenza) rigenerati, `git diff --stat` conferma solo questi 2
+  file. RU: `ru-strumento-check-up-completo.php` scritto a mano
+  (`docs/copy-checkup.md` §4.2/§4.3, testo autonomo) + card in evidenza su
+  `ru-strumenti-index.php`. Blocchi home `patterns/lang-en/checkup-home.php`
+  e `patterns/lang-ru/checkup-home.php` (testo §3.1/§4.1); `checkup-home`
+  inserito in `$home_sections_ru` subito dopo `hero-home` in
+  `deploy-import.php` (IT/EN già presenti da M2). **Bug di M2 corretto:**
+  `initCheckupHomeForm()` in `remarka.js` reindirizzava sempre a
+  `/strumenti/check-up-completo/` — ora legge `data-sr-locale` dal form
+  (stesso contratto `toolLocale()` dei widget strumento) e manda alla
+  pagina check-up della lingua propria via `CHECKUP_PAGE_PATH`. **Bug
+  scoperto in QA:** `data-ai-suffix` (badge «N / 4 segnali» sulla card
+  AI-readiness) non faceva parte del contratto dati di M2 — l'EN/RU
+  mostravano l'italiano «segnali» in chiaro (l'euristica `ITALIAN_HINT` del
+  conveyor non lo intercetta, nessuna parola italiana frequente nella
+  stringa); aggiunto l'attributo alle 3 pagine + voce dizionario, riscontro
+  visivo confermato via screenshot mirato sulla card. Schema.org:
+  `remarka_checkup_tool_schema()` (`functions.php`) copriva solo
+  `is_page('check-up-completo')` (IT) — esteso con `is_page()` ad array dei
+  3 slug, `name`/`featureList`/FAQ localizzati per `remarka_current_lang()`,
+  `provider` da `remarka_company_lang_data()`; verificato con harness PHP
+  dedicato (`m4_schema_test.php`, JSON-LD delle 3 lingue via `eval()` della
+  funzione reale, non una riscrittura). `lang.py` `TOOLS_SLUGS` +
+  `check-up-completo`, `inc/lang-map.php` rigenerato (`python3 lang.py`,
+  diff di una sola riga), `deploy-import.php` `$page_map` + 2 voci EN/RU.
+  Footer-menu EN/RU verificati **invariati** — linkano solo alla sezione
+  `/tools/`/`/instrumenty/`, non ai singoli strumenti (stesso comportamento
+  di T3, nessuna riga da aggiungere). Verifica: `php -l` su tutti i file
+  toccati/nuovi, `node -e` parse su `remarka.js`, `python3 -m py_compile`
+  sui `.py` toccati — tutti puliti; grep anti-residuo IT
+  («Analizza il sito»/«Il report completo»/«misurazioni su») e anti-formato
+  IT dell'euro (`€ N.NNN`) su RU — puliti; hreflang a 3 vie in
+  `lang-map.php` corretta. Playwright (Chromium `/opt/pw-browsers/chromium`,
+  `reducedMotion`) su `remarka.css` reale con `fetch`/`admin-ajax.php`
+  mockati (PSI 4 categorie + GDPR/AI): pagina check-up EN/RU con risultati
+  renderizzati (composito 63/100, verdetti confermati in inglese/russo) a
+  390 e 1440px, blocco home EN/RU a 390/1440px — 8 screenshot in
+  `scratchpad/m4/m4_*.png`, ognuno rivisto. Regressione: pagina check-up IT
+  ancora in italiano (stessa run, stesso mock), `test-velocita` IT
+  funzionante, home IT con blocco `checkup-home` dopo l'hero — 3 screenshot
+  di controllo aggiuntivi. `git diff --stat` finale: 14 file modificati
+  (10 codice + `docs/seo-meta.md`/`deploy-ssh.md`/`piano-checkup-sito.md`)
+  + 4 nuovi, nessun file toccato fuori scope. Meta SEO IT/EN/RU della
+  pagina check-up in `docs/seo-meta.md` (Title/Description/focus keyword,
+  verbatim da `docs/copy-checkup.md` §2.2/§3.2/§4.2). Fase «Check-up
+  completo del sito» conclusa: M1→M4 tutte completate.

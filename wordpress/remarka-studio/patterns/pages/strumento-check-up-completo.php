@@ -29,7 +29,8 @@
      data-label-suffix=" — analisi mobile"
      data-calc-note="Calcolato su {n} misurazioni su 7."
      data-na-text="Non siamo riusciti a misurare questo aspetto: il sito ha rifiutato la lettura o il servizio Google era saturo."
-     data-err="Non siamo riusciti a completare il check-up. Riprovate tra qualche minuto.">
+     data-err="Non siamo riusciti a completare il check-up. Riprovate tra qualche minuto."
+     data-ai-suffix=" / 4 segnali">
   <form data-sr-tool-form>
     <div class="sr-tool-row">
       <input type="text" placeholder="www.ilvostrosito.it" class="sr-text-input" required />

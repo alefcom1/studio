@@ -182,15 +182,25 @@ wp eval-file /var/www/alefcom/data/www/remarka.biz/wp-content/themes/remarka-stu
 > см. диагностику/восстановление ниже.
 
 > ℹ️ **С фазы B у RU-главной собственный набор секций.** `deploy-import.php`
-> теперь содержит отдельный список `$home_sections_ru` (13 секций из
-> `patterns/lang-ru/`: hero-home, trust-strip, vyhod-evropa, tre-numeri,
-> manifesto, seo-lingue, servizi-cards, caso-evidenza, come-lavoriamo,
-> garanzie-dark, prezzi-teaser, faq, contatti) — RU-воронка самодостаточна и
-> не зеркалит IT/EN (без `lingue-mercati`/`strumenti-cards`, вместо них
-> `vyhod-evropa`/`seo-lingue`). Из-за этого предупреждение
+> теперь содержит отдельный список `$home_sections_ru` (14 секций из
+> `patterns/lang-ru/`: hero-home, checkup-home, trust-strip, vyhod-evropa,
+> tre-numeri, manifesto, seo-lingue, servizi-cards, caso-evidenza,
+> come-lavoriamo, garanzie-dark, prezzi-teaser, faq, contatti) — RU-воронка
+> самодостаточна и не зеркалит IT/EN (без `lingue-mercati`/`strumenti-cards`,
+> вместо них `vyhod-evropa`/`seo-lingue`). Из-за этого предупреждение
 > «`[ru] sezione mancante: lingue-mercati.php`», которое раньше появлялось
 > при каждом деплое (RU использовал общий IT-список секций), больше не
 > выводится — это ожидаемо, не повод искать регрессию.
+>
+> ℹ️ **M4 (check-up EN/RU):** `checkup-home` теперь во всех трёх списках
+> секций главной (IT/EN — `$home_sections` сразу после `hero-home`; RU —
+> `$home_sections_ru`, тоже сразу после `hero-home`), блок берётся из
+> `patterns/checkup-home.php` / `patterns/lang-en/checkup-home.php` /
+> `patterns/lang-ru/checkup-home.php`. Страницы check-up EN/RU
+> (`en-strumento-check-up-completo` → `/en/tools/full-site-checkup/`,
+> `ru-strumento-check-up-completo` → `/ru/instrumenty/polnaya-proverka-sajta/`)
+> — обычные записи `$page_map`, деплоятся тем же циклом, никаких
+> дополнительных шагов не требуют.
 
 ## После импорта — ручные шаги
 
@@ -346,6 +356,15 @@ completo и сохраняет лид. Порядок проверок в хен
 whitelist `it|en|ru`). Композит и «measured» из клиента **игнорируются** —
 пересчитываются на сервере из `scores` (`remarka_checkup_composite`), чтобы
 PDF был внутренне непротиворечив, даже если клиент прислал что-то другое.
+
+**M4: работает одинаково на всех 3 языках.** Форма на
+`/en/tools/full-site-checkup/` и `/ru/instrumenty/polnaya-proverka-sajta/`
+шлёт тот же `action=remarka_tool_report` с `locale=en|ru` (из data-атрибута
+виджета) — сервер сам выбирает шаблон/тему письма (`remarka_checkup_render_html`,
+`remarka_checkup_email_subject`/`_body`, все на 3 языка уже с M3) и рендерит
+PDF на языке заявки. Проверить вручную: открыть страницу нужного языка,
+пройти форму реальными данными — письмо и PDF должны прийти на языке
+страницы, а не на итальянском.
 
 **Библиотека PDF:** `wordpress/remarka-studio/lib/dompdf/` — бандл dompdf
 3.1.5 + php-font-lib 1.0.2 + php-svg-lib 1.0.2 + masterminds/html5 2.10.1 +

@@ -1481,7 +1481,16 @@
 	/* ---------- 9. Blocco home check-up completo ----------
 	   Non è un widget [data-sr-tool]: non misura nulla in home, si limita a
 	   normalizzare l'URL e mandare alla pagina check-up con ?url=…&autostart=1
-	   (patterns/checkup-home.php). L'analisi vera parte lì (initCheckupTool). */
+	   (patterns/checkup-home.php + lang-en/lang-ru). L'analisi vera parte lì
+	   (initCheckupTool). Lang-aware (M4): il percorso di destinazione dipende
+	   da data-sr-locale sul form (come i widget strumenti, via toolLocale()),
+	   così ogni blocco home (IT/EN/RU) manda alla pagina check-up della
+	   propria lingua. */
+	var CHECKUP_PAGE_PATH = {
+		it: '/strumenti/check-up-completo/',
+		en: '/en/tools/full-site-checkup/',
+		ru: '/ru/instrumenty/polnaya-proverka-sajta/',
+	};
 	function initCheckupHomeForm() {
 		document.querySelectorAll('[data-sr-checkup-home]').forEach(function (form) {
 			form.addEventListener('submit', function (e) {
@@ -1492,10 +1501,9 @@
 					if (input) input.focus();
 					return;
 				}
-				// URL IT hardcoded (M2, unico blocco home esistente): M4 dovrà
-				// leggere il percorso giusto per EN/RU (es. da window.remarkaLang)
-				// quando aggiungerà i blocchi home tradotti.
-				window.location.href = '/strumenti/check-up-completo/?url=' + encodeURIComponent(url) + '&autostart=1';
+				var locale = toolLocale(form);
+				var path = CHECKUP_PAGE_PATH[locale] || CHECKUP_PAGE_PATH.it;
+				window.location.href = path + '?url=' + encodeURIComponent(url) + '&autostart=1';
 			});
 		});
 	}

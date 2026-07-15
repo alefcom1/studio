@@ -52,6 +52,7 @@ TOOLS_SLUGS = {
     'verifica-accessibilita': {'en': 'accessibility-check',  'ru': 'proverka-dostupnosti'},
     'sito-pronto-ai':         {'en': 'ai-readiness',         'ru': 'gotovnost-k-ii'},
     'impatto-co2':            {'en': 'website-carbon',       'ru': 'uglerodnyj-sled'},
+    'check-up-completo':      {'en': 'full-site-checkup',    'ru': 'polnaya-proverka-sajta'},
 }
 
 BLOG_SLUGS = {

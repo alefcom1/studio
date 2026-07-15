@@ -39,7 +39,7 @@
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:html -->
 <div class="sr-tool-widget sr-card">
   <p class="sr-mono" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sr-grigio);margin:0 0 14px">Il vostro sito, testato in 60 secondi</p>
-  <form data-sr-checkup-home>
+  <form data-sr-checkup-home data-sr-locale="it">
     <div class="sr-tool-row">
       <input type="text" placeholder="www.ilvostrosito.it" class="sr-text-input" required />
       <button type="submit" class="wp-block-button__link" style="padding:15px 26px">Analizza il sito — gratis</button>

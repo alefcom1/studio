@@ -148,6 +148,37 @@ RU CO₂ — 56 — все ≤60. Description (лимит ≤160): IT accessibil
 IT CO₂ — 158, EN accessibility — 158, EN AI — 127, EN CO₂ — 154, RU accessibility — 150,
 RU AI — 141, RU CO₂ — 140 — все ≤160.
 
+## Check-up completo del sito — IT/EN/RU (M4)
+
+> Источник — `docs/copy-checkup.md` §2.2/§3.2/§4.2 (copy deck M1). Contenuto
+> подтянут: H1, intro, sezione «Il metodo»/«The method»/«Метод», FAQ (3),
+> CTA finale — pagine `/strumenti/check-up-completo/` ·
+> `/en/tools/full-site-checkup/` · `/ru/instrumenty/polnaya-proverka-sajta/`.
+
+| Страница | Focus Keyword | Контент подтянут |
+|---|---|---|
+| `/strumenti/check-up-completo/` | check up sito web | ✅ (H1, intro, «Il metodo», «Come leggere», FAQ) |
+| `/en/tools/full-site-checkup/` | website check up | ✅ (H1, intro, «The method», «How to read it», FAQ) |
+| `/ru/instrumenty/polnaya-proverka-sajta/` | полная проверка сайта | ✅ (H1, интро, «Метод», «Как читать», FAQ) |
+
+### IT — `/strumenti/check-up-completo/`
+
+- **Title:** `Check-up completo del sito web, gratis | Studio Remarka`
+- **Description:** `Un solo test: velocità, SEO, accessibilità, privacy, best practice, AI e CO₂. Punteggio di salute 0–100 e report PDF completo. Gratis, senza registrazione.`
+
+### EN — `/en/tools/full-site-checkup/`
+
+- **Title:** `Full website check-up, free — 7 tests in one | Studio Remarka`
+- **Description:** `One test: speed, SEO, accessibility, privacy, best practices, AI and CO₂. A 0–100 health score and a full PDF report. Free, no sign-up required.`
+
+### RU — `/ru/instrumenty/polnaya-proverka-sajta/`
+
+- **Title:** `Полная проверка сайта: 7 тестов в одном | Studio Remarka`
+- **Description:** `Один тест: скорость, SEO, доступность, приватность, стандарты, ИИ и CO₂. Оценка здоровья сайта 0–100 и полный отчёт в PDF. Бесплатно, без регистрации.`
+
+**Проверка длин.** Title: IT — 54, EN — 59, RU — 56 — все ≤60. Description: IT — 157,
+EN — 146, RU — 150 — все ≤160.
+
 ---
 
 ## RU-версия (фаза B)

@@ -698,65 +698,134 @@ add_action( 'wp_head', 'remarka_organization_schema' );
 
 /**
  * WebApplication + FAQPage (JSON-LD) sulla pagina «Check-up completo del sito»
- * (docs/copy-checkup.md §5.2, scope M2). Non duplica l'Organization già
+ * (docs/copy-checkup.md §5.2, scope M2/M4). Non duplica l'Organization già
  * emessa da remarka_organization_schema() (solo su home/città): qui il
- * `provider` resta un riferimento minimo, ancorato ai dati reali del
- * Customizer (nessun indirizzo/numero inventato). Niente aggregateRating:
- * il titolare ha escluso recensioni/valutazioni fittizie per questo strumento.
+ * `provider` resta un riferimento minimo, con nome/e-mail per lingua da
+ * remarka_company_lang_data() (nessun indirizzo/numero inventato). Niente
+ * aggregateRating: il titolare ha escluso recensioni/valutazioni fittizie.
+ * M4: le 3 pagine per lingua condividono lo stesso slug-check (is_page con
+ * array di slug), name/featureList/FAQ sono localizzati da
+ * docs/copy-checkup.md §2.2/§3.2/§4.2 — verbatim identico al testo reso
+ * dal pattern della pagina in quella lingua.
  */
 function remarka_checkup_tool_schema(): void {
-	if ( ! is_page( 'check-up-completo' ) ) {
+	if ( ! is_page( array( 'check-up-completo', 'full-site-checkup', 'polnaya-proverka-sajta' ) ) ) {
 		return;
 	}
+	$lang = remarka_current_lang();
+
+	$copy = array(
+		'it' => array(
+			'name'         => 'Check-up completo del sito',
+			'feature_list' => array(
+				'Prestazioni (Google PageSpeed Insights)',
+				'SEO (Google PageSpeed Insights)',
+				'Accessibilità (Google PageSpeed Insights)',
+				'Privacy e cookie (verifica indicativa)',
+				'Best practice (Google PageSpeed Insights)',
+				'Pronto per l’AI (4 segnali tecnici)',
+				'Impatto CO₂ (modello Sustainable Web Design)',
+			),
+			'faq'          => array(
+				array(
+					'q' => 'Il punteggio è quello vero di Google?',
+					'a' => 'Per prestazioni, SEO, accessibilità e best practice sì: arrivano dall’API ufficiale PageSpeed Insights, strategia mobile. Privacy, prontezza AI e CO₂ sono nostre verifiche, con il metodo dichiarato in ogni sezione.',
+				),
+				array(
+					'q' => 'Il check-up GDPR sostituisce un consulente privacy?',
+					'a' => 'No. È una verifica tecnica indicativa a quattro segnali: intercetta i problemi evidenti — banner assente, tracker prima del consenso — ma non è un parere legale e non sostituisce un consulente.',
+				),
+				array(
+					'q' => 'Cosa ricevo nel report PDF che non vedo già a schermo?',
+					'a' => 'A schermo vedete il punteggio, i sette semafori e le tre priorità. Nel PDF trovate una pagina per dimensione con tutte le criticità rilevate, le raccomandazioni operative in ordine di impatto e cosa faremmo noi, con i nostri riferimenti aziendali.',
+				),
+			),
+		),
+		'en' => array(
+			'name'         => 'Full website check-up',
+			'feature_list' => array(
+				'Performance (Google PageSpeed Insights)',
+				'SEO (Google PageSpeed Insights)',
+				'Accessibility (Google PageSpeed Insights)',
+				'Privacy & cookies (indicative check)',
+				'Best practices (Google PageSpeed Insights)',
+				'AI-readiness (4 technical signals)',
+				'CO₂ impact (Sustainable Web Design model)',
+			),
+			'faq'          => array(
+				array(
+					'q' => 'Is the score the real Google one?',
+					'a' => 'For performance, SEO, accessibility and best practices, yes — it comes from the official PageSpeed Insights API, mobile strategy. Privacy, AI-readiness and CO₂ are our own checks, with the method stated in each section.',
+				),
+				array(
+					'q' => 'Does the GDPR check replace a privacy consultant?',
+					'a' => 'No. It’s an indicative, four-signal technical check: it catches the obvious problems — missing banner, trackers before consent — but it’s not a legal opinion and doesn’t replace a consultant.',
+				),
+				array(
+					'q' => 'What’s in the PDF that I don’t already see on screen?',
+					'a' => 'On screen you see the score, the seven traffic lights and the three priorities. The PDF gives you a page per dimension with every issue found, the fixes ranked by impact, and what we would do, with our company details.',
+				),
+			),
+		),
+		'ru' => array(
+			'name'         => 'Полная проверка сайта',
+			'feature_list' => array(
+				'Скорость (Google PageSpeed Insights)',
+				'SEO (Google PageSpeed Insights)',
+				'Доступность (Google PageSpeed Insights)',
+				'Приватность и cookie (ориентировочная проверка)',
+				'Технические стандарты (Google PageSpeed Insights)',
+				'Готовность к ИИ (4 технических сигнала)',
+				'Углеродный след (модель Sustainable Web Design)',
+			),
+			'faq'          => array(
+				array(
+					'q' => 'Оценка — настоящая от Google?',
+					'a' => 'Для скорости, SEO, доступности и стандартов — да: она из официального API PageSpeed Insights, мобильная стратегия. Приватность, готовность к ИИ и CO₂ — наши проверки, метод описан в каждом разделе.',
+				),
+				array(
+					'q' => 'Проверка GDPR заменяет консультанта по приватности?',
+					'a' => 'Нет. Это ориентировочная техническая проверка по четырём сигналам: она ловит очевидные проблемы — нет баннера, трекеры до согласия, — но это не юридическое заключение и не замена консультанту.',
+				),
+				array(
+					'q' => 'Что в PDF-отчёте, чего нет на экране?',
+					'a' => 'На экране — оценка, семь светофоров и три приоритета. В PDF — по странице на каждое из семи измерений со всеми найденными проблемами, рекомендации по степени влияния и раздел «что сделали бы мы» с нашими реквизитами.',
+				),
+			),
+		),
+	);
+	$c           = $copy[ $lang ];
+	$company     = remarka_company_lang_data();
+	$lang_prefix = 'it' === $lang ? '/' : "/$lang/";
 
 	$app = array(
 		'@context'            => 'https://schema.org',
 		'@type'               => 'WebApplication',
-		'name'                => 'Check-up completo del sito',
+		'name'                => $c['name'],
 		'url'                 => get_permalink(),
 		'applicationCategory' => 'BusinessApplication',
 		'operatingSystem'     => 'Web',
-		'inLanguage'          => 'it',
+		'inLanguage'          => $lang,
 		'isAccessibleForFree' => true,
 		'offers'              => array(
 			'@type'         => 'Offer',
 			'price'         => '0',
 			'priceCurrency' => 'EUR',
 		),
-		'featureList'         => array(
-			'Prestazioni (Google PageSpeed Insights)',
-			'SEO (Google PageSpeed Insights)',
-			'Accessibilità (Google PageSpeed Insights)',
-			'Privacy e cookie (verifica indicativa)',
-			'Best practice (Google PageSpeed Insights)',
-			'Pronto per l’AI (4 segnali tecnici)',
-			'Impatto CO₂ (modello Sustainable Web Design)',
-		),
+		'featureList'         => $c['feature_list'],
 		'provider'            => array(
 			'@type' => 'Organization',
-			'name'  => remarka_footer_mod( 'remarka_company_name' ),
-			'url'   => home_url( '/' ),
-			'email' => remarka_footer_mod( 'remarka_company_email' ),
+			'name'  => $company['name'],
+			'url'   => home_url( $lang_prefix ),
+			'email' => $company['email'],
 		),
 	);
 	echo '<script type="application/ld+json">' . wp_json_encode( $app ) . '</script>' . "\n";
 
-	// Le 3 FAQ della pagina (docs/copy-checkup.md §2.2) — testo statico,
-	// identico a quello reso da details_faq() nel pattern generato.
-	$faq = array(
-		array(
-			'q' => 'Il punteggio è quello vero di Google?',
-			'a' => 'Per prestazioni, SEO, accessibilità e best practice sì: arrivano dall’API ufficiale PageSpeed Insights, strategia mobile. Privacy, prontezza AI e CO₂ sono nostre verifiche, con il metodo dichiarato in ogni sezione.',
-		),
-		array(
-			'q' => 'Il check-up GDPR sostituisce un consulente privacy?',
-			'a' => 'No. È una verifica tecnica indicativa a quattro segnali: intercetta i problemi evidenti — banner assente, tracker prima del consenso — ma non è un parere legale e non sostituisce un consulente.',
-		),
-		array(
-			'q' => 'Cosa ricevo nel report PDF che non vedo già a schermo?',
-			'a' => 'A schermo vedete il punteggio, i sette semafori e le tre priorità. Nel PDF trovate una pagina per dimensione con tutte le criticità rilevate, le raccomandazioni operative in ordine di impatto e cosa faremmo noi, con i nostri riferimenti aziendali.',
-		),
-	);
+	// Le 3 FAQ della pagina (docs/copy-checkup.md §2.2/§3.2/§4.2) — testo
+	// statico, identico a quello reso da details_faq() nel pattern della
+	// pagina in quella lingua.
+	$faq        = $c['faq'];
 	$faq_schema = array(
 		'@context'   => 'https://schema.org',
 		'@type'      => 'FAQPage',

@@ -948,3 +948,176 @@ CHROME_TOOLS_L2 = {
         'en': 'Read more: the 7 causes of a slow website →'},
 }
 CHROME.update(CHROME_TOOLS_L2)
+
+# Full-site check-up (M4, docs/piano-checkup-sito.md): copy editoriale EN
+# della pagina /en/tools/full-site-checkup/ e della card in evidenza su
+# en-strumenti-index.php. Fonte: docs/copy-checkup.md §3.2/§3.3. Solo 'en' —
+# il RU è scritto a mano nella pagina ru-strumento-check-up-completo.php.
+CHROME_CHECKUP = {
+    # ---- eyebrow / hero / intro ----
+    'Check-up completo · gratuito': {'en': 'Full check-up · free'},
+    'Il check-up completo del vostro sito web': {'en': 'The complete check-up for your website'},
+    'Sette strumenti gratuiti in una sola analisi. Incollate l’indirizzo: in meno di un minuto vedete un punteggio di salute da 0 a 100, i sette semafori che lo compongono e i tre interventi più urgenti. La misura è quella vera di Google PageSpeed Insights, affiancata dalle nostre verifiche su privacy e prontezza AI. Il report completo, pagina per pagina, ve lo inviamo in PDF.': {
+        'en': 'Seven free tools in a single analysis. Paste your address: in under a minute you get a 0–100 health score, the seven traffic lights behind it and the three most urgent fixes. The measurement is the real one from Google PageSpeed Insights, alongside our own privacy and AI-readiness checks. The full report, page by page, we send you as a PDF.'},
+
+    # ---- widget: form / stati ----
+    'Analizza il sito — gratis': {'en': 'Analyse the site — free'},
+    'Analisi in corso su sette fronti — può richiedere fino a 30 secondi': {
+        'en': 'Analysis in progress on seven fronts — this can take up to 30 seconds'},
+    'Check-up incompleto': {'en': 'Check-up incomplete'},
+    'Riprovate tra qualche minuto: alcune misure non hanno risposto (il servizio Google potrebbe essere saturo, oppure il sito ha rifiutato la lettura).': {
+        'en': 'Try again in a few minutes: some measures didn’t respond (Google’s service may be overloaded, or the website refused the reading).'},
+    'Riprova': {'en': 'Retry'},
+
+    # ---- composito ----
+    'Salute del sito': {'en': 'Site health'},
+    'Media pesata di 7 misure. Prestazioni, SEO, accessibilità e best practice arrivano da Google PageSpeed Insights; privacy, prontezza AI e impatto CO₂ dalle verifiche di Studio Remarka.': {
+        'en': 'Weighted average of 7 measures. Performance, SEO, accessibility and best practices from Google PageSpeed; privacy, AI and CO₂ from Studio Remarka checks.'},
+
+    # ---- le sette dimensioni ----
+    'Le sette misure': {'en': 'The seven measures'},
+    'Sette semafori, un punteggio': {'en': 'Seven traffic lights, one score'},
+    'Prestazioni': {'en': 'Performance'},
+    'Accessibilità': {'en': 'Accessibility'},
+    'Peso 25': {'en': 'Weight 25'},
+    'Peso 20': {'en': 'Weight 20'},
+    'Peso 15': {'en': 'Weight 15'},
+    'Peso 10': {'en': 'Weight 10'},
+    'Peso 5': {'en': 'Weight 5'},
+    'Privacy e cookie': {'en': 'Privacy & cookies'},
+    'Verifica indicativa · non legale': {'en': 'Indicative check · not legal advice'},
+    'Best practice': {'en': 'Best practices'},
+    'Pronto per l’AI': {'en': 'AI-readiness'},
+    '4 segnali tecnici': {'en': '4 technical signals'},
+    'Modello SWD': {'en': 'SWD model'},
+
+    # ---- verdetti per dimensione (data-verdict-0..3) ----
+    'Il sito è rapido su mobile: rispetta gli standard Google.': {'en': 'Fast on mobile: meets Google’s standards.'},
+    'Velocità buona; restano margini misurabili su qualche pagina.': {'en': 'Good speed; measurable room on some pages.'},
+    'Nella media del web, ma lontano dagli standard consigliati.': {'en': 'Average for the web, but far from the recommended standards.'},
+    'Il sito è lento su mobile: gran parte dei visitatori abbandona prima del caricamento.': {
+        'en': 'Slow on mobile: most visitors leave before it loads.'},
+    'Basi tecniche on-page in ordine: nessun ostacolo all’indicizzazione.': {'en': 'On-page foundations in order: no barrier to indexing.'},
+    'Struttura solida; poche correzioni per completare le basi.': {'en': 'Solid structure; a few fixes to finish the basics.'},
+    'Alcuni elementi on-page mancano o sono duplicati.': {'en': 'Some on-page elements are missing or duplicated.'},
+    'Qualcosa ostacola l’indicizzazione: da sistemare prima di tutto.': {'en': 'Something blocks indexing: fix this first.'},
+    'Poche o nessuna barriera: sito fruibile secondo WCAG 2.1 AA.': {'en': 'Few or no barriers: usable under WCAG 2.1 AA.'},
+    'Buon livello; restano barriere minori da rimuovere.': {'en': 'Good level; minor barriers left to remove.'},
+    'Diverse barriere rilevate: contrasti, etichette, navigazione.': {'en': 'Several barriers found: contrast, labels, navigation.'},
+    'Barriere gravi: il sito è difficile da usare per molte persone (obbligo EAA).': {
+        'en': 'Serious barriers: hard to use for many people (EAA obligation).'},
+    'Banner, informative e tracker in ordine nell’HTML iniziale.': {'en': 'Banner, policies and trackers in order in the initial HTML.'},
+    'Impianto presente; un paio di punti da verificare a mano.': {'en': 'Framework in place; a couple of points to check by hand.'},
+    'Mancano elementi o alcuni tracker vanno governati meglio.': {'en': 'Elements missing or some trackers poorly governed.'},
+    'Tracker attivi senza banner o policy assenti: rischio concreto col Garante.': {
+        'en': 'Trackers active without a banner, or policies missing: real regulatory risk.'},
+    'Sito tecnicamente pulito: HTTPS, console senza errori, librerie aggiornate.': {
+        'en': 'Technically clean: HTTPS, no console errors, up-to-date libraries.'},
+    'Buon livello tecnico; qualche avviso da chiudere.': {'en': 'Good technical level; a few warnings to close.'},
+    'Diversi avvisi tecnici: sicurezza, errori console, immagini.': {'en': 'Several technical warnings: security, console errors, images.'},
+    'Problemi tecnici diffusi che indeboliscono affidabilità e sicurezza.': {
+        'en': 'Widespread technical issues weakening reliability and security.'},
+    '4 segnali su 4: il sito è leggibile e citabile dai modelli AI.': {'en': '4 of 4 signals: readable and citable by AI models.'},
+    '3 segnali su 4: manca poco alla piena prontezza AI.': {'en': '3 of 4 signals: nearly fully AI-ready.'},
+    '2 segnali su 4: dati strutturati o sitemap da completare.': {'en': '2 of 4 signals: structured data or sitemap to complete.'},
+    '0–1 segnali: i modelli AI faticano a leggere e citare il sito.': {'en': '0–1 signals: AI models struggle to read and cite the site.'},
+    'Pagina leggera: emissioni sotto la media del web.': {'en': 'Light page: emissions below the web average.'},
+    'Vicino alla media; c’è margine per alleggerire.': {'en': 'Near the average; room to slim down.'},
+    'Sopra la media: la pagina è pesante da caricare.': {'en': 'Above average: the page is heavy to load.'},
+    'Molto sopra la media: pagina pesante, costo ambientale e di velocità.': {
+        'en': 'Well above average: heavy page, an environmental and speed cost.'},
+
+    # ---- parole di verdetto e composito (data-word-*/data-composite-*) ----
+    'Eccellente': {'en': 'Excellent'},
+    'Buono': {'en': 'Good'},
+    'Da migliorare': {'en': 'Needs work'},
+    'Critico': {'en': 'Critical'},
+    'Sito in salute eccellente': {'en': 'Excellent site health'},
+    'Sito in buona salute': {'en': 'Good site health'},
+    'Sito da migliorare': {'en': 'Site needs work'},
+    'Sito a rischio': {'en': 'Site at risk'},
+    '— analisi mobile': {'en': '— mobile analysis'},
+    ' / 4 segnali': {'en': ' / 4 signals'},
+    'Calcolato su {n} misurazioni su 7.': {'en': 'Calculated on {n} of 7 measurements.'},
+    'Non siamo riusciti a misurare questo aspetto: il sito ha rifiutato la lettura o il servizio Google era saturo.': {
+        'en': 'We couldn’t measure this aspect: the website refused automated reading, or Google’s service was overloaded.'},
+    'Non siamo riusciti a completare il check-up. Riprovate tra qualche minuto.': {
+        'en': 'We couldn’t complete the check-up. Please try again in a few minutes.'},
+
+    # ---- priorità ----
+    'Le priorità': {'en': 'Priorities'},
+    'I 3 interventi che pesano di più': {'en': 'The 3 fixes that matter most'},
+    'Ordinati per impatto sul punteggio: quanto guadagnereste sistemandoli.': {
+        'en': 'Ranked by impact on your score: how much you’d gain by fixing them.'},
+
+    # ---- form e-mail / report PDF ----
+    'Report completo': {'en': 'Full report'},
+    'Il report completo, in PDF': {'en': 'The full report, as a PDF'},
+    'Vi inviamo l’analisi integrale: una pagina per ognuna delle sette dimensioni, tutte le criticità rilevate e le raccomandazioni in ordine di impatto.': {
+        'en': 'We send you the complete analysis: one page per dimension, every issue found and the fixes ranked by impact.'},
+    'Il punteggio di salute con i sette semafori': {'en': 'The health score with the seven traffic lights'},
+    'Una pagina per dimensione: punteggio, cosa abbiamo trovato, cosa fare': {
+        'en': 'A page per dimension: score, what we found, what to do'},
+    'I tre interventi prioritari con le contromisure': {'en': 'The three priority fixes with countermeasures'},
+    '«Cosa faremmo noi» e i riferimenti di Studio Remarka': {'en': '«What we would do» and Studio Remarka’s details'},
+    'Sito web': {'en': 'Website'},
+    'Inviatemi il report PDF': {'en': 'Send me the PDF report'},
+    'Ho letto la': {'en': 'I have read the'},
+    'e acconsento all’invio del report e a essere ricontattato.': {'en': 'and consent to receiving the report and being contacted.'},
+    'Inviatemi ogni mese il monitoraggio dei Core Web Vitals di questo sito.': {
+        'en': 'Send me the monthly Core Web Vitals monitoring for this site.'},
+    'Fatto. Il report è in viaggio verso la vostra casella: se non arriva entro qualche minuto, controllate lo spam o scriveteci.': {
+        'en': 'Done. The report is on its way to your inbox: if it doesn’t arrive within a few minutes, check spam or drop us a line.'},
+    'Non siamo riusciti a inviare il report. Riprovate tra poco o scriveteci: ve lo mandiamo a mano.': {
+        'en': 'We couldn’t send the report. Try again shortly, or write to us and we’ll send it by hand.'},
+    'Niente spam. Usiamo l’indirizzo solo per il report ed eventuale ricontatto. Studio Remarka S.r.l., P.IVA GE 302230994.': {
+        'en': 'No spam. We use your address only for the report and possible follow-up. Studio Remarka S.r.l., VAT GE 302230994.'},
+    'nome@vostraazienda.it': {'en': 'name@yourcompany.com'},
+
+    # ---- come funziona (3 passi) ----
+    'La home o la pagina che porta più visite. Nessuna registrazione, nessun dato di pagamento.': {
+        'en': 'Your home page or the page that brings the most traffic. No sign-up, no payment details.'},
+    'Analizziamo su sette fronti': {'en': 'We analyse on seven fronts'},
+    'Un’unica interrogazione all’API Google PageSpeed (prestazioni, SEO, accessibilità, best practice) più le nostre verifiche su privacy/cookie e prontezza AI, letti dal nostro server come farebbe un visitatore.': {
+        'en': 'A single Google PageSpeed API call (performance, SEO, accessibility, best practices) plus our own privacy/cookie and AI-readiness checks, read from our server the way a visitor would see the page.'},
+    'Leggete il punteggio e le priorità': {'en': 'Read the score and priorities'},
+    'Salute 0–100, i sette semafori spiegati in italiano e i tre interventi che pesano di più. Il report completo arriva in PDF.': {
+        'en': 'Health 0–100, the seven traffic lights in plain English and the three fixes that matter most. The full report follows as a PDF.'},
+
+    # ---- il metodo ----
+    'Che cosa misura davvero il check-up completo': {'en': 'What the full check-up actually measures'},
+    'Dietro il punteggio non c’è una scatola nera. Quattro delle sette dimensioni — prestazioni, SEO, accessibilità e best practice — arrivano dall’API PageSpeed Insights di Google, la stessa che alimenta pagespeed.web.dev: interroghiamo Lighthouse in strategia mobile, perché è la versione del sito che Google usa per posizionarvi. Le altre tre le calcoliamo noi: la conformità privacy la leggiamo dall’HTML della pagina (banner, informative, tracker prima del consenso), la prontezza AI da quattro segnali tecnici — llms.txt, accesso ai crawler, dati strutturati, sitemap — e l’impronta di CO₂ dal peso reale della pagina, con il modello Sustainable Web Design.': {
+        'en': 'There’s no black box behind the score. Four of the seven dimensions — performance, SEO, accessibility and best practices — come from Google’s PageSpeed Insights API, the same engine behind pagespeed.web.dev: we query Lighthouse in mobile strategy, because that’s the version Google uses to rank you. The other three we compute ourselves: privacy compliance we read from the page’s HTML (banner, policies, trackers before consent), AI-readiness from four technical signals — llms.txt, crawler access, structured data, sitemap — and the CO₂ footprint from the page’s real weight, using the Sustainable Web Design model.'},
+    'Ogni dimensione entra nel voto con un peso dichiarato: le prestazioni valgono di più (25 su 100), la CO₂ di meno (5). È giusto sapere anche cosa il check-up non fa: non è un parere legale sulla privacy — è una verifica indicativa a quattro segnali — e non promette una posizione su Google. È la fotografia tecnica precisa del vostro sito, non una promessa di vendita.': {
+        'en': 'Each dimension enters the score with a stated weight: performance counts most (25 of 100), CO₂ least (5). It’s fair to know what the check-up does not do: it’s not a legal opinion on privacy — it’s an indicative, four-signal check — and it never promises a Google ranking. It’s a precise technical snapshot of your site, not a sales promise.'},
+
+    # ---- come leggere il risultato ----
+    'Come si legge lo stato di salute del sito': {'en': 'How to read your site’s health score'},
+    'Il punteggio di salute è la media pesata dei sette semafori, non un voto a sensazione. Si legge come un semaforo: da 90 in su siete in fascia verde (eccellente), da 75 a 89 è buono, tra 50 e 74 c’è margine concreto, sotto 50 è critico e diventa la priorità. Ogni dimensione porta lo stesso codice colore, così capite in un colpo d’occhio dove il sito è solido e dove perde punti.': {
+        'en': 'The health score is the weighted average of the seven traffic lights, not a gut-feel grade. Read it like a traffic light: 90 and up is green (excellent), 75–89 is good, 50–74 leaves real room, below 50 is critical and becomes the priority. Every dimension carries the same colour code, so you see at a glance where the site is solid and where it loses points.'},
+    'Due letture da evitare. Un voto alto non significa «primi su Google»: significa che le fondamenta tecniche sono sane. E se una misura risulta «N/D» non è un guasto del vostro sito: a volte Google è saturo, a volte il sito rifiuta la lettura automatica. In quel caso calcoliamo la salute sulle misure riuscite e ve lo diciamo con chiarezza.': {
+        'en': 'Two readings to avoid. A high score doesn’t mean «number one on Google»: it means the technical foundations are sound. And if a measure shows «N/A» it’s not your site failing: sometimes Google is overloaded, sometimes a site refuses automated reading. In that case we compute health on the successful measures and tell you so clearly.'},
+
+    # ---- FAQ ----
+    'Per prestazioni, SEO, accessibilità e best practice sì: arrivano dall’API ufficiale PageSpeed Insights, strategia mobile. Privacy, prontezza AI e CO₂ sono nostre verifiche, con il metodo dichiarato in ogni sezione.': {
+        'en': 'For performance, SEO, accessibility and best practices, yes — it comes from the official PageSpeed Insights API, mobile strategy. Privacy, AI-readiness and CO₂ are our own checks, with the method stated in each section.'},
+    'Il check-up GDPR sostituisce un consulente privacy?': {'en': 'Does the GDPR check replace a privacy consultant?'},
+    'No. È una verifica tecnica indicativa a quattro segnali: intercetta i problemi evidenti — banner assente, tracker prima del consenso — ma non è un parere legale e non sostituisce un consulente.': {
+        'en': 'No. It’s an indicative, four-signal technical check: it catches the obvious problems — missing banner, trackers before consent — but it’s not a legal opinion and doesn’t replace a consultant.'},
+    'Cosa ricevo nel report PDF che non vedo già a schermo?': {'en': 'What’s in the PDF that I don’t already see on screen?'},
+    'A schermo vedete il punteggio, i sette semafori e le tre priorità. Nel PDF trovate una pagina per dimensione con tutte le criticità rilevate, le raccomandazioni operative in ordine di impatto e cosa faremmo noi, con i nostri riferimenti aziendali.': {
+        'en': 'On screen you see the score, the seven traffic lights and the three priorities. The PDF gives you a page per dimension with every issue found, the fixes ranked by impact, and what we would do, with our company details.'},
+
+    # ---- CTA finale ----
+    'Vogliamo sistemare noi le priorità': {'en': 'Want us to fix the priorities'},
+    'Dal punteggio al preventivo: analizziamo il report insieme e vi diamo un piano d’intervento a prezzo chiuso, con PageSpeed 90+ garantito da contratto.': {
+        'en': 'From score to quote: we review the report together and hand you a fixed-price action plan, with PageSpeed 90+ guaranteed by contract.'},
+    'Richiedi la consulenza — gratis': {'en': 'Book a free consultation'},
+    'Vedi tutti gli strumenti': {'en': 'See all tools'},
+
+    # ---- strumenti-index: card in evidenza ----
+    'Novità · gratuito': {'en': 'New · free'},
+    'Check-up completo': {'en': 'Full check-up'},
+    'Sette strumenti gratuiti in una sola analisi.': {'en': 'Seven free tools in a single analysis.'},
+}
+CHROME.update(CHROME_CHECKUP)

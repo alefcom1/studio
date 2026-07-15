@@ -109,7 +109,9 @@ TEXT_NODE = re.compile(r'>([^<>]+)<')
 # legge a runtime. data-sr-locale NON è qui: è un codice lingua tecnico,
 # sostituito a parte (deterministico, non passa dal dizionario).
 ATTRS = re.compile(
-    r'\b(alt|aria-label|placeholder|data-verdict-[a-z]+|data-label-[a-z-]+|'
+    r'\b(alt|aria-label|placeholder|data-verdict-[a-z0-9]+|data-label-[a-z-]+|'
+    r'data-word-[a-z0-9]+|data-composite-[a-z0-9]+|data-calc-note|data-na-text|'
+    r'data-ai-suffix|'
     r'data-err|data-audits-empty|data-caption[a-z-]*)="([^"]+)"'
 )
 SR_LOCALE = re.compile(r'data-sr-locale="it"')
