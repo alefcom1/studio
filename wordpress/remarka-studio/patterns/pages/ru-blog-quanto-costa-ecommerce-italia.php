@@ -27,7 +27,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Публичные прайс-листы итальянских агентств в 2026 году описывают рынок из трёх сегментов. До 3.000 евро — магазины на шаблонах с минимальной настройкой: они работают, пока не понадобится доработать оформление заказа или подключить учётную систему. Средний сегмент — 6.000–15.000 евро — это профессиональный интернет-магазин под заказчика: структурированный каталог, несколько способов оплаты, техническая SEO страниц товаров. Выше 15.000 начинаются сложные каталоги, интеграции с ERP и логистикой, мультиязычность и мультивалютность.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Наш прайс — в среднем сегменте: € 7.500–14.000, цена фиксируется в смете. С одним договорным отличием: PageSpeed 90+ гарантирован письменно, а дата сдачи — с неустойкой. Эти два пункта в предложениях конкурентов вы почти никогда не найдёте чёрным по белому.</p>
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Наш прайс — в среднем сегменте: € 7 500–14.000, цена фиксируется в смете. С одним договорным отличием: PageSpeed 90+ гарантирован письменно, а дата сдачи — с неустойкой. Эти два пункта в предложениях конкурентов вы почти никогда не найдёте чёрным по белому.</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Расходы, о которых сметы молчат<span class="sr-accent-dot">.</span></h2>
@@ -55,6 +55,21 @@
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:32px"><a href="/ru/ceny/">Смотрите наш прайс на интернет-магазины, цены фиксированные →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Ошибка на 5000 евро: недооценить контент<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Есть статья, которую почти каждая смета на интернет-магазин держит заниженной ради конкурентной цифры, — контент. Хорошо написанные карточки, настоящие фото, продающие тексты и — если экспортируете — переводы носителями. Кажется «лёгкой» частью, а на деле именно она решает, продаёт магазин или остаётся молчаливой витриной. Кто продаёт вам магазин дёшево, часто оставляет этот счёт на потом, когда выясняется, что 300 карточек сами себя не напишут.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Источники<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">Цифры и утверждения этой статьи взяты отсюда. Это первоисточники, а не пересказы: откройте и проверьте.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://almanac.httparchive.org/en/2024/" target="_blank" rel="noopener">HTTP Archive — Web Almanac 2024</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Реальные данные о весе, технологиях и производительности сайтов, включая интернет-магазины.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=E-commerce_statistics" target="_blank" rel="noopener">Eurostat — статистика электронной торговли</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Сколько Европа продаёт онлайн: рыночный контекст за цифрами магазина.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev — Web Vitals</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Мобильная скорость, которую мы защищаем договором и которая влияет на продажи.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en" target="_blank" rel="noopener">AccessibleEU — Еврокомиссия</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">С 2025 года доступность — обязательный расход и для интернет-магазина: его нужно закладывать в смету.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"40px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:40px"><!-- wp:button {"className":"is-style-outline"} -->

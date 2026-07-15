@@ -41,6 +41,9 @@
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Prestazioni: quanto in fretta la pagina diventa utilizzabile su un telefono. È la voce che pesa di più, ed è quella che decide se le visite restano o scappano.</span></div><div><span class="sr-mono">b</span><span>SEO tecnica: se titoli, struttura e dati mancanti mettono i bastoni tra le ruote all’indicizzazione.</span></div><div><span class="sr-mono">c</span><span>Accessibilità: contrasti, etichette, struttura dei titoli — le barriere che dal 2025 sono anche un obbligo di legge.</span></div><div><span class="sr-mono">d</span><span>Best practice: uso corretto di HTTPS, immagini, console pulita e piccoli segnali di igiene tecnica.</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">Web Vitals, la definizione di Google →</a></p>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Le tre misure che aggiungiamo noi<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -58,6 +61,15 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:14px"><a href="/strumenti/check-up-completo/">Fai il check-up completo, gratis e senza registrazione →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/servizi/restyling-migrazione/">Se serve rifare la base: restyling e migrazione →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Fonti<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">Le cifre e le affermazioni di questo articolo vengono da qui. Sono prime fonti, non riassunti: apritele e verificate.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev — Web Vitals</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">La definizione delle metriche di velocità ed esperienza che pesano di più nel check-up.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">Google — contenuti utili e affidabili (E-E-A-T)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">La guida ufficiale a cosa Google considera qualità: è lo sfondo della dimensione SEO.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">WCAG 2 — panoramica W3C/WAI</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Lo standard dietro la misura di accessibilità, oggi anche obbligo di legge nell’UE.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://sustainablewebdesign.org/estimating-digital-emissions/" target="_blank" rel="noopener">Sustainable Web Design — stima delle emissioni</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Il modello con cui calcoliamo l’impronta di CO₂ dal peso reale della pagina.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developer.chrome.com/docs/crux" target="_blank" rel="noopener">Chrome UX Report (CrUX)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">I dati di campo di Google sugli utenti reali, alla base delle metriche di velocità.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:32px"><a href="/strumenti/check-up-completo/">Fai ora il check-up completo del tuo sito — gratis →</a></p>

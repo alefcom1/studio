@@ -18,8 +18,53 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="font-size:17px;line-height:1.7">La traduzione automatica basta per un menu o un orario di apertura. Non basta per una scheda prodotto tecnica o una pagina di vendita, dove un errore di registro costa un cliente prima ancora che scriva. In questo articolo spieghiamo quando conviene la traduzione automatica, quando serve un madrelingua, e cosa cambia davvero nei costi e nei tempi per lingua, con un caso reale di export verso la Germania.</p>
+<p class="has-base-font-size" style="font-size:18px;line-height:1.75;max-width:75ch">Un cliente tedesco apre la vostra scheda prodotto tradotta con l’automatico, legge una frase che nella sua lingua suona goffa, e chiude: non ha pensato «traduzione sbagliata», ha pensato «azienda poco seria». È così che un errore di registro costa un ordine prima ancora di una mail. La traduzione automatica basta per un menù o un orario; non basta dove si vende. In questo articolo: quando conviene l’automatico, quando serve un madrelingua, e cosa cambia davvero nei costi e nei tempi per lingua, con un caso reale di export verso la Germania.</p>
 <!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Quando la traduzione automatica basta (e quando no)<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">La traduzione automatica di oggi è ottima per capire e farsi capire su cose semplici: un orario, un indirizzo, la descrizione neutra di un servizio. Se il vostro obiettivo è che un turista trovi il numero di telefono, va benissimo. Il problema nasce dove le parole vendono: una scheda prodotto tecnica, una pagina che deve convincere, un testo dove il tono conta quanto il contenuto. Lì l’automatico produce frasi «giuste ma spente», e a volte errori di registro che, nella lingua del cliente, suonano goffi o poco professionali.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Un modo semplice per decidere: chiedetevi se quella pagina informa o vende. Le pagine che informano — orari, contatti, descrizioni neutre — reggono bene l’automatico, magari con una rilettura. Le pagine che vendono — schede prodotto, landing, testi che devono convincere — vanno affidate a un madrelingua, perché lì un errore di tono non fa sorridere: fa chiudere la scheda.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Cosa cambia nei costi e nei tempi, per lingua<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Aggiungere una lingua non è schiacciare un pulsante «traduci». È tradurre i testi con un madrelingua, adattare quelli di vendita, tradurre anche ciò che non si vede — titoli, descrizioni per Google, messaggi di errore — e impostare i segnali tecnici (hreflang) che dicono al motore quale versione mostrare a chi. Il costo cresce con le parole reali da lavorare, non con il numero di bandierine; i tempi, con il numero di pagine che devono davvero convincere, non solo informare.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">In pratica, per un sito aziendale medio, aggiungere una lingua ben fatta significa qualche giorno di lavoro per la traduzione e l’adattamento, più l’impostazione tecnica. Molto meno di quanto si teme, se si parte dai testi giusti; molto di più di «zero», che è quanto promette chi vi vende un plugin di traduzione automatica come se fosse una versione estera del sito.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">L’errore che costa clienti: tradurre senza localizzare<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Tradurre è cambiare le parole; localizzare è cambiare ciò che serve perché il messaggio funzioni in quel mercato. Un prezzo con la valuta giusta, una data nel formato locale, un esempio che in Germania si capisce e in Italia no, un tono più diretto o più formale a seconda del Paese. Uno studio classico di CSA Research lo dice da anni con un titolo che è già una tesi: «Can’t Read, Won’t Buy» — se non lo leggo nella mia lingua, non lo compro. Vale ancora, e vale soprattutto dove c’è un carrello.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Un caso di export in Germania<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Per Cantina Serralta, ad Asti, il catalogo tradotto e adattato in tre lingue con un checkout in un solo passaggio ha portato +63% di vendite dirette in un anno. Non è stata la traduzione da sola: è stata la traduzione fatta da chi vende, unita a un sito veloce e a un percorso d’acquisto pulito. È esattamente il modello del nostro servizio Export Ready — il sito e la sua versione estera sotto un unico contratto, con redattori madrelingua.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="/servizi/siti-multilingue/">Siti multilingue con redattori madrelingua →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/strumenti/roi-localizzazione/">Calcola il ROI di una versione estera del sito →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Fonti<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">Le cifre e le affermazioni di questo articolo vengono da qui. Sono prime fonti, non riassunti: apritele e verificate.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://csa-research.com/Featured-Content/Global-Growth/CRWB-Series/CRWB-B2C" target="_blank" rel="noopener">CSA Research — «Can’t Read, Won’t Buy»</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Lo studio classico: la maggioranza dei consumatori compra solo nella propria lingua.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites" target="_blank" rel="noopener">Google — siti multi-regionali e multilingue</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">La guida ufficiale a come strutturare un sito per più Paesi e più lingue.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/specialty/international/localized-versions" target="_blank" rel="noopener">Google — versioni localizzate e hreflang</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Come dire a Google quale versione linguistica mostrare a chi: dettaglio tecnico che conta.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=E-commerce_statistics" target="_blank" rel="noopener">Eurostat — statistiche sull’e-commerce</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Il peso dell’e-commerce transfrontaliero in Europa, il mercato che una versione estera apre.</span></li></ul>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:32px"><a href="/servizi/siti-multilingue/">Scopri i siti multilingue di Studio Remarka →</a></p>
+<!-- /wp:html -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"40px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:40px"><!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/blog/">← Tutti gli articoli</a></div>

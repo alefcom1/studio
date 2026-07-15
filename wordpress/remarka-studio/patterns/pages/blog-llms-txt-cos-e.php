@@ -32,6 +32,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">L’analogia con robots.txt aiuta, ma non è perfetta. robots.txt dice ai crawler dove possono andare; llms.txt dice loro cosa contano le vostre pagine e come raccontarvi. È la differenza tra un cartello «vietato l’ingresso» e una guida che spiega il museo.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="https://llmstxt.org/" target="_blank" rel="noopener">La specifica llms.txt su llmstxt.org →</a></p>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Come è fatto un file llms.txt<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -61,6 +64,15 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:14px"><a href="/servizi/seo-tecnica/">Fa parte della SEO tecnica che consegniamo →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/blog/farsi-trovare-da-chatgpt-geo/">Leggi anche: come farsi trovare e citare da ChatGPT →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Fonti<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">Le cifre e le affermazioni di questo articolo vengono da qui. Sono prime fonti, non riassunti: apritele e verificate.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://llmstxt.org/" target="_blank" rel="noopener">La proposta llms.txt (llmstxt.org)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">La specifica originale del formato: cosa contiene un file llms.txt e a cosa serve.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener">OpenAI — panoramica dei crawler</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">La documentazione ufficiale su GPTBot e sugli altri bot di OpenAI, con le regole robots.txt.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" target="_blank" rel="noopener">Anthropic — ClaudeBot e come bloccarlo</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Come Anthropic dichiara il proprio crawler e come i siti possono consentirlo o escluderlo.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers" target="_blank" rel="noopener">Google — panoramica dei crawler (Google-Extended)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">L’elenco ufficiale degli user-agent Google, incluso Google-Extended per gli usi AI.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:32px"><a href="/strumenti/sito-pronto-ai/">Verifica gratis se il vostro sito è pronto per l’AI →</a></p>

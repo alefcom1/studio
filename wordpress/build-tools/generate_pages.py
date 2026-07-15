@@ -1371,9 +1371,36 @@ def blog_figure(fig, cover=False):
 
 
 def _blog_section_links(links):
-    return ''.join(
-        f'<p class="sr-card-link" style="margin-top:14px"><a href="{url}">{label} →</a></p>'
-        for label, url in links
+    # Link contestuali dentro una sezione: interni (perelinkovka: servizio/
+    # strumento/articolo vicino — href localizzato dal conveyor) oppure esterni
+    # a fonti autorevoli (http(s): target _blank rel noopener, fuori dalla mappa
+    # href, restano invariati in EN). Ogni etichetta è un nodo di testo intero.
+    out = ''
+    for label, url in links:
+        attrs = ' target="_blank" rel="noopener"' if url.startswith('http') else ''
+        out += (f'<p class="sr-card-link" style="margin-top:14px">'
+                f'<a href="{url}"{attrs}>{label} →</a></p>')
+    return out
+
+
+def _blog_fonti(fonti):
+    """Blocco «Fonti» in chiusura d'articolo (requisito titolare 15.07): elenco
+    di 3–5 prime fonti autorevoli, ognuna con un link esterno (target _blank
+    rel noopener) e una frase di contesto. Etichetta e nota sono nodi di testo
+    interi e distinti (nessun frammento con trattino), tradotti dal conveyor."""
+    items = ''.join(
+        f'<li style="margin-top:16px;line-height:1.55">'
+        f'<a href="{url}" target="_blank" rel="noopener">{label}</a>'
+        f'<span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">{nota}</span>'
+        f'</li>'
+        for label, url, nota in fonti
+    )
+    return (
+        heading(2, 'Fonti', style='clamp(24px,2.6vw,32px)') +
+        paragraph('Le cifre e le affermazioni di questo articolo vengono da qui. Sono prime fonti, non riassunti: apritele e verificate.',
+                  size='base', extra_style='font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px') +
+        raw_html(f'<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)">'
+                 f'{items}</ul>')
     )
 
 
@@ -1404,6 +1431,9 @@ def build_blog_post(p):
     else:
         inner += paragraph(p['corpo'], size='base', extra_style='font-size:17px;line-height:1.7')
 
+    if p.get('fonti'):
+        inner += _blog_fonti(p['fonti'])
+
     if p.get('cta'):
         label, url = p['cta']
         inner += raw_html(f'<p class="sr-card-link" style="margin-top:32px"><a href="{url}">{label} →</a></p>')
@@ -1413,6 +1443,60 @@ def build_blog_post(p):
         classes='sr-section',
     )
     write(f'blog-{p["slug"]}', f'Pagina — Articolo: {p["titolo"]}', f'Articolo blog: {p["titolo"]}', hero + body)
+
+
+# Mesi abbreviati italiani (campo `data` di BLOG_POSTS) → numero, per ISO 8601.
+_MESI_IT = {'GEN': '01', 'FEB': '02', 'MAR': '03', 'APR': '04', 'MAG': '05', 'GIU': '06',
+            'LUG': '07', 'AGO': '08', 'SET': '09', 'OTT': '10', 'NOV': '11', 'DIC': '12'}
+
+
+def _blog_iso_date(data_str):
+    """'15 LUG 2026' → '2026-07-15'."""
+    giorno, mese, anno = data_str.split()
+    return f'{anno}-{_MESI_IT[mese.upper()]}-{int(giorno):02d}'
+
+
+def build_blog_schema_map():
+    """Genera inc/blog-schema-map.php: mappa slug-foglia (IT/EN/RU) →
+    {date ISO, image} per l'hook JSON-LD BlogPosting (functions.php). Un'unica
+    fonte di verità (BLOG_POSTS + lang.BLOG_SLUGS), niente duplicazione a mano.
+    L'headline non sta qui: l'hook usa get_the_title() (già localizzato dalla
+    pagina), così non si duplicano i titoli — RU compreso. dateModified è
+    gestito dall'hook. Gli articoli solo-IT+EN (batch 1) non emettono la
+    riga RU: la pagina RU non esiste ancora (piano-blog batch 5–6)."""
+    import lang as L  # noqa: E402
+    RETROFIT = '2026-07-15'  # ретрофит-проход: обновлены все статьи (dateModified)
+    lines = [
+        '<?php',
+        '/**',
+        ' * Автогенерировано build-tools/generate_pages.py:build_blog_schema_map() —',
+        ' * НЕ редактировать вручную. Карта slug-статьи → дата публикации (ISO) и',
+        ' * обложка, для JSON-LD BlogPosting (см. remarka_blog_posting_schema).',
+        ' */',
+        'return array(',
+        f"\t'_modified' => '{RETROFIT}',",
+        "\t'posts' => array(",
+    ]
+    seen = set()  # dedup: alcuni slug coincidono tra lingue (es. core-web-vitals-2026)
+    for p in BLOG_POSTS:
+        it_slug = p['slug']
+        iso = _blog_iso_date(p['data'])
+        image = p['cover']['src'] if p.get('cover') else ''
+        slugs = [it_slug, L.BLOG_SLUGS[it_slug]['en']]
+        if it_slug not in L.BLOG_IT_EN_ONLY:
+            slugs.append(L.BLOG_SLUGS[it_slug]['ru'])
+        for leaf in slugs:
+            if leaf in seen:
+                continue
+            seen.add(leaf)
+            lines.append(f"\t\t'{leaf}' => array( 'date' => '{iso}', 'image' => '{image}' ),")
+    lines.append('\t),')
+    lines.append(');')
+    out = os.path.join(os.path.dirname(__file__), '..', 'remarka-studio', 'inc', 'blog-schema-map.php')
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    with open(out, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines) + '\n')
+    print(f'  blog-schema-map.php: {sum(1 for _ in BLOG_POSTS)} articoli')
 
 
 def main():

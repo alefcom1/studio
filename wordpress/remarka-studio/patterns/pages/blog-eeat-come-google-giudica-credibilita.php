@@ -32,6 +32,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Attenzione a un equivoco diffuso: l’E-E-A-T non è un fattore di ranking diretto, né un numero che Google vi assegna. È una cornice di qualità che i valutatori umani usano per addestrare gli algoritmi. Rafforzare i segnali di fiducia aiuta indirettamente; ma nessuno strumento — nemmeno il nostro — misura l’E-E-A-T «reale» del vostro sito. Diffidate di chi ve lo promette.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">E-E-A-T, la definizione ufficiale di Google →</a></p>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">I quattro pilastri, con Trust al centro<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -61,6 +64,15 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:14px"><a href="/strumenti/segnali-eeat/">Misura gratis gli otto segnali E-E-A-T della tua home →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/servizi/seo-tecnica/">Chi siamo, contatti e dati strutturati sono di serie nella SEO tecnica →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Fonti<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">Le cifre e le affermazioni di questo articolo vengono da qui. Sono prime fonti, non riassunti: apritele e verificate.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">Google — creare contenuti utili e affidabili</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">La pagina dove Google definisce l’E-E-A-T e spiega cosa valuta nella qualità.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener">Google — introduzione ai dati strutturati</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">I dati strutturati JSON-LD sono uno dei segnali di identità più facili da aggiungere.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">Google — le funzionalità AI e il vostro sito</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Perché credibilità e chiarezza contano anche nelle risposte generate dall’AI.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:32px"><a href="/strumenti/segnali-eeat/">Misura gratis i segnali E-E-A-T del tuo sito →</a></p>

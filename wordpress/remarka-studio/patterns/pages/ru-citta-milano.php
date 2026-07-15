@@ -96,7 +96,7 @@
 <h2 class="wp-block-heading">Сколько стоит сайт в Милане<span class="sr-accent-dot">?</span></h2>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<div class="sr-servizi-rows" style="margin-top:32px"><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Сайт-визитка</span><span class="sr-mono" style="color:var(--sr-oltremare)">€ 1.900–2.800</span></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Корпоративный сайт</span><span class="sr-mono" style="color:var(--sr-oltremare)">€ 3.900–5.800</span></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Интернет-магазины</span><span class="sr-mono" style="color:var(--sr-oltremare)">€ 7.500–14.000</span></div></div>
+<div class="sr-servizi-rows" style="margin-top:32px"><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Сайт-визитка</span><span class="sr-mono" style="color:var(--sr-oltremare)">€ 1 900–2.800</span></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Корпоративный сайт</span><span class="sr-mono" style="color:var(--sr-oltremare)">€ 3 900–5.800</span></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Интернет-магазины</span><span class="sr-mono" style="color:var(--sr-oltremare)">€ 7 500–14.000</span></div></div>
 <!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
 <p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:24px">Фиксированная цена в смете, PageSpeed 90+ и срок сдачи прописаны в договоре. Одни и те же открытые цены, где бы вы ни находились.</p>
@@ -154,7 +154,7 @@
 <!-- /wp:paragraph -->
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Сколько стоит сайт в Милане?</summary><!-- wp:paragraph -->
-<p>Миланские агентства просят в среднем 2.500–8.000 € за корпоративный сайт. Наши цены публичны: сайт-визитка от € 1.900, корпоративный от € 3.900, интернет-магазин от € 7.500 — фиксируются в смете, с PageSpeed 90+ и датой сдачи, прописанными в договоре.</p>
+<p>Миланские агентства просят в среднем 2.500–8.000 € за корпоративный сайт. Наши цены публичны: сайт-визитка от € 1 900, корпоративный от € 3 900, интернет-магазин от € 7 500 — фиксируются в смете, с PageSpeed 90+ и датой сдачи, прописанными в договоре.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 <!-- wp:details -->

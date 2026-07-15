@@ -1578,3 +1578,435 @@ CHROME_BLOG = {
         {'en': 'Guide: how to get found and cited by ChatGPT (GEO) →'},
 }
 CHROME.update(CHROME_BLOG)
+
+# CHROME_BLOG_RETROFIT — Blog · ретрофит 15.07 (piano-blog rule 4): EN-пары
+# для всех новых IT-узлов ретрофита (обогащение + блоки «Fonti» + внешние
+# контекстные ссылки), все 13 статей. Только EN (RU блога — руками).
+# Редакция EN уровня носителя; числа в формате US.
+CHROME_BLOG_RETROFIT = {
+    "Web Vitals, la definizione di Google →":
+        {'en': "Web Vitals, Google’s definition →"},
+    "Le cifre e le affermazioni di questo articolo vengono da qui. Sono prime fonti, non riassunti: apritele e verificate.":
+        {'en': "The figures and claims in this article come from here. These are primary sources, not summaries: open them and check for yourself."},
+    "La definizione delle metriche di velocità ed esperienza che pesano di più nel check-up.":
+        {'en': "The definition of the speed and experience metrics that weigh most in the check-up."},
+    "La guida ufficiale a cosa Google considera qualità: è lo sfondo della dimensione SEO.":
+        {'en': "The official guide to what Google considers quality: it’s the backdrop to the SEO dimension."},
+    "Lo standard dietro la misura di accessibilità, oggi anche obbligo di legge nell’UE.":
+        {'en': "The standard behind the accessibility measure, now also a legal requirement in the EU."},
+    "Sustainable Web Design — stima delle emissioni":
+        {'en': "Sustainable Web Design — emissions estimate"},
+    "Il modello con cui calcoliamo l’impronta di CO₂ dal peso reale della pagina.":
+        {'en': "The model we use to calculate the CO₂ footprint from the real page weight."},
+    "I dati di campo di Google sugli utenti reali, alla base delle metriche di velocità.":
+        {'en': "Google’s field data on real users, the basis of the speed metrics."},
+    "Aprite dieci siti italiani a caso e contate: in almeno sette il pulsante «Rifiuta» è nascosto, minuscolo o non c’è proprio. È esattamente il punto su cui il Garante Privacy ha smesso di chiudere un occhio. La regola è semplice — «Rifiuta» deve pesare quanto «Accetta», il consenso dev’essere documentabile — ma è ignorata dalla maggioranza dei banner che analizziamo. Ecco la checklist punto per punto che usiamo per verificare un sito, e come costruiamo i nostri banner perché siano a norma dal primo giorno.":
+        {'en': "Open ten Italian websites at random and count: on at least seven the “Reject” button is hidden, tiny, or missing altogether. This is exactly the point on which the Garante Privacy has stopped turning a blind eye. The rule is simple — “Reject” must carry the same weight as “Accept”, and consent must be documentable — but it’s ignored by most of the banners we analyze. Here’s the point-by-point checklist we use to vet a site, and how we build our banners so they’re compliant from day one."},
+    "Le regole del Garante, in chiaro":
+        {'en': "The Garante’s rules, in plain terms"},
+    "Il principio è uno solo: il consenso ai cookie non necessari dev’essere una scelta libera. Da qui discendono le regole pratiche del Garante e delle linee guida europee. «Rifiuta» deve avere lo stesso peso visivo di «Accetta»: stesso colore, stesse dimensioni, stessa distanza dal dito. Chiudere il banner con la X equivale a rifiutare, non ad accettare. Nessun cookie di profilazione può partire prima che la persona abbia detto sì. E il consenso va conservato, così da poterlo dimostrare se qualcuno lo chiede.":
+        {'en': "There’s just one principle: consent to non-essential cookies must be a free choice. From this follow the practical rules of the Garante and the European guidelines. “Reject” must have the same visual weight as “Accept”: same color, same size, same distance from your finger. Closing the banner with the X counts as rejecting, not accepting. No profiling cookie can fire before the person has said yes. And consent must be stored, so you can prove it if anyone asks."},
+    "La checklist, punto per punto":
+        {'en': "The checklist, point by point"},
+    "Questi sono i controlli che facciamo su ogni sito prima di dire se il banner è a norma. Passateli sul vostro: bastano cinque minuti.":
+        {'en': "These are the checks we run on every site before saying whether the banner is compliant. Run them on yours: five minutes is enough."},
+    "Il pulsante «Rifiuta» è visibile al primo colpo, con lo stesso peso di «Accetta».":
+        {'en': "The “Reject” button is visible at first glance, with the same weight as “Accept”."},
+    "Nessuno script di tracciamento (Google Analytics, pixel, mappe) parte prima del consenso.":
+        {'en': "No tracking script (Google Analytics, pixels, maps) fires before consent."},
+    "Chiudere il banner o navigare senza scegliere non vale come consenso.":
+        {'en': "Closing the banner or browsing without choosing does not count as consent."},
+    "Esiste un modo semplice per cambiare idea dopo: un link «preferenze cookie» sempre raggiungibile.":
+        {'en': "There’s an easy way to change your mind later: a “cookie preferences” link that’s always reachable."},
+    "C’è una cookie policy chiara, che elenca i cookie e le loro finalità.":
+        {'en': "There’s a clear cookie policy that lists the cookies and what they’re for."},
+    "Il consenso viene registrato e resta documentabile nel tempo.":
+        {'en': "Consent is recorded and stays documentable over time."},
+    "Gli errori che troviamo più spesso":
+        {'en': "The mistakes we find most often"},
+    "Tre errori tornano quasi sempre. Il primo: il banner con solo «Accetta» ben visibile e il rifiuto sepolto in un sottomenu — è la violazione più comune e la più facile da contestare. Il secondo: gli analytics che partono al caricamento, prima di qualunque clic, perché installati «al volo» anni fa e mai più toccati. Il terzo: il cookie wall, cioè «accetta o non entri», che salvo casi rari non è una scelta libera e quindi non è un consenso valido.":
+        {'en': "Three mistakes come up almost every time. The first: a banner with only “Accept” clearly visible and rejection buried in a submenu — it’s the most common violation and the easiest to challenge. The second: analytics that fire on load, before any click, because they were installed “on the fly” years ago and never touched again. The third: the cookie wall, i.e. “accept or you don’t get in”, which apart from rare cases is not a free choice and therefore not valid consent."},
+    "C’è poi un quarto errore, più sottile: il banner «finto conforme», con i due pulsanti di pari peso ma i cookie di profilazione che partono comunque al caricamento, sotto il cofano. A occhio sembra a posto; basta aprire gli strumenti per sviluppatori del browser per vedere i tracker attivi prima di ogni clic. È il caso che il nostro controllo indicativo intercetta più spesso.":
+        {'en': "Then there’s a fourth mistake, subtler: the “fake-compliant” banner, with two equal-weight buttons but the profiling cookies firing on load anyway, under the hood. At a glance it looks fine; just open the browser’s developer tools to see the trackers active before any click. It’s the case our indicative check catches most often."},
+    "Come costruiamo un banner a norma":
+        {'en': "How we build a compliant banner"},
+    "Nei nostri siti il banner nasce già conforme: due pulsanti di pari peso, nessuno script prima del consenso, preferenze modificabili in ogni momento e registro dei consensi. Non è un plugin incollato all’ultimo, è parte del progetto. E se avete già un sito, la verifica è il primo passo: il nostro controllo indicativo vi dice in un minuto se banner, policy e tracker sono a posto — poi, se serve, si sistema.":
+        {'en': "In our sites the banner is compliant from the start: two equal-weight buttons, no scripts before consent, preferences you can change at any time, and a consent log. It’s not a plugin stuck on at the last minute, it’s part of the project. And if you already have a site, the check is the first step: our indicative check tells you in a minute whether the banner, policy, and trackers are in order — then, if needed, we fix it."},
+    "Cosa fare in mezz’ora, oggi: aprite il sito in una finestra anonima, guardate se «Rifiuta» è visibile quanto «Accetta», e con gli strumenti per sviluppatori controllate se partono script di tracciamento prima di qualsiasi scelta. Se una delle due cose non torna, avete già trovato la priorità. Non risolve tutto, ma vi dice se siete nella maggioranza a rischio o nella minoranza a posto.":
+        {'en': "What to do in half an hour, today: open the site in an incognito window, check whether “Reject” is as visible as “Accept”, and with the developer tools check whether any tracking scripts fire before you make any choice. If either one is off, you’ve already found your priority. It won’t solve everything, but it tells you whether you’re in the at-risk majority or the compliant minority."},
+    "Controlla gratis cookie e tracker del tuo sito →":
+        {'en': "Check your site’s cookies and trackers for free →"},
+    "Privacy e conformità sono parte della SEO tecnica →":
+        {'en': "Privacy and compliance are part of technical SEO →"},
+    "Le regole italiane su banner e consenso: la fonte diretta della checklist.":
+        {'en': "The Italian rules on banners and consent: the direct source of the checklist."},
+    "EDPB — report della cookie banner taskforce":
+        {'en': "EDPB — cookie banner taskforce report"},
+    "Il documento europeo che uniforma cosa è lecito e cosa no in un banner.":
+        {'en': "The European document that standardizes what is and isn’t allowed in a banner."},
+    "Il testo del GDPR: la base giuridica di consenso libero, specifico e documentabile.":
+        {'en': "The text of the GDPR: the legal basis for free, specific, and documentable consent."},
+    "Controlla gratis il tuo cookie banner →":
+        {'en': "Check your cookie banner for free →"},
+    "Il titolare di un’officina apre il sito dal telefono, in pausa pranzo, sotto rete mobile: conta i secondi, sbuffa, chiude. Non era un cliente vero, era lui — ma il gesto è identico a quello di chi vi cercava sul serio e se n’è andato. LCP, INP e CLS sono le tre sigle con cui Google misura proprio quel momento, e con cui decide chi mostrare per primo nella ricerca da mobile. Le spieghiamo senza gergo, con esempi di negozi e officine e non di startup, e vi diciamo perché il punteggio desktop — su cui molte agenzie insistono ancora — non conta quasi più nulla.":
+        {'en': "The owner of a garage opens the site from his phone, on his lunch break, on mobile data: he counts the seconds, huffs, closes it. It wasn’t a real customer, it was him — but the gesture is identical to that of someone who was genuinely looking for you and left. LCP, INP, and CLS are the three acronyms Google uses to measure exactly that moment, and with which it decides who to show first in mobile search. We explain them without jargon, with examples from shops and garages rather than startups, and we tell you why the desktop score — which many agencies still insist on — counts for almost nothing anymore."},
+    "LCP, INP e CLS: le tre sigle, tradotte":
+        {'en': "LCP, INP, and CLS: the three acronyms, translated"},
+    "LCP (Largest Contentful Paint) misura quanto tempo passa prima che compaia il contenuto più grande della pagina — di solito la foto di apertura o il titolo. È la domanda «quanto devo aspettare per vedere qualcosa di utile?». Sotto i 2,5 secondi è considerato buono; sopra i 4, la maggior parte delle persone ha già valutato se restare. Per un negozio di mobili, l’LCP è la prima fotografia del divano; per un’officina, il numero di telefono in alto.":
+        {'en': "LCP (Largest Contentful Paint) measures how long it takes for the largest content on the page to appear — usually the opening photo or the headline. It’s the question “how long do I have to wait to see something useful?”. Under 2.5 seconds is considered good; over 4, most people have already decided whether to stay. For a furniture shop, the LCP is the first photo of the sofa; for a garage, the phone number at the top."},
+    "INP (Interaction to Next Paint) misura la reattività: tocco un pulsante, quanto ci mette il sito a rispondere? Dal 2024 ha sostituito il vecchio FID come metrica ufficiale, ed è la più sottovalutata. CLS (Cumulative Layout Shift) misura invece la stabilità: quante volte, mentre la pagina carica, gli elementi «saltano» e vi fanno cliccare la cosa sbagliata. Chi ha provato a premere «Aggiungi al carrello» e ha comprato un altro prodotto perché la pagina si è mossa sa esattamente di cosa parliamo.":
+        {'en': "INP (Interaction to Next Paint) measures responsiveness: I tap a button, how long does the site take to respond? Since 2024 it has replaced the old FID as the official metric, and it’s the most underrated one. CLS (Cumulative Layout Shift) instead measures stability: how many times, while the page loads, the elements “jump” and make you click the wrong thing. Anyone who has tried to press “Add to cart” and bought a different product because the page shifted knows exactly what we mean."},
+    "Perché il punteggio mobile è l’unico che conta":
+        {'en': "Why the mobile score is the only one that counts"},
+    "Molte agenzie mostrano ancora con orgoglio il punteggio desktop: 98, verde brillante, complimenti. Peccato che Google indicizzi e posizioni i siti in versione mobile da anni, e che i vostri clienti vi cerchino dal telefono, spesso sotto rete lenta e con dieci schede aperte. Il punteggio che conta è quello mobile, misurato in quelle condizioni — non quello desktop preso in ufficio con la fibra.":
+        {'en': "Many agencies still proudly show the desktop score: 98, bright green, congratulations. Too bad Google has been indexing and ranking sites in their mobile version for years, and your customers look for you from their phones, often on a slow connection with ten tabs open. The score that counts is the mobile one, measured in those conditions — not the desktop one taken in the office on fiber."},
+    "Ecco perché nei nostri contratti la soglia è una sola e chiara: PageSpeed 90+ su mobile, garantito per iscritto. Non «faremo il possibile»: un numero, verificabile da chiunque con lo stesso strumento pubblico di Google.":
+        {'en': "That’s why in our contracts there’s a single, clear threshold: PageSpeed 90+ on mobile, guaranteed in writing. Not “we’ll do our best”: a number, verifiable by anyone with the same public tool from Google."},
+    "Un errore che vediamo spesso: il sito «leggero» che diventa pesante dopo il lancio, perché nel tempo si aggiungono uno slider, un chat-widget, tre pixel di tracciamento e un font in più. Ognuno sembra innocuo; insieme affondano l’INP e l’LCP. La velocità non è un traguardo che si taglia una volta: è una manutenzione. Per questo la rimisuriamo, non la diamo per scontata.":
+        {'en': "A mistake we often see: the “light” site that becomes heavy after launch, because over time a slider, a chat widget, three tracking pixels, and one more font get added. Each seems harmless; together they sink the INP and LCP. Speed isn’t a finish line you cross once: it’s maintenance. That’s why we re-measure it, we don’t take it for granted."},
+    "Dati di laboratorio o dati reali: la differenza che cambia tutto":
+        {'en': "Lab data or real data: the difference that changes everything"},
+    "C’è un equivoco che rovina metà delle discussioni sui Core Web Vitals. Esistono due tipi di misura: i dati di laboratorio (Lighthouse simula un caricamento in condizioni controllate) e i dati di campo (il Chrome UX Report raccoglie i tempi reali degli utenti veri, con i loro telefoni e le loro reti). Google, per posizionarvi, guarda i dati di campo. Un sito può segnare 95 in laboratorio e arrancare sul campo, perché i vostri clienti non hanno tutti l’iPhone nuovo e la fibra.":
+        {'en': "There’s a misunderstanding that ruins half the discussions about Core Web Vitals. There are two kinds of measurement: lab data (Lighthouse simulates a load under controlled conditions) and field data (the Chrome UX Report gathers the real times of real users, with their phones and their networks). To rank you, Google looks at field data. A site can score 95 in the lab and struggle in the field, because your customers don’t all have the newest iPhone and fiber."},
+    "Misurate su mobile, non su desktop: è la versione che Google usa per posizionarvi.":
+        {'en': "Measure on mobile, not desktop: it’s the version Google uses to rank you."},
+    "Guardate i dati di campo (CrUX), non solo il punteggio istantaneo di laboratorio.":
+        {'en': "Look at the field data (CrUX), not just the instant lab score."},
+    "Trattate LCP, INP e CLS come tre problemi diversi: si risolvono con interventi diversi.":
+        {'en': "Treat LCP, INP, and CLS as three different problems: they’re solved with different fixes."},
+    "Ricontrollate dopo ogni modifica pesante: un plugin o uno slider nuovo possono buttare giù tutto.":
+        {'en': "Re-check after every major change: a new plugin or slider can bring everything down."},
+    "Non serve un progetto per iniziare a capire come siete messi. Incollate l’indirizzo nel nostro test di velocità e leggete i tre valori: se l’LCP è alto, quasi sempre il colpevole sono immagini pesanti o un hosting lento; se salta il CLS, mancano le dimensioni fissate su immagini e banner; se l’INP è alto, c’è troppo codice di terze parti che blocca il telefono. Da lì sapete se basta una giornata di ottimizzazione o se conviene rifare la base — e in entrambi i casi partite da un numero, non da una sensazione.":
+        {'en': "You don’t need a project to start understanding where you stand. Paste the address into our speed test and read the three values: if the LCP is high, the culprit is almost always heavy images or slow hosting; if the CLS is off, the fixed dimensions on images and banners are missing; if the INP is high, there’s too much third-party code blocking the phone. From there you know whether a day of optimization is enough or whether it’s better to rebuild the foundation — and in both cases you start from a number, not a feeling."},
+    "Misura ora i Core Web Vitals del tuo sito — gratis →":
+        {'en': "Measure your site’s Core Web Vitals now — for free →"},
+    "Sito lento? Le 7 cause reali e quanto costa sistemarle →":
+        {'en': "Slow site? The 7 real causes and what it costs to fix them →"},
+    "La pagina di Google che introduce e definisce i Core Web Vitals.":
+        {'en': "The Google page that introduces and defines the Core Web Vitals."},
+    "La metrica di caricamento: soglia buona sotto 2,5 secondi.":
+        {'en': "The loading metric: good threshold under 2.5 seconds."},
+    "La metrica di reattività che dal 2024 ha sostituito il vecchio FID.":
+        {'en': "The responsiveness metric that replaced the old FID in 2024."},
+    "La metrica di stabilità visiva: soglia buona sotto 0,1.":
+        {'en': "The visual stability metric: good threshold under 0.1."},
+    "I dati di campo su utenti reali, quelli che Google usa davvero per posizionarvi.":
+        {'en': "The field data on real users, the ones Google actually uses to rank you."},
+    "Misura i Core Web Vitals del tuo sito — gratis →":
+        {'en': "Measure your site’s Core Web Vitals — for free →"},
+    "E-E-A-T, la definizione ufficiale di Google →":
+        {'en': "E-E-A-T, Google’s official definition →"},
+    "La pagina dove Google definisce l’E-E-A-T e spiega cosa valuta nella qualità.":
+        {'en': "The page where Google defines E-E-A-T and explains what it assesses as quality."},
+    "I dati strutturati JSON-LD sono uno dei segnali di identità più facili da aggiungere.":
+        {'en': "JSON-LD structured data is one of the easiest identity signals to add."},
+    "Google — le funzionalità AI e il vostro sito":
+        {'en': "Google — AI features and your site"},
+    "Perché credibilità e chiarezza contano anche nelle risposte generate dall’AI.":
+        {'en': "Why credibility and clarity matter in AI-generated answers too."},
+    "Direttiva (UE) 2019/882, il testo ufficiale su EUR-Lex →":
+        {'en': "Directive (EU) 2019/882, the official text on EUR-Lex →"},
+    "WCAG 2.1 AA, i criteri ufficiali del W3C →":
+        {'en': "WCAG 2.1 AA, the official W3C criteria →"},
+    "Il testo ufficiale dell’European Accessibility Act: da qui nasce l’obbligo.":
+        {'en': "The official text of the European Accessibility Act: this is where the obligation comes from."},
+    "Il centro di competenza UE sull’accessibilità conferma l’entrata in vigore del 28 giugno 2025.":
+        {'en': "The EU accessibility competence center confirms the entry into force on 28 June 2025."},
+    "Lo standard tecnico di riferimento (livello AA): i criteri con cui si misura la conformità.":
+        {'en': "The reference technical standard (level AA): the criteria by which compliance is measured."},
+    "Guida EAA per il commercio online — Bird & Bird":
+        {'en': "EAA guide for online commerce — Bird & Bird"},
+    "Uno studio legale internazionale spiega perimetro, esenzioni e sanzioni per chi vende online.":
+        {'en': "An international law firm explains the scope, exemptions, and penalties for those selling online."},
+    "Come Google usa i contenuti nelle risposte AI →":
+        {'en': "How Google uses content in AI answers →"},
+    "Come Google usa i contenuti del web nelle risposte generative e cosa possono fare i siti.":
+        {'en': "How Google uses web content in generative answers and what sites can do."},
+    "OpenAI — panoramica dei crawler":
+        {'en': "OpenAI — crawler overview"},
+    "Se GPTBot non può leggervi, ChatGPT non può citarvi: qui le regole di accesso.":
+        {'en': "If GPTBot can’t read you, ChatGPT can’t cite you: here are the access rules."},
+    "Anthropic — ClaudeBot e come gestirlo":
+        {'en': "Anthropic — ClaudeBot and how to manage it"},
+    "La stessa logica per Claude: l’accesso del crawler è il presupposto della citabilità.":
+        {'en': "The same logic for Claude: crawler access is the prerequisite for being citable."},
+    "La specifica llms.txt su llmstxt.org →":
+        {'en': "The llms.txt specification on llmstxt.org →"},
+    "La proposta llms.txt (llmstxt.org)":
+        {'en': "The llms.txt proposal (llmstxt.org)"},
+    "La specifica originale del formato: cosa contiene un file llms.txt e a cosa serve.":
+        {'en': "The original specification of the format: what an llms.txt file contains and what it’s for."},
+    "La documentazione ufficiale su GPTBot e sugli altri bot di OpenAI, con le regole robots.txt.":
+        {'en': "The official documentation on GPTBot and the other OpenAI bots, with the robots.txt rules."},
+    "Anthropic — ClaudeBot e come bloccarlo":
+        {'en': "Anthropic — ClaudeBot and how to block it"},
+    "Come Anthropic dichiara il proprio crawler e come i siti possono consentirlo o escluderlo.":
+        {'en': "How Anthropic declares its crawler and how sites can allow or exclude it."},
+    "Google — panoramica dei crawler (Google-Extended)":
+        {'en': "Google — crawler overview (Google-Extended)"},
+    "L’elenco ufficiale degli user-agent Google, incluso Google-Extended per gli usi AI.":
+        {'en': "The official list of Google user-agents, including Google-Extended for AI uses."},
+    "C’è un momento, in ogni rifacimento, in cui il sito nuovo va online e quello vecchio sparisce. Se qualcuno ha sbagliato i redirect, in quel momento spariscono anche anni di posizionamento su Google — e ve ne accorgete due settimane dopo, quando le richieste calano e nessuno sa perché. Migrare da WordPress senza perdere le posizioni non è fortuna: è un protocollo. Vi mostriamo l’audit, la mappa degli URL e i redirect 301 che applichiamo prima di ogni migrazione, cosa monitoriamo nelle prime sei settimane e un caso in cui il traffico non si è mosso di un punto.":
+        {'en': "There’s a moment, in every rebuild, when the new site goes live and the old one disappears. If someone got the redirects wrong, in that moment years of Google ranking disappear too — and you notice two weeks later, when inquiries drop and no one knows why. Migrating from WordPress without losing your rankings isn’t luck: it’s a protocol. We show you the audit, the URL map, and the 301 redirects we apply before every migration, what we monitor in the first six weeks, and a case where traffic didn’t move by a single point."},
+    "Cosa si rischia davvero in una migrazione":
+        {'en': "What you really risk in a migration"},
+    "Google conosce le vostre pagine con i loro indirizzi attuali. Cambiate struttura, dominio o piattaforma senza dirglielo nel modo giusto, e per Google metà del sito «è sparita»: le vecchie pagine restituiscono errore, le posizioni guadagnate in anni evaporano, e il traffico organico cala proprio mentre festeggiate il sito nuovo. Non è una maledizione tecnica: è quasi sempre la conseguenza di redirect mancanti o sbagliati.":
+        {'en': "Google knows your pages by their current addresses. Change structure, domain, or platform without telling it the right way, and to Google half the site “has vanished”: the old pages return errors, the positions earned over years evaporate, and organic traffic drops right as you’re celebrating the new site. It’s not a technical curse: it’s almost always the result of missing or wrong redirects."},
+    "L’errore più comune e più costoso ha un nome: il redirect «tutto alla home». Per fretta o pigrizia, si fa puntare ogni vecchio indirizzo alla pagina iniziale del sito nuovo. Per Google è quasi come cancellare quelle pagine: il valore accumulato non si trasferisce, e le posizioni scivolano. Ogni vecchia pagina deve rimandare alla sua nuova equivalente, una per una.":
+        {'en': "The most common and most costly mistake has a name: the “everything to the homepage” redirect. Out of haste or laziness, every old address is pointed to the new site’s homepage. To Google this is almost like deleting those pages: the accumulated value isn’t transferred, and the rankings slip. Every old page must point to its new equivalent, one by one."},
+    "Il protocollo prima del cambio":
+        {'en': "The protocol before the switch"},
+    "Una migrazione sicura si prepara prima di toccare qualsiasi cosa. Il lavoro vero è qui, non il giorno del lancio.":
+        {'en': "A safe migration is prepared before touching anything. The real work is here, not on launch day."},
+    "Audit del sito attuale: quali pagine portano traffico e posizioni, quali link puntano al sito.":
+        {'en': "Audit of the current site: which pages bring traffic and rankings, which links point to the site."},
+    "Mappa degli URL: ogni vecchio indirizzo abbinato al suo nuovo, senza lasciare pagine orfane.":
+        {'en': "URL map: every old address matched to its new one, without leaving orphan pages."},
+    "Redirect 301 uno-a-uno: ogni vecchia pagina rimanda a quella nuova equivalente, non tutte alla home.":
+        {'en': "One-to-one 301 redirects: every old page points to its new equivalent, not all to the homepage."},
+    "Controllo di sitemap, canonical e dati strutturati sul sito nuovo, prima di pubblicare.":
+        {'en': "Check of the sitemap, canonicals, and structured data on the new site, before publishing."},
+    "Piano di rollback: se qualcosa va storto, si torna indietro in minuti, non in giorni.":
+        {'en': "Rollback plan: if something goes wrong, you roll back in minutes, not days."},
+    "Le prime sei settimane dopo":
+        {'en': "The first six weeks after"},
+    "Il lancio non è la fine, è l’inizio del monitoraggio. Nelle prime sei settimane Google riscansiona il sito e ricalcola le posizioni: è normale un piccolo assestamento, non è normale un crollo. Teniamo d’occhio gli errori di scansione, le pagine che perdono posizioni, i redirect che non funzionano, e correggiamo in giornata. È la differenza tra un calo di tre giorni e un problema che si trascina per mesi.":
+        {'en': "Launch isn’t the end, it’s the start of monitoring. In the first six weeks Google recrawls the site and recalculates rankings: a small settling is normal, a collapse is not. We keep an eye on crawl errors, pages losing rankings, redirects that don’t work, and we fix them the same day. It’s the difference between a three-day dip and a problem that drags on for months."},
+    "Un caso reale":
+        {'en': "A real case"},
+    "Su un sito con anni di posizionamento locale, la migrazione a una base tecnica nuova è passata con il traffico organico invariato: stesse posizioni, stessi contatti, più velocità. Nessun miracolo — solo il protocollo, applicato con pazienza. Se state pensando a un rifacimento o a un cambio di piattaforma, il momento per parlarne è prima, non dopo il primo calo.":
+        {'en': "On a site with years of local ranking, the migration to a new technical foundation went through with organic traffic unchanged: same rankings, same leads, more speed. No miracle — just the protocol, applied with patience. If you’re thinking about a rebuild or a platform change, the time to talk about it is before, not after the first drop."},
+    "Cosa fare prima di dire sì a una migrazione: chiedete a chi la propone se prepara una mappa URL uno-a-uno e un piano di redirect 301 prima del lancio, e se monitora le posizioni nelle settimane dopo. Se la risposta è vaga, il rischio è vostro, non suo. Una migrazione ben fatta non si vede — ed è esattamente questo il punto: il traffico continua come se niente fosse.":
+        {'en': "What to do before saying yes to a migration: ask whoever proposes it whether they prepare a one-to-one URL map and a 301 redirect plan before launch, and whether they monitor rankings in the weeks after. If the answer is vague, the risk is yours, not theirs. A well-done migration is invisible — and that’s exactly the point: traffic carries on as if nothing happened."},
+    "Restyling e migrazione senza perdere posizioni →":
+        {'en': "Restyling and migration without losing rankings →"},
+    "Fai il check-up del sito prima di migrare →":
+        {'en': "Get your site’s check-up before migrating →"},
+    "Google — spostamenti del sito con cambio di URL":
+        {'en': "Google — site moves with URL changes"},
+    "La procedura ufficiale per una migrazione che non perde posizioni.":
+        {'en': "The official procedure for a migration that doesn’t lose rankings."},
+    "Come impostare i redirect 301 perché Google trasferisca il valore delle vecchie pagine.":
+        {'en': "How to set up 301 redirects so Google transfers the value of the old pages."},
+    "Dopo la migrazione la velocità va rimisurata: sono le metriche che Google guarda.":
+        {'en': "After the migration, speed has to be re-measured: these are the metrics Google looks at."},
+    "Parliamo della tua migrazione: restyling e migrazione →":
+        {'en': "Let’s talk about your migration: restyling and migration →"},
+    "«Ci serve un’app.» Nove volte su dieci, quando ce lo sentiamo dire, la risposta onesta è: forse no. Un’app nativa costa in media 15.000–30.000 euro, va mantenuta due volte — iOS e Android — e ogni aggiornamento passa dalla revisione degli store. Una PWA, cioè un sito «progressivo», si installa sul telefono, funziona offline e manda notifiche a una frazione di quel costo. Vediamo i tre casi in cui a una PMI conviene davvero, e i due in cui invece un’app nativa serve ancora.":
+        {'en': "“We need an app.” Nine times out of ten, when we hear this, the honest answer is: maybe not. A native app costs on average € 15,000–30,000, has to be maintained twice — iOS and Android — and every update goes through the stores’ review. A PWA, i.e. a “progressive” site, installs on the phone, works offline, and sends notifications at a fraction of that cost. Let’s look at the three cases where it’s genuinely worth it for an SME, and the two where a native app is still needed."},
+    "Cos’è una PWA, senza gergo":
+        {'en': "What a PWA is, without the jargon"},
+    "PWA sta per Progressive Web App: è un sito web normale, che si apre nel browser, ma costruito in modo da comportarsi come un’app. La persona che lo visita può «installarlo» sullo schermo del telefono con un tocco, senza passare dallo store; da lì si apre a tutto schermo, funziona anche con rete debole o assente, e — dove serve — manda notifiche. Niente download da 80 MB, niente recensione di Apple o Google da aspettare: è il vostro sito, con i superpoteri giusti.":
+        {'en': "PWA stands for Progressive Web App: it’s an ordinary website, opening in the browser, but built to behave like an app. The person visiting it can “install” it on their phone’s screen with a tap, without going through the store; from there it opens full-screen, works even with a weak or absent connection, and — where needed — sends notifications. No 80 MB download, no Apple or Google review to wait for: it’s your site, with the right superpowers."},
+    "Una PWA non è la risposta a tutto. Ma in questi tre casi, per una PMI, è quasi sempre la scelta giusta — più economica e più veloce da mantenere di un’app nativa.":
+        {'en': "A PWA isn’t the answer to everything. But in these three cases, for an SME, it’s almost always the right choice — cheaper and faster to maintain than a native app."},
+    "Un caso tipico dal nostro registro: un’officina che riceve prenotazioni. Con una PWA, il cliente abituale «installa» il sito sul telefono, lo apre con un tocco come un’app, prenota anche dal parcheggio dove la rete balla — e all’officina non è costato un secondo progetto da mantenere. La stessa cosa con un’app nativa avrebbe richiesto due sviluppi, due pubblicazioni e un canone che quella officina non avrebbe mai ripagato.":
+        {'en': "A typical case from our records: a garage that takes bookings. With a PWA, the regular customer “installs” the site on their phone, opens it with a tap like an app, books even from the parking lot where the signal is shaky — and it didn’t cost the garage a second project to maintain. The same thing with a native app would have required two builds, two publications, and a fee that garage would never have recouped."},
+    "Serve una scorciatoia sul telefono del cliente abituale: un ristorante che prende prenotazioni, un negozio con un catalogo che si consulta spesso.":
+        {'en': "You need a shortcut on the regular customer’s phone: a restaurant that takes reservations, a shop with a catalog that gets browsed often."},
+    "I clienti usano il sito anche dove la rete è ballerina: fiere, magazzini, cantieri, zone di campagna.":
+        {'en': "Customers use the site even where the signal is shaky: trade fairs, warehouses, building sites, rural areas."},
+    "Il budget non regge due app separate per iOS e Android più la loro manutenzione: la PWA è una sola, e vive dove vive il sito.":
+        {'en': "The budget can’t sustain two separate apps for iOS and Android plus their maintenance: the PWA is a single one, and it lives where the site lives."},
+    "I due casi in cui serve ancora un’app nativa":
+        {'en': "The two cases where a native app is still needed"},
+    "Onestà prima di tutto: a volte l’app nativa serve davvero. Il primo caso è quando il prodotto vive di funzioni profonde del telefono — fotocamera avanzata, sensori, elaborazione pesante offline, giochi. Il secondo è quando la presenza nello store è essa stessa un canale di vendita e di fiducia, e i clienti si aspettano di trovarvi lì. Fuori da questi due casi, un’app nativa è spesso un costo di prestigio che una PWA copre con meno soldi e meno grattacapi.":
+        {'en': "Honesty first: sometimes a native app really is needed. The first case is when the product lives on deep phone functions — advanced camera, sensors, heavy offline processing, games. The second is when the store presence is itself a sales and trust channel, and customers expect to find you there. Outside these two cases, a native app is often a prestige cost that a PWA covers with less money and fewer headaches."},
+    "Un’app nativa richiede due basi di codice, due pubblicazioni, due cicli di aggiornamento e le commissioni degli store: è per questo che parte da 15.000 euro e non smette più di costare. Una PWA parte dallo stesso sito che già vi serve, aggiunge le funzioni progressive e vive di un solo aggiornamento per tutti. Il consiglio pratico: prima di firmare per un’app, chiedetevi quali funzioni «da app» vi servono davvero. Spesso la risposta sta comodamente dentro una PWA — e i soldi risparmiati diventano contenuti e pubblicità.":
+        {'en': "A native app requires two codebases, two publications, two update cycles, and the store commissions: that’s why it starts at € 15,000 and never stops costing. A PWA starts from the same site you already need, adds the progressive functions, and lives on a single update for everyone. The practical advice: before signing for an app, ask yourself which “app-like” functions you really need. Often the answer sits comfortably inside a PWA — and the money saved becomes content and advertising."},
+    "Un test pratico prima di decidere: elencate le tre cose che l’app «dovrebbe fare». Se sono aprirsi in fretta, funzionare offline, stare sullo schermo e mandare una notifica, siete in territorio PWA. Se invece serve la fotocamera con riconoscimenti, i pagamenti dentro lo store o funzioni hardware profonde, allora l’app nativa ha senso. Il costo di sbagliare questa scelta si conta in decine di migliaia di euro.":
+        {'en': "A practical test before deciding: list the three things the app “should do”. If they’re opening quickly, working offline, sitting on the screen, and sending a notification, you’re in PWA territory. If instead you need the camera with recognition, in-store payments, or deep hardware functions, then a native app makes sense. The cost of getting this choice wrong is counted in tens of thousands of euros."},
+    "Come realizziamo i siti PWA →":
+        {'en': "How we build PWA sites →"},
+    "Quando invece serve una web app su misura →":
+        {'en': "When you need a custom web app instead →"},
+    "Cos’è una PWA e cosa la distingue da un sito normale e da un’app nativa.":
+        {'en': "What a PWA is and what sets it apart from an ordinary site and a native app."},
+    "La documentazione tecnica di riferimento su installabilità, offline e notifiche.":
+        {'en': "The reference technical documentation on installability, offline, and notifications."},
+    "Il corso di Google che spiega, passo per passo, come funziona una PWA.":
+        {'en': "The Google course that explains, step by step, how a PWA works."},
+    "Scopri i siti PWA di Studio Remarka →":
+        {'en': "Discover Studio Remarka’s PWA sites →"},
+    "Un errore da 5.000 euro: sottovalutare i contenuti":
+        {'en': "A € 5,000 mistake: underestimating content"},
+    "C’è una voce che quasi ogni preventivo e-commerce tiene bassa per sembrare competitivo: i contenuti. Schede prodotto scritte bene, foto vere, testi che vendono e — se esportate — traduzioni da madrelingua. Sembra la parte «facile», ed è invece quella che decide se il negozio converte o resta una vetrina silenziosa. Chi vi vende un e-commerce a poco spesso vi lascia questo conto per dopo, quando scoprite che 300 schede non si scrivono da sole.":
+        {'en': "There’s one line item that almost every e-commerce quote keeps low to look competitive: content. Well-written product pages, real photos, copy that sells, and — if you export — native-speaker translations. It seems like the “easy” part, and it’s actually the one that decides whether the shop converts or stays a silent shop window. Whoever sells you a cheap e-commerce site often leaves you this bill for later, when you discover that 300 product pages don’t write themselves."},
+    "Dati reali su peso, tecnologie e prestazioni dei siti, e-commerce compresi.":
+        {'en': "Real data on the weight, technologies, and performance of sites, e-commerce included."},
+    "Quanto vende online l’Europa: il contesto di mercato dietro le cifre di un negozio.":
+        {'en': "How much Europe sells online: the market context behind a shop’s figures."},
+    "La velocità mobile che difendiamo per contratto e che incide sulle vendite.":
+        {'en': "The mobile speed we defend by contract and that affects sales."},
+    "Dal 2025 l’accessibilità è un costo-obbligo anche per l’e-commerce: va messo nel preventivo.":
+        {'en': "Since 2025 accessibility is a mandatory cost for e-commerce too: it has to go in the quote."},
+    "«Mi hanno chiesto 900 euro e mi hanno chiesto 12.000 per la stessa cosa. Chi mi sta prendendo in giro?» Nessuno dei due, quasi sempre: è che «un sito aziendale» in Italia vuol dire dieci prodotti diversi con lo stesso nome. Il mercato va dagli 800 euro dei costruttori fai-da-te ai 50.000 delle grandi agenzie, e nessuno vi spiega davvero cosa cambia in mezzo. In questo articolo mettiamo una mappa onesta sotto ogni fascia di prezzo — incluso il nostro — e le domande da fare prima di firmare qualunque preventivo.":
+        {'en': "“One quoted me € 900 and another quoted me € 12,000 for the same thing. Who’s pulling my leg?” Neither, almost always: it’s that “a company website” in Italy means ten different products with the same name. The market ranges from the € 800 of DIY builders to the € 50,000 of the big agencies, and no one really explains what changes in between. In this article we put an honest map under every price bracket — including ours — and the questions to ask before signing any quote."},
+    "Le fasce di prezzo, senza giri di parole":
+        {'en': "The price brackets, without beating around the bush"},
+    "Sotto i 1.000 euro si comprano quasi sempre template montati in fretta: un costruttore fai-da-te o un conoscente «che sa fare i siti». Funzionano finché non vi serve modificarli, posizionarli o farli caricare in fretta su mobile. Nella fascia 2.500–8.000 euro sta il grosso del mercato professionale italiano: design su misura, CMS per aggiornare da soli, SEO tecnica, più lingue. Sopra i 15.000 si va verso strutture complesse, integrazioni con gestionali e progetti multi-sede.":
+        {'en': "Under € 1,000 you almost always buy hastily assembled templates: a DIY builder or an acquaintance “who knows how to make websites”. They work until you need to modify them, rank them, or make them load fast on mobile. In the € 2,500–8,000 bracket sits the bulk of the Italian professional market: custom design, a CMS to update on your own, technical SEO, multiple languages. Above € 15,000 you move toward complex structures, integrations with management software, and multi-site projects."},
+    "Il nostro listino per il sito aziendale sta nella fascia centrale — € 3.900–5.800, prezzo chiuso nel preventivo — con due voci che altrove raramente trovate nero su bianco: PageSpeed 90+ garantito e data di consegna con penale dell’1% per ogni giorno lavorativo di ritardo.":
+        {'en': "Our price list for the company website sits in the central bracket — € 3,900–5,800, a fixed price in the quote — with two items you rarely find in black and white elsewhere: PageSpeed 90+ guaranteed and a delivery date with a 1% penalty for every working day of delay."},
+    "Cosa cambia davvero tra una fascia e l’altra":
+        {'en': "What really changes from one bracket to the next"},
+    "Il prezzo non lo fa il numero di pagine: lo fanno tre cose. La prima è il design — un tema comprato e riempito costa un decimo di un’interfaccia disegnata sui vostri contenuti, e si vede. La seconda è la base tecnica: un sito che carica in un secondo su mobile richiede lavoro che un template non fa da solo. La terza sono i contenuti veri — testi scritti, foto fatte, traduzioni da madrelingua — che sono spesso la parte che manca nei preventivi troppo bassi, e che poi vi ritrovate a pagare a parte.":
+        {'en': "The price isn’t set by the number of pages: three things set it. The first is design — a bought theme filled in costs a tenth of an interface designed around your content, and it shows. The second is the technical foundation: a site that loads in one second on mobile takes work a template doesn’t do on its own. The third is real content — written copy, photos taken, native-speaker translations — which is often the part missing from quotes that are too low, and that you then end up paying for separately."},
+    "Un esempio concreto di cosa si nasconde nella parola «pagine». Due preventivi dicono entrambi «sito da 15 pagine»: uno intende 15 pagine con testi già pronti da impaginare, l’altro 15 pagine da progettare, scrivere e fotografare. Il secondo costa il doppio e vale il triplo, ma sul foglio sembrano identici. È qui che nasce metà dei «mi hanno chiesto il doppio per la stessa cosa».":
+        {'en': "A concrete example of what hides inside the word “pages”. Two quotes both say “a 15-page site”: one means 15 pages with copy already ready to lay out, the other 15 pages to design, write, and photograph. The second costs twice as much and is worth three times as much, but on paper they look identical. This is where half of the “they quoted me double for the same thing” comes from."},
+    "Un preventivo onesto risponde a queste domande senza esitare. Se chi avete davanti si innervosisce, avete già un’informazione.":
+        {'en': "An honest quote answers these questions without hesitation. If the person in front of you gets flustered, you already have some information."},
+    "Il prezzo è chiuso o «indicativo»? Cosa succede se in corso d’opera emergono lavori aggiuntivi?":
+        {'en': "Is the price fixed or “indicative”? What happens if additional work comes up along the way?"},
+    "La data di consegna è scritta nel contratto? Con quale penale in caso di ritardo?":
+        {'en': "Is the delivery date written in the contract? With what penalty in case of delay?"},
+    "Chi possiede dominio, codice e contenuti dopo la consegna: io o voi?":
+        {'en': "Who owns the domain, code, and content after delivery: me or you?"},
+    "La velocità su mobile è garantita con un numero, o è solo una promessa a voce?":
+        {'en': "Is the mobile speed guaranteed with a number, or is it just a spoken promise?"},
+    "L’assistenza dopo il lancio è inclusa, per quanto tempo, e cosa copre esattamente?":
+        {'en': "Is post-launch support included, for how long, and what exactly does it cover?"},
+    "Un requisito nuovo che nessuno mette a preventivo":
+        {'en': "A new requirement no one puts in the quote"},
+    "Dal 28 giugno 2025 l’accessibilità dei siti che vendono ai consumatori è un obbligo di legge europeo, non un abbellimento. Un preventivo che non ne parla o è vecchio, o vi lascia il conto per dopo. Nel nostro caso lo standard WCAG 2.1 AA è parte del lavoro, non un extra a sorpresa: preferiamo dirlo prima, in cifre, che scoprirlo insieme davanti a una segnalazione.":
+        {'en': "Since 28 June 2025, accessibility for sites that sell to consumers is a European legal obligation, not a decoration. A quote that doesn’t mention it is either outdated or leaving you the bill for later. In our case the WCAG 2.1 AA standard is part of the work, not a surprise extra: we prefer to say it up front, in figures, than to discover it together in the face of a complaint."},
+    "La differenza tra fasce, alla fine, è tutta qui: cosa è garantito per iscritto e cosa è lasciato alla buona volontà. Un template a 800 euro non vi promette una velocità, una data, un obbligo di legge rispettato; un progetto serio sì. Non comprate pagine, comprate promesse mantenibili: ed è su quelle che va letto il prezzo.":
+        {'en': "The difference between brackets, in the end, is all here: what is guaranteed in writing and what is left to good will. An € 800 template doesn’t promise you a speed, a date, a legal obligation met; a serious project does. You’re not buying pages, you’re buying promises that can be kept: and it’s against those that the price should be read."},
+    "Cosa include davvero un sito aziendale →":
+        {'en': "What a company website really includes →"},
+    "Dati reali su come è fatto il web oggi: utile per capire cosa si paga davvero.":
+        {'en': "Real data on how the web is built today: useful for understanding what you’re really paying for."},
+    "Il contesto europeo in cui un sito aziendale deve rendere.":
+        {'en': "The European context in which a company website has to perform."},
+    "La velocità mobile che garantiamo per contratto: la differenza tra le fasce di prezzo.":
+        {'en': "The mobile speed we guarantee by contract: the difference between the price brackets."},
+    "Dal 2025 l’accessibilità è un requisito, non un extra: va considerata nel budget.":
+        {'en': "Since 2025 accessibility is a requirement, not an extra: it has to be factored into the budget."},
+    "Vedi il nostro listino, a prezzo chiuso →":
+        {'en': "See our price list, at a fixed price →"},
+    "Perché la velocità mobile conta: Web Vitals →":
+        {'en': "Why mobile speed matters: Web Vitals →"},
+    "Prima di spendere un euro, misurate. Incollate l’indirizzo nel nostro test di velocità e guardate due cose: il punteggio mobile e quali risorse pesano di più. Nove volte su dieci il colpevole è già lì, in cima alla lista: una manciata di immagini enormi, un tema che carica megabyte di codice inutile, o un hosting che risponde piano. Sapere quale delle sette cause vi riguarda cambia tutto: alcune si risolvono in una giornata, altre chiedono di rifare la base.":
+        {'en': "Before spending a single euro, measure. Paste the address into our speed test and look at two things: the mobile score and which resources weigh the most. Nine times out of ten the culprit is already there, at the top of the list: a handful of enormous images, a theme that loads megabytes of useless code, or hosting that responds slowly. Knowing which of the seven causes affects you changes everything: some are solved in a day, others call for rebuilding the foundation."},
+    "La regola che ripetiamo sempre: non fidatevi del «mi sembra più veloce». Misurate prima, cambiate una cosa, misurate dopo. Un numero che passa da 41 a 92 convince il titolare più di qualsiasi relazione — e vi dice, nero su bianco, che i soldi spesi hanno reso.":
+        {'en': "The rule we always repeat: don’t trust “it feels faster”. Measure before, change one thing, measure after. A number that goes from 41 to 92 convinces the owner more than any report — and it tells you, in black and white, that the money spent paid off."},
+    "Misura ora la velocità del tuo sito — gratis →":
+        {'en': "Measure your site’s speed now — for free →"},
+    "Se la base è vecchia: restyling tecnico →":
+        {'en': "If the foundation is old: technical restyling →"},
+    "Le metriche con cui Google misura la velocità percepita di una pagina.":
+        {'en': "The metrics Google uses to measure the perceived speed of a page."},
+    "Cos’è l’LCP e perché immagini e hosting lo spostano più di ogni altra cosa.":
+        {'en': "What the LCP is and why images and hosting move it more than anything else."},
+    "Dati aggregati sul peso delle pagine: dove si concentra davvero la lentezza del web.":
+        {'en': "Aggregate data on page weight: where the web’s slowness really concentrates."},
+    "I dati di campo che distinguono un sito «che sembra veloce» da uno veloce davvero.":
+        {'en': "The field data that tells a site that “seems fast” apart from one that’s truly fast."},
+    "Un cliente tedesco apre la vostra scheda prodotto tradotta con l’automatico, legge una frase che nella sua lingua suona goffa, e chiude: non ha pensato «traduzione sbagliata», ha pensato «azienda poco seria». È così che un errore di registro costa un ordine prima ancora di una mail. La traduzione automatica basta per un menù o un orario; non basta dove si vende. In questo articolo: quando conviene l’automatico, quando serve un madrelingua, e cosa cambia davvero nei costi e nei tempi per lingua, con un caso reale di export verso la Germania.":
+        {'en': "A German customer opens your machine-translated product page, reads a sentence that in their language sounds clumsy, and closes it: they didn’t think “bad translation”, they thought “unprofessional company”. That’s how a register error costs an order before even an email. Machine translation is enough for a menu or opening hours; it’s not enough where you sell. In this article: when machine translation is worth it, when you need a native speaker, and what really changes in costs and timelines per language, with a real case of exporting to Germany."},
+    "Quando la traduzione automatica basta (e quando no)":
+        {'en': "When machine translation is enough (and when it isn’t)"},
+    "La traduzione automatica di oggi è ottima per capire e farsi capire su cose semplici: un orario, un indirizzo, la descrizione neutra di un servizio. Se il vostro obiettivo è che un turista trovi il numero di telefono, va benissimo. Il problema nasce dove le parole vendono: una scheda prodotto tecnica, una pagina che deve convincere, un testo dove il tono conta quanto il contenuto. Lì l’automatico produce frasi «giuste ma spente», e a volte errori di registro che, nella lingua del cliente, suonano goffi o poco professionali.":
+        {'en': "Today’s machine translation is excellent for understanding and being understood on simple things: opening hours, an address, the neutral description of a service. If your goal is for a tourist to find the phone number, it works fine. The problem arises where words sell: a technical product page, a page that has to persuade, a text where tone counts as much as content. There, machine translation produces sentences that are “correct but flat”, and sometimes register errors that, in the customer’s language, sound clumsy or unprofessional."},
+    "Un modo semplice per decidere: chiedetevi se quella pagina informa o vende. Le pagine che informano — orari, contatti, descrizioni neutre — reggono bene l’automatico, magari con una rilettura. Le pagine che vendono — schede prodotto, landing, testi che devono convincere — vanno affidate a un madrelingua, perché lì un errore di tono non fa sorridere: fa chiudere la scheda.":
+        {'en': "A simple way to decide: ask yourself whether that page informs or sells. Pages that inform — hours, contacts, neutral descriptions — hold up fine with machine translation, perhaps with a proofread. Pages that sell — product pages, landing pages, texts that have to persuade — should be entrusted to a native speaker, because there a tone error doesn’t raise a smile: it closes the page."},
+    "Cosa cambia nei costi e nei tempi, per lingua":
+        {'en': "What changes in costs and timelines, per language"},
+    "Aggiungere una lingua non è schiacciare un pulsante «traduci». È tradurre i testi con un madrelingua, adattare quelli di vendita, tradurre anche ciò che non si vede — titoli, descrizioni per Google, messaggi di errore — e impostare i segnali tecnici (hreflang) che dicono al motore quale versione mostrare a chi. Il costo cresce con le parole reali da lavorare, non con il numero di bandierine; i tempi, con il numero di pagine che devono davvero convincere, non solo informare.":
+        {'en': "Adding a language isn’t hitting a “translate” button. It’s translating the texts with a native speaker, adapting the sales ones, translating even what you don’t see — titles, descriptions for Google, error messages — and setting up the technical signals (hreflang) that tell the engine which version to show to whom. The cost grows with the real words to work on, not with the number of little flags; the timelines, with the number of pages that really have to persuade, not just inform."},
+    "In pratica, per un sito aziendale medio, aggiungere una lingua ben fatta significa qualche giorno di lavoro per la traduzione e l’adattamento, più l’impostazione tecnica. Molto meno di quanto si teme, se si parte dai testi giusti; molto di più di «zero», che è quanto promette chi vi vende un plugin di traduzione automatica come se fosse una versione estera del sito.":
+        {'en': "In practice, for an average company website, adding a well-done language means a few days of work for translation and adaptation, plus the technical setup. Much less than feared, if you start from the right texts; much more than “zero”, which is what those selling you a machine-translation plugin as if it were a foreign version of the site promise."},
+    "L’errore che costa clienti: tradurre senza localizzare":
+        {'en': "The mistake that costs customers: translating without localizing"},
+    "Tradurre è cambiare le parole; localizzare è cambiare ciò che serve perché il messaggio funzioni in quel mercato. Un prezzo con la valuta giusta, una data nel formato locale, un esempio che in Germania si capisce e in Italia no, un tono più diretto o più formale a seconda del Paese. Uno studio classico di CSA Research lo dice da anni con un titolo che è già una tesi: «Can’t Read, Won’t Buy» — se non lo leggo nella mia lingua, non lo compro. Vale ancora, e vale soprattutto dove c’è un carrello.":
+        {'en': "Translating is changing the words; localizing is changing whatever it takes for the message to work in that market. A price in the right currency, a date in the local format, an example that’s understood in Germany but not in Italy, a more direct or more formal tone depending on the country. A classic CSA Research study has said it for years with a title that’s already a thesis: “Can’t Read, Won’t Buy” — if I can’t read it in my language, I won’t buy it. It still holds, and it holds above all where there’s a cart."},
+    "Un caso di export in Germania":
+        {'en': "A case of exporting to Germany"},
+    "Per Cantina Serralta, ad Asti, il catalogo tradotto e adattato in tre lingue con un checkout in un solo passaggio ha portato +63% di vendite dirette in un anno. Non è stata la traduzione da sola: è stata la traduzione fatta da chi vende, unita a un sito veloce e a un percorso d’acquisto pulito. È esattamente il modello del nostro servizio Export Ready — il sito e la sua versione estera sotto un unico contratto, con redattori madrelingua.":
+        {'en': "For Cantina Serralta, in Asti, the catalog translated and adapted into three languages with a single-step checkout brought +63% in direct sales in one year. It wasn’t the translation alone: it was the translation done by people who sell, combined with a fast site and a clean purchase journey. It’s exactly the model of our Export Ready service — the site and its foreign version under a single contract, with native-speaking editors."},
+    "Siti multilingue con redattori madrelingua →":
+        {'en': "Multilingual websites with native-speaking editors →"},
+    "Calcola il ROI di una versione estera del sito →":
+        {'en': "Calculate the ROI of a foreign version of the site →"},
+    "Lo studio classico: la maggioranza dei consumatori compra solo nella propria lingua.":
+        {'en': "The classic study: the majority of consumers buy only in their own language."},
+    "Google — siti multi-regionali e multilingue":
+        {'en': "Google — multi-regional and multilingual sites"},
+    "La guida ufficiale a come strutturare un sito per più Paesi e più lingue.":
+        {'en': "The official guide to how to structure a site for multiple countries and multiple languages."},
+    "Come dire a Google quale versione linguistica mostrare a chi: dettaglio tecnico che conta.":
+        {'en': "How to tell Google which language version to show to whom: a technical detail that matters."},
+    "Il peso dell’e-commerce transfrontaliero in Europa, il mercato che una versione estera apre.":
+        {'en': "The weight of cross-border e-commerce in Europe, the market a foreign version opens up."},
+    "Scopri i siti multilingue di Studio Remarka →":
+        {'en': "Discover Studio Remarka’s multilingual websites →"},
+}
+CHROME.update(CHROME_BLOG_RETROFIT)
+
+# CHROME_BLOG_RETROFIT2 — этикетки «Fonti», названия источников и заголовки/
+# подписи ретрофита, которые не срабатывают на эвристику ITALIAN_HINT конвейера
+# (короткие/с брендами): явные EN-пары, чтобы в EN не осталось IT. Нейтральные
+# (бренды web.dev/MDN/CrUX) — идентичны, добавлены для полноты.
+CHROME_BLOG_RETROFIT2 = {
+    "Fonti":
+        {'en': "Sources"},
+    "web.dev — Web Vitals":
+        {'en': "web.dev — Web Vitals"},
+    "Google — contenuti utili e affidabili (E-E-A-T)":
+        {'en': "Google — helpful, reliable content (E-E-A-T)"},
+    "WCAG 2 — panoramica W3C/WAI":
+        {'en': "WCAG 2 — W3C/WAI overview"},
+    "Chrome UX Report (CrUX)":
+        {'en': "Chrome UX Report (CrUX)"},
+    "Garante Privacy — linee guida sui cookie":
+        {'en': "Garante Privacy — cookie guidelines"},
+    "Regolamento (UE) 2016/679 — GDPR (EUR-Lex)":
+        {'en': "Regulation (EU) 2016/679 — GDPR (EUR-Lex)"},
+    "Cosa fare oggi, in mezz’ora":
+        {'en': "What to do today, in half an hour"},
+    "web.dev — Largest Contentful Paint (LCP)":
+        {'en': "web.dev — Largest Contentful Paint (LCP)"},
+    "web.dev — Interaction to Next Paint (INP)":
+        {'en': "web.dev — Interaction to Next Paint (INP)"},
+    "web.dev — Cumulative Layout Shift (CLS)":
+        {'en': "web.dev — Cumulative Layout Shift (CLS)"},
+    "Google — creare contenuti utili e affidabili":
+        {'en': "Google — create helpful, reliable content"},
+    "Google — introduzione ai dati strutturati":
+        {'en': "Google — intro to structured data"},
+    "Direttiva (UE) 2019/882 (EUR-Lex)":
+        {'en': "Directive (EU) 2019/882 (EUR-Lex)"},
+    "AccessibleEU — Commissione europea":
+        {'en': "AccessibleEU — European Commission"},
+    "WCAG 2.1 — W3C":
+        {'en': "WCAG 2.1 — W3C"},
+    "I dati strutturati JSON-LD aiutano macchine e modelli a capire chi siete e cosa offrite.":
+        {'en': "JSON-LD structured data helps machines and models understand who you are and what you offer."},
+    "Google — redirect e ricerca Google":
+        {'en': "Google — redirects and Google Search"},
+    "I tre casi in cui conviene davvero":
+        {'en': "The three cases where it’s really worth it"},
+    "Quanto si risparmia, in numeri":
+        {'en': "How much you save, in numbers"},
+    "web.dev — Progressive Web Apps":
+        {'en': "web.dev — Progressive Web Apps"},
+    "MDN — Progressive Web Apps":
+        {'en': "MDN — Progressive Web Apps"},
+    "web.dev — Learn PWA":
+        {'en': "web.dev — Learn PWA"},
+    "Dati di mercato reali: Web Almanac 2024 di HTTP Archive →":
+        {'en': "Real market data: HTTP Archive’s Web Almanac 2024 →"},
+    "HTTP Archive — Web Almanac 2024":
+        {'en': "HTTP Archive — Web Almanac 2024"},
+    "Eurostat — statistiche sull’e-commerce":
+        {'en': "Eurostat — e-commerce statistics"},
+    "Confronta prezzi e tempi, accanto a quelli di mercato →":
+        {'en': "Compare prices and timelines, side by side with the market →"},
+    "Eurostat — statistiche sull’economia digitale":
+        {'en': "Eurostat — digital economy statistics"},
+    "CSA Research — «Can’t Read, Won’t Buy»":
+        {'en': "CSA Research — “Can’t Read, Won’t Buy”"},
+    "Google — versioni localizzate e hreflang":
+        {'en': "Google — localized versions and hreflang"},
+}
+CHROME.update(CHROME_BLOG_RETROFIT2)

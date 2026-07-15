@@ -35,6 +35,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Caching and plugin cleanup are the second step: half a day’s work, measurable results right away. The point is to measure before and after — not “the site feels faster,” but a documented number.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">Why mobile speed matters: Web Vitals →</a></p>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">When a technical rebuild actually pays off<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -44,6 +47,27 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Either way, the first step is free: measure your site with our speed test, or request the full analysis — a written report with causes, priorities, and a fixed-price quote.</p>
 <!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">What to do today, in half an hour<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Before spending a single euro, measure. Paste the address into our speed test and look at two things: the mobile score and which resources weigh the most. Nine times out of ten the culprit is already there, at the top of the list: a handful of enormous images, a theme that loads megabytes of useless code, or hosting that responds slowly. Knowing which of the seven causes affects you changes everything: some are solved in a day, others call for rebuilding the foundation.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The rule we always repeat: don’t trust “it feels faster”. Measure before, change one thing, measure after. A number that goes from 41 to 92 convinces the owner more than any report — and it tells you, in black and white, that the money spent paid off.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/speed-test/">Measure your site’s speed now — for free →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/services/redesign-migration/">If the foundation is old: technical restyling →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Sources<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">The figures and claims in this article come from here. These are primary sources, not summaries: open them and check for yourself.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev — Web Vitals</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The metrics Google uses to measure the perceived speed of a page.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/lcp" target="_blank" rel="noopener">web.dev — Largest Contentful Paint (LCP)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">What the LCP is and why images and hosting move it more than anything else.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://almanac.httparchive.org/en/2024/" target="_blank" rel="noopener">HTTP Archive — Web Almanac 2024</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Aggregate data on page weight: where the web’s slowness really concentrates.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developer.chrome.com/docs/crux" target="_blank" rel="noopener">Chrome UX Report (CrUX)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The field data that tells a site that “seems fast” apart from one that’s truly fast.</span></li></ul>
+<!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:32px"><a href="/en/tools/speed-test/">Measure your website now — free test →</a></p>
 <!-- /wp:html -->

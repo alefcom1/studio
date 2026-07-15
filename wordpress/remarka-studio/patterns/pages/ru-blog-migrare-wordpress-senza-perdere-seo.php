@@ -18,8 +18,50 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="font-size:17px;line-height:1.7">Любая техническая миграция несёт риск потерять годы органических позиций. В этой статье — протокол аудита, карты URL и редиректов 301, который мы применяем перед каждым переездом с WordPress; что мы отслеживаем в первые шесть недель после смены платформы; и реальный кейс, в котором позиции не сдвинулись ни на пункт.</p>
+<p class="has-base-font-size" style="font-size:17px;line-height:1.7">В каждом переносе есть момент, когда новый сайт выходит в сеть, а старый исчезает. Если кто-то ошибся с редиректами, в этот момент исчезают и годы позиций в Google — а замечаете вы это через две недели, когда заявки падают и никто не понимает почему. Мигрировать с WordPress без потери позиций — это не удача, а протокол. Показываем аудит, карту URL и редиректы 301, которые мы применяем до каждого переноса, что отслеживаем первые шесть недель и случай, когда трафик не сдвинулся ни на пункт.</p>
 <!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Чем на самом деле рискуешь при переносе<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Google знает ваши страницы по их нынешним адресам. Смените структуру, домен или платформу, не сказав об этом как надо, — и для Google половина сайта «исчезла»: старые страницы отдают ошибку, заработанные годами позиции испаряются, а органический трафик падает как раз тогда, когда вы празднуете новый сайт. Это не техническое проклятие — почти всегда это следствие отсутствующих или неправильных редиректов.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Самая частая и дорогая ошибка называется «редирект всё на главную». По спешке или лени каждый старый адрес отправляют на стартовую страницу нового сайта. Для Google это почти как удалить те страницы: накопленный вес не переносится, и позиции сползают. Каждая старая страница должна вести на свою новую пару, одна к одной.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Протокол до переезда<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Безопасный перенос готовится до того, как тронешь хоть что-то. Настоящая работа здесь, а не в день запуска.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Аудит текущего сайта: какие страницы дают трафик и позиции, какие ссылки ведут на сайт.</span></div><div><span class="sr-mono">b</span><span>Карта URL: каждый старый адрес сопоставлен с новым, без осиротевших страниц.</span></div><div><span class="sr-mono">c</span><span>Редиректы 301 один к одному: каждая старая страница ведёт на равнозначную новую, а не все на главную.</span></div><div><span class="sr-mono">d</span><span>Проверка sitemap, canonical и структурированных данных на новом сайте до публикации.</span></div><div><span class="sr-mono">e</span><span>План отката: если что-то пойдёт не так, возвращаемся за минуты, а не за дни.</span></div></div>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Первые шесть недель после<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Запуск — не финиш, а начало мониторинга. Первые шесть недель Google пересканирует сайт и пересчитывает позиции: небольшая просадка нормальна, обвал — нет. Мы следим за ошибками сканирования, страницами, теряющими позиции, неработающими редиректами и правим в тот же день. Это разница между падением на три дня и проблемой, которая тянется месяцами.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Что спросить до согласия на перенос<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Спросите того, кто предлагает перенос: готовит ли он карту URL один-к-одному и план редиректов 301 до запуска и следит ли за позициями в недели после. Если ответ размытый — риск ваш, а не его. Хорошо сделанный перенос не заметен — и в этом весь смысл: трафик идёт как ни в чём не бывало. На реальном сайте с годами локальных позиций миграция на новую техбазу прошла с неизменным органическим трафиком: те же позиции, те же заявки, больше скорости.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="/ru/uslugi/redizajn-i-migracija/">Редизайн и миграция без потери позиций →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/ru/instrumenty/polnaya-proverka-sajta/">Сделайте чек-ап сайта перед переносом →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Источники<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">Цифры и утверждения этой статьи взяты отсюда. Это первоисточники, а не пересказы: откройте и проверьте.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes" target="_blank" rel="noopener">Google — переезд сайта со сменой URL</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Официальная процедура миграции без потери позиций.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/crawling-indexing/301-redirects" target="_blank" rel="noopener">Google — редиректы и поиск Google</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Как настроить редиректы 301, чтобы Google перенёс вес старых страниц.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev — Web Vitals</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">После переноса скорость нужно перемерить: это метрики, на которые смотрит Google.</span></li></ul>
+<!-- /wp:html -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"40px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:40px"><!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/blog/">← Все статьи</a></div>

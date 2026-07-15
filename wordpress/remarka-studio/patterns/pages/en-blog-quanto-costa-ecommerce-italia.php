@@ -29,6 +29,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Our price list sits in the middle tier — € 7,500–14,000, fixed in the quote — with one contractual difference: PageSpeed 90+ guaranteed in writing and a delivery date backed by a penalty clause. Those are the two items you will almost never find in competing offers in black and white.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="https://almanac.httparchive.org/en/2024/" target="_blank" rel="noopener">Real market data: HTTP Archive’s Web Almanac 2024 →</a></p>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">The costs quotes don’t mention<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -52,6 +55,21 @@
 <!-- /wp:heading -->
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Is the price fixed or “indicative”? What happens if extra work comes up?</span></div><div><span class="sr-mono">b</span><span>Is the delivery date in the contract? With what penalty?</span></div><div><span class="sr-mono">c</span><span>Who owns the domain, code, and customer data after delivery?</span></div><div><span class="sr-mono">d</span><span>Is e-invoicing via SDI included, or is it a separate module?</span></div><div><span class="sr-mono">e</span><span>How fast does the site load on mobile — and who guarantees it, in writing?</span></div></div>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">A € 5,000 mistake: underestimating content<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">There’s one line item that almost every e-commerce quote keeps low to look competitive: content. Well-written product pages, real photos, copy that sells, and — if you export — native-speaker translations. It seems like the “easy” part, and it’s actually the one that decides whether the shop converts or stays a silent shop window. Whoever sells you a cheap e-commerce site often leaves you this bill for later, when you discover that 300 product pages don’t write themselves.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Sources<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">The figures and claims in this article come from here. These are primary sources, not summaries: open them and check for yourself.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://almanac.httparchive.org/en/2024/" target="_blank" rel="noopener">HTTP Archive — Web Almanac 2024</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Real data on the weight, technologies, and performance of sites, e-commerce included.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=E-commerce_statistics" target="_blank" rel="noopener">Eurostat — e-commerce statistics</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">How much Europe sells online: the market context behind a shop’s figures.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev — Web Vitals</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The mobile speed we defend by contract and that affects sales.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en" target="_blank" rel="noopener">AccessibleEU — European Commission</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Since 2025 accessibility is a mandatory cost for e-commerce too: it has to go in the quote.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:32px"><a href="/en/pricing/">See our e-commerce price list, fixed prices →</a></p>

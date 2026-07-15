@@ -32,6 +32,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">L’errore da evitare è pensare che sia una moda passeggera o roba «da grandi marchi». Il meccanismo premia chi si spiega bene, non chi ha il budget più grosso — ed è esattamente il terreno su cui una PMI ben fatta può battere un concorrente più grande e più pigro.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">Come Google usa i contenuti nelle risposte AI →</a></p>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Come un modello arriva a citare la vostra pagina<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -61,6 +64,15 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:14px"><a href="/servizi/seo-tecnica/">Lo prepariamo noi: fa parte della SEO tecnica →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/blog/llms-txt-cos-e/">Leggi anche: llms.txt, cos’è e serve davvero al vostro sito →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Fonti<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">Le cifre e le affermazioni di questo articolo vengono da qui. Sono prime fonti, non riassunti: apritele e verificate.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">Google — le funzionalità AI e il vostro sito</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Come Google usa i contenuti del web nelle risposte generative e cosa possono fare i siti.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener">OpenAI — panoramica dei crawler</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Se GPTBot non può leggervi, ChatGPT non può citarvi: qui le regole di accesso.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" target="_blank" rel="noopener">Anthropic — ClaudeBot e come gestirlo</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">La stessa logica per Claude: l’accesso del crawler è il presupposto della citabilità.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener">Google — introduzione ai dati strutturati</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">I dati strutturati JSON-LD aiutano macchine e modelli a capire chi siete e cosa offrite.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:32px"><a href="/strumenti/sito-pronto-ai/">Verifica gratis se il vostro sito è leggibile dai modelli AI →</a></p>

@@ -35,6 +35,9 @@
 <!-- wp:html -->
 <figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/eaa-timeline.svg" alt="Cronologia dell’European Accessibility Act: direttiva UE 2019/882, recepimento in Italia, entrata in vigore il 28 giugno 2025 e sanzione massima del 5%" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Dalla direttiva UE 2019/882 all’entrata in vigore in Italia il 28 giugno 2025. Le microimprese di servizi — meno di 10 persone e meno di 2 milioni di euro di fatturato — hanno un’esenzione. Fonti: AccessibleEU (Commissione europea) e la guida di Bird & Bird.</figcaption></figure>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="https://eur-lex.europa.eu/eli/dir/2019/882/oj" target="_blank" rel="noopener">Direttiva (UE) 2019/882, il testo ufficiale su EUR-Lex →</a></p>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Cosa rischia davvero il vostro e-commerce con l’European Accessibility Act<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -75,7 +78,16 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">La buona notizia è che non è un lavoro infinito. Per un e-commerce di taglia media, dall’audit alle correzioni fino alla dichiarazione, sono in genere tre settimane. L’obbligo, preso per tempo, non è un costo a fondo perduto: è un sito che vende a più persone e che non teme la prima lettera del controllo.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/servizi/adeguamento-eaa/">Vogliamo sistemarlo noi: il servizio Adeguamento EAA, a prezzo chiuso →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/servizi/adeguamento-eaa/">Vogliamo sistemarlo noi: il servizio Adeguamento EAA, a prezzo chiuso →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener">WCAG 2.1 AA, i criteri ufficiali del W3C →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Fonti<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">Le cifre e le affermazioni di questo articolo vengono da qui. Sono prime fonti, non riassunti: apritele e verificate.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://eur-lex.europa.eu/eli/dir/2019/882/oj" target="_blank" rel="noopener">Direttiva (UE) 2019/882 (EUR-Lex)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Il testo ufficiale dell’European Accessibility Act: da qui nasce l’obbligo.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en" target="_blank" rel="noopener">AccessibleEU — Commissione europea</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Il centro di competenza UE sull’accessibilità conferma l’entrata in vigore del 28 giugno 2025.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener">WCAG 2.1 — W3C</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Lo standard tecnico di riferimento (livello AA): i criteri con cui si misura la conformità.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://www.twobirds.com/en/insights/2025/a-guide-to-navigating-the-european-accessibility-act-for-online-retailers-service-providers-and-plat" target="_blank" rel="noopener">Guida EAA per il commercio online — Bird & Bird</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Uno studio legale internazionale spiega perimetro, esenzioni e sanzioni per chi vende online.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:32px"><a href="/servizi/adeguamento-eaa/">Adeguamento EAA: audit, correzioni e dichiarazione in 3 settimane →</a></p>

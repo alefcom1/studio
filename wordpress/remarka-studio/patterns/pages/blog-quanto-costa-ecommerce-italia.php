@@ -29,6 +29,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Il nostro listino sta nella fascia centrale — € 7.500–14.000, prezzo chiuso nel preventivo — con una differenza contrattuale: PageSpeed 90+ garantito per iscritto e data di consegna con penale. Sono le due voci che nelle offerte concorrenti non troverete quasi mai nero su bianco.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="https://almanac.httparchive.org/en/2024/" target="_blank" rel="noopener">Dati di mercato reali: Web Almanac 2024 di HTTP Archive →</a></p>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">I costi che i preventivi non dicono<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -52,6 +55,21 @@
 <!-- /wp:heading -->
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Il prezzo è chiuso o «indicativo»? Cosa succede se emergono lavori aggiuntivi?</span></div><div><span class="sr-mono">b</span><span>La data di consegna è nel contratto? Con quale penale?</span></div><div><span class="sr-mono">c</span><span>Chi possiede dominio, codice e dati dei clienti dopo la consegna?</span></div><div><span class="sr-mono">d</span><span>La fatturazione elettronica via SDI è inclusa o è un modulo a parte?</span></div><div><span class="sr-mono">e</span><span>Quanto carica il sito su mobile — e chi lo garantisce, per iscritto?</span></div></div>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Un errore da 5.000 euro: sottovalutare i contenuti<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">C’è una voce che quasi ogni preventivo e-commerce tiene bassa per sembrare competitivo: i contenuti. Schede prodotto scritte bene, foto vere, testi che vendono e — se esportate — traduzioni da madrelingua. Sembra la parte «facile», ed è invece quella che decide se il negozio converte o resta una vetrina silenziosa. Chi vi vende un e-commerce a poco spesso vi lascia questo conto per dopo, quando scoprite che 300 schede non si scrivono da sole.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Fonti<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">Le cifre e le affermazioni di questo articolo vengono da qui. Sono prime fonti, non riassunti: apritele e verificate.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://almanac.httparchive.org/en/2024/" target="_blank" rel="noopener">HTTP Archive — Web Almanac 2024</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Dati reali su peso, tecnologie e prestazioni dei siti, e-commerce compresi.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=E-commerce_statistics" target="_blank" rel="noopener">Eurostat — statistiche sull’e-commerce</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Quanto vende online l’Europa: il contesto di mercato dietro le cifre di un negozio.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev — Web Vitals</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">La velocità mobile che difendiamo per contratto e che incide sulle vendite.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en" target="_blank" rel="noopener">AccessibleEU — Commissione europea</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Dal 2025 l’accessibilità è un costo-obbligo anche per l’e-commerce: va messo nel preventivo.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:32px"><a href="/prezzi/">Vedi il nostro listino e-commerce, prezzi chiusi →</a></p>

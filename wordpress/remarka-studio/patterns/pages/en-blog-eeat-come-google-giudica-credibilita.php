@@ -32,6 +32,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Beware a widespread misunderstanding: E-E-A-T is not a direct ranking factor, nor a number Google assigns you. It’s a quality framework the human raters use to train the algorithms. Strengthening trust signals helps indirectly; but no tool — not even ours — measures your site’s “real” E-E-A-T. Be wary of anyone who promises it.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">E-E-A-T, Google’s official definition →</a></p>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">The four pillars, with Trust at the center<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -61,6 +64,15 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/eeat-signals/">Measure your homepage’s eight E-E-A-T signals for free →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/services/technical-seo/">An about page, contacts and structured data come standard in technical SEO →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Sources<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">The figures and claims in this article come from here. These are primary sources, not summaries: open them and check for yourself.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">Google — create helpful, reliable content</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The page where Google defines E-E-A-T and explains what it assesses as quality.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener">Google — intro to structured data</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">JSON-LD structured data is one of the easiest identity signals to add.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">Google — AI features and your site</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Why credibility and clarity matter in AI-generated answers too.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:32px"><a href="/en/tools/eeat-signals/">Measure your site’s E-E-A-T signals for free →</a></p>

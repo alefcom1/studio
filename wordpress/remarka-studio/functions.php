@@ -848,6 +848,67 @@ function remarka_checkup_tool_schema(): void {
 add_action( 'wp_head', 'remarka_checkup_tool_schema' );
 
 /**
+ * BlogPosting (JSON-LD) su ogni pagina-articolo del blog, nelle tre lingue
+ * (piano-blog.md, requisito del titolare 15.07). Segue lo stesso schema di
+ * remarka_checkup_tool_schema(): niente duplicazione dell'Organization della
+ * home, niente aggregateRating.
+ *
+ * I dati non testuali (data di pubblicazione, obbligatoria; obbligatoria la
+ * dateModified del ritrofit; immagine di copertina, quando esiste) vengono da
+ * inc/blog-schema-map.php, generato da build-tools/generate_pages.py
+ * (build_blog_schema_map) a partire da BLOG_POSTS + lang.BLOG_SLUGS: una sola
+ * fonte di verità, nessun titolo o data ricopiato a mano. L'headline non sta
+ * nella mappa: usiamo get_the_title(), già localizzato dalla pagina in quella
+ * lingua (RU compreso), così non si duplicano i titoli. author e publisher
+ * sono l'Organization Studio Remarka da remarka_company_lang_data() (nome/URL
+ * per lingua, nessun dato inventato).
+ */
+function remarka_blog_posting_schema(): void {
+	if ( ! is_page() ) {
+		return;
+	}
+	static $map = null;
+	if ( null === $map ) {
+		$map = require get_stylesheet_directory() . '/inc/blog-schema-map.php';
+	}
+	$slug = get_post_field( 'post_name', get_queried_object_id() );
+	if ( ! isset( $map['posts'][ $slug ] ) ) {
+		return;
+	}
+	$entry       = $map['posts'][ $slug ];
+	$lang        = remarka_current_lang();
+	$lang_prefix = 'it' === $lang ? '/' : "/$lang/";
+	$company     = remarka_company_lang_data();
+
+	$organization = array(
+		'@type' => 'Organization',
+		'name'  => $company['name'],
+		'url'   => home_url( $lang_prefix ),
+	);
+
+	$schema = array(
+		'@context'         => 'https://schema.org',
+		'@type'            => 'BlogPosting',
+		'headline'         => wp_strip_all_tags( get_the_title() ),
+		'datePublished'    => $entry['date'],
+		'dateModified'     => $map['_modified'],
+		'inLanguage'       => $lang,
+		'url'              => get_permalink(),
+		'mainEntityOfPage' => array(
+			'@type' => 'WebPage',
+			'@id'   => get_permalink(),
+		),
+		'author'           => $organization,
+		'publisher'        => $organization,
+	);
+	if ( ! empty( $entry['image'] ) ) {
+		$schema['image'] = home_url( $entry['image'] );
+	}
+	echo '<script type="application/ld+json">' . wp_json_encode( $schema ) . '</script>' . "\n";
+}
+add_action( 'wp_head', 'remarka_blog_posting_schema' );
+
+/**
  * ---------- Modulo contatti nativo ----------
  * Shortcode [remarka_form]: nessun plugin, invio via wp_mail.
  * Anti-spam: honeypot + nonce + rate-limit per IP (1 invio/60s, transient).

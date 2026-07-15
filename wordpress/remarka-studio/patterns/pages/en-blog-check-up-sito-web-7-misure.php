@@ -41,6 +41,9 @@
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Performance: how fast the page becomes usable on a phone. It’s the metric that weighs the most, and the one that decides whether visits stay or bolt.</span></div><div><span class="sr-mono">b</span><span>Technical SEO: whether titles, structure and missing data are getting in the way of indexing.</span></div><div><span class="sr-mono">c</span><span>Accessibility: contrast, labels, heading structure — the barriers that since 2025 are also a legal requirement.</span></div><div><span class="sr-mono">d</span><span>Best practices: correct use of HTTPS, images, a clean console and the small signs of technical hygiene.</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">Web Vitals, Google’s definition →</a></p>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">The three metrics we add ourselves<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -58,6 +61,15 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/full-site-checkup/">Run the full check-up, free and with no sign-up →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/services/redesign-migration/">If the foundation needs rebuilding: redesign and migration →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Sources<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">The figures and claims in this article come from here. These are primary sources, not summaries: open them and check for yourself.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev — Web Vitals</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The definition of the speed and experience metrics that weigh most in the check-up.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">Google — helpful, reliable content (E-E-A-T)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The official guide to what Google considers quality: it’s the backdrop to the SEO dimension.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">WCAG 2 — W3C/WAI overview</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The standard behind the accessibility measure, now also a legal requirement in the EU.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://sustainablewebdesign.org/estimating-digital-emissions/" target="_blank" rel="noopener">Sustainable Web Design — emissions estimate</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The model we use to calculate the CO₂ footprint from the real page weight.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developer.chrome.com/docs/crux" target="_blank" rel="noopener">Chrome UX Report (CrUX)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Google’s field data on real users, the basis of the speed metrics.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:32px"><a href="/en/tools/full-site-checkup/">Run your site’s full check-up now — free →</a></p>

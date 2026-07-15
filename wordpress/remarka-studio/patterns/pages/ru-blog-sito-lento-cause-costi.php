@@ -39,13 +39,34 @@
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Когда технический редизайн действительно выгоден<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Если ваш сайт собрал причины 3, 4 и 7 — тяжёлая тема, наслоения плагинов, старая база, — оптимизировать его по кусочку всё равно что менять шины при заклинившем двигателе: каждая работа стоит денег, а результат остаётся посредственным. В таких случаях технический редизайн (тот же контент, новая база, редиректы 301, чтобы не потерять позиции) начинается от € 2.900 и выводит сайт за 90 баллов PageSpeed — по гарантии в договоре, а не по обещанию.</p>
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Если ваш сайт собрал причины 3, 4 и 7 — тяжёлая тема, наслоения плагинов, старая база, — оптимизировать его по кусочку всё равно что менять шины при заклинившем двигателе: каждая работа стоит денег, а результат остаётся посредственным. В таких случаях технический редизайн (тот же контент, новая база, редиректы 301, чтобы не потерять позиции) начинается от € 2 900 и выводит сайт за 90 баллов PageSpeed — по гарантии в договоре, а не по обещанию.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Первый шаг бесплатен в обоих случаях: измерьте сайт нашим тестом скорости или запросите полный анализ — письменный отчёт с причинами, приоритетами и фиксированной сметой.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:32px"><a href="/ru/instrumenty/test-skorosti/">Измерьте свой сайт сейчас — бесплатный тест →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Что сделать сегодня, за полчаса<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Прежде чем тратить хоть евро — измерьте. Вставьте адрес в наш тест скорости и посмотрите две вещи: мобильную оценку и какие ресурсы весят больше всего. В девяти случаях из десяти виновник уже там, в начале списка: горстка огромных изображений, тема, тянущая мегабайты лишнего кода, или медленный хостинг. Знать, какая из семи причин ваша, меняет всё: одни решаются за день, другие требуют переделать базу.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Правило, которое мы повторяем всегда: не верьте «вроде стало быстрее». Замерьте до, поменяйте одно, замерьте после. Число, которое выросло с 41 до 92, убеждает владельца сильнее любого отчёта — и говорит чёрным по белому, что потраченные деньги окупились.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="/ru/instrumenty/test-skorosti/">Измерьте скорость сайта сейчас — бесплатно →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/ru/uslugi/redizajn-i-migracija/">Если база старая: технический редизайн →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Источники<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">Цифры и утверждения этой статьи взяты отсюда. Это первоисточники, а не пересказы: откройте и проверьте.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev — Web Vitals</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Метрики, которыми Google измеряет воспринимаемую скорость страницы.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/lcp" target="_blank" rel="noopener">web.dev — Largest Contentful Paint (LCP)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Что такое LCP и почему изображения и хостинг влияют на него сильнее всего.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://almanac.httparchive.org/en/2024/" target="_blank" rel="noopener">HTTP Archive — Web Almanac 2024</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Сводные данные о весе страниц: где на самом деле сосредоточена медлительность веба.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://sustainablewebdesign.org/estimating-digital-emissions/" target="_blank" rel="noopener">Sustainable Web Design — оценка выбросов</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Модель, по которой вес страницы превращается в углеродный след.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"40px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:40px"><!-- wp:button {"className":"is-style-outline"} -->

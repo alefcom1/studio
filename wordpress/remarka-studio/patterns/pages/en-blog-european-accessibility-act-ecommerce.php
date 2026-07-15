@@ -35,6 +35,9 @@
 <!-- wp:html -->
 <figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/eaa-timeline.svg" alt="Timeline of the European Accessibility Act: EU Directive 2019/882, transposition in Italy, entry into force on 28 June 2025, and a maximum fine of 5%" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">From EU Directive 2019/882 to entry into force in Italy on 28 June 2025. Service micro-enterprises — fewer than 10 people and under € 2M in revenue — are exempt. Sources: AccessibleEU (European Commission) and the Bird & Bird guide.</figcaption></figure>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="https://eur-lex.europa.eu/eli/dir/2019/882/oj" target="_blank" rel="noopener">Directive (EU) 2019/882, the official text on EUR-Lex →</a></p>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">What your e-commerce site really risks under the European Accessibility Act<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -75,7 +78,16 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The good news is that it isn’t an endless job. For a mid-sized e-commerce site, from audit to fixes to statement it’s usually three weeks. Taken in time, the obligation isn’t money down the drain: it’s a site that sells to more people and doesn’t fear the first enforcement letter.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/eaa-compliance/">Want us to fix it? The EAA compliance service, at a fixed price →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/eaa-compliance/">Want us to fix it? The EAA compliance service, at a fixed price →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener">WCAG 2.1 AA, the official W3C criteria →</a></p>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Sources<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:16px;line-height:1.7;max-width:75ch;margin-top:8px">The figures and claims in this article come from here. These are primary sources, not summaries: open them and check for yourself.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://eur-lex.europa.eu/eli/dir/2019/882/oj" target="_blank" rel="noopener">Directive (EU) 2019/882 (EUR-Lex)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The official text of the European Accessibility Act: this is where the obligation comes from.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en" target="_blank" rel="noopener">AccessibleEU — European Commission</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The EU accessibility competence center confirms the entry into force on 28 June 2025.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener">WCAG 2.1 — W3C</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The reference technical standard (level AA): the criteria by which compliance is measured.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://www.twobirds.com/en/insights/2025/a-guide-to-navigating-the-european-accessibility-act-for-online-retailers-service-providers-and-plat" target="_blank" rel="noopener">EAA guide for online commerce — Bird & Bird</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">An international law firm explains the scope, exemptions, and penalties for those selling online.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:32px"><a href="/en/services/eaa-compliance/">EAA compliance: audit, fixes and statement in 3 weeks →</a></p>

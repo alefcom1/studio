@@ -1247,3 +1247,492 @@ BLOG_POSTS = [
                          ('Chi siamo, contatti e dati strutturati sono di serie nella SEO tecnica', '/servizi/seo-tecnica/')]),
          ]),
 ]
+
+# ============================================================================
+# Ретрофит блога 15.07 (piano-blog.md, требования владельца — правила 4 и 4-бис).
+# Отдельный проход по ВСЕМ 13 статьям: (1) внешние авторитетные первоисточники
+# — контекстные ссылки в тексте + блок «Fonti» (≥3 на статью); (2) обогащение
+# содержимого и оживление лидов старых статей до уровня батча 1 (6 коротких
+# статей разворачиваются в полноформатные sezioni). JSON-LD BlogPosting —
+# отдельно (functions.php + inc/blog-schema-map.php). URL проверены
+# (search-index corroboration): только реальные первоисточники, ничего не
+# выдумано. Внешние ссылки → target="_blank" rel="noopener".
+# Все итальянские текстовые узлы, добавленные здесь, имеют EN-пары в
+# chrome_strings.py (CHROME_BLOG_RETROFIT) — конвейер translate_pages.py en
+# закрывается без непереведённых узлов.
+# ----------------------------------------------------------------------------
+
+# --- Bank di prime fonti autorevoli (URL verificati). ---
+_S_EURLEX_EAA   = 'https://eur-lex.europa.eu/eli/dir/2019/882/oj'
+_S_ACCESSIBLEEU = 'https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en'
+_S_WCAG21       = 'https://www.w3.org/TR/WCAG21/'
+_S_WAI_WCAG     = 'https://www.w3.org/WAI/standards-guidelines/wcag/'
+_S_BIRDBIRD_EAA = 'https://www.twobirds.com/en/insights/2025/a-guide-to-navigating-the-european-accessibility-act-for-online-retailers-service-providers-and-plat'
+_S_GARANTE_COOKIE = 'https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677876'
+_S_EDPB_COOKIE  = 'https://www.edpb.europa.eu/our-work-tools/our-documents/other/report-work-undertaken-cookie-banner-taskforce_en'
+_S_GDPR         = 'https://eur-lex.europa.eu/eli/reg/2016/679/oj'
+_S_OPENAI_BOTS  = 'https://platform.openai.com/docs/bots'
+_S_ANTHROPIC    = 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
+_S_LLMSTXT      = 'https://llmstxt.org/'
+_S_GOOGLE_CRAWLERS = 'https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers'
+_S_GOOGLE_HELPFUL  = 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content'
+_S_GOOGLE_SD    = 'https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data'
+_S_GOOGLE_AI    = 'https://developers.google.com/search/docs/appearance/ai-features'
+_S_GOOGLE_SITEMOVE = 'https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes'
+_S_GOOGLE_REDIRECTS = 'https://developers.google.com/search/docs/crawling-indexing/301-redirects'
+_S_GOOGLE_MULTIREG  = 'https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites'
+_S_GOOGLE_HREFLANG  = 'https://developers.google.com/search/docs/specialty/international/localized-versions'
+_S_WEBDEV_VITALS = 'https://web.dev/articles/vitals'
+_S_WEBDEV_LCP    = 'https://web.dev/articles/lcp'
+_S_WEBDEV_INP    = 'https://web.dev/articles/inp'
+_S_WEBDEV_CLS    = 'https://web.dev/articles/cls'
+_S_WEBDEV_PWA    = 'https://web.dev/explore/progressive-web-apps'
+_S_WEBDEV_LEARN_PWA = 'https://web.dev/learn/pwa/'
+_S_MDN_PWA       = 'https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps'
+_S_CRUX          = 'https://developer.chrome.com/docs/crux'
+_S_ALMANAC       = 'https://almanac.httparchive.org/en/2024/'
+_S_SWD           = 'https://sustainablewebdesign.org/estimating-digital-emissions/'
+_S_CSA           = 'https://csa-research.com/Featured-Content/Global-Growth/CRWB-Series/CRWB-B2C'
+_S_EUROSTAT_ECOM = 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=E-commerce_statistics'
+
+# --- Blocchi «Fonti» per articolo (etichetta, URL, frase di contesto). ---
+_BLOG_FONTI = {
+    'european-accessibility-act-ecommerce': [
+        ('Direttiva (UE) 2019/882 (EUR-Lex)', _S_EURLEX_EAA,
+         'Il testo ufficiale dell’European Accessibility Act: da qui nasce l’obbligo.'),
+        ('AccessibleEU — Commissione europea', _S_ACCESSIBLEEU,
+         'Il centro di competenza UE sull’accessibilità conferma l’entrata in vigore del 28 giugno 2025.'),
+        ('WCAG 2.1 — W3C', _S_WCAG21,
+         'Lo standard tecnico di riferimento (livello AA): i criteri con cui si misura la conformità.'),
+        ('Guida EAA per il commercio online — Bird & Bird', _S_BIRDBIRD_EAA,
+         'Uno studio legale internazionale spiega perimetro, esenzioni e sanzioni per chi vende online.'),
+    ],
+    'llms-txt-cos-e': [
+        ('La proposta llms.txt (llmstxt.org)', _S_LLMSTXT,
+         'La specifica originale del formato: cosa contiene un file llms.txt e a cosa serve.'),
+        ('OpenAI — panoramica dei crawler', _S_OPENAI_BOTS,
+         'La documentazione ufficiale su GPTBot e sugli altri bot di OpenAI, con le regole robots.txt.'),
+        ('Anthropic — ClaudeBot e come bloccarlo', _S_ANTHROPIC,
+         'Come Anthropic dichiara il proprio crawler e come i siti possono consentirlo o escluderlo.'),
+        ('Google — panoramica dei crawler (Google-Extended)', _S_GOOGLE_CRAWLERS,
+         'L’elenco ufficiale degli user-agent Google, incluso Google-Extended per gli usi AI.'),
+    ],
+    'farsi-trovare-da-chatgpt-geo': [
+        ('Google — le funzionalità AI e il vostro sito', _S_GOOGLE_AI,
+         'Come Google usa i contenuti del web nelle risposte generative e cosa possono fare i siti.'),
+        ('OpenAI — panoramica dei crawler', _S_OPENAI_BOTS,
+         'Se GPTBot non può leggervi, ChatGPT non può citarvi: qui le regole di accesso.'),
+        ('Anthropic — ClaudeBot e come gestirlo', _S_ANTHROPIC,
+         'La stessa logica per Claude: l’accesso del crawler è il presupposto della citabilità.'),
+        ('Google — introduzione ai dati strutturati', _S_GOOGLE_SD,
+         'I dati strutturati JSON-LD aiutano macchine e modelli a capire chi siete e cosa offrite.'),
+    ],
+    'check-up-sito-web-7-misure': [
+        ('web.dev — Web Vitals', _S_WEBDEV_VITALS,
+         'La definizione delle metriche di velocità ed esperienza che pesano di più nel check-up.'),
+        ('Google — contenuti utili e affidabili (E-E-A-T)', _S_GOOGLE_HELPFUL,
+         'La guida ufficiale a cosa Google considera qualità: è lo sfondo della dimensione SEO.'),
+        ('WCAG 2 — panoramica W3C/WAI', _S_WAI_WCAG,
+         'Lo standard dietro la misura di accessibilità, oggi anche obbligo di legge nell’UE.'),
+        ('Sustainable Web Design — stima delle emissioni', _S_SWD,
+         'Il modello con cui calcoliamo l’impronta di CO₂ dal peso reale della pagina.'),
+        ('Chrome UX Report (CrUX)', _S_CRUX,
+         'I dati di campo di Google sugli utenti reali, alla base delle metriche di velocità.'),
+    ],
+    'eeat-come-google-giudica-credibilita': [
+        ('Google — creare contenuti utili e affidabili', _S_GOOGLE_HELPFUL,
+         'La pagina dove Google definisce l’E-E-A-T e spiega cosa valuta nella qualità.'),
+        ('Google — introduzione ai dati strutturati', _S_GOOGLE_SD,
+         'I dati strutturati JSON-LD sono uno dei segnali di identità più facili da aggiungere.'),
+        ('Google — le funzionalità AI e il vostro sito', _S_GOOGLE_AI,
+         'Perché credibilità e chiarezza contano anche nelle risposte generate dall’AI.'),
+    ],
+    'quanto-costa-ecommerce-italia': [
+        ('HTTP Archive — Web Almanac 2024', _S_ALMANAC,
+         'Dati reali su peso, tecnologie e prestazioni dei siti, e-commerce compresi.'),
+        ('Eurostat — statistiche sull’e-commerce', _S_EUROSTAT_ECOM,
+         'Quanto vende online l’Europa: il contesto di mercato dietro le cifre di un negozio.'),
+        ('web.dev — Web Vitals', _S_WEBDEV_VITALS,
+         'La velocità mobile che difendiamo per contratto e che incide sulle vendite.'),
+        ('AccessibleEU — Commissione europea', _S_ACCESSIBLEEU,
+         'Dal 2025 l’accessibilità è un costo-obbligo anche per l’e-commerce: va messo nel preventivo.'),
+    ],
+    'sito-lento-cause-costi': [
+        ('web.dev — Web Vitals', _S_WEBDEV_VITALS,
+         'Le metriche con cui Google misura la velocità percepita di una pagina.'),
+        ('web.dev — Largest Contentful Paint (LCP)', _S_WEBDEV_LCP,
+         'Cos’è l’LCP e perché immagini e hosting lo spostano più di ogni altra cosa.'),
+        ('HTTP Archive — Web Almanac 2024', _S_ALMANAC,
+         'Dati aggregati sul peso delle pagine: dove si concentra davvero la lentezza del web.'),
+        ('Chrome UX Report (CrUX)', _S_CRUX,
+         'I dati di campo che distinguono un sito «che sembra veloce» da uno veloce davvero.'),
+    ],
+    'sito-quattro-lingue-costi-tempi': [
+        ('CSA Research — «Can’t Read, Won’t Buy»', _S_CSA,
+         'Lo studio classico: la maggioranza dei consumatori compra solo nella propria lingua.'),
+        ('Google — siti multi-regionali e multilingue', _S_GOOGLE_MULTIREG,
+         'La guida ufficiale a come strutturare un sito per più Paesi e più lingue.'),
+        ('Google — versioni localizzate e hreflang', _S_GOOGLE_HREFLANG,
+         'Come dire a Google quale versione linguistica mostrare a chi: dettaglio tecnico che conta.'),
+        ('Eurostat — statistiche sull’e-commerce', _S_EUROSTAT_ECOM,
+         'Il peso dell’e-commerce transfrontaliero in Europa, il mercato che una versione estera apre.'),
+    ],
+    'cookie-banner-checklist-garante-2026': [
+        ('Garante Privacy — linee guida sui cookie', _S_GARANTE_COOKIE,
+         'Le regole italiane su banner e consenso: la fonte diretta della checklist.'),
+        ('EDPB — report della cookie banner taskforce', _S_EDPB_COOKIE,
+         'Il documento europeo che uniforma cosa è lecito e cosa no in un banner.'),
+        ('Regolamento (UE) 2016/679 — GDPR (EUR-Lex)', _S_GDPR,
+         'Il testo del GDPR: la base giuridica di consenso libero, specifico e documentabile.'),
+    ],
+    'migrare-wordpress-senza-perdere-seo': [
+        ('Google — spostamenti del sito con cambio di URL', _S_GOOGLE_SITEMOVE,
+         'La procedura ufficiale per una migrazione che non perde posizioni.'),
+        ('Google — redirect e ricerca Google', _S_GOOGLE_REDIRECTS,
+         'Come impostare i redirect 301 perché Google trasferisca il valore delle vecchie pagine.'),
+        ('web.dev — Web Vitals', _S_WEBDEV_VITALS,
+         'Dopo la migrazione la velocità va rimisurata: sono le metriche che Google guarda.'),
+    ],
+    'pwa-per-pmi-quando-app-non-serve': [
+        ('web.dev — Progressive Web Apps', _S_WEBDEV_PWA,
+         'Cos’è una PWA e cosa la distingue da un sito normale e da un’app nativa.'),
+        ('MDN — Progressive Web Apps', _S_MDN_PWA,
+         'La documentazione tecnica di riferimento su installabilità, offline e notifiche.'),
+        ('web.dev — Learn PWA', _S_WEBDEV_LEARN_PWA,
+         'Il corso di Google che spiega, passo per passo, come funziona una PWA.'),
+    ],
+    'quanto-costa-sito-aziendale-italia': [
+        ('HTTP Archive — Web Almanac 2024', _S_ALMANAC,
+         'Dati reali su come è fatto il web oggi: utile per capire cosa si paga davvero.'),
+        ('Eurostat — statistiche sull’economia digitale', _S_EUROSTAT_ECOM,
+         'Il contesto europeo in cui un sito aziendale deve rendere.'),
+        ('web.dev — Web Vitals', _S_WEBDEV_VITALS,
+         'La velocità mobile che garantiamo per contratto: la differenza tra le fasce di prezzo.'),
+        ('AccessibleEU — Commissione europea', _S_ACCESSIBLEEU,
+         'Dal 2025 l’accessibilità è un requisito, non un extra: va considerata nel budget.'),
+    ],
+    'core-web-vitals-2026': [
+        ('web.dev — Web Vitals', _S_WEBDEV_VITALS,
+         'La pagina di Google che introduce e definisce i Core Web Vitals.'),
+        ('web.dev — Largest Contentful Paint (LCP)', _S_WEBDEV_LCP,
+         'La metrica di caricamento: soglia buona sotto 2,5 secondi.'),
+        ('web.dev — Interaction to Next Paint (INP)', _S_WEBDEV_INP,
+         'La metrica di reattività che dal 2024 ha sostituito il vecchio FID.'),
+        ('web.dev — Cumulative Layout Shift (CLS)', _S_WEBDEV_CLS,
+         'La metrica di stabilità visiva: soglia buona sotto 0,1.'),
+        ('Chrome UX Report (CrUX)', _S_CRUX,
+         'I dati di campo su utenti reali, quelli che Google usa davvero per posizionarvi.'),
+    ],
+}
+
+# --- Link contestuali esterni da agganciare a sezioni già esistenti
+#     (articoli batch 1 + i due articoli «Mese 1»): {slug: {indice_sez: [(label,url)]}}. ---
+_BLOG_EXT_LINKS = {
+    'european-accessibility-act-ecommerce': {
+        0: [('Direttiva (UE) 2019/882, il testo ufficiale su EUR-Lex', _S_EURLEX_EAA)],
+        4: [('WCAG 2.1 AA, i criteri ufficiali del W3C', _S_WCAG21)],
+    },
+    'llms-txt-cos-e': {
+        0: [('La specifica llms.txt su llmstxt.org', _S_LLMSTXT)],
+    },
+    'farsi-trovare-da-chatgpt-geo': {
+        0: [('Come Google usa i contenuti nelle risposte AI', _S_GOOGLE_AI)],
+    },
+    'check-up-sito-web-7-misure': {
+        1: [('Web Vitals, la definizione di Google', _S_WEBDEV_VITALS)],
+    },
+    'eeat-come-google-giudica-credibilita': {
+        0: [('E-E-A-T, la definizione ufficiale di Google', _S_GOOGLE_HELPFUL)],
+    },
+    'quanto-costa-ecommerce-italia': {
+        0: [('Dati di mercato reali: Web Almanac 2024 di HTTP Archive', _S_ALMANAC)],
+    },
+    'sito-lento-cause-costi': {
+        1: [('Perché la velocità mobile conta: Web Vitals', _S_WEBDEV_VITALS)],
+    },
+}
+
+# --- Lead ravvivati (scena, «voi», numeri) per le 6 vecchie schede brevi.
+#     Fatti e slug invariati: cambiano solo apertura e tono, al livello del
+#     batch 1. Il vecchio `corpo` diventa questo, più ricco. ---
+_BLOG_LEAD_NEW = {
+    'core-web-vitals-2026':
+        "Il titolare di un’officina apre il sito dal telefono, in pausa pranzo, sotto rete mobile: conta i secondi, sbuffa, chiude. Non era un cliente vero, era lui — ma il gesto è identico a quello di chi vi cercava sul serio e se n’è andato. LCP, INP e CLS sono le tre sigle con cui Google misura proprio quel momento, e con cui decide chi mostrare per primo nella ricerca da mobile. Le spieghiamo senza gergo, con esempi di negozi e officine e non di startup, e vi diciamo perché il punteggio desktop — su cui molte agenzie insistono ancora — non conta quasi più nulla.",
+    'quanto-costa-sito-aziendale-italia':
+        "«Mi hanno chiesto 900 euro e mi hanno chiesto 12.000 per la stessa cosa. Chi mi sta prendendo in giro?» Nessuno dei due, quasi sempre: è che «un sito aziendale» in Italia vuol dire dieci prodotti diversi con lo stesso nome. Il mercato va dagli 800 euro dei costruttori fai-da-te ai 50.000 delle grandi agenzie, e nessuno vi spiega davvero cosa cambia in mezzo. In questo articolo mettiamo una mappa onesta sotto ogni fascia di prezzo — incluso il nostro — e le domande da fare prima di firmare qualunque preventivo.",
+    'pwa-per-pmi-quando-app-non-serve':
+        "«Ci serve un’app.» Nove volte su dieci, quando ce lo sentiamo dire, la risposta onesta è: forse no. Un’app nativa costa in media 15.000–30.000 euro, va mantenuta due volte — iOS e Android — e ogni aggiornamento passa dalla revisione degli store. Una PWA, cioè un sito «progressivo», si installa sul telefono, funziona offline e manda notifiche a una frazione di quel costo. Vediamo i tre casi in cui a una PMI conviene davvero, e i due in cui invece un’app nativa serve ancora.",
+    'cookie-banner-checklist-garante-2026':
+        "Aprite dieci siti italiani a caso e contate: in almeno sette il pulsante «Rifiuta» è nascosto, minuscolo o non c’è proprio. È esattamente il punto su cui il Garante Privacy ha smesso di chiudere un occhio. La regola è semplice — «Rifiuta» deve pesare quanto «Accetta», il consenso dev’essere documentabile — ma è ignorata dalla maggioranza dei banner che analizziamo. Ecco la checklist punto per punto che usiamo per verificare un sito, e come costruiamo i nostri banner perché siano a norma dal primo giorno.",
+    'migrare-wordpress-senza-perdere-seo':
+        "C’è un momento, in ogni rifacimento, in cui il sito nuovo va online e quello vecchio sparisce. Se qualcuno ha sbagliato i redirect, in quel momento spariscono anche anni di posizionamento su Google — e ve ne accorgete due settimane dopo, quando le richieste calano e nessuno sa perché. Migrare da WordPress senza perdere le posizioni non è fortuna: è un protocollo. Vi mostriamo l’audit, la mappa degli URL e i redirect 301 che applichiamo prima di ogni migrazione, cosa monitoriamo nelle prime sei settimane e un caso in cui il traffico non si è mosso di un punto.",
+    'sito-quattro-lingue-costi-tempi':
+        "Un cliente tedesco apre la vostra scheda prodotto tradotta con l’automatico, legge una frase che nella sua lingua suona goffa, e chiude: non ha pensato «traduzione sbagliata», ha pensato «azienda poco seria». È così che un errore di registro costa un ordine prima ancora di una mail. La traduzione automatica basta per un menù o un orario; non basta dove si vende. In questo articolo: quando conviene l’automatico, quando serve un madrelingua, e cosa cambia davvero nei costi e nei tempi per lingua, con un caso reale di export verso la Germania.",
+}
+
+# --- Sezioni complete per le 6 schede brevi: le portano a 1000–1500 parole,
+#     con la vivacità del batch 1. Niente <strong> nelle voci di lista (un
+#     nodo di testo per voce, traduzione pulita). Link interni + esterni
+#     contestuali dentro le sezioni; il blocco «Fonti» è aggiunto a parte. ---
+_BLOG_SEZIONI_NEW = {
+    'core-web-vitals-2026': [
+        dict(titolo='LCP, INP e CLS: le tre sigle, tradotte',
+             paragrafi=[
+                 "LCP (Largest Contentful Paint) misura quanto tempo passa prima che compaia il contenuto più grande della pagina — di solito la foto di apertura o il titolo. È la domanda «quanto devo aspettare per vedere qualcosa di utile?». Sotto i 2,5 secondi è considerato buono; sopra i 4, la maggior parte delle persone ha già valutato se restare. Per un negozio di mobili, l’LCP è la prima fotografia del divano; per un’officina, il numero di telefono in alto.",
+                 "INP (Interaction to Next Paint) misura la reattività: tocco un pulsante, quanto ci mette il sito a rispondere? Dal 2024 ha sostituito il vecchio FID come metrica ufficiale, ed è la più sottovalutata. CLS (Cumulative Layout Shift) misura invece la stabilità: quante volte, mentre la pagina carica, gli elementi «saltano» e vi fanno cliccare la cosa sbagliata. Chi ha provato a premere «Aggiungi al carrello» e ha comprato un altro prodotto perché la pagina si è mossa sa esattamente di cosa parliamo.",
+             ]),
+        dict(titolo='Perché il punteggio mobile è l’unico che conta',
+             paragrafi=[
+                 "Molte agenzie mostrano ancora con orgoglio il punteggio desktop: 98, verde brillante, complimenti. Peccato che Google indicizzi e posizioni i siti in versione mobile da anni, e che i vostri clienti vi cerchino dal telefono, spesso sotto rete lenta e con dieci schede aperte. Il punteggio che conta è quello mobile, misurato in quelle condizioni — non quello desktop preso in ufficio con la fibra.",
+                 "Ecco perché nei nostri contratti la soglia è una sola e chiara: PageSpeed 90+ su mobile, garantito per iscritto. Non «faremo il possibile»: un numero, verificabile da chiunque con lo stesso strumento pubblico di Google.",
+             ]),
+        dict(titolo='Dati di laboratorio o dati reali: la differenza che cambia tutto',
+             paragrafi=[
+                 "C’è un equivoco che rovina metà delle discussioni sui Core Web Vitals. Esistono due tipi di misura: i dati di laboratorio (Lighthouse simula un caricamento in condizioni controllate) e i dati di campo (il Chrome UX Report raccoglie i tempi reali degli utenti veri, con i loro telefoni e le loro reti). Google, per posizionarvi, guarda i dati di campo. Un sito può segnare 95 in laboratorio e arrancare sul campo, perché i vostri clienti non hanno tutti l’iPhone nuovo e la fibra.",
+             ],
+             lista=[
+                 'Misurate su mobile, non su desktop: è la versione che Google usa per posizionarvi.',
+                 'Guardate i dati di campo (CrUX), non solo il punteggio istantaneo di laboratorio.',
+                 'Trattate LCP, INP e CLS come tre problemi diversi: si risolvono con interventi diversi.',
+                 'Ricontrollate dopo ogni modifica pesante: un plugin o uno slider nuovo possono buttare giù tutto.',
+             ]),
+        dict(titolo='Cosa fare oggi, in mezz’ora',
+             paragrafi=[
+                 "Non serve un progetto per iniziare a capire come siete messi. Incollate l’indirizzo nel nostro test di velocità e leggete i tre valori: se l’LCP è alto, quasi sempre il colpevole sono immagini pesanti o un hosting lento; se salta il CLS, mancano le dimensioni fissate su immagini e banner; se l’INP è alto, c’è troppo codice di terze parti che blocca il telefono. Da lì sapete se basta una giornata di ottimizzazione o se conviene rifare la base — e in entrambi i casi partite da un numero, non da una sensazione.",
+             ],
+             links=[('Misura ora i Core Web Vitals del tuo sito — gratis', '/strumenti/test-velocita/'),
+                    ('Sito lento? Le 7 cause reali e quanto costa sistemarle', '/blog/sito-lento-cause-costi/')]),
+    ],
+    'quanto-costa-sito-aziendale-italia': [
+        dict(titolo='Le fasce di prezzo, senza giri di parole',
+             paragrafi=[
+                 "Sotto i 1.000 euro si comprano quasi sempre template montati in fretta: un costruttore fai-da-te o un conoscente «che sa fare i siti». Funzionano finché non vi serve modificarli, posizionarli o farli caricare in fretta su mobile. Nella fascia 2.500–8.000 euro sta il grosso del mercato professionale italiano: design su misura, CMS per aggiornare da soli, SEO tecnica, più lingue. Sopra i 15.000 si va verso strutture complesse, integrazioni con gestionali e progetti multi-sede.",
+                 "Il nostro listino per il sito aziendale sta nella fascia centrale — € 3.900–5.800, prezzo chiuso nel preventivo — con due voci che altrove raramente trovate nero su bianco: PageSpeed 90+ garantito e data di consegna con penale dell’1% per ogni giorno lavorativo di ritardo.",
+             ]),
+        dict(titolo='Cosa cambia davvero tra una fascia e l’altra',
+             paragrafi=[
+                 "Il prezzo non lo fa il numero di pagine: lo fanno tre cose. La prima è il design — un tema comprato e riempito costa un decimo di un’interfaccia disegnata sui vostri contenuti, e si vede. La seconda è la base tecnica: un sito che carica in un secondo su mobile richiede lavoro che un template non fa da solo. La terza sono i contenuti veri — testi scritti, foto fatte, traduzioni da madrelingua — che sono spesso la parte che manca nei preventivi troppo bassi, e che poi vi ritrovate a pagare a parte.",
+             ]),
+        dict(titolo='Le domande da fare prima di firmare',
+             paragrafi=[
+                 "Un preventivo onesto risponde a queste domande senza esitare. Se chi avete davanti si innervosisce, avete già un’informazione.",
+             ],
+             lista=[
+                 'Il prezzo è chiuso o «indicativo»? Cosa succede se in corso d’opera emergono lavori aggiuntivi?',
+                 'La data di consegna è scritta nel contratto? Con quale penale in caso di ritardo?',
+                 'Chi possiede dominio, codice e contenuti dopo la consegna: io o voi?',
+                 'La velocità su mobile è garantita con un numero, o è solo una promessa a voce?',
+                 'L’assistenza dopo il lancio è inclusa, per quanto tempo, e cosa copre esattamente?',
+             ]),
+        dict(titolo='Un requisito nuovo che nessuno mette a preventivo',
+             paragrafi=[
+                 "Dal 28 giugno 2025 l’accessibilità dei siti che vendono ai consumatori è un obbligo di legge europeo, non un abbellimento. Un preventivo che non ne parla o è vecchio, o vi lascia il conto per dopo. Nel nostro caso lo standard WCAG 2.1 AA è parte del lavoro, non un extra a sorpresa: preferiamo dirlo prima, in cifre, che scoprirlo insieme davanti a una segnalazione.",
+             ],
+             links=[('Confronta prezzi e tempi, accanto a quelli di mercato', '/prezzi/'),
+                    ('Cosa include davvero un sito aziendale', '/servizi/siti-aziendali/')]),
+    ],
+    'pwa-per-pmi-quando-app-non-serve': [
+        dict(titolo='Cos’è una PWA, senza gergo',
+             paragrafi=[
+                 "PWA sta per Progressive Web App: è un sito web normale, che si apre nel browser, ma costruito in modo da comportarsi come un’app. La persona che lo visita può «installarlo» sullo schermo del telefono con un tocco, senza passare dallo store; da lì si apre a tutto schermo, funziona anche con rete debole o assente, e — dove serve — manda notifiche. Niente download da 80 MB, niente recensione di Apple o Google da aspettare: è il vostro sito, con i superpoteri giusti.",
+             ]),
+        dict(titolo='I tre casi in cui conviene davvero',
+             paragrafi=[
+                 "Una PWA non è la risposta a tutto. Ma in questi tre casi, per una PMI, è quasi sempre la scelta giusta — più economica e più veloce da mantenere di un’app nativa.",
+             ],
+             lista=[
+                 'Serve una scorciatoia sul telefono del cliente abituale: un ristorante che prende prenotazioni, un negozio con un catalogo che si consulta spesso.',
+                 'I clienti usano il sito anche dove la rete è ballerina: fiere, magazzini, cantieri, zone di campagna.',
+                 'Il budget non regge due app separate per iOS e Android più la loro manutenzione: la PWA è una sola, e vive dove vive il sito.',
+             ]),
+        dict(titolo='I due casi in cui serve ancora un’app nativa',
+             paragrafi=[
+                 "Onestà prima di tutto: a volte l’app nativa serve davvero. Il primo caso è quando il prodotto vive di funzioni profonde del telefono — fotocamera avanzata, sensori, elaborazione pesante offline, giochi. Il secondo è quando la presenza nello store è essa stessa un canale di vendita e di fiducia, e i clienti si aspettano di trovarvi lì. Fuori da questi due casi, un’app nativa è spesso un costo di prestigio che una PWA copre con meno soldi e meno grattacapi.",
+             ]),
+        dict(titolo='Quanto si risparmia, in numeri',
+             paragrafi=[
+                 "Un’app nativa richiede due basi di codice, due pubblicazioni, due cicli di aggiornamento e le commissioni degli store: è per questo che parte da 15.000 euro e non smette più di costare. Una PWA parte dallo stesso sito che già vi serve, aggiunge le funzioni progressive e vive di un solo aggiornamento per tutti. Il consiglio pratico: prima di firmare per un’app, chiedetevi quali funzioni «da app» vi servono davvero. Spesso la risposta sta comodamente dentro una PWA — e i soldi risparmiati diventano contenuti e pubblicità.",
+             ],
+             links=[('Come realizziamo i siti PWA', '/servizi/siti-pwa/'),
+                    ('Quando invece serve una web app su misura', '/servizi/web-app/')]),
+    ],
+    'cookie-banner-checklist-garante-2026': [
+        dict(titolo='Le regole del Garante, in chiaro',
+             paragrafi=[
+                 "Il principio è uno solo: il consenso ai cookie non necessari dev’essere una scelta libera. Da qui discendono le regole pratiche del Garante e delle linee guida europee. «Rifiuta» deve avere lo stesso peso visivo di «Accetta»: stesso colore, stesse dimensioni, stessa distanza dal dito. Chiudere il banner con la X equivale a rifiutare, non ad accettare. Nessun cookie di profilazione può partire prima che la persona abbia detto sì. E il consenso va conservato, così da poterlo dimostrare se qualcuno lo chiede.",
+             ]),
+        dict(titolo='La checklist, punto per punto',
+             paragrafi=[
+                 "Questi sono i controlli che facciamo su ogni sito prima di dire se il banner è a norma. Passateli sul vostro: bastano cinque minuti.",
+             ],
+             lista=[
+                 'Il pulsante «Rifiuta» è visibile al primo colpo, con lo stesso peso di «Accetta».',
+                 'Nessuno script di tracciamento (Google Analytics, pixel, mappe) parte prima del consenso.',
+                 'Chiudere il banner o navigare senza scegliere non vale come consenso.',
+                 'Esiste un modo semplice per cambiare idea dopo: un link «preferenze cookie» sempre raggiungibile.',
+                 'C’è una cookie policy chiara, che elenca i cookie e le loro finalità.',
+                 'Il consenso viene registrato e resta documentabile nel tempo.',
+             ]),
+        dict(titolo='Gli errori che troviamo più spesso',
+             paragrafi=[
+                 "Tre errori tornano quasi sempre. Il primo: il banner con solo «Accetta» ben visibile e il rifiuto sepolto in un sottomenu — è la violazione più comune e la più facile da contestare. Il secondo: gli analytics che partono al caricamento, prima di qualunque clic, perché installati «al volo» anni fa e mai più toccati. Il terzo: il cookie wall, cioè «accetta o non entri», che salvo casi rari non è una scelta libera e quindi non è un consenso valido.",
+             ]),
+        dict(titolo='Come costruiamo un banner a norma',
+             paragrafi=[
+                 "Nei nostri siti il banner nasce già conforme: due pulsanti di pari peso, nessuno script prima del consenso, preferenze modificabili in ogni momento e registro dei consensi. Non è un plugin incollato all’ultimo, è parte del progetto. E se avete già un sito, la verifica è il primo passo: il nostro controllo indicativo vi dice in un minuto se banner, policy e tracker sono a posto — poi, se serve, si sistema.",
+             ],
+             links=[('Controlla gratis cookie e tracker del tuo sito', '/strumenti/check-gdpr/'),
+                    ('Privacy e conformità sono parte della SEO tecnica', '/servizi/seo-tecnica/')]),
+    ],
+    'migrare-wordpress-senza-perdere-seo': [
+        dict(titolo='Cosa si rischia davvero in una migrazione',
+             paragrafi=[
+                 "Google conosce le vostre pagine con i loro indirizzi attuali. Cambiate struttura, dominio o piattaforma senza dirglielo nel modo giusto, e per Google metà del sito «è sparita»: le vecchie pagine restituiscono errore, le posizioni guadagnate in anni evaporano, e il traffico organico cala proprio mentre festeggiate il sito nuovo. Non è una maledizione tecnica: è quasi sempre la conseguenza di redirect mancanti o sbagliati.",
+             ]),
+        dict(titolo='Il protocollo prima del cambio',
+             paragrafi=[
+                 "Una migrazione sicura si prepara prima di toccare qualsiasi cosa. Il lavoro vero è qui, non il giorno del lancio.",
+             ],
+             lista=[
+                 'Audit del sito attuale: quali pagine portano traffico e posizioni, quali link puntano al sito.',
+                 'Mappa degli URL: ogni vecchio indirizzo abbinato al suo nuovo, senza lasciare pagine orfane.',
+                 'Redirect 301 uno-a-uno: ogni vecchia pagina rimanda a quella nuova equivalente, non tutte alla home.',
+                 'Controllo di sitemap, canonical e dati strutturati sul sito nuovo, prima di pubblicare.',
+                 'Piano di rollback: se qualcosa va storto, si torna indietro in minuti, non in giorni.',
+             ]),
+        dict(titolo='Le prime sei settimane dopo',
+             paragrafi=[
+                 "Il lancio non è la fine, è l’inizio del monitoraggio. Nelle prime sei settimane Google riscansiona il sito e ricalcola le posizioni: è normale un piccolo assestamento, non è normale un crollo. Teniamo d’occhio gli errori di scansione, le pagine che perdono posizioni, i redirect che non funzionano, e correggiamo in giornata. È la differenza tra un calo di tre giorni e un problema che si trascina per mesi.",
+             ]),
+        dict(titolo='Un caso reale',
+             paragrafi=[
+                 "Su un sito con anni di posizionamento locale, la migrazione a una base tecnica nuova è passata con il traffico organico invariato: stesse posizioni, stessi contatti, più velocità. Nessun miracolo — solo il protocollo, applicato con pazienza. Se state pensando a un rifacimento o a un cambio di piattaforma, il momento per parlarne è prima, non dopo il primo calo.",
+             ],
+             links=[('Restyling e migrazione senza perdere posizioni', '/servizi/restyling-migrazione/'),
+                    ('Fai il check-up del sito prima di migrare', '/strumenti/check-up-completo/')]),
+    ],
+    'sito-quattro-lingue-costi-tempi': [
+        dict(titolo='Quando la traduzione automatica basta (e quando no)',
+             paragrafi=[
+                 "La traduzione automatica di oggi è ottima per capire e farsi capire su cose semplici: un orario, un indirizzo, la descrizione neutra di un servizio. Se il vostro obiettivo è che un turista trovi il numero di telefono, va benissimo. Il problema nasce dove le parole vendono: una scheda prodotto tecnica, una pagina che deve convincere, un testo dove il tono conta quanto il contenuto. Lì l’automatico produce frasi «giuste ma spente», e a volte errori di registro che, nella lingua del cliente, suonano goffi o poco professionali.",
+             ]),
+        dict(titolo='Cosa cambia nei costi e nei tempi, per lingua',
+             paragrafi=[
+                 "Aggiungere una lingua non è schiacciare un pulsante «traduci». È tradurre i testi con un madrelingua, adattare quelli di vendita, tradurre anche ciò che non si vede — titoli, descrizioni per Google, messaggi di errore — e impostare i segnali tecnici (hreflang) che dicono al motore quale versione mostrare a chi. Il costo cresce con le parole reali da lavorare, non con il numero di bandierine; i tempi, con il numero di pagine che devono davvero convincere, non solo informare.",
+             ]),
+        dict(titolo='L’errore che costa clienti: tradurre senza localizzare',
+             paragrafi=[
+                 "Tradurre è cambiare le parole; localizzare è cambiare ciò che serve perché il messaggio funzioni in quel mercato. Un prezzo con la valuta giusta, una data nel formato locale, un esempio che in Germania si capisce e in Italia no, un tono più diretto o più formale a seconda del Paese. Uno studio classico di CSA Research lo dice da anni con un titolo che è già una tesi: «Can’t Read, Won’t Buy» — se non lo leggo nella mia lingua, non lo compro. Vale ancora, e vale soprattutto dove c’è un carrello.",
+             ]),
+        dict(titolo='Un caso di export in Germania',
+             paragrafi=[
+                 "Per Cantina Serralta, ad Asti, il catalogo tradotto e adattato in tre lingue con un checkout in un solo passaggio ha portato +63% di vendite dirette in un anno. Non è stata la traduzione da sola: è stata la traduzione fatta da chi vende, unita a un sito veloce e a un percorso d’acquisto pulito. È esattamente il modello del nostro servizio Export Ready — il sito e la sua versione estera sotto un unico contratto, con redattori madrelingua.",
+             ],
+             links=[('Siti multilingue con redattori madrelingua', '/servizi/siti-multilingue/'),
+                    ('Calcola il ROI di una versione estera del sito', '/strumenti/roi-localizzazione/')]),
+    ],
+}
+
+# --- CTA per le schede brevi che non ne avevano una. ---
+_BLOG_CTA_NEW = {
+    'core-web-vitals-2026': ('Misura i Core Web Vitals del tuo sito — gratis', '/strumenti/test-velocita/'),
+    'quanto-costa-sito-aziendale-italia': ('Vedi il nostro listino, a prezzo chiuso', '/prezzi/'),
+    'pwa-per-pmi-quando-app-non-serve': ('Scopri i siti PWA di Studio Remarka', '/servizi/siti-pwa/'),
+    'cookie-banner-checklist-garante-2026': ('Controlla gratis il tuo cookie banner', '/strumenti/check-gdpr/'),
+    'migrare-wordpress-senza-perdere-seo': ('Parliamo della tua migrazione: restyling e migrazione', '/servizi/restyling-migrazione/'),
+    'sito-quattro-lingue-costi-tempi': ('Scopri i siti multilingue di Studio Remarka', '/servizi/siti-multilingue/'),
+}
+
+# --- Merge: applica lead, sezioni, CTA, link esterni contestuali e Fonti
+#     ai dict di BLOG_POSTS (per slug). Ordine: prima il contenuto, poi i
+#     link esterni sulle sezioni, infine le fonti (lette da build_blog_post). ---
+# --- Paragrafi extra (concretezza, esempi, errori tipici): portano le schede
+#     brevi verso le 900–1000 parole senza acqua. {slug: {indice_sez: [par]}}. ---
+_BLOG_SEZIONI_EXTEND = {
+    'quanto-costa-sito-aziendale-italia': {
+        1: [
+            "Un esempio concreto di cosa si nasconde nella parola «pagine». Due preventivi dicono entrambi «sito da 15 pagine»: uno intende 15 pagine con testi già pronti da impaginare, l’altro 15 pagine da progettare, scrivere e fotografare. Il secondo costa il doppio e vale il triplo, ma sul foglio sembrano identici. È qui che nasce metà dei «mi hanno chiesto il doppio per la stessa cosa».",
+        ],
+        3: [
+            "La differenza tra fasce, alla fine, è tutta qui: cosa è garantito per iscritto e cosa è lasciato alla buona volontà. Un template a 800 euro non vi promette una velocità, una data, un obbligo di legge rispettato; un progetto serio sì. Non comprate pagine, comprate promesse mantenibili: ed è su quelle che va letto il prezzo.",
+        ],
+    },
+    'pwa-per-pmi-quando-app-non-serve': {
+        1: [
+            "Un caso tipico dal nostro registro: un’officina che riceve prenotazioni. Con una PWA, il cliente abituale «installa» il sito sul telefono, lo apre con un tocco come un’app, prenota anche dal parcheggio dove la rete balla — e all’officina non è costato un secondo progetto da mantenere. La stessa cosa con un’app nativa avrebbe richiesto due sviluppi, due pubblicazioni e un canone che quella officina non avrebbe mai ripagato.",
+        ],
+        3: [
+            "Un test pratico prima di decidere: elencate le tre cose che l’app «dovrebbe fare». Se sono aprirsi in fretta, funzionare offline, stare sullo schermo e mandare una notifica, siete in territorio PWA. Se invece serve la fotocamera con riconoscimenti, i pagamenti dentro lo store o funzioni hardware profonde, allora l’app nativa ha senso. Il costo di sbagliare questa scelta si conta in decine di migliaia di euro.",
+        ],
+    },
+    'cookie-banner-checklist-garante-2026': {
+        2: [
+            "C’è poi un quarto errore, più sottile: il banner «finto conforme», con i due pulsanti di pari peso ma i cookie di profilazione che partono comunque al caricamento, sotto il cofano. A occhio sembra a posto; basta aprire gli strumenti per sviluppatori del browser per vedere i tracker attivi prima di ogni clic. È il caso che il nostro controllo indicativo intercetta più spesso.",
+        ],
+        3: [
+            "Cosa fare in mezz’ora, oggi: aprite il sito in una finestra anonima, guardate se «Rifiuta» è visibile quanto «Accetta», e con gli strumenti per sviluppatori controllate se partono script di tracciamento prima di qualsiasi scelta. Se una delle due cose non torna, avete già trovato la priorità. Non risolve tutto, ma vi dice se siete nella maggioranza a rischio o nella minoranza a posto.",
+        ],
+    },
+    'migrare-wordpress-senza-perdere-seo': {
+        0: [
+            "L’errore più comune e più costoso ha un nome: il redirect «tutto alla home». Per fretta o pigrizia, si fa puntare ogni vecchio indirizzo alla pagina iniziale del sito nuovo. Per Google è quasi come cancellare quelle pagine: il valore accumulato non si trasferisce, e le posizioni scivolano. Ogni vecchia pagina deve rimandare alla sua nuova equivalente, una per una.",
+        ],
+        3: [
+            "Cosa fare prima di dire sì a una migrazione: chiedete a chi la propone se prepara una mappa URL uno-a-uno e un piano di redirect 301 prima del lancio, e se monitora le posizioni nelle settimane dopo. Se la risposta è vaga, il rischio è vostro, non suo. Una migrazione ben fatta non si vede — ed è esattamente questo il punto: il traffico continua come se niente fosse.",
+        ],
+    },
+    'sito-quattro-lingue-costi-tempi': {
+        0: [
+            "Un modo semplice per decidere: chiedetevi se quella pagina informa o vende. Le pagine che informano — orari, contatti, descrizioni neutre — reggono bene l’automatico, magari con una rilettura. Le pagine che vendono — schede prodotto, landing, testi che devono convincere — vanno affidate a un madrelingua, perché lì un errore di tono non fa sorridere: fa chiudere la scheda.",
+        ],
+        1: [
+            "In pratica, per un sito aziendale medio, aggiungere una lingua ben fatta significa qualche giorno di lavoro per la traduzione e l’adattamento, più l’impostazione tecnica. Molto meno di quanto si teme, se si parte dai testi giusti; molto di più di «zero», che è quanto promette chi vi vende un plugin di traduzione automatica come se fosse una versione estera del sito.",
+        ],
+    },
+    'core-web-vitals-2026': {
+        1: [
+            "Un errore che vediamo spesso: il sito «leggero» che diventa pesante dopo il lancio, perché nel tempo si aggiungono uno slider, un chat-widget, tre pixel di tracciamento e un font in più. Ognuno sembra innocuo; insieme affondano l’INP e l’LCP. La velocità non è un traguardo che si taglia una volta: è una manutenzione. Per questo la rimisuriamo, non la diamo per scontata.",
+        ],
+    },
+}
+
+_BLOG_BY_SLUG = {p['slug']: p for p in BLOG_POSTS}
+for _slug, _lead in _BLOG_LEAD_NEW.items():
+    _BLOG_BY_SLUG[_slug]['corpo'] = _lead
+for _slug, _sez in _BLOG_SEZIONI_NEW.items():
+    _BLOG_BY_SLUG[_slug]['sezioni'] = _sez
+for _slug, _bymap in _BLOG_SEZIONI_EXTEND.items():
+    _sezioni = _BLOG_SEZIONI_NEW[_slug]
+    for _idx, _extra in _bymap.items():
+        _sezioni[_idx]['paragrafi'] = _sezioni[_idx].get('paragrafi', []) + _extra
+
+# --- Sezioni aggiuntive per due vecchi articoli «Mese 1» (già con sezioni):
+#     aggiunte in coda, per densità e per un finale pratico. ---
+_BLOG_SEZIONI_APPEND = {
+    'sito-lento-cause-costi': [
+        dict(titolo='Cosa fare oggi, in mezz’ora',
+             paragrafi=[
+                 "Prima di spendere un euro, misurate. Incollate l’indirizzo nel nostro test di velocità e guardate due cose: il punteggio mobile e quali risorse pesano di più. Nove volte su dieci il colpevole è già lì, in cima alla lista: una manciata di immagini enormi, un tema che carica megabyte di codice inutile, o un hosting che risponde piano. Sapere quale delle sette cause vi riguarda cambia tutto: alcune si risolvono in una giornata, altre chiedono di rifare la base.",
+                 "La regola che ripetiamo sempre: non fidatevi del «mi sembra più veloce». Misurate prima, cambiate una cosa, misurate dopo. Un numero che passa da 41 a 92 convince il titolare più di qualsiasi relazione — e vi dice, nero su bianco, che i soldi spesi hanno reso.",
+             ],
+             links=[('Misura ora la velocità del tuo sito — gratis', '/strumenti/test-velocita/'),
+                    ('Se la base è vecchia: restyling tecnico', '/servizi/restyling-migrazione/')]),
+    ],
+    'quanto-costa-ecommerce-italia': [
+        dict(titolo='Un errore da 5.000 euro: sottovalutare i contenuti',
+             paragrafi=[
+                 "C’è una voce che quasi ogni preventivo e-commerce tiene bassa per sembrare competitivo: i contenuti. Schede prodotto scritte bene, foto vere, testi che vendono e — se esportate — traduzioni da madrelingua. Sembra la parte «facile», ed è invece quella che decide se il negozio converte o resta una vetrina silenziosa. Chi vi vende un e-commerce a poco spesso vi lascia questo conto per dopo, quando scoprite che 300 schede non si scrivono da sole.",
+             ]),
+    ],
+}
+for _slug, _new_sez in _BLOG_SEZIONI_APPEND.items():
+    _BLOG_BY_SLUG[_slug]['sezioni'] = _BLOG_BY_SLUG[_slug].get('sezioni', []) + _new_sez
+for _slug, _cta in _BLOG_CTA_NEW.items():
+    _BLOG_BY_SLUG[_slug].setdefault('cta', _cta)
+for _slug, _bymap in _BLOG_EXT_LINKS.items():
+    _sezioni = _BLOG_BY_SLUG[_slug].get('sezioni', [])
+    for _idx, _links in _bymap.items():
+        _sez = _sezioni[_idx]
+        _sez['links'] = _sez.get('links', []) + _links
+for _slug, _fonti in _BLOG_FONTI.items():
+    _BLOG_BY_SLUG[_slug]['fonti'] = _fonti
