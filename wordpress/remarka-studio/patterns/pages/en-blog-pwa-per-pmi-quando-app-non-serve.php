@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">PWAs for SMBs: when you don’t need an app</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/pwa-cover.svg" alt="PWA for SMBs: when a native app isn’t needed — installable, offline, with notifications" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -53,6 +56,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">A practical test before deciding: list the three things the app “should do”. If they’re opening quickly, working offline, sitting on the screen, and sending a notification, you’re in PWA territory. If instead you need the camera with recognition, in-store payments, or deep hardware functions, then a native app makes sense. The cost of getting this choice wrong is counted in tens of thousands of euros.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/pwa-confronto.svg" alt="A comparison of website, PWA and native app for installability, offline use, notifications, store and starting cost" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Website, PWA and native app compared: a PWA adds installability, offline use and notifications starting from the same site, while a native app starts at € 15,000. Sources: web.dev and MDN on Progressive Web Apps.</figcaption></figure>
+<!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:14px"><a href="/en/services/progressive-web-apps/">How we build PWA sites →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/services/custom-web-apps/">When you need a custom web app instead →</a></p>
 <!-- /wp:html -->

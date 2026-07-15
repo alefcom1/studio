@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="530" viewBox="0 0 1200 530" role="img" aria-label="Le fasce di prezzo e i costi ricorrenti di un e-commerce in Italia">
+  <defs>
+    <pattern id="gridCed" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}
+    </style>
+  </defs>
+  <rect width="1200" height="530" fill="#F7F6F2"/>
+  <rect width="1200" height="530" fill="url(#gridCed)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">E-COMMERCE — FASCE DI PREZZO / PRICE BANDS · ITALIA 2026</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <!-- band 1 -->
+  <g transform="translate(80,110)">
+    <rect x="0" y="0" width="180" height="270" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+    <rect x="0" y="0" width="180" height="8" fill="#DDDBD4"/>
+    <text x="20" y="52" class="mono" font-size="15" fill="#5A5E66">TEMPLATE</text>
+    <text x="20" y="96" class="body" font-size="26" fill="#14161A">&lt; € 3.000</text>
+    <g class="mono" font-size="15" fill="#14161A">
+      <text x="20" y="150">▸ su template</text>
+      <text x="20" y="184">▸ checkout base</text>
+      <text x="20" y="218">▸ no gestionale</text>
+    </g>
+  </g>
+  <!-- band 2 -->
+  <g transform="translate(290,110)">
+    <rect x="0" y="0" width="500" height="270" fill="#FFFFFF" stroke="#2440C8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="500" height="8" fill="#2440C8"/>
+    <text x="24" y="52" class="mono" font-size="15" fill="#2440C8">PROFESSIONALE SU MISURA</text>
+    <text x="24" y="96" class="body" font-size="26" fill="#14161A">€ 6.000 – 15.000</text>
+    <g class="mono" font-size="15" fill="#14161A">
+      <text x="24" y="150">▸ catalogo strutturato</text>
+      <text x="24" y="184">▸ pagamenti multipli</text>
+      <text x="24" y="218">▸ SEO delle pagine prodotto</text>
+    </g>
+    <g transform="translate(24,236)">
+      <rect x="0" y="0" width="452" height="34" fill="#EEF1FE" stroke="#2440C8" stroke-width="1"/>
+      <text x="14" y="23" class="mono" font-size="14" fill="#2440C8">NOI: € 7.500–14.000 · prezzo chiuso · PageSpeed 90+</text>
+    </g>
+  </g>
+  <!-- band 3 -->
+  <g transform="translate(820,110)">
+    <rect x="0" y="0" width="300" height="270" fill="#14161A"/>
+    <rect x="0" y="0" width="300" height="8" fill="#5B73E8"/>
+    <text x="24" y="52" class="mono" font-size="15" fill="#9AA0AA">COMPLESSO</text>
+    <text x="24" y="96" class="body" font-size="26" fill="#FFFFFF">&gt; € 15.000</text>
+    <g class="mono" font-size="15" fill="#F7F6F2">
+      <text x="24" y="150">▸ ERP · logistica</text>
+      <text x="24" y="184">▸ multi-lingua · multi-valuta</text>
+      <text x="24" y="218">▸ cataloghi complessi</text>
+    </g>
+  </g>
+  <!-- recurring costs strip -->
+  <g transform="translate(80,408)">
+    <text x="0" y="16" class="mono" font-size="14" letter-spacing="2" fill="#5A5E66">COSTI RICORRENTI / YEARLY — spesso fuori dal preventivo</text>
+    <g class="mono" font-size="16" fill="#14161A">
+      <g transform="translate(0,52)"><rect x="0" y="-26" width="14" height="14" fill="#2440C8"/><text x="26" y="-14" fill="#14161A">manutenzione € 500–2.000 / anno</text></g>
+      <g transform="translate(430,52)"><rect x="0" y="-26" width="14" height="14" fill="#5B73E8"/><text x="26" y="-14" fill="#14161A">commissioni 1,5–3% a transazione</text></g>
+      <g transform="translate(870,52)"><rect x="0" y="-26" width="14" height="14" fill="#14161A"/><text x="26" y="-14" fill="#14161A">hosting · SDI</text></g>
+    </g>
+  </g>
+</svg>

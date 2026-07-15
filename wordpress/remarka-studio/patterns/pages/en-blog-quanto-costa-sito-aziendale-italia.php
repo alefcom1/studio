@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">What a business website costs in Italy: the real prices</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/costo-sito-cover.svg" alt="How much a business website costs in Italy: the price bands from € 800 to € 50,000" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -29,6 +32,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Our price list for the company website sits in the central bracket — € 3,900–5,800, a fixed price in the quote — with two items you rarely find in black and white elsewhere: PageSpeed 90+ guaranteed and a delivery date with a 1% penalty for every working day of delay.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/costo-sito-fasce.svg" alt="The three price bands of a business website in Italy: DIY under € 1,000, professional between € 2,500 and € 8,000, complex above € 15,000" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The Italian market bands, 2026: DIY (under € 1,000), professional (€ 2,500–8,000, where our list price € 3,900–5,800 sits) and complex (over € 15,000). Source: public price lists of Italian web agencies, 2026.</figcaption></figure>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">What really changes from one bracket to the next<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->

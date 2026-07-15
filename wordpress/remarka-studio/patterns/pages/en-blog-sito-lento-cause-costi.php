@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Slow website: the 7 real causes (and what fixing them costs)</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/sito-lento-cover.svg" alt="A slow website: the seven real causes and what it costs to fix them" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -25,6 +28,9 @@
 <!-- /wp:heading -->
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Unoptimized images: 3–8 MB photos uploaded straight from the phone. The no. 1 cause, and the cheapest to fix.</span></div><div><span class="sr-mono">b</span><span>Inadequate hosting: overcrowded shared servers that take 1–2 seconds to respond before the page even starts loading.</span></div><div><span class="sr-mono">c</span><span>Bloated theme or template: page builders loading 2 MB of code to display three columns of text.</span></div><div><span class="sr-mono">d</span><span>Plugins piled up over the years: every active plugin adds code, requests, and security risk — we have counted up to 60 on a single site.</span></div><div><span class="sr-mono">e</span><span>External fonts and scripts: six font families and ten tracking services blocking the first paint.</span></div><div><span class="sr-mono">f</span><span>No caching configured: the server rebuilds every page from scratch, for every visitor, every time.</span></div><div><span class="sr-mono">g</span><span>An aging technical foundation: obsolete PHP versions and never-optimized databases — at this point, no single fix is enough.</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/sito-lento-7cause.svg" alt="The seven causes of a slow website, from the most frequent, with a low, medium or high fix cost" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The seven most frequent causes of a slow website and the cost to fix them: nearly all are low-cost, only an old technical base needs deeper work. Source: dozens of audits on Italian SMB websites (Studio Remarka).</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">What costs little and returns a lot<span class="sr-accent-dot">.</span></h2>

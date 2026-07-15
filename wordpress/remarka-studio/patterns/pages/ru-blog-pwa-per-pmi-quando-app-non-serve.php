@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">PWA для малого и среднего бизнеса: когда приложение не нужно</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/pwa-cover.svg" alt="PWA для малого и среднего бизнеса: когда нативное приложение не нужно — устанавливается, работает офлайн, шлёт уведомления" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -52,6 +55,9 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:14px"><a href="/ru/uslugi/pwa-sajty/">Как мы делаем PWA-сайты →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/ru/uslugi/veb-prilozhenija/">Когда всё же нужно веб-приложение на заказ →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/pwa-confronto.svg" alt="Сравнение сайта, PWA и нативного приложения по установке, офлайну, уведомлениям, магазину и стартовой стоимости" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Сайт, PWA и нативное приложение в сравнении: PWA добавляет установку, офлайн и уведомления, начиная с того же сайта, тогда как нативное приложение стартует от € 15 000. Источники: web.dev и MDN о Progressive Web Apps.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Источники<span class="sr-accent-dot">.</span></h2>

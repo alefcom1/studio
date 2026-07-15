@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Сайт на четырёх языках: цены, сроки и ошибки, которых стоит избегать</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg" alt="Сайт на четырёх языках: стоимость, сроки и разница между переводом и локализацией" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -41,6 +44,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Перевести — поменять слова; локализовать — поменять то, что нужно, чтобы сообщение сработало на этом рынке. Цена в нужной валюте, дата в местном формате, пример, который в Германии понятен, а в Италии нет, более прямой или более формальный тон в зависимости от страны. Классическое исследование CSA Research годами твердит это заголовком, который уже тезис: «Can’t Read, Won’t Buy» — «не читаю на своём языке — не покупаю». Это по-прежнему верно, особенно там, где есть корзина.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/quattro-tradurre-localizzare.svg" alt="Перевод против локализации: заменить слова или адаптировать валюту, формат даты, тон и примеры под рынок" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Перевод меняет слова; локализация адаптирует сообщение под рынок — валюту, формат даты, тон, hreflang. Источник: CSA Research, «Can’t Read, Won’t Buy».</figcaption></figure>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Кейс экспорта в Германию<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->

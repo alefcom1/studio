@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-label="Le soglie di LCP, INP e CLS">
+  <defs>
+    <pattern id="gridVd" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}
+    </style>
+  </defs>
+  <rect width="1200" height="500" fill="#F7F6F2"/>
+  <rect width="1200" height="500" fill="url(#gridVd)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">CORE WEB VITALS — SOGLIE / THRESHOLDS</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <!-- legend -->
+  <g class="mono" font-size="14" transform="translate(600,66)">
+    <rect x="0" y="-12" width="14" height="14" fill="#1E7F4F"/><text x="22" y="0" fill="#14161A">buono</text>
+    <rect x="120" y="-12" width="14" height="14" fill="#c98a00"/><text x="142" y="0" fill="#14161A">da migliorare</text>
+    <rect x="300" y="-12" width="14" height="14" fill="#cc3333"/><text x="322" y="0" fill="#14161A">scarso</text>
+  </g>
+  <!-- LCP row -->
+  <g transform="translate(80,130)">
+    <text x="0" y="24" class="disp" font-size="34" fill="#14161A">LCP</text>
+    <text x="0" y="52" class="mono" font-size="14" fill="#5A5E66">caricamento</text>
+    <g transform="translate(180,0)">
+      <rect x="0" y="8" width="480" height="40" fill="#1E7F4F"/>
+      <rect x="480" y="8" width="240" height="40" fill="#c98a00"/>
+      <rect x="720" y="8" width="220" height="40" fill="#cc3333"/>
+      <line x1="480" y1="0" x2="480" y2="66" stroke="#14161A" stroke-width="1.5"/>
+      <line x1="720" y1="0" x2="720" y2="66" stroke="#14161A" stroke-width="1.5"/>
+      <text x="480" y="84" class="mono" font-size="16" fill="#14161A" text-anchor="middle">2,5 s</text>
+      <text x="720" y="84" class="mono" font-size="16" fill="#14161A" text-anchor="middle">4,0 s</text>
+    </g>
+  </g>
+  <!-- INP row -->
+  <g transform="translate(80,250)">
+    <text x="0" y="24" class="disp" font-size="34" fill="#14161A">INP</text>
+    <text x="0" y="52" class="mono" font-size="14" fill="#5A5E66">reattività</text>
+    <g transform="translate(180,0)">
+      <rect x="0" y="8" width="420" height="40" fill="#1E7F4F"/>
+      <rect x="420" y="8" width="300" height="40" fill="#c98a00"/>
+      <rect x="720" y="8" width="220" height="40" fill="#cc3333"/>
+      <line x1="420" y1="0" x2="420" y2="66" stroke="#14161A" stroke-width="1.5"/>
+      <line x1="720" y1="0" x2="720" y2="66" stroke="#14161A" stroke-width="1.5"/>
+      <text x="420" y="84" class="mono" font-size="16" fill="#14161A" text-anchor="middle">200 ms</text>
+      <text x="720" y="84" class="mono" font-size="16" fill="#14161A" text-anchor="middle">500 ms</text>
+    </g>
+  </g>
+  <!-- CLS row -->
+  <g transform="translate(80,370)">
+    <text x="0" y="24" class="disp" font-size="34" fill="#14161A">CLS</text>
+    <text x="0" y="52" class="mono" font-size="14" fill="#5A5E66">stabilità</text>
+    <g transform="translate(180,0)">
+      <rect x="0" y="8" width="360" height="40" fill="#1E7F4F"/>
+      <rect x="360" y="8" width="360" height="40" fill="#c98a00"/>
+      <rect x="720" y="8" width="220" height="40" fill="#cc3333"/>
+      <line x1="360" y1="0" x2="360" y2="66" stroke="#14161A" stroke-width="1.5"/>
+      <line x1="720" y1="0" x2="720" y2="66" stroke="#14161A" stroke-width="1.5"/>
+      <text x="360" y="84" class="mono" font-size="16" fill="#14161A" text-anchor="middle">0,1</text>
+      <text x="720" y="84" class="mono" font-size="16" fill="#14161A" text-anchor="middle">0,25</text>
+    </g>
+  </g>
+</svg>

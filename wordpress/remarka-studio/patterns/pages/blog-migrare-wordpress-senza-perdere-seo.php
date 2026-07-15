@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Migrare da WordPress senza perdere le posizioni su Google</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/migrare-cover.svg" alt="Migrare da WordPress senza perdere la SEO: redirect 301, mappa degli URL e sei settimane di monitoraggio" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -37,6 +40,9 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Audit del sito attuale: quali pagine portano traffico e posizioni, quali link puntano al sito.</span></div><div><span class="sr-mono">b</span><span>Mappa degli URL: ogni vecchio indirizzo abbinato al suo nuovo, senza lasciare pagine orfane.</span></div><div><span class="sr-mono">c</span><span>Redirect 301 uno-a-uno: ogni vecchia pagina rimanda a quella nuova equivalente, non tutte alla home.</span></div><div><span class="sr-mono">d</span><span>Controllo di sitemap, canonical e dati strutturati sul sito nuovo, prima di pubblicare.</span></div><div><span class="sr-mono">e</span><span>Piano di rollback: se qualcosa va storto, si torna indietro in minuti, non in giorni.</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/migrare-301.svg" alt="Redirect 301 uno-a-uno che trasferisce il valore SEO contro il redirect «tutto alla home» che lo perde" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Ogni vecchia pagina va rimandata alla sua nuova equivalente (1→1): il redirect «tutto alla home» disperde le posizioni. Fonte: Google Search Central, spostamenti del sito e redirect.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Le prime sei settimane dopo<span class="sr-accent-dot">.</span></h2>

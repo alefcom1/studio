@@ -2010,3 +2010,62 @@ CHROME_BLOG_RETROFIT2 = {
         {'en': "Google — localized versions and hreflang"},
 }
 CHROME.update(CHROME_BLOG_RETROFIT2)
+
+# CHROME_BLOG_RETRO_ILLUS — иллюстрации 8 старых статей (обложки + схемы):
+# EN-пары ТОЛЬКО для новых текстовых узлов (alt обложек, alt и caption схем).
+# Метки внутри SVG нейтральны/двуязычны и не переводятся (файл общий IT/EN/RU).
+# Числа — в формате US (как в CHROME_BLOG): us_numbers конвейера их сохраняет.
+CHROME_BLOG_RETRO_ILLUS = {
+    # ---- Cover alt ----
+    'Un sito in quattro lingue: costi, tempi e la differenza tra tradurre e localizzare':
+        {'en': 'A four-language website: costs, timelines, and the difference between translating and localizing'},
+    'Cookie banner a norma nel 2026: «Rifiuta» con lo stesso peso di «Accetta» e consenso documentabile secondo il Garante Privacy':
+        {'en': 'A compliant cookie banner in 2026: “Reject” with the same weight as “Accept” and documentable consent, per the Italian Garante Privacy'},
+    'Migrare da WordPress senza perdere la SEO: redirect 301, mappa degli URL e sei settimane di monitoraggio':
+        {'en': 'Migrating from WordPress without losing SEO: 301 redirects, a URL map, and six weeks of monitoring'},
+    'PWA per le PMI: quando l’app nativa non serve, con installabilità, uso offline e notifiche':
+        {'en': 'PWA for SMBs: when a native app isn’t needed — installable, offline, with notifications'},
+    'Quanto costa un sito aziendale in Italia: le fasce di prezzo dagli 800 ai 50.000 euro':
+        {'en': 'How much a business website costs in Italy: the price bands from € 800 to € 50,000'},
+    'Core Web Vitals nel 2026: LCP, INP e CLS, le tre metriche che Google misura sul mobile':
+        {'en': 'Core Web Vitals in 2026: LCP, INP and CLS, the three metrics Google measures on mobile'},
+    'Quanto costa un e-commerce in Italia nel 2026: le fasce di prezzo dai 6.000 ai 25.000 euro e oltre':
+        {'en': 'How much an e-commerce site costs in Italy in 2026: the price bands from € 6,000 to € 25,000 and up'},
+    'Sito lento: le sette cause reali e quanto costa sistemarle':
+        {'en': 'A slow website: the seven real causes and what it costs to fix them'},
+    # ---- Figure alt ----
+    'Tradurre contro localizzare: cambiare le parole rispetto ad adattare valuta, formato data, tono ed esempi al mercato':
+        {'en': 'Translating versus localizing: changing the words compared with adapting currency, date format, tone and examples to the market'},
+    'La checklist del cookie banner a norma in sei punti e gli errori più comuni':
+        {'en': 'The compliant cookie-banner checklist in six points and the most common mistakes'},
+    'Redirect 301 uno-a-uno che trasferisce il valore SEO contro il redirect «tutto alla home» che lo perde':
+        {'en': 'A one-to-one 301 redirect that transfers SEO value versus the “all to home” redirect that loses it'},
+    'Confronto tra sito, PWA e app nativa per installabilità, uso offline, notifiche, store e costo di partenza':
+        {'en': 'A comparison of website, PWA and native app for installability, offline use, notifications, store and starting cost'},
+    'Le tre fasce di prezzo di un sito aziendale in Italia: fai-da-te sotto i 1.000 euro, professionale tra 2.500 e 8.000, complesso oltre i 15.000':
+        {'en': 'The three price bands of a business website in Italy: DIY under € 1,000, professional between € 2,500 and € 8,000, complex above € 15,000'},
+    'Le soglie «buono», «da migliorare» e «scarso» di LCP, INP e CLS':
+        {'en': 'The “good”, “needs improvement” and “poor” thresholds of LCP, INP and CLS'},
+    'Le tre fasce di prezzo di un e-commerce in Italia e i costi ricorrenti spesso fuori dal preventivo':
+        {'en': 'The three price bands of an e-commerce site in Italy and the recurring costs often left out of the quote'},
+    'Le sette cause di un sito lento, dalla più frequente, con il costo dell’intervento basso, medio o alto':
+        {'en': 'The seven causes of a slow website, from the most frequent, with a low, medium or high fix cost'},
+    # ---- Figure caption ----
+    'Tradurre cambia le parole; localizzare adatta il messaggio al mercato — valuta, formato data, tono, hreflang. Fonte: CSA Research, «Can’t Read, Won’t Buy».':
+        {'en': 'Translating changes the words; localizing adapts the message to the market — currency, date format, tone, hreflang. Source: CSA Research, “Can’t Read, Won’t Buy”.'},
+    'I sei controlli di un cookie banner a norma e i tre errori che troviamo più spesso. Fonte: Garante Privacy, linee guida sui cookie.':
+        {'en': 'The six checks for a compliant cookie banner and the three mistakes we see most often. Source: Garante Privacy, cookie guidelines.'},
+    'Ogni vecchia pagina va rimandata alla sua nuova equivalente (1→1): il redirect «tutto alla home» disperde le posizioni. Fonte: Google Search Central, spostamenti del sito e redirect.':
+        {'en': 'Every old page must point to its new equivalent (1→1): the “all to home” redirect scatters your rankings. Source: Google Search Central, site moves and redirects.'},
+    'Sito, PWA e app nativa a confronto: la PWA aggiunge installabilità, offline e notifiche partendo dallo stesso sito, mentre un’app nativa parte da € 15.000. Fonti: web.dev e MDN sulle Progressive Web App.':
+        {'en': 'Website, PWA and native app compared: a PWA adds installability, offline use and notifications starting from the same site, while a native app starts at € 15,000. Sources: web.dev and MDN on Progressive Web Apps.'},
+    'Le fasce del mercato italiano 2026: fai-da-te (sotto € 1.000), professionale (€ 2.500–8.000, dove sta il nostro listino € 3.900–5.800) e complesso (oltre € 15.000). Fonte: listini pubblici delle web agency italiane, 2026.':
+        {'en': 'The Italian market bands, 2026: DIY (under € 1,000), professional (€ 2,500–8,000, where our list price € 3,900–5,800 sits) and complex (over € 15,000). Source: public price lists of Italian web agencies, 2026.'},
+    'Le soglie dei tre Core Web Vitals. LCP sotto 2,5 secondi e CLS sotto 0,1 sono i valori citati nell’articolo; l’INP sotto 200 ms è la soglia «buono» ufficiale. Fonte: web.dev (Google), Web Vitals.':
+        {'en': 'The thresholds of the three Core Web Vitals. LCP under 2.5 seconds and CLS under 0.1 are the values cited in the article; INP under 200 ms is the official “good” threshold. Source: web.dev (Google), Web Vitals.'},
+    'Le fasce del mercato italiano 2026: template (sotto € 3.000), professionale su misura (€ 6.000–15.000, dove sta il nostro listino € 7.500–14.000) e complesso (oltre € 15.000). Ai costi di costruzione si aggiungono manutenzione (€ 500–2.000 l’anno) e commissioni sui pagamenti (1,5–3%). Fonte: listini pubblici delle web agency italiane, 2026.':
+        {'en': 'The Italian market bands, 2026: template (under € 3,000), professional custom-built (€ 6,000–15,000, where our list price € 7,500–14,000 sits) and complex (over € 15,000). On top of the build cost come maintenance (€ 500–2,000 a year) and payment fees (1.5–3%). Source: public price lists of Italian web agencies, 2026.'},
+    'Le sette cause più frequenti di un sito lento e il costo dell’intervento: quasi tutte si risolvono a costo basso, solo la base tecnica vecchia richiede un lavoro più profondo. Fonte: decine di audit su siti di PMI italiane (Studio Remarka).':
+        {'en': 'The seven most frequent causes of a slow website and the cost to fix them: nearly all are low-cost, only an old technical base needs deeper work. Source: dozens of audits on Italian SMB websites (Studio Remarka).'},
+}
+CHROME.update(CHROME_BLOG_RETRO_ILLUS)

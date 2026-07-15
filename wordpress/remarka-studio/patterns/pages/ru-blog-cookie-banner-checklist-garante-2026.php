@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Cookie-баннер по правилам: чек-лист регулятора Garante на 2026 год</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cookie-cover.svg" alt="Cookie-баннер по правилам в 2026 году: «Отклонить» с тем же весом, что «Принять», и подтверждаемое согласие по требованиям регулятора Garante" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -34,6 +37,9 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Кнопка «Отклонить» видна с первого взгляда и весит столько же, сколько «Принять».</span></div><div><span class="sr-mono">b</span><span>Ни один скрипт слежения (аналитика, пиксели, карты) не запускается до согласия.</span></div><div><span class="sr-mono">c</span><span>Закрытие баннера или навигация без выбора не считаются согласием.</span></div><div><span class="sr-mono">d</span><span>Есть простой способ передумать: ссылка «настройки cookie» всегда доступна.</span></div><div><span class="sr-mono">e</span><span>Есть понятная cookie-политика с перечнем cookie и их целей.</span></div><div><span class="sr-mono">f</span><span>Согласие фиксируется и остаётся подтверждаемым во времени.</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cookie-checklist.svg" alt="Чек-лист cookie-баннера по правилам из шести пунктов и самые частые ошибки" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Шесть проверок cookie-баннера по правилам и три ошибки, которые встречаются чаще всего. Источник: Garante Privacy, рекомендации по cookie.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Ошибки, которые встречаются чаще всего<span class="sr-accent-dot">.</span></h2>

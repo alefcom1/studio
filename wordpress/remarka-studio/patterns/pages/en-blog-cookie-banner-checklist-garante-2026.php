@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Compliant cookie banners: the Garante’s 2026 checklist</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cookie-cover.svg" alt="A compliant cookie banner in 2026: “Reject” with the same weight as “Accept” and documentable consent, per the Italian Garante Privacy" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -34,6 +37,9 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>The “Reject” button is visible at first glance, with the same weight as “Accept”.</span></div><div><span class="sr-mono">b</span><span>No tracking script (Google Analytics, pixels, maps) fires before consent.</span></div><div><span class="sr-mono">c</span><span>Closing the banner or browsing without choosing does not count as consent.</span></div><div><span class="sr-mono">d</span><span>There’s an easy way to change your mind later: a “cookie preferences” link that’s always reachable.</span></div><div><span class="sr-mono">e</span><span>There’s a clear cookie policy that lists the cookies and what they’re for.</span></div><div><span class="sr-mono">f</span><span>Consent is recorded and stays documentable over time.</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cookie-checklist.svg" alt="The compliant cookie-banner checklist in six points and the most common mistakes" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The six checks for a compliant cookie banner and the three mistakes we see most often. Source: Garante Privacy, cookie guidelines.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">The mistakes we find most often<span class="sr-accent-dot">.</span></h2>

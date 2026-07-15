@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Сколько стоит интернет-магазин в Италии в 2026 году: настоящие цифры</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/costo-ecom-cover.svg" alt="Сколько стоит интернет-магазин в Италии в 2026 году: ценовые диапазоны от 6000 до 25 000 евро и выше" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -29,6 +32,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Наш прайс — в среднем сегменте: € 7 500–14.000, цена фиксируется в смете. С одним договорным отличием: PageSpeed 90+ гарантирован письменно, а дата сдачи — с неустойкой. Эти два пункта в предложениях конкурентов вы почти никогда не найдёте чёрным по белому.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/costo-ecom-fasce.svg" alt="Три ценовых диапазона интернет-магазина в Италии и регулярные расходы, которых часто нет в смете" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Диапазоны итальянского рынка 2026: шаблон (до € 3 000), профессиональный на заказ (€ 6 000–15 000, где находится наш прайс € 7 500–14 000) и сложный (свыше € 15 000). К стоимости разработки добавляются обслуживание (€ 500–2 000 в год) и комиссии за платежи (1,5–3%). Источник: публичные прайс-листы итальянских веб-агентств, 2026.</figcaption></figure>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Расходы, о которых сметы молчат<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->

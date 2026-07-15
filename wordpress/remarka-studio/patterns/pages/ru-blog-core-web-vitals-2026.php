@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Core Web Vitals в 2026 году: что на самом деле измеряет Google</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cwv-cover.svg" alt="Core Web Vitals в 2026 году: LCP, INP и CLS — три метрики, которые Google измеряет на мобильных" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -29,6 +32,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">INP (Interaction to Next Paint) — отзывчивость: нажимаю кнопку, за сколько сайт отвечает? С 2024 года эта метрика заменила прежний FID и остаётся самой недооценённой. CLS (Cumulative Layout Shift) — визуальная стабильность: сколько раз при загрузке элементы «прыгают» и заставляют нажать не туда. Кто хоть раз промахнулся мимо «В корзину», потому что страница дёрнулась, отлично нас поймёт.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cwv-soglie.svg" alt="Пороги «хорошо», «нужно улучшить» и «плохо» для LCP, INP и CLS" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Пороги трёх Core Web Vitals. LCP меньше 2,5 секунды и CLS меньше 0,1 — значения, названные в статье; INP меньше 200 мс — официальный порог «хорошо». Источник: web.dev (Google), Web Vitals.</figcaption></figure>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Почему важна только мобильная оценка<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->

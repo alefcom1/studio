@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Сколько стоит корпоративный сайт в Италии: настоящие цены</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/costo-sito-cover.svg" alt="Сколько стоит корпоративный сайт в Италии: ценовые диапазоны от 800 до 50 000 евро" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -29,6 +32,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Наш прайс на корпоративный сайт — в средней ступени: € 3 900–5 800, фиксированная цена в смете, с двумя пунктами, которые в других местах редко пишут чёрным по белому: гарантированный PageSpeed 90+ и срок сдачи со штрафом 1% за каждый рабочий день опоздания.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/costo-sito-fasce.svg" alt="Три ценовых диапазона корпоративного сайта в Италии: сделай сам — до 1000 евро, профессиональный — 2500–8000, сложный — свыше 15 000" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Диапазоны итальянского рынка 2026: сделай сам (до € 1 000), профессиональный (€ 2 500–8 000, где находится наш прайс € 3 900–5 800) и сложный (свыше € 15 000). Источник: публичные прайс-листы итальянских веб-агентств, 2026.</figcaption></figure>
+<!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Что на самом деле меняется между ступенями<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->

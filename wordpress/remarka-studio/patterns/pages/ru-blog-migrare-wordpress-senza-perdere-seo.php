@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Переезд с WordPress без потери позиций в Google</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/migrare-cover.svg" alt="Переезд с WordPress без потери SEO: редиректы 301, карта URL и шесть недель мониторинга" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -37,6 +40,9 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Аудит текущего сайта: какие страницы дают трафик и позиции, какие ссылки ведут на сайт.</span></div><div><span class="sr-mono">b</span><span>Карта URL: каждый старый адрес сопоставлен с новым, без осиротевших страниц.</span></div><div><span class="sr-mono">c</span><span>Редиректы 301 один к одному: каждая старая страница ведёт на равнозначную новую, а не все на главную.</span></div><div><span class="sr-mono">d</span><span>Проверка sitemap, canonical и структурированных данных на новом сайте до публикации.</span></div><div><span class="sr-mono">e</span><span>План отката: если что-то пойдёт не так, возвращаемся за минуты, а не за дни.</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/migrare-301.svg" alt="Редирект 301 один-к-одному, передающий вес SEO, против редиректа «всё на главную», который его теряет" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Каждая старая страница должна вести на свой новый аналог (1→1): редирект «всё на главную» рассеивает позиции. Источник: Google Search Central, переезды сайта и редиректы.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Первые шесть недель после<span class="sr-accent-dot">.</span></h2>

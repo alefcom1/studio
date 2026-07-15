@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Медленный сайт: 7 настоящих причин (и сколько стоит их устранить)</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/sito-lento-cover.svg" alt="Медленный сайт: семь настоящих причин и сколько стоит их устранить" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -25,6 +28,9 @@
 <!-- /wp:heading -->
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Неоптимизированные изображения: фотографии по 3–8 МБ, загруженные прямо с телефона. Причина №1 — и самая дешёвая в устранении.</span></div><div><span class="sr-mono">b</span><span>Слабый хостинг: переполненные общие серверы, которые отвечают 1–2 секунды ещё до начала загрузки страницы.</span></div><div><span class="sr-mono">c</span><span>Перегруженная тема или шаблон: конструкторы страниц, которые тянут 2 МБ кода, чтобы показать три колонки текста.</span></div><div><span class="sr-mono">d</span><span>Плагины, накопленные за годы: каждый активный плагин добавляет код, запросы и риски безопасности — на одном сайте мы насчитали их 60.</span></div><div><span class="sr-mono">e</span><span>Внешние шрифты и скрипты: шесть гарнитур и десять сервисов аналитики, которые блокируют первую отрисовку.</span></div><div><span class="sr-mono">f</span><span>Ненастроенный кеш: сервер собирает каждую страницу с нуля, для каждого посетителя, каждый раз.</span></div><div><span class="sr-mono">g</span><span>Устаревшая техническая база: старые версии PHP и ни разу не оптимизированные базы данных — здесь точечными мерами уже не обойтись.</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/sito-lento-7cause.svg" alt="Семь причин медленного сайта, от самой частой, со стоимостью устранения: низкая, средняя или высокая" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Семь самых частых причин медленного сайта и стоимость устранения: почти все решаются недорого, только устаревшая техническая база требует более глубокой работы. Источник: десятки аудитов сайтов итальянских МСБ (Studio Remarka).</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Что стоит немного, а даёт много<span class="sr-accent-dot">.</span></h2>

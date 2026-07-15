@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Un sito in quattro lingue">
+  <defs>
+    <pattern id="gridQc" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="#F7F6F2"/>
+  <rect width="1200" height="630" fill="url(#gridQc)"/>
+  <line x1="80" y1="96" x2="1120" y2="96" stroke="#14161A" stroke-width="1.5"/>
+  <text x="80" y="82" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">REMARKA · STUDIO — BLOG</text>
+  <text x="1120" y="82" class="mono" font-size="15" letter-spacing="2" fill="#2440C8" text-anchor="end">IT · EN · DE · FR</text>
+  <text x="80" y="262" class="disp" font-size="168" letter-spacing="2" fill="#14161A">4</text>
+  <text x="82" y="330" class="body" font-size="36" font-weight="600" fill="#14161A">lingue · languages</text>
+  <text x="84" y="374" class="mono" font-size="20" fill="#5A5E66">costi · tempi · localizzazione</text>
+  <!-- language chips: single row, top-right -->
+  <g transform="translate(700,140)" class="disp" font-size="34" text-anchor="middle">
+    <g><rect x="0" y="0" width="94" height="94" fill="#14161A"/><text x="47" y="60" fill="#FFFFFF">IT</text></g>
+    <g transform="translate(110,0)"><rect x="0" y="0" width="94" height="94" fill="none" stroke="#DDDBD4" stroke-width="1.5"/><text x="47" y="60" fill="#14161A">EN</text></g>
+    <g transform="translate(220,0)"><rect x="0" y="0" width="94" height="94" fill="none" stroke="#DDDBD4" stroke-width="1.5"/><text x="47" y="60" fill="#14161A">DE</text></g>
+    <g transform="translate(330,0)"><rect x="0" y="0" width="94" height="94" fill="#2440C8"/><text x="47" y="60" fill="#FFFFFF">FR</text></g>
+  </g>
+  <!-- decorative page stack right, below chips -->
+  <g transform="translate(700,290)" opacity="0.95">
+    <rect x="0" y="0" width="424" height="22" fill="#14161A"/>
+    <rect x="0" y="40" width="424" height="22" fill="#DDDBD4"/>
+    <rect x="0" y="80" width="424" height="22" fill="#2440C8"/>
+    <rect x="0" y="120" width="280" height="22" fill="#5B73E8"/>
+  </g>
+  <!-- bottom metric boxes -->
+  <g transform="translate(80,430)">
+    <rect x="0" y="0" width="270" height="92" fill="none" stroke="#14161A" stroke-width="1.5"/>
+    <text x="24" y="37" class="mono" font-size="14" letter-spacing="2" fill="#5A5E66">REDATTORI</text>
+    <text x="24" y="74" class="body" font-size="30" font-weight="600" fill="#14161A">madrelingua</text>
+  </g>
+  <g transform="translate(380,430)">
+    <rect x="0" y="0" width="230" height="92" fill="#1E7F4F"/>
+    <text x="24" y="37" class="mono" font-size="14" letter-spacing="2" fill="#BFE6CE">EXPORT · DE</text>
+    <text x="24" y="76" class="disp" font-size="46" fill="#FFFFFF">+63%</text>
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-label="Redirect 301 uno a uno contro tutto alla home">
+  <defs>
+    <pattern id="gridMd" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <marker id="arrMd" markerWidth="12" markerHeight="12" refX="8" refY="6" orient="auto">
+      <path d="M0 0 L10 6 L0 12" fill="none" stroke="#1E7F4F" stroke-width="2"/>
+    </marker>
+    <marker id="arrBad" markerWidth="12" markerHeight="12" refX="8" refY="6" orient="auto">
+      <path d="M0 0 L10 6 L0 12" fill="none" stroke="#cc3333" stroke-width="2"/>
+    </marker>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}
+    </style>
+  </defs>
+  <rect width="1200" height="500" fill="#F7F6F2"/>
+  <rect width="1200" height="500" fill="url(#gridMd)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">REDIRECT 301 — 1 → 1  vs  TUTTO ALLA HOME / ALL TO HOME</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <!-- GOOD: one-to-one -->
+  <g transform="translate(80,110)">
+    <rect x="0" y="0" width="480" height="330" fill="#FFFFFF" stroke="#1E7F4F" stroke-width="1.5"/>
+    <rect x="0" y="0" width="480" height="8" fill="#1E7F4F"/>
+    <text x="24" y="50" class="body" font-size="21" fill="#14161A">Uno-a-uno · one-to-one</text>
+    <text x="24" y="76" class="mono" font-size="14" fill="#1E7F4F">il valore SEO si trasferisce</text>
+    <g class="mono" font-size="15">
+      <rect x="24" y="100" width="150" height="36" fill="#F7F6F2" stroke="#DDDBD4"/><text x="38" y="123" fill="#14161A">/vecchia-1</text>
+      <line x1="180" y1="118" x2="290" y2="118" stroke="#1E7F4F" stroke-width="2" marker-end="url(#arrMd)"/>
+      <rect x="300" y="100" width="150" height="36" fill="#EAF4EE" stroke="#1E7F4F"/><text x="314" y="123" fill="#14161A">/nuova-1</text>
+      <rect x="24" y="150" width="150" height="36" fill="#F7F6F2" stroke="#DDDBD4"/><text x="38" y="173" fill="#14161A">/vecchia-2</text>
+      <line x1="180" y1="168" x2="290" y2="168" stroke="#1E7F4F" stroke-width="2" marker-end="url(#arrMd)"/>
+      <rect x="300" y="150" width="150" height="36" fill="#EAF4EE" stroke="#1E7F4F"/><text x="314" y="173" fill="#14161A">/nuova-2</text>
+      <rect x="24" y="200" width="150" height="36" fill="#F7F6F2" stroke="#DDDBD4"/><text x="38" y="223" fill="#14161A">/vecchia-3</text>
+      <line x1="180" y1="218" x2="290" y2="218" stroke="#1E7F4F" stroke-width="2" marker-end="url(#arrMd)"/>
+      <rect x="300" y="200" width="150" height="36" fill="#EAF4EE" stroke="#1E7F4F"/><text x="314" y="223" fill="#14161A">/nuova-3</text>
+    </g>
+    <text x="24" y="290" class="mono" font-size="15" fill="#1E7F4F">✓ posizioni mantenute / kept</text>
+  </g>
+  <!-- BAD: all to home -->
+  <g transform="translate(640,110)">
+    <rect x="0" y="0" width="480" height="330" fill="#FFFFFF" stroke="#cc3333" stroke-width="1.5"/>
+    <rect x="0" y="0" width="480" height="8" fill="#cc3333"/>
+    <text x="24" y="50" class="body" font-size="21" fill="#14161A">Tutto alla home · all to home</text>
+    <text x="24" y="76" class="mono" font-size="14" fill="#cc3333">il valore SEO si perde</text>
+    <g class="mono" font-size="15">
+      <rect x="24" y="100" width="150" height="36" fill="#F7F6F2" stroke="#DDDBD4"/><text x="38" y="123" fill="#14161A">/vecchia-1</text>
+      <rect x="24" y="150" width="150" height="36" fill="#F7F6F2" stroke="#DDDBD4"/><text x="38" y="173" fill="#14161A">/vecchia-2</text>
+      <rect x="24" y="200" width="150" height="36" fill="#F7F6F2" stroke="#DDDBD4"/><text x="38" y="223" fill="#14161A">/vecchia-3</text>
+      <line x1="180" y1="118" x2="300" y2="165" stroke="#cc3333" stroke-width="2" marker-end="url(#arrBad)"/>
+      <line x1="180" y1="168" x2="300" y2="168" stroke="#cc3333" stroke-width="2" marker-end="url(#arrBad)"/>
+      <line x1="180" y1="218" x2="300" y2="171" stroke="#cc3333" stroke-width="2" marker-end="url(#arrBad)"/>
+      <rect x="310" y="148" width="140" height="40" fill="#14161A"/><text x="326" y="173" fill="#FFFFFF">/ home</text>
+    </g>
+    <text x="24" y="290" class="mono" font-size="15" fill="#cc3333">✗ posizioni perse / lost</text>
+  </g>
+</svg>

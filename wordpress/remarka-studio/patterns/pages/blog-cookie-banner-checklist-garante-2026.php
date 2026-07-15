@@ -14,6 +14,9 @@
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Cookie banner a norma: la checklist 2026 del Garante</h1>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cookie-cover.svg" alt="Cookie banner a norma nel 2026: «Rifiuta» con lo stesso peso di «Accetta» e consenso documentabile secondo il Garante Privacy" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -34,6 +37,9 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Il pulsante «Rifiuta» è visibile al primo colpo, con lo stesso peso di «Accetta».</span></div><div><span class="sr-mono">b</span><span>Nessuno script di tracciamento (Google Analytics, pixel, mappe) parte prima del consenso.</span></div><div><span class="sr-mono">c</span><span>Chiudere il banner o navigare senza scegliere non vale come consenso.</span></div><div><span class="sr-mono">d</span><span>Esiste un modo semplice per cambiare idea dopo: un link «preferenze cookie» sempre raggiungibile.</span></div><div><span class="sr-mono">e</span><span>C’è una cookie policy chiara, che elenca i cookie e le loro finalità.</span></div><div><span class="sr-mono">f</span><span>Il consenso viene registrato e resta documentabile nel tempo.</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cookie-checklist.svg" alt="La checklist del cookie banner a norma in sei punti e gli errori più comuni" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">I sei controlli di un cookie banner a norma e i tre errori che troviamo più spesso. Fonte: Garante Privacy, linee guida sui cookie.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Gli errori che troviamo più spesso<span class="sr-accent-dot">.</span></h2>
