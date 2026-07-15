@@ -767,7 +767,8 @@ def _widget_checkup():
      data-label-suffix=" — analisi mobile"
      data-calc-note="Calcolato su {{n}} misurazioni su 7."
      data-na-text="Non siamo riusciti a misurare questo aspetto: il sito ha rifiutato la lettura o il servizio Google era saturo."
-     data-err="Non siamo riusciti a completare il check-up. Riprovate tra qualche minuto.">
+     data-err="Non siamo riusciti a completare il check-up. Riprovate tra qualche minuto."
+     data-ai-suffix=" / 4 segnali">
   <form data-sr-tool-form>
     <div class="sr-tool-row">
       <input type="text" placeholder="www.ilvostrosito.it" class="sr-text-input" required />
@@ -824,6 +825,7 @@ def _widget_checkup():
           <li>«Cosa faremmo noi» e i riferimenti di Studio Remarka</li>
         </ul>
         <form data-sr-checkup-report-form style="margin-top:24px">
+          <p class="sr-hp-field" aria-hidden="true"><label>Sito web<input type="text" name="sr_checkup_hp" tabindex="-1" autocomplete="off"></label></p>
           <div class="sr-tool-row">
             <input type="email" placeholder="nome@vostraazienda.it" class="sr-text-input" required />
             <button type="submit" class="wp-block-button__link" style="padding:15px 26px">Inviatemi il report PDF</button>
