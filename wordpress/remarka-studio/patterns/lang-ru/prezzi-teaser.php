@@ -52,7 +52,7 @@
 <!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"margin":{"top":"28px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center" style="margin-top:28px"><!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%"><!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Цены Remarka — фиксированные: сколько подписали, столько и платите. Оплата в евро, инвойс для юрлиц ЕС.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Цены Remarka — фиксированные: сколько подписали, столько и платите. Оплата в евро или рублях, инвойс для юрлиц.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
