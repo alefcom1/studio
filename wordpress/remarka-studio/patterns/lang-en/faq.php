@@ -26,7 +26,7 @@
 <!-- wp:column {"width":"62%","className":"sr-faq"} -->
 <div class="wp-block-column sr-faq" style="flex-basis:62%"><!-- wp:details -->
 <details class="wp-block-details"><summary>How much does a website cost?</summary><!-- wp:paragraph -->
-<p>A brochure site starts at € 1,900, a business website at € 3,900, an e-commerce site at € 7,500. The quote is a fixed price: what you sign is what you pay, in writing.</p>
+<p>A brochure site starts at {{listino}}€ 1,900{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 1,900</s> <span class="sr-lancio-price">€ 950</span>{{/lancio}}, a business website at {{listino}}€ 3,900{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 3,900</s> <span class="sr-lancio-price">€ 1,950</span>{{/lancio}}, an e-commerce site at {{listino}}€ 7,500{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 7,500</s> <span class="sr-lancio-price">€ 3,750</span>{{/lancio}}. The quote is a fixed price: what you sign is what you pay, in writing.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 

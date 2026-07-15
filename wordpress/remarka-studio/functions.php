@@ -274,6 +274,48 @@ function remarka_deregister_wp_embed(): void {
 add_action( 'wp_footer', 'remarka_deregister_wp_embed' );
 
 /**
+ * Prezzo lancio — promo sui primi 5 progetti (requisito del titolare,
+ * 15.07.2026). I posti rimasti vivono in un'option, niente Customizer:
+ * si gestisce da SSH con `wp option update remarka_lancio_slots N`
+ * (sempre clampata 0–5 in lettura, per sicurezza anche se l'option viene
+ * scritta a mano con un valore fuori range).
+ *
+ * Il contenuto delle pagine promo (patterns/**) è statico in post_content,
+ * quindi il conteggio va sostituito a runtime, non rigenerato: i pattern
+ * toccati dalla promo portano il placeholder letterale "{{lancio_slots}}"
+ * e due coppie di marcatori testuali "{{lancio}}…{{/lancio}}" /
+ * "{{listino}}…{{/listino}}". Il filtro the_content qui sotto mostra un
+ * solo blocco per volta: finché restano posti (slots > 0) si vede il
+ * blocco lancio col conteggio; quando gli slot finiscono (slots = 0) la
+ * promo sparisce da sola e resta il solo listino pieno — fine di
+ * campagna elegante, senza nessun redeploy.
+ *
+ * Priorità 8: gira PRIMA di do_blocks() (priorità 9 su the_content), così
+ * i marcatori operano sui commenti-blocco Gutenberg ancora intatti nel
+ * post_content grezzo, invece che sull'HTML già renderizzato.
+ */
+function remarka_lancio_slots(): int {
+	$n = (int) get_option( 'remarka_lancio_slots', 5 );
+	return max( 0, min( 5, $n ) );
+}
+
+function remarka_lancio_filter_content( string $content ): string {
+	if ( false === strpos( $content, '{{lancio' ) && false === strpos( $content, '{{listino' ) ) {
+		return $content;
+	}
+	if ( remarka_lancio_slots() > 0 ) {
+		$content = preg_replace( '/\{\{lancio\}\}(.*?)\{\{\/lancio\}\}/s', '$1', $content );
+		$content = preg_replace( '/\{\{listino\}\}(.*?)\{\{\/listino\}\}/s', '', $content );
+		$content = str_replace( '{{lancio_slots}}', (string) remarka_lancio_slots(), $content );
+	} else {
+		$content = preg_replace( '/\{\{lancio\}\}(.*?)\{\{\/lancio\}\}/s', '', $content );
+		$content = preg_replace( '/\{\{listino\}\}(.*?)\{\{\/listino\}\}/s', '$1', $content );
+	}
+	return $content;
+}
+add_filter( 'the_content', 'remarka_lancio_filter_content', 8 );
+
+/**
  * Cookie banner (GDPR, Rifiuta = Accetta по весу) и WhatsApp FAB —
  * сайтвайд, без необходимости вставлять паттерн на каждую страницу.
  * Numero WhatsApp per lingua (IT/EN condividono lo stesso, RU ha il suo),

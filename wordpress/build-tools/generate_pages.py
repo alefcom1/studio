@@ -65,6 +65,28 @@ SERVICE_TOOL_LINKS = {
 }
 
 
+# Prezzo lancio (owner 15.07.2026): −50% sui primi 5 progetti, solo sui tre
+# prodotti "a scatola chiusa" (sito vetrina — solo nella tabella /prezzi/,
+# non ha una pagina servizio propria — sito aziendale, e-commerce). Il testo
+# è quello approvato dal titolare, usato alla lettera in ogni lingua.
+LANCIO_SLUGS = {'siti-aziendali', 'e-commerce'}
+
+
+def _lancio_banner_html():
+    """Badge + riga + contatore promo. Avvolto in {{lancio}}…{{/lancio}}:
+    il filtro the_content in functions.php lo mostra solo finché
+    remarka_lancio_slots() > 0, e sostituisce {{lancio_slots}} col numero
+    vero letto dall'option — niente redeploy quando la promo finisce."""
+    return (
+        '{{lancio}}'
+        '<div class="sr-lancio-badge sr-mono">PREZZO LANCIO — PRIMI 5 PROGETTI</div>'
+        '<p class="sr-lancio-line">Prezzo lancio sui primi 5 progetti: stesso contratto, stesse garanzie. '
+        'Listino pieno dal 2027.</p>'
+        '<p class="sr-lancio-counter sr-mono">Ne restano {{lancio_slots}} su 5.</p>'
+        '{{/lancio}}'
+    )
+
+
 def _service_tool_links_html(slug):
     links = SERVICE_TOOL_LINKS.get(slug)
     if not links:
@@ -150,8 +172,10 @@ def build_servizio(svc):
         classes='sr-section',
     )
 
+    lancio_html = raw_html(_lancio_banner_html()) if svc['slug'] in LANCIO_SLUGS else ''
     prezzo = section(
         eyebrow('Prezzo') +
+        lancio_html +
         raw_html(f'<div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">{svc["prezzo_range"]}</div>') +
         paragraph(svc['prezzo_lede'], color='grigio', size='base', extra_style='margin-top:14px;max-width:60ch') +
         paragraph('Cosa fa variare il prezzo', extra_style='margin-top:28px;font-weight:500;font-size:16px') +
@@ -300,8 +324,17 @@ def build_prezzi():
         classes='sr-section sr-hero',
     )
 
-    headers = ['', 'Sito vetrina<br><span>€ 1.900–2.800</span>', 'Sito aziendale<br><span>€ 3.900–5.800</span>',
-               'E-commerce<br><span>€ 7.500–14.000</span>']
+    lancio_banner = section(raw_html(_lancio_banner_html()), classes='sr-section')
+
+    headers = [
+        '',
+        'Sito vetrina<br><span>{{listino}}€ 1.900–2.800{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 1.900–2.800</s> '
+        '<strong class="sr-lancio-price">€ 950–1.400</strong>{{/lancio}}</span>',
+        'Sito aziendale<br><span>{{listino}}€ 3.900–5.800{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 3.900–5.800</s> '
+        '<strong class="sr-lancio-price">€ 1.950–2.900</strong>{{/lancio}}</span>',
+        'E-commerce<br><span>{{listino}}€ 7.500–14.000{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 7.500–14.000</s> '
+        '<strong class="sr-lancio-price">€ 3.750–7.000</strong>{{/lancio}}</span>',
+    ]
     rows_data = [
         ('Pagine incluse', ['5', '15', 'Catalogo']),
         ('Lingue tradotte da madrelingua', ['1', '2', '2']),
@@ -333,10 +366,15 @@ def build_prezzi():
         classes='sr-section',
     )
 
+    def _market_lancio(listino, lancio):
+        return (f'{{{{listino}}}}{listino}{{{{/listino}}}}'
+                f'{{{{lancio}}}}<s class="sr-lancio-listino">{listino}</s>'
+                f'<span class="sr-lancio-price">{lancio}</span>{{{{/lancio}}}}')
+
     market_rows = [
-        ('Sito vetrina', '€ 1.000–3.000', '€ 1.900–2.800', '2–4 settimane', '2 settimane'),
-        ('Sito aziendale', '€ 2.500–8.000', '€ 3.900–5.800', '6–10 settimane', '3 settimane'),
-        ('E-commerce', '€ 6.000–25.000', '€ 7.500–14.000', '8–14 settimane', '6 settimane'),
+        ('Sito vetrina', '€ 1.000–3.000', _market_lancio('€ 1.900–2.800', '€ 950–1.400'), '2–4 settimane', '2 settimane'),
+        ('Sito aziendale', '€ 2.500–8.000', _market_lancio('€ 3.900–5.800', '€ 1.950–2.900'), '6–10 settimane', '3 settimane'),
+        ('E-commerce', '€ 6.000–25.000', _market_lancio('€ 7.500–14.000', '€ 3.750–7.000'), '8–14 settimane', '6 settimane'),
     ]
     market_thead = ('<tr><th>Prodotto</th><th>Prezzo di mercato</th>'
                     '<th class="sr-market-table__uscol">Prezzo Remarka</th>'
@@ -344,7 +382,7 @@ def build_prezzi():
                     '<th class="sr-market-table__uscol">Tempi Remarka</th></tr>')
     market_tbody = ''.join(
         f'<tr><td class="sr-market-table__prod">{prod}</td>'
-        f'<td>{mprice}</td><td class="sr-market-table__us">{rprice}</td>'
+        f'<td>{mprice}</td><td class="sr-market-table__us sr-market-table__us--lancio">{rprice}</td>'
         f'<td>{mtime}</td><td class="sr-market-table__us">{rtime}</td></tr>'
         for prod, mprice, rprice, mtime, rtime in market_rows
     )
@@ -383,7 +421,7 @@ def build_prezzi():
     )
     write('prezzi', 'Pagina — Prezzi (completa)',
           'Pagina prezzi con tabella comparativa completa (min-width 840px, scroll orizzontale su mobile).',
-          hero + table_section + market + variazioni + cta)
+          hero + lancio_banner + table_section + market + variazioni + cta)
 
 
 # ---------------------------------------------------------------- Strumenti

@@ -117,7 +117,10 @@
 <p class="sr-eyebrow">Price</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">€ 3,900–5,800</div>
+{{lancio}}<div class="sr-lancio-badge sr-mono">LAUNCH PRICE — FIRST 5 PROJECTS</div><p class="sr-lancio-line">Launch price on our first 5 projects: same contract, same guarantees. Full price list from 2027.</p><p class="sr-lancio-counter sr-mono">{{lancio_slots}} of 5 slots still open.</p>{{/lancio}}
+<!-- /wp:html -->
+<!-- wp:html -->
+<div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">{{listino}}€ 3,900–5,800{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 3,900–5,800</s> <span class="sr-lancio-price">€ 1,950–2,900</span>{{/lancio}}</div>
 <!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
 <p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:14px;max-width:60ch">Fixed price locked in the quote, delivery in 3 weeks. E-invoicing, payment in three installments.</p>

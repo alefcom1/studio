@@ -16,8 +16,12 @@
 <h2 class="wp-block-heading">Prezzi e tempi, accanto al mercato<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 
-<!-- wp:group {"className":"sr-market-table sr-market-table--compact","style":{"spacing":{"margin":{"top":"48px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group sr-market-table sr-market-table--compact" style="margin-top:48px"><!-- wp:html -->
+<!-- wp:html -->
+{{lancio}}<div class="sr-lancio-badge sr-mono" style="margin-top:20px">PREZZO LANCIO — PRIMI 5 PROGETTI</div><p class="sr-lancio-line">Prezzo lancio sui primi 5 progetti: stesso contratto, stesse garanzie. Listino pieno dal 2027.</p><p class="sr-lancio-counter sr-mono">Ne restano {{lancio_slots}} su 5.</p>{{/lancio}}
+<!-- /wp:html -->
+
+<!-- wp:group {"className":"sr-market-table sr-market-table--compact","style":{"spacing":{"margin":{"top":"28px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-market-table sr-market-table--compact" style="margin-top:28px"><!-- wp:html -->
 <table>
 <thead><tr>
 <th>Prodotto</th>
@@ -28,17 +32,17 @@
 <tr>
 <td class="sr-market-table__prod">Sito vetrina</td>
 <td>€ 1.000–3.000<span class="sr-market-table__sub">2–4 settimane</span></td>
-<td class="sr-market-table__us">€ 1.900–2.800<span class="sr-market-table__sub">2 settimane</span></td>
+<td class="sr-market-table__us sr-market-table__us--lancio">{{listino}}€ 1.900–2.800{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 1.900–2.800</s><span class="sr-lancio-price">€ 950–1.400</span>{{/lancio}}<span class="sr-market-table__sub">2 settimane</span></td>
 </tr>
 <tr>
 <td class="sr-market-table__prod">Sito aziendale</td>
 <td>€ 2.500–8.000<span class="sr-market-table__sub">6–10 settimane</span></td>
-<td class="sr-market-table__us">€ 3.900–5.800<span class="sr-market-table__sub">3 settimane</span></td>
+<td class="sr-market-table__us sr-market-table__us--lancio">{{listino}}€ 3.900–5.800{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 3.900–5.800</s><span class="sr-lancio-price">€ 1.950–2.900</span>{{/lancio}}<span class="sr-market-table__sub">3 settimane</span></td>
 </tr>
 <tr>
 <td class="sr-market-table__prod">E-commerce</td>
 <td>€ 6.000–25.000<span class="sr-market-table__sub">8–14 settimane</span></td>
-<td class="sr-market-table__us">€ 7.500–14.000<span class="sr-market-table__sub">6 settimane</span></td>
+<td class="sr-market-table__us sr-market-table__us--lancio">{{listino}}€ 7.500–14.000{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 7.500–14.000</s><span class="sr-lancio-price">€ 3.750–7.000</span>{{/lancio}}<span class="sr-market-table__sub">6 settimane</span></td>
 </tr>
 </tbody>
 </table>

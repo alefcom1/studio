@@ -2072,3 +2072,16 @@ CHROME_BLOG_RETRO_ILLUS = {
         {'en': 'The seven most frequent causes of a slow website and the cost to fix them: nearly all are low-cost, only an old technical base needs deeper work. Source: dozens of audits on Italian SMB websites (Studio Remarka).'},
 }
 CHROME.update(CHROME_BLOG_RETRO_ILLUS)
+
+# Prezzo lancio — promo sui primi 5 progetti (titolare, 15.07.2026). Solo
+# 'en': il RU si scrive a mano (translate_pages.py ru è vietato). I prezzi
+# stessi (es. "€ 1.900–2.800") non servono qui: sono nodi di testo puramente
+# numerici, il traduttore li lascia intatti e la conversione al formato
+# US (virgola/punto) avviene comunque nel passo us_numbers() a valle.
+CHROME_LANCIO = {
+    'PREZZO LANCIO — PRIMI 5 PROGETTI': {'en': 'LAUNCH PRICE — FIRST 5 PROJECTS'},
+    'Prezzo lancio sui primi 5 progetti: stesso contratto, stesse garanzie. Listino pieno dal 2027.': {
+        'en': 'Launch price on our first 5 projects: same contract, same guarantees. Full price list from 2027.'},
+    'Ne restano {{lancio_slots}} su 5.': {'en': '{{lancio_slots}} of 5 slots still open.'},
+}
+CHROME.update(CHROME_LANCIO)

@@ -41,7 +41,8 @@ SERVICES = [
             testo='Sito aziendale in italiano e tedesco per un installatore con clienti in Alto Adige. Tre volte più richieste dal modulo contatti nel primo trimestre.',
             caption='GOOGLE PAGESPEED, MOBILE — RILEVAZIONI DOCUMENTATE',
         ),
-        prezzo_range='€ 3.900–5.800',
+        prezzo_range='{{listino}}€ 3.900–5.800{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 3.900–5.800</s> '
+                      '<span class="sr-lancio-price">€ 1.950–2.900</span>{{/lancio}}',
         prezzo_lede='Prezzo chiuso nel preventivo, consegna in 3 settimane. Fattura elettronica, pagamento in tre tranche.',
         prezzo_note=[
             'Numero di pagine e schede prodotto oltre le 15 incluse.',
@@ -83,7 +84,8 @@ SERVICES = [
             testo='Catalogo vini tradotto in tre lingue con checkout in un solo passaggio: le vendite dirette dal sito sono cresciute del 63% in un anno.',
             caption='GOOGLE PAGESPEED, MOBILE — RILEVAZIONI DOCUMENTATE',
         ),
-        prezzo_range='€ 7.500–14.000',
+        prezzo_range='{{listino}}€ 7.500–14.000{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 7.500–14.000</s> '
+                      '<span class="sr-lancio-price">€ 3.750–7.000</span>{{/lancio}}',
         prezzo_lede='Prezzo chiuso nel preventivo, consegna in 6 settimane. Fattura elettronica, pagamento in tre tranche.',
         prezzo_note=[
             'Numero di prodotti e varianti oltre il catalogo base.',

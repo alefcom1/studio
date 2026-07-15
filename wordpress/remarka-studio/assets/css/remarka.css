@@ -1198,6 +1198,106 @@ body.page .entry-title {
 .sr-compare-table .sr-yes { color: var(--sr-verde); }
 .sr-compare-table .sr-no { color: #A2A5AB; }
 
+.sr-compare-table th .sr-lancio-listino,
+.sr-compare-table th .sr-lancio-price {
+  display: block;
+}
+
+/* ---------- Prezzo lancio (promo primi 5 progetti, 15.07.2026) ---------- */
+
+.sr-lancio-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sr-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sr-oltremare-scuro);
+  background: rgba(36, 64, 200, 0.08);
+  border: 1px solid var(--sr-oltremare);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+
+.sr-lancio-badge::before {
+  content: "\25CF";
+  font-size: 8px;
+  color: var(--sr-verde);
+}
+
+.sr-dark .sr-lancio-badge {
+  background: rgba(91, 115, 232, 0.16);
+  border-color: var(--sr-oltremare-chiaro);
+  color: var(--sr-oltremare-chiaro);
+}
+
+.sr-lancio-line {
+  margin-top: 14px;
+  font-size: 15.5px;
+  color: var(--sr-grigio);
+  max-width: 60ch;
+}
+
+.sr-lancio-counter {
+  display: block;
+  margin-top: 8px;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--sr-oltremare);
+}
+
+.sr-dark .sr-lancio-counter { color: var(--sr-oltremare-chiaro); }
+
+.sr-lancio-listino {
+  color: var(--sr-grigio);
+  text-decoration: line-through;
+  opacity: 0.75;
+  font-weight: 400;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+.sr-lancio-price {
+  color: var(--sr-inchiostro);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.sr-dark .sr-lancio-price { color: var(--sr-bianco); }
+
+/* Nel numero grande di prezzo (pagina servizio) il listino barrato non deve
+   competere in dimensione col prezzo lancio: resta leggibile ma subordinato. */
+.sr-stat__num .sr-lancio-listino {
+  display: inline-block;
+  font-size: 0.42em;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+.sr-stat__num .sr-lancio-price {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Le celle sr-market-table sono nowrap di default (una sola cifra): col
+   prezzo lancio diventano due righe (listino barrato + lancio), serve
+   poterle mandare a capo. */
+.sr-market-table td.sr-market-table__us--lancio,
+.sr-market-table--compact td.sr-market-table__us--lancio {
+  white-space: normal;
+}
+
+.sr-market-table__us--lancio .sr-lancio-listino,
+.sr-market-table__us--lancio .sr-lancio-price {
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .sr-lancio-badge { font-size: 10px; padding: 5px 12px; }
+  .sr-lancio-line { font-size: 14.5px; }
+}
+
 /* ---------- Widget strumento (test velocità) ---------- */
 
 .sr-tool-widget {

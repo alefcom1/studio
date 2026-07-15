@@ -26,7 +26,7 @@
 <!-- wp:column {"width":"62%","className":"sr-faq"} -->
 <div class="wp-block-column sr-faq" style="flex-basis:62%"><!-- wp:details -->
 <details class="wp-block-details"><summary>Quanto costa un sito web?</summary><!-- wp:paragraph -->
-<p>La realizzazione di un sito web parte da € 1.900 per una vetrina; un sito aziendale da € 3.900, un e-commerce da € 7.500. Il preventivo è un prezzo chiuso: quello che firmate è quello che pagate, per iscritto.</p>
+<p>La realizzazione di un sito web parte da {{listino}}€ 1.900{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 1.900</s> <span class="sr-lancio-price">€ 950</span>{{/lancio}} per una vetrina; un sito aziendale da {{listino}}€ 3.900{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 3.900</s> <span class="sr-lancio-price">€ 1.950</span>{{/lancio}}, un e-commerce da {{listino}}€ 7.500{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 7.500</s> <span class="sr-lancio-price">€ 3.750</span>{{/lancio}}. Il preventivo è un prezzo chiuso: quello che firmate è quello che pagate, per iscritto.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
