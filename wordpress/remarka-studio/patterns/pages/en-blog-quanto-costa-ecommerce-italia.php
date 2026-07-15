@@ -51,7 +51,7 @@
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">The three factors that move the price<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">A concrete case from our delivery log: for Cantina Serralta (wine, Asti), a catalog translated into three languages with a one-step checkout brought +63% direct sales in one year — and the project paid for itself before the second harvest.</p>
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">A catalog translated by native speakers and a checkout cut down to one step are the two levers that move the most direct sales in an e-commerce site selling abroad: we apply them to the same multilingual projects the Remarka group builds for itself — real cases, with a link to the live project, at /en/case-studies/.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Catalog: not how many products you have, but how many variants, price lists, and pricing rules (B2B vs B2C) the store has to handle.</span></div><div><span class="sr-mono">b</span><span>Integrations: ERP, carriers, external warehouses. Every connected system is development and testing work, not a box to check.</span></div><div><span class="sr-mono">c</span><span>Languages and markets: selling in Germany isn’t translating product pages — it’s VAT, shipping, returns, and copy a native speaker has to adapt to the market.</span></div></div>

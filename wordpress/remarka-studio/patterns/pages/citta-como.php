@@ -46,41 +46,29 @@
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
-<div class="wp-block-column" style="flex-basis:55%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">cantinaserralta.it</span></div>
+<div class="wp-block-column" style="flex-basis:55%"><!-- wp:group {"className":"sr-browser sr-browser--mobile","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-browser sr-browser--mobile"><!-- wp:html -->
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">ukrinitsy.ru</span></div>
 <!-- /wp:html -->
-<!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-cantina-serralta.jpg" alt="Realizzazione siti web a Como: il sito di Cantina Serralta"/></figure>
-<!-- /wp:image -->
+<!-- wp:html -->
+[sr_shot file="ukrinitsy-mobile-390.jpg" alt="Sito vetrina della guest house ukrinitsy.ru, versione mobile" caption="ukrinitsy.ru — prima schermata, mobile" mobile="1"]
+<!-- /wp:html -->
 </div>
 <!-- /wp:group -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Un caso simile: vendere all’estero</p>
+<p class="sr-eyebrow">Lo stesso approccio per il turismo</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Cantina Serralta, Asti</h3>
+<h3 class="wp-block-heading">ukrinitsy.ru, sito vetrina per una guest house</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">In un anno, con il sito tradotto e il checkout semplificato, le vendite dirette dal sito sono cresciute del 63%, senza intermediari.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">Dopo il lancio le prenotazioni sono cresciute del 450%: 18 prenotazioni in una stagione arrivate dal sito — per una piccola struttura, la differenza tra stagione piena e stanze vuote.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div style="display:flex;flex-direction:column;gap:10px;margin-top:24px">
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-barra" style="height:6px" data-sr-target="41%" data-sr-delay="0" aria-hidden="true"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-barra" style="height:6px" data-sr-target="97%" data-sr-delay="150" aria-hidden="true"><div class="sr-barra__fill"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-</div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/cantina-serralta/">Leggi il caso completo →</a></p>
+<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/#ukrinitsy">Leggi il caso completo →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -166,7 +154,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi preventivo in 24 ore</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"sr-btn-whatsapp"} -->
-<div class="wp-block-button sr-btn-whatsapp"><a class="wp-block-button__link wp-element-button" href="https://api.whatsapp.com/send?phone=393478311141&amp;text=" target="_blank" rel="noopener noreferrer">WhatsApp Business</a></div>
+<div class="wp-block-button sr-btn-whatsapp"><a class="wp-block-button__link wp-element-button" href="https://wa.me/390000000000" target="_blank" rel="noopener noreferrer">WhatsApp Business</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

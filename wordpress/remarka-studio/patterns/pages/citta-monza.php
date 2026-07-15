@@ -48,39 +48,27 @@
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
 <div class="wp-block-column" style="flex-basis:55%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">arredamenticolombo.it</span></div>
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">tms.perevod4.ru</span></div>
 <!-- /wp:html -->
-<!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-arredamenti-colombo.jpg" alt="Realizzazione siti web a Monza: il sito di Arredamenti Colombo"/></figure>
-<!-- /wp:image -->
+<!-- wp:html -->
+[sr_shot file="tms-board-1440.jpg" alt="Pannello del TMS tms.perevod4.ru con la bacheca degli ordini di traduzione" caption="TMS — bacheca ordini, schermata principale, desktop" mobile="0"]
+<!-- /wp:html -->
 </div>
 <!-- /wp:group -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Un caso dalla Brianza</p>
+<p class="sr-eyebrow">Sistemi, non solo siti</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Arredamenti Colombo, Lissone</h3>
+<h3 class="wp-block-heading">TMS, il sistema operativo del gruppo</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">Sei settimane dopo la messa online, il punteggio PageSpeed mobile è passato da 34 a 96, con un tempo di caricamento sceso a 1,2 secondi.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">In produzione da 2 anni: il sistema gestisce 180 ordini al mese, oltre 2.000 l'anno. Dentro ci lavorano 2 amministratori, 8 project manager e 4 agenzie partner con la propria base — e gli ordini non si perdono più tra le email.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div style="display:flex;flex-direction:column;gap:10px;margin-top:24px">
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-barra" style="height:6px" data-sr-target="34%" data-sr-delay="0" aria-hidden="true"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-barra" style="height:6px" data-sr-target="96%" data-sr-delay="150" aria-hidden="true"><div class="sr-barra__fill"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-</div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/arredamenti-colombo/">Leggi il caso completo →</a></p>
+<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/#tms-perevod4">Leggi il caso completo →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -149,7 +137,7 @@
 <!-- /wp:details -->
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Avete già lavorato con aziende della zona?</summary><!-- wp:paragraph -->
-<p>Sì: il caso più citato del nostro portfolio è proprio a Lissone — Arredamenti Colombo, da 34 a 96 di PageSpeed con +41% di richieste di preventivo.</p>
+<p>Lavoriamo soprattutto con PMI di Monza e Brianza, ma il caso che mostriamo più spesso è un nostro progetto interno: il TMS che gestisce 180 ordini al mese per il gruppo Remarka — la stessa ingegneria che mettiamo nei siti che consegniamo qui.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 </section>
@@ -166,7 +154,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi preventivo in 24 ore</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"sr-btn-whatsapp"} -->
-<div class="wp-block-button sr-btn-whatsapp"><a class="wp-block-button__link wp-element-button" href="https://api.whatsapp.com/send?phone=393478311141&amp;text=" target="_blank" rel="noopener noreferrer">WhatsApp Business</a></div>
+<div class="wp-block-button sr-btn-whatsapp"><a class="wp-block-button__link wp-element-button" href="https://wa.me/390000000000" target="_blank" rel="noopener noreferrer">WhatsApp Business</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

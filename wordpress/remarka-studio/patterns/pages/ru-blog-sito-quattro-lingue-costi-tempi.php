@@ -51,7 +51,7 @@
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Кейс экспорта в Германию<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Для Cantina Serralta в Асти каталог, переведённый и адаптированный на три языка с оформлением заказа в один шаг, дал +63% прямых продаж за год. Дело не в одном переводе: дело в переводе, сделанном теми, кто продаёт, вместе с быстрым сайтом и чистым путём покупки. Это ровно модель нашей услуги Export Ready — сайт и его зарубежная версия под одним договором, с редакторами-носителями.</p>
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Сайт ATT (traduzione.tech), работающий с 2022 года, приносит бюро около 20 заказов в месяц по более чем 40 языковым парам и направлениям — реальный кейс группы Remarka, а не сторонний клиент, со ссылкой на живой проект на /ru/kejsy/. Дело не в одном переводе: дело в переводе, сделанном теми, кто продаёт, вместе с быстрым сайтом и структурой, рассчитанной на B2B-клиента. Это ровно модель нашей услуги Export Ready — сайт и его зарубежная версия под одним договором, с редакторами-носителями.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:14px"><a href="/ru/uslugi/mnogojazychnye-sajty/">Многоязычные сайты с редакторами-носителями →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/ru/instrumenty/roi-lokalizacii/">Посчитайте ROI зарубежной версии сайта →</a></p>

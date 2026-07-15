@@ -36,7 +36,7 @@
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">What costs little and returns a lot<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The first two causes — images and hosting — can often be fixed within a day and can halve load times on their own. Modern compression (AVIF/WebP with progressive loading) cuts photo weight by 80% with no visible loss of quality: on the Arredamenti Colombo rebuild it was worth −82% in file weight and a PageSpeed score that went from 34 to 96.</p>
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The first two causes — images and hosting — can often be fixed within a day and can halve load times on their own. Modern compression (AVIF/WebP with progressive loading) cuts photo weight by 80% with no visible loss of quality: on its own, it's often the single optimisation with the highest cost-to-benefit ratio in an audit.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Caching and plugin cleanup are the second step: half a day’s work, measurable results right away. The point is to measure before and after — not “the site feels faster,” but a documented number.</p>

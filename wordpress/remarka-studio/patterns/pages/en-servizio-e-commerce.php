@@ -77,34 +77,31 @@
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
 <div class="wp-block-column" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">From the delivery log</p>
+<p class="sr-eyebrow">From our own catalogue</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(26px,3vw,34px)"}}} -->
-<h2 class="wp-block-heading" style="font-size:clamp(26px,3vw,34px)">Cantina Serralta, Asti<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading" style="font-size:clamp(26px,3vw,34px)">ukrinitsy.ru<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<p class="sr-mono" style="font-size:12.5px;color:var(--sr-grigio);margin-top:6px">ukrinitsy.ru</p>
+<!-- /wp:html -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:16px;font-size:16px">Wine catalog translated into three languages with a one-step checkout: direct sales from the site grew 63% in one year.</p>
+<p class="has-base-font-size" style="margin-top:16px;font-size:16px">A brochure site for a small guest house: photos, contacts and a booking request within reach. Bookings grew 450% after launch.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="/en/case-studies/cantina-serralta/">Read a full case study →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="/en/case-studies/#ukrinitsy">Read the full case study →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:html -->
-<div style="display:flex;flex-direction:column;gap:20px">
+<div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">+450%</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">bookings after launch</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">Before</span><span class="sr-barra-row__val">41</span></div><div class="sr-barra" style="height:8px" data-sr-target="41%" data-sr-delay="0" role="img" aria-label="Before: 41 out of 100"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
+<div class="sr-stat" style="margin-top:24px"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">18</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">bookings in a season, from the site</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">After</span><span class="sr-barra-row__val sr-barra-row__val--verde">97</span></div><div class="sr-barra" style="height:8px" data-sr-target="97%" data-sr-delay="150" role="img" aria-label="After: 97 out of 100"><div class="sr-barra__fill"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-mono" style="font-size:11.5px;letter-spacing:0.06em;color:var(--sr-grigio)">GOOGLE PAGESPEED, MOBILE — DOCUMENTED MEASUREMENTS</p>
-<!-- /wp:html -->
-<!-- wp:html -->
-</div>
+<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:20px">REMARKA GROUP PROJECT — VERIFIABLE ON UKRINITSY.RU</p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->

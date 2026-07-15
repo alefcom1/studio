@@ -857,6 +857,132 @@ body.page .entry-title {
   background: var(--sr-traccia) !important;
 }
 
+/* Cornice stretta per screenshot mobile (Mini App, ukrinitsy): la stessa
+   .sr-browser, ma centrata e limitata in larghezza dentro la colonna. */
+.sr-browser--mobile {
+  max-width: 260px;
+  margin-inline: auto;
+}
+
+.sr-browser--mobile img,
+.sr-browser--mobile .sr-shot-placeholder {
+  aspect-ratio: 9 / 19.5;
+  min-height: 0;
+}
+
+/* ---------- Segnaposto screenshot casi studio (in attesa dei file reali) ----------
+   Griglia grigia + didascalia mono su due righe: nome file finale atteso e
+   cosa deve inquadrare. Sostituito automaticamente da [sr_shot] non appena
+   il file esiste in assets/img/casi/ — vedi inc/case-shots.php. */
+.sr-shot-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 220px;
+  aspect-ratio: 16 / 10;
+  padding: 20px;
+  text-align: center;
+  background-color: var(--sr-traccia);
+  background-image:
+    linear-gradient(var(--sr-bordo) 1px, transparent 1px),
+    linear-gradient(90deg, var(--sr-bordo) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.sr-shot-placeholder__file {
+  font-family: var(--sr-font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: var(--sr-oltremare);
+  background: var(--sr-bianco);
+  border: 1px solid var(--sr-bordo);
+  border-radius: 999px;
+  padding: 4px 12px;
+  word-break: break-all;
+}
+
+.sr-shot-placeholder__caption {
+  font-family: var(--sr-font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  color: var(--sr-grigio);
+  max-width: 32ch;
+}
+
+/* ---------- Catalogo casi studio: filtro a chip ---------- */
+
+.sr-case-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.sr-case-filter__btn {
+  font-family: var(--sr-font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--sr-grigio);
+  background: var(--sr-bianco);
+  border: 1px solid var(--sr-bordo);
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: color .15s ease, border-color .15s ease, background-color .15s ease;
+}
+
+.sr-case-filter__btn:hover {
+  color: var(--sr-inchiostro);
+  border-color: var(--sr-grigio);
+}
+
+.sr-case-filter__btn.is-active {
+  color: var(--sr-bianco);
+  background: var(--sr-inchiostro);
+  border-color: var(--sr-inchiostro);
+}
+
+/* Ogni scheda-caso è una sr-section a sé; il filtro nasconde/mostra
+   l'intera sezione in base a data-cat. */
+.sr-case-card[hidden] {
+  display: none;
+}
+
+.sr-case-card__chip {
+  display: inline-block;
+  font-family: var(--sr-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sr-oltremare);
+  border: 1px solid var(--sr-oltremare-chiaro);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.sr-case-card__url {
+  font-family: var(--sr-font-mono);
+  font-size: 13px;
+  color: var(--sr-grigio);
+}
+
+.sr-case-card__url a {
+  color: var(--sr-oltremare);
+}
+
+.sr-case-card__shots-extra {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.sr-case-card__shots-extra .sr-browser {
+  flex: 1;
+}
+
 /* ---------- Таблица цен ---------- */
 
 .sr-price-table {

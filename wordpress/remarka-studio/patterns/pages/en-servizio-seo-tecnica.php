@@ -77,34 +77,31 @@
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
 <div class="wp-block-column" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">From the delivery log</p>
+<p class="sr-eyebrow">From our own catalogue</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(26px,3vw,34px)"}}} -->
-<h2 class="wp-block-heading" style="font-size:clamp(26px,3vw,34px)">Studio Legale Fontana, Milan<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading" style="font-size:clamp(26px,3vw,34px)">пере.рф<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<p class="sr-mono" style="font-size:12.5px;color:var(--sr-grigio);margin-top:6px">пере.рф</p>
+<!-- /wp:html -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:16px;font-size:16px">Brochure site with an industry blog, fixed on the technical side: from page 3 to page 1 on Google for twelve industry keywords in eight weeks.</p>
+<p class="has-base-font-size" style="margin-top:16px;font-size:16px">A two-letter domain on the Cyrillic alphabet, taken to the top of Yandex with purely technical SEO: no shortcut from the name.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="/en/case-studies/studio-legale-fontana/">Read a full case study →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="/en/case-studies/#pere-rf">Read the full case study →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:html -->
-<div style="display:flex;flex-direction:column;gap:20px">
+<div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">No. 1</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">on Yandex for "notarised translation"</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">Before</span><span class="sr-barra-row__val">38</span></div><div class="sr-barra" style="height:8px" data-sr-target="38%" data-sr-delay="0" role="img" aria-label="Before: 38 out of 100"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
+<div class="sr-stat" style="margin-top:24px"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">9–10k/month</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">visitors, at the top for over 1,000 days</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">After</span><span class="sr-barra-row__val sr-barra-row__val--verde">95</span></div><div class="sr-barra" style="height:8px" data-sr-target="95%" data-sr-delay="150" role="img" aria-label="After: 95 out of 100"><div class="sr-barra__fill"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-mono" style="font-size:11.5px;letter-spacing:0.06em;color:var(--sr-grigio)">GOOGLE PAGESPEED, MOBILE — DOCUMENTED MEASUREMENTS</p>
-<!-- /wp:html -->
-<!-- wp:html -->
-</div>
+<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:20px">REMARKA GROUP PROJECT — VERIFIABLE ON ПЕРЕ.РФ</p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->

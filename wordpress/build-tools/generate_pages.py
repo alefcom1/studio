@@ -21,8 +21,9 @@ from blocks import (  # noqa: E402
     raw_html, image, table, details_faq, stat_block, list_rows, checklist,
     metric_rows, browser_frame, case_screenshot_src, barra, barra_row,
     pull_quote, chapter, compare_table_row, pattern_header,
+    case_shot, browser_frame_shot,
 )
-from data import SERVICES, CASES, TOOLS, CITY, CITIES, BLOG_POSTS, EXPORT_READY, WEB_APP, ADEGUAMENTO_EAA  # noqa: E402
+from data import SERVICES, CASES, CASES_BY_SLUG, TOOLS, CITY, CITIES, BLOG_POSTS, EXPORT_READY, WEB_APP, ADEGUAMENTO_EAA  # noqa: E402
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'remarka-studio', 'patterns', 'pages')
 os.makedirs(OUT_DIR, exist_ok=True)
@@ -156,18 +157,28 @@ def build_servizio(svc):
         classes='sr-section sr-section--bianco',
     )
 
+    # Mini-caso: un progetto REALE del gruppo Remarka (docs/copy-casi-studio.md),
+    # non un cliente inventato — niente più barre prima/dopo fittizie, solo due
+    # cifre verificabili sul progetto vivo (link_slug punta all'àncora della
+    # scheda nel catalogo unico /casi-studio/#…).
     mc = svc['mini_caso']
     mini_caso = section(
         columns([
-            column(eyebrow('Dal registro consegne') + heading(2, f"{mc['cliente']}, {mc['citta']}", style='clamp(26px,3vw,34px)') +
+            column(eyebrow('Dal nostro catalogo') + heading(2, mc['cliente'], style='clamp(26px,3vw,34px)') +
+                   raw_html(f'<p class="sr-mono" style="font-size:12.5px;color:var(--sr-grigio);margin-top:6px">{mc["progetto"]}</p>') +
                    paragraph(mc['testo'], size='base', extra_style='margin-top:16px;font-size:16px') +
-                   raw_html(f'<p class="sr-card-link" style="margin-top:16px"><a href="/casi-studio/{mc["link_slug"]}/">Leggi un caso completo →</a></p>'),
+                   raw_html(f'<p class="sr-card-link" style="margin-top:16px"><a href="{mc["link_slug"]}">Leggi il caso completo →</a></p>'),
                    width='55%'),
-            column(raw_html('<div style="display:flex;flex-direction:column;gap:20px">') +
-                   raw_html(barra_row('Prima', str(mc['prima']), mc['prima'], muted=True)) +
-                   raw_html(barra_row('Dopo', str(mc['dopo']), mc['dopo'], delay=150, verde_value=True)) +
-                   raw_html(f'<p class="sr-mono" style="font-size:11.5px;letter-spacing:0.06em;color:var(--sr-grigio)">{mc["caption"]}</p>') +
-                   raw_html('</div>'), width='45%'),
+            column(raw_html(
+                       f'<div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">{mc["stat1_value"]}</span>'
+                       f'<p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">{mc["stat1_label"]}</p></div>'
+                   ) +
+                   raw_html(
+                       f'<div class="sr-stat" style="margin-top:24px"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">{mc["stat2_value"]}</span>'
+                       f'<p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">{mc["stat2_label"]}</p></div>'
+                   ) +
+                   raw_html(f'<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:20px">{mc["caption"]}</p>'),
+                   width='45%'),
         ], valign='center'),
         classes='sr-section',
     )
@@ -214,100 +225,101 @@ def build_servizio(svc):
 
 # ---------------------------------------------------------------- Casi studio
 
-def build_casi_studio_index():
-    hero = section(eyebrow('Casi studio') + heading(1, 'Risultati misurati, non promessi', style='clamp(38px,4.6vw,64px)'),
-                    classes='sr-section sr-hero')
+CASE_FILTER_LABELS = [
+    ('all', 'Tutti i progetti'),
+    ('siti', 'Siti aziendali e vetrina'),
+    ('webapp', 'Web app e prodotti'),
+    ('seo', 'SEO tecnica e contenuti'),
+    ('restyling', 'Restyling e marketing'),
+]
 
-    cards = []
-    for c in CASES:
-        card_inner = (
-            browser_frame(c['sito'], f'Screenshot del sito {c["cliente"]}', src=case_screenshot_src(c['slug'])) +
-            raw_html(
-                f'<a href="/casi-studio/{c["slug"]}/" style="color:inherit;text-decoration:none">'
-                f'<h3 class="wp-block-heading" style="margin-top:20px">{c["cliente"]}</h3></a>'
-            ) +
-            raw_html(f'<p class="sr-mono" style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--sr-grigio);margin-top:6px">{c["settore"]} · {c["citta"]} · {c["intervento"]}</p>') +
-            raw_html(f'<p class="sr-mono" style="font-size:18px;color:var(--sr-oltremare);margin-top:10px">{c["key_metric"]}</p>') +
-            raw_html('<div style="display:flex;flex-direction:column;gap:6px;margin-top:14px">') +
-            raw_html(barra(c['prima'], muted=True, height=6)) +
-            raw_html(barra(c['dopo'], delay=150, height=6)) +
-            raw_html('</div>') +
-            raw_html(f'<p class="sr-card-link" style="margin-top:16px"><a href="/casi-studio/{c["slug"]}/">Leggi il caso →</a></p>')
+
+def _case_shots_html(c):
+    """Una scheda-caso può avere 1 screenshot, un board principale + 2 più
+    piccoli (TMS) o una coppia affiancata (moscowtrans+techperevod)."""
+    shots = c['shots']
+    if len(shots) == 1:
+        s = shots[0]
+        return browser_frame_shot(c['url_label'], s['file'], c['alt'], s['caption'], mobile=s['mobile'])
+    if c['slug'] == 'tms-perevod4':
+        main, extra = shots[0], shots[1:]
+        extra_html = ''.join(
+            browser_frame_shot(c['url_label'], s['file'], c['alt'], s['caption'], mobile=False)
+            for s in extra
         )
-        cards.append(group(card_inner, classes=''))
-
-    grid = section(
-        group(''.join(cards), classes='', layout_type='grid', style='280px') +
-        paragraph('Punteggi Google PageSpeed su mobile — report disponibili su richiesta', classes='sr-mono',
-                   extra_style='margin-top:40px;font-size:12px;color:var(--sr-grigio)'),
-        classes='sr-section',
-    )
-
-    cta = section(
-        heading(2, 'Il prossimo caso può essere il vostro') +
-        paragraph('Prima misuriamo il sito attuale, poi vi diciamo — con numeri — cosa possiamo garantire.',
-                   color='grigio', size='medium', extra_style='margin-top:12px') +
-        buttons([('Analizza il tuo sito — gratis', '/strumenti/test-velocita/', None)], justify='center', margin_top='28px'),
-        classes='sr-section sr-dark',
-    )
-    write('casi-studio-index', 'Pagina — Casi studio (elenco)',
-          'Elenco dei casi studio in griglia 2×2 con metriche chiave e barre prima/dopo.',
-          hero + grid + cta)
+        return (browser_frame_shot(c['url_label'], main['file'], c['alt'], main['caption'], mobile=False) +
+                raw_html(f'<div class="sr-case-card__shots-extra">{extra_html}</div>'))
+    # Coppia affiancata (moscowtrans.ru + techperevod.com): due cornici uguali.
+    return raw_html('<div class="sr-case-card__shots-extra">' + ''.join(
+        browser_frame_shot(c['url_label'], s['file'], c['alt'], s['caption'], mobile=False)
+        for s in shots
+    ) + '</div>')
 
 
-def build_caso_detail(c):
+def build_casi_studio_index():
     hero = section(
-        eyebrow(f'Casi studio / {c["cliente"]}') +
-        heading(1, c['titolo'], style='clamp(34px,4.4vw,58px)') +
-        raw_html(f'<p class="sr-mono" style="margin-top:20px;font-size:12.5px;letter-spacing:0.06em;color:var(--sr-grigio)">'
-                  f'SETTORE {c["settore"].upper()} · SEDE {c["citta"].upper()} · INTERVENTO {c["intervento"].upper()} · ANNO {c["anno"]}</p>'),
+        eyebrow('Casi studio') +
+        heading(1, "Non un portfolio di clienti. I sistemi che abbiamo costruito per noi", style='clamp(38px,4.6vw,64px)') +
+        paragraph(
+            "Molte web agency mostrano loghi di clienti. Il gruppo Remarka lavora con le lingue dal 2001 — "
+            "e dallo stesso anno costruisce siti: già nel 2002–2003 ne realizzava per aziende terze, e alcuni "
+            "sono online ancora oggi (directindustry.com.ru · ivextrans.eu · beltran.by). Da allora abbiamo "
+            "realizzato oltre 160 progetti; 28 sono oggi in manutenzione continua presso di noi. Studio Remarka "
+            "è la vetrina nuova di questo lavoro, non il suo inizio.",
+            color='grigio', size='medium', extra_style='margin-top:24px;max-width:74ch',
+        ) +
+        paragraph(
+            "Qui sotto trovate i sistemi che il gruppo ha costruito per sé: per gestire il proprio lavoro, "
+            "portare i propri servizi su Google, vendere in più lingue. Li usiamo ogni giorno, con i nostri "
+            "soldi e la nostra reputazione in gioco — e quando lavorate con noi ricevete la stessa ingegneria. "
+            "Ogni caso ha un link al progetto vivo: potete aprirlo, provarlo, misurarlo da soli. Nessun cliente "
+            "inventato, nessun numero non verificabile.",
+            color='grigio', size='medium', extra_style='margin-top:16px;max-width:74ch',
+        ) +
+        raw_html('<p class="sr-mono" style="margin-top:20px;font-size:12.5px;color:var(--sr-grigio)">Ogni scheda porta al progetto online. I punteggi e le metriche sono verificabili sul posto.</p>') +
+        raw_html(
+            '<div class="sr-case-filter" data-sr-case-filter-bar>' +
+            ''.join(
+                f'<button type="button" class="sr-case-filter__btn{" is-active" if key == "all" else ""}" '
+                f'data-sr-case-filter="{key}" aria-pressed="{"true" if key == "all" else "false"}">{label}</button>'
+                for key, label in CASE_FILTER_LABELS
+            ) + '</div>'
+        ) +
+        raw_html('<p class="sr-mono" style="margin-top:14px;font-size:12px;color:var(--sr-grigio)">11 progetti del gruppo · filtra per tipo di lavoro</p>'),
         classes='sr-section sr-hero',
     )
 
-    screenshot = section(browser_frame(c['sito'], f'Screenshot del sito {c["cliente"]}', src=case_screenshot_src(c['slug'])), classes='sr-section')
-
-    cap1 = section(chapter('01 — Problema',
-                            paragraph(c['problema_testo'], size='base', extra_style='font-size:17px') +
-                            group(''.join(
-                                f'<div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">{v}</span>'
-                                f'<p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">{l}</p></div>'
-                                for v, l in c['problema_stats']),
-                                classes='', layout_type='grid', style='160px')),
-                    classes='sr-section')
-
-    cap2 = section(chapter('02 — Soluzione',
-                            paragraph(c['soluzione_testo'], size='base', extra_style='font-size:17px') +
-                            list_rows(c['soluzione_interventi'])),
-                    classes='sr-section sr-section--bianco')
-
-    cap3_bars = raw_html('<div style="display:flex;flex-direction:column;gap:20px">') + \
-        raw_html(barra_row('Prima', str(c['prima']), c['prima'], muted=True, height=10)) + \
-        raw_html(barra_row('Dopo', str(c['dopo']), c['dopo'], delay=150, verde_value=True, height=10)) + \
-        raw_html(f'<p class="sr-mono" style="font-size:11.5px;letter-spacing:0.06em;color:var(--sr-grigio)">{c["caption"]}</p>') + \
-        raw_html('</div>')
-    cap3 = section(chapter('03 — Risultati',
-                            cap3_bars +
-                            paragraph(c['risultati_testo'], size='base', extra_style='font-size:17px;margin-top:24px') +
-                            group(''.join(
-                                f'<div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(32px,3vw,44px);color:var(--sr-oltremare)">{v}</span>'
-                                f'<p style="margin-top:10px;font-size:14.5px;color:var(--sr-grigio)">{l}</p></div>'
-                                for v, l in c['risultati_stats']),
-                                classes='', layout_type='grid', style='160px') +
-                            pull_quote(c['quote'], c['attribuzione'])),
-                    classes='sr-section')
+    cards = []
+    for i, c in enumerate(CASES):
+        card_classes = 'sr-section sr-case-card' + (' sr-section--bianco' if i % 2 else '')
+        card_body = columns([
+            column(_case_shots_html(c), width='52%'),
+            column(
+                raw_html(f'<span class="sr-case-card__chip">{c["chip"]}</span>') +
+                heading(2, c['titolo'], style='clamp(24px,2.6vw,32px)') +
+                raw_html(f'<p class="sr-case-card__url" style="margin-top:10px"><a href="{c["url"]}" target="_blank" rel="noopener noreferrer">{c["url_label"]} ↗</a></p>') +
+                paragraph(c['problema'], size='base', extra_style='margin-top:18px;font-size:15.5px') +
+                paragraph(c['soluzione'], size='base', extra_style='margin-top:12px;font-size:15.5px') +
+                raw_html(f'<p style="margin-top:16px;font-size:15.5px;font-weight:500">{c["risultato"]}</p>') +
+                raw_html(f'<p class="sr-card-link" style="margin-top:18px"><a href="{c["cta_href"]}">{c["cta_testo"]} →</a></p>'),
+                width='48%',
+            ),
+        ])
+        cards.append(section(card_body, classes=card_classes, anchor=c['slug'], data_attrs={'data-cat': c['data_cat']}))
 
     cta = section(
-        heading(2, 'Numeri simili per il vostro settore', dot_char='?') +
-        paragraph("L’analisi del sito attuale è gratuita e vi arriva come report scritto, con le priorità.",
+        heading(2, 'Il prossimo sistema possiamo costruirlo per voi') +
+        paragraph('Prima misuriamo cosa avete oggi, poi vi diciamo — con numeri e con una data in contratto — cosa possiamo fare.',
                    color='grigio', size='medium', extra_style='margin-top:12px') +
-        buttons([("Richiedi l’analisi gratuita", '/#contatti', None)], justify='center', margin_top='28px') +
-        raw_html('<p class="sr-card-link" style="text-align:center;margin-top:20px"><a href="/casi-studio/">Altri casi studio →</a></p>'),
+        buttons([
+            ('Richiedi un preventivo in 24 ore', '/#contatti', None),
+            ('Guarda tutti i servizi', '/servizi/', 'outline'),
+        ], justify='center', margin_top='28px'),
         classes='sr-section sr-dark',
     )
-
-    write(f'caso-{c["slug"]}', f'Pagina — Caso: {c["cliente"]}',
-          f'Caso studio dettagliato: {c["titolo"]}',
-          hero + screenshot + cap1 + cap2 + cap3 + cta)
+    write('casi-studio-index', 'Pagina — Casi studio (elenco)',
+          'Catalogo degli 11 casi studio reali del gruppo Remarka, con filtro per tipo di lavoro e link ai progetti vivi.',
+          hero + ''.join(cards) + cta)
 
 
 # ---------------------------------------------------------------- Prezzi
@@ -1058,20 +1070,17 @@ def build_city(c):
         classes='sr-section sr-section--bianco',
     )
 
-    local_case = next(x for x in CASES if x['slug'] == c['case_slug'])
-    case_alt = (f'Web agency {c["nome"]}: il sito di {local_case["cliente"]}'
-                if c['slug'] == 'milano'
-                else f'Realizzazione siti web a {c["nome"]}: il sito di {local_case["cliente"]}')
+    # Il caso non è un cliente locale: è un progetto REALE del gruppo Remarka
+    # (docs/copy-casi-studio.md) — stessa ingegneria, ovunque sia il cliente.
+    local_case = CASES_BY_SLUG[c['case_slug']]
+    case_alt = local_case['alt']  # stringa già coperta dal corpus (CASES) — niente concatenazioni non traducibili
+    main_shot = local_case['shots'][0]
     caso = section(
         columns([
-            column(browser_frame(c['case_url_label'], case_alt, src=case_screenshot_src(local_case['slug'])), width='55%'),
+            column(browser_frame_shot(c['case_url_label'], main_shot['file'], case_alt, main_shot['caption'], mobile=main_shot['mobile']), width='55%'),
             column(eyebrow(c['case_eyebrow']) + heading(3, c['case_title'], accent_dot=False) +
-                   paragraph(local_case['risultati_testo'], color='grigio', size='base', extra_style='margin-top:12px') +
-                   raw_html('<div style="display:flex;flex-direction:column;gap:10px;margin-top:24px">') +
-                   raw_html(barra(local_case['prima'], muted=True, height=6)) +
-                   raw_html(barra(local_case['dopo'], delay=150, height=6)) +
-                   raw_html('</div>') +
-                   raw_html(f'<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/{local_case["slug"]}/">Leggi il caso completo →</a></p>'),
+                   paragraph(local_case['risultato'], color='grigio', size='base', extra_style='margin-top:12px') +
+                   raw_html(f'<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/#{local_case["slug"]}">Leggi il caso completo →</a></p>'),
                    width='45%'),
         ], valign='center'),
         classes='sr-section',
@@ -1556,8 +1565,6 @@ def main():
 
     print('Casi studio:')
     build_casi_studio_index()
-    for c in CASES:
-        build_caso_detail(c)
 
     print('Prezzi:')
     build_prezzi()

@@ -48,39 +48,27 @@
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
 <div class="wp-block-column" style="flex-basis:55%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">tecnoidraulica.it</span></div>
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">пере.рф</span></div>
 <!-- /wp:html -->
-<!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-tecnoidraulica.jpg" alt="Realizzazione siti web a Brescia: il sito di TecnoIdraulica"/></figure>
-<!-- /wp:image -->
+<!-- wp:html -->
+[sr_shot file="pererf-home-1440.jpg" alt="Sito пере.рф, caso di SEO tecnica su dominio internazionalizzato" caption="пере.рф — home page" mobile="0"]
+<!-- /wp:html -->
 </div>
 <!-- /wp:group -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Un caso vicino: Bergamo</p>
+<p class="sr-eyebrow">SEO tecnica, non fortuna del nome</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">TecnoIdraulica, Bergamo</h3>
+<h3 class="wp-block-heading">пере.рф, primi posti su Yandex</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">Nel primo trimestre dalla pubblicazione, le richieste dal modulo contatti sono triplicate, in buona parte dalla versione in tedesco.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">Posizione n. 1 su Yandex — il principale motore di ricerca russo — per le query di settore «traduzione notarile» e «traduzione di manuali», 9.000–10.000 visitatori al mese, in vetta da oltre 1.000 giorni. Primi posti ottenuti con la tecnica, non con il nome.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div style="display:flex;flex-direction:column;gap:10px;margin-top:24px">
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-barra" style="height:6px" data-sr-target="29%" data-sr-delay="0" aria-hidden="true"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-barra" style="height:6px" data-sr-target="94%" data-sr-delay="150" aria-hidden="true"><div class="sr-barra__fill"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-</div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/tecnoidraulica/">Leggi il caso completo →</a></p>
+<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/#pere-rf">Leggi il caso completo →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -166,7 +154,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi preventivo in 24 ore</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"sr-btn-whatsapp"} -->
-<div class="wp-block-button sr-btn-whatsapp"><a class="wp-block-button__link wp-element-button" href="https://api.whatsapp.com/send?phone=393478311141&amp;text=" target="_blank" rel="noopener noreferrer">WhatsApp Business</a></div>
+<div class="wp-block-button sr-btn-whatsapp"><a class="wp-block-button__link wp-element-button" href="https://wa.me/390000000000" target="_blank" rel="noopener noreferrer">WhatsApp Business</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

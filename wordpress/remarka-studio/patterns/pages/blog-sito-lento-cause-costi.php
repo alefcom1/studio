@@ -36,7 +36,7 @@
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Cosa costa poco e rende molto<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Le prime due cause — immagini e hosting — si risolvono spesso in giornata e da sole possono dimezzare i tempi di caricamento. La compressione moderna (AVIF/WebP con caricamento progressivo) taglia il peso delle fotografie dell’80% a parità di qualità visibile: sul restyling di Arredamenti Colombo ha valso −82% di peso e un punteggio PageSpeed passato da 34 a 96.</p>
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Le prime due cause — immagini e hosting — si risolvono spesso in giornata e da sole possono dimezzare i tempi di caricamento. La compressione moderna (AVIF/WebP con caricamento progressivo) taglia il peso delle fotografie dell’80% a parità di qualità visibile: è spesso, da sola, l’ottimizzazione con il rapporto costo/beneficio più alto in un audit.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Cache e pulizia dei plugin sono il secondo gradino: mezza giornata di lavoro, risultati misurabili subito. Il punto è misurare prima e dopo — non «il sito sembra più veloce», ma un numero documentato.</p>

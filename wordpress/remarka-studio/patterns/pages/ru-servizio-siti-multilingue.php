@@ -77,34 +77,33 @@
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
 <div class="wp-block-column" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Из журнала сдачи проектов</p>
+<p class="sr-eyebrow">Из нашего каталога</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(26px,3vw,34px)"}}} -->
-<h2 class="wp-block-heading" style="font-size:clamp(26px,3vw,34px)">Cantina Serralta, Asti<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading" style="font-size:clamp(26px,3vw,34px)">Система тестирования переводчиков<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:html -->
+<p class="sr-mono" style="font-size:12.5px;color:var(--sr-grigio);margin-top:6px">moscowtrans.ru/test-perevodchika</p>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:16px;font-size:16px">С каталогом, переведённым на три языка носителями из группы Remarka, прямые продажи с сайта выросли на 63% за год.</p>
+<p class="has-base-font-size" style="margin-top:16px;font-size:16px">Платформа тестирования и оценки переводчиков — та самая система, что стоит за гарантией «редакторы-носители по профилю» на каждом многоязычном сайте, который мы сдаём.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="/ru/kejsy/cantina-serralta/">Читать полный кейс →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="/ru/kejsy/#test-traduttori">Читать полный кейс →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:html -->
-<div style="display:flex;flex-direction:column;gap:20px">
+<div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">400+</span>
+<p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">переводчиков протестировано</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">До</span><span class="sr-barra-row__val">41</span></div><div class="sr-barra" style="height:8px" data-sr-target="41%" data-sr-delay="0" role="img" aria-label="До: 41 из 100"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
+<div class="sr-stat" style="margin-top:24px"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">8%</span>
+<p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">проходят отбор</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">После</span><span class="sr-barra-row__val sr-barra-row__val--verde">97</span></div><div class="sr-barra" style="height:8px" data-sr-target="97%" data-sr-delay="150" role="img" aria-label="После: 97 из 100"><div class="sr-barra__fill"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-mono" style="font-size:11.5px;letter-spacing:0.06em;color:var(--sr-grigio)">GOOGLE PAGESPEED, МОБИЛЬНАЯ ВЕРСИЯ — ЗАДОКУМЕНТИРОВАННЫЕ ЗАМЕРЫ</p>
-<!-- /wp:html -->
-<!-- wp:html -->
-</div>
+<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:20px">ПРОЕКТ ГРУППЫ REMARKA — ИСПОЛЬЗУЕТСЯ ВО ВСЕХ ПРОЕКТАХ</p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->

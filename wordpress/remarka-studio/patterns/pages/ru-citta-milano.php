@@ -48,39 +48,27 @@
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
 <div class="wp-block-column" style="flex-basis:55%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">studiolegalefontana.it</span></div>
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">traduzione.tech</span></div>
 <!-- /wp:html -->
-<!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-studio-legale-fontana.jpg" alt="Скриншот сайта Studio Legale Fontana"/></figure>
-<!-- /wp:image -->
+<!-- wp:html -->
+[sr_shot file="att-home-1440.jpg" alt="Главная страница сайта бюро переводов traduzione.tech, с блоком услуг" caption="ATT — главная, блок услуг, десктоп" mobile="0"]
+<!-- /wp:html -->
 </div>
 <!-- /wp:group -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Кейс из Милана</p>
+<p class="sr-eyebrow">Та же инженерия — для итальянского клиента</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Studio Legale Fontana, Милан</h3>
+<h3 class="wp-block-heading">ATT, сайт бюро переводов</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">За восемь недель фирма поднялась с третьей страницы Google на первую по двенадцати отраслевым запросам — не переписав ни одной статьи.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">Сайт работает с 2022 года и приносит бюро около 20 заказов в месяц по более чем 40 языковым парам и направлениям. Это не клиент из Милана — это собственный проект группы Remarka: та же инженерия, которую мы применяем и здесь.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div style="display:flex;flex-direction:column;gap:10px;margin-top:24px">
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-barra" style="height:6px" data-sr-target="38%" data-sr-delay="0" aria-hidden="true"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-barra" style="height:6px" data-sr-target="95%" data-sr-delay="150" aria-hidden="true"><div class="sr-barra__fill"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-</div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-card-link" style="margin-top:20px"><a href="/ru/kejsy/studio-legale-fontana/">Читать кейс целиком →</a></p>
+<p class="sr-card-link" style="margin-top:20px"><a href="/ru/kejsy/#att-traduzione-tech">Читать кейс целиком →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->

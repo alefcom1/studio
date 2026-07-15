@@ -51,7 +51,7 @@
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">I tre fattori che spostano il prezzo<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Un caso concreto dal nostro registro consegne: per Cantina Serralta (vini, Asti) il catalogo tradotto in tre lingue con checkout in un solo passaggio ha portato +63% di vendite dirette in un anno — e il costo del progetto si è ripagato prima della seconda vendemmia.</p>
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Un catalogo tradotto da madrelingua e un checkout ridotto a un solo passaggio sono le due leve che spostano più vendite dirette in un e-commerce che vende all'estero: lo applichiamo agli stessi progetti multilingue che il gruppo Remarka costruisce per sé — casi reali, con link al progetto vivo, in /casi-studio/.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Catalogo: non quanti prodotti avete, ma quante varianti, listini e regole di prezzo (B2B vs B2C) il negozio deve gestire.</span></div><div><span class="sr-mono">b</span><span>Integrazioni: gestionale, corrieri, magazzino esterno. Ogni sistema collegato è lavoro di sviluppo e di test, non una casella da spuntare.</span></div><div><span class="sr-mono">c</span><span>Lingue e mercati: vendere in Germania non è tradurre le schede — è IVA, spedizioni, resi e testi che un madrelingua deve adattare al mercato.</span></div></div>

@@ -269,10 +269,6 @@ CHROME_EXTRA = {
         'ru': 'Мебель на заказ · Лиссоне (MB) · Редизайн + PWA + SEO'},
     'Assistenza inclusa': {'en': 'Support included', 'ru': 'Поддержка включена'},
     'Casi studio': {'en': 'Case studies', 'ru': 'Кейсы'},
-    'Casi studio / Arredamenti Colombo': {'en': 'Case studies / Arredamenti Colombo', 'ru': 'Кейсы / Arredamenti Colombo'},
-    'Casi studio / Cantina Serralta': {'en': 'Case studies / Cantina Serralta', 'ru': 'Кейсы / Cantina Serralta'},
-    'Casi studio / Studio Legale Fontana': {'en': 'Case studies / Studio Legale Fontana', 'ru': 'Кейсы / Studio Legale Fontana'},
-    'Casi studio / TecnoIdraulica': {'en': 'Case studies / TecnoIdraulica', 'ru': 'Кейсы / TecnoIdraulica'},
     'Catalogo': {'en': 'Catalog', 'ru': 'Каталог'},
     'Catalogo, carrello e pagamenti': {'en': 'Catalog, cart and payments', 'ru': 'Каталог, корзина и оплата'},
     'Chi siamo': {'en': 'About us', 'ru': 'О студии'},
@@ -392,8 +388,6 @@ CHROME_SEO = {
     'Web agency Milano': {'en': 'Web agency Milan'},
     'Web agency Milano: sei servizi, una garanzia': {
         'en': 'Web agency Milan: six services, one guarantee'},
-    'Web agency Milano: il sito di Studio Legale Fontana': {
-        'en': 'Web agency Milan: the Studio Legale Fontana website'},
     # strumento-test-velocita — «test velocità sito web» / «website speed test»
     'Test velocità sito web: il punteggio reale di Google': {
         'en': 'Website speed test: your real Google score'},
@@ -1907,6 +1901,8 @@ CHROME_BLOG_RETROFIT = {
         {'en': "The field data that tells a site that “seems fast” apart from one that’s truly fast."},
     "Un cliente tedesco apre la vostra scheda prodotto tradotta con l’automatico, legge una frase che nella sua lingua suona goffa, e chiude: non ha pensato «traduzione sbagliata», ha pensato «azienda poco seria». È così che un errore di registro costa un ordine prima ancora di una mail. La traduzione automatica basta per un menù o un orario; non basta dove si vende. In questo articolo: quando conviene l’automatico, quando serve un madrelingua, e cosa cambia davvero nei costi e nei tempi per lingua, con un caso reale di export verso la Germania.":
         {'en': "A German customer opens your machine-translated product page, reads a sentence that in their language sounds clumsy, and closes it: they didn’t think “bad translation”, they thought “unprofessional company”. That’s how a register error costs an order before even an email. Machine translation is enough for a menu or opening hours; it’s not enough where you sell. In this article: when machine translation is worth it, when you need a native speaker, and what really changes in costs and timelines per language, with a real case of exporting to Germany."},
+    "Un cliente tedesco apre la vostra scheda prodotto tradotta con l’automatico, legge una frase che nella sua lingua suona goffa, e chiude: non ha pensato «traduzione sbagliata», ha pensato «azienda poco seria». È così che un errore di registro costa un ordine prima ancora di una mail. La traduzione automatica basta per un menù o un orario; non basta dove si vende. In questo articolo: quando conviene l’automatico, quando serve un madrelingua, e cosa cambia davvero nei costi e nei tempi per lingua, con un caso reale del gruppo Remarka.":
+        {'en': "A German customer opens your machine-translated product page, reads a sentence that in their language sounds clumsy, and closes it: they didn’t think “bad translation”, they thought “unprofessional company”. That’s how a register error costs an order before even an email. Machine translation is enough for a menu or opening hours; it’s not enough where you sell. In this article: when machine translation is worth it, when you need a native speaker, and what really changes in costs and timelines per language, with a real case from the Remarka group."},
     "Quando la traduzione automatica basta (e quando no)":
         {'en': "When machine translation is enough (and when it isn’t)"},
     "La traduzione automatica di oggi è ottima per capire e farsi capire su cose semplici: un orario, un indirizzo, la descrizione neutra di un servizio. Se il vostro obiettivo è che un turista trovi il numero di telefono, va benissimo. Il problema nasce dove le parole vendono: una scheda prodotto tecnica, una pagina che deve convincere, un testo dove il tono conta quanto il contenuto. Lì l’automatico produce frasi «giuste ma spente», e a volte errori di registro che, nella lingua del cliente, suonano goffi o poco professionali.":
@@ -1923,10 +1919,14 @@ CHROME_BLOG_RETROFIT = {
         {'en': "The mistake that costs customers: translating without localizing"},
     "Tradurre è cambiare le parole; localizzare è cambiare ciò che serve perché il messaggio funzioni in quel mercato. Un prezzo con la valuta giusta, una data nel formato locale, un esempio che in Germania si capisce e in Italia no, un tono più diretto o più formale a seconda del Paese. Uno studio classico di CSA Research lo dice da anni con un titolo che è già una tesi: «Can’t Read, Won’t Buy» — se non lo leggo nella mia lingua, non lo compro. Vale ancora, e vale soprattutto dove c’è un carrello.":
         {'en': "Translating is changing the words; localizing is changing whatever it takes for the message to work in that market. A price in the right currency, a date in the local format, an example that’s understood in Germany but not in Italy, a more direct or more formal tone depending on the country. A classic CSA Research study has said it for years with a title that’s already a thesis: “Can’t Read, Won’t Buy” — if I can’t read it in my language, I won’t buy it. It still holds, and it holds above all where there’s a cart."},
-    "Un caso di export in Germania":
-        {'en': "A case of exporting to Germany"},
-    "Per Cantina Serralta, ad Asti, il catalogo tradotto e adattato in tre lingue con un checkout in un solo passaggio ha portato +63% di vendite dirette in un anno. Non è stata la traduzione da sola: è stata la traduzione fatta da chi vende, unita a un sito veloce e a un percorso d’acquisto pulito. È esattamente il modello del nostro servizio Export Ready — il sito e la sua versione estera sotto un unico contratto, con redattori madrelingua.":
-        {'en': "For Cantina Serralta, in Asti, the catalog translated and adapted into three languages with a single-step checkout brought +63% in direct sales in one year. It wasn’t the translation alone: it was the translation done by people who sell, combined with a fast site and a clean purchase journey. It’s exactly the model of our Export Ready service — the site and its foreign version under a single contract, with native-speaking editors."},
+    "Un catalogo tradotto da madrelingua e un checkout ridotto a un solo passaggio sono le due leve che spostano più vendite dirette in un e-commerce che vende all'estero: lo applichiamo agli stessi progetti multilingue che il gruppo Remarka costruisce per sé — casi reali, con link al progetto vivo, in /casi-studio/.":
+        {'en': "A catalog translated by native speakers and a checkout cut down to one step are the two levers that move the most direct sales in an e-commerce site selling abroad: we apply them to the same multilingual projects the Remarka group builds for itself — real cases, with a link to the live project, at /en/case-studies/."},
+    "Le prime due cause — immagini e hosting — si risolvono spesso in giornata e da sole possono dimezzare i tempi di caricamento. La compressione moderna (AVIF/WebP con caricamento progressivo) taglia il peso delle fotografie dell’80% a parità di qualità visibile: è spesso, da sola, l’ottimizzazione con il rapporto costo/beneficio più alto in un audit.":
+        {'en': "The first two causes — images and hosting — can often be fixed within a day and can halve load times on their own. Modern compression (AVIF/WebP with progressive loading) cuts photo weight by 80% with no visible loss of quality: on its own, it's often the single optimisation with the highest cost-to-benefit ratio in an audit."},
+    "Un caso reale: la localizzazione che genera ordini":
+        {'en': "A real case: localisation that generates orders"},
+    "Il sito di ATT (traduzione.tech), online dal 2022, porta all'agenzia circa 20 ordini al mese su oltre 40 combinazioni e direzioni linguistiche — un caso reale del gruppo Remarka, non un cliente terzo, con link al progetto vivo in /casi-studio/. Non è la traduzione da sola: è la traduzione fatta da chi vende, unita a un sito veloce e a una struttura pensata per il cliente B2B. È esattamente il modello del nostro servizio Export Ready — il sito e la sua versione estera sotto un unico contratto, con redattori madrelingua.":
+        {'en': "The site of ATT (traduzione.tech), live since 2022, brings the agency around 20 orders a month across more than 40 language pairs and directions — a real case from the Remarka group, not a third-party client, with a link to the live project at /en/case-studies/. It isn’t the translation alone: it’s the translation done by people who sell, combined with a fast site and a structure built for the B2B client. It’s exactly the model of our Export Ready service — the site and its foreign version under a single contract, with native-speaking editors."},
     "Siti multilingue con redattori madrelingua →":
         {'en': "Multilingual websites with native-speaking editors →"},
     "Calcola il ROI di una versione estera del sito →":
@@ -2085,3 +2085,43 @@ CHROME_LANCIO = {
     'Ne restano {{lancio_slots}} su 5.': {'en': '{{lancio_slots}} of 5 slots still open.'},
 }
 CHROME.update(CHROME_LANCIO)
+
+# Catalogo casi studio reali (docs/copy-casi-studio.md, generate_pages.py
+# build_casi_studio_index()): microcopy del template — intro, filtro a chip,
+# CTA delle 11 schede, blocco finale. I testi delle singole carte (titolo/
+# problema/soluzione/risultato/alt/didascalie shot) sono nel corpus CASES,
+# non qui — questo è solo lo scheletro riutilizzabile della pagina.
+CHROME_CASI_STUDIO = {
+    'Non un portfolio di clienti. I sistemi che abbiamo costruito per noi': {
+        'en': 'Not a client portfolio. The systems we built for ourselves'},
+    "Molte web agency mostrano loghi di clienti. Il gruppo Remarka lavora con le lingue dal 2001 — e dallo stesso anno costruisce siti: già nel 2002–2003 ne realizzava per aziende terze, e alcuni sono online ancora oggi (directindustry.com.ru · ivextrans.eu · beltran.by). Da allora abbiamo realizzato oltre 160 progetti; 28 sono oggi in manutenzione continua presso di noi. Studio Remarka è la vetrina nuova di questo lavoro, non il suo inizio.": {
+        'en': "Most web agencies show off client logos. The Remarka group has worked with languages since 2001 — and has been building websites since that same year: as early as 2002–2003 it was delivering sites for outside companies, some still online today (directindustry.com.ru · ivextrans.eu · beltran.by). Since then: over 160 projects delivered, 28 currently under our continuous maintenance. Studio Remarka is this work's new storefront, not its beginning."},
+    'Qui sotto trovate i sistemi che il gruppo ha costruito per sé: per gestire il proprio lavoro, portare i propri servizi su Google, vendere in più lingue. Li usiamo ogni giorno, con i nostri soldi e la nostra reputazione in gioco — e quando lavorate con noi ricevete la stessa ingegneria. Ogni caso ha un link al progetto vivo: potete aprirlo, provarlo, misurarlo da soli. Nessun cliente inventato, nessun numero non verificabile.': {
+        'en': "Below are the systems the group built for itself: to run our own operations, rank our own services on Google, sell in several languages. We use them every day, with our own money and reputation on the line — and when you work with us you get the same engineering. Every case links to the live project: open it, test it, measure it yourself. No invented clients, no numbers you can't check."},
+    'Ogni scheda porta al progetto online. I punteggi e le metriche sono verificabili sul posto.': {
+        'en': 'Every card opens the live project. Scores and metrics are verifiable on the spot.'},
+    'Tutti i progetti': {'en': 'All projects'},
+    'Siti aziendali e vetrina': {'en': 'Business & brochure sites'},
+    'Web app e prodotti': {'en': 'Web apps & products'},
+    'SEO tecnica e contenuti': {'en': 'Technical SEO & content'},
+    'Restyling e marketing': {'en': 'Redesign & marketing'},
+    '11 progetti del gruppo · filtra per tipo di lavoro': {'en': '11 group projects · filter by type of work'},
+    'Un sito aziendale come questo →': {'en': 'A business website like this one →'},
+    'Una web app su misura per la vostra azienda →': {'en': 'A custom web app for your company →'},
+    'Una Mini App o PWA per il vostro pubblico →': {'en': 'A Mini App or PWA for your audience →'},
+    'SEO tecnica e siti multilingue →': {'en': 'Technical SEO and multilingual sites →'},
+    'SEO tecnica per progetti di contenuto →': {'en': 'Technical SEO for content projects →'},
+    'Restyling e idee di marketing per il vostro sito →': {'en': 'Redesign and marketing ideas for your site →'},
+    'SEO tecnica che porta risultati →': {'en': 'Technical SEO that delivers →'},
+    'Un sito vetrina per la vostra attività →': {'en': 'A brochure site for your business →'},
+    'Restyling e nuovo design per il vostro sito →': {'en': 'Redesign and new design for your site →'},
+    'Una web app su misura per il vostro processo →': {'en': 'A custom web app for your process →'},
+    'Contenuti nativi in più lingue per il vostro sito →': {'en': 'Native content in several languages for your site →'},
+    'Il prossimo sistema possiamo costruirlo per voi': {'en': 'The next system, we can build for you'},
+    'Prima misuriamo cosa avete oggi, poi vi diciamo — con numeri e con una data in contratto — cosa possiamo fare.': {
+        'en': 'First we measure what you have today, then we tell you — with numbers and a date in the contract — what we can do.'},
+    'Richiedi un preventivo in 24 ore': {'en': 'Get a quote in 24 hours'},
+    'Guarda tutti i servizi': {'en': 'See all services'},
+    'Dal nostro catalogo': {'en': 'From our own catalogue'},
+}
+CHROME.update(CHROME_CASI_STUDIO)

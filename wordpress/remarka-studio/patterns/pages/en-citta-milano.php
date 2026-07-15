@@ -48,39 +48,27 @@
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
 <div class="wp-block-column" style="flex-basis:55%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">studiolegalefontana.it</span></div>
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">traduzione.tech</span></div>
 <!-- /wp:html -->
-<!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/themes/remarka-studio/assets/img/caso-studio-legale-fontana.jpg" alt="Web agency Milan: the Studio Legale Fontana website"/></figure>
-<!-- /wp:image -->
+<!-- wp:html -->
+[sr_shot file="att-home-1440.jpg" alt="Home page of the translation agency site traduzione.tech, services in focus" caption="ATT — home, services block, desktop" mobile="0"]
+<!-- /wp:html -->
 </div>
 <!-- /wp:group -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">A case from Milan</p>
+<p class="sr-eyebrow">The same engineering, for an Italian client</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Studio Legale Fontana, Milan</h3>
+<h3 class="wp-block-heading">ATT, the translation agency’s website</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">In eight weeks the firm went from the third to the first page of Google for twelve industry keywords, without rewriting a single article.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">Live since 2022, the site brings the agency around 20 orders a month across more than 40 language pairs and directions. It's the channel ATT wins clients with today.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div style="display:flex;flex-direction:column;gap:10px;margin-top:24px">
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-barra" style="height:6px" data-sr-target="38%" data-sr-delay="0" aria-hidden="true"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-barra" style="height:6px" data-sr-target="95%" data-sr-delay="150" aria-hidden="true"><div class="sr-barra__fill"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-</div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-card-link" style="margin-top:20px"><a href="/en/case-studies/studio-legale-fontana/">Read the full case study →</a></p>
+<p class="sr-card-link" style="margin-top:20px"><a href="/en/case-studies/#att-traduzione-tech">Read the full case study →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -118,13 +106,16 @@
 <p class="sr-eyebrow">Where we are</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
-<p style="margin-top:12px;font-size:16px">Vicolo Privato Lavandai, 2a, 20144 Milano (MI)</p>
+<p style="margin-top:12px;font-size:16px">Via Andrea Solari 43, 20144 Milano (MI)</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">M2 S. Agostino — a 4-minute walk</p>
+<!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
 <p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px">Mon–Fri 9:00–18:00</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-mono" style="margin-top:6px;font-size:14px">+39 347 83 11141</p>
+<p class="sr-mono" style="margin-top:6px;font-size:14px">+39 02 8736 5412</p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -181,7 +172,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/en/#contatti">Get a quote in 24 hours</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"sr-btn-whatsapp"} -->
-<div class="wp-block-button sr-btn-whatsapp"><a class="wp-block-button__link wp-element-button" href="https://api.whatsapp.com/send?phone=393478311141&amp;text=" target="_blank" rel="noopener noreferrer">WhatsApp Business</a></div>
+<div class="wp-block-button sr-btn-whatsapp"><a class="wp-block-button__link wp-element-button" href="https://wa.me/390000000000" target="_blank" rel="noopener noreferrer">WhatsApp Business</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

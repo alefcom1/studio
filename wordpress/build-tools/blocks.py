@@ -133,14 +133,17 @@ def group(html, classes='', layout_type='constrained', tag=None, style=None, anc
             f'<!-- /wp:group -->\n')
 
 
-def section(inner_html, classes='sr-section', anchor=None):
+def section(inner_html, classes='sr-section', anchor=None, data_attrs=None):
+    """data_attrs: dict opzionale di attributi extra sul tag <section>
+    (es. {'data-cat': 'webapp'} per il filtro a chip del catalogo casi studio)."""
     attrs = {"tagName": "section", "className": classes,
              "layout": {"type": "constrained", "contentSize": "1240px"}}
     if anchor:
         attrs["anchor"] = anchor
     anchor_attr = f' id="{anchor}"' if anchor else ''
+    extra_attr = ''.join(f' {k}="{v}"' for k, v in (data_attrs or {}).items())
     return (f'<!-- wp:group{_attrs(attrs)} -->\n'
-            f'<section class="wp-block-group is-layout-constrained {classes}"{anchor_attr}>' + inner_html + '</section>\n'
+            f'<section class="wp-block-group is-layout-constrained {classes}"{anchor_attr}{extra_attr}>' + inner_html + '</section>\n'
             f'<!-- /wp:group -->\n')
 
 
@@ -227,6 +230,26 @@ def case_screenshot_src(case_slug):
     """Мокап-скриншоты кейсов (сгенерированы Playwright'ом, лежат в теме).
     Владелец заменяет реальными через редактор блоков (кнопка «Sostituisci»)."""
     return f'/wp-content/themes/remarka-studio/assets/img/caso-{case_slug}.jpg'
+
+
+def case_shot(file, alt, caption, mobile=False):
+    """Screenshot reale di un caso studio (docs/copy-casi-studio.md), non
+    ancora ricevuto dal proprietario: emette lo shortcode [sr_shot], risolto
+    a runtime da inc/case-shots.php (immagine se il file esiste in
+    assets/img/casi/, segnaposto brandizzato altrimenti — vedi quel file per
+    il perché di uno shortcode e non di un tag <img> statico)."""
+    m = '1' if mobile else '0'
+    return raw_html(f'[sr_shot file="{file}" alt="{alt}" caption="{caption}" mobile="{m}"]')
+
+
+def browser_frame_shot(url_label, file, alt, caption, mobile=False):
+    """Come browser_frame(), ma per gli screenshot reali dei casi studio:
+    corpo dell'immagine tramite case_shot() invece di un <img> fisso."""
+    bar = (f'<div class="sr-browser__bar"><span class="sr-browser__dot"></span>'
+           f'<span class="sr-browser__dot"></span><span class="sr-browser__dot"></span>'
+           f'<span class="sr-browser__url">{url_label}</span></div>')
+    cls = 'sr-browser sr-browser--mobile' if mobile else 'sr-browser'
+    return group(raw_html(bar) + case_shot(file, alt, caption, mobile=mobile), classes=cls)
 
 
 def barra(target, delay=0, muted=False, height=10, aria_label=None):

@@ -2059,6 +2059,39 @@
 		});
 	}
 
+	/* ---------- 10. Filtro a chip del catalogo casi studio ----------
+	   patterns/pages/casi-studio-index.php (+ en-): righe di pulsanti
+	   [data-sr-case-filter="all|siti|webapp|seo|restyling"] sopra la
+	   griglia di sezioni [data-cat] .sr-case-card. Nessuna dipendenza da
+	   framework: solo hidden/show, coerente con lo stile del resto del file. */
+	function initCaseFilter() {
+		var bars = document.querySelectorAll('[data-sr-case-filter-bar]');
+		if (!bars.length) return;
+
+		bars.forEach(function (bar) {
+			var scope = bar.closest('[data-sr-case-scope]') || document;
+			var btns = bar.querySelectorAll('[data-sr-case-filter]');
+			var cards = scope.querySelectorAll('.sr-case-card[data-cat]');
+
+			function apply(key) {
+				cards.forEach(function (card) {
+					var show = key === 'all' || card.getAttribute('data-cat') === key;
+					card.hidden = !show;
+				});
+				btns.forEach(function (b) {
+					b.classList.toggle('is-active', b.getAttribute('data-sr-case-filter') === key);
+					b.setAttribute('aria-pressed', b.getAttribute('data-sr-case-filter') === key ? 'true' : 'false');
+				});
+			}
+
+			btns.forEach(function (btn) {
+				btn.addEventListener('click', function () {
+					apply(btn.getAttribute('data-sr-case-filter'));
+				});
+			});
+		});
+	}
+
 	onReady(function () {
 		initReveal();
 		initBarre();
@@ -2071,5 +2104,6 @@
 		initWaFab();
 		initLangSwitch();
 		initContactForm();
+		initCaseFilter();
 	});
 })();

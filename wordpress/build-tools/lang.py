@@ -39,11 +39,11 @@ SERVICES_SLUGS = {
     'adeguamento-eaa':      {'en': 'eaa-compliance',        'ru': 'dostupnost-eaa'},
 }
 
-# Имена клиентов — бренды, слаги не переводятся.
-CASES_SLUGS = {
-    s: {'en': s, 'ru': s}
-    for s in ('arredamenti-colombo', 'cantina-serralta', 'tecnoidraulica', 'studio-legale-fontana')
-}
+# I casi studio (docs/copy-casi-studio.md, deck §8.3) non hanno più pagine
+# dedicate /casi-studio/<slug>/: vivono come schede con àncora nel catalogo
+# unico (IT: casi-studio-index.php, EN: en-casi-studio-index.php, RU:
+# ru-casi-studio-index.php — narrativa a sé). Niente slug da tradurre.
+CASES_SLUGS = {}
 
 TOOLS_SLUGS = {
     'test-velocita':          {'en': 'speed-test',           'ru': 'test-skorosti'},

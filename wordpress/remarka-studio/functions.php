@@ -18,6 +18,10 @@ require_once get_stylesheet_directory() . '/inc/multilang.php';
 // Check-up completo: copy deck del report PDF + rendering dompdf (M3).
 require_once get_stylesheet_directory() . '/inc/checkup-report-pdf.php';
 
+// Segnaposto per gli screenshot dei casi studio reali, in attesa dei file
+// definitivi (docs/copy-casi-studio.md): shortcode [sr_shot], risolto a runtime.
+require_once get_stylesheet_directory() . '/inc/case-shots.php';
+
 /**
  * Есть ли локальные шрифты? Маркер — главный woff2 Clash Display.
  * Пока владелец не положил файлы в assets/fonts, тема грузит CDN

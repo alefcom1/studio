@@ -183,11 +183,12 @@ $page_map = array(
 	'servizio-web-app'                     => array( 'web-app', 'servizi', 'Web app su misura' ),
 	'servizio-adeguamento-eaa'             => array( 'adeguamento-eaa', 'servizi', 'Adeguamento EAA' ),
 
+	// I casi studio non hanno più pagine singole (docs/copy-casi-studio.md
+	// §8.3): un solo catalogo con schede-àncora in casi-studio-index. Le
+	// quattro voci caso-<slug> (clienti inventati) sono state rimosse di
+	// proposito: la pulizia orfane qui sotto le sposta nel cestino al
+	// prossimo REMARKA_FORCE=1, non compaiono più in $current_slugs.
 	'casi-studio-index'                    => array( 'casi-studio', null, 'Casi studio' ),
-	'caso-arredamenti-colombo'             => array( 'arredamenti-colombo', 'casi-studio', null ),
-	'caso-cantina-serralta'                => array( 'cantina-serralta', 'casi-studio', null ),
-	'caso-tecnoidraulica'                  => array( 'tecnoidraulica', 'casi-studio', null ),
-	'caso-studio-legale-fontana'           => array( 'studio-legale-fontana', 'casi-studio', null ),
 
 	'prezzi'                               => array( 'prezzi', null, null ),
 
@@ -241,10 +242,6 @@ $page_map = array(
 	'en-servizio-export-ready'                     => array( 'export-ready', 'en/services', null ),
 	'en-servizio-web-app'                          => array( 'custom-web-apps', 'en/services', null ),
 	'en-servizio-adeguamento-eaa'                  => array( 'eaa-compliance', 'en/services', 'EAA compliance' ),
-	'en-caso-arredamenti-colombo'                  => array( 'arredamenti-colombo', 'en/case-studies', null ),
-	'en-caso-cantina-serralta'                     => array( 'cantina-serralta', 'en/case-studies', null ),
-	'en-caso-tecnoidraulica'                       => array( 'tecnoidraulica', 'en/case-studies', null ),
-	'en-caso-studio-legale-fontana'                => array( 'studio-legale-fontana', 'en/case-studies', null ),
 	'en-strumento-check-up-completo'               => array( 'full-site-checkup', 'en/tools', 'Full site check-up' ),
 	'en-strumento-test-velocita'                   => array( 'speed-test', 'en/tools', 'Speed test' ),
 	'en-strumento-check-gdpr'                      => array( 'gdpr-check', 'en/tools', 'GDPR & cookie check' ),
@@ -290,10 +287,6 @@ $page_map = array(
 	'ru-servizio-adeguamento-eaa'                  => array( 'dostupnost-eaa', 'ru/uslugi', 'Доступность и EAA' ),
 	'ru-sajt-dlya-evropy'                          => array( 'sajt-dlya-evropy', 'ru/uslugi', 'Сайт для выхода на рынок Италии и Европы' ),
 	'ru-seo-prodvizhenie'                          => array( 'seo-prodvizhenie', 'ru/uslugi', 'SEO-продвижение в Италии и Европе' ),
-	'ru-caso-arredamenti-colombo'                  => array( 'arredamenti-colombo', 'ru/kejsy', null ),
-	'ru-caso-cantina-serralta'                     => array( 'cantina-serralta', 'ru/kejsy', null ),
-	'ru-caso-tecnoidraulica'                       => array( 'tecnoidraulica', 'ru/kejsy', null ),
-	'ru-caso-studio-legale-fontana'                => array( 'studio-legale-fontana', 'ru/kejsy', null ),
 	'ru-strumento-check-up-completo'               => array( 'polnaya-proverka-sajta', 'ru/instrumenty', 'Полная проверка сайта' ),
 	'ru-strumento-test-velocita'                   => array( 'test-skorosti', 'ru/instrumenty', 'Тест скорости' ),
 	'ru-strumento-check-gdpr'                      => array( 'proverka-gdpr', 'ru/instrumenty', 'Проверка GDPR и cookie' ),
@@ -362,8 +355,8 @@ foreach ( $ordered as $pattern_slug ) {
 
 /* ---------- 2b. Pulizia pagine orfane ----------
  * Se un caso/articolo viene rinominato o rimosso da data.py (successo con
- * gli slug dei casi studio: officine-riva/studio-fontana/bb-il-cortile →
- * cantina-serralta/tecnoidraulica/studio-legale-fontana), la vecchia pagina
+ * i quattro casi studio con clienti inventati, sostituiti dal catalogo
+ * unico di progetti reali — docs/copy-casi-studio.md), la vecchia pagina
  * resta nel database con lo slug precedente — non viene toccata perché non
  * compare più in $page_map. Qui cerchiamo tutte le pagine con il meta
  * _remarka_generated il cui slug non è (più) nella mappa corrente e le

@@ -77,34 +77,31 @@
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
 <div class="wp-block-column" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">From the delivery log</p>
+<p class="sr-eyebrow">From our own catalogue</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(26px,3vw,34px)"}}} -->
-<h2 class="wp-block-heading" style="font-size:clamp(26px,3vw,34px)">Arredamenti Colombo, Lissone (MB)<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading" style="font-size:clamp(26px,3vw,34px)">Telegram Mini App<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<p class="sr-mono" style="font-size:12.5px;color:var(--sr-grigio);margin-top:6px">@massimoalefBot</p>
+<!-- /wp:html -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:16px;font-size:16px">The catalog opens instantly and stays available offline in the showroom: +41% quote requests in six months.</p>
+<p class="has-base-font-size" style="margin-top:16px;font-size:16px">The TMS's key functions brought into a Telegram Mini App: orders and notifications inside the chat, nothing to install. Built in 2 weeks.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="/en/case-studies/arredamenti-colombo/">Read a full case study →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="/en/case-studies/#mini-app-telegram">Read the full case study →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:html -->
-<div style="display:flex;flex-direction:column;gap:20px">
+<div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">2 weeks</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">from decision to app in production</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">Before</span><span class="sr-barra-row__val">34</span></div><div class="sr-barra" style="height:8px" data-sr-target="34%" data-sr-delay="0" role="img" aria-label="Before: 34 out of 100"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
+<div class="sr-stat" style="margin-top:24px"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">10+/day</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">users and orders handled every day</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">After</span><span class="sr-barra-row__val sr-barra-row__val--verde">96</span></div><div class="sr-barra" style="height:8px" data-sr-target="96%" data-sr-delay="150" role="img" aria-label="After: 96 out of 100"><div class="sr-barra__fill"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-mono" style="font-size:11.5px;letter-spacing:0.06em;color:var(--sr-grigio)">GOOGLE PAGESPEED, MOBILE — AVERAGE OF 3 MEASUREMENTS</p>
-<!-- /wp:html -->
-<!-- wp:html -->
-</div>
+<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:20px">REMARKA GROUP PROJECT — VERIFIABLE ON TELEGRAM</p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -127,6 +124,9 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Offline features requested beyond the base pages.</span></div><div><span class="sr-mono">b</span><span>Push notifications and additional native integrations.</span></div><div><span class="sr-mono">c</span><span>Number of pages and sections beyond those included.</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/en/pricing/">Compare all plans →</a></p>

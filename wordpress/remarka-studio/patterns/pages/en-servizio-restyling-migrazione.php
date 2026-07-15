@@ -77,34 +77,31 @@
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
 <div class="wp-block-column" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">From the delivery log</p>
+<p class="sr-eyebrow">From our own catalogue</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(26px,3vw,34px)"}}} -->
-<h2 class="wp-block-heading" style="font-size:clamp(26px,3vw,34px)">Arredamenti Colombo, Lissone (MB)<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading" style="font-size:clamp(26px,3vw,34px)">moscowtrans.ru · techperevod.com<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
+<!-- wp:html -->
+<p class="sr-mono" style="font-size:12.5px;color:var(--sr-grigio);margin-top:6px">moscowtrans.ru</p>
+<!-- /wp:html -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:16px;font-size:16px">Same content, same navigation structure customers were used to: only the technical foundation changed, with 301 redirects on every existing URL.</p>
+<p class="has-base-font-size" style="margin-top:16px;font-size:16px">Two agency sites redesigned in 2026, careful in design and optimised in performance. Conversions grew by over 300% in recent months.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="/en/case-studies/arredamenti-colombo/">Read a full case study →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="/en/case-studies/#moscowtrans-techperevod">Read the full case study →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:html -->
-<div style="display:flex;flex-direction:column;gap:20px">
+<div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">+300%</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">conversions after the 2026 redesign</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">Before</span><span class="sr-barra-row__val">34</span></div><div class="sr-barra" style="height:8px" data-sr-target="34%" data-sr-delay="0" role="img" aria-label="Before: 34 out of 100"><div class="sr-barra__fill sr-barra__fill--muted"></div></div>
+<div class="sr-stat" style="margin-top:24px"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">2</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">sites redesigned with the same method</p></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-barra-row"><span class="sr-eyebrow" style="margin:0">After</span><span class="sr-barra-row__val sr-barra-row__val--verde">96</span></div><div class="sr-barra" style="height:8px" data-sr-target="96%" data-sr-delay="150" role="img" aria-label="After: 96 out of 100"><div class="sr-barra__fill"></div></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-mono" style="font-size:11.5px;letter-spacing:0.06em;color:var(--sr-grigio)">GOOGLE PAGESPEED, MOBILE — AVERAGE OF 3 MEASUREMENTS</p>
-<!-- /wp:html -->
-<!-- wp:html -->
-</div>
+<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:20px">REMARKA GROUP PROJECT — VERIFIABLE ON BOTH SITES</p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->

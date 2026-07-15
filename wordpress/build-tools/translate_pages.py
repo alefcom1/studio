@@ -25,6 +25,7 @@ import sys
 sys.path.insert(0, os.path.dirname(__file__))
 import lang as L  # noqa: E402
 from chrome_strings import CHROME  # noqa: E402
+from data import CASES  # noqa: E402
 
 # Параметрические шаблоны генератора (составные строки с числами/именами).
 PARAM_PATTERNS = {
@@ -91,6 +92,10 @@ def build_href_map(lang_code):
     p = L.paths_for(lang_code)
     m['/servizi/'] = p['servizi']
     m['/casi-studio/'] = p['casi']
+    # Schede del catalogo unico: niente più pagine /casi-studio/<slug>/,
+    # solo àncore sulla pagina indice (deck §6.2) — stesso id IT/EN.
+    for c in CASES:
+        m[f'/casi-studio/#{c["slug"]}'] = f'{p["casi"]}#{c["slug"]}'
     m['/strumenti/'] = p['strumenti']
     m['/blog/'] = p['blog']
     m['/prezzi/'] = p['prezzi']
@@ -154,6 +159,24 @@ def translate_file(path, d, href_map, lang_code, report):
             if m2:
                 return m2.expand(repl)
         return None
+
+    # [sr_shot file="…" alt="…" caption="…" mobile="0"] (inc/case-shots.php,
+    # blocks.py case_shot()): testo nudo tra <!-- wp:html --> e <!-- /wp:html -->,
+    # senza tag che delimitino i confini per TEXT_NODE — va tradotto PRIMA,
+    # sostituendo solo alt/caption, altrimenti l'intera riga finirebbe nel
+    # report come "italiano non tradotto" (falso positivo: gli attributi si
+    # traducono comunque, ma exit 1 blocca il conveyor).
+    SR_SHOT = re.compile(r'\[sr_shot ([^\]]*)\]')
+    SR_SHOT_ATTR = re.compile(r'(alt|caption)="([^"]*)"')
+
+    def tr_sr_shot(m):
+        def repl_attr(am):
+            key, val = am.group(1), am.group(2)
+            tr = lookup(val)
+            return f'{key}="{tr if tr is not None else val}"'
+        return '[sr_shot ' + SR_SHOT_ATTR.sub(repl_attr, m.group(1)) + ']'
+
+    src = SR_SHOT.sub(tr_sr_shot, src)
 
     def tr_text(m):
         raw = m.group(1)
