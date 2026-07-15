@@ -256,12 +256,13 @@
 	 *   lcpSec / inpMs / cls        (metriche Core Web Vitals)
 	 *   audits: {perf/a11y/seo/bp:[{id,title,score,items:[{u,v}]}]}  (falliti score<0.9, peggiori prima)
 	 */
-	function psiFetch(url, locale) {
+	function psiFetch(url, locale, categories) {
 		locale = locale || 'it';
+		var cats = categories && categories.length ? categories : ['PERFORMANCE', 'ACCESSIBILITY', 'SEO', 'BEST_PRACTICES'];
 		var endpoint = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed' +
 			'?url=' + encodeURIComponent(url) +
 			'&strategy=mobile' +
-			'&category=PERFORMANCE&category=ACCESSIBILITY&category=SEO&category=BEST_PRACTICES' +
+			cats.map(function (c) { return '&category=' + c; }).join('') +
 			'&locale=' + encodeURIComponent(locale);
 		var key = (window.remarkaPSI && window.remarkaPSI.key) || '';
 		if (key) {
@@ -360,7 +361,7 @@
 				if (result) result.hidden = true;
 				if (fill) fill.style.width = '0%';
 
-				psiFetch(url, toolLocale(form)).then(function (m) {
+				psiFetch(url, toolLocale(form), ['PERFORMANCE']).then(function (m) {
 					var score = m.scores.perf;
 					if (urlOut) urlOut.textContent = url.replace(/^https?:\/\//, '');
 					if (scoreOut) scoreOut.textContent = score === null ? '—' : String(score);
@@ -564,7 +565,7 @@
 		var shell = toolShell(root);
 		onUrlSubmit(shell, function (url) {
 			var locale = toolLocale(root);
-			return psiFetch(url, locale).then(function (m) {
+			return psiFetch(url, locale, ['PERFORMANCE']).then(function (m) {
 				var score = m.scores.perf;
 				setText(root, '[data-sr-tool-url]', url.replace(/^https?:\/\//, '') + txt(root, 'data-label-suffix', ' — PageSpeed mobile'));
 				setText(root, '[data-sr-tool-score]', score === null ? '—' : String(score));
@@ -582,7 +583,7 @@
 		var shell = toolShell(root);
 		var scoreKey = kind === 'seo' ? 'seo' : 'a11y';
 		onUrlSubmit(shell, function (url) {
-			return psiFetch(url, toolLocale(root)).then(function (m) {
+			return psiFetch(url, toolLocale(root), [kind === 'seo' ? 'SEO' : 'ACCESSIBILITY']).then(function (m) {
 				var score = m.scores[scoreKey];
 				setText(root, '[data-sr-tool-url]', url.replace(/^https?:\/\//, '') + txt(root, 'data-label-suffix', ''));
 				setText(root, '[data-sr-tool-score]', score === null ? '—' : String(score));
@@ -634,7 +635,7 @@
 		var shell = toolShell(root);
 		onUrlSubmit(shell, function (url) {
 			var locale = toolLocale(root);
-			return psiFetch(url, locale).then(function (m) {
+			return psiFetch(url, locale, ['PERFORMANCE']).then(function (m) {
 				if (m.byteWeight === null) { throw new Error('CO2: peso non disponibile'); }
 				var grams = co2PerVisitGrams(m.byteWeight);
 				var mb = m.byteWeight / (1024 * 1024);
@@ -1422,9 +1423,25 @@
 	}
 
 	/** Orchestratore: 1 psiFetch (4 categorie + byte-weight) + GDPR + AI, in parallelo, tollerante ai fallimenti parziali. */
+	/*
+	 * PSI con 4 categorie su siti pesanti fallisce spesso lato Google (timeout
+	 * interno Lighthouse). Strategia: 2 tentativi completi, poi fallback alla
+	 * sola categoria PERFORMANCE (meglio perf+CO2 misurati che 5 N/D).
+	 */
+	function psiFetchResilient(url, locale) {
+		function delay(ms) {
+			return new Promise(function (resolve) { window.setTimeout(resolve, ms); });
+		}
+		return psiFetch(url, locale).catch(function () {
+			return delay(1500).then(function () { return psiFetch(url, locale); });
+		}).catch(function () {
+			return delay(1500).then(function () { return psiFetch(url, locale, ['PERFORMANCE']); });
+		}).catch(function () { return null; });
+	}
+
 	function runCheckup(url, locale) {
 		var jobs = [
-			psiFetch(url, locale).catch(function () { return null; }),
+			psiFetchResilient(url, locale),
 			runGdprCheck(url).catch(function () { return null; }),
 			runAiCheck(url).catch(function () { return null; })
 		];
@@ -1510,7 +1527,15 @@
 			var level = checkupLevel(score);
 			var flag = checkupFlagForLevel(level);
 			var word = txt(root, 'data-word-' + level, CHECKUP_WORDS[level]);
-			var finding = txt(card, 'data-verdict-' + level, CHECKUP_FINDINGS[key][level]);
+			/* I testi-verdetto della card AI parlano di "N segnali su 4": vanno
+			   scelti dal conteggio reale, non dalla fascia del punteggio pesato
+			   (2 segnali "leggeri" = 45 punti, ma il testo deve dire 2, non 0-1). */
+			var textLevel = level;
+			if (key === 'ai' && result.extra && typeof result.extra.aiCount === 'number') {
+				var n = result.extra.aiCount;
+				textLevel = n >= 4 ? 0 : n === 3 ? 1 : n === 2 ? 2 : 3;
+			}
+			var finding = txt(card, 'data-verdict-' + textLevel, CHECKUP_FINDINGS[key][textLevel]);
 
 			if (scoreEl) scoreEl.textContent = String(score);
 			if (fillEl) animateFill(card, '[data-sr-tool-fill]', score);
