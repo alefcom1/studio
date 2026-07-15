@@ -1121,3 +1121,118 @@ CHROME_CHECKUP = {
     'Sette strumenti gratuiti in una sola analisi.': {'en': 'Seven free tools in a single analysis.'},
 }
 CHROME.update(CHROME_CHECKUP)
+
+# ---- Servizio «Adeguamento EAA» (docs/copy-eaa.md §4, EN madrelingua) ----
+# CHROME_EAA copre servizio-adeguamento-eaa.php, la card premium in
+# servizi-index.php, la nota in prezzi.php e le due stringhe di CTA
+# aggiornate in strumento-verifica-accessibilita.php (data.py TOOLS).
+CHROME_EAA = {
+    'Servizio / Adeguamento EAA': {'en': 'Service / EAA compliance'},
+    'Il sito conforme all’European Accessibility Act, in 3 settimane': {
+        'en': 'Your website compliant with the European Accessibility Act, in 3 weeks'},
+    'Dal 28 giugno 2025 l’accessibilità è un obbligo di legge per molti siti. Vi portiamo allo standard WCAG 2.1 AA — audit, correzioni e dichiarazione di accessibilità — a prezzo chiuso e con la data nel contratto.': {
+        'en': 'Since 28 June 2025 accessibility is a legal requirement for many websites. We bring yours up to the WCAG 2.1 AA standard — audit, fixes and accessibility statement — at a fixed price, with the date in the contract.'},
+    'Data da cui l’European Accessibility Act è in vigore in Italia. Le prime sanzioni sono una questione di tempo.': {
+        'en': 'The date the European Accessibility Act took effect in Italy. The first fines are only a matter of time.'},
+    'Richiedi l’audit di accessibilità': {'en': 'Request the accessibility audit'},
+    'Verifica subito il tuo sito': {'en': 'Check your site now'},
+    'L’obbligo riguarda chi vende a consumatori, online': {'en': 'The duty applies to those who sell to consumers, online'},
+    'E-commerce e servizi digitali che vendono beni o servizi ai consumatori nell’Unione Europea.': {
+        'en': 'E-commerce and digital services selling goods or services to consumers in the EU.'},
+    'Banche, assicurazioni, trasporti, biglietterie e sistemi di prenotazione online.': {
+        'en': 'Banks, insurers, transport, ticketing and online booking systems.'},
+    'Aziende non microimpresa che temono la prima sanzione italiana, o che l’hanno già ricevuta come segnalazione.': {
+        'en': 'Non-micro companies facing the first Italian fines, or already flagged for non-compliance.'},
+    'Dall’audit alla dichiarazione, tutto scritto nel preventivo': {'en': 'From audit to statement, all spelled out in the quote'},
+    'Audit completo: test automatico (Lighthouse) più verifica manuale — tastiera, screen reader, contenuti.': {
+        'en': 'Full audit: automated test (Lighthouse) plus manual review — keyboard, screen reader, content.'},
+    'Correzione di tema, contrasti, etichette dei moduli e struttura dei titoli.': {
+        'en': 'Fixes to theme, contrast, form labels and heading structure.'},
+    'Navigazione da tastiera e focus sempre visibile su ogni elemento interattivo.': {
+        'en': 'Keyboard navigation and a visible focus state on every interactive element.'},
+    'Dichiarazione di accessibilità pubblicata, il documento che la norma richiede.': {
+        'en': 'A published accessibility statement, the document the law requires.'},
+    'Audit di verifica finale secondo lo standard WCAG 2.1 AA, a correzioni fatte.': {
+        'en': 'A final verification audit against the WCAG 2.1 AA standard, once fixes are done.'},
+    'Prezzo chiuso dopo l’audit, consegna in 3 settimane con penale in contratto.': {
+        'en': 'Fixed price after the audit, delivery in 3 weeks with a contractual penalty.'},
+    'Tre settimane, dalla diagnosi alla conformità': {'en': 'Three weeks, from diagnosis to compliance'},
+    'Settimana 1': {'en': 'Week 1'},
+    'Settimana 2': {'en': 'Week 2'},
+    'Settimana 3': {'en': 'Week 3'},
+    'Audit': {'en': 'Audit'},
+    'Correzioni': {'en': 'Fixes'},
+    'Dichiarazione e verifica': {'en': 'Statement and verification'},
+    'Partiamo dal test automatico gratuito, poi la verifica manuale: tastiera, screen reader, contrasti, contenuti. A fine audit il prezzo è chiuso e la data è fissata.': {
+        'en': 'We start from the free automated test, then the manual review: keyboard, screen reader, contrast, content. By the end of the audit the price is fixed and the date is set.'},
+    'Sistemiamo tema, contrasti, etichette dei moduli, gerarchia dei titoli e navigazione da tastiera. Ogni barriera dell’elenco, una per una.': {
+        'en': 'We correct theme, contrast, form labels, heading hierarchy and keyboard navigation. Every barrier on the list, one by one.'},
+    'Pubblichiamo la dichiarazione di accessibilità obbligatoria e ripetiamo l’audit per confermare la conformità WCAG 2.1 AA.': {
+        'en': 'We publish the required accessibility statement and re-run the audit to confirm WCAG 2.1 AA compliance.'},
+    'Tempi indicativi per un sito aziendale o vetrina. Un e-commerce con catalogo ampio può richiedere più tempo: lo scriviamo nel preventivo, con la stessa penale.': {
+        'en': 'Indicative timing for a business or brochure site. A large-catalogue e-commerce may take longer: we write it in the quote, with the same penalty.'},
+    'Prezzo chiuso, dopo l’audit': {'en': 'A fixed price, after the audit'},
+    'da € 1.900': {'en': 'from € 1,900'},
+    'Prezzo chiuso nel preventivo dopo l’audit, da € 1.900. Consegna in 3 settimane, data fissa in contratto. Fattura elettronica, pagamento in tre tranche.': {
+        'en': 'Fixed price locked in the quote after the audit, from € 1,900. Delivery in 3 weeks, date fixed in the contract. E-invoicing, payment in three installments.'},
+    'Non sai da dove partire? L’audit automatico è gratuito →': {'en': 'Not sure where to start? The automated audit is free →'},
+    'Numero di pagine e modelli (template) da correggere: una vetrina costa meno di un e-commerce a catalogo.': {
+        'en': 'Number of pages and templates to fix: a brochure site costs less than a catalogue e-commerce.'},
+    'Stato di partenza: quante barriere emergono dall’audit iniziale.': {
+        'en': 'Starting point: how many barriers the initial audit reveals.'},
+    'Contenuti da rifare — testi alternativi, PDF accessibili, sottotitoli ai video.': {
+        'en': 'Content to redo — alt text, accessible PDFs, video captions.'},
+    'Nero su bianco, come per ogni nostro servizio': {'en': 'In writing, like every service we deliver'},
+    '± 0 giorni di ritardo — la data è nel contratto: ogni giorno lavorativo di ritardo vale l’1% di sconto.': {
+        'en': '± 0 days late — the date is in the contract: every working day of delay is 1% off.'},
+    'Prezzo chiuso dopo l’audit — quello che firmate è quello che pagate; ogni extra si concorda per iscritto prima.': {
+        'en': 'Fixed price after the audit — what you sign is what you pay; any extra is agreed in writing first.'},
+    'Standard dichiarato — conformità WCAG 2.1 AA verificata a mano, non solo un punteggio automatico.': {
+        'en': 'A declared standard — WCAG 2.1 AA compliance verified by hand, not just an automated score.'},
+    'Dichiarazione di accessibilità inclusa — il documento richiesto dalla norma, pubblicato sul vostro sito.': {
+        'en': 'Accessibility statement included — the document the law requires, published on your site.'},
+    'Domande frequenti': {'en': 'Frequently asked questions'},
+    'Chi è obbligato dall’EAA? La mia azienda rientra?': {'en': 'Who is required to comply with the EAA? Does my company qualify?'},
+    'L’European Accessibility Act è in vigore in Italia dal 28 giugno 2025 e obbliga molti siti che vendono beni o servizi ai consumatori: e-commerce, banche, trasporti, servizi digitali. Sono esentate le microimprese che erogano servizi — meno di 10 persone e meno di 2 milioni di euro di fatturato annuo. Nel dubbio verifichiamo il vostro caso prima di firmare: se non siete obbligati, ve lo diciamo.': {
+        'en': 'The European Accessibility Act took effect in Italy on 28 June 2025 and covers many sites selling goods or services to consumers: e-commerce, banks, transport, digital services. Micro-enterprises providing services are exempt — fewer than 10 people and under € 2 million in annual turnover. If in doubt we check your case before signing: if you’re not required to comply, we tell you.'},
+    'Quali sanzioni sono previste in Italia?': {'en': 'What fines apply in Italy?'},
+    'Il decreto italiano prevede sanzioni fino al 5% del fatturato per i servizi non conformi. In Francia sono già partite le prime cause verso i grandi rivenditori online, e in Italia l’applicazione è appena cominciata. Le fonti sono pubbliche: la guida di Bird & Bird e il centro AccessibleEU della Commissione europea (link in fondo alla pagina).': {
+        'en': 'The Italian decree sets fines of up to 5% of turnover for non-compliant services. In France the first lawsuits against large online retailers have already begun, and enforcement in Italy has just started. The sources are public: the Bird & Bird guide and the European Commission’s AccessibleEU centre (links at the bottom of the page).'},
+    'Cos’è la dichiarazione di accessibilità?': {'en': 'What is an accessibility statement?'},
+    'È un documento pubblico, richiesto dalla norma, in cui il sito dichiara il proprio livello di conformità, le eventuali parti non ancora accessibili e un contatto per segnalare problemi. Lo redigiamo e lo pubblichiamo noi, come parte del servizio: senza dichiarazione, il sito non è a norma anche se tecnicamente accessibile.': {
+        'en': 'It’s a public document, required by the law, in which the site declares its level of compliance, any parts not yet accessible, and a contact for reporting problems. We write and publish it as part of the service: without a statement a site isn’t compliant, even if technically accessible.'},
+    'Basta un controllo automatico per essere conformi?': {'en': 'Is an automated check enough to be compliant?'},
+    'No, ed è giusto dirlo chiaro. Un test automatico come il nostro strumento gratuito intercetta circa un terzo dei criteri WCAG: quello che una macchina sa misurare. Il resto — navigazione da tastiera, esperienza con screen reader, chiarezza dei contenuti — si verifica solo a mano. Per questo l’audit manuale è il cuore del servizio, non un optional.': {
+        'en': 'No, and it’s fair to say so plainly. An automated test like our free tool catches roughly a third of the WCAG criteria: what a machine can measure. The rest — keyboard navigation, screen-reader experience, content clarity — can only be checked by hand. That’s why the manual audit is the core of this service, not an add-on.'},
+    'European Accessibility Act (dir. UE 2019/882), in vigore in Italia dal 28 giugno 2025.': {
+        'en': 'European Accessibility Act (EU Directive 2019/882), in effect in Italy since 28 June 2025.'},
+    'Sanzioni fino al 5% del fatturato per i servizi non conformi (recepimento italiano).': {
+        'en': 'Fines up to 5% of turnover for non-compliant services (Italian transposition).'},
+    'Standard di riferimento:': {'en': 'Reference standard:'},
+    'WCAG 2.1 livello AA': {'en': 'WCAG 2.1 level AA'},
+    'Bird & Bird — guida all’European Accessibility Act →': {'en': 'Bird & Bird — a guide to the European Accessibility Act →'},
+    'AccessibleEU (Commissione europea) — l’EAA in vigore da giugno 2025 →': {
+        'en': 'AccessibleEU (European Commission) — the EAA in effect since June 2025 →'},
+    'Un controllo automatico copre parte dei criteri WCAG 2.1 AA. La conformità piena richiede la verifica manuale, che è inclusa in questo servizio.': {
+        'en': 'An automated check covers part of the WCAG 2.1 AA criteria. Full compliance requires manual review, which is included in this service.'},
+    'Facciamo il punto sul vostro sito': {'en': 'Let’s take stock of your website'},
+    'L’audit iniziale trasforma l’obbligo in una lista di cose da fare, con prezzo chiuso e data di consegna. Il primo controllo automatico è gratuito e senza registrazione.': {
+        'en': 'The initial audit turns the legal duty into a to-do list, with a fixed price and delivery date. The first automated check is free and needs no sign-up.'},
+    'Prova lo strumento gratuito': {'en': 'Try the free tool'},
+
+    # ---- premium card (servizi-index.php) ----
+    'Obbligo di legge': {'en': 'Legal duty'},
+    'Adeguamento EAA': {'en': 'EAA compliance'},
+    'Il vostro sito già online, portato allo standard WCAG 2.1 AA: audit, correzioni e dichiarazione di accessibilità. Obbligo di legge dal 2025.': {
+        'en': 'Your website, already online, brought up to the WCAG 2.1 AA standard: audit, fixes and accessibility statement. A legal duty since 2025.'},
+
+    # ---- nota in prezzi.php ----
+    'Sito già online? L’adeguamento all’European Accessibility Act è un servizio a sé →': {
+        'en': 'Website already online? Bringing it up to European Accessibility Act standard is a separate service →'},
+
+    # ---- CTA strumento-verifica-accessibilita.php (data.py TOOLS) ----
+    'Vogliamo sistemarle noi: audit, correzioni e dichiarazione — servizio Adeguamento EAA →': {
+        'en': 'Want us to fix them for you? Audit, fixes and statement — our EAA compliance service →'},
+    'Scopri il servizio Adeguamento EAA': {'en': 'Discover the EAA compliance service'},
+}
+CHROME.update(CHROME_EAA)

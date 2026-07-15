@@ -124,7 +124,7 @@
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Поднимите контраст</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Тексту и фону нужен коэффициент контрастности не ниже 4,5:1: изящный светло-серый на экране дизайнера становится нечитаемым на солнце и для слабовидящих.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Опишите изображения</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Каждой информативной картинке — альтернативный текст с её содержанием: именно его скрин-ридер прочитает тому, кто картинку не видит.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Подпишите формы</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">У каждого поля — явная связанная подпись: «Имя», «Email», «Сообщение», а не серая подсказка, исчезающая при первом же символе.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Выстройте заголовки и фокус</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Последовательная иерархия заголовков и путь, проходимый с клавиатуры, с всегда видимым фокусом, делают страницу пригодной и без мыши.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Не полагайтесь на один цвет</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Ошибка, отмеченная только красным, невидима для тех, кто не различает цвета: добавляйте иконку или текст, объясняющий, что произошло.</p></div></div>
 <!-- /wp:group -->
 <!-- wp:html -->
-<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/ru/uslugi/korporativnye-sajty/">Хотите, чтобы барьеры убрали мы: доступность входит в корпоративные сайты →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/uslugi/sajt-dlya-evropy/">Выходите на рынок ЕС? Доступность по EAA — часть проекта →</a></p></div>
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/ru/uslugi/dostupnost-eaa/">Хотим устранить их сами: аудит, исправления и декларация — услуга «Доступность и EAA» →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/uslugi/sajt-dlya-evropy/">Выходите на рынок ЕС? Доступность по EAA — часть проекта →</a></p></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -140,7 +140,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/ru/#contatti">Запросить проверку доступности</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/uslugi/korporativnye-sajty/">Смотреть корпоративные сайты</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/uslugi/dostupnost-eaa/">Смотреть услугу «Доступность и EAA»</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

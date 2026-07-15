@@ -266,3 +266,32 @@ best-practices 10 · ai-readiness 10 · co2 5. Каждое измерение �
   identico a M2/M4 (gauge 55/100, 7 card, 3 priorità), payload
   `remarka_tool_report` intercettato lato client conferma `findings`
   popolati correttamente (1257 byte totali, ben sotto il cap 64KB).
+- **E1 — completato (15.07.2026).** Servizio «Adeguamento EAA» (§2 punto 1),
+  copy deck in `docs/copy-eaa.md`: dict modulare `ADEGUAMENTO_EAA` in
+  `data.py` (stesso trattamento di `EXPORT_READY`/`WEB_APP`, niente
+  `mini_caso`) + `build_adeguamento_eaa()` in `generate_pages.py` →
+  `servizio-adeguamento-eaa.php` IT (hero, per chi, cosa include, 3
+  settimane a week-chip, prezzo da € 1.900, garanzie, FAQ ×4, fonti
+  E-E-A-T Bird & Bird/AccessibleEU, CTA). EN via `translate_pages.py en`
+  (CHROME_EAA, 65 coppie in `chrome_strings.py`, report vuoto, exit 0); RU
+  autonomo scritto a mano (`ru-servizio-adeguamento-eaa.php`, angolo
+  «mercato UE», link incrociato verso `ru-sajt-dlya-evropy`). CTA
+  dell'strumento `verifica-accessibilita` ripuntata sul nuovo servizio
+  nelle 3 lingue (`/servizi/siti-aziendali/` non è più target del CTA
+  accessibilità). Card premium «Obbligo di legge» in `servizi-index.php`
+  (catalogo `/servizi/`) + settima card su tutte e tre le home
+  (`servizi-cards.php` IT/EN/RU, titoli aggiornati da «sei» a «sette
+  cose»). Nota-link (non riga in tabella, per decisione del titolare) sotto
+  la tabella comparativa in `prezzi.php`/`en-prezzi.php`/`ru-prezzi.php`.
+  `lang.py` `SERVICES_SLUGS` + `inc/lang-map.php` rigenerato (+1 riga);
+  `deploy-import.php` `$page_map` +3 (`servizio-adeguamento-eaa`/
+  `en-servizio-adeguamento-eaa`/`ru-servizio-adeguamento-eaa`). Meta SEO
+  IT/EN/RU in `docs/seo-meta.md` (§«Adeguamento EAA — IT/EN/RU (E1)»,
+  verbatim da `docs/copy-eaa.md` §2). Verifica: `php -l` su tutti i file
+  toccati, compilazione Python (`data.py`/`generate_pages.py`/`lang.py`/
+  `chrome_strings.py`), rigenerazione puntuale (mai `main()` — diff
+  ripulito da 2 derive preesistenti non correlate in `servizi-index.php` e
+  `strumento-verifica-accessibilita.php`, ripristinate al contenuto già
+  in `HEAD`), grep su residui italiani nei file EN/RU e sul vecchio href
+  CTA, screenshot Playwright su CSS reale (pagina servizio IT 390/1440,
+  pagina RU 1440, card sulla home IT).

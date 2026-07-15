@@ -22,7 +22,7 @@ from blocks import (  # noqa: E402
     metric_rows, browser_frame, case_screenshot_src, barra, barra_row,
     pull_quote, chapter, compare_table_row, pattern_header,
 )
-from data import SERVICES, CASES, TOOLS, CITY, CITIES, BLOG_POSTS, EXPORT_READY, WEB_APP  # noqa: E402
+from data import SERVICES, CASES, TOOLS, CITY, CITIES, BLOG_POSTS, EXPORT_READY, WEB_APP, ADEGUAMENTO_EAA  # noqa: E402
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'remarka-studio', 'patterns', 'pages')
 os.makedirs(OUT_DIR, exist_ok=True)
@@ -100,6 +100,7 @@ def build_servizi_index():
         for ey, t, d, u in [
             ('Flagship', 'Export Ready', 'Il sito e la sua versione estera sotto un unico contratto: localizzazione da madrelingua, SEO internazionale, KPI per mercato.', '/servizi/export-ready/'),
             ('Prodotti digitali', 'Web app su misura', 'Aree clienti, configuratori, portali B2B e integrazioni: quando un sito non basta.', '/servizi/web-app/'),
+            ('Obbligo di legge', 'Adeguamento EAA', 'Il vostro sito già online, portato allo standard WCAG 2.1 AA: audit, correzioni e dichiarazione di accessibilità. Obbligo di legge dal 2025.', '/servizi/adeguamento-eaa/'),
         ]
     )
     premium = section(
@@ -318,6 +319,9 @@ def build_prezzi():
 
     table_section = section(
         compare +
+        raw_html('<p class="sr-card-link" style="margin-top:20px;font-size:14.5px">'
+                 '<a href="/servizi/adeguamento-eaa/">Sito già online? L’adeguamento all’European Accessibility Act '
+                 'è un servizio a sé →</a></p>') +
         paragraph('Per confronto: le agenzie italiane chiedono in media € 2.500–8.000 per un sito aziendale '
                    'e € 5.000–20.000 per un e-commerce (listini pubblici 2026). Siamo nella stessa fascia — '
                    'con tre garanzie scritte nel contratto che altrove non trovate.',
@@ -1130,6 +1134,91 @@ def build_web_app():
           hero + per_chi + formati + prove + faq + cta)
 
 
+# ---------------------------------------------------------------- Adeguamento EAA
+# Servizio «speciale» (docs/copy-eaa.md): niente mini_caso (nessun caso
+# inventato per un obbligo di legge), blocchi processo/garanzie propri —
+# stesso trattamento di Export Ready/Web app, non build_servizio().
+
+def build_adeguamento_eaa():
+    e = ADEGUAMENTO_EAA
+    hero = hero_interno(e['eyebrow'], e['hero_title'], e['hero_sub'],
+                         extra_html=buttons([
+                             ('Richiedi l’audit di accessibilità', '/#contatti', None),
+                             ('Verifica subito il tuo sito', '/strumenti/verifica-accessibilita/', 'outline'),
+                         ], margin_top='36px'),
+                         stat=(e['hero_stat_value'], e['hero_stat_label']))
+
+    per_chi = section(
+        columns([
+            column(eyebrow('Per chi è') + heading(2, e['per_chi_heading']), width='38%'),
+            column(list_rows(e['per_chi']), width='62%'),
+        ]),
+        classes='sr-section',
+    )
+
+    include = section(
+        eyebrow('Cosa include') + heading(2, e['include_heading']) + checklist(e['include']),
+        classes='sr-section sr-section--bianco',
+    )
+
+    week_cols = ''.join(
+        f'<div class="sr-week"><p class="sr-week-chip sr-no-margin">{settimana}</p>'
+        f'<div class="sr-week__steps"><div class="sr-week__step">'
+        f'<p class="sr-step__head sr-no-margin"><span class="sr-step-num">{i:02d}</span></p>'
+        f'<h4>{passo}</h4><p>{testo}</p></div></div></div>'
+        for i, (settimana, passo, testo) in enumerate(e['processo'], start=1)
+    )
+    processo = section(
+        eyebrow('Come lavoriamo') + heading(2, e['processo_heading']) +
+        raw_html(f'<div class="sr-weeks sr-cascade">{week_cols}</div>') +
+        raw_html(f'<p class="sr-eyebrow" style="margin-top:44px">{e["processo_note"]}</p>'),
+        classes='sr-section sr-section--bianco',
+    )
+
+    prezzo_link_label, prezzo_link_url = e['prezzo_link']
+    prezzo = section(
+        columns([
+            column(eyebrow('Prezzo') + heading(2, 'Prezzo chiuso, dopo l’audit') +
+                   raw_html(f'<p class="sr-mono" style="font-size:32px;color:var(--sr-oltremare);margin-top:16px">{e["prezzo_range"]}</p>') +
+                   paragraph(e['prezzo_lede'], size='base', extra_style='margin-top:16px;font-size:16px') +
+                   raw_html(f'<p class="sr-card-link" style="margin-top:20px"><a href="{prezzo_link_url}">{prezzo_link_label} →</a></p>'),
+                   width='50%'),
+            column(eyebrow('Cosa fa variare il prezzo') + list_rows(e['prezzo_note']), width='50%'),
+        ]),
+        classes='sr-section',
+    )
+
+    garanzie = section(
+        eyebrow('Garanzie') + heading(2, e['garanzie_heading']) + checklist(e['garanzie']),
+        classes='sr-section sr-section--bianco',
+    )
+
+    fonti_links = ''.join(
+        f'<p class="sr-card-link" style="margin-top:8px;font-size:14px">'
+        f'<a href="{url}" target="_blank" rel="noopener noreferrer nofollow">{label} →</a></p>'
+        for label, url in e['fonti']
+    )
+    faq = section(
+        eyebrow('Domande frequenti') + details_faq(e['faq']) +
+        raw_html('<div style="margin-top:32px">') +
+        list_rows(e['fatti'] + ['Standard di riferimento: <strong>WCAG 2.1 livello AA</strong>.']) +
+        raw_html(fonti_links) +
+        paragraph(e['disclaimer'], color='grigio', size='small', extra_style='margin-top:20px') +
+        raw_html('</div>'),
+        classes='sr-section',
+    )
+
+    cta = section(
+        heading(2, e['cta']['heading']) +
+        paragraph(e['cta']['testo'], color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons(e['cta']['buttons'], justify='center', margin_top='28px'),
+        classes='sr-section sr-dark',
+    )
+    write('servizio-adeguamento-eaa', 'Pagina — Servizio: Adeguamento EAA',
+          'Servizio conformità European Accessibility Act: audit, correzioni, dichiarazione di accessibilità e verifica finale WCAG 2.1 AA.',
+          hero + per_chi + include + processo + prezzo + garanzie + faq + cta)
+
+
 # ---------------------------------------------------------------- Chi siamo / legal
 
 def build_chi_siamo():
@@ -1212,6 +1301,7 @@ def main():
         build_servizio(svc)
     build_export_ready()
     build_web_app()
+    build_adeguamento_eaa()
 
     print('Casi studio:')
     build_casi_studio_index()

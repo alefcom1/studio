@@ -596,12 +596,12 @@ TOOLS = [
                  ('Non affidatevi solo al colore', 'Un errore segnalato solo in rosso è invisibile a chi non distingue i colori: affiancate sempre un’icona o un testo che spieghi cosa succede.'),
              ],
              links=[
-                 ('Vogliamo sistemarle noi: l’accessibilità è inclusa nei siti aziendali', '/servizi/siti-aziendali/'),
+                 ('Vogliamo sistemarle noi: audit, correzioni e dichiarazione — servizio Adeguamento EAA', '/servizi/adeguamento-eaa/'),
              ]),
          cta=dict(heading='Vogliamo rendere il sito accessibile?',
                   testo='Verifichiamo le barriere una per una — automatiche e manuali — e le sistemiamo secondo lo standard WCAG 2.1 AA.',
                   buttons=[('Richiedi una verifica di accessibilità', '/#contatti', None),
-                           ('Scopri i siti aziendali', '/servizi/siti-aziendali/', 'outline')])),
+                           ('Scopri il servizio Adeguamento EAA', '/servizi/adeguamento-eaa/', 'outline')])),
     dict(slug='sito-pronto-ai', idx='/06', tipo='ai', titolo='Sito pronto per l’AI',
          hero_titolo='Il vostro sito è pronto per l’AI?',
          hero_sub='Quando ChatGPT, Claude o Perplexity leggono il web, trovano il vostro sito? Controlliamo quattro segnali: llms.txt, accesso dei crawler AI, dati strutturati e sitemap. Senza registrazione.',
@@ -841,6 +841,77 @@ WEB_APP = dict(
         ('Meglio una web app o un’app nativa?', 'Per la maggior parte delle PMI, una web app (o PWA) costa una frazione di un’app nativa, non passa dagli store e si aggiorna in un rilascio. L’app nativa serve solo per hardware specifico o notifiche avanzate.'),
         ('Chi mantiene il prodotto dopo il lancio?', 'Dodici mesi di assistenza inclusi, come per i siti. Dopo, canone facoltativo o consegna completa: codice e documentazione sono vostri dal primo giorno.'),
     ],
+)
+
+# Servizio «Adeguamento EAA» (docs/copy-eaa.md): niente mini_caso (nessun caso
+# inventato per l'obbligo di legge), blocchi processo/garanzie dedicati —
+# struttura a dict modulare come EXPORT_READY/WEB_APP, non build_servizio.
+ADEGUAMENTO_EAA = dict(
+    slug='adeguamento-eaa',
+    title='Adeguamento EAA',
+    eyebrow='Servizio / Adeguamento EAA',
+    hero_title='Il sito conforme all’European Accessibility Act, in 3 settimane',
+    hero_sub='Dal 28 giugno 2025 l’accessibilità è un obbligo di legge per molti siti. Vi portiamo allo standard WCAG 2.1 AA — audit, correzioni e dichiarazione di accessibilità — a prezzo chiuso e con la data nel contratto.',
+    hero_stat_value='28.06.2025',
+    hero_stat_label='Data da cui l’European Accessibility Act è in vigore in Italia. Le prime sanzioni sono una questione di tempo.',
+    per_chi_heading='L’obbligo riguarda chi vende a consumatori, online',
+    per_chi=[
+        'E-commerce e servizi digitali che vendono beni o servizi ai consumatori nell’Unione Europea.',
+        'Banche, assicurazioni, trasporti, biglietterie e sistemi di prenotazione online.',
+        'Aziende non microimpresa che temono la prima sanzione italiana, o che l’hanno già ricevuta come segnalazione.',
+    ],
+    include_heading='Dall’audit alla dichiarazione, tutto scritto nel preventivo',
+    include=[
+        'Audit completo: test automatico (Lighthouse) più verifica manuale — tastiera, screen reader, contenuti.',
+        'Correzione di tema, contrasti, etichette dei moduli e struttura dei titoli.',
+        'Navigazione da tastiera e focus sempre visibile su ogni elemento interattivo.',
+        'Dichiarazione di accessibilità pubblicata, il documento che la norma richiede.',
+        'Audit di verifica finale secondo lo standard WCAG 2.1 AA, a correzioni fatte.',
+        'Prezzo chiuso dopo l’audit, consegna in 3 settimane con penale in contratto.',
+    ],
+    processo_heading='Tre settimane, dalla diagnosi alla conformità',
+    processo=[
+        ('Settimana 1', 'Audit', 'Partiamo dal test automatico gratuito, poi la verifica manuale: tastiera, screen reader, contrasti, contenuti. A fine audit il prezzo è chiuso e la data è fissata.'),
+        ('Settimana 2', 'Correzioni', 'Sistemiamo tema, contrasti, etichette dei moduli, gerarchia dei titoli e navigazione da tastiera. Ogni barriera dell’elenco, una per una.'),
+        ('Settimana 3', 'Dichiarazione e verifica', 'Pubblichiamo la dichiarazione di accessibilità obbligatoria e ripetiamo l’audit per confermare la conformità WCAG 2.1 AA.'),
+    ],
+    processo_note='Tempi indicativi per un sito aziendale o vetrina. Un e-commerce con catalogo ampio può richiedere più tempo: lo scriviamo nel preventivo, con la stessa penale.',
+    prezzo_range='da € 1.900',
+    prezzo_lede='Prezzo chiuso nel preventivo dopo l’audit, da € 1.900. Consegna in 3 settimane, data fissa in contratto. Fattura elettronica, pagamento in tre tranche.',
+    prezzo_note=[
+        'Numero di pagine e modelli (template) da correggere: una vetrina costa meno di un e-commerce a catalogo.',
+        'Stato di partenza: quante barriere emergono dall’audit iniziale.',
+        'Contenuti da rifare — testi alternativi, PDF accessibili, sottotitoli ai video.',
+    ],
+    prezzo_link=('Non sai da dove partire? L’audit automatico è gratuito', '/strumenti/verifica-accessibilita/'),
+    garanzie_heading='Nero su bianco, come per ogni nostro servizio',
+    garanzie=[
+        '± 0 giorni di ritardo — la data è nel contratto: ogni giorno lavorativo di ritardo vale l’1% di sconto.',
+        'Prezzo chiuso dopo l’audit — quello che firmate è quello che pagate; ogni extra si concorda per iscritto prima.',
+        'Standard dichiarato — conformità WCAG 2.1 AA verificata a mano, non solo un punteggio automatico.',
+        'Dichiarazione di accessibilità inclusa — il documento richiesto dalla norma, pubblicato sul vostro sito.',
+    ],
+    faq=[
+        ('Chi è obbligato dall’EAA? La mia azienda rientra?', 'L’European Accessibility Act è in vigore in Italia dal 28 giugno 2025 e obbliga molti siti che vendono beni o servizi ai consumatori: e-commerce, banche, trasporti, servizi digitali. Sono esentate le microimprese che erogano servizi — meno di 10 persone e meno di 2 milioni di euro di fatturato annuo. Nel dubbio verifichiamo il vostro caso prima di firmare: se non siete obbligati, ve lo diciamo.'),
+        ('Quali sanzioni sono previste in Italia?', 'Il decreto italiano prevede sanzioni fino al 5% del fatturato per i servizi non conformi. In Francia sono già partite le prime cause verso i grandi rivenditori online, e in Italia l’applicazione è appena cominciata. Le fonti sono pubbliche: la guida di Bird & Bird e il centro AccessibleEU della Commissione europea (link in fondo alla pagina).'),
+        ('Cos’è la dichiarazione di accessibilità?', 'È un documento pubblico, richiesto dalla norma, in cui il sito dichiara il proprio livello di conformità, le eventuali parti non ancora accessibili e un contatto per segnalare problemi. Lo redigiamo e lo pubblichiamo noi, come parte del servizio: senza dichiarazione, il sito non è a norma anche se tecnicamente accessibile.'),
+        ('Basta un controllo automatico per essere conformi?', 'No, ed è giusto dirlo chiaro. Un test automatico come il nostro strumento gratuito intercetta circa un terzo dei criteri WCAG: quello che una macchina sa misurare. Il resto — navigazione da tastiera, esperienza con screen reader, chiarezza dei contenuti — si verifica solo a mano. Per questo l’audit manuale è il cuore del servizio, non un optional.'),
+    ],
+    fatti=[
+        'European Accessibility Act (dir. UE 2019/882), in vigore in Italia dal 28 giugno 2025.',
+        'Sanzioni fino al 5% del fatturato per i servizi non conformi (recepimento italiano).',
+    ],
+    fonti=[
+        ('Bird & Bird — guida all’European Accessibility Act', 'https://www.twobirds.com/en/insights/2025/a-guide-to-navigating-the-european-accessibility-act-for-online-retailers-service-providers-and-plat'),
+        ('AccessibleEU (Commissione europea) — l’EAA in vigore da giugno 2025', 'https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en'),
+    ],
+    disclaimer='Un controllo automatico copre parte dei criteri WCAG 2.1 AA. La conformità piena richiede la verifica manuale, che è inclusa in questo servizio.',
+    cta=dict(
+        heading='Facciamo il punto sul vostro sito',
+        testo='L’audit iniziale trasforma l’obbligo in una lista di cose da fare, con prezzo chiuso e data di consegna. Il primo controllo automatico è gratuito e senza registrazione.',
+        buttons=[('Richiedi l’audit di accessibilità', '/#contatti', None),
+                 ('Prova lo strumento gratuito', '/strumenti/verifica-accessibilita/', 'outline')],
+    ),
 )
 
 BLOG_POSTS = [

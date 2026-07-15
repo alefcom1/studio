@@ -111,6 +111,7 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/ru/instrumenty/proverka-dostupnosti/">Бесплатно проверить доступность вашего текущего сайта →</a></p>
+<p class="sr-card-link" style="margin-top:8px"><a href="/ru/uslugi/dostupnost-eaa/">Обязательная доступность по EAA: приводим сайт к стандарту →</a></p>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->

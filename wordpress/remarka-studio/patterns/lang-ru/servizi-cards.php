@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Услуги — шесть карточек
+ * Title: Услуги — семь карточек
  * Slug: remarka-studio/ru-servizi-cards
  * Categories: remarka
- * Description: Шапка с эйбрау и сетка из шести карточек услуг под аудиторию выхода в Италию и Европу; PWA заменена на SEO-продвижение.
+ * Description: Шапка с эйбрау и сетка из семи карточек услуг под аудиторию выхода в Италию и Европу; PWA заменена на SEO-продвижение, добавлена карточка «Доступность и EAA».
  * Viewport Width: 1400
  */
 ?>
@@ -98,6 +98,20 @@
 
 <!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
 <p class="sr-card-link sr-no-margin"><a href="/ru/uslugi/tehnicheskoe-seo/">Подробнее →</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-card"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Доступность и EAA</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Обязательная доступность сайта по European Accessibility Act: аудит, исправления и декларация о соответствии WCAG 2.1 AA. Требование закона с 2025 года.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
+<p class="sr-card-link sr-no-margin"><a href="/ru/uslugi/dostupnost-eaa/">Подробнее →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></section>

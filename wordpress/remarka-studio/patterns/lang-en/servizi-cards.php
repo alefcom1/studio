@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Services — six cards
+ * Title: Services — seven cards
  * Slug: remarka-studio/en-servizi-cards
  * Categories: remarka
- * Description: Header with eyebrow and a grid of six service cards with links.
+ * Description: Header with eyebrow and a grid of seven service cards with links (six base services + EAA compliance).
  * Viewport Width: 1400
  */
 ?>
@@ -13,7 +13,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Six things we do well<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Seven things we do well<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 
 <!-- wp:group {"className":"sr-cascade","style":{"spacing":{"blockGap":"20px","margin":{"top":"56px"}}},"layout":{"type":"grid","minimumColumnWidth":"300px"}} -->
@@ -98,6 +98,20 @@
 
 <!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
 <p class="sr-card-link sr-no-margin"><a href="/en/services/multilingual-websites/">Learn more →</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-card"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">EAA compliance</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Your website, already online, brought up to the WCAG 2.1 AA standard: audit, fixes and accessibility statement. A legal duty since 2025.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
+<p class="sr-card-link sr-no-margin"><a href="/en/services/eaa-compliance/">Learn more →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></section>

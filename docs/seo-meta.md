@@ -21,6 +21,7 @@
 | `/servizi/siti-multilingue/` | sito web multilingua | multilingual website | ✅ (hero-sub, H2 «per chi») |
 | `/servizi/export-ready/` | sito web per l'export | export website | ✅ (hero-sub, H2 «garanzie») |
 | `/servizi/web-app/` | sviluppo web app | custom web app | ✅ (hero-sub, H2 «per chi») |
+| `/servizi/adeguamento-eaa/` | adeguamento EAA | EAA compliance | ✅ (H1, hero-sub, H2 «per chi», FAQ) — см. «Adeguamento EAA» sotto |
 | `/milano/` | web agency Milano | (city IT-only, EN: web agency Milan) | ✅ (eyebrow, H2 servizi, alt) |
 | `/monza/ /bergamo/ /brescia/ /como/` | realizzazione siti web ‹città› | — | ✅ (H1, H2 servizi, alt) |
 | `/strumenti/test-velocita/` | test velocità sito web | website speed test | ✅ (H1) |
@@ -178,6 +179,39 @@ RU AI — 141, RU CO₂ — 140 — все ≤160.
 
 **Проверка длин.** Title: IT — 54, EN — 59, RU — 56 — все ≤60. Description: IT — 157,
 EN — 146, RU — 150 — все ≤160.
+
+---
+
+## Adeguamento EAA — IT/EN/RU (E1)
+
+> Источник — `docs/copy-eaa.md` §2 (copy deck E1, услуга «специальная»: собственный dict
+> `ADEGUAMENTO_EAA` в `data.py`, не входит в `SERVICES`). Focus keyword IT `adeguamento EAA`,
+> EN `EAA compliance`, RU `доступность сайта по EAA`. Слаги: IT `/servizi/adeguamento-eaa/`,
+> EN `/en/services/eaa-compliance/`, RU `/ru/uslugi/dostupnost-eaa/`.
+
+| Страница | Focus Keyword | Контент подтянут |
+|---|---|---|
+| `/servizi/adeguamento-eaa/` | adeguamento EAA | ✅ (H1, hero-sub, H2 «per chi»/«cosa include», FAQ) |
+| `/en/services/eaa-compliance/` | EAA compliance | ✅ (H1, hero-sub, H2 «who it's for»/«what's included», FAQ) |
+| `/ru/uslugi/dostupnost-eaa/` | доступность сайта по EAA | ✅ (H1, hero-sub, H2 «для кого это»/«что входит», FAQ) |
+
+### IT — `/servizi/adeguamento-eaa/`
+
+- **Title (47):** `Adeguamento EAA in 3 settimane | Studio Remarka`
+- **Description (152):** `Sito conforme all'European Accessibility Act (WCAG 2.1 AA): audit, correzioni e dichiarazione di accessibilità in 3 settimane. Da € 1.900, prezzo chiuso.`
+
+### EN — `/en/services/eaa-compliance/`
+
+- **Title (54):** `EAA compliance in 3 weeks, fixed price | Studio Remarka`
+- **Description (154):** `Make your site compliant with the European Accessibility Act (WCAG 2.1 AA): audit, fixes and accessibility statement in 3 weeks. From € 1,900, fixed price.`
+
+### RU — `/ru/uslugi/dostupnost-eaa/`
+
+- **Title (52):** `Доступность сайта по EAA за 3 недели | Studio Remarka`
+- **Description (156):** `Приводим сайт в соответствие с European Accessibility Act (WCAG 2.1 AA): аудит, исправления и декларация о доступности за 3 недели. От € 1 900, цена в договоре.`
+
+**Проверка длин.** Title: IT — 47, EN — 54, RU — 52 — все ≤60. Description: IT — 152,
+EN — 154, RU — 156 — все ≤160.
 
 ---
 

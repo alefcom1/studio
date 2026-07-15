@@ -124,7 +124,7 @@
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Aumentate il contrasto</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Testo e sfondo devono avere un rapporto di contrasto di almeno 4,5:1: il grigio chiaro elegante sullo schermo del designer diventa illeggibile al sole o per chi ci vede poco.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Descrivete le immagini</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Ogni immagine informativa ha bisogno di un testo alternativo che ne racconti il contenuto: è ciò che uno screen reader legge a chi non può vederla.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Etichettate i moduli</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Ogni campo deve avere un’etichetta esplicita e collegata: «Nome», «Email», «Messaggio», non solo un testo grigio che sparisce appena si scrive.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Ordinate titoli e focus</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Una gerarchia di titoli coerente e un percorso navigabile da tastiera, con il focus sempre visibile, rendono la pagina usabile anche senza mouse.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Non affidatevi solo al colore</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Un errore segnalato solo in rosso è invisibile a chi non distingue i colori: affiancate sempre un’icona o un testo che spieghi cosa succede.</p></div></div>
 <!-- /wp:group -->
 <!-- wp:html -->
-<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/servizi/siti-aziendali/">Vogliamo sistemarle noi: l’accessibilità è inclusa nei siti aziendali →</a></p></div>
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/servizi/adeguamento-eaa/">Vogliamo sistemarle noi: audit, correzioni e dichiarazione — servizio Adeguamento EAA →</a></p></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -140,7 +140,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi una verifica di accessibilità</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/servizi/siti-aziendali/">Scopri i siti aziendali</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/servizi/adeguamento-eaa/">Scopri il servizio Adeguamento EAA</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

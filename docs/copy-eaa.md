@@ -1,5 +1,10 @@
 # Copy deck — nuovo servizio «Adeguamento EAA»
 
+> **Реализовано (E1) — 15.07.2026, этот коммит.** Все тексты этого дека внесены в репозиторий
+> verbatim: `data.py` (`ADEGUAMENTO_EAA`), `generate_pages.py` (`build_adeguamento_eaa()`),
+> EN через `translate_pages.py en` (CHROME_EAA), RU вручную (`ru-servizio-adeguamento-eaa.php`).
+> Статус и детали — `docs/piano-checkup-sito.md` §«Статус выполнения» → E1.
+
 > Data: 15.07.2026 · Autore: Opus (strategia-copy) · Ветка `claude/new-project-prep-zhmkg5` (SOLO LETTURA).
 > Единственный выход этой задачи. Оркестратор сам вносит контент в репо — я НИЧЕГО не менял и git не трогал.
 > Тон бренда (piano-implementazione-fase-A §0): числа вместо прилагательных, форма «voi», честные оговорки,

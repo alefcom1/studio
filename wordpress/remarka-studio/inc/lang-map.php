@@ -23,6 +23,7 @@ return array(
 	array( 'it' => 'servizi/siti-multilingue', 'en' => 'en/services/multilingual-websites', 'ru' => 'ru/uslugi/mnogojazychnye-sajty' ),
 	array( 'it' => 'servizi/export-ready', 'en' => 'en/services/export-ready', 'ru' => 'ru/uslugi/export-ready' ),
 	array( 'it' => 'servizi/web-app', 'en' => 'en/services/custom-web-apps', 'ru' => 'ru/uslugi/veb-prilozhenija' ),
+	array( 'it' => 'servizi/adeguamento-eaa', 'en' => 'en/services/eaa-compliance', 'ru' => 'ru/uslugi/dostupnost-eaa' ),
 	array( 'it' => 'casi-studio/arredamenti-colombo', 'en' => 'en/case-studies/arredamenti-colombo', 'ru' => 'ru/kejsy/arredamenti-colombo' ),
 	array( 'it' => 'casi-studio/cantina-serralta', 'en' => 'en/case-studies/cantina-serralta', 'ru' => 'ru/kejsy/cantina-serralta' ),
 	array( 'it' => 'casi-studio/tecnoidraulica', 'en' => 'en/case-studies/tecnoidraulica', 'ru' => 'ru/kejsy/tecnoidraulica' ),

@@ -36,6 +36,7 @@ SERVICES_SLUGS = {
     'siti-multilingue':     {'en': 'multilingual-websites', 'ru': 'mnogojazychnye-sajty'},
     'export-ready':         {'en': 'export-ready',          'ru': 'export-ready'},
     'web-app':              {'en': 'custom-web-apps',       'ru': 'veb-prilozhenija'},
+    'adeguamento-eaa':      {'en': 'eaa-compliance',        'ru': 'dostupnost-eaa'},
 }
 
 # Имена клиентов — бренды, слаги не переводятся.

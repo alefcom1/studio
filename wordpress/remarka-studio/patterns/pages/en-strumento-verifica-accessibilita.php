@@ -124,7 +124,7 @@
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">01</p><p style="font-weight:500;margin-top:8px">Increase your contrast</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Text and background need a contrast ratio of at least 4.5:1: the elegant light grey that looks fine on a designer’s screen becomes unreadable in sunlight or for people with low vision.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">02</p><p style="font-weight:500;margin-top:8px">Describe your images</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Every informative image needs alt text describing its content: it’s what a screen reader reads out to someone who can’t see it.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">03</p><p style="font-weight:500;margin-top:8px">Label your forms</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">Every field needs an explicit, properly linked label — “Name”, “Email”, “Message” — not just grey placeholder text that vanishes as soon as you start typing.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">04</p><p style="font-weight:500;margin-top:8px">Put your headings and focus order in order</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">A consistent heading hierarchy and a keyboard-navigable path, with focus always visible, make the page usable even without a mouse.</p></div><div class="sr-step"><p class="sr-mono" style="color:var(--sr-oltremare)">05</p><p style="font-weight:500;margin-top:8px">Don’t rely on colour alone</p><p style="font-size:14.5px;color:var(--sr-grigio);margin-top:8px">An error flagged only in red is invisible to someone who can’t distinguish colours: always pair it with an icon or text explaining what’s happening.</p></div></div>
 <!-- /wp:group -->
 <!-- wp:html -->
-<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/en/services/business-websites/">Want us to fix them for you? Accessibility is included in our business websites →</a></p></div>
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><p class="sr-card-link" style="margin-top:12px"><a href="/en/services/eaa-compliance/">Want us to fix them for you? Audit, fixes and statement — our EAA compliance service →</a></p></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -140,7 +140,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/en/#contatti">Request an accessibility check</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/en/services/business-websites/">See business websites</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/en/services/eaa-compliance/">Discover the EAA compliance service</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
