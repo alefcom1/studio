@@ -150,14 +150,27 @@ function remarka_legacy_flat_redirect_map(): array {
 		// URL creati prima di questo progetto (post_name già percent-encoded
 		// in DB per gli slug non latini — così arriva anche da wp_parse_url()).
 		'%d0%b3%d0%bb%d0%b0%d0%b2%d0%bd%d0%b0%d1%8f' => '',        // главная
-		'%d0%b1%d0%bb%d0%be%d0%b3'                   => 'en/blog', // блог
+		'%d0%b1%d0%bb%d0%be%d0%b3'                   => 'ru/blog', // блог (URL cirillico → blog RU)
 		'sample-page'                                => '',
 	);
+	/*
+	 * Guardia anti-collisione: se il percorso EN/RU meno il prefisso di lingua
+	 * coincide con un percorso ITALIANO reale (indice blog: it 'blog' vs
+	 * en 'en/blog'; articoli con slug identico nelle lingue, es.
+	 * core-web-vitals-2026), quel "flat" NON è un URL legacy — è la pagina
+	 * italiana viva, e redirigerla manderebbe gli utenti IT sulla versione EN.
+	 */
+	$it_paths = array();
+	foreach ( remarka_lang_map() as $row ) {
+		if ( ! empty( $row['it'] ) ) {
+			$it_paths[ (string) $row['it'] ] = true;
+		}
+	}
 	foreach ( remarka_lang_map() as $row ) {
 		foreach ( array( 'en', 'ru' ) as $lang ) {
 			$path = $row[ $lang ];
 			$flat = preg_replace( '#^' . $lang . '/#', '', (string) $path );
-			if ( $path && $flat !== $path && ! isset( $map[ $flat ] ) ) {
+			if ( $path && $flat !== $path && ! isset( $it_paths[ $flat ] ) && ! isset( $map[ $flat ] ) ) {
 				$map[ $flat ] = $path;
 			}
 		}
