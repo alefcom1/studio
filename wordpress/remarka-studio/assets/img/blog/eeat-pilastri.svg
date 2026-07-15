@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="Gli otto segnali E-E-A-T raggruppati nei quattro pilastri">
+  <defs>
+    <pattern id="gridEp" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}
+    </style>
+  </defs>
+  <rect width="1200" height="520" fill="#F7F6F2"/>
+  <rect width="1200" height="520" fill="url(#gridEp)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">E-E-A-T — 8 SEGNALI / 8 SIGNALS · 4 PILASTRI / PILLARS</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <g class="body">
+    <!-- Experience -->
+    <g transform="translate(80,110)">
+      <rect width="245" height="360" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+      <rect width="245" height="8" fill="#5B73E8"/>
+      <text x="20" y="52" font-size="20" fill="#14161A">Experience</text>
+      <text x="20" y="78" class="mono" font-size="14" fill="#5A5E66">Esperienza</text>
+      <g class="mono" font-size="17" fill="#14161A">
+        <text x="20" y="140">▸ portfolio</text>
+        <text x="20" y="176">▸ case studies</text>
+      </g>
+    </g>
+    <!-- Expertise -->
+    <g transform="translate(345,110)">
+      <rect width="245" height="360" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+      <rect width="245" height="8" fill="#5B73E8"/>
+      <text x="20" y="52" font-size="20" fill="#14161A">Expertise</text>
+      <text x="20" y="78" class="mono" font-size="14" fill="#5A5E66">Competenza</text>
+      <g class="mono" font-size="17" fill="#14161A">
+        <text x="20" y="140">▸ chi siamo</text>
+        <text x="20" y="176">▸ about page</text>
+      </g>
+    </g>
+    <!-- Authoritativeness -->
+    <g transform="translate(610,110)">
+      <rect width="245" height="360" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+      <rect width="245" height="8" fill="#2440C8"/>
+      <text x="20" y="52" font-size="20" fill="#14161A">Authority</text>
+      <text x="20" y="78" class="mono" font-size="14" fill="#5A5E66">Autorevolezza</text>
+      <g class="mono" font-size="17" fill="#14161A">
+        <text x="20" y="140">▸ schema.org</text>
+        <text x="20" y="176">▸ sameAs · profili</text>
+      </g>
+    </g>
+    <!-- Trust (accent, taller emphasis) -->
+    <g transform="translate(875,110)">
+      <rect width="245" height="360" fill="#14161A"/>
+      <rect width="245" height="8" fill="#2440C8"/>
+      <text x="20" y="52" font-size="20" fill="#FFFFFF">Trust</text>
+      <text x="20" y="78" class="mono" font-size="14" fill="#9AA0AA">Affidabilità · core</text>
+      <g class="mono" font-size="17" fill="#F7F6F2">
+        <text x="20" y="140">▸ HTTPS</text>
+        <text x="20" y="176">▸ contacts</text>
+        <text x="20" y="212">▸ P.IVA / VAT</text>
+        <text x="20" y="248">▸ privacy · cookie</text>
+      </g>
+    </g>
+  </g>
+</svg>

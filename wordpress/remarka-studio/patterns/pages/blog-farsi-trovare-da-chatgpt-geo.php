@@ -1,0 +1,75 @@
+<?php
+/**
+ * Title: Pagina — Articolo: Come farsi trovare (e citare) da ChatGPT: guida alla GEO
+ * Slug: remarka-studio/blog-farsi-trovare-da-chatgpt-geo
+ * Categories: remarka-pagine
+ * Description: Articolo blog: Come farsi trovare (e citare) da ChatGPT: guida alla GEO
+ * Viewport Width: 1400
+ */
+?>
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-grigio);font-size:13px">15 LUG 2026</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
+<h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Come farsi trovare (e citare) da ChatGPT: guida alla GEO</h1>
+<!-- /wp:heading -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/geo-cover.svg" alt="Sito visibile su ChatGPT: la GEO (Generative Engine Optimization) e una risposta AI che cita la vostra pagina come fonte" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<!-- /wp:html -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:18px;line-height:1.75;max-width:75ch">C’è una domanda che un anno fa era da nerd e oggi la fa anche vostro cugino: «l’hai chiesto a ChatGPT?». Sempre più persone cercano una risposta parlando con un assistente AI invece di sfogliare dieci link blu, e questo apre una partita nuova: non basta più essere primi su Google, bisogna essere citati nelle risposte generate. Farsi trovare su ChatGPT, Perplexity e simili ha persino un nome — GEO, Generative Engine Optimization. Vediamo cos’è, in cosa somiglia alla SEO e in cosa se ne allontana, e soprattutto cosa potete fare concretamente.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Perché volete un sito visibile su ChatGPT<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Quando un modello AI risponde a una domanda, spesso non inventa: legge il web e sintetizza, e nelle risposte migliori indica le fonti con dei rimandi cliccabili. Essere una di quelle fonti significa due cose. La prima, immediata: qualcuno vi legge nel momento esatto in cui sta decidendo. La seconda, più sottile: comparire in una risposta di ChatGPT o Perplexity è un segnale di autorevolezza che si trascina dietro fiducia, anche offline.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">L’errore da evitare è pensare che sia una moda passeggera o roba «da grandi marchi». Il meccanismo premia chi si spiega bene, non chi ha il budget più grosso — ed è esattamente il terreno su cui una PMI ben fatta può battere un concorrente più grande e più pigro.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Come un modello arriva a citare la vostra pagina<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Il percorso è più semplice di quanto sembri, e capirlo aiuta a lavorarci. Il vostro sito viene letto da crawler specializzati — GPTBot di OpenAI, ClaudeBot, PerplexityBot; questi contenuti alimentano il modello; e quando qualcuno fa una domanda pertinente, il modello costruisce la risposta e, se il vostro testo è chiaro e affidabile, vi cita come fonte.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/geo-flusso.svg" alt="Il flusso della GEO: dal vostro sito ai crawler AI (GPTBot, ClaudeBot, PerplexityBot), al modello, fino alla risposta con la citazione" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Il percorso, in quattro passi: il vostro sito (1) viene letto dai crawler AI (2), alimenta il modello (3) e, se il contenuto è chiaro, finisce citato nella risposta (4). Ogni passo ha un modo per andare storto — o per funzionare.</figcaption></figure>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">GEO e SEO: cosa cambia (e cosa no)<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Buona parte del lavoro è la stessa di sempre: contenuti chiari, struttura tecnica pulita, velocità, dati strutturati. Chi ha già una SEO tecnica solida parte con mezzo lavoro fatto. Ma tre cose diventano più importanti del solito.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Aprire la porta ai crawler giusti: nel robots.txt non bloccate GPTBot, ClaudeBot, PerplexityBot e Google-Extended se volete comparire nelle risposte generate.</span></div><div><span class="sr-mono">b</span><span>Scrivere fatti espliciti: i modelli citano ciò che capiscono senza ambiguità. «Realizziamo e-commerce a Milano, consegna in 6 settimane, prezzo chiuso» vale più di «soluzioni digitali su misura per il vostro business».</span></div><div><span class="sr-mono">c</span><span>Farsi leggere in testo, non in immagini: un dato prezioso dentro una locandina JPG, per un modello, non esiste.</span></div></div>
+<!-- /wp:html -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Da dove partire, senza perdersi<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">La GEO non è un servizio a parte da comprare in fretta: è la buona SEO tecnica di sempre, orientata a un lettore nuovo. Il primo passo concreto è verificare se il vostro sito è già leggibile dalle macchine — se espone i dati strutturati, se non sta bloccando i crawler AI, se ha una sitemap in ordine. Da lì si vede subito cosa manca.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">E se volete capire il tassello più discusso di questo mondo — il famoso file llms.txt — l’abbiamo raccontato a parte, senza fumo: cos’è, come si scrive e quanto conta davvero.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="/servizi/seo-tecnica/">Lo prepariamo noi: fa parte della SEO tecnica →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/blog/llms-txt-cos-e/">Leggi anche: llms.txt, cos’è e serve davvero al vostro sito →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:32px"><a href="/strumenti/sito-pronto-ai/">Verifica gratis se il vostro sito è leggibile dai modelli AI →</a></p>
+<!-- /wp:html -->
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"40px"}}}} -->
+<div class="wp-block-buttons" style="margin-top:40px"><!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/blog/">← Tutti gli articoli</a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+</section>
+<!-- /wp:group -->

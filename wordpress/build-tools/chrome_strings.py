@@ -1328,3 +1328,253 @@ CHROME_EEAT = {
     'Misura i segnali E-E-A-T del sito →': {'en': 'Check your site’s E-E-A-T signals →'},
 }
 CHROME.update(CHROME_EEAT)
+
+# CHROME_BLOG — Blog · Batch 1 (5 articoli IT → EN). Copre ogni nodo di testo
+# visibile generato da build_blog_post: titolo (H1 + indice), estratto, corpo,
+# titoli H2, paragrafi, voci di lista, alt e didascalie delle illustrazioni,
+# etichette dei link contestuali e delle CTA (con « →» finale). Solo EN: la
+# versione RU del blog è un batch a parte, non una traduzione (translate_pages
+# ru resta vietato). Redazione EN madrelingua; numeri in formato US.
+CHROME_BLOG = {
+    '15 LUG 2026': {'en': '15 JUL 2026'},
+    # ---------- Articolo 1 — EAA e-commerce ----------
+    'EAA 2026: cosa rischia davvero il vostro e-commerce':
+        {'en': 'EAA 2026: what your e-commerce site really risks'},
+    'Dal 28 giugno 2025 l’accessibilità è un obbligo di legge, con sanzioni fino al 5% del fatturato. Chi è coinvolto, chi resta fuori e da dove partire, senza allarmismi.':
+        {'en': 'Since 28 June 2025 accessibility is a legal requirement, with fines up to 5% of revenue. Who’s covered, who’s exempt, and where to start — without the scaremongering.'},
+    'European Accessibility Act e-commerce: la scadenza del 28 giugno 2025, lo standard WCAG 2.1 AA e la sanzione fino al 5% del fatturato':
+        {'en': 'European Accessibility Act e-commerce: the 28 June 2025 deadline, the WCAG 2.1 AA standard, and fines up to 5% of revenue'},
+    'Il 28 giugno 2025 è passato in sordina, e proprio per questo fa più danni. Da quella data l’European Accessibility Act è una legge applicata anche in Italia, e tocca molti più e-commerce di quanti se ne siano accorti: se vendete online a dei consumatori, con ogni probabilità il vostro negozio deve essere usabile anche dalle persone con disabilità — non come cortesia, ma per obbligo, con sanzioni che il recepimento italiano fissa fino al 5% del fatturato. Niente panico e niente finta indifferenza: vediamo cosa rischia davvero il vostro e-commerce, chi resta fuori e cosa conviene fare adesso.':
+        {'en': '28 June 2025 came and went quietly, and that’s exactly why it does more damage. Since that date the European Accessibility Act has been enforced law in Italy too, and it affects far more e-commerce sites than have noticed: if you sell online to consumers, your store most likely has to be usable by people with disabilities as well — not as a courtesy, but by law, with fines the Italian transposition sets at up to 5% of revenue. No panic, and no pretending it isn’t happening: let’s look at what your e-commerce site really risks, who’s left out, and what’s worth doing now.'},
+    'Che cos’è l’European Accessibility Act, in parole vostre':
+        {'en': 'What the European Accessibility Act is, in plain terms'},
+    'L’European Accessibility Act (EAA) nasce dalla direttiva europea 2019/882, e l’idea è persino ovvia una volta detta. Un negozio fisico con tre gradini all’ingresso e nessuna rampa lascia fuori una parte dei clienti; un e-commerce con contrasti illeggibili, immagini senza descrizione e un checkout che non si completa da tastiera fa esattamente la stessa cosa, solo che non si vede. La norma chiede che i servizi digitali venduti ai consumatori siano usabili anche da chi ha una disabilità visiva, motoria o cognitiva.':
+        {'en': 'The European Accessibility Act (EAA) comes from EU Directive 2019/882, and the idea is almost obvious once you say it out loud. A physical shop with three steps at the door and no ramp shuts out some of its customers; an e-commerce site with unreadable contrast, images without descriptions and a checkout you can’t complete from the keyboard does exactly the same thing — you just can’t see it. The law requires that digital services sold to consumers be usable by people with a visual, motor or cognitive disability too.'},
+    'In Italia la direttiva è stata recepita e si applica dal 28 giugno 2025. Lo standard di riferimento non è un’opinione: sono le WCAG 2.1 di livello AA, le stesse linee guida internazionali che i tecnici usano da anni. Non è una moda partita ieri, è un percorso cominciato nel 2019 e arrivato a scadenza adesso.':
+        {'en': 'In Italy the directive has been transposed and applies from 28 June 2025. The reference standard isn’t a matter of opinion: it’s WCAG 2.1 level AA, the same international guidelines developers have used for years. This isn’t a fad that started yesterday — it’s a path that began in 2019 and has just reached its deadline.'},
+    'Cronologia dell’European Accessibility Act: direttiva UE 2019/882, recepimento in Italia, entrata in vigore il 28 giugno 2025 e sanzione massima del 5%':
+        {'en': 'Timeline of the European Accessibility Act: EU Directive 2019/882, transposition in Italy, entry into force on 28 June 2025, and a maximum fine of 5%'},
+    'Dalla direttiva UE 2019/882 all’entrata in vigore in Italia il 28 giugno 2025. Le microimprese di servizi — meno di 10 persone e meno di 2 milioni di euro di fatturato — hanno un’esenzione. Fonti: AccessibleEU (Commissione europea) e la guida di Bird & Bird.':
+        {'en': 'From EU Directive 2019/882 to entry into force in Italy on 28 June 2025. Service micro-enterprises — fewer than 10 people and under € 2M in revenue — are exempt. Sources: AccessibleEU (European Commission) and the Bird & Bird guide.'},
+    'Cosa rischia davvero il vostro e-commerce con l’European Accessibility Act':
+        {'en': 'What your e-commerce site really risks under the European Accessibility Act'},
+    'Partiamo dai soldi, perché è la domanda vera. Il recepimento italiano prevede sanzioni fino al 5% del fatturato per i servizi non conformi: su un negozio che fattura 800.000 euro l’anno sono fino a 40.000 euro, più di quanto costi rifare il sito da zero. Non è un rischio teorico. In Francia, dove l’applicazione è partita prima, le prime cause verso i grandi rivenditori online sono già arrivate; in Italia la vigilanza è appena cominciata, e le prime segnalazioni sono una questione di mesi, non di anni.':
+        {'en': 'Let’s start with the money, because that’s the real question. The Italian transposition provides for fines of up to 5% of revenue for non-compliant services: for a store turning over € 800,000 a year that’s up to € 40,000 — more than rebuilding the site from scratch would cost. This isn’t a theoretical risk. In France, where enforcement started earlier, the first cases against large online retailers have already landed; in Italy oversight has only just begun, and the first complaints are a matter of months, not years.'},
+    'Ma la sanzione è la parte che spaventa di più, non quella che pesa di più. Un e-commerce inaccessibile perde clienti ogni giorno, in silenzio, molto prima che arrivi un controllo. Pensate a chi ci vede poco e non riesce a leggere un grigio chiaro elegante, a chi naviga da telefono con una mano sola, a chi compila l’ordine da tastiera perché il mouse gli è scomodo: ogni barriera è un carrello abbandonato che nei vostri report non comparirà mai come «problema di accessibilità». Lo leggerete come «tasso di conversione basso», e darete la colpa al prezzo.':
+        {'en': 'But the fine is the part that scares you most, not the part that costs you most. An inaccessible e-commerce site loses customers every day, quietly, long before any inspection. Think of the person who sees poorly and can’t read an elegant light gray, the one browsing one-handed on a phone, the one filling in the order from the keyboard because the mouse is awkward for them: every barrier is an abandoned cart that will never show up in your reports as an “accessibility problem.” You’ll read it as a “low conversion rate,” and you’ll blame the price.'},
+    'Siete obbligati? La regola delle microimprese':
+        {'en': 'Are you covered? The micro-enterprise rule'},
+    'La domanda che ci fanno tutti è «vale anche per me?». La risposta onesta è «quasi sempre sì, ma verificate». La norma guarda a chi vende beni o servizi ai consumatori a distanza. Esiste però un’esenzione per le microimprese che erogano servizi — meno di 10 persone e meno di 2 milioni di euro di fatturato annuo. L’esenzione è pensata per i servizi e il perimetro esatto va guardato caso per caso, non a occhio: nel dubbio, meglio una verifica di mezz’ora che una sanzione.':
+        {'en': 'Everyone asks us the same thing: “does this apply to me too?” The honest answer is “almost always yes, but check.” The law looks at anyone selling goods or services to consumers at a distance. There is, however, an exemption for service micro-enterprises — fewer than 10 people and under € 2 million in annual revenue. The exemption is built for services, and the exact scope has to be looked at case by case, not by gut feeling: when in doubt, a half-hour check beats a fine.'},
+    'E-commerce e servizi digitali che vendono a consumatori nell’Unione Europea: è il caso più comune, e il più esposto.':
+        {'en': 'E-commerce and digital services selling to consumers in the European Union: the most common case, and the most exposed.'},
+    'Banche, assicurazioni, trasporti, biglietterie e sistemi di prenotazione online.':
+        {'en': 'Banks, insurers, transport, ticketing and online booking systems.'},
+    'Aziende che non sono microimprese e che finora hanno trattato l’accessibilità come un dettaglio estetico.':
+        {'en': 'Companies that aren’t micro-enterprises and have treated accessibility as a cosmetic detail until now.'},
+    'Verifica gratis le barriere del vostro sito →':
+        {'en': 'Check your site’s barriers for free →'},
+    'Da dove si comincia: le quattro parole che contano':
+        {'en': 'Where to start: the four words that matter'},
+    'Le WCAG 2.1 AA sembrano un muro di sigle, ma poggiano su quattro princìpi semplici, riassunti nell’acronimo POUR: un sito accessibile è percepibile, utilizzabile, comprensibile e robusto. Tradotto in pratica: testo che si legge anche con poca vista, tutto raggiungibile da tastiera, moduli con etichette chiare e messaggi d’errore che spiegano cosa fare, codice pulito che gli screen reader sanno leggere.':
+        {'en': 'WCAG 2.1 AA looks like a wall of acronyms, but it rests on four simple principles, summed up as POUR: an accessible site is perceivable, operable, understandable and robust. In practice: text you can read even with poor eyesight, everything reachable from the keyboard, forms with clear labels and error messages that explain what to do, and clean code that screen readers can read.'},
+    'I quattro princìpi delle WCAG 2.1 AA: percepibile, utilizzabile, comprensibile, robusto':
+        {'en': 'The four principles of WCAG 2.1 AA: perceivable, operable, understandable, robust'},
+    'I quattro princìpi delle WCAG 2.1 AA (POUR). Un audit automatico intercetta circa un terzo di questi criteri; il resto — tastiera, screen reader, contenuti — si verifica a mano.':
+        {'en': 'The four principles of WCAG 2.1 AA (POUR). An automated audit catches about a third of these criteria; the rest — keyboard, screen reader, content — is checked by hand.'},
+    'Tre settimane, dall’audit alla dichiarazione':
+        {'en': 'Three weeks, from audit to statement'},
+    'Un controllo automatico gratuito è il primo gradino: in un minuto vi dice se il sito ha già i problemi più evidenti — contrasti, etichette, struttura. Ma la conformità piena non si certifica con un punteggio: serve la verifica manuale (tastiera, screen reader, contenuti) e una dichiarazione di accessibilità pubblicata sul sito, il documento che la norma pretende. Senza dichiarazione, un sito tecnicamente accessibile resta comunque non a norma.':
+        {'en': 'A free automated check is the first step: in a minute it tells you whether the site already has the most obvious problems — contrast, labels, structure. But full compliance isn’t certified by a score: it takes a manual review (keyboard, screen reader, content) and an accessibility statement published on the site, the document the law requires. Without the statement, a technically accessible site is still not compliant.'},
+    'La buona notizia è che non è un lavoro infinito. Per un e-commerce di taglia media, dall’audit alle correzioni fino alla dichiarazione, sono in genere tre settimane. L’obbligo, preso per tempo, non è un costo a fondo perduto: è un sito che vende a più persone e che non teme la prima lettera del controllo.':
+        {'en': 'The good news is that it isn’t an endless job. For a mid-sized e-commerce site, from audit to fixes to statement it’s usually three weeks. Taken in time, the obligation isn’t money down the drain: it’s a site that sells to more people and doesn’t fear the first enforcement letter.'},
+    'Vogliamo sistemarlo noi: il servizio Adeguamento EAA, a prezzo chiuso →':
+        {'en': 'Want us to fix it? The EAA compliance service, at a fixed price →'},
+    'Adeguamento EAA: audit, correzioni e dichiarazione in 3 settimane →':
+        {'en': 'EAA compliance: audit, fixes and statement in 3 weeks →'},
+
+    # ---------- Articolo 2 — llms.txt ----------
+    'llms.txt: cos’è e serve davvero al vostro sito?':
+        {'en': 'llms.txt: what it is, and does your site actually need it?'},
+    'Un file di testo che spiega il vostro sito ai modelli AI, come robots.txt fa con Google. Cos’è, come si scrive e quanto conta davvero, senza esagerazioni.':
+        {'en': 'A text file that explains your site to AI models, the way robots.txt does for Google. What it is, how to write it, and how much it really matters — no hype.'},
+    'llms.txt: cos’è, il file Markdown nella radice del sito che riassume i contenuti per i modelli AI':
+        {'en': 'llms.txt: what it is — the Markdown file in the site root that summarizes your content for AI models'},
+    'Nel giro di un anno è comparso un nuovo file di cui tutti parlano e che quasi nessuno ha: llms.txt. La promessa è semplice — un foglietto di istruzioni che spiega il vostro sito ai modelli di intelligenza artificiale, come robots.txt fa da vent’anni con i motori di ricerca. Ma serve davvero, o è l’ennesima sigla che qualcuno vi venderà a caro prezzo? Vediamo cos’è llms.txt, come si scrive in mezz’ora e quanto conta oggi, senza gonfiarne l’importanza e senza liquidarlo con un’alzata di spalle.':
+        {'en': 'Within a year a new file everyone talks about and almost nobody has appeared: llms.txt. The promise is simple — a little instruction sheet that explains your site to AI models, the way robots.txt has done for search engines for twenty years. But does it actually help, or is it just one more acronym someone will sell you at a premium? Let’s look at what llms.txt is, how to write it in half an hour, and how much it matters today — without inflating it and without waving it off.'},
+    'llms.txt, cos’è in una frase':
+        {'en': 'llms.txt, in one sentence'},
+    'llms.txt è un file di testo in formato Markdown che mettete nella radice del sito (sito.it/llms.txt) e che riassume, in modo leggibile da una macchina, chi siete, cosa fate e dove trovare le pagine importanti. Nasce come proposta di standard nel 2024 e ha un obiettivo preciso: dare ai modelli linguistici — quelli dietro ChatGPT, Claude, Perplexity — una mappa pulita del sito, senza costringerli a indovinare tra menù, banner e codice.':
+        {'en': 'llms.txt is a Markdown text file you place in your site root (yoursite.com/llms.txt) that summarizes, in a machine-readable way, who you are, what you do, and where to find the important pages. It emerged as a proposed standard in 2024 with a clear goal: to give language models — the ones behind ChatGPT, Claude, Perplexity — a clean map of the site, without forcing them to guess among menus, banners and code.'},
+    'L’analogia con robots.txt aiuta, ma non è perfetta. robots.txt dice ai crawler dove possono andare; llms.txt dice loro cosa contano le vostre pagine e come raccontarvi. È la differenza tra un cartello «vietato l’ingresso» e una guida che spiega il museo.':
+        {'en': 'The robots.txt analogy helps, but it isn’t perfect. robots.txt tells crawlers where they may go; llms.txt tells them what your pages are about and how to describe you. It’s the difference between a “no entry” sign and a guide that explains the museum.'},
+    'Come è fatto un file llms.txt':
+        {'en': 'What an llms.txt file looks like'},
+    'La parte bella è che si legge e si scrive senza essere programmatori. La struttura è quella di un documento Markdown ordinato: un titolo con il nome dell’azienda, una riga di sintesi, e poi sezioni con link alle pagine che volete far leggere per prime — servizi, chi siamo, contatti, documentazione.':
+        {'en': 'The nice part is that you can read and write it without being a programmer. The structure is that of a tidy Markdown document: a title with the company name, a one-line summary, then sections with links to the pages you want read first — services, about, contacts, documentation.'},
+    'Anatomia di un file llms.txt: titolo H1 obbligatorio, una riga di sintesi, sezioni con link e un blocco opzionale':
+        {'en': 'Anatomy of an llms.txt file: a required H1 title, a one-line summary, sections with links, and an optional block'},
+    'L’anatomia di un file llms.txt: un titolo (1, obbligatorio), una sintesi in una riga (2), le sezioni con i link alle pagine chiave (3) e un blocco opzionale per il resto (4). Nient’altro: la forza sta nella sobrietà.':
+        {'en': 'The anatomy of an llms.txt file: a title (1, required), a one-line summary (2), sections with links to the key pages (3), and an optional block for the rest (4). Nothing more — its strength is in the restraint.'},
+    'Serve davvero? La risposta onesta':
+        {'en': 'Does it actually help? The honest answer'},
+    'Qui evitiamo due bugie speculari. La prima: «llms.txt è indispensabile, senza sei invisibile». Falso. È uno standard giovane, non tutti i modelli lo leggono ancora, e la sua assenza oggi non è un errore grave. La seconda: «è una moda inutile». Anche questa è falsa. Costa mezz’ora, non fa danni, e vi mette dalla parte giusta di un cambiamento che sta accelerando.':
+        {'en': 'Here we steer clear of two mirror-image lies. The first: “llms.txt is essential, without it you’re invisible.” False. It’s a young standard, not every model reads it yet, and its absence today isn’t a serious error. The second: “it’s a pointless fad.” Also false. It costs half an hour, does no harm, and puts you on the right side of a change that’s speeding up.'},
+    'Il modo giusto di leggerlo è questo: llms.txt non vi porta clienti da solo, ma toglie ambiguità. Se un modello prova a raccontare cosa fate, preferite che legga una mappa scritta da voi o che ricostruisca tutto da un menù e da tre banner cookie? La risposta è ovvia, e il costo dell’assicurazione è ridicolo rispetto al rischio di essere descritti male.':
+        {'en': 'Here’s the right way to read it: llms.txt won’t bring you customers on its own, but it removes ambiguity. If a model tries to describe what you do, would you rather it read a map you wrote or piece everything together from a menu and three cookie banners? The answer is obvious, and the cost of the insurance is trivial next to the risk of being described badly.'},
+    'llms.txt è un pezzo, non tutta la SEO tecnica':
+        {'en': 'llms.txt is one piece, not the whole of technical SEO'},
+    'Un errore comune è trattare llms.txt come una bacchetta magica. In realtà è l’ultimo arrivato in una famiglia di segnali che esistono da tempo: dati strutturati in JSON-LD, una sitemap aggiornata, contenuti in testo leggibile e non solo in immagini, un robots.txt che non chiude la porta ai crawler giusti. llms.txt è la ciliegina; la torta è la SEO tecnica fatta bene.':
+        {'en': 'A common mistake is treating llms.txt as a magic wand. In reality it’s the newest arrival in a family of signals that have been around for a while: JSON-LD structured data, an up-to-date sitemap, content in readable text rather than only in images, and a robots.txt that doesn’t shut the door on the right crawlers. llms.txt is the cherry; the cake is technical SEO done well.'},
+    'Se non sapete da dove cominciare, cominciate misurando. In un minuto potete verificare se il vostro sito espone già i quattro segnali che i modelli cercano — file llms.txt, accesso dei crawler AI, dati strutturati e sitemap — e capire cosa manca prima di scrivere una sola riga.':
+        {'en': 'If you don’t know where to begin, begin by measuring. In a minute you can check whether your site already exposes the four signals models look for — an llms.txt file, AI-crawler access, structured data and a sitemap — and see what’s missing before you write a single line.'},
+    'Fa parte della SEO tecnica che consegniamo →':
+        {'en': 'It’s part of the technical SEO we deliver →'},
+    'Leggi anche: come farsi trovare e citare da ChatGPT →':
+        {'en': 'Read also: how to get found and cited by ChatGPT →'},
+    'Verifica gratis se il vostro sito è pronto per l’AI →':
+        {'en': 'Check for free whether your site is AI-ready →'},
+
+    # ---------- Articolo 3 — GEO / ChatGPT ----------
+    'Come farsi trovare (e citare) da ChatGPT: guida alla GEO':
+        {'en': 'How to get found (and cited) by ChatGPT: a GEO guide'},
+    'Sempre più persone chiedono a ChatGPT invece che a Google. La GEO è l’arte di farsi citare nelle risposte generate: cosa cambia rispetto alla SEO e cosa fare.':
+        {'en': 'More and more people ask ChatGPT instead of Google. GEO is the craft of getting cited in generated answers: what changes from SEO, and what to do about it.'},
+    'Sito visibile su ChatGPT: la GEO (Generative Engine Optimization) e una risposta AI che cita la vostra pagina come fonte':
+        {'en': 'A site visible on ChatGPT: GEO (Generative Engine Optimization) and an AI answer that cites your page as a source'},
+    'C’è una domanda che un anno fa era da nerd e oggi la fa anche vostro cugino: «l’hai chiesto a ChatGPT?». Sempre più persone cercano una risposta parlando con un assistente AI invece di sfogliare dieci link blu, e questo apre una partita nuova: non basta più essere primi su Google, bisogna essere citati nelle risposte generate. Farsi trovare su ChatGPT, Perplexity e simili ha persino un nome — GEO, Generative Engine Optimization. Vediamo cos’è, in cosa somiglia alla SEO e in cosa se ne allontana, e soprattutto cosa potete fare concretamente.':
+        {'en': 'There’s a question that a year ago was for nerds and today even your cousin asks: “did you ask ChatGPT?” More and more people look for an answer by talking to an AI assistant instead of scrolling ten blue links, and that opens a new game: being first on Google is no longer enough — you have to be cited in the generated answers. Getting found on ChatGPT, Perplexity and the like even has a name: GEO, Generative Engine Optimization. Let’s look at what it is, where it resembles SEO and where it parts ways, and above all what you can concretely do.'},
+    'Perché volete un sito visibile su ChatGPT':
+        {'en': 'Why you want a site visible on ChatGPT'},
+    'Quando un modello AI risponde a una domanda, spesso non inventa: legge il web e sintetizza, e nelle risposte migliori indica le fonti con dei rimandi cliccabili. Essere una di quelle fonti significa due cose. La prima, immediata: qualcuno vi legge nel momento esatto in cui sta decidendo. La seconda, più sottile: comparire in una risposta di ChatGPT o Perplexity è un segnale di autorevolezza che si trascina dietro fiducia, anche offline.':
+        {'en': 'When an AI model answers a question, it often isn’t making things up: it reads the web and synthesizes, and in the best answers it points to sources with clickable references. Being one of those sources means two things. The first, immediate: someone reads you at the exact moment they’re deciding. The second, subtler: appearing in a ChatGPT or Perplexity answer is a signal of authority that carries trust with it, offline too.'},
+    'L’errore da evitare è pensare che sia una moda passeggera o roba «da grandi marchi». Il meccanismo premia chi si spiega bene, non chi ha il budget più grosso — ed è esattamente il terreno su cui una PMI ben fatta può battere un concorrente più grande e più pigro.':
+        {'en': 'The mistake to avoid is thinking it’s a passing fad or something “for big brands.” The mechanism rewards whoever explains themselves clearly, not whoever has the biggest budget — and that’s exactly the ground on which a well-run small business can beat a bigger, lazier competitor.'},
+    'Come un modello arriva a citare la vostra pagina':
+        {'en': 'How a model ends up citing your page'},
+    'Il percorso è più semplice di quanto sembri, e capirlo aiuta a lavorarci. Il vostro sito viene letto da crawler specializzati — GPTBot di OpenAI, ClaudeBot, PerplexityBot; questi contenuti alimentano il modello; e quando qualcuno fa una domanda pertinente, il modello costruisce la risposta e, se il vostro testo è chiaro e affidabile, vi cita come fonte.':
+        {'en': 'The path is simpler than it looks, and understanding it helps you work on it. Your site is read by specialized crawlers — OpenAI’s GPTBot, ClaudeBot, PerplexityBot; that content feeds the model; and when someone asks a relevant question, the model builds the answer and, if your text is clear and trustworthy, cites you as a source.'},
+    'Il flusso della GEO: dal vostro sito ai crawler AI (GPTBot, ClaudeBot, PerplexityBot), al modello, fino alla risposta con la citazione':
+        {'en': 'The GEO flow: from your site to the AI crawlers (GPTBot, ClaudeBot, PerplexityBot), to the model, to the answer with the citation'},
+    'Il percorso, in quattro passi: il vostro sito (1) viene letto dai crawler AI (2), alimenta il modello (3) e, se il contenuto è chiaro, finisce citato nella risposta (4). Ogni passo ha un modo per andare storto — o per funzionare.':
+        {'en': 'The path, in four steps: your site (1) is read by AI crawlers (2), feeds the model (3) and, if the content is clear, ends up cited in the answer (4). Every step has a way to go wrong — or to work.'},
+    'GEO e SEO: cosa cambia (e cosa no)':
+        {'en': 'GEO and SEO: what changes (and what doesn’t)'},
+    'Buona parte del lavoro è la stessa di sempre: contenuti chiari, struttura tecnica pulita, velocità, dati strutturati. Chi ha già una SEO tecnica solida parte con mezzo lavoro fatto. Ma tre cose diventano più importanti del solito.':
+        {'en': 'Much of the work is the same as always: clear content, a clean technical structure, speed, structured data. Anyone with solid technical SEO already starts half done. But three things become more important than usual.'},
+    'Aprire la porta ai crawler giusti: nel robots.txt non bloccate GPTBot, ClaudeBot, PerplexityBot e Google-Extended se volete comparire nelle risposte generate.':
+        {'en': 'Open the door to the right crawlers: in robots.txt, don’t block GPTBot, ClaudeBot, PerplexityBot and Google-Extended if you want to appear in generated answers.'},
+    'Scrivere fatti espliciti: i modelli citano ciò che capiscono senza ambiguità. «Realizziamo e-commerce a Milano, consegna in 6 settimane, prezzo chiuso» vale più di «soluzioni digitali su misura per il vostro business».':
+        {'en': 'Write explicit facts: models cite what they understand without ambiguity. “We build e-commerce sites in Milan, delivery in 6 weeks, fixed price” is worth more than “tailored digital solutions for your business.”'},
+    'Farsi leggere in testo, non in immagini: un dato prezioso dentro una locandina JPG, per un modello, non esiste.':
+        {'en': 'Be readable as text, not as images: a valuable fact inside a JPG poster, to a model, simply doesn’t exist.'},
+    'Da dove partire, senza perdersi':
+        {'en': 'Where to start, without getting lost'},
+    'La GEO non è un servizio a parte da comprare in fretta: è la buona SEO tecnica di sempre, orientata a un lettore nuovo. Il primo passo concreto è verificare se il vostro sito è già leggibile dalle macchine — se espone i dati strutturati, se non sta bloccando i crawler AI, se ha una sitemap in ordine. Da lì si vede subito cosa manca.':
+        {'en': 'GEO isn’t a separate service to buy in a hurry: it’s the same good technical SEO as always, aimed at a new kind of reader. The first concrete step is to check whether your site is already machine-readable — whether it exposes structured data, whether it’s blocking the AI crawlers, whether its sitemap is in order. From there you see at once what’s missing.'},
+    'E se volete capire il tassello più discusso di questo mondo — il famoso file llms.txt — l’abbiamo raccontato a parte, senza fumo: cos’è, come si scrive e quanto conta davvero.':
+        {'en': 'And if you want to understand the most talked-about piece of this world — the famous llms.txt file — we’ve covered it separately, no smoke: what it is, how to write it, and how much it really matters.'},
+    'Lo prepariamo noi: fa parte della SEO tecnica →':
+        {'en': 'We set it up: it’s part of technical SEO →'},
+    'Leggi anche: llms.txt, cos’è e serve davvero al vostro sito →':
+        {'en': 'Read also: llms.txt, what it is and whether your site needs it →'},
+    'Verifica gratis se il vostro sito è leggibile dai modelli AI →':
+        {'en': 'Check for free whether AI models can read your site →'},
+
+    # ---------- Articolo 4 — Check-up ----------
+    'Check-up del sito web: le 7 misure che contano':
+        {'en': 'Website check-up: the 7 metrics that matter'},
+    'Un sito «va bene» o «va male» non si decide a sensazione. Ci sono sette misure che ne raccontano la salute — e un modo per leggerle in un minuto, gratis.':
+        {'en': 'Whether a site is “doing well” or “doing badly” isn’t decided by gut feeling. There are seven metrics that tell its health — and a way to read them in a minute, for free.'},
+    'Check-up del sito web: sette misure in un solo punteggio di salute da 0 a 100':
+        {'en': 'Website check-up: seven metrics in a single health score from 0 to 100'},
+    '«Secondo voi il nostro sito è messo bene?» È la domanda con cui inizia metà delle nostre chiamate, e la risposta seria non è «sì» o «no»: è «dipende da cosa misurate». Un sito bellissimo può essere lentissimo; uno velocissimo può essere invisibile a Google; uno perfetto per Google può respingere una persona su dieci per un problema di accessibilità. Fare il check-up di un sito web significa guardarlo su più fronti insieme, con dei numeri, non a occhio. Ecco le sette misure che contano davvero, e come leggerle senza diventare tecnici.':
+        {'en': '“Do you think our site is in good shape?” It’s the question half our calls start with, and the serious answer isn’t “yes” or “no”: it’s “depends what you measure.” A beautiful site can be painfully slow; a lightning-fast one can be invisible to Google; one that’s perfect for Google can turn away one person in ten over an accessibility problem. Running a website check-up means looking at it on several fronts at once, with numbers, not by eye. Here are the seven metrics that really matter, and how to read them without becoming a technician.'},
+    'Perché un solo numero non basta (e sette sì)':
+        {'en': 'Why a single number isn’t enough (and seven are)'},
+    'Il voto unico rassicura, ma inganna. «PageSpeed 92» dice qualcosa sulla velocità e niente su privacy, accessibilità o prontezza AI. Per questo un check-up serio non guarda una cosa sola: mette in fila sette dimensioni e le pesa, così vedete in un colpo d’occhio dove il sito è solido e dove perde punti — e quali problemi valgono la pena di sistemare per primi.':
+        {'en': 'A single score reassures, but it misleads. “PageSpeed 92” says something about speed and nothing about privacy, accessibility or AI readiness. That’s why a serious check-up doesn’t look at one thing: it lines up seven dimensions and weights them, so you see at a glance where the site is solid and where it loses points — and which problems are worth fixing first.'},
+    'Le sette misure del check-up — prestazioni, SEO, accessibilità, best practice, privacy, prontezza AI, CO₂ — e le fasce di punteggio di salute':
+        {'en': 'The seven check-up metrics — performance, SEO, accessibility, best practices, privacy, AI readiness, CO₂ — and the health-score bands'},
+    'Le sette misure e le fasce del punteggio di salute (0–49 critico, 50–74 con margine, 75–89 buono, 90+ eccellente). Quattro dimensioni arrivano dall’API Google PageSpeed; tre — privacy, prontezza AI e CO₂ — sono verifiche nostre. Le prestazioni pesano di più (25), la CO₂ di meno (5).':
+        {'en': 'The seven metrics and the health-score bands (0–49 critical, 50–74 room to improve, 75–89 good, 90+ excellent). Four dimensions come from the Google PageSpeed API; three — privacy, AI readiness and CO₂ — are our own checks. Performance weighs the most (25), CO₂ the least (5).'},
+    'Le quattro misure che arrivano da Google':
+        {'en': 'The four metrics that come from Google'},
+    'Quattro delle sette misure non sono una nostra opinione: arrivano dall’API di Google PageSpeed, la stessa che alimenta pagespeed.web.dev, interrogata in versione mobile perché è quella con cui Google vi posiziona.':
+        {'en': 'Four of the seven metrics aren’t our opinion: they come from the Google PageSpeed API, the same one that powers pagespeed.web.dev, queried in mobile mode because that’s the version Google ranks you by.'},
+    'Prestazioni: quanto in fretta la pagina diventa utilizzabile su un telefono. È la voce che pesa di più, ed è quella che decide se le visite restano o scappano.':
+        {'en': 'Performance: how fast the page becomes usable on a phone. It’s the metric that weighs the most, and the one that decides whether visits stay or bolt.'},
+    'SEO tecnica: se titoli, struttura e dati mancanti mettono i bastoni tra le ruote all’indicizzazione.':
+        {'en': 'Technical SEO: whether titles, structure and missing data are getting in the way of indexing.'},
+    'Accessibilità: contrasti, etichette, struttura dei titoli — le barriere che dal 2025 sono anche un obbligo di legge.':
+        {'en': 'Accessibility: contrast, labels, heading structure — the barriers that since 2025 are also a legal requirement.'},
+    'Best practice: uso corretto di HTTPS, immagini, console pulita e piccoli segnali di igiene tecnica.':
+        {'en': 'Best practices: correct use of HTTPS, images, a clean console and the small signs of technical hygiene.'},
+    'Le tre misure che aggiungiamo noi':
+        {'en': 'The three metrics we add ourselves'},
+    'Le altre tre le calcoliamo direttamente, leggendo il sito come farebbe un visitatore. La conformità privacy la ricaviamo dall’HTML (banner, informative, tracker prima del consenso); la prontezza AI da quattro segnali — llms.txt, accesso dei crawler AI, dati strutturati, sitemap; l’impronta di CO₂ dal peso reale della pagina, con il modello Sustainable Web Design. Sono verifiche indicative, e lo diciamo: il check-up privacy non è un parere legale, e il punteggio non promette una posizione su Google. È una fotografia tecnica precisa, non una promessa di vendita.':
+        {'en': 'The other three we calculate directly, reading the site as a visitor would. Privacy compliance we read from the HTML (banner, notices, trackers firing before consent); AI readiness from four signals — llms.txt, AI-crawler access, structured data, sitemap; the CO₂ footprint from the page’s real weight, using the Sustainable Web Design model. These are indicative checks, and we say so: the privacy check isn’t legal advice, and the score doesn’t promise a position on Google. It’s a precise technical snapshot, not a sales promise.'},
+    'Come si legge il voto di salute':
+        {'en': 'How to read the health score'},
+    'Il punteggio di salute è la media pesata delle sette misure, e si legge come un semaforo: da 90 in su siete in fascia verde, tra 75 e 89 è buono, tra 50 e 74 c’è margine concreto, sotto 50 è critico e diventa la priorità. Due avvertenze: un voto alto non significa «primi su Google» — significa fondamenta tecniche sane; e se una misura risulta «N/D», di solito non è un guasto vostro, ma un server saturo o una lettura automatica rifiutata.':
+        {'en': 'The health score is the weighted average of the seven metrics, and it reads like a traffic light: 90 and up you’re in the green band, 75 to 89 is good, 50 to 74 there’s real room to improve, below 50 is critical and becomes the priority. Two caveats: a high score doesn’t mean “first on Google” — it means sound technical foundations; and if a metric comes back “N/A,” it’s usually not a fault on your side, but a saturated server or an automated read that was refused.'},
+    'La cosa migliore è che tutto questo lo potete misurare da soli, gratis e in meno di un minuto, incollando l’indirizzo del sito. Il report completo, pagina per pagina, arriva in PDF; e se dal check-up esce che vale la pena rifare la base tecnica, il restyling parte da lì — dai numeri, non dalle sensazioni.':
+        {'en': 'The best part is that you can measure all this yourself, free and in under a minute, by pasting in the site’s address. The full report, page by page, comes as a PDF; and if the check-up shows the technical foundation is worth rebuilding, the redesign starts there — from the numbers, not from a hunch.'},
+    'Fai il check-up completo, gratis e senza registrazione →':
+        {'en': 'Run the full check-up, free and with no sign-up →'},
+    'Se serve rifare la base: restyling e migrazione →':
+        {'en': 'If the foundation needs rebuilding: redesign and migration →'},
+    'Fai ora il check-up completo del tuo sito — gratis →':
+        {'en': 'Run your site’s full check-up now — free →'},
+
+    # ---------- Articolo 5 — E-E-A-T ----------
+    'E-E-A-T: come Google giudica la vostra credibilità':
+        {'en': 'E-E-A-T: how Google judges your credibility'},
+    'Esperienza, competenza, autorevolezza, affidabilità: la cornice con cui Google valuta di chi fidarsi. Cos’è l’E-E-A-T e come rafforzarla, senza trucchi.':
+        {'en': 'Experience, expertise, authoritativeness, trust: the framework Google uses to judge who to rely on. What E-E-A-T is and how to strengthen it, no tricks.'},
+    'E-E-A-T cos’è: esperienza, competenza, autorevolezza e affidabilità, i quattro pilastri delle Search Quality Rater Guidelines di Google':
+        {'en': 'What E-E-A-T is: experience, expertise, authoritativeness and trust — the four pillars of Google’s Search Quality Rater Guidelines'},
+    'Se avete letto qualcosa di SEO nell’ultimo anno vi sarà rimbalzato addosso un acronimo dall’aria misteriosa: E-E-A-T. Suona come una password, ed è invece il modo in cui Google prova a rispondere a una domanda molto umana: di questo sito, ci si può fidare? Non è un punteggio segreto e non si compra. È una cornice fatta di quattro parole — esperienza, competenza, autorevolezza, affidabilità — che vale la pena capire, perché tocca da vicino chiunque venda servizi o consigli online. Vediamo cos’è l’E-E-A-T e, soprattutto, cosa potete fare per rafforzarla senza scorciatoie.':
+        {'en': 'If you’ve read anything about SEO in the past year, a mysterious-looking acronym has probably bounced off you: E-E-A-T. It sounds like a password, and it’s actually the way Google tries to answer a very human question: can this site be trusted? It’s not a secret score and it can’t be bought. It’s a framework made of four words — experience, expertise, authoritativeness, trust — worth understanding, because it directly affects anyone who sells services or advice online. Let’s look at what E-E-A-T is and, above all, what you can do to strengthen it without shortcuts.'},
+    'E-E-A-T, cos’è (e cosa non è)':
+        {'en': 'E-E-A-T, what it is (and what it isn’t)'},
+    'E-E-A-T sta per Experience, Expertise, Authoritativeness, Trust: esperienza, competenza, autorevolezza e affidabilità. Non è un’invenzione dei SEO: è scritto nero su bianco nelle Search Quality Rater Guidelines, il manuale con cui Google istruisce le persone in carne e ossa che valutano la qualità dei risultati. Serve a stimare quanto ci si può fidare di una pagina, soprattutto sui temi che incidono su salute, denaro e sicurezza.':
+        {'en': 'E-E-A-T stands for Experience, Expertise, Authoritativeness, Trust. It isn’t an invention of the SEO crowd: it’s written in black and white in the Search Quality Rater Guidelines, the manual Google uses to instruct the flesh-and-blood people who assess the quality of its results. It’s there to estimate how far a page can be trusted, especially on topics that affect health, money and safety.'},
+    'Attenzione a un equivoco diffuso: l’E-E-A-T non è un fattore di ranking diretto, né un numero che Google vi assegna. È una cornice di qualità che i valutatori umani usano per addestrare gli algoritmi. Rafforzare i segnali di fiducia aiuta indirettamente; ma nessuno strumento — nemmeno il nostro — misura l’E-E-A-T «reale» del vostro sito. Diffidate di chi ve lo promette.':
+        {'en': 'Beware a widespread misunderstanding: E-E-A-T is not a direct ranking factor, nor a number Google assigns you. It’s a quality framework the human raters use to train the algorithms. Strengthening trust signals helps indirectly; but no tool — not even ours — measures your site’s “real” E-E-A-T. Be wary of anyone who promises it.'},
+    'I quattro pilastri, con Trust al centro':
+        {'en': 'The four pillars, with Trust at the center'},
+    'Le quattro parole non pesano tutte uguale. Nelle linee guida di Google il pilastro centrale è la fiducia (Trust): esperienza, competenza e autorevolezza servono soprattutto a sostenerla. Ha senso: un contenuto può essere scritto da un vero esperto, ma se il sito non è sicuro o non si capisce chi c’è dietro, la fiducia crolla lo stesso.':
+        {'en': 'The four words don’t all carry equal weight. In Google’s guidelines the central pillar is Trust: experience, expertise and authoritativeness mostly serve to support it. It makes sense: content can be written by a genuine expert, but if the site isn’t secure or it’s unclear who’s behind it, trust collapses anyway.'},
+    'I quattro pilastri E-E-A-T — esperienza, competenza, autorevolezza, affidabilità — con gli otto segnali di fiducia leggibili nel codice della pagina':
+        {'en': 'The four E-E-A-T pillars — experience, expertise, authoritativeness, trust — with the eight trust signals readable in the page code'},
+    'I quattro pilastri E-E-A-T e alcuni segnali concreti che vi finiscono dentro: portfolio e casi studio, pagina «chi siamo», dati strutturati e profili esterni, HTTPS, contatti, P.IVA, privacy. La fiducia (Trust) è il pilastro centrale.':
+        {'en': 'The four E-E-A-T pillars and some concrete signals that fall under them: portfolio and case studies, an “about” page, structured data and external profiles, HTTPS, contacts, VAT number, privacy. Trust is the central pillar.'},
+    'I segnali che potete davvero controllare':
+        {'en': 'The signals you can actually control'},
+    'La parte buona dell’E-E-A-T è che una fetta è alla vostra portata, subito. Google e i lettori cercano, nella pagina, dei segnali di fiducia leggibili: una connessione sicura in HTTPS, contatti verificabili, l’identità legale (P.IVA e ragione sociale), i link a privacy e cookie policy, una pagina «chi siamo» vera con nomi e volti, un portfolio o dei casi studio, i dati strutturati in JSON-LD e i profili esterni. Sono aggiunte tecniche precise, quasi tutte veloci e a basso costo.':
+        {'en': 'The good part of E-E-A-T is that a slice of it is within your reach right away. Google and readers look, on the page, for readable trust signals: a secure HTTPS connection, verifiable contacts, legal identity (VAT number and registered name), links to privacy and cookie policies, a real “about” page with names and faces, a portfolio or case studies, JSON-LD structured data and external profiles. These are precise technical additions, almost all of them quick and low-cost.'},
+    'Quello che nessuna scorciatoia vi darà è l’altra metà: la reputazione, le menzioni, la qualità reale dei contenuti, l’esperienza vissuta di chi scrive. Quella si costruisce con il tempo — ed è esattamente perché non si può falsificare che Google le dà tanto peso.':
+        {'en': 'What no shortcut will give you is the other half: reputation, mentions, the real quality of the content, the lived experience of whoever writes it. That’s built over time — and it’s precisely because it can’t be faked that Google gives it so much weight.'},
+    'Da dove partire: misurare, poi sistemare':
+        {'en': 'Where to start: measure, then fix'},
+    'Il modo più rapido per capire come siete messi non è leggere altra teoria, ma guardare cosa espone davvero la vostra home. In un minuto potete misurare gli otto segnali di fiducia leggibili nel codice e vedere su quale dei quattro pilastri conviene intervenire per primo. Da lì, un pomeriggio di lavoro tecnico — una pagina «chi siamo» vera, i contatti nel footer, un blocco di dati strutturati — sposta il punteggio più di quanto immaginate.':
+        {'en': 'The fastest way to see where you stand isn’t to read more theory, but to look at what your homepage actually exposes. In a minute you can measure the eight trust signals readable in the code and see which of the four pillars is worth tackling first. From there, an afternoon of technical work — a real “about” page, contacts in the footer, a block of structured data — moves the score more than you’d expect.'},
+    'E ricordate la regola che vale per tutto l’E-E-A-T: un sito può dichiarare bene chi è, ma la fiducia vera la costruiscono i contenuti, il tempo e le persone. Gli strumenti misurano i segnali; la credibilità la meritate voi.':
+        {'en': 'And remember the rule that holds for all of E-E-A-T: a site can state well who it is, but real trust is built by content, time and people. Tools measure the signals; the credibility, you earn.'},
+    'Misura gratis gli otto segnali E-E-A-T della tua home →':
+        {'en': 'Measure your homepage’s eight E-E-A-T signals for free →'},
+    'Chi siamo, contatti e dati strutturati sono di serie nella SEO tecnica →':
+        {'en': 'An about page, contacts and structured data come standard in technical SEO →'},
+    'Misura gratis i segnali E-E-A-T del tuo sito →':
+        {'en': 'Measure your site’s E-E-A-T signals for free →'},
+
+    # ---------- Link contestuali aggiunti nelle pagine strumento (migliorare) ----------
+    'Approfondisci: EAA 2026, cosa rischia davvero il vostro e-commerce →':
+        {'en': 'Read more: EAA 2026, what your e-commerce site really risks →'},
+    'Approfondisci: llms.txt, cos’è e serve davvero al vostro sito →':
+        {'en': 'Read more: llms.txt, what it is and whether your site needs it →'},
+    'Guida: come farsi trovare e citare da ChatGPT (GEO) →':
+        {'en': 'Guide: how to get found and cited by ChatGPT (GEO) →'},
+}
+CHROME.update(CHROME_BLOG)

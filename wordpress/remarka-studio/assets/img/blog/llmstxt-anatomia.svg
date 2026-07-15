@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="Anatomia di un file llms.txt">
+  <defs>
+    <pattern id="gridA" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .num{font-family:'Clash Display',Arial,sans-serif;font-weight:600;}
+    </style>
+  </defs>
+  <rect width="1200" height="560" fill="#F7F6F2"/>
+  <rect width="1200" height="560" fill="url(#gridA)"/>
+  <text x="80" y="60" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">/llms.txt — ANATOMIA / ANATOMY</text>
+  <line x1="80" y1="78" x2="1120" y2="78" stroke="#14161A" stroke-width="1.5"/>
+  <!-- file -->
+  <g transform="translate(80,120)">
+    <rect x="0" y="0" width="720" height="410" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+    <rect x="0" y="0" width="720" height="44" fill="#14161A"/>
+    <text x="24" y="29" class="mono" font-size="16" fill="#F7F6F2">/llms.txt</text>
+    <!-- 1 H1 -->
+    <rect x="16" y="70" width="688" height="46" fill="#EEF1FE"/>
+    <text x="30" y="100" class="mono" font-size="22" fill="#2440C8"># </text>
+    <rect x="54" y="82" width="300" height="22" rx="2" fill="#C7D0F6"/>
+    <!-- 2 summary -->
+    <rect x="16" y="128" width="688" height="46" fill="#F2F4FE"/>
+    <text x="30" y="158" class="mono" font-size="22" fill="#5A5E66">&gt; </text>
+    <rect x="54" y="140" width="600" height="20" rx="2" fill="#DDE1F5"/>
+    <!-- 3 sections -->
+    <text x="30" y="222" class="mono" font-size="22" fill="#14161A">## </text>
+    <rect x="70" y="205" width="220" height="20" rx="2" fill="#EBEAE4"/>
+    <text x="54" y="262" class="mono" font-size="20" fill="#2440C8">- [</text>
+    <rect x="94" y="247" width="180" height="18" rx="2" fill="#EBEAE4"/>
+    <text x="284" y="262" class="mono" font-size="20" fill="#5A5E66">](/…)</text>
+    <text x="54" y="298" class="mono" font-size="20" fill="#2440C8">- [</text>
+    <rect x="94" y="283" width="230" height="18" rx="2" fill="#EBEAE4"/>
+    <text x="334" y="298" class="mono" font-size="20" fill="#5A5E66">](/…)</text>
+    <!-- 4 optional -->
+    <text x="30" y="360" class="mono" font-size="22" fill="#14161A">## </text>
+    <text x="70" y="360" class="mono" font-size="20" fill="#5A5E66">Optional</text>
+    <rect x="54" y="378" width="360" height="16" rx="2" fill="#EBEAE4"/>
+  </g>
+  <!-- callouts -->
+  <g class="num">
+    <g transform="translate(840,190)"><circle r="22" fill="#2440C8"/><text y="8" font-size="24" fill="#FFF" text-anchor="middle">1</text></g>
+    <text x="878" y="185" class="mono" font-size="18" fill="#14161A"># H1 — nome / name</text>
+    <text x="878" y="210" class="mono" font-size="15" fill="#5A5E66">obbligatorio · required</text>
+    <g transform="translate(840,268)"><circle r="22" fill="#14161A"/><text y="8" font-size="24" fill="#FFF" text-anchor="middle">2</text></g>
+    <text x="878" y="263" class="mono" font-size="18" fill="#14161A">&gt; blockquote · summary</text>
+    <text x="878" y="288" class="mono" font-size="15" fill="#5A5E66">1 riga · one line</text>
+    <g transform="translate(840,346)"><circle r="22" fill="#14161A"/><text y="8" font-size="24" fill="#FFF" text-anchor="middle">3</text></g>
+    <text x="878" y="341" class="mono" font-size="18" fill="#14161A">## sections · links</text>
+    <text x="878" y="366" class="mono" font-size="15" fill="#5A5E66">.md · URL</text>
+    <g transform="translate(840,424)"><circle r="22" fill="#DDDBD4"/><text y="8" font-size="24" fill="#14161A" text-anchor="middle">4</text></g>
+    <text x="878" y="419" class="mono" font-size="18" fill="#14161A">## Optional</text>
+    <text x="878" y="444" class="mono" font-size="15" fill="#5A5E66">extra · optional</text>
+  </g>
+</svg>

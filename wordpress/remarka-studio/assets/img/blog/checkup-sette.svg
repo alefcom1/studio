@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-label="Le sette misure del check-up e le fasce di punteggio">
+  <defs>
+    <pattern id="gridS7" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}
+    </style>
+  </defs>
+  <rect width="1200" height="620" fill="#F7F6F2"/>
+  <rect width="1200" height="620" fill="url(#gridS7)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">CHECK-UP — 7 MISURE / 7 METRICS</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <g>
+    <!-- rows: IT | EN | source | weight -->
+    <g class="body" font-size="21">
+      <g transform="translate(80,104)"><rect width="1040" height="44" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1"/><circle cx="26" cy="22" r="8" fill="#2440C8"/><text x="50" y="30" fill="#14161A">Prestazioni</text><text x="360" y="30" class="mono" font-size="16" fill="#5A5E66">Performance</text><text x="700" y="30" class="mono" font-size="15" fill="#5A5E66">Google PageSpeed API</text><text x="1020" y="30" class="mono" font-size="17" fill="#2440C8" text-anchor="end">25</text></g>
+      <g transform="translate(80,152)"><rect width="1040" height="44" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1"/><circle cx="26" cy="22" r="8" fill="#5B73E8"/><text x="50" y="30" fill="#14161A">SEO</text><text x="360" y="30" class="mono" font-size="16" fill="#5A5E66">SEO</text><text x="700" y="30" class="mono" font-size="15" fill="#5A5E66">Google PageSpeed API</text></g>
+      <g transform="translate(80,200)"><rect width="1040" height="44" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1"/><circle cx="26" cy="22" r="8" fill="#5B73E8"/><text x="50" y="30" fill="#14161A">Accessibilità</text><text x="360" y="30" class="mono" font-size="16" fill="#5A5E66">Accessibility</text><text x="700" y="30" class="mono" font-size="15" fill="#5A5E66">Google PageSpeed API</text></g>
+      <g transform="translate(80,248)"><rect width="1040" height="44" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1"/><circle cx="26" cy="22" r="8" fill="#5B73E8"/><text x="50" y="30" fill="#14161A">Best practice</text><text x="360" y="30" class="mono" font-size="16" fill="#5A5E66">Best practices</text><text x="700" y="30" class="mono" font-size="15" fill="#5A5E66">Google PageSpeed API</text></g>
+      <g transform="translate(80,296)"><rect width="1040" height="44" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1"/><circle cx="26" cy="22" r="8" fill="#5A5E66"/><text x="50" y="30" fill="#14161A">Privacy · GDPR</text><text x="360" y="30" class="mono" font-size="16" fill="#5A5E66">Privacy · GDPR</text><text x="700" y="30" class="mono" font-size="15" fill="#5A5E66">Remarka check</text></g>
+      <g transform="translate(80,344)"><rect width="1040" height="44" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1"/><circle cx="26" cy="22" r="8" fill="#5A5E66"/><text x="50" y="30" fill="#14161A">Prontezza AI</text><text x="360" y="30" class="mono" font-size="16" fill="#5A5E66">AI readiness</text><text x="700" y="30" class="mono" font-size="15" fill="#5A5E66">Remarka check</text></g>
+      <g transform="translate(80,392)"><rect width="1040" height="44" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1"/><circle cx="26" cy="22" r="8" fill="#5A5E66"/><text x="50" y="30" fill="#14161A">CO₂</text><text x="360" y="30" class="mono" font-size="16" fill="#5A5E66">Carbon</text><text x="700" y="30" class="mono" font-size="15" fill="#5A5E66">Sustainable Web Design</text><text x="1020" y="30" class="mono" font-size="17" fill="#2440C8" text-anchor="end">5</text></g>
+    </g>
+  </g>
+  <!-- score ruler -->
+  <text x="80" y="486" class="mono" font-size="15" letter-spacing="2" fill="#5A5E66">SALUTE / HEALTH SCORE — MEDIA PESATA / WEIGHTED · 0…100</text>
+  <g transform="translate(80,502)">
+    <rect x="0" y="0" width="470" height="44" fill="#DDDBD4"/>
+    <rect x="470" y="0" width="235" height="44" fill="#5B73E8"/>
+    <rect x="705" y="0" width="141" height="44" fill="#2440C8"/>
+    <rect x="846" y="0" width="194" height="44" fill="#1E7F4F"/>
+    <line x1="470" y1="0" x2="470" y2="64" stroke="#14161A" stroke-width="1.5"/>
+    <line x1="705" y1="0" x2="705" y2="64" stroke="#14161A" stroke-width="1.5"/>
+    <line x1="846" y1="0" x2="846" y2="64" stroke="#14161A" stroke-width="1.5"/>
+    <text x="470" y="86" class="mono" font-size="16" fill="#14161A" text-anchor="middle">50</text>
+    <text x="705" y="86" class="mono" font-size="16" fill="#14161A" text-anchor="middle">75</text>
+    <text x="846" y="86" class="mono" font-size="16" fill="#14161A" text-anchor="middle">90</text>
+    <text x="235" y="28" class="mono" font-size="15" fill="#14161A" text-anchor="middle">0–49</text>
+    <text x="587" y="28" class="mono" font-size="15" fill="#FFFFFF" text-anchor="middle">50–74</text>
+    <text x="775" y="28" class="mono" font-size="15" fill="#FFFFFF" text-anchor="middle">75–89</text>
+    <text x="943" y="28" class="mono" font-size="15" fill="#FFFFFF" text-anchor="middle">90+</text>
+  </g>
+</svg>

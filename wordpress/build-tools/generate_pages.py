@@ -1353,15 +1353,41 @@ def build_blog_index():
     write('blog-index', 'Pagina — Blog (elenco)', 'Elenco articoli, riga data + titolo + estratto.', hero + list_section)
 
 
+def blog_figure(fig, cover=False):
+    """Иллюстрация статьи (фирменный SVG). cover=True — обложка под H1
+    (без подписи, с рамкой), иначе — схема/диаграмма с mono-подписью.
+    loading=lazy, max-width:100% (адаптив), alt переводится конвейером."""
+    margin = '8px 0 8px' if cover else '36px 0 8px'
+    cap = ''
+    if not cover and fig.get('caption'):
+        cap = (f'<figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;'
+               f'letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">{fig["caption"]}</figcaption>')
+    return raw_html(
+        f'<figure class="wp-block-image size-large" style="margin:{margin}">'
+        f'<img src="{fig["src"]}" alt="{fig["alt"]}" loading="lazy" '
+        f'style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/>'
+        f'{cap}</figure>'
+    )
+
+
+def _blog_section_links(links):
+    return ''.join(
+        f'<p class="sr-card-link" style="margin-top:14px"><a href="{url}">{label} →</a></p>'
+        for label, url in links
+    )
+
+
 def build_blog_post(p):
     hero = section(
         raw_html(f'<p class="sr-mono" style="color:var(--sr-grigio);font-size:13px">{p["data"]}</p>') +
-        heading(1, p['titolo'], accent_dot=False, style='clamp(32px,4vw,48px)'),
+        heading(1, p['titolo'], accent_dot=False, style='clamp(32px,4vw,48px)') +
+        (blog_figure(p['cover'], cover=True) if p.get('cover') else ''),
         classes='sr-section',
     )
 
-    # Полноформатная статья: intro + секции (h2 + абзацы + опц. список).
-    # Короткий формат (только corpo) остаётся для старых заглушек.
+    # Полноформатная статья: intro + секции (h2 + абзацы + опц. список +
+    # опц. диаграмма + опц. контекстные ссылки). Короткий формат (только
+    # corpo) остаётся для старых заглушек.
     inner = ''
     if p.get('sezioni'):
         inner += paragraph(p['corpo'], size='base', extra_style='font-size:18px;line-height:1.75;max-width:75ch')
@@ -1371,6 +1397,10 @@ def build_blog_post(p):
                 inner += paragraph(par, size='base', extra_style='font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px')
             if sez.get('lista'):
                 inner += list_rows(sez['lista'])
+            if sez.get('figura'):
+                inner += blog_figure(sez['figura'])
+            if sez.get('links'):
+                inner += raw_html(_blog_section_links(sez['links']))
     else:
         inner += paragraph(p['corpo'], size='base', extra_style='font-size:17px;line-height:1.7')
 

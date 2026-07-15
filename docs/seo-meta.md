@@ -247,6 +247,61 @@ EN — 154, RU — 156 — все ≤160.
 
 ---
 
+## Blog · Batch 1 — IT/EN (5 статей-спутников)
+
+> 5 статей блога с фирменными SVG (`assets/img/blog/`). Опубликованы в IT + EN
+> (RU-блог — отдельный батч, не перевод, см. `piano-blog.md`). Фокус-ключ у
+> каждой статьи заложен в лид, один H2 и один alt при написании (контент подтянут
+> «с рождения»). Слаги — `build-tools/lang.py` (`BLOG_SLUGS`, `BLOG_IT_EN_ONLY`).
+
+| Страница IT · EN | Focus Keyword IT | Focus Keyword EN |
+|---|---|---|
+| `/blog/european-accessibility-act-ecommerce/` · `/en/blog/eaa-ecommerce-risks/` | european accessibility act e-commerce | european accessibility act e-commerce |
+| `/blog/llms-txt-cos-e/` · `/en/blog/llms-txt-explained/` | llms.txt cos’è | what is llms.txt |
+| `/blog/farsi-trovare-da-chatgpt-geo/` · `/en/blog/get-cited-by-chatgpt-geo/` | sito visibile su ChatGPT | get cited by ChatGPT |
+| `/blog/check-up-sito-web-7-misure/` · `/en/blog/website-checkup-7-metrics/` | check up sito web | website check-up |
+| `/blog/eeat-come-google-giudica-credibilita/` · `/en/blog/eeat-how-google-judges-credibility/` | E-E-A-T cos’è | what is E-E-A-T |
+
+### 1 — EAA e-commerce
+
+- **IT Title:** `EAA 2026: cosa rischia il vostro e-commerce | Remarka`
+- **IT Description:** `European Accessibility Act ed e-commerce: dal 28 giugno 2025 è obbligo di legge, con sanzioni fino al 5% del fatturato. Chi è coinvolto e da dove partire.`
+- **EN Title:** `EAA 2026: what your e-commerce site risks | Remarka`
+- **EN Description:** `European Accessibility Act and e-commerce: since 28 June 2025 it’s the law, with fines up to 5% of revenue. Who is covered and where to start.`
+
+### 2 — llms.txt
+
+- **IT Title:** `llms.txt: cos’è e serve al vostro sito? | Remarka`
+- **IT Description:** `llms.txt cos’è: un file che spiega il sito ai modelli AI come robots.txt con Google. Come si scrive, quanto conta e perché è solo un pezzo della SEO tecnica.`
+- **EN Title:** `llms.txt: what it is and does your site need it | Remarka`
+- **EN Description:** `What llms.txt is: a file that explains your site to AI models the way robots.txt does for Google. How to write it, and how much it really matters.`
+
+### 3 — GEO / ChatGPT
+
+- **IT Title:** `Farsi trovare su ChatGPT: guida alla GEO | Remarka`
+- **IT Description:** `Come rendere il sito visibile su ChatGPT e Perplexity ed essere citati nelle risposte: cos’è la GEO, cosa cambia rispetto alla SEO e cosa fare subito.`
+- **EN Title:** `Get found and cited by ChatGPT: a GEO guide | Remarka`
+- **EN Description:** `How to make your site visible on ChatGPT and Perplexity and get cited in answers: what GEO is, how it differs from SEO, and what to do now.`
+
+### 4 — Check-up del sito
+
+- **IT Title:** `Check-up del sito web: le 7 misure che contano | Remarka`
+- **IT Description:** `Check up sito web: le sette misure che ne raccontano la salute — prestazioni, SEO, accessibilità, privacy, AI, CO₂ — in un punteggio 0–100, gratis.`
+- **EN Title:** `Website check-up: the 7 metrics that matter | Remarka`
+- **EN Description:** `A website check-up in seven metrics — performance, SEO, accessibility, privacy, AI readiness, CO₂ — in one 0–100 health score, free, no sign-up.`
+
+### 5 — E-E-A-T
+
+- **IT Title:** `E-E-A-T cos’è: come Google giudica la credibilità | Remarka`
+- **IT Description:** `E-E-A-T cos’è: esperienza, competenza, autorevolezza e affidabilità, la cornice con cui Google valuta di chi fidarsi. Come rafforzarla senza trucchi.`
+- **EN Title:** `E-E-A-T: how Google judges your credibility | Remarka`
+- **EN Description:** `What E-E-A-T is: experience, expertise, authoritativeness and trust — how Google judges who to rely on, and how to strengthen it without tricks.`
+
+**Проверка длин.** Title (IT/EN): 53/51 · 49/57 · 50/53 · 56/53 · 59/53 — все ≤60.
+Description (IT/EN): 154/142 · 157/146 · 150/139 · 147/144 · 149/144 — все ≤160.
+
+---
+
 ## RU-версия (фаза B)
 
 > Источник текстов — `docs/copy-fase-B.md`, Часть 3 «SEO-мета» (главная и оба

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-label="Come un modello AI cita il vostro sito">
+  <defs>
+    <pattern id="gridF" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <marker id="arr" markerWidth="12" markerHeight="12" refX="8" refY="6" orient="auto">
+      <path d="M0 0 L10 6 L0 12" fill="none" stroke="#2440C8" stroke-width="2"/>
+    </marker>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}
+    </style>
+  </defs>
+  <rect width="1200" height="440" fill="#F7F6F2"/>
+  <rect width="1200" height="440" fill="url(#gridF)"/>
+  <text x="80" y="60" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">GEO — FLUSSO / FLOW</text>
+  <line x1="80" y1="78" x2="1120" y2="78" stroke="#14161A" stroke-width="1.5"/>
+  <!-- step 1 -->
+  <g transform="translate(80,150)">
+    <rect x="0" y="0" width="230" height="150" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+    <text x="20" y="42" class="mono" font-size="14" fill="#5A5E66">01</text>
+    <text x="20" y="86" class="body" font-size="22" fill="#14161A">Il vostro</text>
+    <text x="20" y="112" class="body" font-size="22" fill="#14161A">sito</text>
+    <text x="20" y="140" class="mono" font-size="14" fill="#2440C8">your site · HTML</text>
+  </g>
+  <line x1="318" y1="225" x2="368" y2="225" stroke="#2440C8" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- step 2 -->
+  <g transform="translate(378,150)">
+    <rect x="0" y="0" width="250" height="150" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+    <text x="20" y="42" class="mono" font-size="14" fill="#5A5E66">02 · CRAWLER</text>
+    <text x="20" y="78" class="mono" font-size="16" fill="#14161A">GPTBot</text>
+    <text x="20" y="104" class="mono" font-size="16" fill="#14161A">ClaudeBot</text>
+    <text x="20" y="130" class="mono" font-size="16" fill="#14161A">PerplexityBot</text>
+  </g>
+  <line x1="636" y1="225" x2="686" y2="225" stroke="#2440C8" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- step 3 -->
+  <g transform="translate(696,150)">
+    <rect x="0" y="0" width="200" height="150" fill="#14161A"/>
+    <text x="20" y="42" class="mono" font-size="14" fill="#9AA0AA">03 · LLM</text>
+    <text x="20" y="88" class="body" font-size="22" fill="#FFFFFF">Modello AI</text>
+    <text x="20" y="120" class="mono" font-size="15" fill="#9AA0AA">AI model</text>
+  </g>
+  <line x1="904" y1="225" x2="954" y2="225" stroke="#2440C8" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- step 4 -->
+  <g transform="translate(964,150)">
+    <rect x="0" y="0" width="156" height="150" fill="#EEF1FE" stroke="#2440C8" stroke-width="1.5"/>
+    <text x="18" y="42" class="mono" font-size="14" fill="#2440C8">04</text>
+    <text x="18" y="84" class="body" font-size="20" fill="#2440C8">Risposta</text>
+    <text x="18" y="108" class="mono" font-size="13" fill="#5B73E8">answer</text>
+    <text x="18" y="134" class="mono" font-size="20" fill="#2440C8">+ [1]</text>
+  </g>
+</svg>

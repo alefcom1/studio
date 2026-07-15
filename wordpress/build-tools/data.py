@@ -598,6 +598,7 @@ TOOLS = [
              ],
              links=[
                  ('Vogliamo sistemarle noi: audit, correzioni e dichiarazione — servizio Adeguamento EAA', '/servizi/adeguamento-eaa/'),
+                 ('Approfondisci: EAA 2026, cosa rischia davvero il vostro e-commerce', '/blog/european-accessibility-act-ecommerce/'),
              ]),
          cta=dict(heading='Vogliamo rendere il sito accessibile?',
                   testo='Verifichiamo le barriere una per una — automatiche e manuali — e le sistemiamo secondo lo standard WCAG 2.1 AA.',
@@ -636,6 +637,8 @@ TOOLS = [
              ],
              links=[
                  ('Lo prepariamo noi: fa parte della SEO tecnica', '/servizi/seo-tecnica/'),
+                 ('Approfondisci: llms.txt, cos’è e serve davvero al vostro sito', '/blog/llms-txt-cos-e/'),
+                 ('Guida: come farsi trovare e citare da ChatGPT (GEO)', '/blog/farsi-trovare-da-chatgpt-geo/'),
                  ('Misurate anche i segnali di fiducia E-E-A-T del sito', '/strumenti/segnali-eeat/'),
              ]),
          cta=dict(heading='Vogliamo preparare il sito per l’AI?',
@@ -1043,5 +1046,204 @@ BLOG_POSTS = [
                       "Se il vostro sito somma le cause 3, 4 e 7 — tema pesante, plugin stratificati, base vecchia — ottimizzare pezzo per pezzo è come cambiare le gomme a un motore fuso: ogni intervento costa e il risultato resta mediocre. In questi casi il restyling tecnico (stessi contenuti, base nuova, redirect 301 per non perdere il posizionamento) parte da € 2.900 e porta il sito sopra i 90 di PageSpeed — garantiti da contratto, non promessi.",
                       "Il primo passo è gratuito in entrambi i casi: misurate il sito con il nostro test di velocità, oppure chiedete l’analisi completa — un report scritto con le cause, le priorità e un preventivo chiuso.",
                   ]),
+         ]),
+
+    # ---- Blog · Batch 1 (sputniki dei nuovi strumenti e servizi) — IT + EN ----
+    # Illustrazioni: SVG di marca in assets/img/blog/ (griglia carta, palette
+    # remarka.css, tipografia di sistema). Condivise IT/EN: etichette neutre
+    # (numeri, acronimi, token tecnici, coppie bilingui) — le frasi e le
+    # didascalie stanno nell'HTML, tradotte dal conveyor (CHROME_BLOG in
+    # chrome_strings.py). Le versioni EN/RU sono pagine separate: IT+EN via
+    # translate_pages.py en; RU del blog è un batch successivo a parte
+    # (piano-blog.md, batch 5–6), non una traduzione di queste.
+    dict(slug='european-accessibility-act-ecommerce', data='15 LUG 2026',
+         titolo='EAA 2026: cosa rischia davvero il vostro e-commerce',
+         estratto='Dal 28 giugno 2025 l’accessibilità è un obbligo di legge, con sanzioni fino al 5% del fatturato. Chi è coinvolto, chi resta fuori e da dove partire, senza allarmismi.',
+         corpo='Il 28 giugno 2025 è passato in sordina, e proprio per questo fa più danni. Da quella data l’European Accessibility Act è una legge applicata anche in Italia, e tocca molti più e-commerce di quanti se ne siano accorti: se vendete online a dei consumatori, con ogni probabilità il vostro negozio deve essere usabile anche dalle persone con disabilità — non come cortesia, ma per obbligo, con sanzioni che il recepimento italiano fissa fino al 5% del fatturato. Niente panico e niente finta indifferenza: vediamo cosa rischia davvero il vostro e-commerce, chi resta fuori e cosa conviene fare adesso.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/eaa-cover.svg',
+                    alt='European Accessibility Act e-commerce: la scadenza del 28 giugno 2025, lo standard WCAG 2.1 AA e la sanzione fino al 5% del fatturato'),
+         cta=('Adeguamento EAA: audit, correzioni e dichiarazione in 3 settimane', '/servizi/adeguamento-eaa/'),
+         sezioni=[
+             dict(titolo='Che cos’è l’European Accessibility Act, in parole vostre',
+                  paragrafi=[
+                      "L’European Accessibility Act (EAA) nasce dalla direttiva europea 2019/882, e l’idea è persino ovvia una volta detta. Un negozio fisico con tre gradini all’ingresso e nessuna rampa lascia fuori una parte dei clienti; un e-commerce con contrasti illeggibili, immagini senza descrizione e un checkout che non si completa da tastiera fa esattamente la stessa cosa, solo che non si vede. La norma chiede che i servizi digitali venduti ai consumatori siano usabili anche da chi ha una disabilità visiva, motoria o cognitiva.",
+                      "In Italia la direttiva è stata recepita e si applica dal 28 giugno 2025. Lo standard di riferimento non è un’opinione: sono le WCAG 2.1 di livello AA, le stesse linee guida internazionali che i tecnici usano da anni. Non è una moda partita ieri, è un percorso cominciato nel 2019 e arrivato a scadenza adesso.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/eaa-timeline.svg',
+                              alt='Cronologia dell’European Accessibility Act: direttiva UE 2019/882, recepimento in Italia, entrata in vigore il 28 giugno 2025 e sanzione massima del 5%',
+                              caption='Dalla direttiva UE 2019/882 all’entrata in vigore in Italia il 28 giugno 2025. Le microimprese di servizi — meno di 10 persone e meno di 2 milioni di euro di fatturato — hanno un’esenzione. Fonti: AccessibleEU (Commissione europea) e la guida di Bird & Bird.')),
+             dict(titolo='Cosa rischia davvero il vostro e-commerce con l’European Accessibility Act',
+                  paragrafi=[
+                      "Partiamo dai soldi, perché è la domanda vera. Il recepimento italiano prevede sanzioni fino al 5% del fatturato per i servizi non conformi: su un negozio che fattura 800.000 euro l’anno sono fino a 40.000 euro, più di quanto costi rifare il sito da zero. Non è un rischio teorico. In Francia, dove l’applicazione è partita prima, le prime cause verso i grandi rivenditori online sono già arrivate; in Italia la vigilanza è appena cominciata, e le prime segnalazioni sono una questione di mesi, non di anni.",
+                      "Ma la sanzione è la parte che spaventa di più, non quella che pesa di più. Un e-commerce inaccessibile perde clienti ogni giorno, in silenzio, molto prima che arrivi un controllo. Pensate a chi ci vede poco e non riesce a leggere un grigio chiaro elegante, a chi naviga da telefono con una mano sola, a chi compila l’ordine da tastiera perché il mouse gli è scomodo: ogni barriera è un carrello abbandonato che nei vostri report non comparirà mai come «problema di accessibilità». Lo leggerete come «tasso di conversione basso», e darete la colpa al prezzo.",
+                  ]),
+             dict(titolo='Siete obbligati? La regola delle microimprese',
+                  paragrafi=[
+                      "La domanda che ci fanno tutti è «vale anche per me?». La risposta onesta è «quasi sempre sì, ma verificate». La norma guarda a chi vende beni o servizi ai consumatori a distanza. Esiste però un’esenzione per le microimprese che erogano servizi — meno di 10 persone e meno di 2 milioni di euro di fatturato annuo. L’esenzione è pensata per i servizi e il perimetro esatto va guardato caso per caso, non a occhio: nel dubbio, meglio una verifica di mezz’ora che una sanzione.",
+                  ],
+                  lista=[
+                      'E-commerce e servizi digitali che vendono a consumatori nell’Unione Europea: è il caso più comune, e il più esposto.',
+                      'Banche, assicurazioni, trasporti, biglietterie e sistemi di prenotazione online.',
+                      'Aziende che non sono microimprese e che finora hanno trattato l’accessibilità come un dettaglio estetico.',
+                  ],
+                  links=[('Verifica gratis le barriere del vostro sito', '/strumenti/verifica-accessibilita/')]),
+             dict(titolo='Da dove si comincia: le quattro parole che contano',
+                  paragrafi=[
+                      "Le WCAG 2.1 AA sembrano un muro di sigle, ma poggiano su quattro princìpi semplici, riassunti nell’acronimo POUR: un sito accessibile è percepibile, utilizzabile, comprensibile e robusto. Tradotto in pratica: testo che si legge anche con poca vista, tutto raggiungibile da tastiera, moduli con etichette chiare e messaggi d’errore che spiegano cosa fare, codice pulito che gli screen reader sanno leggere.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/eaa-wcag.svg',
+                              alt='I quattro princìpi delle WCAG 2.1 AA: percepibile, utilizzabile, comprensibile, robusto',
+                              caption='I quattro princìpi delle WCAG 2.1 AA (POUR). Un audit automatico intercetta circa un terzo di questi criteri; il resto — tastiera, screen reader, contenuti — si verifica a mano.'),
+                  ),
+             dict(titolo='Tre settimane, dall’audit alla dichiarazione',
+                  paragrafi=[
+                      "Un controllo automatico gratuito è il primo gradino: in un minuto vi dice se il sito ha già i problemi più evidenti — contrasti, etichette, struttura. Ma la conformità piena non si certifica con un punteggio: serve la verifica manuale (tastiera, screen reader, contenuti) e una dichiarazione di accessibilità pubblicata sul sito, il documento che la norma pretende. Senza dichiarazione, un sito tecnicamente accessibile resta comunque non a norma.",
+                      "La buona notizia è che non è un lavoro infinito. Per un e-commerce di taglia media, dall’audit alle correzioni fino alla dichiarazione, sono in genere tre settimane. L’obbligo, preso per tempo, non è un costo a fondo perduto: è un sito che vende a più persone e che non teme la prima lettera del controllo.",
+                  ],
+                  links=[('Vogliamo sistemarlo noi: il servizio Adeguamento EAA, a prezzo chiuso', '/servizi/adeguamento-eaa/')]),
+         ]),
+
+    dict(slug='llms-txt-cos-e', data='15 LUG 2026',
+         titolo='llms.txt: cos’è e serve davvero al vostro sito?',
+         estratto='Un file di testo che spiega il vostro sito ai modelli AI, come robots.txt fa con Google. Cos’è, come si scrive e quanto conta davvero, senza esagerazioni.',
+         corpo='Nel giro di un anno è comparso un nuovo file di cui tutti parlano e che quasi nessuno ha: llms.txt. La promessa è semplice — un foglietto di istruzioni che spiega il vostro sito ai modelli di intelligenza artificiale, come robots.txt fa da vent’anni con i motori di ricerca. Ma serve davvero, o è l’ennesima sigla che qualcuno vi venderà a caro prezzo? Vediamo cos’è llms.txt, come si scrive in mezz’ora e quanto conta oggi, senza gonfiarne l’importanza e senza liquidarlo con un’alzata di spalle.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/llmstxt-cover.svg',
+                    alt='llms.txt: cos’è, il file Markdown nella radice del sito che riassume i contenuti per i modelli AI'),
+         cta=('Verifica gratis se il vostro sito è pronto per l’AI', '/strumenti/sito-pronto-ai/'),
+         sezioni=[
+             dict(titolo='llms.txt, cos’è in una frase',
+                  paragrafi=[
+                      "llms.txt è un file di testo in formato Markdown che mettete nella radice del sito (sito.it/llms.txt) e che riassume, in modo leggibile da una macchina, chi siete, cosa fate e dove trovare le pagine importanti. Nasce come proposta di standard nel 2024 e ha un obiettivo preciso: dare ai modelli linguistici — quelli dietro ChatGPT, Claude, Perplexity — una mappa pulita del sito, senza costringerli a indovinare tra menù, banner e codice.",
+                      "L’analogia con robots.txt aiuta, ma non è perfetta. robots.txt dice ai crawler dove possono andare; llms.txt dice loro cosa contano le vostre pagine e come raccontarvi. È la differenza tra un cartello «vietato l’ingresso» e una guida che spiega il museo.",
+                  ]),
+             dict(titolo='Come è fatto un file llms.txt',
+                  paragrafi=[
+                      "La parte bella è che si legge e si scrive senza essere programmatori. La struttura è quella di un documento Markdown ordinato: un titolo con il nome dell’azienda, una riga di sintesi, e poi sezioni con link alle pagine che volete far leggere per prime — servizi, chi siamo, contatti, documentazione.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/llmstxt-anatomia.svg',
+                              alt='Anatomia di un file llms.txt: titolo H1 obbligatorio, una riga di sintesi, sezioni con link e un blocco opzionale',
+                              caption='L’anatomia di un file llms.txt: un titolo (1, obbligatorio), una sintesi in una riga (2), le sezioni con i link alle pagine chiave (3) e un blocco opzionale per il resto (4). Nient’altro: la forza sta nella sobrietà.')),
+             dict(titolo='Serve davvero? La risposta onesta',
+                  paragrafi=[
+                      "Qui evitiamo due bugie speculari. La prima: «llms.txt è indispensabile, senza sei invisibile». Falso. È uno standard giovane, non tutti i modelli lo leggono ancora, e la sua assenza oggi non è un errore grave. La seconda: «è una moda inutile». Anche questa è falsa. Costa mezz’ora, non fa danni, e vi mette dalla parte giusta di un cambiamento che sta accelerando.",
+                      "Il modo giusto di leggerlo è questo: llms.txt non vi porta clienti da solo, ma toglie ambiguità. Se un modello prova a raccontare cosa fate, preferite che legga una mappa scritta da voi o che ricostruisca tutto da un menù e da tre banner cookie? La risposta è ovvia, e il costo dell’assicurazione è ridicolo rispetto al rischio di essere descritti male.",
+                  ]),
+             dict(titolo='llms.txt è un pezzo, non tutta la SEO tecnica',
+                  paragrafi=[
+                      "Un errore comune è trattare llms.txt come una bacchetta magica. In realtà è l’ultimo arrivato in una famiglia di segnali che esistono da tempo: dati strutturati in JSON-LD, una sitemap aggiornata, contenuti in testo leggibile e non solo in immagini, un robots.txt che non chiude la porta ai crawler giusti. llms.txt è la ciliegina; la torta è la SEO tecnica fatta bene.",
+                      "Se non sapete da dove cominciare, cominciate misurando. In un minuto potete verificare se il vostro sito espone già i quattro segnali che i modelli cercano — file llms.txt, accesso dei crawler AI, dati strutturati e sitemap — e capire cosa manca prima di scrivere una sola riga.",
+                  ],
+                  links=[('Fa parte della SEO tecnica che consegniamo', '/servizi/seo-tecnica/'),
+                         ('Leggi anche: come farsi trovare e citare da ChatGPT', '/blog/farsi-trovare-da-chatgpt-geo/')]),
+         ]),
+
+    dict(slug='farsi-trovare-da-chatgpt-geo', data='15 LUG 2026',
+         titolo='Come farsi trovare (e citare) da ChatGPT: guida alla GEO',
+         estratto='Sempre più persone chiedono a ChatGPT invece che a Google. La GEO è l’arte di farsi citare nelle risposte generate: cosa cambia rispetto alla SEO e cosa fare.',
+         corpo='C’è una domanda che un anno fa era da nerd e oggi la fa anche vostro cugino: «l’hai chiesto a ChatGPT?». Sempre più persone cercano una risposta parlando con un assistente AI invece di sfogliare dieci link blu, e questo apre una partita nuova: non basta più essere primi su Google, bisogna essere citati nelle risposte generate. Farsi trovare su ChatGPT, Perplexity e simili ha persino un nome — GEO, Generative Engine Optimization. Vediamo cos’è, in cosa somiglia alla SEO e in cosa se ne allontana, e soprattutto cosa potete fare concretamente.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/geo-cover.svg',
+                    alt='Sito visibile su ChatGPT: la GEO (Generative Engine Optimization) e una risposta AI che cita la vostra pagina come fonte'),
+         cta=('Verifica gratis se il vostro sito è leggibile dai modelli AI', '/strumenti/sito-pronto-ai/'),
+         sezioni=[
+             dict(titolo='Perché volete un sito visibile su ChatGPT',
+                  paragrafi=[
+                      "Quando un modello AI risponde a una domanda, spesso non inventa: legge il web e sintetizza, e nelle risposte migliori indica le fonti con dei rimandi cliccabili. Essere una di quelle fonti significa due cose. La prima, immediata: qualcuno vi legge nel momento esatto in cui sta decidendo. La seconda, più sottile: comparire in una risposta di ChatGPT o Perplexity è un segnale di autorevolezza che si trascina dietro fiducia, anche offline.",
+                      "L’errore da evitare è pensare che sia una moda passeggera o roba «da grandi marchi». Il meccanismo premia chi si spiega bene, non chi ha il budget più grosso — ed è esattamente il terreno su cui una PMI ben fatta può battere un concorrente più grande e più pigro.",
+                  ]),
+             dict(titolo='Come un modello arriva a citare la vostra pagina',
+                  paragrafi=[
+                      "Il percorso è più semplice di quanto sembri, e capirlo aiuta a lavorarci. Il vostro sito viene letto da crawler specializzati — GPTBot di OpenAI, ClaudeBot, PerplexityBot; questi contenuti alimentano il modello; e quando qualcuno fa una domanda pertinente, il modello costruisce la risposta e, se il vostro testo è chiaro e affidabile, vi cita come fonte.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/geo-flusso.svg',
+                              alt='Il flusso della GEO: dal vostro sito ai crawler AI (GPTBot, ClaudeBot, PerplexityBot), al modello, fino alla risposta con la citazione',
+                              caption='Il percorso, in quattro passi: il vostro sito (1) viene letto dai crawler AI (2), alimenta il modello (3) e, se il contenuto è chiaro, finisce citato nella risposta (4). Ogni passo ha un modo per andare storto — o per funzionare.')),
+             dict(titolo='GEO e SEO: cosa cambia (e cosa no)',
+                  paragrafi=[
+                      "Buona parte del lavoro è la stessa di sempre: contenuti chiari, struttura tecnica pulita, velocità, dati strutturati. Chi ha già una SEO tecnica solida parte con mezzo lavoro fatto. Ma tre cose diventano più importanti del solito.",
+                  ],
+                  lista=[
+                      'Aprire la porta ai crawler giusti: nel robots.txt non bloccate GPTBot, ClaudeBot, PerplexityBot e Google-Extended se volete comparire nelle risposte generate.',
+                      'Scrivere fatti espliciti: i modelli citano ciò che capiscono senza ambiguità. «Realizziamo e-commerce a Milano, consegna in 6 settimane, prezzo chiuso» vale più di «soluzioni digitali su misura per il vostro business».',
+                      'Farsi leggere in testo, non in immagini: un dato prezioso dentro una locandina JPG, per un modello, non esiste.',
+                  ]),
+             dict(titolo='Da dove partire, senza perdersi',
+                  paragrafi=[
+                      "La GEO non è un servizio a parte da comprare in fretta: è la buona SEO tecnica di sempre, orientata a un lettore nuovo. Il primo passo concreto è verificare se il vostro sito è già leggibile dalle macchine — se espone i dati strutturati, se non sta bloccando i crawler AI, se ha una sitemap in ordine. Da lì si vede subito cosa manca.",
+                      "E se volete capire il tassello più discusso di questo mondo — il famoso file llms.txt — l’abbiamo raccontato a parte, senza fumo: cos’è, come si scrive e quanto conta davvero.",
+                  ],
+                  links=[('Lo prepariamo noi: fa parte della SEO tecnica', '/servizi/seo-tecnica/'),
+                         ('Leggi anche: llms.txt, cos’è e serve davvero al vostro sito', '/blog/llms-txt-cos-e/')]),
+         ]),
+
+    dict(slug='check-up-sito-web-7-misure', data='15 LUG 2026',
+         titolo='Check-up del sito web: le 7 misure che contano',
+         estratto='Un sito «va bene» o «va male» non si decide a sensazione. Ci sono sette misure che ne raccontano la salute — e un modo per leggerle in un minuto, gratis.',
+         corpo='«Secondo voi il nostro sito è messo bene?» È la domanda con cui inizia metà delle nostre chiamate, e la risposta seria non è «sì» o «no»: è «dipende da cosa misurate». Un sito bellissimo può essere lentissimo; uno velocissimo può essere invisibile a Google; uno perfetto per Google può respingere una persona su dieci per un problema di accessibilità. Fare il check-up di un sito web significa guardarlo su più fronti insieme, con dei numeri, non a occhio. Ecco le sette misure che contano davvero, e come leggerle senza diventare tecnici.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/checkup-cover.svg',
+                    alt='Check-up del sito web: sette misure in un solo punteggio di salute da 0 a 100'),
+         cta=('Fai ora il check-up completo del tuo sito — gratis', '/strumenti/check-up-completo/'),
+         sezioni=[
+             dict(titolo='Perché un solo numero non basta (e sette sì)',
+                  paragrafi=[
+                      "Il voto unico rassicura, ma inganna. «PageSpeed 92» dice qualcosa sulla velocità e niente su privacy, accessibilità o prontezza AI. Per questo un check-up serio non guarda una cosa sola: mette in fila sette dimensioni e le pesa, così vedete in un colpo d’occhio dove il sito è solido e dove perde punti — e quali problemi valgono la pena di sistemare per primi.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/checkup-sette.svg',
+                              alt='Le sette misure del check-up — prestazioni, SEO, accessibilità, best practice, privacy, prontezza AI, CO₂ — e le fasce di punteggio di salute',
+                              caption='Le sette misure e le fasce del punteggio di salute (0–49 critico, 50–74 con margine, 75–89 buono, 90+ eccellente). Quattro dimensioni arrivano dall’API Google PageSpeed; tre — privacy, prontezza AI e CO₂ — sono verifiche nostre. Le prestazioni pesano di più (25), la CO₂ di meno (5).')),
+             dict(titolo='Le quattro misure che arrivano da Google',
+                  paragrafi=[
+                      "Quattro delle sette misure non sono una nostra opinione: arrivano dall’API di Google PageSpeed, la stessa che alimenta pagespeed.web.dev, interrogata in versione mobile perché è quella con cui Google vi posiziona.",
+                  ],
+                  lista=[
+                      'Prestazioni: quanto in fretta la pagina diventa utilizzabile su un telefono. È la voce che pesa di più, ed è quella che decide se le visite restano o scappano.',
+                      'SEO tecnica: se titoli, struttura e dati mancanti mettono i bastoni tra le ruote all’indicizzazione.',
+                      'Accessibilità: contrasti, etichette, struttura dei titoli — le barriere che dal 2025 sono anche un obbligo di legge.',
+                      'Best practice: uso corretto di HTTPS, immagini, console pulita e piccoli segnali di igiene tecnica.',
+                  ]),
+             dict(titolo='Le tre misure che aggiungiamo noi',
+                  paragrafi=[
+                      "Le altre tre le calcoliamo direttamente, leggendo il sito come farebbe un visitatore. La conformità privacy la ricaviamo dall’HTML (banner, informative, tracker prima del consenso); la prontezza AI da quattro segnali — llms.txt, accesso dei crawler AI, dati strutturati, sitemap; l’impronta di CO₂ dal peso reale della pagina, con il modello Sustainable Web Design. Sono verifiche indicative, e lo diciamo: il check-up privacy non è un parere legale, e il punteggio non promette una posizione su Google. È una fotografia tecnica precisa, non una promessa di vendita.",
+                  ]),
+             dict(titolo='Come si legge il voto di salute',
+                  paragrafi=[
+                      "Il punteggio di salute è la media pesata delle sette misure, e si legge come un semaforo: da 90 in su siete in fascia verde, tra 75 e 89 è buono, tra 50 e 74 c’è margine concreto, sotto 50 è critico e diventa la priorità. Due avvertenze: un voto alto non significa «primi su Google» — significa fondamenta tecniche sane; e se una misura risulta «N/D», di solito non è un guasto vostro, ma un server saturo o una lettura automatica rifiutata.",
+                      "La cosa migliore è che tutto questo lo potete misurare da soli, gratis e in meno di un minuto, incollando l’indirizzo del sito. Il report completo, pagina per pagina, arriva in PDF; e se dal check-up esce che vale la pena rifare la base tecnica, il restyling parte da lì — dai numeri, non dalle sensazioni.",
+                  ],
+                  links=[('Fai il check-up completo, gratis e senza registrazione', '/strumenti/check-up-completo/'),
+                         ('Se serve rifare la base: restyling e migrazione', '/servizi/restyling-migrazione/')]),
+         ]),
+
+    dict(slug='eeat-come-google-giudica-credibilita', data='15 LUG 2026',
+         titolo='E-E-A-T: come Google giudica la vostra credibilità',
+         estratto='Esperienza, competenza, autorevolezza, affidabilità: la cornice con cui Google valuta di chi fidarsi. Cos’è l’E-E-A-T e come rafforzarla, senza trucchi.',
+         corpo='Se avete letto qualcosa di SEO nell’ultimo anno vi sarà rimbalzato addosso un acronimo dall’aria misteriosa: E-E-A-T. Suona come una password, ed è invece il modo in cui Google prova a rispondere a una domanda molto umana: di questo sito, ci si può fidare? Non è un punteggio segreto e non si compra. È una cornice fatta di quattro parole — esperienza, competenza, autorevolezza, affidabilità — che vale la pena capire, perché tocca da vicino chiunque venda servizi o consigli online. Vediamo cos’è l’E-E-A-T e, soprattutto, cosa potete fare per rafforzarla senza scorciatoie.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/eeat-cover.svg',
+                    alt='E-E-A-T cos’è: esperienza, competenza, autorevolezza e affidabilità, i quattro pilastri delle Search Quality Rater Guidelines di Google'),
+         cta=('Misura gratis i segnali E-E-A-T del tuo sito', '/strumenti/segnali-eeat/'),
+         sezioni=[
+             dict(titolo='E-E-A-T, cos’è (e cosa non è)',
+                  paragrafi=[
+                      "E-E-A-T sta per Experience, Expertise, Authoritativeness, Trust: esperienza, competenza, autorevolezza e affidabilità. Non è un’invenzione dei SEO: è scritto nero su bianco nelle Search Quality Rater Guidelines, il manuale con cui Google istruisce le persone in carne e ossa che valutano la qualità dei risultati. Serve a stimare quanto ci si può fidare di una pagina, soprattutto sui temi che incidono su salute, denaro e sicurezza.",
+                      "Attenzione a un equivoco diffuso: l’E-E-A-T non è un fattore di ranking diretto, né un numero che Google vi assegna. È una cornice di qualità che i valutatori umani usano per addestrare gli algoritmi. Rafforzare i segnali di fiducia aiuta indirettamente; ma nessuno strumento — nemmeno il nostro — misura l’E-E-A-T «reale» del vostro sito. Diffidate di chi ve lo promette.",
+                  ]),
+             dict(titolo='I quattro pilastri, con Trust al centro',
+                  paragrafi=[
+                      "Le quattro parole non pesano tutte uguale. Nelle linee guida di Google il pilastro centrale è la fiducia (Trust): esperienza, competenza e autorevolezza servono soprattutto a sostenerla. Ha senso: un contenuto può essere scritto da un vero esperto, ma se il sito non è sicuro o non si capisce chi c’è dietro, la fiducia crolla lo stesso.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/eeat-pilastri.svg',
+                              alt='I quattro pilastri E-E-A-T — esperienza, competenza, autorevolezza, affidabilità — con gli otto segnali di fiducia leggibili nel codice della pagina',
+                              caption='I quattro pilastri E-E-A-T e alcuni segnali concreti che vi finiscono dentro: portfolio e casi studio, pagina «chi siamo», dati strutturati e profili esterni, HTTPS, contatti, P.IVA, privacy. La fiducia (Trust) è il pilastro centrale.')),
+             dict(titolo='I segnali che potete davvero controllare',
+                  paragrafi=[
+                      "La parte buona dell’E-E-A-T è che una fetta è alla vostra portata, subito. Google e i lettori cercano, nella pagina, dei segnali di fiducia leggibili: una connessione sicura in HTTPS, contatti verificabili, l’identità legale (P.IVA e ragione sociale), i link a privacy e cookie policy, una pagina «chi siamo» vera con nomi e volti, un portfolio o dei casi studio, i dati strutturati in JSON-LD e i profili esterni. Sono aggiunte tecniche precise, quasi tutte veloci e a basso costo.",
+                      "Quello che nessuna scorciatoia vi darà è l’altra metà: la reputazione, le menzioni, la qualità reale dei contenuti, l’esperienza vissuta di chi scrive. Quella si costruisce con il tempo — ed è esattamente perché non si può falsificare che Google le dà tanto peso.",
+                  ]),
+             dict(titolo='Da dove partire: misurare, poi sistemare',
+                  paragrafi=[
+                      "Il modo più rapido per capire come siete messi non è leggere altra teoria, ma guardare cosa espone davvero la vostra home. In un minuto potete misurare gli otto segnali di fiducia leggibili nel codice e vedere su quale dei quattro pilastri conviene intervenire per primo. Da lì, un pomeriggio di lavoro tecnico — una pagina «chi siamo» vera, i contatti nel footer, un blocco di dati strutturati — sposta il punteggio più di quanto immaginate.",
+                      "E ricordate la regola che vale per tutto l’E-E-A-T: un sito può dichiarare bene chi è, ma la fiducia vera la costruiscono i contenuti, il tempo e le persone. Gli strumenti misurano i segnali; la credibilità la meritate voi.",
+                  ],
+                  links=[('Misura gratis gli otto segnali E-E-A-T della tua home', '/strumenti/segnali-eeat/'),
+                         ('Chi siamo, contatti e dati strutturati sono di serie nella SEO tecnica', '/servizi/seo-tecnica/')]),
          ]),
 ]

@@ -66,6 +66,28 @@ BLOG_SLUGS = {
     'core-web-vitals-2026':                 {'en': 'core-web-vitals-2026',                'ru': 'core-web-vitals-2026'},
     'quanto-costa-ecommerce-italia':        {'en': 'ecommerce-cost-italy-2026',           'ru': 'skolko-stoit-internet-magazin'},
     'sito-lento-cause-costi':               {'en': 'slow-website-causes-fixes',           'ru': 'medlennyj-sajt-prichiny'},
+    # Blog · Batch 1 — pubblicati in IT + EN. La versione RU del blog è un
+    # batch separato con articoli propri (piano-blog.md, batch 5–6), non una
+    # traduzione: fino ad allora questi articoli sono IT+EN-only (vedi
+    # BLOG_IT_EN_ONLY: hreflang/switcher RU puntano all'indice /ru/blog/,
+    # nessun 404). Gli slug RU pianificati restano qui per il batch futuro.
+    'european-accessibility-act-ecommerce': {'en': 'eaa-ecommerce-risks',                 'ru': 'dostupnost-eaa-internet-magazin'},
+    'llms-txt-cos-e':                       {'en': 'llms-txt-explained',                  'ru': 'chto-takoe-llms-txt'},
+    'farsi-trovare-da-chatgpt-geo':         {'en': 'get-cited-by-chatgpt-geo',            'ru': 'kak-popast-v-chatgpt'},
+    'check-up-sito-web-7-misure':           {'en': 'website-checkup-7-metrics',           'ru': 'chek-ap-sajta-7-pokazatelej'},
+    'eeat-come-google-giudica-credibilita': {'en': 'eeat-how-google-judges-credibility',  'ru': 'eeat-kak-google-ocenivaet'},
+}
+
+# Articoli del blog pubblicati solo in IT + EN in questa fase (la loro versione
+# RU è un batch a sé, non una traduzione). Per questi, all_page_paths non emette
+# una riga hreflang verso una pagina RU inesistente: la colonna RU rimanda
+# all'indice /ru/blog/ (pagina reale), così switcher e hreflang restano validi.
+BLOG_IT_EN_ONLY = {
+    'european-accessibility-act-ecommerce',
+    'llms-txt-cos-e',
+    'farsi-trovare-da-chatgpt-geo',
+    'check-up-sito-web-7-misure',
+    'eeat-come-google-giudica-credibilita',
 }
 
 
@@ -126,7 +148,11 @@ def all_page_paths():
     for it_slug, tr in TOOLS_SLUGS.items():
         row(f'strumenti/{it_slug}', f'{SECTIONS["strumenti"]["en"]}/{tr["en"]}', f'{SECTIONS["strumenti"]["ru"]}/{tr["ru"]}')
     for it_slug, tr in BLOG_SLUGS.items():
-        row(f'blog/{it_slug}', f'{SECTIONS["blog"]["en"]}/{tr["en"]}', f'{SECTIONS["blog"]["ru"]}/{tr["ru"]}')
+        if it_slug in BLOG_IT_EN_ONLY:
+            # RU non ancora pubblicato: rimanda all'indice /ru/blog/ (no 404).
+            row(f'blog/{it_slug}', f'{SECTIONS["blog"]["en"]}/{tr["en"]}', SECTIONS["blog"]["ru"])
+        else:
+            row(f'blog/{it_slug}', f'{SECTIONS["blog"]["en"]}/{tr["en"]}', f'{SECTIONS["blog"]["ru"]}/{tr["ru"]}')
     return rows
 
 

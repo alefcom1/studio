@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-label="WCAG 2.1 AA four principles POUR">
+  <defs>
+    <pattern id="gridW" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="430" fill="#F7F6F2"/>
+  <rect width="1200" height="430" fill="url(#gridW)"/>
+  <text x="80" y="66" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">WCAG 2.1 — LIVELLO / LEVEL AA</text>
+  <line x1="80" y1="84" x2="1120" y2="84" stroke="#14161A" stroke-width="1.5"/>
+  <g font-family="'Clash Display',Arial,sans-serif">
+    <!-- P -->
+    <g transform="translate(80,140)">
+      <rect x="0" y="0" width="245" height="230" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+      <text x="24" y="96" class="disp" font-size="90" fill="#2440C8">P</text>
+      <text x="24" y="150" class="body" font-size="23" font-weight="600" fill="#14161A">Perceivable</text>
+      <text x="24" y="188" class="mono" font-size="15" fill="#5A5E66">contrast · alt</text>
+    </g>
+    <!-- O -->
+    <g transform="translate(345,140)">
+      <rect x="0" y="0" width="245" height="230" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+      <text x="24" y="96" class="disp" font-size="90" fill="#2440C8">O</text>
+      <text x="24" y="150" class="body" font-size="23" font-weight="600" fill="#14161A">Operable</text>
+      <text x="24" y="188" class="mono" font-size="15" fill="#5A5E66">keyboard · focus</text>
+    </g>
+    <!-- U -->
+    <g transform="translate(610,140)">
+      <rect x="0" y="0" width="245" height="230" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+      <text x="24" y="96" class="disp" font-size="90" fill="#2440C8">U</text>
+      <text x="24" y="150" class="body" font-size="23" font-weight="600" fill="#14161A">Understandable</text>
+      <text x="24" y="188" class="mono" font-size="15" fill="#5A5E66">labels · errors</text>
+    </g>
+    <!-- R -->
+    <g transform="translate(875,140)">
+      <rect x="0" y="0" width="245" height="230" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+      <text x="24" y="96" class="disp" font-size="90" fill="#2440C8">R</text>
+      <text x="24" y="150" class="body" font-size="23" font-weight="600" fill="#14161A">Robust</text>
+      <text x="24" y="188" class="mono" font-size="15" fill="#5A5E66">ARIA · HTML</text>
+    </g>
+  </g>
+</svg>

@@ -45,4 +45,9 @@ return array(
 	array( 'it' => 'blog/core-web-vitals-2026', 'en' => 'en/blog/core-web-vitals-2026', 'ru' => 'ru/blog/core-web-vitals-2026' ),
 	array( 'it' => 'blog/quanto-costa-ecommerce-italia', 'en' => 'en/blog/ecommerce-cost-italy-2026', 'ru' => 'ru/blog/skolko-stoit-internet-magazin' ),
 	array( 'it' => 'blog/sito-lento-cause-costi', 'en' => 'en/blog/slow-website-causes-fixes', 'ru' => 'ru/blog/medlennyj-sajt-prichiny' ),
+	array( 'it' => 'blog/european-accessibility-act-ecommerce', 'en' => 'en/blog/eaa-ecommerce-risks', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/llms-txt-cos-e', 'en' => 'en/blog/llms-txt-explained', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/farsi-trovare-da-chatgpt-geo', 'en' => 'en/blog/get-cited-by-chatgpt-geo', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/check-up-sito-web-7-misure', 'en' => 'en/blog/website-checkup-7-metrics', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/eeat-come-google-giudica-credibilita', 'en' => 'en/blog/eeat-how-google-judges-credibility', 'ru' => 'ru/blog' ),
 );

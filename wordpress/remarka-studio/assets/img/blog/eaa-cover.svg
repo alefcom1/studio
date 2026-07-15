@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="European Accessibility Act 2025">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="#F7F6F2"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <line x1="80" y1="96" x2="1120" y2="96" stroke="#14161A" stroke-width="1.5"/>
+  <text x="80" y="82" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">REMARKA · STUDIO — BLOG</text>
+  <text x="1120" y="82" class="mono" font-size="15" letter-spacing="2" fill="#2440C8" text-anchor="end">DIR. UE 2019/882</text>
+  <text x="80" y="252" class="disp" font-size="150" letter-spacing="2" fill="#14161A">EAA</text>
+  <text x="80" y="316" class="body" font-size="37" font-weight="600" fill="#14161A">European Accessibility Act</text>
+  <text x="80" y="360" class="mono" font-size="21" letter-spacing="1" fill="#5A5E66">e-commerce · WCAG 2.1 AA</text>
+  <g transform="translate(80,430)">
+    <rect x="0" y="0" width="300" height="92" fill="#2440C8"/>
+    <text x="24" y="37" class="mono" font-size="14" letter-spacing="2" fill="#C9D2FF">EU · EAA</text>
+    <text x="24" y="74" class="disp" font-size="40" fill="#FFFFFF">28.06.2025</text>
+  </g>
+  <g transform="translate(410,430)">
+    <rect x="0" y="0" width="200" height="92" fill="none" stroke="#14161A" stroke-width="1.5"/>
+    <text x="24" y="37" class="mono" font-size="14" letter-spacing="2" fill="#5A5E66">MAX €</text>
+    <text x="24" y="76" class="disp" font-size="46" fill="#14161A">5%</text>
+  </g>
+  <g transform="translate(880,150)" opacity="0.95">
+    <rect x="0" y="0" width="240" height="26" fill="#14161A"/>
+    <rect x="0" y="48" width="240" height="26" fill="#DDDBD4"/>
+    <rect x="0" y="96" width="240" height="26" fill="#2440C8"/>
+    <rect x="0" y="144" width="240" height="26" fill="#DDDBD4"/>
+    <rect x="0" y="192" width="240" height="26" fill="#14161A"/>
+    <rect x="0" y="240" width="150" height="26" fill="#DDDBD4"/>
+  </g>
+</svg>
