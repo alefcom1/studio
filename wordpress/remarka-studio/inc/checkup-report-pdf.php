@@ -583,7 +583,7 @@ function remarka_checkup_pdf_logo_data_uri(): ?string {
 	if ( false !== $cached ) {
 		return $cached;
 	}
-	$path = get_stylesheet_directory() . '/assets/img/logo-full.png';
+	$path = get_stylesheet_directory() . '/assets/img/logo-pdf.png';
 	if ( ! is_readable( $path ) ) {
 		$cached = null;
 		return null;
