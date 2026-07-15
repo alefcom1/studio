@@ -1400,6 +1400,97 @@ function remarka_tool_fetch_handler(): void {
 }
 add_action( 'wp_ajax_remarka_tool_fetch', 'remarka_tool_fetch_handler' );
 add_action( 'wp_ajax_nopriv_remarka_tool_fetch', 'remarka_tool_fetch_handler' );
+
+/**
+ * Proxy server-side per Google PageSpeed Insights.
+ *
+ * Perché esiste: dal browser la chiamata diretta a googleapis.com può fallire
+ * in modo sistematico (CSP dell'hosting, estensioni, restrizioni della chiave
+ * API legate al referrer); dal server passa sempre, e la chiave resta lato
+ * PHP invece di essere esposta nel sorgente della pagina. Il JS prova prima
+ * la via diretta e ripiega qui (vedi psiFetch in remarka.js).
+ * Cache: transient 10 minuti per url+categorie+lingua — le ripetizioni di uno
+ * stesso test non consumano quota. Rate-limit separato da tool_fetch.
+ */
+function remarka_tool_psi_handler(): void {
+	if ( ! isset( $_GET['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_GET['nonce'] ), 'remarka_tools' ) ) {
+		wp_send_json_error( array( 'message' => 'sessione scaduta' ), 403 );
+	}
+
+	$ip    = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
+	$rl    = 'remarka_psi_' . md5( $ip );
+	$count = (int) get_transient( $rl );
+	if ( $count >= 8 ) {
+		wp_send_json_error( array( 'message' => 'troppe richieste, riprovate tra un minuto' ), 429 );
+	}
+	set_transient( $rl, $count + 1, MINUTE_IN_SECONDS );
+
+	$url = esc_url_raw( wp_unslash( $_GET['url'] ?? '' ) );
+	if ( '' === $url || ! preg_match( '#^https?://#i', $url ) ) {
+		wp_send_json_error( array( 'message' => 'url non valido' ), 400 );
+	}
+
+	$allowed = array( 'PERFORMANCE', 'ACCESSIBILITY', 'SEO', 'BEST_PRACTICES' );
+	$cats    = array_values( array_intersect(
+		array_map( 'strtoupper', array_map( 'trim', explode( ',', sanitize_text_field( wp_unslash( $_GET['categories'] ?? '' ) ) ) ) ),
+		$allowed
+	) );
+	if ( ! $cats ) {
+		$cats = $allowed;
+	}
+
+	$locale = sanitize_key( wp_unslash( $_GET['locale'] ?? 'it' ) );
+	if ( ! in_array( $locale, array( 'it', 'en', 'ru' ), true ) ) {
+		$locale = 'it';
+	}
+
+	$cache_key = 'remarka_psic_' . md5( $url . '|' . implode( ',', $cats ) . '|' . $locale );
+	$cached    = get_transient( $cache_key );
+	if ( false !== $cached ) {
+		header( 'Content-Type: application/json; charset=utf-8' );
+		echo $cached; // phpcs:ignore WordPress.Security.EscapeOutput -- JSON già validato alla scrittura in cache.
+		wp_die();
+	}
+
+	$endpoint = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' . rawurlencode( $url )
+		. '&strategy=mobile&locale=' . rawurlencode( $locale );
+	foreach ( $cats as $c ) {
+		$endpoint .= '&category=' . $c;
+	}
+	$psi_key = get_theme_mod( 'remarka_psi_api_key', '' );
+	if ( $psi_key ) {
+		$endpoint .= '&key=' . rawurlencode( $psi_key );
+	}
+
+	if ( function_exists( 'set_time_limit' ) ) {
+		@set_time_limit( 90 );
+	}
+	$resp = wp_remote_get( $endpoint, array( 'timeout' => 55 ) );
+	if ( is_wp_error( $resp ) ) {
+		wp_send_json_error( array( 'message' => 'psi non raggiungibile: ' . $resp->get_error_message() ), 502 );
+	}
+	$code = (int) wp_remote_retrieve_response_code( $resp );
+	$body = wp_remote_retrieve_body( $resp );
+	if ( 200 !== $code || '' === $body ) {
+		// Il corpo d'errore di Google contiene il motivo (chiave/quota): lo
+		// passiamo nel log del server, al client solo lo stato.
+		error_log( 'remarka_tool_psi: upstream HTTP ' . $code . ' — ' . substr( (string) $body, 0, 300 ) );
+		wp_send_json_error( array( 'message' => 'psi upstream ' . $code ), 502 );
+	}
+	$decoded = json_decode( $body );
+	if ( null === $decoded || empty( $decoded->lighthouseResult ) ) {
+		wp_send_json_error( array( 'message' => 'psi risposta non valida' ), 502 );
+	}
+	if ( strlen( $body ) < 3 * MB_IN_BYTES ) {
+		set_transient( $cache_key, $body, 10 * MINUTE_IN_SECONDS );
+	}
+	header( 'Content-Type: application/json; charset=utf-8' );
+	echo $body; // phpcs:ignore WordPress.Security.EscapeOutput -- passthrough JSON di Google, decodificato e validato sopra.
+	wp_die();
+}
+add_action( 'wp_ajax_remarka_tool_psi', 'remarka_tool_psi_handler' );
+add_action( 'wp_ajax_nopriv_remarka_tool_psi', 'remarka_tool_psi_handler' );
+
 add_action( 'admin_post_nopriv_remarka_contact', 'remarka_form_handle_post' );
 
 /* ============================================================================

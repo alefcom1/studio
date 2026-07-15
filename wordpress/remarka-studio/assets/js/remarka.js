@@ -268,11 +268,33 @@
 		if (key) {
 			endpoint += '&key=' + encodeURIComponent(key);
 		}
+		/* Se la chiamata diretta a googleapis.com fallisce (CSP dell'hosting,
+		   estensioni del browser, chiave con restrizioni), ripieghiamo sul
+		   proxy del nostro server: stessa risposta JSON, chiave lato PHP. */
+		function viaProxy() {
+			var cfg = window.remarkaPSI || {};
+			if (!cfg.ajaxUrl) {
+				throw new Error('PSI proxy non disponibile');
+			}
+			var pu = cfg.ajaxUrl + '?action=remarka_tool_psi' +
+				'&nonce=' + encodeURIComponent(cfg.toolsNonce || '') +
+				'&url=' + encodeURIComponent(url) +
+				'&categories=' + encodeURIComponent(cats.join(',')) +
+				'&locale=' + encodeURIComponent(locale);
+			return window.fetch(pu).then(function (resp) {
+				if (!resp.ok) {
+					throw new Error('PSI proxy HTTP ' + resp.status);
+				}
+				return resp.json();
+			});
+		}
 		return window.fetch(endpoint).then(function (resp) {
 			if (!resp.ok) {
 				throw new Error('PSI HTTP ' + resp.status);
 			}
 			return resp.json();
+		}).catch(function () {
+			return viaProxy();
 		}).then(function (data) {
 			var lh = data.lighthouseResult;
 			if (!lh || !lh.categories) {
