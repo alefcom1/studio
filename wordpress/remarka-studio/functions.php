@@ -1458,13 +1458,73 @@ function remarka_checkup_score_keys(): array {
 }
 
 /**
+ * Sanifica i rilievi individuali (M5, docs/piano-checkup-sito.md) — stessi
+ * cap del client (§ CHECKUP_FINDING_LABELS/buildCheckupFindings in remarka.js),
+ * riverificati qui perché il client non è fidato: whitelist delle 7 chiavi di
+ * dimensione, max 4 gruppi per dimensione, max 3 item per gruppo, ogni
+ * stringa passata da wp_strip_all_tags() + troncata, ogni url validato con
+ * esc_url_raw() solo http/https (altrimenti scartato, non l'intero gruppo).
+ * Un gruppo senza titolo e senza item validi viene scartato: non produce
+ * righe vuote nel PDF.
+ */
+function remarka_tool_report_sanitize_findings( $raw ): array {
+	$out = array();
+	foreach ( remarka_checkup_score_keys() as $dim_key ) {
+		$out[ $dim_key ] = array();
+	}
+	if ( ! is_array( $raw ) ) {
+		return $out;
+	}
+	foreach ( remarka_checkup_score_keys() as $dim_key ) {
+		$groups_in = is_array( $raw[ $dim_key ] ?? null ) ? $raw[ $dim_key ] : array();
+		$groups    = array();
+		foreach ( array_slice( $groups_in, 0, 4 ) as $group ) {
+			if ( ! is_array( $group ) ) {
+				continue;
+			}
+			$title = is_string( $group['t'] ?? null ) ? mb_substr( wp_strip_all_tags( (string) $group['t'] ), 0, 200 ) : '';
+
+			$items_in = is_array( $group['items'] ?? null ) ? $group['items'] : array();
+			$items    = array();
+			foreach ( array_slice( $items_in, 0, 3 ) as $item ) {
+				if ( ! is_array( $item ) ) {
+					continue;
+				}
+				$u_raw = is_string( $item['u'] ?? null ) ? mb_substr( (string) $item['u'], 0, 300 ) : '';
+				$u     = '' !== $u_raw ? esc_url_raw( $u_raw, array( 'http', 'https' ) ) : '';
+				$v     = is_string( $item['v'] ?? null ) ? mb_substr( wp_strip_all_tags( (string) $item['v'] ), 0, 200 ) : '';
+				if ( '' === $u && '' === $v ) {
+					continue;
+				}
+				$items[] = array(
+					'u' => $u,
+					'v' => $v,
+				);
+			}
+
+			if ( '' === $title && empty( $items ) ) {
+				continue;
+			}
+			$groups[] = array(
+				't'     => $title,
+				'items' => $items,
+			);
+		}
+		$out[ $dim_key ] = $groups;
+	}
+	return $out;
+}
+
+/**
  * Sanifica il payload JSON mandato dal client — cappato a 64KB già lato JS,
  * ma qui riverificato server-side perché non ci si fida mai del client:
  * whitelist delle chiavi, punteggi clampati a interi 0-100 (o null se
  * mancanti/non numerici — stessa semantica "N/D" del client), url ristretto
- * a http/https, locale whitelisted it|en|ru (fallback it). `composite` e
- * `measured` mandati dal client sono ignorati: si ricalcolano sempre da
- * `scores` in remarka_checkup_composite(), per coerenza interna del PDF.
+ * a http/https, locale whitelisted it|en|ru (fallback it), rilievi
+ * individuali (M5) sanificati da remarka_tool_report_sanitize_findings().
+ * `composite` e `measured` mandati dal client sono ignorati: si ricalcolano
+ * sempre da `scores` in remarka_checkup_composite(), per coerenza interna
+ * del PDF.
  */
 function remarka_tool_report_sanitize_payload( string $raw ): ?array {
 	if ( strlen( $raw ) > 65536 ) {
@@ -1498,9 +1558,10 @@ function remarka_tool_report_sanitize_payload( string $raw ): ?array {
 	}
 
 	return array(
-		'url'    => $url,
-		'locale' => $locale,
-		'scores' => $scores,
+		'url'      => $url,
+		'locale'   => $locale,
+		'scores'   => $scores,
+		'findings' => remarka_tool_report_sanitize_findings( $decoded['findings'] ?? null ),
 	);
 }
 

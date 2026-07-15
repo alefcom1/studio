@@ -183,8 +183,10 @@ function remarka_checkup_copy( string $locale ): array {
 			'na_finding'       => 'Non siamo riusciti a misurare questo aspetto: il sito ha rifiutato la lettura o il servizio Google era saturo. Rilanciate il test tra qualche minuto.',
 			'dim_score_suffix' => '/100',
 			'dim_found_h3'     => 'Cosa abbiamo trovato',
+			'dim_findings_detail_h3' => 'Cosa abbiamo trovato su questa pagina',
 			'dim_todo_h3'      => 'Cosa fare',
 			'dim_method_label' => 'Misura',
+			'single_page_note' => "Analizziamo la pagina che ci avete indicato, non l'intero sito: un audit completo, pagina per pagina, è uno dei nostri servizi a pagamento.",
 			'priorities_h1'    => 'Da dove partire',
 			'priorities_lead'  => 'I tre interventi con il maggiore impatto sul punteggio, ordinati per peso × margine di miglioramento.',
 			'whatwedo_h1'      => 'Cosa faremmo noi, e con quali garanzie',
@@ -215,8 +217,10 @@ function remarka_checkup_copy( string $locale ): array {
 			'na_finding'       => "We couldn't measure this aspect: the site refused the reading, or Google's service was overloaded. Re-run the test in a few minutes.",
 			'dim_score_suffix' => '/100',
 			'dim_found_h3'     => 'What we found',
+			'dim_findings_detail_h3' => 'What we found on this page',
 			'dim_todo_h3'      => 'What to do',
 			'dim_method_label' => 'Measured by',
+			'single_page_note' => 'We analyse the page you gave us, not the whole website: a full page-by-page audit is one of our paid services.',
 			'priorities_h1'    => 'Where to start',
 			'priorities_lead'  => 'The three fixes with the biggest impact on the score, ranked by weight × room for improvement.',
 			'whatwedo_h1'      => 'What we would do, and with what guarantees',
@@ -247,8 +251,10 @@ function remarka_checkup_copy( string $locale ): array {
 			'na_finding'       => 'Не удалось измерить этот аспект: сайт отказал в чтении, либо сервис Google был перегружен. Повторите тест через несколько минут.',
 			'dim_score_suffix' => '/100',
 			'dim_found_h3'     => 'Что мы нашли',
+			'dim_findings_detail_h3' => 'Что мы нашли на этой странице',
 			'dim_todo_h3'      => 'Что делать',
 			'dim_method_label' => 'Измерение',
+			'single_page_note' => 'Мы анализируем именно указанную вами страницу, а не весь сайт: полный постраничный аудит — одна из наших платных услуг.',
 			'priorities_h1'    => 'С чего начать',
 			'priorities_lead'  => 'Три задачи с наибольшим влиянием на оценку, по убыванию веса × запаса на улучшение.',
 			'whatwedo_h1'      => 'Что сделали бы мы — и с какими гарантиями',
@@ -555,6 +561,243 @@ function remarka_checkup_pdf_dot( string $flag ): string {
 }
 
 /**
+ * Formatta un numero con virgola (it/ru) o punto (en), come itNumber() lato
+ * client (remarka.js) — usato per la scala comparativa CO₂ (M5).
+ */
+function remarka_checkup_num( float $n, int $decimals, string $locale ): string {
+	$s = number_format( $n, $decimals, '.', '' );
+	return 'en' === $locale ? $s : str_replace( '.', ',', $s );
+}
+
+/**
+ * Logo completo (M5, decisione del titolare: logo pieno in copertina, non lo
+ * stemma mono). Incorporato come data-URI: dompdf ha il chroot puntato su
+ * lib/dompdf/ (vedi remarka_checkup_render_pdf()), quindi un <img src="…png">
+ * fuori da quell'albero non verrebbe letto — il data-URI bypassa il
+ * filesystem e funziona a prescindere dal chroot. Se il file manca (tema
+ * spostato, asset non sincronizzato) la copertina degrada al solo testo
+ * "Studio Remarka": mai un PDF rotto per un logo assente.
+ */
+function remarka_checkup_pdf_logo_data_uri(): ?string {
+	static $cached = false;
+	if ( false !== $cached ) {
+		return $cached;
+	}
+	$path = get_stylesheet_directory() . '/assets/img/logo-full.png';
+	if ( ! is_readable( $path ) ) {
+		$cached = null;
+		return null;
+	}
+	$bytes  = file_get_contents( $path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_file_get_contents
+	$cached = false === $bytes || '' === $bytes ? null : 'data:image/png;base64,' . base64_encode( $bytes );
+	return $cached;
+}
+
+/** #RRGGBB -> [r,g,b], per disegnare col modulo GD (già richiesto da dompdf, vedi remarka_checkup_pdf_missing_extensions()). */
+function remarka_checkup_hex_to_rgb( string $hex ): array {
+	$hex = ltrim( $hex, '#' );
+	return array(
+		hexdec( substr( $hex, 0, 2 ) ),
+		hexdec( substr( $hex, 2, 2 ) ),
+		hexdec( substr( $hex, 4, 2 ) ),
+	);
+}
+
+/**
+ * Anello (donut) del punteggio composito, colorato secondo il verdetto —
+ * decisione del titolare M5 "grafici in ogni sezione". Renderizzato come PNG
+ * raster via GD (estensione già obbligatoria per il PDF), non come SVG
+ * inline: nei test M5 l'immagine SVG via data-URI non si centrava in modo
+ * affidabile con dompdf/php-svg-lib (intrinsic size del box non coerente a
+ * livello di layout), mentre un PNG si comporta come il logo di copertina
+ * (centratura block+margin:auto verificata visivamente).
+ */
+function remarka_checkup_pdf_donut( int $score, string $flag, array $colors ): string {
+	$pct  = max( 0, min( 100, $score ) );
+	$size = 300; // px — nitido nel PDF a ~40mm di resa
+	$im   = imagecreatetruecolor( $size, $size );
+	imagesavealpha( $im, true );
+	$transparent = imagecolorallocatealpha( $im, 0, 0, 0, 127 );
+	imagefill( $im, 0, 0, $transparent );
+	imageantialias( $im, true );
+
+	$cx        = $size / 2;
+	$cy        = $size / 2;
+	$r         = $size * 0.42;
+	$thickness = $size * 0.075;
+
+	list($tr, $tg, $tb) = remarka_checkup_hex_to_rgb( $colors['traccia'] );
+	$track_color = imagecolorallocate( $im, $tr, $tg, $tb );
+	for ( $t = -$thickness / 2; $t <= $thickness / 2; $t += 0.6 ) {
+		imagearc( $im, (int) $cx, (int) $cy, (int) round( ( $r + $t ) * 2 ), (int) round( ( $r + $t ) * 2 ), 0, 360, $track_color );
+	}
+
+	if ( $pct > 0 ) {
+		list($fr, $fg, $fb) = remarka_checkup_hex_to_rgb( remarka_checkup_flag_color( $flag ) );
+		$fill_color = imagecolorallocate( $im, $fr, $fg, $fb );
+		$start_deg  = -90;
+		$end_deg    = (int) round( -90 + ( 360 * $pct / 100 ) );
+		for ( $t = -$thickness / 2; $t <= $thickness / 2; $t += 0.6 ) {
+			imagearc( $im, (int) $cx, (int) $cy, (int) round( ( $r + $t ) * 2 ), (int) round( ( $r + $t ) * 2 ), $start_deg, $end_deg, $fill_color );
+		}
+	}
+
+	ob_start();
+	imagepng( $im );
+	$bytes = (string) ob_get_clean();
+	imagedestroy( $im );
+
+	// Centratura via tabella a cella singola (text-align), come già usato
+	// altrove nel report (priorità): più affidabile di margin:auto su un
+	// secondo elemento block nello stesso contenitore, nei test M5.
+	// Dimensioni impostate come attributi HTML width/height (151px = 40mm a
+	// 96dpi), non solo CSS: dompdf le rispetta con più costanza per le <img>.
+	return '<table style="width:100%"><tr><td style="text-align:center;padding-top:8px">'
+		. '<img width="151" height="151" src="data:image/png;base64,' . base64_encode( $bytes ) . '" alt="">'
+		. '</td></tr></table>';
+}
+
+/**
+ * Barra orizzontale "il vostro punteggio" con le tacche di soglia 90/75/50 —
+ * le stesse soglie dei 4 verdetti (§1.4), MAI una finta "media di mercato":
+ * l'unico dato onesto disponibile è la soglia del nostro stesso semaforo.
+ */
+function remarka_checkup_pdf_score_bar( int $score, string $flag, array $colors ): string {
+	$pct  = max( 0, min( 100, $score ) );
+	$html = '<div class="scorebar"><div class="scorebar__track">';
+	$html .= '<div class="scorebar__fill" style="width:' . esc_attr( (string) $pct ) . '%;background:' . esc_attr( remarka_checkup_flag_color( $flag ) ) . '"></div>';
+	foreach ( array( 50, 75, 90 ) as $mark ) {
+		$html .= '<div class="scorebar__mark" style="left:' . esc_attr( (string) $mark ) . '%"></div>';
+	}
+	$html .= '</div></div>';
+	return $html;
+}
+
+/**
+ * Diagramma orizzontale delle 7 dimensioni in un blocco unico (pagina
+ * Riepilogo, M5). Una riga per dimensione: etichetta · barra colorata sul
+ * semaforo · punteggio.
+ */
+function remarka_checkup_pdf_chart( array $scores, array $copy, array $dims, array $colors ): string {
+	$html = '<div class="chart">';
+	foreach ( $dims as $key => $weight ) {
+		$score = $scores[ $key ] ?? null;
+		$label = $copy['dims'][ $key ]['label'];
+		$html .= '<div class="chart__row"><span class="chart__label mono">' . esc_html( $label ) . '</span><div class="chart__track">';
+		if ( null !== $score ) {
+			$level = remarka_checkup_level( (int) $score );
+			$html .= '<div class="chart__fill" style="width:' . esc_attr( (string) $score ) . '%;background:' . esc_attr( remarka_checkup_flag_color( remarka_checkup_flag( $level ) ) ) . '"></div>';
+		}
+		$html .= '</div><span class="chart__score mono">' . esc_html( null === $score ? $copy['na_word'] : $score . '/100' ) . '</span></div>';
+	}
+	$html .= '</div>';
+	return $html;
+}
+
+/**
+ * Stima i grammi CO₂/visita a partire dal punteggio 0-100 ricevuto — inversa
+ * esatta della rampa dichiarata in docs/copy-checkup.md §1.2
+ * (co2Score = clamp(round(100·(1,6−g)/1,2),0,100)): non è un dato nuovo, è
+ * la stessa formula del client letta al contrario, per disegnare la scala
+ * comparativa contro la mediana del web (0,8 g, modello SWD).
+ */
+function remarka_checkup_co2_grams_from_score( int $score ): float {
+	$g = 1.6 - ( max( 0, min( 100, $score ) ) * 1.2 / 100 );
+	return round( max( 0, $g ), 2 );
+}
+
+/** Scala comparativa CO₂ vs mediana del web (0,8 g, modello SWD) — richiesta esplicita del titolare M5. */
+function remarka_checkup_pdf_co2_scale( int $score, string $locale, array $colors ): string {
+	$grams    = remarka_checkup_co2_grams_from_score( $score );
+	$max_g    = 1.6;
+	$pos_pct  = max( 0, min( 100, ( $grams / $max_g ) * 100 ) );
+	$avg_pct  = ( 0.8 / $max_g ) * 100;
+	$labels   = array(
+		'it' => array( 'sub' => 'Confronto con la mediana del web', 'avg' => 'Mediana web · 0,8 g', 'unit' => 'g/visita' ),
+		'en' => array( 'sub' => 'Compared with the web median', 'avg' => 'Web median · 0.8 g', 'unit' => 'g/visit' ),
+		'ru' => array( 'sub' => 'Сравнение с медианой веба', 'avg' => 'Медиана веба · 0,8 г', 'unit' => 'г/визит' ),
+	);
+	$l        = $labels[ $locale ] ?? $labels['it'];
+	$html  = '<p class="mono muted" style="margin-top:14px">' . esc_html( $l['sub'] ) . '</p>';
+	$html .= '<div class="scorebar scorebar--co2"><div class="scorebar__track">';
+	$html .= '<div class="scorebar__mark scorebar__mark--avg" style="left:' . esc_attr( (string) $avg_pct ) . '%"></div>';
+	$html .= '<div class="scorebar__dot" style="left:' . esc_attr( (string) $pos_pct ) . '%;background:' . esc_attr( remarka_checkup_flag_color( remarka_checkup_flag( remarka_checkup_level( $score ) ) ) ) . '"></div>';
+	$html .= '</div></div>';
+	$html .= '<p class="mono muted">' . esc_html( remarka_checkup_num( $grams, 2, $locale ) . ' ' . $l['unit'] ) . ' — ' . esc_html( $l['avg'] ) . '</p>';
+	return $html;
+}
+
+/** Accorcia un url per la visualizzazione (il click va comunque all'url completo). */
+function remarka_checkup_short_url( string $u ): string {
+	$short = preg_replace( '#^https?://#i', '', $u );
+	$short = is_string( $short ) ? $short : $u;
+	return strlen( $short ) > 72 ? substr( $short, 0, 69 ) . '…' : $short;
+}
+
+/**
+ * Blocco "Cosa abbiamo trovato su questa pagina" (M5): rilievi individuali
+ * sanificati dal server (remarka_tool_report_sanitize_findings()), con link
+ * cliccabili alle risorse concrete + un link alla pagina analizzata stessa.
+ * Ritorna stringa vuota se non ci sono rilievi per questa dimensione (client
+ * vecchio o payload ridotto): la sezione sparisce, il PDF resta valido —
+ * nessuna riga vuota, nessun dato inventato.
+ */
+function remarka_checkup_pdf_findings_block( array $groups, string $page_url, array $copy ): string {
+	$has_content = false;
+	foreach ( $groups as $group ) {
+		if ( '' !== trim( (string) ( $group['t'] ?? '' ) ) || ! empty( $group['items'] ) ) {
+			$has_content = true;
+			break;
+		}
+	}
+	if ( ! $has_content ) {
+		return '';
+	}
+
+	$domain = preg_replace( '#^https?://#i', '', $page_url );
+	$domain = rtrim( (string) $domain, '/' );
+
+	$html  = '<h3 style="margin-top:16px">' . esc_html( $copy['dim_findings_detail_h3'] ) . '</h3>';
+	$html .= '<p class="mono muted">' . esc_html( $copy['cover_domain'] ) . ': <a href="' . esc_url( $page_url ) . '">' . esc_html( $domain ) . '</a></p>';
+
+	foreach ( $groups as $group ) {
+		$title = trim( (string) ( $group['t'] ?? '' ) );
+		$items = is_array( $group['items'] ?? null ) ? $group['items'] : array();
+		if ( '' === $title && empty( $items ) ) {
+			continue;
+		}
+		$html .= '<div class="finding-group">';
+		if ( '' !== $title ) {
+			$html .= '<p class="finding-group__title">' . esc_html( $title ) . '</p>';
+		}
+		if ( ! empty( $items ) ) {
+			$html .= '<ul>';
+			foreach ( $items as $item ) {
+				$u = trim( (string) ( $item['u'] ?? '' ) );
+				$v = trim( (string) ( $item['v'] ?? '' ) );
+				if ( '' === $u && '' === $v ) {
+					continue;
+				}
+				$html .= '<li>';
+				if ( '' !== $u ) {
+					$html .= '<a href="' . esc_url( $u ) . '">' . esc_html( remarka_checkup_short_url( $u ) ) . '</a>';
+					if ( '' !== $v ) {
+						$html .= ' — ';
+					}
+				}
+				if ( '' !== $v ) {
+					$html .= esc_html( $v );
+				}
+				$html .= '</li>';
+			}
+			$html .= '</ul>';
+		}
+		$html .= '</div>';
+	}
+	return $html;
+}
+
+/**
  * Costruisce l'HTML completo del report (12 pagine) — separata dalla
  * conversione PDF apposta per essere testabile in isolamento (verifica che
  * ogni stringa di provenienza client, es. il dominio nell'url, esca sempre
@@ -611,6 +854,26 @@ function remarka_checkup_render_html( array $data, string $locale ): string {
 		ul { margin: 0 0 8px 16px; padding: 0; }
 		li { margin-bottom: 4px; }
 		a { color: <?php echo esc_html( $colors['oltremare'] ); ?>; }
+		.cover .logo { width: 55mm; display: block; margin: 0 auto 8mm; }
+		.chart { margin-top: 16px; }
+		.chart__row { display: table; width: 100%; margin-bottom: 10px; }
+		.chart__label { display: table-cell; width: 46mm; vertical-align: middle; font-size: 9.5px; padding-right: 6px; }
+		.chart__track { display: table-cell; vertical-align: middle; position: relative; height: 7px; border-radius: 4px; background: <?php echo esc_html( $colors['traccia'] ); ?>; }
+		.chart__fill { position: absolute; top: 0; left: 0; bottom: 0; border-radius: 4px; }
+		.chart__score { display: table-cell; width: 18mm; text-align: right; vertical-align: middle; font-size: 10px; padding-left: 6px; }
+		.scorebar { margin: 12px 0 6px; }
+		.scorebar__track { position: relative; height: 8px; border-radius: 4px; background: <?php echo esc_html( $colors['traccia'] ); ?>; margin: 0 3px; }
+		.scorebar__fill { position: absolute; top: 0; left: 0; bottom: 0; border-radius: 4px; }
+		.scorebar__mark { position: absolute; top: -3px; bottom: -3px; width: 1.4px; background: <?php echo esc_html( $colors['inchiostro'] ); ?>; opacity: 0.4; }
+		.scorebar__mark--avg { width: 2px; opacity: 0.55; }
+		.scorebar__dot { position: absolute; top: -3px; width: 6px; height: 14px; margin-left: -3px; border-radius: 3px; }
+		.scorebar-legend { display: table; width: 100%; margin-top: 3px; }
+		.scorebar-legend span { display: table-cell; font-size: 8px; color: <?php echo esc_html( $colors['grigio'] ); ?>; }
+		.scorebar-legend span:nth-child(2) { text-align: center; }
+		.scorebar-legend span:last-child { text-align: right; }
+		.finding-group { margin-top: 10px; }
+		.finding-group__title { font-weight: bold; font-size: 10.5px; margin-bottom: 3px; }
+		.finding-group li { font-size: 10.5px; word-break: break-all; }
 	</style>
 	</head>
 	<body>
@@ -618,10 +881,18 @@ function remarka_checkup_render_html( array $data, string $locale ): string {
 
 	<?php /* ---------- 1. Copertina ---------- */ ?>
 	<div class="page cover">
-		<p class="brand">Studio Remarka</p>
+		<?php $logo = remarka_checkup_pdf_logo_data_uri(); ?>
+		<?php if ( $logo ) : ?>
+			<img class="logo" src="<?php echo esc_attr( $logo ); ?>" alt="Studio Remarka">
+		<?php else : ?>
+			<p class="brand">Studio Remarka</p>
+		<?php endif; ?>
 		<h1><?php echo esc_html( $copy['cover_title'] ); ?></h1>
 		<p class="domain mono"><?php echo esc_html( $copy['cover_domain'] ); ?>: <?php echo esc_html( $domain ); ?></p>
 		<p class="mono muted"><?php echo esc_html( $copy['cover_date'] ); ?>: <?php echo esc_html( $data['date_display'] ); ?></p>
+		<?php if ( null !== $comp['composite'] ) : ?>
+			<?php echo remarka_checkup_pdf_donut( $comp['composite'], remarka_checkup_flag( remarka_checkup_level( $comp['composite'] ) ), $colors ); ?>
+		<?php endif; ?>
 		<div class="badge">
 			<?php if ( null !== $comp['composite'] ) : ?>
 				<div class="num"><?php echo esc_html( (string) $comp['composite'] ); ?>/100</div>
@@ -692,6 +963,10 @@ function remarka_checkup_render_html( array $data, string $locale ): string {
 				 (<?php echo esc_html( (string) $n_bad ); ?>× <?php echo esc_html( $copy['words'][3] ); ?>, <?php echo esc_html( (string) $n_warn ); ?>× <?php echo esc_html( $copy['words'][2] ); ?>)
 			<?php endif; ?>
 		</p>
+
+		<?php echo remarka_checkup_pdf_chart( $scores, $copy, $dims, $colors ); ?>
+
+		<p class="mono muted" style="margin-top:16px"><?php echo esc_html( $copy['single_page_note'] ); ?></p>
 	</div>
 
 	<?php /* ---------- 3-9. Una pagina per dimensione ---------- */ ?>
@@ -712,8 +987,20 @@ function remarka_checkup_render_html( array $data, string $locale ): string {
 				<?php endif; ?>
 			</div>
 
-			<h3><?php echo esc_html( $copy['dim_found_h3'] ); ?></h3>
+			<?php if ( null !== $score ) : ?>
+				<?php echo remarka_checkup_pdf_score_bar( (int) $score, remarka_checkup_flag( $level ), $colors ); ?>
+				<p class="mono muted" style="font-size:8.5px;margin-top:2px">
+					50 → <?php echo esc_html( $copy['words'][2] ); ?> · 75 → <?php echo esc_html( $copy['words'][1] ); ?> · 90 → <?php echo esc_html( $copy['words'][0] ); ?>
+				</p>
+				<?php if ( 'co2' === $key ) : ?>
+					<?php echo remarka_checkup_pdf_co2_scale( (int) $score, $locale, $colors ); ?>
+				<?php endif; ?>
+			<?php endif; ?>
+
+			<h3 style="margin-top:14px"><?php echo esc_html( $copy['dim_found_h3'] ); ?></h3>
 			<p><?php echo esc_html( null === $score ? $copy['na_finding'] : $dim_copy['findings'][ remarka_checkup_level( (int) $score ) ] ); ?></p>
+
+			<?php echo remarka_checkup_pdf_findings_block( is_array( $data['findings'][ $key ] ?? null ) ? $data['findings'][ $key ] : array(), (string) $data['url'], $copy ); ?>
 
 			<h3 style="margin-top:14px"><?php echo esc_html( $copy['dim_todo_h3'] ); ?></h3>
 			<ul>
@@ -776,6 +1063,7 @@ function remarka_checkup_render_html( array $data, string $locale ): string {
 
 		<h2 style="margin-top:26px"><?php echo esc_html( $copy['eeat_method_h2'] ); ?></h2>
 		<p class="muted" style="font-size:11px;line-height:1.7"><?php echo esc_html( $copy['eeat_method_text'] ); ?></p>
+		<p class="muted" style="font-size:11px;line-height:1.7;margin-top:8px"><?php echo esc_html( $copy['single_page_note'] ); ?></p>
 	</div>
 
 	</body>

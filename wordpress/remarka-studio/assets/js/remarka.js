@@ -217,6 +217,32 @@
 	}
 
 	/**
+	 * Estrae fino a 3 risorse concrete (url + valore leggibile) dai
+	 * `details.items` di un audit Lighthouse, per i "rilievi" del check-up
+	 * (M5, docs/piano-checkup-sito.md). Non tutti gli audit hanno un url per
+	 * item (es. audit di accessibilità basati su nodo DOM): in quel caso la
+	 * lista resta vuota, il chiamante mostra solo il titolo dell'audit.
+	 */
+	function auditItemValue(item) {
+		if (typeof item.wastedMs === 'number') return Math.round(item.wastedMs) + ' ms';
+		if (typeof item.wastedBytes === 'number') return Math.round(item.wastedBytes / 1024) + ' KB';
+		if (typeof item.totalBytes === 'number') return Math.round(item.totalBytes / 1024) + ' KB';
+		if (typeof item.transferSize === 'number') return Math.round(item.transferSize / 1024) + ' KB';
+		return '';
+	}
+	function auditResources(audit) {
+		var items = (audit && audit.details && Array.isArray(audit.details.items)) ? audit.details.items : [];
+		var out = [];
+		for (var i = 0; i < items.length && out.length < 3; i++) {
+			var it = items[i];
+			var url = it && typeof it.url === 'string' ? it.url : null;
+			if (!url) continue;
+			out.push({ u: url.slice(0, 300), v: auditItemValue(it).slice(0, 200) });
+		}
+		return out;
+	}
+
+	/**
 	 * Chiamata unica a PageSpeed Insights su quattro categorie (performance,
 	 * accessibility, seo, best-practices) + estrazione byte-weight e audit
 	 * falliti localizzati. `locale` (it|en|ru) fa restituire a Google i titoli
@@ -226,8 +252,9 @@
 	 * Ritorna:
 	 *   scores: {perf, a11y, seo, bp}   (0–100 o null)
 	 *   byteWeight: numericValue di total-byte-weight (byte) o null
+	 *   byteWeightItems: fino a 3 risorse più pesanti {u,v} (M5, per i rilievi CO₂)
 	 *   lcpSec / inpMs / cls        (metriche Core Web Vitals)
-	 *   audits: {a11y:[{id,title,score}], seo:[…]}  (falliti score<0.9, peggiori prima)
+	 *   audits: {perf/a11y/seo/bp:[{id,title,score,items:[{u,v}]}]}  (falliti score<0.9, peggiori prima)
 	 */
 	function psiFetch(url, locale) {
 		locale = locale || 'it';
@@ -271,7 +298,7 @@
 					if (mode === 'notApplicable' || mode === 'informative' || mode === 'manual') {
 						return;
 					}
-					out.push({ id: ref.id, title: a.title || ref.id, score: a.score });
+					out.push({ id: ref.id, title: a.title || ref.id, score: a.score, items: auditResources(a) });
 				});
 				out.sort(function (a, b) { return a.score - b.score; });
 				return out;
@@ -291,12 +318,15 @@
 					bp: catScore(cats['best-practices'])
 				},
 				byteWeight: byteAudit && typeof byteAudit.numericValue === 'number' ? byteAudit.numericValue : null,
+				byteWeightItems: auditResources(byteAudit),
 				lcpSec: lcpAudit && typeof lcpAudit.numericValue === 'number' ? lcpAudit.numericValue / 1000 : null,
 				cls: clsAudit && typeof clsAudit.numericValue === 'number' ? clsAudit.numericValue : null,
 				inpMs: inpField && typeof inpField.percentile === 'number' ? inpField.percentile : null,
 				audits: {
+					perf: topAudits(cats.performance),
 					a11y: topAudits(cats.accessibility),
-					seo: topAudits(cats.seo)
+					seo: topAudits(cats.seo),
+					bp: topAudits(cats['best-practices'])
 				}
 			};
 		});
@@ -626,7 +656,9 @@
 	 * (via remarka_tool_fetch) e ne estrae i 4 segnali GDPR. Riutilizzata da
 	 * initGdprTool (rendering pagina strumento) e dall'orchestratore check-up
 	 * (docs/copy-checkup.md §1.2 — stessi 4 segnali, pesi diversi).
-	 * Ritorna: { cmp: string|null, hasPolicy: bool, trackersFound: string[], externalCount: int }
+	 * Ritorna: { cmp: string|null, hasPolicy: bool, trackersFound: string[], externalCount: int, domains: string[] }
+	 * `domains` (M5): gli hostname di terze parti effettivamente trovati negli
+	 * src degli script — usati per i rilievi del check-up (link cliccabili).
 	 */
 	function runGdprCheck(url) {
 		return toolFetch(url, 'html').then(function (data) {
@@ -646,7 +678,7 @@
 			var re = /<script[^>]+src=["']https?:\/\/([^\/"']+)/gi, mm;
 			while ((mm = re.exec(html)) !== null) { domains[mm[1].toLowerCase()] = true; }
 
-			return { cmp: cmp, hasPolicy: hasPolicy, trackersFound: trackersFound, externalCount: Object.keys(domains).length };
+			return { cmp: cmp, hasPolicy: hasPolicy, trackersFound: trackersFound, externalCount: Object.keys(domains).length, domains: Object.keys(domains) };
 		});
 	}
 
@@ -961,6 +993,135 @@
 		return { composite: (valid && sumW > 0) ? Math.round(sumWS / sumW) : null, measured: n, valid: valid };
 	}
 
+	/**
+	 * Rilievi individuali per il report PDF (M5, docs/piano-checkup-sito.md).
+	 * Etichette brevi nelle 3 lingue per le 3 dimensioni "nostre" (gdpr/ai/co2):
+	 * i 4 audit Google arrivano già localizzati da PSI (parametro `locale` in
+	 * psiFetch). Nessun testo lungo qui: sono titoli di gruppo, il copy deck
+	 * del PDF (checkup-report-pdf.php) resta la fonte del tono/contenuto.
+	 */
+	var CHECKUP_FINDING_LABELS = {
+		it: {
+			gdprTrackers: 'Domini di terze parti che caricano script',
+			aiFiles: 'File assenti agli indirizzi attesi',
+			aiFileMissing: 'File assente',
+			aiJsonldFound: 'Dati strutturati JSON-LD rilevati',
+			aiJsonldMissing: 'Nessun dato strutturato JSON-LD nella pagina',
+			co2Weight: 'Peso totale della pagina',
+			co2Heavy: 'Risorse più pesanti'
+		},
+		en: {
+			gdprTrackers: 'Third-party domains loading scripts',
+			aiFiles: 'Files missing at the expected address',
+			aiFileMissing: 'File missing',
+			aiJsonldFound: 'Structured data (JSON-LD) found',
+			aiJsonldMissing: 'No structured data (JSON-LD) on the page',
+			co2Weight: 'Total page weight',
+			co2Heavy: 'Heaviest resources'
+		},
+		ru: {
+			gdprTrackers: 'Домены третьих лиц, загружающие скрипты',
+			aiFiles: 'Файлы отсутствуют по ожидаемому адресу',
+			aiFileMissing: 'Файл отсутствует',
+			aiJsonldFound: 'Обнаружены структурированные данные (JSON-LD)',
+			aiJsonldMissing: 'На странице нет структурированных данных (JSON-LD)',
+			co2Weight: 'Общий вес страницы',
+			co2Heavy: 'Самые тяжёлые ресурсы'
+		}
+	};
+
+	function checkupFindingLabels(locale) {
+		return CHECKUP_FINDING_LABELS[locale] || CHECKUP_FINDING_LABELS.it;
+	}
+
+	/** PSI (perf/seo/a11y/bp): fino a 4 audit peggiori, già ordinati, con le loro risorse. */
+	function auditsToFindings(list) {
+		return (list || []).slice(0, 4).map(function (a) {
+			return { t: String(a.title || '').slice(0, 200), items: (a.items || []).slice(0, 3) };
+		});
+	}
+
+	function checkupOrigin(url) {
+		try { return new URL(url).origin; } catch (e) { return url.replace(/\/$/, ''); }
+	}
+
+	function buildGdprFindings(sig, locale) {
+		var lbl = checkupFindingLabels(locale);
+		var groups = [];
+		var domains = (sig && sig.domains) || [];
+		if (domains.length) {
+			groups.push({
+				t: lbl.gdprTrackers,
+				items: domains.slice(0, 3).map(function (d) { return { u: 'https://' + String(d).slice(0, 290), v: '' }; })
+			});
+		}
+		return groups;
+	}
+
+	function buildAiFindings(sig, url, locale) {
+		var lbl = checkupFindingLabels(locale);
+		var origin = checkupOrigin(url);
+		var groups = [];
+		var missing = [];
+		if (sig) {
+			if (!sig.llms) missing.push({ u: origin + '/llms.txt', v: lbl.aiFileMissing });
+			if (sig.robots === 'blocked') missing.push({ u: origin + '/robots.txt', v: lbl.aiFileMissing });
+			if (!sig.sitemap) missing.push({ u: origin + '/sitemap.xml', v: lbl.aiFileMissing });
+		}
+		if (missing.length) {
+			groups.push({ t: lbl.aiFiles, items: missing.slice(0, 3) });
+		}
+		if (sig) {
+			groups.push({ t: sig.jsonld ? lbl.aiJsonldFound : lbl.aiJsonldMissing, items: [] });
+		}
+		return groups.slice(0, 4);
+	}
+
+	function formatBytesShort(bytes) {
+		if (bytes >= 1024 * 1024) return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+		return Math.round(bytes / 1024) + ' KB';
+	}
+
+	function buildCo2Findings(m, url, locale) {
+		var lbl = checkupFindingLabels(locale);
+		var groups = [];
+		if (!m || m.byteWeight === null || m.byteWeight === undefined) {
+			return groups;
+		}
+		groups.push({ t: lbl.co2Weight, items: [{ u: url, v: formatBytesShort(m.byteWeight) }] });
+		if (m.byteWeightItems && m.byteWeightItems.length) {
+			groups.push({ t: lbl.co2Heavy, items: m.byteWeightItems.slice(0, 3) });
+		}
+		return groups;
+	}
+
+	/** Ricapa i findings se, nonostante i limiti per-audit/per-item, il totale resta troppo grande. */
+	function capFindingsSize(findings, maxBytes) {
+		function size(f) { return JSON.stringify(f).length; }
+		if (size(findings) <= maxBytes) return findings;
+		Object.keys(findings).forEach(function (k) {
+			findings[k].forEach(function (group) { group.items = group.items.slice(0, 1); });
+		});
+		if (size(findings) <= maxBytes) return findings;
+		Object.keys(findings).forEach(function (k) { findings[k] = findings[k].slice(0, 2); });
+		if (size(findings) <= maxBytes) return findings;
+		return {};
+	}
+
+	/** Assembla i rilievi individuali delle 7 dimensioni (M5) — tollerante ai fallimenti parziali come lo scoring. */
+	function buildCheckupFindings(url, locale, m, gdprSig, aiSig) {
+		var findings = {
+			perf: m ? auditsToFindings(m.audits.perf) : [],
+			seo: m ? auditsToFindings(m.audits.seo) : [],
+			a11y: m ? auditsToFindings(m.audits.a11y) : [],
+			bp: m ? auditsToFindings(m.audits.bp) : [],
+			gdpr: buildGdprFindings(gdprSig, locale),
+			ai: buildAiFindings(aiSig, url, locale),
+			co2: buildCo2Findings(m, url, locale)
+		};
+		return capFindingsSize(findings, 40000);
+	}
+
 	/** Orchestratore: 1 psiFetch (4 categorie + byte-weight) + GDPR + AI, in parallelo, tollerante ai fallimenti parziali. */
 	function runCheckup(url, locale) {
 		var jobs = [
@@ -991,7 +1152,8 @@
 				scores.ai = aiScoreFromSignals(aiSig);
 			}
 			var comp = checkupComposite(scores);
-			return { url: url, scores: scores, extra: extra, composite: comp.composite, measured: comp.measured, valid: comp.valid };
+			var findings = buildCheckupFindings(url, locale, m, gdprSig, aiSig);
+			return { url: url, scores: scores, extra: extra, composite: comp.composite, measured: comp.measured, valid: comp.valid, findings: findings };
 		});
 	}
 
@@ -1142,6 +1304,7 @@
 				composite: result.composite,
 				measured: result.measured,
 				scores: result.scores,
+				findings: result.findings || {},
 				ts: new Date().toISOString()
 			};
 
