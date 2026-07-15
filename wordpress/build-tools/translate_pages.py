@@ -111,7 +111,7 @@ TEXT_NODE = re.compile(r'>([^<>]+)<')
 ATTRS = re.compile(
     r'\b(alt|aria-label|placeholder|data-verdict-[a-z0-9]+|data-label-[a-z-]+|'
     r'data-word-[a-z0-9]+|data-composite-[a-z0-9]+|data-calc-note|data-na-text|'
-    r'data-ai-suffix|data-notice|'
+    r'data-ai-suffix|data-notice|data-more-label|'
     r'data-err|data-audits-empty|data-caption[a-z-]*)="([^"]+)"'
 )
 SR_LOCALE = re.compile(r'data-sr-locale="it"')

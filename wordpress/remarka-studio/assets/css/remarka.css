@@ -1878,6 +1878,21 @@ body.page .entry-title {
   color: var(--sr-grigio);
 }
 
+.sr-dim-card__more {
+  margin: 14px 0 0;
+}
+
+.sr-dim-card__more a {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--sr-oltremare);
+  text-decoration: none;
+}
+
+.sr-dim-card__more a:hover {
+  text-decoration: underline;
+}
+
 /* ---------- «I 3 interventi che pesano di più» ---------- */
 
 .sr-priorities__row {

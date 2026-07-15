@@ -30,7 +30,8 @@
      data-calc-note="Рассчитано на {n} измерениях из 7."
      data-na-text="Не удалось измерить этот показатель: сайт отказал в автоматическом чтении, либо сервис Google был перегружен."
      data-err="Не удалось завершить проверку. Попробуйте ещё раз через несколько минут."
-     data-ai-suffix=" / 4 сигналов">
+     data-ai-suffix=" / 4 сигналов"
+     data-more-label="Подробный тест →">
   <form data-sr-tool-form>
     <div class="sr-tool-row">
       <input type="text" placeholder="www.vashsajt.ru" class="sr-text-input" required />
@@ -72,6 +73,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">Google PageSpeed</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">Подробный тест →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="seo" data-verdict-0="Технические основы страницы в порядке: ничто не мешает индексации." data-verdict-1="Структура крепкая; несколько правок, чтобы завершить основы." data-verdict-2="Часть элементов страницы отсутствует или дублируется." data-verdict-3="Что-то мешает индексации: исправить в первую очередь.">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">SEO</p><span class="sr-dim-card__weight">Вес 20</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -79,6 +81,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">Google PageSpeed</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">Подробный тест →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="a11y" data-verdict-0="Барьеров мало или нет: сайт пригоден по WCAG 2.1 AA." data-verdict-1="Хороший уровень; остались мелкие барьеры." data-verdict-2="Найдено несколько барьеров: контраст, подписи, навигация." data-verdict-3="Серьёзные барьеры: сайтом трудно пользоваться многим (требование EAA).">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">Доступность</p><span class="sr-dim-card__weight">Вес 15</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -86,6 +89,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">WCAG 2.1 / EAA</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">Подробный тест →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="gdpr" data-verdict-0="Баннер, политики и трекеры в начальном HTML в порядке." data-verdict-1="Механизм есть; пару пунктов стоит проверить вручную." data-verdict-2="Не хватает элементов или трекеры управляются плохо." data-verdict-3="Трекеры работают без баннера или нет политик: реальный юридический риск.">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">Приватность и cookie</p><span class="sr-dim-card__weight">Вес 15</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -93,6 +97,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">Ориентировочная проверка · не юридическая</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">Подробный тест →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="bp" data-verdict-0="Технически чисто: HTTPS, консоль без ошибок, актуальные библиотеки." data-verdict-1="Хороший уровень; несколько предупреждений закрыть." data-verdict-2="Несколько технических предупреждений: безопасность, ошибки консоли, картинки." data-verdict-3="Много технических проблем, ослабляющих надёжность и безопасность.">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">Технические стандарты</p><span class="sr-dim-card__weight">Вес 10</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -107,6 +112,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">4 технических сигнала</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">Подробный тест →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="co2" data-verdict-0="Лёгкая страница: выбросы ниже среднего по вебу." data-verdict-1="Около среднего; есть запас, чтобы облегчить." data-verdict-2="Выше среднего: страница тяжёлая при загрузке." data-verdict-3="Заметно выше среднего: тяжёлая страница, цена для экологии и скорости.">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">Углеродный след</p><span class="sr-dim-card__weight">Вес 5</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -114,6 +120,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">Модель SWD</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">Подробный тест →</a></p>
 </div></div>
     </div>
 

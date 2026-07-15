@@ -1044,6 +1044,9 @@ CHROME_CHECKUP = {
     'Non siamo riusciti a completare il check-up. Riprovate tra qualche minuto.': {
         'en': 'We couldn’t complete the check-up. Please try again in a few minutes.'},
 
+    # ---- link "Approfondisci" per card (data-more-label + testo statico) ----
+    'Approfondisci →': {'en': 'See the full test →'},
+
     # ---- priorità ----
     'Le priorità': {'en': 'Priorities'},
     'I 3 interventi che pesano di più': {'en': 'The 3 fixes that matter most'},

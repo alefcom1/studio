@@ -546,6 +546,35 @@
 		};
 	}
 
+	/** Precompila e avvia da `?url=…&autostart=1`: usato dal redirect del
+	 * blocco home check-up (initCheckupHomeForm) e dai link "Approfondisci →"
+	 * delle card check-up (renderCheckupResults). Generico: agganciato da
+	 * onUrlSubmit() a ogni widget [data-sr-tool] con un form URL, non solo
+	 * al check-up. */
+	function toolMaybeAutostart(shell) {
+		var params;
+		try {
+			params = new URLSearchParams(window.location.search);
+		} catch (e) {
+			return;
+		}
+		var urlParam = params.get('url');
+		if (!urlParam) return;
+		var input = shell.form.querySelector('input[type="text"], input[type="url"]');
+		if (input) input.value = urlParam;
+		if (params.get('autostart') === '1') {
+			window.setTimeout(function () {
+				if (shell.form.requestSubmit) {
+					shell.form.requestSubmit();
+					return;
+				}
+				var ev = null;
+				try { ev = new Event('submit', { cancelable: true }); } catch (e2) { /* ambienti molto vecchi */ }
+				if (ev) shell.form.dispatchEvent(ev);
+			}, 0);
+		}
+	}
+
 	function onUrlSubmit(shell, handler) {
 		var running = false;
 		shell.form.addEventListener('submit', function (e) {
@@ -566,6 +595,7 @@
 					running = false;
 				});
 		});
+		toolMaybeAutostart(shell);
 	}
 
 	function showToolError(shell) {
@@ -1269,6 +1299,29 @@
 	var CHECKUP_NA_TEXT = 'Non siamo riusciti a misurare questo aspetto: il sito ha rifiutato la lettura o il servizio Google era saturo.';
 	var CHECKUP_GAUGE_COLORS = { good: '#1a8f4a', warn: '#c98a00', bad: '#cc3333', na: '#DDDBD4' };
 
+	/** Percorsi per lingua degli strumenti dedicati (inc/lang-map.php),
+	 *  per il link "Approfondisci →" di ogni card check-up. 'bp' non ha uno
+	 *  strumento dedicato (generate_pages.py::_checkup_dim_card la esclude). */
+	var CHECKUP_DIM_TOOL_PATH = {
+		perf: { it: '/strumenti/test-velocita/', en: '/en/tools/speed-test/', ru: '/ru/instrumenty/test-skorosti/' },
+		seo: { it: '/strumenti/analisi-seo/', en: '/en/tools/seo-audit/', ru: '/ru/instrumenty/seo-audit/' },
+		a11y: { it: '/strumenti/verifica-accessibilita/', en: '/en/tools/accessibility-check/', ru: '/ru/instrumenty/proverka-dostupnosti/' },
+		gdpr: { it: '/strumenti/check-gdpr/', en: '/en/tools/gdpr-check/', ru: '/ru/instrumenty/proverka-gdpr/' },
+		ai: { it: '/strumenti/sito-pronto-ai/', en: '/en/tools/ai-readiness/', ru: '/ru/instrumenty/gotovnost-k-ii/' },
+		co2: { it: '/strumenti/impatto-co2/', en: '/en/tools/website-carbon/', ru: '/ru/instrumenty/uglerodnyj-sled/' }
+	};
+
+	/** Href del link "Approfondisci →" di una card: percorso dello strumento
+	 *  dedicato (per lingua) + `?url=…&autostart=1`, sullo stesso schema del
+	 *  redirect del blocco home (CHECKUP_PAGE_PATH più sotto). null se la
+	 *  dimensione non ha uno strumento dedicato (bp). */
+	function checkupDimMoreHref(dim, locale, url) {
+		var byLocale = CHECKUP_DIM_TOOL_PATH[dim];
+		if (!byLocale) return null;
+		var path = byLocale[locale] || byLocale.it;
+		return path + '?url=' + encodeURIComponent(url) + '&autostart=1';
+	}
+
 	function checkupLevel(score) {
 		if (score >= 90) return 0;
 		if (score >= 75) return 1;
@@ -1525,6 +1578,7 @@
 
 	function renderCheckupResults(root, result) {
 		var dims = [];
+		var locale = toolLocale(root);
 		root.querySelectorAll('[data-sr-dim]').forEach(function (card) {
 			var key = card.getAttribute('data-sr-dim');
 			var score = result.scores[key];
@@ -1535,6 +1589,20 @@
 			var wordEl = card.querySelector('[data-sr-dim-word]');
 			var findingEl = card.querySelector('[data-sr-tool-verdict]');
 			var extraEl = card.querySelector('[data-sr-dim-extra]');
+
+			/* Link "Approfondisci →" verso lo strumento dedicato: mostrato anche
+			   quando la misura è N/D, perché la pagina dello strumento rifà la
+			   misurazione da sola (può riuscire dove la chiamata combinata del
+			   check-up ha fallito). Assente su 'bp' (nessuno strumento dedicato). */
+			var moreEl = card.querySelector('[data-sr-dim-more]');
+			if (moreEl) {
+				var moreHref = checkupDimMoreHref(key, locale, result.url);
+				if (moreHref) {
+					moreEl.href = moreHref;
+					moreEl.textContent = txt(root, 'data-more-label', 'Approfondisci →');
+					moreEl.hidden = false;
+				}
+			}
 
 			if (score === null || score === undefined) {
 				if (scoreEl) scoreEl.textContent = '—';
@@ -1687,31 +1755,6 @@
 		});
 	}
 
-	/** Precompila e avvia da `?url=…&autostart=1` (submit del blocco home). */
-	function checkupMaybeAutostart(shell) {
-		var params;
-		try {
-			params = new URLSearchParams(window.location.search);
-		} catch (e) {
-			return;
-		}
-		var urlParam = params.get('url');
-		if (!urlParam) return;
-		var input = shell.form.querySelector('input[type="text"]');
-		if (input) input.value = urlParam;
-		if (params.get('autostart') === '1') {
-			window.setTimeout(function () {
-				if (shell.form.requestSubmit) {
-					shell.form.requestSubmit();
-					return;
-				}
-				var ev = null;
-				try { ev = new Event('submit', { cancelable: true }); } catch (e2) { /* ambienti molto vecchi */ }
-				if (ev) shell.form.dispatchEvent(ev);
-			}, 0);
-		}
-	}
-
 	function initCheckupTool(root) {
 		var shell = toolShell(root);
 		var lastResult = null;
@@ -1736,8 +1779,6 @@
 				run(url).finally(function () { if (shell.pending) shell.pending.hidden = true; });
 			});
 		}
-
-		checkupMaybeAutostart(shell);
 	}
 
 	/** POST server-side fetch (endpoint remarka_tool_fetch) → {ok,status,body}. */

@@ -747,13 +747,20 @@ _CHECKUP_DIMS = [
 def _checkup_dim_card(key, label, weight, engine, verdicts):
     extra = '<span class="sr-dim-card__extra" data-sr-dim-extra></span>' if key == 'ai' else ''
     verdict_attrs = ' '.join(f'data-verdict-{i}="{v}"' for i, v in enumerate(verdicts))
+    # «Approfondisci →» verso lo strumento dedicato: tutte le dimensioni tranne
+    # 'bp' (best practice non ha una pagina strumento propria). L'href lo
+    # calcola remarka.js (mappa dim→percorso per lingua, lang-map.php) dopo un
+    # rendering con punteggio; l'etichetta viene da data-more-label sulla
+    # wrapper del widget (fallback IT in JS).
+    more = ('\n  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">Approfondisci →</a></p>'
+            if key != 'bp' else '')
     return f'''<div class="sr-card sr-dim-card" data-sr-dim="{key}" {verdict_attrs}>
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">{label}</p><span class="sr-dim-card__weight">{weight}</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span>{extra}</div>
   <div class="sr-barra" style="height:8px;margin-top:12px"><div class="sr-barra__fill" data-sr-tool-fill style="width:0%"></div></div>
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
-  <p class="sr-dim-card__engine sr-mono">{engine}</p>
+  <p class="sr-dim-card__engine sr-mono">{engine}</p>{more}
 </div>'''
 
 
@@ -768,7 +775,8 @@ def _widget_checkup():
      data-calc-note="Calcolato su {{n}} misurazioni su 7."
      data-na-text="Non siamo riusciti a misurare questo aspetto: il sito ha rifiutato la lettura o il servizio Google era saturo."
      data-err="Non siamo riusciti a completare il check-up. Riprovate tra qualche minuto."
-     data-ai-suffix=" / 4 segnali">
+     data-ai-suffix=" / 4 segnali"
+     data-more-label="Approfondisci →">
   <form data-sr-tool-form>
     <div class="sr-tool-row">
       <input type="text" placeholder="www.ilvostrosito.it" class="sr-text-input" required />

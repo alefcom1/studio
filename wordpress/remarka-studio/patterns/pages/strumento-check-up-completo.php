@@ -30,7 +30,8 @@
      data-calc-note="Calcolato su {n} misurazioni su 7."
      data-na-text="Non siamo riusciti a misurare questo aspetto: il sito ha rifiutato la lettura o il servizio Google era saturo."
      data-err="Non siamo riusciti a completare il check-up. Riprovate tra qualche minuto."
-     data-ai-suffix=" / 4 segnali">
+     data-ai-suffix=" / 4 segnali"
+     data-more-label="Approfondisci →">
   <form data-sr-tool-form>
     <div class="sr-tool-row">
       <input type="text" placeholder="www.ilvostrosito.it" class="sr-text-input" required />
@@ -72,6 +73,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">Google PageSpeed</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">Approfondisci →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="seo" data-verdict-0="Basi tecniche on-page in ordine: nessun ostacolo all’indicizzazione." data-verdict-1="Struttura solida; poche correzioni per completare le basi." data-verdict-2="Alcuni elementi on-page mancano o sono duplicati." data-verdict-3="Qualcosa ostacola l’indicizzazione: da sistemare prima di tutto.">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">SEO</p><span class="sr-dim-card__weight">Peso 20</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -79,6 +81,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">Google PageSpeed</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">Approfondisci →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="a11y" data-verdict-0="Poche o nessuna barriera: sito fruibile secondo WCAG 2.1 AA." data-verdict-1="Buon livello; restano barriere minori da rimuovere." data-verdict-2="Diverse barriere rilevate: contrasti, etichette, navigazione." data-verdict-3="Barriere gravi: il sito è difficile da usare per molte persone (obbligo EAA).">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">Accessibilità</p><span class="sr-dim-card__weight">Peso 15</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -86,6 +89,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">WCAG 2.1 / EAA</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">Approfondisci →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="gdpr" data-verdict-0="Banner, informative e tracker in ordine nell’HTML iniziale." data-verdict-1="Impianto presente; un paio di punti da verificare a mano." data-verdict-2="Mancano elementi o alcuni tracker vanno governati meglio." data-verdict-3="Tracker attivi senza banner o policy assenti: rischio concreto col Garante.">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">Privacy e cookie</p><span class="sr-dim-card__weight">Peso 15</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -93,6 +97,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">Verifica indicativa · non legale</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">Approfondisci →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="bp" data-verdict-0="Sito tecnicamente pulito: HTTPS, console senza errori, librerie aggiornate." data-verdict-1="Buon livello tecnico; qualche avviso da chiudere." data-verdict-2="Diversi avvisi tecnici: sicurezza, errori console, immagini." data-verdict-3="Problemi tecnici diffusi che indeboliscono affidabilità e sicurezza.">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">Best practice</p><span class="sr-dim-card__weight">Peso 10</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -107,6 +112,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">4 segnali tecnici</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">Approfondisci →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="co2" data-verdict-0="Pagina leggera: emissioni sotto la media del web." data-verdict-1="Vicino alla media; c’è margine per alleggerire." data-verdict-2="Sopra la media: la pagina è pesante da caricare." data-verdict-3="Molto sopra la media: pagina pesante, costo ambientale e di velocità.">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">Impatto CO₂</p><span class="sr-dim-card__weight">Peso 5</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -114,6 +120,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">Modello SWD</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">Approfondisci →</a></p>
 </div></div>
     </div>
 

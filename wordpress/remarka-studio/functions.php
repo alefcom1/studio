@@ -1808,3 +1808,100 @@ function remarka_tool_report_handler(): void {
 }
 add_action( 'wp_ajax_remarka_tool_report', 'remarka_tool_report_handler' );
 add_action( 'wp_ajax_nopriv_remarka_tool_report', 'remarka_tool_report_handler' );
+
+/* ---------- llms.txt: indice testuale per i crawler AI ----------
+ * Proposta emergente llmstxt.org: un indice Markdown del sito, che i
+ * crawler dei modelli AI (ChatGPT, Perplexity, Claude…) leggono più
+ * volentieri dell'HTML o di una sitemap XML. La nostra card "Pronto per
+ * l'AI" del check-up (generate_pages.py::_CHECKUP_DIMS, chiave 'ai') lo
+ * misura fra i quattro segnali tecnici — un check-up su remarka.biz stesso
+ * lo segnalava mancante (15-07-2026). Contenuto assemblato dai dati reali
+ * del tema (remarka_company_lang_data(), remarka_str(), percorsi di
+ * inc/lang-map.php): nessun testo inventato. Serve un
+ * `wp rewrite flush` dopo il deploy perché la regola è nuova. */
+function remarka_llms_txt_rewrite(): void {
+	add_rewrite_rule( '^llms\.txt$', 'index.php?remarka_llms_txt=1', 'top' );
+}
+add_action( 'init', 'remarka_llms_txt_rewrite' );
+
+function remarka_llms_txt_query_vars( array $vars ): array {
+	$vars[] = 'remarka_llms_txt';
+	return $vars;
+}
+add_filter( 'query_vars', 'remarka_llms_txt_query_vars' );
+
+/** Corpo del file, separato dall'handler HTTP per poterlo testare senza stubbare l'output. */
+function remarka_llms_txt_content(): string {
+	$company = remarka_company_lang_data();
+	$lines   = array(
+		'# Studio Remarka',
+		'',
+		'> ' . remarka_str( 'footer_tagline' ),
+		'',
+		'## Servizi',
+		'- [Servizi](' . home_url( '/servizi/' ) . ')',
+		'- [Siti aziendali](' . home_url( '/servizi/siti-aziendali/' ) . ')',
+		'- [E-commerce](' . home_url( '/servizi/e-commerce/' ) . ')',
+		'',
+		'## Prezzi',
+		'- [Prezzi e tempi](' . home_url( '/prezzi/' ) . ')',
+		'',
+		'## Strumenti gratuiti',
+		'- [Check-up completo del sito](' . home_url( '/strumenti/check-up-completo/' ) . ')',
+		'- [Tutti gli strumenti](' . home_url( '/strumenti/' ) . ')',
+		'',
+		'## Casi studio',
+		'- [Casi studio](' . home_url( '/casi-studio/' ) . ')',
+		'',
+		'## Blog',
+		'- [Blog](' . home_url( '/blog/' ) . ')',
+		'',
+		'## Contatti',
+		'- [' . $company['name'] . '](' . home_url( '/#contatti' ) . ') — ' . $company['email'],
+		'',
+		'## Languages',
+		'- [English](' . home_url( '/en/' ) . ')',
+		'- [Русский](' . home_url( '/ru/' ) . ')',
+	);
+	return implode( "\n", $lines ) . "\n";
+}
+
+function remarka_llms_txt_output(): void {
+	if ( ! get_query_var( 'remarka_llms_txt' ) ) {
+		return;
+	}
+	header( 'Content-Type: text/plain; charset=utf-8' );
+	echo remarka_llms_txt_content(); // phpcs:ignore WordPress.Security.EscapeOutput -- Markdown statico dal tema, nessun input utente.
+	exit;
+}
+add_action( 'template_redirect', 'remarka_llms_txt_output' );
+
+/* ---------- /sitemap.xml → wp-sitemap.xml (o sitemap_index.xml con Rank Math) ----------
+ * WordPress core pubblica la sitemap XML su wp-sitemap.xml (dalla 5.5); le
+ * verifiche automatiche — la nostra card "Pronto per l'AI" inclusa, e i
+ * crawler AI in generale — cercano per convenzione /sitemap.xml, che sul
+ * core resta un 404. Se Rank Math è attivo con il modulo Sitemap, la sua
+ * sitemap vive su sitemap_index.xml e va rispettata: qui NON la
+ * sovrascriviamo, redirigiamo lì invece che su wp-sitemap.xml. Nessuna
+ * regola di rewrite: come remarka_redirect_legacy_flat_urls(), si aggancia
+ * al percorso corrente su template_redirect, valido anche per URL che non
+ * corrispondono a nessun contenuto WordPress. */
+function remarka_rank_math_sitemap_active(): bool {
+	if ( function_exists( 'rank_math_is_module_active' ) ) {
+		return (bool) rank_math_is_module_active( 'sitemap' );
+	}
+	// Rank Math presente ma il modulo non è verificabile (helper non
+	// caricato ancora): il Sitemap è abilitato di default, meglio assumerlo
+	// attivo che rischiare due sitemap in conflitto.
+	return defined( 'RANK_MATH_VERSION' );
+}
+
+function remarka_sitemap_redirect(): void {
+	if ( 'sitemap.xml' !== strtolower( remarka_current_path() ) ) {
+		return;
+	}
+	$target = remarka_rank_math_sitemap_active() ? 'sitemap_index.xml' : 'wp-sitemap.xml';
+	wp_safe_redirect( home_url( '/' . $target ), 301 );
+	exit;
+}
+add_action( 'template_redirect', 'remarka_sitemap_redirect', 1 );

@@ -30,7 +30,8 @@
      data-calc-note="Calculated on {n} of 7 measurements."
      data-na-text="We couldn’t measure this aspect: the website refused automated reading, or Google’s service was overloaded."
      data-err="We couldn’t complete the check-up. Please try again in a few minutes."
-     data-ai-suffix=" / 4 signals">
+     data-ai-suffix=" / 4 signals"
+     data-more-label="See the full test →">
   <form data-sr-tool-form>
     <div class="sr-tool-row">
       <input type="text" placeholder="www.ilvostrosito.it" class="sr-text-input" required />
@@ -72,6 +73,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">Google PageSpeed</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">See the full test →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="seo" data-verdict-0="On-page foundations in order: no barrier to indexing." data-verdict-1="Solid structure; a few fixes to finish the basics." data-verdict-2="Some on-page elements are missing or duplicated." data-verdict-3="Something blocks indexing: fix this first.">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">SEO</p><span class="sr-dim-card__weight">Weight 20</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -79,6 +81,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">Google PageSpeed</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">See the full test →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="a11y" data-verdict-0="Few or no barriers: usable under WCAG 2.1 AA." data-verdict-1="Good level; minor barriers left to remove." data-verdict-2="Several barriers found: contrast, labels, navigation." data-verdict-3="Serious barriers: hard to use for many people (EAA obligation).">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">Accessibility</p><span class="sr-dim-card__weight">Weight 15</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -86,6 +89,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">WCAG 2.1 / EAA</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">See the full test →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="gdpr" data-verdict-0="Banner, policies and trackers in order in the initial HTML." data-verdict-1="Framework in place; a couple of points to check by hand." data-verdict-2="Elements missing or some trackers poorly governed." data-verdict-3="Trackers active without a banner, or policies missing: real regulatory risk.">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">Privacy & cookies</p><span class="sr-dim-card__weight">Weight 15</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -93,6 +97,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">Indicative check · not legal advice</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">See the full test →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="bp" data-verdict-0="Technically clean: HTTPS, no console errors, up-to-date libraries." data-verdict-1="Good technical level; a few warnings to close." data-verdict-2="Several technical warnings: security, console errors, images." data-verdict-3="Widespread technical issues weakening reliability and security.">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">Best practices</p><span class="sr-dim-card__weight">Weight 10</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -107,6 +112,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">4 technical signals</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">See the full test →</a></p>
 </div><div class="sr-card sr-dim-card" data-sr-dim="co2" data-verdict-0="Light page: emissions below the web average." data-verdict-1="Near the average; room to slim down." data-verdict-2="Above average: the page is heavy to load." data-verdict-3="Well above average: heavy page, an environmental and speed cost.">
   <div class="sr-dim-card__head"><p class="sr-eyebrow" style="margin:0">CO₂ impact</p><span class="sr-dim-card__weight">Weight 5</span></div>
   <div class="sr-dim-card__score"><span class="sr-dim-card__score-value" data-sr-tool-score>—</span><span class="sr-dim-card__score-suffix">/100</span></div>
@@ -114,6 +120,7 @@
   <p class="sr-dim-card__word" data-sr-dim-word></p>
   <p class="sr-dim-card__findings" data-sr-tool-verdict></p>
   <p class="sr-dim-card__engine sr-mono">SWD model</p>
+  <p class="sr-dim-card__more"><a data-sr-dim-more hidden target="_self">See the full test →</a></p>
 </div></div>
     </div>
 
