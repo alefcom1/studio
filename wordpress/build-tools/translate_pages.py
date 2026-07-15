@@ -103,15 +103,15 @@ def build_href_map(lang_code):
 
 TEXT_NODE = re.compile(r'>([^<>]+)<')
 # alt/aria-label/placeholder: attributi visibili classici. data-verdict-*/
-# data-label-*/data-err/data-audits-empty/data-caption*: stringhe dei widget
-# strumenti (Remarka Lab, vedi contratto in assets/js/remarka.js prima di
-# toolLocale()) — ogni pagina per-lingua porta le proprie in data-*, il JS le
-# legge a runtime. data-sr-locale NON è qui: è un codice lingua tecnico,
-# sostituito a parte (deterministico, non passa dal dizionario).
+# data-label-*/data-err/data-audits-empty/data-caption*/data-notice: stringhe
+# dei widget strumenti (Remarka Lab, vedi contratto in assets/js/remarka.js
+# prima di toolLocale()) — ogni pagina per-lingua porta le proprie in data-*,
+# il JS le legge a runtime. data-sr-locale NON è qui: è un codice lingua
+# tecnico, sostituito a parte (deterministico, non passa dal dizionario).
 ATTRS = re.compile(
     r'\b(alt|aria-label|placeholder|data-verdict-[a-z0-9]+|data-label-[a-z-]+|'
     r'data-word-[a-z0-9]+|data-composite-[a-z0-9]+|data-calc-note|data-na-text|'
-    r'data-ai-suffix|'
+    r'data-ai-suffix|data-notice|'
     r'data-err|data-audits-empty|data-caption[a-z-]*)="([^"]+)"'
 )
 SR_LOCALE = re.compile(r'data-sr-locale="it"')

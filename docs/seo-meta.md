@@ -182,6 +182,38 @@ EN — 146, RU — 150 — все ≤160.
 
 ---
 
+## Segnali E-E-A-T — IT/EN/RU (8° strumento Lab)
+
+> Источник — `docs/copy-eeat.md` §2. Focus keyword IT `segnali E-E-A-T`, EN `E-E-A-T checker`,
+> RU `проверка E-E-A-T`. Слаги: IT `/strumenti/segnali-eeat/`, EN `/en/tools/eeat-signals/`,
+> RU `/ru/instrumenty/signaly-eeat/`.
+
+| URL | Focus keyword | Заголовок H1 присутствует? |
+|---|---|---|
+| `/strumenti/segnali-eeat/` | segnali E-E-A-T | ✅ (H1, hero-sub, «Il metodo», «Leggere il risultato», FAQ) |
+| `/en/tools/eeat-signals/` | E-E-A-T checker | ✅ (H1, hero-sub, «The method», «How to read it», FAQ) |
+| `/ru/instrumenty/signaly-eeat/` | проверка E-E-A-T | ✅ (H1, hero-sub, «Метод», «Как читать результат», FAQ) |
+
+### IT — `/strumenti/segnali-eeat/`
+
+- **Title:** `Segnali E-E-A-T: test di fiducia del sito | Studio Remarka`
+- **Description:** `Misuriamo i segnali E-E-A-T leggibili nel codice della home: HTTPS, contatti, P.IVA, chi siamo, dati strutturati. Punteggio 0–100, gratis, senza registrazione.`
+
+### EN — `/en/tools/eeat-signals/`
+
+- **Title:** `E-E-A-T Checker: your site's trust signals | Studio Remarka`
+- **Description:** `We check the E-E-A-T signals readable in your homepage code: HTTPS, contacts, VAT, an about page, structured data. A 0–100 score, free, no sign-up.`
+
+### RU — `/ru/instrumenty/signaly-eeat/`
+
+- **Title:** `Проверка E-E-A-T: сигналы доверия сайта | Studio Remarka`
+- **Description:** `Проверяем сигналы E-E-A-T, читаемые в коде главной: HTTPS, контакты, реквизиты, страница «о нас», микроразметка. Оценка 0–100, бесплатно, без регистрации.`
+
+**Проверка длин.** Title: IT — 58, EN — 59, RU — 56 — все ≤60. Description: IT — ≈159,
+EN — ≈152, RU — ≈153 — все ≤160.
+
+---
+
 ## Adeguamento EAA — IT/EN/RU (E1)
 
 > Источник — `docs/copy-eaa.md` §2 (copy deck E1, услуга «специальная»: собственный dict

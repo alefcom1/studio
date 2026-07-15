@@ -36,6 +36,7 @@ return array(
 	array( 'it' => 'strumenti/sito-pronto-ai', 'en' => 'en/tools/ai-readiness', 'ru' => 'ru/instrumenty/gotovnost-k-ii' ),
 	array( 'it' => 'strumenti/impatto-co2', 'en' => 'en/tools/website-carbon', 'ru' => 'ru/instrumenty/uglerodnyj-sled' ),
 	array( 'it' => 'strumenti/check-up-completo', 'en' => 'en/tools/full-site-checkup', 'ru' => 'ru/instrumenty/polnaya-proverka-sajta' ),
+	array( 'it' => 'strumenti/segnali-eeat', 'en' => 'en/tools/eeat-signals', 'ru' => 'ru/instrumenty/signaly-eeat' ),
 	array( 'it' => 'blog/sito-quattro-lingue-costi-tempi', 'en' => 'en/blog/website-four-languages-costs', 'ru' => 'ru/blog/sajt-na-4-jazykah' ),
 	array( 'it' => 'blog/cookie-banner-checklist-garante-2026', 'en' => 'en/blog/cookie-banner-compliance-italy-2026', 'ru' => 'ru/blog/cookie-banner-trebovanija-2026' ),
 	array( 'it' => 'blog/migrare-wordpress-senza-perdere-seo', 'en' => 'en/blog/migrate-wordpress-without-losing-seo', 'ru' => 'ru/blog/migracija-wordpress-bez-poteri-seo' ),

@@ -385,7 +385,8 @@
 	}
 
 	/* ============================================================================
-	 * Remarka Lab — motore dei 7 strumenti gratuiti.
+	 * Remarka Lab — motore degli 8 strumenti gratuiti (+ il check-up completo,
+	 * l'orchestratore che li riassume).
 	 *
 	 * DISPATCHER: initToolWidgets() cerca ogni contenitore [data-sr-tool="…"] e
 	 * inizializza il modulo giusto (speed|seo|a11y|co2|gdpr|ai|roi|checkup). Retro-
@@ -400,7 +401,7 @@
 	 * fallback in italiano qui sotto. Il tipo si sceglie con data-sr-tool.
 	 *
 	 * COMUNE a tutti:
-	 *   data-sr-tool="speed|seo|a11y|co2|gdpr|ai|roi|checkup"   (obbligatorio sul wrapper)
+	 *   data-sr-tool="speed|seo|a11y|co2|gdpr|ai|roi|checkup|eeat"   (obbligatorio sul wrapper)
 	 *   data-sr-locale="it|en|ru"        locale PSI (default: window.remarkaPSI.locale|it)
 	 *   [data-sr-tool-form]              il <form> (input url + submit)
 	 *   input[type=text]                 campo URL
@@ -453,6 +454,26 @@
 	 *   [data-sr-roi-annual]    ricavo/anno stimato
 	 *   [data-sr-roi-monthly]   ricavo/mese stimato
 	 *   data-roi-currency       simbolo (default "€")
+	 *
+	 * EEAT (data-sr-tool="eeat"): punteggio 0–100 su 8 segnali di fiducia
+	 * on-page, raggruppati in 4 assi E-E-A-T (docs/copy-eeat.md).
+	 *   [data-sr-tool-url] [data-sr-tool-score] [data-sr-tool-fill] [data-sr-tool-verdict]
+	 *   data-verdict-good (≥90) / data-verdict-buono (75–89) / data-verdict-mid (50–74) /
+	 *     data-verdict-poor (<50)
+	 *   4 assi, valore 0–100 + [data-sr-flag]=good|warn|bad (soglie 75/50):
+	 *     [data-sr-tool-axis-esperienza] [data-sr-tool-axis-competenza]
+	 *     [data-sr-tool-axis-autorevolezza] [data-sr-tool-axis-affidabilita]
+	 *   8 segnali, ognuno [data-sr-flag]=good|warn|bad:
+	 *     [data-sr-tool-https] [data-sr-tool-contatti] [data-sr-tool-legale]
+	 *     [data-sr-tool-policy] [data-sr-tool-chisiamo] [data-sr-tool-portfolio]
+	 *     [data-sr-tool-schema] [data-sr-tool-profili]
+	 *   data-label-{signal}-{good|warn|bad}   testo per ogni segnale/esito
+	 *     (segnali binari: solo -good/-bad). Chiavi: https, contatti, legale,
+	 *     policy, chisiamo, portfolio, schema, profili.
+	 *   [data-sr-tool-notice]   avviso «analisi parziale» SPA (hidden di default)
+	 *   data-notice             testo dell'avviso
+	 *   data-label-nd           suffisso annotato sui segnali "bad" quando l'avviso è attivo
+	 *   [data-sr-tool-disclaimer] (statico nella pagina, non toccato dal JS)
 	 * ========================================================================== */
 
 	function toolLocale(el) {
@@ -761,6 +782,40 @@
 	}
 
 	/**
+	 * Parser JSON-LD condiviso (puro, nessun accesso al DOM): estrae ogni
+	 * blocco <script type="application/ld+json">, i valori @type (anche dentro
+	 * @graph) e sameAs. Un blocco malformato conta comunque come "presente"
+	 * (coerente con l'euristica storica di initAiTool) e alza `malformed`.
+	 * Riutilizzato da runAiCheck e da runEeatCheck (segnale "Dati strutturati").
+	 * Ritorna: { present: bool, malformed: bool, types: string[], sameAs: string[] }
+	 */
+	function extractJsonLd(html) {
+		var out = { present: false, malformed: false, types: [], sameAs: [] };
+		var collect = function (o) {
+			if (!o) return;
+			if (o['@type']) out.types.push(String(o['@type']));
+			if (o.sameAs) {
+				(Array.isArray(o.sameAs) ? o.sameAs : [o.sameAs]).forEach(function (s) {
+					if (s) out.sameAs.push(String(s));
+				});
+			}
+			if (Array.isArray(o['@graph'])) { o['@graph'].forEach(collect); }
+		};
+		var re = /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi, mm;
+		while ((mm = re.exec(html)) !== null) {
+			out.present = true;
+			try {
+				var json = JSON.parse(mm[1].trim());
+				(Array.isArray(json) ? json : [json]).forEach(collect);
+			} catch (e) {
+				out.malformed = true;
+				out.types.push('?');
+			}
+		}
+		return out;
+	}
+
+	/**
 	 * Funzione pura: le 4 verifiche di prontezza AI (llms.txt, robots, JSON-LD,
 	 * sitemap), senza toccare il DOM. Riutilizzata da initAiTool e
 	 * dall'orchestratore check-up (docs/copy-checkup.md §1.2 — stessi 4
@@ -778,17 +833,9 @@
 			}, function () { checks.robotsRaw = ''; }),
 			toolFetch(url, 'html').then(function (d) {
 				var body = d.body || '';
-				var types = [];
-				var re = /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi, mm;
-				while ((mm = re.exec(body)) !== null) {
-					try {
-						var json = JSON.parse(mm[1].trim());
-						var arr = Array.isArray(json) ? json : [json];
-						arr.forEach(function (o) { if (o && o['@type']) types.push(String(o['@type'])); });
-					} catch (e) { /* JSON-LD malformato: conta comunque come presente */ types.push('?'); }
-				}
-				checks.jsonld = /application\/ld\+json/i.test(body);
-				checks.jsonldTypes = types;
+				var jsonld = extractJsonLd(body);
+				checks.jsonld = jsonld.present;
+				checks.jsonldTypes = jsonld.types;
 			}, function () {}),
 			toolFetch(url, 'path:sitemap.xml').then(function (d) {
 				checks.sitemap = d.status === 200 && /<(urlset|sitemapindex)/i.test(d.body || '');
@@ -835,6 +882,258 @@
 
 				var n = (checks.llms ? 1 : 0) + (robotsGood ? 1 : 0) + (checks.jsonld ? 1 : 0) + (checks.sitemap ? 1 : 0);
 				setText(root, '[data-sr-tool-score]', n + '/4');
+			});
+		});
+	}
+
+	/* ============================================================================
+	 * Modulo: segnali E-E-A-T (docs/copy-eeat.md) — 8° strumento Lab.
+	 *
+	 * Un solo fetch `toolFetch(url, 'html')`: leggiamo la home come farebbe un
+	 * visitatore, senza passare da Google. Otto segnali on-page (regex/DOM sul
+	 * primo HTML, nessun JavaScript eseguito) raggruppati in 4 assi E-E-A-T.
+	 * L'HTTPS si legge dallo schema dell'URL normalizzato dall'utente (il
+	 * fetch server-side non espone l'URL finale dopo eventuali redirect).
+	 * ========================================================================== */
+
+	// peso di ogni segnale (somma 100) — docs/copy-eeat.md §1.1/§1.2.
+	var EEAT_WEIGHTS = {
+		https: 8, contatti: 12, legale: 12, policy: 10,
+		chisiamo: 12, portfolio: 10, schema: 20, profili: 16
+	};
+	// composizione dei 4 assi (§1.3) — le chiavi corrispondono a EEAT_WEIGHTS.
+	var EEAT_AXES = {
+		affidabilita: ['https', 'contatti', 'legale', 'policy'],
+		esperienza: ['chisiamo', 'portfolio'],
+		competenza: ['schema'],
+		autorevolezza: ['profili']
+	};
+	var EEAT_AXIS_MAX = { affidabilita: 42, esperienza: 22, competenza: 20, autorevolezza: 16 };
+
+	// Fallback IT (usati solo se la pagina non porta il data-label-* corrispondente).
+	var EEAT_FALLBACK = {
+		https: { good: 'Connessione sicura (HTTPS)', bad: 'Nessun HTTPS: connessione non sicura' },
+		contatti: {
+			good: 'Contatti verificabili presenti',
+			warn: 'Solo un’email, nessun telefono o indirizzo',
+			bad: 'Nessun contatto verificabile'
+		},
+		legale: { good: 'P.IVA / dati fiscali presenti', bad: 'Nessuna P.IVA o identità legale' },
+		policy: {
+			good: 'Privacy e cookie policy presenti',
+			warn: 'Presente solo una delle due policy',
+			bad: 'Nessuna privacy o cookie policy'
+		},
+		chisiamo: { good: 'Pagina «Chi siamo» presente', bad: 'Nessuna pagina «Chi siamo»' },
+		portfolio: { good: 'Portfolio o casi studio presenti', bad: 'Nessun portfolio o caso studio' },
+		schema: {
+			good: 'Dati strutturati d’identità presenti',
+			warn: 'JSON-LD presente ma solo generico',
+			bad: 'Nessun dato strutturato JSON-LD'
+		},
+		profili: {
+			good: 'Profili esterni collegati',
+			warn: 'Un solo profilo esterno',
+			bad: 'Nessun profilo esterno collegato'
+		}
+	};
+
+	/** true se `href="…"` contiene la regex, oppure se il testo visibile di un <a> la contiene. */
+	function eeatLinkOrTextMatch(html, re) {
+		var hrefRe = new RegExp('href=["\'][^"\']*(?:' + re.source + ')[^"\']*["\']', 'i');
+		if (hrefRe.test(html)) { return true; }
+		var anchorRe = /<a\b[^>]*>([\s\S]*?)<\/a>/gi, m;
+		while ((m = anchorRe.exec(html)) !== null) {
+			if (re.test(m[1])) { return true; }
+		}
+		return false;
+	}
+
+	/** Lunghezza del testo visibile nel <body> (script/style/commenti/tag rimossi). */
+	function eeatVisibleTextLength(html) {
+		var bodyMatch = /<body[^>]*>([\s\S]*)<\/body>/i.exec(html);
+		var body = bodyMatch ? bodyMatch[1] : html;
+		var stripped = body
+			.replace(/<script[\s\S]*?<\/script>/gi, ' ')
+			.replace(/<style[\s\S]*?<\/style>/gi, ' ')
+			.replace(/<!--[\s\S]*?-->/g, ' ')
+			.replace(/<[^>]+>/g, ' ')
+			.replace(/\s+/g, ' ')
+			.trim();
+		return stripped.length;
+	}
+
+	/** Euristica SPA/HTML scarno (§1.4): marker id="root"/"app" vuoto, o testo visibile < ~2 KB. */
+	function eeatLooksThin(html) {
+		if (/<div[^>]*\bid=["'](root|app)["'][^>]*>\s*<\/div>/i.test(html)) { return true; }
+		return eeatVisibleTextLength(html) < 2000;
+	}
+
+	/** Domini social distinti collegati da un href= (linkedin/facebook/instagram/youtube/x/twitter/t.me). */
+	function eeatSocialDomains(html) {
+		var socialRe = /(linkedin\.com|facebook\.com|instagram\.com|youtube\.com|x\.com|twitter\.com|t\.me)/i;
+		var hrefRe = /href=["'](https?:\/\/[^"']+)["']/gi, m, domains = {};
+		while ((m = hrefRe.exec(html)) !== null) {
+			var mm = socialRe.exec(m[1]);
+			if (mm) { domains[mm[1].toLowerCase()] = true; }
+		}
+		return Object.keys(domains);
+	}
+
+	/**
+	 * Funzione pura (nessun accesso al DOM/rete): gli 8 segnali E-E-A-T
+	 * (docs/copy-eeat.md §1.1) letti da un HTML già scaricato + schema
+	 * dell'URL normalizzato. Separata da runEeatCheck per essere testabile
+	 * senza stub di rete (vedi scratchpad test unitari dello scoring).
+	 * Ritorna: { flags: {https,contatti,legale,policy,chisiamo,portfolio,schema,profili: 'good'|'warn'|'bad'}, partial: bool }
+	 */
+	function eeatComputeFlags(html, scheme) {
+		html = html || '';
+		var jsonld = extractJsonLd(html);
+
+		// 1. HTTPS — binario, dallo schema dell'URL (nessun downgrade rilevabile lato client).
+		var httpsFlag = scheme === 'https' ? 'good' : 'bad';
+
+		// 2. Contatti verificabili.
+		var hasTel = /href=["']tel:/i.test(html);
+		var hasMailto = /href=["']mailto:/i.test(html) || /[\w.+-]+@[\w-]+\.[a-z]{2,}/i.test(html);
+		var hasAddressCap = /(via|viale|piazza|corso|str\.)\s+[^,<]{2,}?\b\d{5}\b/i.test(html);
+		var contattiFlag = (hasTel || hasAddressCap) ? 'good' : (hasMailto ? 'warn' : 'bad');
+
+		// 3. Identità legale — binario.
+		var legaleRe = /(p\.?\s?iva|partita\s+iva|\bvat\b|\brea\b|c\.?f\.?|cod(?:ice)?\s+fisc)/i;
+		var legaleFlag = (legaleRe.test(html) || /\b\d{11}\b/.test(html)) ? 'good' : 'bad';
+
+		// 4. Privacy & cookie policy — buone entrambe, warn una sola.
+		var hasPrivacy = eeatLinkOrTextMatch(html, /privacy|informativa/i);
+		var hasCookiePolicy = eeatLinkOrTextMatch(html, /cookie/i);
+		var policyFlag = (hasPrivacy && hasCookiePolicy) ? 'good' : ((hasPrivacy || hasCookiePolicy) ? 'warn' : 'bad');
+
+		// 5. Pagina «Chi siamo» — binario.
+		var chisiamoFlag = eeatLinkOrTextMatch(html, /chi[-\s]siamo|about(?:-us)?|su-di-noi|azienda|team|storia/i) ? 'good' : 'bad';
+
+		// 6. Portfolio / casi studio — binario.
+		var portfolioFlag = eeatLinkOrTextMatch(html, /casi[-\s]studio|case[-\s]stud|portfolio|referenze|lavori|progetti|testimonial/i) ? 'good' : 'bad';
+
+		// 7. Dati strutturati JSON-LD — good un @type d'identità, warn generico/malformato, bad assente.
+		var schemaFlag;
+		if (!jsonld.present) {
+			schemaFlag = 'bad';
+		} else if (jsonld.malformed) {
+			schemaFlag = 'warn';
+		} else if (jsonld.types.some(function (t) { return /organization|localbusiness|person/i.test(t); })) {
+			schemaFlag = 'good';
+		} else {
+			schemaFlag = 'warn';
+		}
+
+		// 8. Profili esterni — good ≥2 profili o sameAs presente, warn 1 profilo.
+		var socialDomains = eeatSocialDomains(html);
+		var profiliFlag;
+		if (jsonld.sameAs.length > 0 || socialDomains.length >= 2) {
+			profiliFlag = 'good';
+		} else if (socialDomains.length === 1) {
+			profiliFlag = 'warn';
+		} else {
+			profiliFlag = 'bad';
+		}
+
+		return {
+			flags: {
+				https: httpsFlag, contatti: contattiFlag, legale: legaleFlag, policy: policyFlag,
+				chisiamo: chisiamoFlag, portfolio: portfolioFlag, schema: schemaFlag, profili: profiliFlag
+			},
+			partial: eeatLooksThin(html)
+		};
+	}
+
+	/** Wrapper di rete: un solo `toolFetch(url,'html')` + eeatComputeFlags sul body ricevuto. */
+	function runEeatCheck(url) {
+		var scheme = /^http:\/\//i.test(url) ? 'http' : 'https';
+		return toolFetch(url, 'html').then(function (data) {
+			return eeatComputeFlags(data.body || '', scheme);
+		});
+	}
+
+	/** punteggio_segnale (§1.2): peso se good, round(peso/2) se warn, 0 se bad. */
+	function eeatSignalScore(flag, weight) {
+		if (flag === 'good') { return weight; }
+		if (flag === 'warn') { return Math.round(weight / 2); }
+		return 0;
+	}
+
+	/** Dai flag agli 8 segnali: punti per segnale, punteggio totale 0–100, percentuale per asse. */
+	function eeatScoreFromFlags(flags) {
+		var points = {}, total = 0;
+		Object.keys(EEAT_WEIGHTS).forEach(function (key) {
+			var p = eeatSignalScore(flags[key], EEAT_WEIGHTS[key]);
+			points[key] = p;
+			total += p;
+		});
+		var axes = {};
+		Object.keys(EEAT_AXES).forEach(function (axis) {
+			var sum = EEAT_AXES[axis].reduce(function (s, key) { return s + points[key]; }, 0);
+			axes[axis] = Math.round(sum / EEAT_AXIS_MAX[axis] * 100);
+		});
+		return { total: total, points: points, axes: axes };
+	}
+
+	/** Flag CSS per asse (§1.3): ≥75 good, 50–74 warn, <50 bad. */
+	function eeatAxisFlag(pct) {
+		if (pct >= 75) { return 'good'; }
+		if (pct >= 50) { return 'warn'; }
+		return 'bad';
+	}
+
+	var EEAT_VERDICT_FALLBACK = {
+		good: 'Ottimo: i segnali di fiducia E-E-A-T sono presenti e leggibili nel codice. Ricordate che parliamo di segnali on-page, non del vostro E-E-A-T reale.',
+		buono: 'Buona base: la maggior parte dei segnali di fiducia c’è. Sistemate i pochi punti in giallo o rosso per completare il quadro.',
+		mid: 'A metà strada: diversi segnali di fiducia mancano o non sono leggibili. La lista qui sotto indica da dove partire.',
+		poor: 'Segnali deboli: la pagina espone pochi elementi di fiducia verificabili — che sono anche i più facili da aggiungere.'
+	};
+
+	/** Verdetto generale a 4 fasce (§1.3): 90/75/50. */
+	function eeatVerdict(root, score) {
+		if (score >= 90) { return txt(root, 'data-verdict-good', EEAT_VERDICT_FALLBACK.good); }
+		if (score >= 75) { return txt(root, 'data-verdict-buono', EEAT_VERDICT_FALLBACK.buono); }
+		if (score >= 50) { return txt(root, 'data-verdict-mid', EEAT_VERDICT_FALLBACK.mid); }
+		return txt(root, 'data-verdict-poor', EEAT_VERDICT_FALLBACK.poor);
+	}
+
+	function initEeatTool(root) {
+		var shell = toolShell(root);
+		onUrlSubmit(shell, function (url) {
+			return runEeatCheck(url).then(function (res) {
+				var scored = eeatScoreFromFlags(res.flags);
+
+				setText(root, '[data-sr-tool-url]', url.replace(/^https?:\/\//, ''));
+				setText(root, '[data-sr-tool-score]', String(scored.total));
+				animateFill(root, '[data-sr-tool-fill]', scored.total);
+				setText(root, '[data-sr-tool-verdict]', eeatVerdict(root, scored.total));
+
+				['esperienza', 'competenza', 'autorevolezza', 'affidabilita'].forEach(function (axis) {
+					var sel = '[data-sr-tool-axis-' + axis + ']';
+					setText(root, sel, scored.axes[axis] + '%');
+					setFlag(root, sel, eeatAxisFlag(scored.axes[axis]));
+				});
+
+				var ndText = txt(root, 'data-label-nd', 'non rilevato (possibile rendering JavaScript)');
+				Object.keys(EEAT_WEIGHTS).forEach(function (key) {
+					var flag = res.flags[key];
+					var label = txt(root, 'data-label-' + key + '-' + flag, EEAT_FALLBACK[key][flag]);
+					if (res.partial && flag === 'bad') { label += ' (' + ndText + ')'; }
+					setText(root, '[data-sr-tool-' + key + ']', label);
+					setFlag(root, '[data-sr-tool-' + key + ']', flag);
+				});
+
+				var notice = q(root, '[data-sr-tool-notice]');
+				if (notice) {
+					notice.hidden = !res.partial;
+					if (res.partial) {
+						notice.textContent = txt(root, 'data-notice',
+							'Il sito rende i contenuti via JavaScript: alcuni segnali potrebbero esistere ma non essere leggibili nell’HTML iniziale. Il punteggio è indicativo.');
+					}
+				}
 			});
 		});
 	}
@@ -1425,6 +1724,7 @@
 				case 'ai': initAiTool(root); break;
 				case 'roi': initRoiTool(root); break;
 				case 'checkup': initCheckupTool(root); break;
+				case 'eeat': initEeatTool(root); break;
 			}
 		});
 		// Retro-compatibilità: form velocità senza wrapper [data-sr-tool].

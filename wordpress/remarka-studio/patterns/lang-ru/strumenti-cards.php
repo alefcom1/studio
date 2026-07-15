@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Бесплатные инструменты — семь карточек
+ * Title: Бесплатные инструменты — восемь карточек
  * Slug: remarka-studio/ru-strumenti-cards
  * Categories: remarka
- * Description: Семь карточек инструментов с моноширинным индексом и ссылкой.
+ * Description: Восемь карточек инструментов с моноширинным индексом и ссылкой.
  * Viewport Width: 1400
  */
 ?>
@@ -140,6 +140,24 @@
 
 <!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
 <p class="sr-card-link sr-no-margin"><a href="/ru/instrumenty/uglerodnyj-sled/">Попробовать →</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-mono sr-no-margin","style":{"typography":{"fontSize":"12px"}},"textColor":"oltremare"} -->
+<p class="sr-mono sr-no-margin has-oltremare-color has-text-color" style="font-size:12px">/08</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:14px">Сигналы E-E-A-T</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Восемь сигналов доверия на странице, разложенных по четырём осям E-E-A-T.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
+<p class="sr-card-link sr-no-margin"><a href="/ru/instrumenty/signaly-eeat/">Попробовать →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></section>

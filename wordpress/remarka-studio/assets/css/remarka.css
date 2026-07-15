@@ -1672,6 +1672,18 @@ body.page .entry-title {
   opacity: 0.85;
 }
 
+/* Avviso «analisi parziale» (E-E-A-T, SPA/HTML scarno — docs/copy-eeat.md §1.4) */
+.sr-tool-notice {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: 1px solid var(--sr-bordo);
+  border-left: 3px solid #c98a00;
+  border-radius: var(--sr-radius);
+  font-size: 13.5px;
+  color: var(--sr-grigio);
+  background: var(--sr-bianco);
+}
+
 @media (max-width: 520px) {
   .sr-roi-grid {
     grid-template-columns: 1fr;

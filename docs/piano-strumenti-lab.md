@@ -11,7 +11,8 @@
 | T3 | EN/RU: конвейер EN (`translate_pages.py en`), RU — вручную, `page_map` EN/RU, меню, EN/RU-перелинковка | `522758c` |
 | T4 | QA: функциональные прогоны, линк-аудит, регрессия, локализованные title 8 старых EN/RU записей `page_map`, SEO-мета 3 новых инструментов, документация | `907c941` |
 | L1 | Lab-контент IT: 3 SEO-секции («Il metodo», «Leggere il risultato», «Come migliorare») на всех 7 IT-страницах инструментов — данные в `data.py`, рендер в `build_tool()` | `aad3f12` |
-| L2 | Lab-контент EN/RU: EN — конвейером (`chrome_strings.py` +141 пара, включая 2 residui T3), RU — 3 секции руками на 7 `ru-strumento-*.php` (самодостаточный текст, ≥350 слов/страницу, RU-перелинковка услуги/блог/лендинги) | текущий коммит (см. `git log`) |
+| L2 | Lab-контент EN/RU: EN — конвейером (`chrome_strings.py` +141 пара, включая 2 residui T3), RU — 3 секции руками на 7 `ru-strumento-*.php` (самодостаточный текст, ≥350 слов/страницу, RU-перелинковка услуги/блог/лендинги) | `907c941` (после T4) |
+| L3 | 8-й инструмент «Segnali E-E-A-T» (модель скоринга: 8 сигналов → 4 асси → punteggio 0–100, docs/copy-eeat.md): JS-модуль `initEeatTool` + юнит-тесты скоринга, IT-страница (`data.py`+генератор), EN конвейером, RU руками, перелинковка (`seo-tecnica`→eeat, `sito-pronto-ai`↔eeat, `analisi-seo`↔eeat), `lang.py`/`lang-map.php`/`page_map` +1 инструмент | текущий коммит |
 
 ---
 
@@ -22,7 +23,7 @@
 > в ru-servizio-*/ru-prezzi). RU-контент — только руками. `translate_pages.py en`
 > разрешён (en-страницы принадлежат конвейеру).
 
-## 0. Итоговый состав: 7 инструментов на /strumenti/
+## 0. Итоговый состав: 8 инструментов на /strumenti/ (+ check-up completo /00)
 
 | # | Инструмент (IT-slug) | Статус | Движок | EN-slug | RU-slug |
 |---|---|---|---|---|---|
@@ -30,9 +31,10 @@
 | 2 | analisi-seo | оживить | PSI category=SEO | seo-audit | seo-audit |
 | 3 | check-gdpr | оживить (v1) | PHP-fetch + эвристики | gdpr-check | proverka-gdpr |
 | 4 | roi-localizzazione | оживить | JS-калькулятор | localization-roi | roi-lokalizacii |
-| 5 | **verifica-accessibilita** | НОВЫЙ | PSI category=ACCESSIBILITY | accessibility-check | proverka-dostupnosti |
-| 6 | **sito-pronto-ai** | НОВЫЙ | PHP-fetch (llms.txt/robots/schema) | ai-readiness | gotovnost-k-ii |
-| 7 | **impatto-co2** | НОВЫЙ | PSI byte-weight + модель SWD (co2.js) | website-carbon | uglerodnyj-sled |
+| 5 | verifica-accessibilita | ✅ работает | PSI category=ACCESSIBILITY | accessibility-check | proverka-dostupnosti |
+| 6 | sito-pronto-ai | ✅ работает | PHP-fetch (llms.txt/robots/schema) | ai-readiness | gotovnost-k-ii |
+| 7 | impatto-co2 | ✅ работает | PSI byte-weight + модель SWD (co2.js) | website-carbon | uglerodnyj-sled |
+| 8 | **segnali-eeat** | ✅ работает (L3) | PHP-fetch «html» + regex/JSON-LD, scoring 8 segnali→4 assi (docs/copy-eeat.md) | eeat-signals | signaly-eeat |
 
 CTA инструментов → услуги: accessibilità→/#contatti (позже Adeguamento EAA),
 analisi-seo/AI→seo-tecnica, co2→restyling-migrazione+test-velocita,

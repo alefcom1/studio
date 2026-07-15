@@ -59,7 +59,8 @@ SERVICE_TOOL_LINKS = {
     'e-commerce':           [('Obbligo di accessibilità (EAA dal 2025): verifica il vostro sito', '/strumenti/verifica-accessibilita/')],
     'restyling-migrazione': [('Misura l’impatto CO₂ del sito attuale', '/strumenti/impatto-co2/')],
     'seo-tecnica':          [('Analizza la SEO on-page della vostra pagina', '/strumenti/analisi-seo/'),
-                             ('Verifica se il sito è pronto per l’AI', '/strumenti/sito-pronto-ai/')],
+                             ('Verifica se il sito è pronto per l’AI', '/strumenti/sito-pronto-ai/'),
+                             ('Misura i segnali E-E-A-T del sito', '/strumenti/segnali-eeat/')],
     'siti-multilingue':     [('Calcola il ROI della localizzazione', '/strumenti/roi-localizzazione/')],
 }
 
@@ -582,6 +583,92 @@ def _widget_ai():
 </div>'''
 
 
+# Gli 8 segnali E-E-A-T (chiave data-sr-tool-*, etichetta di riga statica,
+# stati good/warn/bad con relativa etichetta — docs/copy-eeat.md §3-bis).
+# I segnali binari (nessun warn) ripetono la stessa etichetta good/bad due volte
+# nell'attributo warn per semplicità del generatore: il JS non lo userà mai
+# perché eeatComputeFlags non produce mai 'warn' per quei segnali.
+_EEAT_SIGNALS = [
+    ('https', 'Connessione HTTPS',
+     'Connessione sicura (HTTPS)', None, 'Nessun HTTPS: connessione non sicura'),
+    ('contatti', 'Contatti verificabili',
+     'Contatti verificabili presenti', 'Solo un’email, nessun telefono o indirizzo', 'Nessun contatto verificabile'),
+    ('legale', 'Identità legale (P.IVA)',
+     'P.IVA / dati fiscali presenti', None, 'Nessuna P.IVA o identità legale'),
+    ('policy', 'Privacy e cookie policy',
+     'Privacy e cookie policy presenti', 'Presente solo una delle due policy', 'Nessuna privacy o cookie policy'),
+    ('chisiamo', 'Pagina «Chi siamo»',
+     'Pagina «Chi siamo» presente', None, 'Nessuna pagina «Chi siamo»'),
+    ('portfolio', 'Portfolio / casi studio',
+     'Portfolio o casi studio presenti', None, 'Nessun portfolio o caso studio'),
+    ('schema', 'Dati strutturati (JSON-LD)',
+     'Dati strutturati d’identità presenti', 'JSON-LD presente ma solo generico', 'Nessun dato strutturato JSON-LD'),
+    ('profili', 'Profili esterni',
+     'Profili esterni collegati', 'Un solo profilo esterno', 'Nessun profilo esterno collegato'),
+]
+
+_EEAT_AXES = [
+    ('esperienza', 'Esperienza'),
+    ('competenza', 'Competenza'),
+    ('autorevolezza', 'Autorevolezza'),
+    ('affidabilita', 'Affidabilità'),
+]
+
+
+def _widget_eeat():
+    signal_attrs = ''
+    signal_rows = ''
+    for key, label, good, warn, bad in _EEAT_SIGNALS:
+        signal_attrs += (f'\n     data-label-{key}-good="{good}"' +
+                          (f' data-label-{key}-warn="{warn}"' if warn else '') +
+                          f' data-label-{key}-bad="{bad}"')
+        signal_rows += (f'<li><span class="sr-gdpr-key">{label}</span>'
+                         f'<span data-sr-tool-{key} data-sr-flag></span></li>')
+
+    axis_rows = ''.join(
+        f'<li><span class="sr-gdpr-key">{label}</span>'
+        f'<span data-sr-tool-axis-{key} data-sr-flag>—</span></li>'
+        for key, label in _EEAT_AXES
+    )
+
+    return f'''
+<div class="sr-tool-widget sr-card" data-sr-tool="eeat" data-sr-locale="it"
+     data-verdict-good="Ottimo: i segnali di fiducia E-E-A-T sono presenti e leggibili nel codice. Ricordate che parliamo di segnali on-page, non del vostro E-E-A-T reale."
+     data-verdict-buono="Buona base: la maggior parte dei segnali di fiducia c’è. Sistemate i pochi punti in giallo o rosso per completare il quadro."
+     data-verdict-mid="A metà strada: diversi segnali di fiducia mancano o non sono leggibili. La lista qui sotto indica da dove partire."
+     data-verdict-poor="Segnali deboli: la pagina espone pochi elementi di fiducia verificabili — che sono anche i più facili da aggiungere."
+     data-notice="Il sito rende i contenuti via JavaScript: alcuni segnali potrebbero esistere ma non essere leggibili nell’HTML iniziale. Il punteggio è indicativo."
+     data-label-nd="non rilevato (possibile rendering JavaScript)"{signal_attrs}
+     data-err="Non siamo riusciti a leggere la pagina. Controllate l’indirizzo e riprovate tra qualche minuto.">
+  <form data-sr-tool-form>
+    <div class="sr-tool-row">
+      <input type="text" placeholder="www.tuosito.it" class="sr-text-input" required />
+      <button type="submit" class="wp-block-button__link" style="padding:17px 30px">Analizza i segnali di fiducia</button>
+    </div>
+  </form>
+  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>Lettura del sito in corso<span class="sr-blink">…</span></p>
+  <div class="sr-tool-result" data-sr-tool-result hidden>
+    <p style="margin:0;font-size:14px;color:var(--sr-grigio)" data-sr-tool-url></p>
+    <p class="sr-eyebrow" style="margin-top:4px">Punteggio E-E-A-T on-page</p>
+    <div class="sr-tool-result__score">
+      <span class="sr-mono" data-sr-tool-score>0</span><span class="sr-mono" style="font-size:18px;color:var(--sr-grigio)">/100</span>
+    </div>
+    <div class="sr-barra" style="height:10px"><div class="sr-barra__fill" data-sr-tool-fill style="width:0%"></div><span class="sr-barra__tick" style="left:90%"></span><span class="sr-barra__tick" style="left:75%"></span><span class="sr-barra__tick" style="left:50%"></span></div>
+    <p style="margin-top:20px;font-size:15.5px;color:var(--sr-grigio)" data-sr-tool-verdict></p>
+    <p class="sr-tool-notice" data-sr-tool-notice hidden></p>
+    <div style="margin-top:28px">
+      <p class="sr-eyebrow">I quattro pilastri</p>
+      <ul class="sr-gdpr-rows">{axis_rows}</ul>
+    </div>
+    <div style="margin-top:28px">
+      <p class="sr-eyebrow">Otto segnali di fiducia</p>
+      <ul class="sr-gdpr-rows">{signal_rows}</ul>
+    </div>
+    <p class="sr-disclaimer" data-sr-tool-disclaimer>Misuriamo segnali on-page verificabili nel codice della pagina, non la vostra reputazione o competenza reale. Un punteggio alto non garantisce un giudizio E-E-A-T positivo da parte di Google.</p>
+  </div>
+</div>'''
+
+
 def _widget_roi():
     return '''
 <div class="sr-tool-widget sr-card" data-sr-tool="roi" data-sr-locale="it" data-roi-currency="€">
@@ -781,6 +868,8 @@ def build_tool_widget(tool):
         return _widget_roi()
     if tipo == 'checkup':
         return _widget_checkup()
+    if tipo == 'eeat':
+        return _widget_eeat()
     raise ValueError(f'tipo strumento sconosciuto: {tipo}')
 
 

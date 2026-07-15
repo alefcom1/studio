@@ -132,6 +132,21 @@
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/08</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Segnali E-E-A-T</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Otto segnali di fiducia on-page, raggruppati nei quattro pilastri E-E-A-T.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/segnali-eeat/">Prova →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 </section>

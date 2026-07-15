@@ -443,61 +443,102 @@ Un solo fetch `html`. Campi:
 
 # PARTE 8 — PER L'IMPLEMENTATORE (checklist)
 
+> **Stato: implementato** (commit di questa sessione). Note di scostamento dal testo
+> letterale sotto, dove la convenzione reale del codice differiva dal deck.
+
 **Dati / build**
-- [ ] `wordpress/build-tools/data.py` → nuova voce `TOOLS` (dopo `impatto-co2`):
+- [x] `wordpress/build-tools/data.py` → nuova voce `TOOLS` (dopo `impatto-co2`):
       `tipo='eeat'`, `idx='/08'`, `slug='segnali-eeat'`, `has_demo=False`, con tutti i
       campi di §3 (hero_titolo, hero_sub, descrizione, come_funziona×3, faq×3,
-      metodologia, lettura, migliorare, cta). Attenzione agli apostrofi tipografici
-      `'` come nelle voci esistenti.
-- [ ] `wordpress/build-tools/lang.py` → `TOOLS_SLUGS`:
+      metodologia, lettura, migliorare, cta). Apostrofi tipografici `'` rispettati.
+      `migliorare.links` ha un 3° link verso `analisi-seo` (perelinkovka §7, non nel
+      testo letterale di §3 ma esplicitamente autorizzato).
+- [x] `wordpress/build-tools/lang.py` → `TOOLS_SLUGS`:
       `'segnali-eeat': {'en':'eeat-signals','ru':'signaly-eeat'}`.
-- [ ] Rigenerare `inc/lang-map.php` con `emit_php_lang_map` (o eseguendo `lang.py` come
-      `__main__`). Verificare diff: **solo +1 riga** (terna strumenti).
-- [ ] Rigenerazione **puntuale** delle sole pagine: `strumento-segnali-eeat` (IT), la
-      card in `strumenti-index`, e il blocco vicini negli altri 7 strumenti. `main()`
-      vietato (grabli chi-siamo/citta).
+- [x] Rigenerato `inc/lang-map.php` con `lang.py` come `__main__`. Diff: **+1 riga**.
+- [x] Rigenerazione **puntuale**: `build_strumenti_index()` + `build_tool(t)` per
+      tutti i `TOOLS` (chiama la stessa funzione del generatore per ognuna delle 9
+      pagine strumento, non `main()` — nessun rischio chi-siamo/città). **Grabli
+      trovato e disinnescato**: la rigenerazione di `strumento-check-up-completo.php`
+      avrebbe cancellato due patch manuali non presenti nel generatore
+      (`data-ai-suffix` sul widget checkup, campo honeypot `sr_checkup_hp` nel form
+      report) — ripristinati a mano dopo la rigenerazione, verificati col diff.
+      **Effetto collaterale tenuto consapevolmente**: le 7 pagine strumento esistenti
+      non includevano il link «/00 Check-up completo» nel blocco vicini (drift
+      preesistente, il generatore lo prevede già) — la rigenerazione lo ha aggiunto
+      su tutte, coerente e corretto.
 
 **JS (`assets/js/remarka.js`)**
-- [ ] Nuovo modulo `initEeatTool(root)` sul modello di `initGdprTool`/`initAiTool`:
-      un solo `toolFetch(url,'html')`; riusare il parser JSON-LD già presente in
-      `initAiTool`; regex dei segnali come in §1.1; `setFlag`/`setText` come i moduli
-      esistenti; calcolo punteggio+assi come §1.2; verdetto a 4 livelli da `data-verdict-*`.
-- [ ] Dispatcher `initToolWidgets()`: aggiungere `case 'eeat': initEeatTool(root); break;`.
-- [ ] HTTPS: leggere lo schema dell'URL normalizzato / dell'eventuale URL finale della
-      risposta (`data.status`/redirect già gestiti server-side). Verificare che
-      `remarka_tool_fetch` esponga l'URL finale; altrimenti usare lo schema dell'input
-      normalizzato (`normalizeUrl` forza già `https://` di default → in tal caso HTTPS
-      va valutato sul valore digitato dall'utente, con nota all'implementatore).
-- [ ] Avviso SPA: heuristica su lunghezza del testo/`<body>` e marker `id="root"|"app"`.
+- [x] Nuovo modulo `initEeatTool(root)` + `eeatComputeFlags()` (funzione pura,
+      separata da `runEeatCheck` per testabilità) sul modello di
+      `initGdprTool`/`initAiTool`: un solo `toolFetch(url,'html')`; parser JSON-LD
+      **estratto in `extractJsonLd()`** e condiviso con `initAiTool` (refactor
+      behaviour-preserving, verificato con test di regressione); regex dei segnali
+      come in §1.1; `setFlag`/`setText` riusati; punteggio+assi come §1.2; verdetto a
+      4 livelli (`data-verdict-good/-buono/-mid/-poor`).
+- [x] Dispatcher `initToolWidgets()`: `case 'eeat': initEeatTool(root); break;`.
+- [x] HTTPS: `remarka_tool_fetch` non espone l'URL finale (solo `status`/`body`) →
+      valutato sullo schema dell'URL normalizzato lato client (`normalizeUrl`),
+      come previsto dalla nota d'implementazione.
+- [x] Avviso SPA: `eeatLooksThin()` — marker `id="root"|"app"` vuoto o testo visibile
+      del `<body>` < ~2 KB (script/style/commenti/tag rimossi).
+- [x] `translate_pages.py`: `ATTRS` esteso con `data-notice` (mancava per il nuovo
+      attributo del widget eeat).
 
 **Pagine / deploy**
-- [ ] `patterns/pages/strumento-segnali-eeat.php` (IT, dal generatore) con markup
+- [x] `patterns/pages/strumento-segnali-eeat.php` (IT, dal generatore) con markup
       widget `data-sr-tool="eeat"` e tutte le stringhe `data-*` di §3-bis.
-- [ ] EN: coppie CHROME (`en` only) di tutte le stringhe nuove in `chrome_strings.py`
-      → `translate_pages.py en` → exit 0, diff solo `en-strumento-eeat-signals.php` (+
-      card index EN + vicini EN). Testi di riferimento in §4.
-- [ ] RU **a mano** (conveyor RU vietato): `patterns/pages/ru-strumento-signaly-eeat.php`
-      con i testi di §5 + card in `ru-strumenti-index` + blocco vicini nei 7 ru-strumento-*.
-- [ ] `deploy-import.php` → `$page_map` +3 righe:
+- [x] EN: ~87 coppie CHROME (`en` only) in `chrome_strings.py` (`CHROME_EEAT`) →
+      `translate_pages.py en` → exit 0, nessun residuo italiano. Diff:
+      `en-strumento-segnali-eeat.php` (+ card index EN + vicini EN nei 7 esistenti +
+      link contestuale in `en-servizio-seo-tecnica.php`). **Nome file**: la pipeline
+      nomina i file EN/RU dal *nome file IT* (`en-strumento-{it-slug}.php`), non dallo
+      slug tradotto — quindi `en-strumento-segnali-eeat.php`, non
+      `en-strumento-eeat-signals.php` come nel testo letterale (verificato contro la
+      convenzione reale di tutti gli altri strumenti).
+- [x] RU **a mano** (conveyor RU mai eseguito): `patterns/pages/ru-strumento-segnali-eeat.php`
+      (stesso motivo sul nome file: non `ru-strumento-signaly-eeat.php`) con i testi
+      di §5 + card in `ru-strumenti-index.php` + blocco vicini nei 7 `ru-strumento-*`
+      + link contestuale in `ru-servizio-seo-tecnica.php` + link reciproci in
+      `ru-strumento-analisi-seo.php`/`ru-strumento-sito-pronto-ai.php`.
+- [x] `deploy-import.php` → `$page_map` +3 righe:
       `'strumento-segnali-eeat' => ['segnali-eeat','strumenti',null]` (IT),
-      `'en-strumento-eeat-signals' => ['eeat-signals','en/tools',null]` (EN),
-      `'ru-strumento-signaly-eeat' => ['signaly-eeat','ru/instrumenty',null]` (RU).
-      Verificare i nomi-chiave contro le convenzioni già usate per gli altri strumenti.
-- [ ] `$current_slugs` (orphan-sweep) in `deploy-import.php`: aggiungere i 3 nuovi slug.
-- [ ] Footer «Pagine»: la voce Strumenti/Tools/Инструменты esiste già — nessuna azione.
+      `'en-strumento-segnali-eeat' => ['eeat-signals','en/tools','E-E-A-T signals']` (EN),
+      `'ru-strumento-segnali-eeat' => ['signaly-eeat','ru/instrumenty','Сигналы E-E-A-T']` (RU).
+- [x] `$current_slugs`: derivato automaticamente da `wp_list_pluck($page_map, 0)` —
+      nessuna riga separata da toccare.
+- [x] Footer «Pagine»: nessuna azione (confermato).
+- [x] Home teaser `strumenti-cards.php` (IT/EN/RU, incluso nella home via
+      `deploy-import.php`): 8ª card aggiunta nelle 3 lingue (non nel piano originale
+      della Parte 7, ma necessaria: la sezione vive nelle home page).
+- [x] Perelinkovka Parte 7: `seo-tecnica` → eeat (contestuale, IT/EN/RU via
+      `SERVICE_TOOL_LINKS`); `sito-pronto-ai` → eeat (nuovo link in migliorare,
+      IT/EN/RU); `analisi-seo` ↔ eeat (link reciproco, IT/EN/RU).
 
 **Docs**
-- [ ] `docs/seo-meta.md`: aggiungere le righe Title/Description/Focus di §2.2 per i 3
-      slug (sezione «Инструменты (Lab)»), con verifica lunghezze.
-- [ ] `docs/piano-strumenti-lab.md`: aggiornare §0 (7 → 8 strumenti) e tabella stato.
+- [x] `docs/seo-meta.md`: nuova sezione «Segnali E-E-A-T — IT/EN/RU (8° strumento
+      Lab)» con Title/Description/Focus per i 3 slug, lunghezze verificate ≤60/≤160.
+- [x] `docs/piano-strumenti-lab.md`: §0 aggiornato (7 → 8 strumenti), tabella stato,
+      nuova riga L3 nello storico esecuzione.
+- [x] `docs/piano-checkup-sito.md` §2: nessuna voce da aggiornare — l'E-E-A-T resta
+      volutamente fuori dal check-up sintetico (decisione owner #4, confermata).
 
 **QA**
-- [ ] `php -l` su ogni file toccato; parse-check JS (`new Function`); test-harness stub
-      del modulo `eeat` (fixture HTML: sito «buono» ~90+, sito «SPA» → avviso, sito
-      «nudo» ~<30) come i 5 node-test PSI esistenti.
-- [ ] Screenshot risultato IT/EN/RU (1440/800/390).
-- [ ] Link-audit: la card E-E-A-T presente in index + home-cards (se si estende) +
-      blocco vicini dei 7, su 3 lingue; hreflang: la terna dà 3 lingue.
+- [x] `php -l` su tutti i file toccati (0 errori); parse-check JS (`new Function`, 0
+      errori); test-harness Node puro (51 asserzioni: 8 segnali good/warn/bad,
+      formula punteggio, 4 assi, soglie 75/50 per asse e 90/75/50 generali, regola
+      N/D, 3 fixture end-to-end «ottimo»/«medio»/«nudo»); regressione `extractJsonLd`
+      condiviso con `initAiTool` (4 casi: presente/malformato/assente/multiplo+sameAs).
+- [x] Screenshot su CSS/JS reali con `toolFetch` mockato via intercettazione di rete
+      (Playwright, `/opt/pw-browsers/chromium`): IT 1440 e 390 (fixture «ottimo»,
+      100/100), EN 1440 (fixture «medio», 49/100, verdetti in inglese), RU 1440
+      (fixture «ottimo», verdetti in russo), avviso SPA IT 1440 (fixture SPA,
+      punteggio 8/100 con annotazione N/D sui segnali bad), regressione
+      `sito-pronto-ai` IT 1440 (JSON-LD ancora rilevato correttamente, 2/4).
+- [x] Link-audit: card E-E-A-T in `strumenti-index` + `strumenti-cards` (home teaser)
+      + blocco vicini negli altri 8, sulle 3 lingue; grep di residui italiani nelle
+      pagine EN — nessuno (a parte i commenti di intestazione PHP, mai tradotti per
+      convenzione esistente su tutte le pagine strumento).
 
 ---
 

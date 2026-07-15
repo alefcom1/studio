@@ -481,6 +481,7 @@ TOOLS = [
              links=[
                  ('Vogliamo sistemarla noi: scopri la SEO tecnica', '/servizi/seo-tecnica/'),
                  ('Approfondisci: i Core Web Vitals nel 2026', '/blog/core-web-vitals-2026/'),
+                 ('Verificate anche i segnali di fiducia E-E-A-T', '/strumenti/segnali-eeat/'),
              ]),
          cta=dict(heading='Vogliamo sistemare noi la SEO tecnica?',
                   testo='Audit completo, dati strutturati e Core Web Vitals a posto: PageSpeed 90+ garantito da contratto.',
@@ -635,6 +636,7 @@ TOOLS = [
              ],
              links=[
                  ('Lo prepariamo noi: fa parte della SEO tecnica', '/servizi/seo-tecnica/'),
+                 ('Misurate anche i segnali di fiducia E-E-A-T del sito', '/strumenti/segnali-eeat/'),
              ]),
          cta=dict(heading='Vogliamo preparare il sito per l’AI?',
                   testo='Dati strutturati, file corretti e struttura leggibile dalle macchine: fa parte della SEO tecnica che consegniamo.',
@@ -679,6 +681,46 @@ TOOLS = [
                   testo='Immagini ottimizzate, base tecnica pulita, meno peso a parità di contenuti: meno CO₂ e PageSpeed 90+ da contratto.',
                   buttons=[('Restyling e migrazione', '/servizi/restyling-migrazione/', None),
                            ('Misura la velocità', '/strumenti/test-velocita/', 'outline')])),
+    dict(slug='segnali-eeat', idx='/08', tipo='eeat', titolo='Segnali E-E-A-T',
+         hero_titolo='Segnali E-E-A-T: quanto è credibile il vostro sito?',
+         hero_sub='Analizziamo otto segnali di fiducia leggibili nel codice della vostra home — HTTPS, contatti, P.IVA, chi siamo, dati strutturati e altri — raggruppati nei quattro pilastri E-E-A-T. Misuriamo i segnali on-page, non la vostra reputazione o competenza reale. Senza registrazione.',
+         descrizione='Otto segnali di fiducia on-page, raggruppati nei quattro pilastri E-E-A-T.', has_demo=False,
+         come_funziona=[
+             ('Inserite l’indirizzo del sito', 'Leggiamo la home page dal nostro server, come farebbe un visitatore alla prima apertura: analizziamo il codice HTML, non serve installare nulla.'),
+             ('Otto controlli automatici', 'Cerchiamo otto segnali di fiducia leggibili nella pagina — HTTPS, contatti, P.IVA, privacy, chi siamo, portfolio, dati strutturati, profili esterni — e li raggruppiamo nei quattro pilastri E-E-A-T.'),
+             ('Punteggio 0–100 e quattro assi', 'Un punteggio complessivo e il dettaglio per Esperienza, Competenza, Autorevolezza e Affidabilità, con il colore di ogni segnale e cosa manca.'),
+         ],
+         faq=[
+             ('Cos’è l’E-E-A-T?', 'È un concetto delle linee guida di Google per i valutatori della qualità (Search Quality Rater Guidelines): Experience, Expertise, Authoritativeness, Trust — esperienza, competenza, autorevolezza e affidabilità. Aiuta Google a stimare quanto ci si può fidare di una pagina, soprattutto sui temi che incidono su salute, denaro e sicurezza.'),
+             ('L’E-E-A-T influenza il posizionamento?', 'Non è un fattore di ranking diretto né un punteggio che Google assegna: è una cornice di qualità che i valutatori umani usano per addestrare gli algoritmi. Rafforzare i segnali di fiducia aiuta indirettamente, ma nessuno strumento — nemmeno il nostro — misura l’E-E-A-T «reale» del vostro sito.'),
+             ('Perché il test non vede la mia reputazione?', 'Perché leggiamo solo il codice della vostra pagina: possiamo verificare che i segnali di fiducia ci siano e siano dichiarati, non chi vi cita, che recensioni avete o quanto siete davvero esperti. Quella parte la giudicano le persone e il resto del web, non una scansione dell’HTML.'),
+         ],
+         metodologia=('Cosa misura davvero questo test dei segnali E-E-A-T', [
+             'Come per il controllo GDPR e per quello di prontezza AI, è il nostro server a leggere la home page del vostro sito, senza passare da Google. Sul codice HTML cerchiamo otto segnali di fiducia che chiunque — un motore di ricerca, un modello AI, un cliente diffidente — userebbe per decidere se fidarsi: la connessione sicura (HTTPS), i contatti verificabili, l’identità legale (P.IVA e ragione sociale), i link a privacy e cookie policy, la pagina «Chi siamo», un portfolio o dei casi studio, i dati strutturati in JSON-LD e i profili esterni. Ogni segnale finisce in uno dei quattro pilastri E-E-A-T — Esperienza, Competenza, Autorevolezza, Affidabilità — e pesa sul punteggio complessivo.',
+             'Ed ecco il confine, che diciamo subito: misuriamo segnali on-page verificabili nel codice, non l’E-E-A-T reale del vostro sito. Non contiamo i link o le menzioni che ricevete, non leggiamo le recensioni né la vostra reputazione, non giudichiamo se siete davvero esperti o se i contenuti dicono il vero: quella valutazione la fanno le persone — i quality rater di Google e il resto del web — non una scansione dell’HTML. Guardiamo solo la home indicata, non l’intero sito, e non vediamo ciò che compare soltanto dopo l’esecuzione del JavaScript. Un punteggio alto significa che i segnali di fiducia ci sono e sono leggibili, non che Google vi darà un giudizio E-E-A-T positivo.',
+         ]),
+         lettura=('Come leggere il punteggio E-E-A-T e i quattro assi', [
+             'Il punteggio va da 0 a 100 e si legge come un semaforo a quattro livelli. Da 90 in su i segnali di fiducia ci sono quasi tutti e si leggono senza sforzo. Tra 75 e 89 avete una buona base, con pochi elementi da completare. Tra 50 e 74 mancano diversi segnali importanti: è la fascia più comune per i siti aziendali italiani, che spesso curano i contenuti ma dimenticano la parte tecnica. Sotto 50 la pagina espone pochi appigli di fiducia — ed è anche la situazione in cui bastano poche aggiunte per salire in fretta. Accanto al totale trovate i quattro assi, così vedete su quale pilastro conviene intervenire prima.',
+             'Due letture da evitare. La prima: un segnale in rosso non è una colpa, ma un’occasione — «nessun dato strutturato» vuol dire che, aggiungendo un blocco JSON-LD, guadagnate punti in un pomeriggio. La seconda, più importante: un 100 pieno non certifica il vostro E-E-A-T. Significa che avete dichiarato bene chi siete, non che il web vi considera autorevoli — quella fiducia si costruisce con contenuti, tempo e reputazione, che nessuno strumento legge dall’HTML. E se il punteggio vi sembra ingiustamente basso, controllate se il sito rende i contenuti via JavaScript: in quel caso molti segnali esistono ma non sono nel codice iniziale che leggiamo, e ve lo segnaliamo con un avviso.',
+         ]),
+         migliorare=dict(h2='Come rafforzare i segnali E-E-A-T del sito',
+             intro='Rafforzare la fiducia non richiede riscrivere il sito: sono aggiunte tecniche precise, quasi tutte veloci e a basso costo.',
+             punti=[
+                 ('Pubblicate una pagina «Chi siamo» vera', 'Con nomi, volti, storia e competenze reali del team, non un paragrafo generico: è il primo posto dove Google e i lettori cercano di capire chi c’è dietro.'),
+                 ('Rendete i contatti verificabili', 'Indirizzo completo, telefono ed email reali in chiaro, nel footer di ogni pagina, non solo dentro un modulo: un recapito tracciabile è un segnale di fiducia di base.'),
+                 ('Dichiarate l’identità legale', 'P.IVA, ragione sociale e sede nel footer: per un’azienda italiana è la prova più semplice di essere un soggetto reale e raggiungibile.'),
+                 ('Aggiungete i dati strutturati', 'Un blocco JSON-LD schema.org Organization (o LocalBusiness) con nome, logo, contatti e profili «sameAs» dice a motori e AI chi siete, in modo esplicito.'),
+                 ('Firmate e datate i contenuti', 'Autore riconoscibile, data di pubblicazione e di aggiornamento su articoli e schede: mostrano esperienza reale e contenuti curati nel tempo.'),
+             ],
+             links=[
+                 ('Vogliamo sistemarli noi: fa parte della SEO tecnica', '/servizi/seo-tecnica/'),
+                 ('Chi siamo, contatti e dati strutturati sono di serie nei siti aziendali', '/servizi/siti-aziendali/'),
+                 ('Controllate anche la SEO on-page della pagina', '/strumenti/analisi-seo/'),
+             ]),
+         cta=dict(heading='Vogliamo rafforzare la fiducia del vostro sito?',
+                  testo='Chi siamo, contatti verificabili, identità legale e dati strutturati a posto: fanno parte della SEO tecnica e di ogni sito aziendale che consegniamo.',
+                  buttons=[('Scopri la SEO tecnica', '/servizi/seo-tecnica/', None),
+                           ('Verifica se il sito è pronto per l’AI', '/strumenti/sito-pronto-ai/', 'outline')])),
 ]
 
 # Городские лендинги. Правило из piano-contenuti-seo.md §2: максимум 6–8

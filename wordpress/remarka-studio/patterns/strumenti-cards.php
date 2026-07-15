@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Strumenti gratuiti — sette card
+ * Title: Strumenti gratuiti — otto card
  * Slug: remarka-studio/strumenti-cards
  * Categories: remarka
- * Description: Sette card strumenti con indice mono e link.
+ * Description: Otto card strumenti con indice mono e link.
  * Viewport Width: 1400
  */
 ?>
@@ -140,6 +140,24 @@
 
 <!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
 <p class="sr-card-link sr-no-margin"><a href="/strumenti/impatto-co2/">Prova →</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-mono sr-no-margin","style":{"typography":{"fontSize":"12px"}},"textColor":"oltremare"} -->
+<p class="sr-mono sr-no-margin has-oltremare-color has-text-color" style="font-size:12px">/08</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"14px"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:14px">Segnali E-E-A-T</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small","textColor":"grigio"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Otto segnali di fiducia on-page, raggruppati nei quattro pilastri E-E-A-T.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link sr-no-margin"} -->
+<p class="sr-card-link sr-no-margin"><a href="/strumenti/segnali-eeat/">Prova →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></section>
