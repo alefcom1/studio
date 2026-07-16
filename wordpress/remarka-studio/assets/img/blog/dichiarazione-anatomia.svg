@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-label="L'anatomia di una dichiarazione di accessibilita: i cinque elementi">
+  <defs>
+    <pattern id="gridDca" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}
+    </style>
+  </defs>
+  <rect width="1200" height="500" fill="#F7F6F2"/>
+  <rect width="1200" height="500" fill="url(#gridDca)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">ANATOMIA DI UNA DICHIARAZIONE DI ACCESSIBILITÀ — FONTE: W3C/WAI</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <g class="body" font-size="19" fill="#14161A">
+    <g transform="translate(80,116)">
+      <rect x="0" y="0" width="1040" height="60" fill="#FFFFFF" stroke="#2440C8" stroke-width="1.5"/>
+      <text x="26" y="38" class="mono" font-size="22" fill="#2440C8">1</text>
+      <text x="80" y="38">Impegno all'accessibilità — anche verso le persone con disabilità</text>
+    </g>
+    <g transform="translate(80,188)">
+      <rect x="0" y="0" width="1040" height="60" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+      <text x="26" y="38" class="mono" font-size="22" fill="#2440C8">2</text>
+      <text x="80" y="38">Standard applicato — di norma WCAG 2.1 livello AA</text>
+    </g>
+    <g transform="translate(80,260)">
+      <rect x="0" y="0" width="1040" height="60" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+      <text x="26" y="38" class="mono" font-size="22" fill="#2440C8">3</text>
+      <text x="80" y="38">Stato di conformità — cosa è accessibile e cosa non lo è ancora</text>
+    </g>
+    <g transform="translate(80,332)">
+      <rect x="0" y="0" width="1040" height="60" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+      <text x="26" y="38" class="mono" font-size="22" fill="#2440C8">4</text>
+      <text x="80" y="38">Contatto per le segnalazioni — un indirizzo vero, con impegno a rispondere</text>
+    </g>
+    <g transform="translate(80,404)">
+      <rect x="0" y="0" width="1040" height="60" fill="#14161A"/>
+      <text x="26" y="38" class="mono" font-size="22" fill="#5B73E8">5</text>
+      <text x="80" y="38" fill="#FFFFFF">Data di redazione e aggiornamento — il sito cambia, la dichiarazione lo segue</text>
+    </g>
+  </g>
+</svg>

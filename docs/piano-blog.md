@@ -108,7 +108,14 @@
   verifica-accessibilita и sito-pronto-ai. Особенность: RU-страниц у этих
   статей нет по плану (RU-темы — батчи 5–6); hreflang решён через
   BLOG_IT_EN_ONLY в lang.py (переключатель RU ведёт на /ru/blog/, без 404).
-- Батчи 2–6 — очередь, по одному в день (триггер 05:00 UTC ежедневно).
+- Батч 2 — ✅ выполнен (16.07): 5 статей IT+EN «деньги и решения владельца»
+  (preventivo · sito in 3 settimane · restyling o sito nuovo · impatto
+  ambientale · dichiarazione di accessibilità), 10 фирменных SVG, 4–8 внешних
+  источников на статью (SDI, CSRD, Green Web Foundation, W3C/WAI + банк
+  ретрофита), JSON-LD BlogPosting через blog-schema-map, перелинковка услуга +
+  инструмент + соседняя статья, бэклинки из инструментов impatto-co2 и
+  verifica-accessibilita. RU-страниц нет (BLOG_IT_EN_ONLY, как в батче 1).
+- Батчи 3–6 — очередь, по одному в день (триггер 05:00 UTC ежедневно).
 - **Ретрофит выполнен отдельным проходом 15.07** (коммит «Blog retrofit:
   external sources, BlogPosting schema, content enrichment»). Охват — ВСЕ 13
   готовых статей (8 старых + 5 батча 1):

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Sito web in 3 settimane, dalla firma all'online">
+  <defs>
+    <pattern id="gridTsc" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="#F7F6F2"/>
+  <rect width="1200" height="630" fill="url(#gridTsc)"/>
+  <line x1="80" y1="96" x2="1120" y2="96" stroke="#14161A" stroke-width="1.5"/>
+  <text x="80" y="82" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">REMARKA · STUDIO — BLOG</text>
+  <text x="1120" y="82" class="mono" font-size="15" letter-spacing="2" fill="#2440C8" text-anchor="end">DALLA FIRMA ALL'ONLINE</text>
+  <text x="80" y="270" class="disp" font-size="150" letter-spacing="1" fill="#14161A">21 GIORNI</text>
+  <text x="84" y="330" class="body" font-size="34" font-weight="600" fill="#14161A">un sito web in 3 settimane, davvero</text>
+  <text x="84" y="374" class="mono" font-size="20" fill="#5A5E66">niente magia · niente template svuotato · data in contratto</text>
+  <!-- three week stripes -->
+  <g transform="translate(80,432)">
+    <text x="0" y="-6" class="mono" font-size="14" letter-spacing="2" fill="#5A5E66">SETT. 1 · ANALISI E DESIGN</text>
+    <rect x="0" y="6" width="1040" height="26" fill="#DDDBD4"/>
+    <rect x="0" y="6" width="347" height="26" fill="#2440C8"/>
+    <text x="357" y="26" class="mono" font-size="14" fill="#2440C8">33%</text>
+  </g>
+  <g transform="translate(80,486)">
+    <text x="0" y="-6" class="mono" font-size="14" letter-spacing="2" fill="#5A5E66">SETT. 2 · SVILUPPO</text>
+    <rect x="0" y="6" width="1040" height="26" fill="#DDDBD4"/>
+    <rect x="0" y="6" width="693" height="26" fill="#2440C8"/>
+    <text x="703" y="26" class="mono" font-size="14" fill="#2440C8">66%</text>
+  </g>
+  <g transform="translate(80,540)">
+    <text x="0" y="-6" class="mono" font-size="14" letter-spacing="2" fill="#5A5E66">SETT. 3 · CONTENUTI, TEST, ONLINE</text>
+    <rect x="0" y="6" width="1040" height="26" fill="#14161A"/>
+    <text x="1030" y="26" class="mono" font-size="14" fill="#FFFFFF" text-anchor="end">100%</text>
+  </g>
+</svg>

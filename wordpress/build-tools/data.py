@@ -655,6 +655,7 @@ TOOLS = [
              links=[
                  ('Vogliamo sistemarle noi: audit, correzioni e dichiarazione — servizio Adeguamento EAA', '/servizi/adeguamento-eaa/'),
                  ('Approfondisci: EAA 2026, cosa rischia davvero il vostro e-commerce', '/blog/european-accessibility-act-ecommerce/'),
+                 ('Guida pratica: la dichiarazione di accessibilità nel 2026', '/blog/dichiarazione-di-accessibilita-guida-2026/'),
              ]),
          cta=dict(heading='Vogliamo rendere il sito accessibile?',
                   testo='Verifichiamo le barriere una per una — automatiche e manuali — e le sistemiamo secondo lo standard WCAG 2.1 AA.',
@@ -735,6 +736,7 @@ TOOLS = [
              links=[
                  ('Vogliamo alleggerirlo noi: scopri il restyling tecnico', '/servizi/restyling-migrazione/'),
                  ('Approfondisci: le 7 cause di un sito lento', '/blog/sito-lento-cause-costi/'),
+                 ('Guida: quanto pesa il vostro sito sull’ambiente (e sul portafoglio)', '/blog/impatto-ambientale-sito-web/'),
              ]),
          cta=dict(heading='Vogliamo alleggerire il sito?',
                   testo='Immagini ottimizzate, base tecnica pulita, meno peso a parità di contenuti: meno CO₂ e PageSpeed 90+ da contratto.',
@@ -1014,6 +1016,47 @@ ADEGUAMENTO_EAA = dict(
                  ('Prova lo strumento gratuito', '/strumenti/verifica-accessibilita/', 'outline')],
     ),
 )
+
+# --- Bank di prime fonti autorevoli (URL verificati). Definito prima di
+#     BLOG_POSTS: sia il ritrofit (_BLOG_FONTI, più sotto) sia i batch 2+
+#     (fonti/link inline nei dict) referenziano queste costanti. ---
+_S_EURLEX_EAA   = 'https://eur-lex.europa.eu/eli/dir/2019/882/oj'
+_S_ACCESSIBLEEU = 'https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en'
+_S_WCAG21       = 'https://www.w3.org/TR/WCAG21/'
+_S_WAI_WCAG     = 'https://www.w3.org/WAI/standards-guidelines/wcag/'
+_S_BIRDBIRD_EAA = 'https://www.twobirds.com/en/insights/2025/a-guide-to-navigating-the-european-accessibility-act-for-online-retailers-service-providers-and-plat'
+_S_GARANTE_COOKIE = 'https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677876'
+_S_EDPB_COOKIE  = 'https://www.edpb.europa.eu/our-work-tools/our-documents/other/report-work-undertaken-cookie-banner-taskforce_en'
+_S_GDPR         = 'https://eur-lex.europa.eu/eli/reg/2016/679/oj'
+_S_OPENAI_BOTS  = 'https://platform.openai.com/docs/bots'
+_S_ANTHROPIC    = 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
+_S_LLMSTXT      = 'https://llmstxt.org/'
+_S_GOOGLE_CRAWLERS = 'https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers'
+_S_GOOGLE_HELPFUL  = 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content'
+_S_GOOGLE_SD    = 'https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data'
+_S_GOOGLE_AI    = 'https://developers.google.com/search/docs/appearance/ai-features'
+_S_GOOGLE_SITEMOVE = 'https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes'
+_S_GOOGLE_REDIRECTS = 'https://developers.google.com/search/docs/crawling-indexing/301-redirects'
+_S_GOOGLE_MULTIREG  = 'https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites'
+_S_GOOGLE_HREFLANG  = 'https://developers.google.com/search/docs/specialty/international/localized-versions'
+_S_WEBDEV_VITALS = 'https://web.dev/articles/vitals'
+_S_WEBDEV_LCP    = 'https://web.dev/articles/lcp'
+_S_WEBDEV_INP    = 'https://web.dev/articles/inp'
+_S_WEBDEV_CLS    = 'https://web.dev/articles/cls'
+_S_WEBDEV_PWA    = 'https://web.dev/explore/progressive-web-apps'
+_S_WEBDEV_LEARN_PWA = 'https://web.dev/learn/pwa/'
+_S_MDN_PWA       = 'https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps'
+_S_CRUX          = 'https://developer.chrome.com/docs/crux'
+_S_ALMANAC       = 'https://almanac.httparchive.org/en/2024/'
+_S_SWD           = 'https://sustainablewebdesign.org/estimating-digital-emissions/'
+_S_CSA           = 'https://csa-research.com/Featured-Content/Global-Growth/CRWB-Series/CRWB-B2C'
+_S_EUROSTAT_ECOM = 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=E-commerce_statistics'
+# --- Batch 2 (fonti verificate 16.07): fatturazione elettronica SDI, CSRD,
+#     Green Web Foundation co2.js, W3C WAI «Developing an Accessibility Statement». ---
+_S_SDI           = 'https://www.agenziaentrate.gov.it/portale/aree-tematiche/fatturazione-elettronica'
+_S_CSRD          = 'https://eur-lex.europa.eu/eli/dir/2022/2464/oj'
+_S_CO2JS         = 'https://www.thegreenwebfoundation.org/co2-js/'
+_S_WAI_STATEMENT = 'https://www.w3.org/WAI/planning/statements/'
 
 BLOG_POSTS = [
     dict(slug='sito-quattro-lingue-costi-tempi', data='05 MAG 2026',
@@ -1324,6 +1367,307 @@ BLOG_POSTS = [
                   links=[('Misura gratis gli otto segnali E-E-A-T della tua home', '/strumenti/segnali-eeat/'),
                          ('Chi siamo, contatti e dati strutturati sono di serie nella SEO tecnica', '/servizi/seo-tecnica/')]),
          ]),
+
+    # ---- Blog · Batch 2 (soldi e decisioni del titolare) — IT + EN ----
+    # Stesse regole del batch 1: SVG di marca in assets/img/blog/, ≥3 prime
+    # fonti autorevoli (blocco «Fonti» + link contestuali, URL verificati),
+    # JSON-LD BlogPosting via blog-schema-map, IT+EN (RU è un batch a parte).
+    # Le versioni EN sono pagine separate (translate_pages.py en, CHROME_BLOG_BATCH2).
+    dict(slug='preventivo-sito-web-come-leggerlo', data='16 LUG 2026',
+         titolo='Preventivo sito web: come leggerlo senza sorprese',
+         estratto='Tre preventivi per lo stesso sito, tre cifre che non c’entrano niente. La griglia per leggerli riga per riga e le domande da fare prima di firmare.',
+         corpo='Avete chiesto tre preventivi per lo stesso sito e vi tornano tre cifre che sembrano parlare di progetti diversi: 2.400, 6.900, 14.000 euro. Vi pare di confrontare mele con biciclette, e in un certo senso è vero. Un preventivo sito web non è il listino del pane: dentro la stessa parola — «sito da dieci pagine» — ci stanno lavori che valgono il triplo l’uno dell’altro. In questo articolo vi diamo la griglia per leggere un preventivo riga per riga, capire dove si nasconde il prezzo vero e quali domande fare prima di firmare, così le sorprese non arrivano in fattura.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/preventivo-cover.svg',
+                    alt='Preventivo sito web: come leggerlo riga per riga, le voci che spostano il prezzo e le sorprese da evitare in fattura'),
+         cta=('Confronta prezzi e tempi, a listino chiuso', '/prezzi/'),
+         sezioni=[
+             dict(titolo='Perché due preventivi «uguali» costano il doppio',
+                  paragrafi=[
+                      "Il malinteso nasce quasi sempre da una parola sola: «pagina». Due preventivi dicono entrambi «sito da dieci pagine», ma uno intende dieci pagine con i vostri testi già pronti da impaginare su un template, l’altro dieci pagine da progettare, scrivere e fotografare su misura. Il secondo costa il doppio e vale il triplo, eppure sul foglio le due righe sembrano identiche. È qui che nasce metà dei «mi hanno chiesto una cifra assurda per la stessa cosa».",
+                      "Il prezzo di un sito non lo fanno le pagine, lo fanno tre cose che spesso restano implicite: quanto è su misura il design, quanto lavoro c’è sui contenuti, e cosa viene garantito per iscritto. Un preventivo onesto rende esplicite tutte e tre. Un preventivo furbo le lascia nel vago, così può essere il più basso della pila — e recuperare dopo, quando scoprite che le foto, i testi e la seconda lingua «non erano compresi».",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/preventivo-voci.svg',
+                              alt='Le voci di un preventivo sito web: design, sviluppo, contenuti, SEO tecnica, accessibilità e assistenza, e quali fanno oscillare di più il prezzo',
+                              caption='Le sei voci che compongono un preventivo sito web. Design e contenuti sono quelle che spostano di più il prezzo; assistenza e accessibilità sono quelle che spesso «spariscono» dalle offerte più basse. Fonte: listini pubblici delle web agency italiane, 2026.')),
+             dict(titolo='Le voci che un preventivo sito web deve avere',
+                  paragrafi=[
+                      "Prima di guardare la cifra in fondo, guardate se ci sono tutte le voci. Un progetto serio si scompone più o meno sempre nello stesso modo, e ogni voce mancante è un costo che tornerà, di solito a lavoro iniziato, quando trattare è più difficile.",
+                  ],
+                  lista=[
+                      'Design e struttura: quanto è su misura e quanto è template. Un tema comprato e adattato è legittimo, ma deve costare come tale, non come un progetto originale.',
+                      'Sviluppo e messa online: CMS, moduli, integrazioni, configurazione dell’hosting. Chiedete cosa è incluso e cosa è «a parte».',
+                      'Contenuti: testi, foto, eventuali traduzioni. È la voce che i preventivi bassi tengono più bassa, ed è quella che decide se il sito converte o resta una vetrina muta.',
+                      'SEO tecnica e velocità: struttura, dati strutturati, PageSpeed. Se non c’è una riga, non è gratis: è che non c’è.',
+                      'Accessibilità: dal 28 giugno 2025 è un obbligo di legge per molti siti, non un abbellimento. Un preventivo che non la nomina è vecchio o vi lascia il conto per dopo.',
+                      'Assistenza e proprietà: chi possiede dominio, codice e dati dopo la consegna, e cosa copre l’assistenza — per quanto tempo e a quali condizioni.',
+                  ]),
+             dict(titolo='Prezzo chiuso o «indicativo»? La riga che cambia tutto',
+                  paragrafi=[
+                      "C’è una differenza sostanziale tra un preventivo «chiuso» e uno «indicativo», e vale più di qualsiasi sconto. Il prezzo chiuso è quello che pagherete: se emergono lavori aggiuntivi, si concordano per iscritto prima, o restano a carico di chi ha fatto il preventivo. Il prezzo indicativo è un punto di partenza che sale in corsa, quando ormai avete investito tempo e non potete tornare indietro.",
+                      "La stessa logica vale per i tempi. «Consegna in primavera» non è una data; «consegna il 30, con l’1% di sconto per ogni giorno lavorativo di ritardo» lo è. Chiedete sempre se la data è nel contratto e con quale penale: la risposta, più delle cifre, vi dice con chi avete a che fare. Nel nostro caso il prezzo è bloccato alla firma e la data è scritta con la penale — non per generosità, ma perché è l’unico modo per cui «senza sorprese» significhi qualcosa.",
+                  ]),
+             dict(titolo='Le sorprese che arrivano dopo: i costi ricorrenti',
+                  paragrafi=[
+                      "Il prezzo di costruzione è metà della storia. Un sito vivo costa ogni anno, e un preventivo onesto ve lo dice prima. Hosting adeguato, aggiornamenti di sicurezza, manutenzione: sul mercato la manutenzione professionale viaggia tra i 500 e i 2.000 euro l’anno, e cambia molto cosa comprende. Se vendete online si aggiungono le commissioni sui pagamenti e la fatturazione elettronica, che in Italia passa obbligatoriamente dal Sistema di Interscambio dell’Agenzia delle Entrate: assicuratevi che sia inclusa o messa a preventivo, non scoperta a negozio aperto.",
+                      "C’è poi un costo che quasi nessun preventivo nomina ancora, ed è un obbligo: l’adeguamento all’European Accessibility Act, in vigore in Italia dal 28 giugno 2025 per i siti che vendono ai consumatori. Non è una voce facoltativa da «vedere più avanti»: è un requisito di legge, con sanzioni. Un preventivo che lo ignora non vi sta facendo risparmiare, vi sta rimandando il conto.",
+                  ]),
+             dict(titolo='Come leggerlo in pratica: le cinque domande',
+                  paragrafi=[
+                      "Non serve diventare tecnici. Bastano cinque domande, e il modo in cui vi rispondono conta quanto le risposte: se chi avete davanti si innervosisce, avete già un’informazione.",
+                  ],
+                  lista=[
+                      'Il prezzo è chiuso o indicativo? Cosa succede se in corso d’opera emergono lavori aggiuntivi?',
+                      'La data di consegna è nel contratto, e con quale penale in caso di ritardo?',
+                      'Contenuti, foto e traduzioni sono inclusi, o sono «a parte»?',
+                      'Chi possiede dominio, codice e dati dopo la consegna — io o voi?',
+                      'Accessibilità e velocità su mobile sono garantite con un numero, o sono promesse a voce?',
+                  ],
+                  links=[('Confronta i nostri prezzi e tempi, accanto a quelli di mercato', '/prezzi/'),
+                         ('Cosa include davvero un sito aziendale', '/servizi/siti-aziendali/'),
+                         ('Prima di rifare: misura la salute del sito attuale', '/strumenti/check-up-completo/'),
+                         ('Leggi anche: sito web in 3 settimane, com’è possibile davvero', '/blog/sito-web-in-3-settimane/')]),
+         ],
+         fonti=[
+             ('Agenzia delle Entrate — fatturazione elettronica (SDI)', _S_SDI,
+              'La pagina ufficiale sul Sistema di Interscambio: un costo che ogni e-commerce deve mettere a preventivo.'),
+             ('AccessibleEU — Commissione europea', _S_ACCESSIBLEEU,
+              'Dal 28 giugno 2025 l’accessibilità è un obbligo, non un extra: va considerata nel preventivo.'),
+             ('HTTP Archive — Web Almanac 2024', _S_ALMANAC,
+              'Dati reali su com’è fatto il web oggi: utile per capire cosa si paga davvero dietro un sito.'),
+             ('web.dev — Web Vitals', _S_WEBDEV_VITALS,
+              'La velocità mobile che va garantita con un numero: la differenza tra un preventivo serio e uno vago.'),
+         ]),
+
+    dict(slug='sito-web-in-3-settimane', data='16 LUG 2026',
+         titolo='Sito web in 3 settimane: com’è possibile (davvero)',
+         estratto='Il mercato ci mette 6–10 settimane, noi tre. Non è magia né lavoro fatto a metà: è metodo. Ecco cosa succede in ognuna delle tre settimane, e la penale se sforiamo.',
+         corpo='«Un sito web in 3 settimane? O è una fregatura, o è un template riempito in fretta.» È la reazione più comune, ed è sana: sul mercato italiano un sito aziendale richiede in media 6–10 settimane, quindi promettere tre suona come promettere di dimagrire dormendo. Eppure lo facciamo, con la data scritta in contratto e una penale se sforiamo. Non c’è nessun trucco e nessun lavoro fatto a metà: c’è un metodo che toglie i tempi morti, non la qualità. Vediamo, giorno per giorno, com’è possibile un sito web in 3 settimane — e cosa serve da parte vostra perché funzioni.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/tresett-cover.svg',
+                    alt='Sito web in 3 settimane: le tre settimane dalla firma all’online, analisi, sviluppo e messa online con data in contratto'),
+         cta=('Sito aziendale in 3 settimane, prezzo chiuso', '/servizi/siti-aziendali/'),
+         sezioni=[
+             dict(titolo='Tre settimane non è magia: è togliere i tempi morti',
+                  paragrafi=[
+                      "Le 6–10 settimane del mercato non sono quasi mai lavoro: sono attesa. Il preventivo che resta indeciso per giorni, i contenuti che arrivano a rate, il design che va avanti e indietro cinque volte perché nessuno ha fissato lo scopo all’inizio. Il tempo se ne va nel ping-pong, non nel produrre. Noi comprimiamo le tre settimane aggredendo proprio quel ping-pong: scopo chiuso alla firma, un solo giro di revisione per fase, contenuti raccolti con voi in un incontro invece che inseguiti per email.",
+                      "La seconda leva è banale ma decisiva: partiamo da fondamenta nostre, collaudate su decine di progetti, non da un foglio bianco ogni volta. Questo non vuol dire «tutti i siti uguali»: vuol dire che l’impalcatura tecnica — velocità, accessibilità, struttura SEO — è già solida, e le tre settimane le spendiamo su ciò che è vostro, non a reinventare la ruota.",
+                  ]),
+             dict(titolo='Settimana 1: analisi, preventivo chiuso, design',
+                  paragrafi=[
+                      "La prima settimana decide le altre due. Facciamo l’analisi — chi siete, chi volete raggiungere, cosa deve fare il sito — e da lì esce un preventivo chiuso, con prezzo bloccato e data. Poi il design: non venti bozze, ma una direzione condivisa e approvata, così la settimana dopo si sviluppa senza ripensamenti. È la settimana che richiede più presenza da parte vostra, ed è tempo ben speso: ogni decisione presa adesso è un ritardo evitato dopo.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/tresett-timeline.svg',
+                              alt='Le tre settimane dalla firma all’online: settimana 1 analisi e design, settimana 2 sviluppo, settimana 3 contenuti, test e messa online',
+                              caption='Dalla firma all’online in 21 giorni: analisi e design (settimana 1), sviluppo (settimana 2), contenuti, test e pubblicazione (settimana 3). La data è in contratto: ogni giorno lavorativo di ritardo vale l’1% di sconto. Tempi del sito aziendale; la vetrina è 2 settimane, l’e-commerce 6.')),
+             dict(titolo='Settimana 2: sviluppo, con la velocità già dentro',
+                  paragrafi=[
+                      "Nella seconda settimana il design approvato diventa un sito che funziona. Qui la scelta di partire da fondamenta collaudate paga tutto il suo prezzo: la struttura tecnica che regge la velocità e l’accessibilità è già al suo posto, e lo sviluppo si concentra sulle vostre pagine, non sull’impalcatura. Non rincorriamo il PageSpeed 90+ alla fine come una toppa: lo costruiamo mentre sviluppiamo, perché la velocità non è un ritocco finale ma il modo in cui il sito è fatto.",
+                  ]),
+             dict(titolo='Settimana 3: contenuti, test, online',
+                  paragrafi=[
+                      "La terza settimana è quella dei dettagli che si vedono e di quelli che non si vedono. Impaginiamo i contenuti definitivi, poi testiamo: velocità reale su telefono, accessibilità secondo lo standard WCAG 2.1 AA — oggi anche un obbligo di legge — moduli, link, comportamento su schermi diversi. Solo quando i numeri tornano si va online. Un sito veloce che rispetta le persone non è un vezzo: è ciò che Google misura per posizionarvi e ciò che tiene le visite invece di farle scappare.",
+                  ],
+                  links=[('Verifica la salute di un sito con il check-up completo', '/strumenti/check-up-completo/')]),
+             dict(titolo='Cosa non comprimiamo: mai la qualità',
+                  paragrafi=[
+                      "Tagliamo l’attesa, non i controlli. Le tre settimane non nascono da un lavoro fatto di corsa, ma da un lavoro senza pause morte: mentre voi rileggete una bozza, noi non restiamo fermi, prepariamo la fase successiva. Quello che non salta mai è la parte che protegge voi — i test di velocità e accessibilità, la prova su telefoni veri, il controllo dei moduli e dei link. Se una di queste verifiche non passa, non andiamo online: la data si difende con il metodo, non sacrificando il collaudo.",
+                      "C’è un caso in cui tre settimane non bastano, e lo diciamo prima: un progetto con un catalogo grande, molte integrazioni o più lingue richiede più tempo. Non lo nascondiamo per far firmare — lo scriviamo nel preventivo, con la stessa data fissa e la stessa penale. È per questo che le tre settimane valgono per il sito aziendale: la vetrina ne chiede due, l’e-commerce sei. Un numero onesto vale più di un numero piccolo.",
+                  ]),
+             dict(titolo='E se sforiamo? La penale, e cosa serve da parte vostra',
+                  paragrafi=[
+                      "La data in contratto vale solo se ha un prezzo: ogni giorno lavorativo di ritardo è l’1% di sconto sul totale. È la ragione per cui prendiamo sul serio le tre settimane, ed è anche la ragione per cui vi chiediamo una cosa in cambio. Il rispetto della data dipende da due mani: perché tre settimane bastino, i contenuti e le decisioni devono arrivare quando li chiediamo, non a lavoro iniziato. La settimana 1 serve proprio a questo — a raccogliere tutto insieme, così le settimane 2 e 3 corrono.",
+                      "Chi promette «un sito in una settimana» senza chiedervi niente sta vendendo un template svuotato. Chi vi promette «quando sarà pronto» sta lasciando aperta una porta che costa cara. Tre settimane, con una data e una penale, è il punto onesto tra le due cose: veloce sul serio, ma senza scorciatoie sulla qualità.",
+                  ],
+                  links=[('Cosa include un sito aziendale, a prezzo chiuso', '/servizi/siti-aziendali/'),
+                         ('Prima di firmare: come leggere un preventivo sito web', '/blog/preventivo-sito-web-come-leggerlo/'),
+                         ('Sito già online? Restyling o sito nuovo: il test delle 5 domande', '/blog/restyling-o-sito-nuovo-5-domande/')]),
+         ],
+         fonti=[
+             ('web.dev — Web Vitals', _S_WEBDEV_VITALS,
+              'La velocità mobile che garantiamo per contratto: il PageSpeed 90+ non è uno slogan, è una soglia misurabile.'),
+             ('AccessibleEU — Commissione europea', _S_ACCESSIBLEEU,
+              'Dal 2025 l’accessibilità è parte dello scopo di ogni sito nuovo, non un lavoro rimandabile.'),
+             ('Google — creare contenuti utili e affidabili', _S_GOOGLE_HELPFUL,
+              'Cosa Google considera qualità: lo sfondo del perché testiamo prima di andare online.'),
+             ('Google — introduzione ai dati strutturati', _S_GOOGLE_SD,
+              'I dati strutturati fanno parte dell’impalcatura tecnica che è già pronta in partenza.'),
+         ]),
+
+    dict(slug='restyling-o-sito-nuovo-5-domande', data='16 LUG 2026',
+         titolo='Restyling o sito nuovo? Il test delle 5 domande',
+         estratto='Rifare tutto o ritoccare? Cinque domande per capire, con i numeri e non a sensazione, se al vostro sito basta un restyling o serve ripartire da zero.',
+         corpo='C’è un momento in cui aprite il vostro sito dal telefono e qualcosa stona: carica piano, sembra vecchio, i contatti arrivano col contagocce. La domanda che segue è sempre la stessa — «lo ritocchiamo o lo rifacciamo da capo?» — e la risposta sbagliata costa in entrambe le direzioni: si può buttare via un sito ancora buono, o accanirsi a rattoppare una base ormai fusa. Non è una scelta da fare a sensazione. Bastano cinque domande per capire se al vostro sito serve un restyling o un rifacimento vero — e questo articolo ve le mette in mano.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/restyling-cover.svg',
+                    alt='Restyling sito web o sito nuovo: il test delle cinque domande per decidere con i numeri se ritoccare o ripartire da zero'),
+         cta=('Restyling e migrazione senza perdere posizioni', '/servizi/restyling-migrazione/'),
+         sezioni=[
+             dict(titolo='Restyling o rifacimento: non è la stessa spesa',
+                  paragrafi=[
+                      "Prima di decidere, mettiamo d’accordo le parole. Un restyling lavora sopra una base che tiene: rinnova l’aspetto, riscrive dei contenuti, sistema la velocità e l’accessibilità, ma non demolisce le fondamenta. Un rifacimento rifà la base tecnica da zero — tema, struttura, spesso la piattaforma — e ci riporta sopra i contenuti che meritano di restare. Il primo costa meno e dura meno a farsi; il secondo costa di più ma risolve problemi che nessun ritocco può toccare.",
+                      "Sbagliare la diagnosi è la spesa più stupida di tutte. Fare un rifacimento completo quando bastava un restyling è buttare soldi; fare un restyling su una base marcia è come cambiare le gomme a un motore fuso — ogni intervento costa e il risultato resta mediocre. Le cinque domande servono esattamente a non sbagliare questa diagnosi.",
+                  ]),
+             dict(titolo='Il test delle 5 domande',
+                  paragrafi=[
+                      "Rispondete con onestà. Più «sì» collezionate, più l’ago si sposta dal restyling verso il sito nuovo. Non è una formula magica, è un modo per guardare in faccia le cose che di solito si evitano.",
+                  ],
+                  lista=[
+                      '1. Il sito è lento su telefono anche dopo aver alleggerito le immagini? Se la lentezza sta nella base — tema pesante, plugin stratificati, PHP vecchio — ritoccare non basta.',
+                      '2. Ogni modifica è una battaglia? Se aggiungere una pagina o cambiare un testo richiede un tecnico e mezza giornata, la struttura sta remando contro di voi.',
+                      '3. È inutilizzabile o inaccessibile da mobile? Se una persona su due arriva da telefono e fatica, non è un ritocco estetico: è un problema di fondamenta.',
+                      '4. La piattaforma è ferma o insicura? Versioni obsolete, aggiornamenti impossibili, avvisi di sicurezza: sono crepe strutturali, non macchie da coprire.',
+                      '5. Il sito non dice più cosa siete diventati? Se posizionamento, offerta e pubblico sono cambiati e il sito è rimasto indietro, il problema è la sostanza, non la vernice.',
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/restyling-5domande.svg',
+                              alt='Il test delle cinque domande su velocità, facilità di modifica, mobile, piattaforma e messaggio, con l’esito restyling o sito nuovo',
+                              caption='Le cinque domande e dove portano: pochi «sì», e concentrati sull’aspetto, indicano un restyling; molti «sì», e sulle fondamenta (velocità, piattaforma, mobile), indicano un sito nuovo. La soglia non è matematica: conta quali domande.')),
+             dict(titolo='Quando basta un restyling',
+                  paragrafi=[
+                      "Se i «sì» sono pochi e riguardano l’aspetto — il sito invecchiato ma ancora rapido, facile da aggiornare, solido sotto il cofano — il restyling è la scelta giusta e la più intelligente. Rinnovate l’immagine, riscrivete i contenuti che vendono, sistemate accessibilità e velocità, e tenete tutto il valore che il sito ha già accumulato su Google. Prima di decidere, però, guardate i numeri e non l’impressione: un check-up del sito misura in un minuto velocità, SEO, accessibilità e privacy, e vi dice se la base regge davvero o se vi sta solo sembrando.",
+                  ],
+                  links=[('Misura la salute del sito prima di scegliere: check-up completo', '/strumenti/check-up-completo/')]),
+             dict(titolo='Quando conviene il sito nuovo (e come non perdere Google)',
+                  paragrafi=[
+                      "Se i «sì» si accumulano sulle fondamenta — lentezza strutturale, piattaforma insicura, mobile inutilizzabile — il rifacimento non è uno spreco, è la fine di uno spreco. La paura giusta, a quel punto, è una sola: perdere le posizioni guadagnate in anni. È una paura legittima e gestibile. Con una mappa degli URL uno-a-uno e i redirect 301 fatti prima del lancio, il valore delle vecchie pagine si trasferisce alle nuove e il traffico continua come se niente fosse. Il crollo dopo un rifacimento non è una maledizione tecnica: è quasi sempre la conseguenza di redirect mancanti o fatti «tutti alla home».",
+                      "Un dettaglio che fa la differenza: la mappa non si improvvisa il giorno del lancio. Si prepara prima, pagina per pagina, e si prova su un ambiente di test. Quando è fatta bene, il passaggio è invisibile ai visitatori e a Google — nessun errore 404, nessuna pagina orfana, nessun calo. Il rifacimento smette di essere un salto nel buio e diventa un trasloco ordinato, con le scatole etichettate.",
+                  ],
+                  links=[('Come funzionano i redirect quando si cambia sito (Google)', _S_GOOGLE_SITEMOVE)]),
+             dict(titolo='Decidere con i numeri, non a sensazione',
+                  paragrafi=[
+                      "La regola che ripetiamo sempre: prima si misura, poi si decide. Un check-up onesto trasforma «mi sembra vecchio» in una lista di problemi con una priorità, e da lì la scelta tra restyling e sito nuovo diventa quasi ovvia. Se dai numeri esce che la base regge, si ritocca; se esce che è finita, si rifà — e in entrambi i casi si parte da un dato, non da una sensazione o da un venditore che ha già deciso per voi.",
+                      "Un ultimo criterio che quasi nessuno considera: il peso. Un sito vecchio è spesso anche un sito pesante, e un sito pesante è lento, costoso da servire e più inquinante. Rifare la base, quando serve, è anche l’occasione per alleggerire — e la velocità che ne esce si vede subito, sul telefono e nei contatti.",
+                  ],
+                  links=[('Restyling e migrazione, senza perdere posizioni', '/servizi/restyling-migrazione/'),
+                         ('Leggi anche: quanto pesa il vostro sito sull’ambiente (e sul portafoglio)', '/blog/impatto-ambientale-sito-web/')]),
+         ],
+         fonti=[
+             ('Google — spostamenti del sito con cambio di URL', _S_GOOGLE_SITEMOVE,
+              'La procedura ufficiale per rifare un sito senza perdere il posizionamento su Google.'),
+             ('Google — redirect e ricerca Google', _S_GOOGLE_REDIRECTS,
+              'Come impostare i redirect 301 perché Google trasferisca il valore delle vecchie pagine alle nuove.'),
+             ('web.dev — Web Vitals', _S_WEBDEV_VITALS,
+              'Le metriche di velocità con cui distinguere un sito ancora buono da uno da rifare.'),
+             ('Sustainable Web Design — stima delle emissioni', _S_SWD,
+              'Il modello che lega il peso della pagina al consumo: un sito vecchio è spesso anche pesante.'),
+         ]),
+
+    dict(slug='impatto-ambientale-sito-web', data='16 LUG 2026',
+         titolo='Quanto pesa il vostro sito sull’ambiente (e sul portafoglio)',
+         estratto='Ogni visita consuma energia e produce CO₂. Come si misura l’impatto ambientale di un sito web, perché leggero vuol dire anche veloce ed economico, e cosa c’entra la CSRD.',
+         corpo='Un sito web sembra immateriale, ma non lo è: ogni volta che qualcuno lo apre, dei byte viaggiano da un data center alla sua schermata, e quel viaggio consuma energia. Moltiplicate per decine di migliaia di visite al mese e l’«immateriale» diventa una bolletta e un po’ di anidride carbonica. La buona notizia è che l’impatto ambientale di un sito web si può stimare, e che ridurlo coincide quasi sempre con renderlo più veloce e meno costoso. Vediamo come si misura, cosa c’entrano i vostri conti e la nuova rendicontazione europea, e cosa potete fare in un pomeriggio.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/impatto-cover.svg',
+                    alt='Impatto ambientale sito web: dal peso della pagina in byte all’energia consumata e ai grammi di CO₂ per visita'),
+         cta=('Misura ora l’impronta di CO₂ del tuo sito — gratis', '/strumenti/impatto-co2/'),
+         sezioni=[
+             dict(titolo='Un sito ha un peso, e il peso ha un costo',
+                  paragrafi=[
+                      "Il peso di una pagina è la somma di tutto ciò che il browser deve scaricare per mostrarla: immagini, caratteri, script, video. Più è pesante, più energia serve per trasferirla e visualizzarla — nel data center, lungo la rete, sul dispositivo di chi guarda. Quell’energia ha due prezzi paralleli: uno ambientale, in grammi di CO₂, e uno economico, in server più cari, campagne che portano visite che scappano, e clienti che se ne vanno prima di vedere la prima riga perché il telefono arranca.",
+                      "È il motivo per cui parliamo di ambiente e portafoglio nello stesso respiro: non sono due discorsi, è lo stesso discorso. La pagina che inquina di più è, quasi sempre, la stessa che carica più lentamente e costa di più mantenere.",
+                  ]),
+             dict(titolo='Come si stima l’impatto ambientale di un sito web',
+                  paragrafi=[
+                      "Non è una sensazione, è un calcolo. Si parte da un dato misurabile — il peso della pagina in byte — e gli si applica un modello che traduce i byte trasferiti in energia e poi in grammi di CO₂ equivalente. Il modello più usato è il Sustainable Web Design, reso disponibile dalla Green Web Foundation nella libreria open source co2.js: gli stessi strumenti che stanno dietro ai calcolatori di emissioni del web. Il riferimento comodo è la media: una pagina web produce intorno agli 0,8 grammi di CO₂ per visita. Sotto quella soglia siete leggeri; sensibilmente sopra, c’è margine per alleggerire.",
+                      "Serve onestà sui limiti, perché qui è facile vendere fumo. È una stima con coefficienti medi mondiali: non conosce l’energia reale del vostro hosting né il comportamento di ogni visitatore. Non è un’impronta certificata, è un ordine di grandezza affidabile e confrontabile — e il suo pregio è proprio che si aggancia a un fatto tecnico su cui potete davvero intervenire: il peso.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/impatto-peso.svg',
+                              alt='Dal peso della pagina ai grammi di CO₂: byte trasferiti, energia consumata, emissioni per visita e stima annua col modello Sustainable Web Design',
+                              caption='Dal peso ai grammi: i byte trasferiti diventano energia e poi CO₂ per visita, moltiplicata per il traffico dà la stima annua. Riferimento: media del web ≈ 0,8 g per visita. Modello: Sustainable Web Design (co2.js, Green Web Foundation).')),
+             dict(titolo='Perché leggero vuol dire veloce e più economico',
+                  paragrafi=[
+                      "Alleggerire una pagina e velocizzarla sono la stessa operazione, vista da due lati. Ogni byte tolto è meno energia trasferita — quindi meno CO₂ — e insieme meno tempo di caricamento, quindi più visite che restano. Le fotografie non ottimizzate sono quasi sempre la voce più pesante: convertirle nei formati moderni può tagliarne l’80% a parità di qualità visibile, e con esse taglia emissioni, costi di banda e secondi di attesa. Non dovete scegliere tra fare bene al pianeta e fare bene ai conti: è la stessa leva.",
+                      "Un esempio tipico da un audit: una home da 6 megabyte, quasi tutti in fotografie non compresse, portata a poco più di 1 megabyte senza togliere una sola immagine — solo formati moderni e caricamento differito. Il risultato è triplo: pagina più veloce di alcuni secondi su telefono, banda risparmiata ogni mese e un’impronta di CO₂ per visita più che dimezzata. Un solo intervento, tre benefici — ambiente, velocità e costi — che vanno sempre nella stessa direzione.",
+                  ]),
+             dict(titolo='La CO₂ entra anche nei bilanci: la CSRD',
+                  paragrafi=[
+                      "Fino a ieri l’impatto ambientale di un sito era una questione di sensibilità. Da poco è anche una voce che può finire in un bilancio. La direttiva europea sulla rendicontazione di sostenibilità — la CSRD — allarga di molto la platea delle aziende che devono rendicontare i propri impatti ambientali, e chi ha questo obbligo lo estende ai fornitori. Se lavorate con o dentro aziende soggette alla CSRD, un sito misurabile e leggero smette di essere un vezzo e diventa un dato che qualcuno vi chiederà. Meglio arrivarci con un numero in mano che con un’alzata di spalle.",
+                      "Diciamolo con onestà, come sempre: il nostro strumento dà una stima indicativa, non un audit certificato per una rendicontazione ufficiale. Ma è il primo passo giusto — vi dice dove siete e quanto margine avete, prima ancora di parlare con un consulente.",
+                  ],
+                  links=[('La direttiva CSRD sulla rendicontazione di sostenibilità (EUR-Lex)', _S_CSRD)]),
+             dict(titolo='Cosa potete fare in un pomeriggio',
+                  paragrafi=[
+                      "Non serve rifare tutto per vedere il numero scendere. Le prime mosse sono semplici e rendono subito.",
+                  ],
+                  lista=[
+                      'Alleggerite le immagini: convertitele in WebP o AVIF con caricamento differito. È quasi sempre l’intervento con il rapporto costo/beneficio più alto.',
+                      'Tagliate script e font superflui: ogni libreria di terze parti e ogni famiglia di caratteri in più è energia trasferita a ogni visita.',
+                      'Sfruttate cache e CDN: evitano di ritrasferire gli stessi contenuti mille volte, meno traffico ripetuto e meno consumo.',
+                      'Scegliete un hosting alimentato da rinnovabili: abbassa l’intensità di carbonio di ogni byte servito, con effetto immediato.',
+                  ],
+                  links=[('Misura gratis l’impronta di CO₂ del tuo sito', '/strumenti/impatto-co2/'),
+                         ('Vogliamo alleggerirlo noi: restyling e migrazione', '/servizi/restyling-migrazione/'),
+                         ('Leggi anche: sito lento, le 7 cause reali (e quanto costa sistemarle)', '/blog/sito-lento-cause-costi/')]),
+         ],
+         fonti=[
+             ('Sustainable Web Design — stima delle emissioni', _S_SWD,
+              'Il modello con cui si calcola l’impronta di CO₂ dal peso reale della pagina.'),
+             ('Green Web Foundation — CO2.js', _S_CO2JS,
+              'La libreria open source che traduce i byte trasferiti in grammi di CO₂ equivalente.'),
+             ('Direttiva (UE) 2022/2464 — CSRD (EUR-Lex)', _S_CSRD,
+              'Il testo ufficiale della rendicontazione di sostenibilità che allarga gli obblighi ambientali alle imprese.'),
+             ('HTTP Archive — Web Almanac 2024', _S_ALMANAC,
+              'Dati reali sul peso delle pagine: dove si concentra davvero il consumo del web.'),
+             ('web.dev — Web Vitals', _S_WEBDEV_VITALS,
+              'Perché un sito leggero è anche veloce: le metriche che legano peso, velocità ed esperienza.'),
+         ]),
+
+    dict(slug='dichiarazione-di-accessibilita-guida-2026', data='16 LUG 2026',
+         titolo='Dichiarazione di accessibilità: guida pratica 2026',
+         estratto='È il documento che la legge pretende, e che un sito accessibile senza non è a norma. Cos’è la dichiarazione di accessibilità, cosa deve contenere e gli errori da evitare.',
+         corpo='C’è un documento di cui pochi parlano e che, dal 2025, molti siti devono avere: la dichiarazione di accessibilità. È la parte meno appariscente dell’adeguamento all’European Accessibility Act, e proprio per questo la più dimenticata — con una beffa dentro: un sito tecnicamente accessibile, ma senza dichiarazione pubblicata, resta comunque non a norma. In questa guida pratica vediamo cos’è la dichiarazione di accessibilità, cosa deve contenere per essere seria e non un copia-incolla, gli errori più comuni, e come si arriva a pubblicarla senza affidarsi a un punteggio automatico.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/dichiarazione-cover.svg',
+                    alt='Dichiarazione di accessibilità: il documento richiesto dall’European Accessibility Act, cosa deve contenere e dove pubblicarlo'),
+         cta=('Adeguamento EAA: audit, correzioni e dichiarazione in 3 settimane', '/servizi/adeguamento-eaa/'),
+         sezioni=[
+             dict(titolo='Cos’è la dichiarazione di accessibilità (e perché è obbligatoria)',
+                  paragrafi=[
+                      "La dichiarazione di accessibilità è un documento pubblico in cui il sito dichiara, in chiaro, quanto è accessibile: quale standard applica, cosa funziona, cosa non è ancora a posto e a chi scrivere per segnalare un problema. Non è un attestato che vi date da soli per bellezza: è il modo in cui la norma vi chiede di prendere una posizione verificabile davanti a chi usa il sito, comprese le persone con disabilità.",
+                      "L’obbligo nasce dall’European Accessibility Act — la direttiva europea 2019/882 — applicato in Italia dal 28 giugno 2025 per molti siti che vendono beni o servizi ai consumatori. Lo standard tecnico di riferimento sono le WCAG 2.1 di livello AA. E qui sta il punto che sorprende di più: la conformità non si esaurisce nel rendere il sito accessibile, chiede anche di dichiararlo. Senza il documento, il lavoro tecnico non basta.",
+                  ],
+                  links=[('L’European Accessibility Act, il testo ufficiale (EUR-Lex)', _S_EURLEX_EAA)]),
+             dict(titolo='Cosa deve contenere: l’anatomia di una dichiarazione seria',
+                  paragrafi=[
+                      "Il World Wide Web Consortium, l’ente che scrive gli standard del web, indica cosa una dichiarazione dovrebbe sempre avere — e mette a disposizione perfino un generatore gratuito. Tradotto in pratica, gli elementi che non possono mancare sono pochi e chiari.",
+                  ],
+                  lista=[
+                      'L’impegno all’accessibilità: una frase che dichiara che vi rivolgete anche alle persone con disabilità, non un preambolo di circostanza.',
+                      'Lo standard applicato: quale livello WCAG (di norma 2.1 AA) avete preso come riferimento.',
+                      'Lo stato di conformità: cosa è accessibile e — onestà — quali parti non lo sono ancora, senza nascondere i limiti.',
+                      'Un contatto per le segnalazioni: un indirizzo vero a cui una persona può scrivere se trova una barriera, con l’impegno a rispondere.',
+                      'La data e l’aggiornamento: quando è stata redatta e revisionata, perché un sito cambia e la dichiarazione deve seguirlo.',
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/dichiarazione-anatomia.svg',
+                              alt='L’anatomia di una dichiarazione di accessibilità: impegno, standard WCAG 2.1 AA, stato di conformità, parti non accessibili, contatto e data',
+                              caption='I cinque elementi che una dichiarazione di accessibilità dovrebbe sempre avere: impegno, standard applicato, stato di conformità, parti non ancora accessibili e contatto per le segnalazioni, con data di redazione. Fonte: W3C/WAI, «Developing an Accessibility Statement».'),
+                  links=[('La guida e il generatore gratuito del W3C/WAI', _S_WAI_STATEMENT)]),
+             dict(titolo='Gli errori più comuni',
+                  paragrafi=[
+                      "Le dichiarazioni che vediamo sbagliano quasi sempre negli stessi modi. Il primo: il copia-incolla scaricato da un altro sito, con dati che non c’entrano nulla — vale meno di niente, e in caso di controllo si nota subito. Il secondo: la dichiarazione «perfetta» che giura conformità totale mentre il sito è pieno di barriere, cioè una promessa che smentisce sé stessa alla prima prova. Il terzo: il gergo da avvocati e da tecnici, illeggibile per la persona a cui dovrebbe servire — «non soddisfa il criterio 1.2.2» invece di «i video non hanno i sottotitoli». Il quarto: nasconderla, così ben sepolta nel footer che nessuno la trova. Una dichiarazione onesta e imperfetta vale più di una perfetta e falsa.",
+                  ]),
+             dict(titolo='Non basta un punteggio: la dichiarazione viene dopo l’audit',
+                  paragrafi=[
+                      "C’è un equivoco da smontare: «ho passato il test automatico, sono a posto». No. Un controllo automatico gratuito è un ottimo primo gradino — in un minuto scova contrasti, etichette e struttura — ma intercetta circa un terzo dei criteri WCAG: quello che una macchina sa misurare. Il resto — navigazione da tastiera, esperienza con uno screen reader, chiarezza dei contenuti — si verifica solo a mano. Una dichiarazione seria si scrive dopo un audit vero, non incollando il numero di uno strumento.",
+                      "Per questo l’ordine giusto è preciso: prima l’audit, automatico e manuale; poi le correzioni; poi la dichiarazione che racconta con onestà il risultato; infine una verifica finale. Chi vi vende la dichiarazione senza l’audit vi sta vendendo una cornice senza il quadro.",
+                  ],
+                  links=[('Verifica gratis le barriere del vostro sito', '/strumenti/verifica-accessibilita/'),
+                         ('Guida EAA per il commercio online (Bird & Bird)', _S_BIRDBIRD_EAA)]),
+             dict(titolo='Come la prepariamo noi, in tre settimane',
+                  paragrafi=[
+                      "Nel nostro servizio la dichiarazione non è un foglio a parte, è l’ultimo passo di un percorso. Settimana 1: audit automatico e manuale, con il perimetro esatto delle barriere. Settimana 2: correzioni — contrasti, etichette dei moduli, gerarchia dei titoli, navigazione da tastiera. Settimana 3: redazione e pubblicazione della dichiarazione di accessibilità, e un audit di verifica che conferma lo standard WCAG 2.1 AA a correzioni fatte. Prezzo chiuso dopo l’audit, data in contratto con penale, come per ogni nostro lavoro.",
+                      "Se avete un e-commerce e volete capire prima cosa rischiate davvero — chi è obbligato, chi resta fuori, quali sanzioni — l’abbiamo raccontato a parte, senza allarmismi. La dichiarazione è il traguardo; ma il viaggio comincia dal sapere se, e quanto, l’obbligo vi riguarda.",
+                  ],
+                  links=[('Vogliamo sistemarlo noi: il servizio Adeguamento EAA, a prezzo chiuso', '/servizi/adeguamento-eaa/'),
+                         ('Leggi anche: EAA 2026, cosa rischia davvero il vostro e-commerce', '/blog/european-accessibility-act-ecommerce/')]),
+         ],
+         fonti=[
+             ('W3C/WAI — Developing an Accessibility Statement', _S_WAI_STATEMENT,
+              'La guida ufficiale del W3C, con un generatore gratuito: cosa una dichiarazione deve contenere.'),
+             ('Direttiva (UE) 2019/882 (EUR-Lex)', _S_EURLEX_EAA,
+              'Il testo dell’European Accessibility Act: da qui nasce l’obbligo, dichiarazione compresa.'),
+             ('WCAG 2.1 — W3C', _S_WCAG21,
+              'Lo standard tecnico di riferimento (livello AA) che la dichiarazione deve citare.'),
+             ('AccessibleEU — Commissione europea', _S_ACCESSIBLEEU,
+              'Il centro di competenza UE sull’accessibilità: conferma l’entrata in vigore del 28 giugno 2025.'),
+             ('Guida EAA per il commercio online — Bird & Bird', _S_BIRDBIRD_EAA,
+              'Uno studio legale internazionale spiega perimetro, esenzioni e obblighi per chi vende online.'),
+         ]),
 ]
 
 # ============================================================================
@@ -1340,38 +1684,8 @@ BLOG_POSTS = [
 # закрывается без непереведённых узлов.
 # ----------------------------------------------------------------------------
 
-# --- Bank di prime fonti autorevoli (URL verificati). ---
-_S_EURLEX_EAA   = 'https://eur-lex.europa.eu/eli/dir/2019/882/oj'
-_S_ACCESSIBLEEU = 'https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en'
-_S_WCAG21       = 'https://www.w3.org/TR/WCAG21/'
-_S_WAI_WCAG     = 'https://www.w3.org/WAI/standards-guidelines/wcag/'
-_S_BIRDBIRD_EAA = 'https://www.twobirds.com/en/insights/2025/a-guide-to-navigating-the-european-accessibility-act-for-online-retailers-service-providers-and-plat'
-_S_GARANTE_COOKIE = 'https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677876'
-_S_EDPB_COOKIE  = 'https://www.edpb.europa.eu/our-work-tools/our-documents/other/report-work-undertaken-cookie-banner-taskforce_en'
-_S_GDPR         = 'https://eur-lex.europa.eu/eli/reg/2016/679/oj'
-_S_OPENAI_BOTS  = 'https://platform.openai.com/docs/bots'
-_S_ANTHROPIC    = 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler'
-_S_LLMSTXT      = 'https://llmstxt.org/'
-_S_GOOGLE_CRAWLERS = 'https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers'
-_S_GOOGLE_HELPFUL  = 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content'
-_S_GOOGLE_SD    = 'https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data'
-_S_GOOGLE_AI    = 'https://developers.google.com/search/docs/appearance/ai-features'
-_S_GOOGLE_SITEMOVE = 'https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes'
-_S_GOOGLE_REDIRECTS = 'https://developers.google.com/search/docs/crawling-indexing/301-redirects'
-_S_GOOGLE_MULTIREG  = 'https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites'
-_S_GOOGLE_HREFLANG  = 'https://developers.google.com/search/docs/specialty/international/localized-versions'
-_S_WEBDEV_VITALS = 'https://web.dev/articles/vitals'
-_S_WEBDEV_LCP    = 'https://web.dev/articles/lcp'
-_S_WEBDEV_INP    = 'https://web.dev/articles/inp'
-_S_WEBDEV_CLS    = 'https://web.dev/articles/cls'
-_S_WEBDEV_PWA    = 'https://web.dev/explore/progressive-web-apps'
-_S_WEBDEV_LEARN_PWA = 'https://web.dev/learn/pwa/'
-_S_MDN_PWA       = 'https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps'
-_S_CRUX          = 'https://developer.chrome.com/docs/crux'
-_S_ALMANAC       = 'https://almanac.httparchive.org/en/2024/'
-_S_SWD           = 'https://sustainablewebdesign.org/estimating-digital-emissions/'
-_S_CSA           = 'https://csa-research.com/Featured-Content/Global-Growth/CRWB-Series/CRWB-B2C'
-_S_EUROSTAT_ECOM = 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=E-commerce_statistics'
+# --- Bank di prime fonti autorevoli: definito sopra BLOG_POSTS (i batch 2+
+#     referenziano le costanti inline nei dict, quindi devono precedere la lista). ---
 
 # --- Blocchi «Fonti» per articolo (etichetta, URL, frase di contesto). ---
 _BLOG_FONTI = {

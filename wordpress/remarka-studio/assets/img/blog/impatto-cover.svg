@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Quanto pesa il vostro sito sull'ambiente e sul portafoglio">
+  <defs>
+    <pattern id="gridImc" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="#F7F6F2"/>
+  <rect width="1200" height="630" fill="url(#gridImc)"/>
+  <line x1="80" y1="96" x2="1120" y2="96" stroke="#14161A" stroke-width="1.5"/>
+  <text x="80" y="82" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">REMARKA · STUDIO — BLOG</text>
+  <text x="1120" y="82" class="mono" font-size="15" letter-spacing="2" fill="#2440C8" text-anchor="end">IMPATTO AMBIENTALE · SITO WEB</text>
+  <text x="80" y="262" class="disp" font-size="120" letter-spacing="1" fill="#14161A">≈ 0,8 g CO₂</text>
+  <text x="84" y="322" class="body" font-size="34" font-weight="600" fill="#14161A">per visita: la media del web</text>
+  <text x="84" y="366" class="mono" font-size="20" fill="#5A5E66">ambiente e portafoglio · leggero = veloce = economico</text>
+  <!-- weight to co2 chips -->
+  <g transform="translate(80,430)">
+    <rect x="0" y="0" width="240" height="128" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+    <text x="22" y="42" class="mono" font-size="14" letter-spacing="2" fill="#5A5E66">PESO PAGINA</text>
+    <text x="22" y="90" class="disp" font-size="40" fill="#14161A">byte</text>
+  </g>
+  <text x="342" y="504" class="disp" font-size="40" fill="#2440C8">→</text>
+  <g transform="translate(400,430)">
+    <rect x="0" y="0" width="240" height="128" fill="#EEF1FE" stroke="#2440C8" stroke-width="1.5"/>
+    <text x="22" y="42" class="mono" font-size="14" letter-spacing="2" fill="#2440C8">ENERGIA</text>
+    <text x="22" y="90" class="disp" font-size="40" fill="#14161A">kWh</text>
+  </g>
+  <text x="662" y="504" class="disp" font-size="40" fill="#2440C8">→</text>
+  <g transform="translate(720,430)">
+    <rect x="0" y="0" width="320" height="128" fill="#14161A"/>
+    <text x="22" y="42" class="mono" font-size="14" letter-spacing="2" fill="#9AA0AA">EMISSIONI</text>
+    <text x="22" y="90" class="disp" font-size="40" fill="#FFFFFF">g CO₂ / visita</text>
+  </g>
+</svg>

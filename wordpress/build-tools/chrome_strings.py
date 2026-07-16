@@ -2073,6 +2073,349 @@ CHROME_BLOG_RETRO_ILLUS = {
 }
 CHROME.update(CHROME_BLOG_RETRO_ILLUS)
 
+# CHROME_BLOG_BATCH2 — Blog · Batch 2 (5 articoli IT → EN) + i due backlink
+# aggiunti nei tool impatto-co2 / verifica-accessibilita. Copre ogni nodo
+# di testo generato da build_blog_post non gia' coperto (titoli, lead, corpo,
+# liste, alt/didascalie SVG, link contestuali e CTA con « →», etichette e note
+# del blocco «Fonti»). Solo EN: il blog RU e' un batch a se'. Numeri in US.
+CHROME_BLOG_BATCH2 = {
+    '16 LUG 2026': {'en': '16 JUL 2026'},
+    # arricchimenti (paragrafi/sezioni aggiunti per densità)
+    "Cosa non comprimiamo: mai la qualità":
+        {'en': "What we never compress: quality"},
+    "Tagliamo l’attesa, non i controlli. Le tre settimane non nascono da un lavoro fatto di corsa, ma da un lavoro senza pause morte: mentre voi rileggete una bozza, noi non restiamo fermi, prepariamo la fase successiva. Quello che non salta mai è la parte che protegge voi — i test di velocità e accessibilità, la prova su telefoni veri, il controllo dei moduli e dei link. Se una di queste verifiche non passa, non andiamo online: la data si difende con il metodo, non sacrificando il collaudo.":
+        {'en': "We cut the waiting, not the checks. The three weeks don’t come from work done in a rush, but from work with no dead pauses: while you review a draft, we don’t sit idle, we prepare the next phase. What never gets skipped is the part that protects you — the speed and accessibility tests, the trial on real phones, the check of forms and links. If one of these checks fails, we don’t go live: the date is defended with method, not by sacrificing the testing."},
+    "C’è un caso in cui tre settimane non bastano, e lo diciamo prima: un progetto con un catalogo grande, molte integrazioni o più lingue richiede più tempo. Non lo nascondiamo per far firmare — lo scriviamo nel preventivo, con la stessa data fissa e la stessa penale. È per questo che le tre settimane valgono per il sito aziendale: la vetrina ne chiede due, l’e-commerce sei. Un numero onesto vale più di un numero piccolo.":
+        {'en': "There’s a case where three weeks aren’t enough, and we say so up front: a project with a large catalog, many integrations or several languages takes longer. We don’t hide it to get a signature — we write it in the quote, with the same fixed date and the same penalty. That’s why three weeks is the business-website figure: a brochure site asks for two, e-commerce for six. An honest number is worth more than a small one."},
+    "Un dettaglio che fa la differenza: la mappa non si improvvisa il giorno del lancio. Si prepara prima, pagina per pagina, e si prova su un ambiente di test. Quando è fatta bene, il passaggio è invisibile ai visitatori e a Google — nessun errore 404, nessuna pagina orfana, nessun calo. Il rifacimento smette di essere un salto nel buio e diventa un trasloco ordinato, con le scatole etichettate.":
+        {'en': "A detail that makes the difference: the map isn’t improvised on launch day. It’s prepared beforehand, page by page, and tested on a staging environment. When it’s done well, the switch is invisible to visitors and to Google — no 404 errors, no orphan pages, no drop. The rebuild stops being a leap in the dark and becomes an orderly move, with the boxes labeled."},
+    "Un esempio tipico da un audit: una home da 6 megabyte, quasi tutti in fotografie non compresse, portata a poco più di 1 megabyte senza togliere una sola immagine — solo formati moderni e caricamento differito. Il risultato è triplo: pagina più veloce di alcuni secondi su telefono, banda risparmiata ogni mese e un’impronta di CO₂ per visita più che dimezzata. Un solo intervento, tre benefici — ambiente, velocità e costi — che vanno sempre nella stessa direzione.":
+        {'en': "A typical example from an audit: a homepage of 6 megabytes, almost all in uncompressed photos, brought down to just over 1 megabyte without removing a single image — just modern formats and lazy loading. The result is threefold: a page several seconds faster on a phone, bandwidth saved every month, and a CO₂ footprint per visit more than halved. One intervention, three benefits — environment, speed and cost — that always pull in the same direction."},
+    # estratti (indice blog)
+    "Tre preventivi per lo stesso sito, tre cifre che non c’entrano niente. La griglia per leggerli riga per riga e le domande da fare prima di firmare.":
+        {'en': "Three quotes for the same site, three figures that don’t add up. The grid to read them line by line and the questions to ask before signing."},
+    "Il mercato ci mette 6–10 settimane, noi tre. Non è magia né lavoro fatto a metà: è metodo. Ecco cosa succede in ognuna delle tre settimane, e la penale se sforiamo.":
+        {'en': "The market takes 6–10 weeks, we take three. It isn’t magic or half-done work: it’s method. Here’s what happens in each of the three weeks, and the penalty if we overrun."},
+    "Rifare tutto o ritoccare? Cinque domande per capire, con i numeri e non a sensazione, se al vostro sito basta un restyling o serve ripartire da zero.":
+        {'en': "Redo everything or touch it up? Five questions to work out, with numbers and not by feel, whether your site needs a redesign or a fresh start."},
+    "Ogni visita consuma energia e produce CO₂. Come si misura l’impatto ambientale di un sito web, perché leggero vuol dire anche veloce ed economico, e cosa c’entra la CSRD.":
+        {'en': "Every visit consumes energy and produces CO₂. How to measure a website’s environmental impact, why light also means fast and cheap, and what the CSRD has to do with it."},
+    "È il documento che la legge pretende, e che un sito accessibile senza non è a norma. Cos’è la dichiarazione di accessibilità, cosa deve contenere e gli errori da evitare.":
+        {'en': "It’s the document the law requires, and without which an accessible site isn’t compliant. What the accessibility statement is, what it must contain and the mistakes to avoid."},
+    "Preventivo sito web: come leggerlo senza sorprese":
+        {'en': "Website quote: how to read it without surprises"},
+    "Avete chiesto tre preventivi per lo stesso sito e vi tornano tre cifre che sembrano parlare di progetti diversi: 2.400, 6.900, 14.000 euro. Vi pare di confrontare mele con biciclette, e in un certo senso è vero. Un preventivo sito web non è il listino del pane: dentro la stessa parola — «sito da dieci pagine» — ci stanno lavori che valgono il triplo l’uno dell’altro. In questo articolo vi diamo la griglia per leggere un preventivo riga per riga, capire dove si nasconde il prezzo vero e quali domande fare prima di firmare, così le sorprese non arrivano in fattura.":
+        {'en': "You asked for three quotes for the same website and back come three figures that seem to describe different projects: € 2,400, € 6,900, € 14,000. It feels like comparing apples with bicycles, and in a sense that’s true. A website quote isn’t a bakery price list: inside the same words — “a ten-page site” — sit jobs worth three times one another. In this article we hand you the grid to read a quote line by line, see where the real price hides, and which questions to ask before signing, so the surprises don’t arrive on the invoice."},
+    "Perché due preventivi «uguali» costano il doppio":
+        {'en': "Why two “identical” quotes cost double"},
+    "Il malinteso nasce quasi sempre da una parola sola: «pagina». Due preventivi dicono entrambi «sito da dieci pagine», ma uno intende dieci pagine con i vostri testi già pronti da impaginare su un template, l’altro dieci pagine da progettare, scrivere e fotografare su misura. Il secondo costa il doppio e vale il triplo, eppure sul foglio le due righe sembrano identiche. È qui che nasce metà dei «mi hanno chiesto una cifra assurda per la stessa cosa».":
+        {'en': "The misunderstanding almost always starts from a single word: “page.” Two quotes both say “a ten-page site,” but one means ten pages with your texts already written, to lay out on a template; the other means ten pages to design, write and photograph from scratch. The second costs double and is worth triple, yet on paper the two lines look identical. This is where half of the “they quoted me an absurd amount for the same thing” comes from."},
+    "Il prezzo di un sito non lo fanno le pagine, lo fanno tre cose che spesso restano implicite: quanto è su misura il design, quanto lavoro c’è sui contenuti, e cosa viene garantito per iscritto. Un preventivo onesto rende esplicite tutte e tre. Un preventivo furbo le lascia nel vago, così può essere il più basso della pila — e recuperare dopo, quando scoprite che le foto, i testi e la seconda lingua «non erano compresi».":
+        {'en': "A site’s price isn’t made by the pages, it’s made by three things that often stay implicit: how bespoke the design is, how much work goes into the content, and what is guaranteed in writing. An honest quote makes all three explicit. A crafty quote leaves them vague, so it can be the lowest of the pile — and make it up later, when you find that the photos, the texts and the second language “weren’t included.”"},
+    "Le sei voci che compongono un preventivo sito web. Design e contenuti sono quelle che spostano di più il prezzo; assistenza e accessibilità sono quelle che spesso «spariscono» dalle offerte più basse. Fonte: listini pubblici delle web agency italiane, 2026.":
+        {'en': "The six items that make up a website quote. Design and content are the ones that move the price the most; support and accessibility are the ones that often “vanish” from the cheapest offers. Source: public price lists of Italian web agencies, 2026."},
+    "Le voci che un preventivo sito web deve avere":
+        {'en': "The items a website quote must include"},
+    "Prima di guardare la cifra in fondo, guardate se ci sono tutte le voci. Un progetto serio si scompone più o meno sempre nello stesso modo, e ogni voce mancante è un costo che tornerà, di solito a lavoro iniziato, quando trattare è più difficile.":
+        {'en': "Before looking at the figure at the bottom, check that all the items are there. A serious project breaks down more or less the same way every time, and every missing item is a cost that will come back — usually once the work has started, when negotiating is harder."},
+    "Design e struttura: quanto è su misura e quanto è template. Un tema comprato e adattato è legittimo, ma deve costare come tale, non come un progetto originale.":
+        {'en': "Design and structure: how much is bespoke and how much is template. A bought and adapted theme is legitimate, but it should cost as such, not as an original project."},
+    "Sviluppo e messa online: CMS, moduli, integrazioni, configurazione dell’hosting. Chiedete cosa è incluso e cosa è «a parte».":
+        {'en': "Development and go-live: CMS, modules, integrations, hosting setup. Ask what’s included and what’s “separate.”"},
+    "Contenuti: testi, foto, eventuali traduzioni. È la voce che i preventivi bassi tengono più bassa, ed è quella che decide se il sito converte o resta una vetrina muta.":
+        {'en': "Content: texts, photos, any translations. It’s the item the cheapest quotes keep lowest, and it’s the one that decides whether the site converts or stays a mute shop window."},
+    "SEO tecnica e velocità: struttura, dati strutturati, PageSpeed. Se non c’è una riga, non è gratis: è che non c’è.":
+        {'en': "Technical SEO and speed: structure, structured data, PageSpeed. If there isn’t a line, it isn’t free: it isn’t there."},
+    "Accessibilità: dal 28 giugno 2025 è un obbligo di legge per molti siti, non un abbellimento. Un preventivo che non la nomina è vecchio o vi lascia il conto per dopo.":
+        {'en': "Accessibility: since 28 June 2025 it’s a legal requirement for many sites, not an embellishment. A quote that doesn’t mention it is either old or leaving you the bill for later."},
+    "Assistenza e proprietà: chi possiede dominio, codice e dati dopo la consegna, e cosa copre l’assistenza — per quanto tempo e a quali condizioni.":
+        {'en': "Support and ownership: who owns the domain, code and data after delivery, and what the support covers — for how long and on what terms."},
+    "Prezzo chiuso o «indicativo»? La riga che cambia tutto":
+        {'en': "Fixed price or “indicative”? The line that changes everything"},
+    "C’è una differenza sostanziale tra un preventivo «chiuso» e uno «indicativo», e vale più di qualsiasi sconto. Il prezzo chiuso è quello che pagherete: se emergono lavori aggiuntivi, si concordano per iscritto prima, o restano a carico di chi ha fatto il preventivo. Il prezzo indicativo è un punto di partenza che sale in corsa, quando ormai avete investito tempo e non potete tornare indietro.":
+        {'en': "There’s a substantial difference between a “fixed” quote and an “indicative” one, and it’s worth more than any discount. The fixed price is what you’ll pay: if extra work comes up, it’s agreed in writing first, or it’s on whoever made the quote. The indicative price is a starting point that climbs as you go, once you’ve already invested time and can’t turn back."},
+    "La stessa logica vale per i tempi. «Consegna in primavera» non è una data; «consegna il 30, con l’1% di sconto per ogni giorno lavorativo di ritardo» lo è. Chiedete sempre se la data è nel contratto e con quale penale: la risposta, più delle cifre, vi dice con chi avete a che fare. Nel nostro caso il prezzo è bloccato alla firma e la data è scritta con la penale — non per generosità, ma perché è l’unico modo per cui «senza sorprese» significhi qualcosa.":
+        {'en': "The same logic applies to timing. “Delivery in spring” isn’t a date; “delivery on the 30th, with 1% off for every working day of delay” is. Always ask whether the date is in the contract and with what penalty: the answer, more than the figures, tells you who you’re dealing with. In our case the price is locked at signing and the date is written with the penalty — not out of generosity, but because it’s the only way “no surprises” means anything."},
+    "Le sorprese che arrivano dopo: i costi ricorrenti":
+        {'en': "The surprises that come later: the recurring costs"},
+    "Il prezzo di costruzione è metà della storia. Un sito vivo costa ogni anno, e un preventivo onesto ve lo dice prima. Hosting adeguato, aggiornamenti di sicurezza, manutenzione: sul mercato la manutenzione professionale viaggia tra i 500 e i 2.000 euro l’anno, e cambia molto cosa comprende. Se vendete online si aggiungono le commissioni sui pagamenti e la fatturazione elettronica, che in Italia passa obbligatoriamente dal Sistema di Interscambio dell’Agenzia delle Entrate: assicuratevi che sia inclusa o messa a preventivo, non scoperta a negozio aperto.":
+        {'en': "The build price is half the story. A living site costs every year, and an honest quote tells you so up front. Adequate hosting, security updates, maintenance: on the market professional maintenance runs between € 500 and € 2,000 a year, and what it covers varies a lot. If you sell online, add payment fees and e-invoicing, which in Italy must pass through the Agenzia delle Entrate’s Sistema di Interscambio: make sure it’s included or quoted, not discovered once the shop is open."},
+    "C’è poi un costo che quasi nessun preventivo nomina ancora, ed è un obbligo: l’adeguamento all’European Accessibility Act, in vigore in Italia dal 28 giugno 2025 per i siti che vendono ai consumatori. Non è una voce facoltativa da «vedere più avanti»: è un requisito di legge, con sanzioni. Un preventivo che lo ignora non vi sta facendo risparmiare, vi sta rimandando il conto.":
+        {'en': "Then there’s a cost almost no quote names yet, and it’s an obligation: compliance with the European Accessibility Act, in force in Italy since 28 June 2025 for sites that sell to consumers. It isn’t an optional item to “look at later”: it’s a legal requirement, with fines. A quote that ignores it isn’t saving you money, it’s postponing the bill."},
+    "Come leggerlo in pratica: le cinque domande":
+        {'en': "How to read it in practice: the five questions"},
+    "Non serve diventare tecnici. Bastano cinque domande, e il modo in cui vi rispondono conta quanto le risposte: se chi avete davanti si innervosisce, avete già un’informazione.":
+        {'en': "You don’t need to become technical. Five questions are enough, and the way they answer counts as much as the answers: if the person opposite gets nervous, you already have some information."},
+    "Il prezzo è chiuso o indicativo? Cosa succede se in corso d’opera emergono lavori aggiuntivi?":
+        {'en': "Is the price fixed or indicative? What happens if extra work comes up along the way?"},
+    "La data di consegna è nel contratto, e con quale penale in caso di ritardo?":
+        {'en': "Is the delivery date in the contract, and with what penalty for delay?"},
+    "Contenuti, foto e traduzioni sono inclusi, o sono «a parte»?":
+        {'en': "Are content, photos and translations included, or are they “separate”?"},
+    "Chi possiede dominio, codice e dati dopo la consegna — io o voi?":
+        {'en': "Who owns the domain, code and data after delivery — me or you?"},
+    "Accessibilità e velocità su mobile sono garantite con un numero, o sono promesse a voce?":
+        {'en': "Are accessibility and mobile speed guaranteed with a number, or promised verbally?"},
+    "Prima di rifare: misura la salute del sito attuale →":
+        {'en': "Before rebuilding: measure the health of your current site →"},
+    "Leggi anche: sito web in 3 settimane, com’è possibile davvero →":
+        {'en': "Read also: a website in 3 weeks, how it’s really possible →"},
+    "Agenzia delle Entrate — fatturazione elettronica (SDI)":
+        {'en': "Agenzia delle Entrate — e-invoicing (SDI)"},
+    "La pagina ufficiale sul Sistema di Interscambio: un costo che ogni e-commerce deve mettere a preventivo.":
+        {'en': "The official page on the Sistema di Interscambio: a cost every e-commerce site must put in the quote."},
+    "Dal 28 giugno 2025 l’accessibilità è un obbligo, non un extra: va considerata nel preventivo.":
+        {'en': "Since 28 June 2025 accessibility is an obligation, not an extra: it belongs in the quote."},
+    "Dati reali su com’è fatto il web oggi: utile per capire cosa si paga davvero dietro un sito.":
+        {'en': "Real data on how the web is actually built today: useful to understand what you’re really paying for behind a site."},
+    "La velocità mobile che va garantita con un numero: la differenza tra un preventivo serio e uno vago.":
+        {'en': "The mobile speed that must be guaranteed with a number: the difference between a serious quote and a vague one."},
+    "Preventivo sito web: come leggerlo riga per riga, le voci che spostano il prezzo e le sorprese da evitare in fattura":
+        {'en': "Website quote: how to read it line by line, the items that move the price, and the surprises to avoid on the invoice"},
+    "Le voci di un preventivo sito web: design, sviluppo, contenuti, SEO tecnica, accessibilità e assistenza, e quali fanno oscillare di più il prezzo":
+        {'en': "The items of a website quote: design, development, content, technical SEO, accessibility and support, and which ones swing the price the most"},
+    "Sito web in 3 settimane: com’è possibile (davvero)":
+        {'en': "A website in 3 weeks: how it’s (really) possible"},
+    "«Un sito web in 3 settimane? O è una fregatura, o è un template riempito in fretta.» È la reazione più comune, ed è sana: sul mercato italiano un sito aziendale richiede in media 6–10 settimane, quindi promettere tre suona come promettere di dimagrire dormendo. Eppure lo facciamo, con la data scritta in contratto e una penale se sforiamo. Non c’è nessun trucco e nessun lavoro fatto a metà: c’è un metodo che toglie i tempi morti, non la qualità. Vediamo, giorno per giorno, com’è possibile un sito web in 3 settimane — e cosa serve da parte vostra perché funzioni.":
+        {'en': "“A website in 3 weeks? Either it’s a scam, or it’s a template filled in a hurry.” It’s the most common reaction, and a healthy one: on the Italian market a business website takes 6–10 weeks on average, so promising three sounds like promising to lose weight while sleeping. Yet we do it, with the date written in the contract and a penalty if we overrun. There’s no trick and no half-done work: there’s a method that removes the dead time, not the quality. Let’s see, day by day, how a website in 3 weeks is possible — and what we need from you to make it work."},
+    "Tre settimane non è magia: è togliere i tempi morti":
+        {'en': "Three weeks isn’t magic: it’s removing the dead time"},
+    "Le 6–10 settimane del mercato non sono quasi mai lavoro: sono attesa. Il preventivo che resta indeciso per giorni, i contenuti che arrivano a rate, il design che va avanti e indietro cinque volte perché nessuno ha fissato lo scopo all’inizio. Il tempo se ne va nel ping-pong, non nel produrre. Noi comprimiamo le tre settimane aggredendo proprio quel ping-pong: scopo chiuso alla firma, un solo giro di revisione per fase, contenuti raccolti con voi in un incontro invece che inseguiti per email.":
+        {'en': "The market’s 6–10 weeks are hardly ever work: they’re waiting. The quote that stays undecided for days, content arriving in dribs and drabs, a design going back and forth five times because nobody set the scope at the start. Time goes in the ping-pong, not in producing. We compress the three weeks by attacking exactly that ping-pong: scope fixed at signing, a single round of revisions per phase, content gathered with you in one meeting rather than chased by email."},
+    "La seconda leva è banale ma decisiva: partiamo da fondamenta nostre, collaudate su decine di progetti, non da un foglio bianco ogni volta. Questo non vuol dire «tutti i siti uguali»: vuol dire che l’impalcatura tecnica — velocità, accessibilità, struttura SEO — è già solida, e le tre settimane le spendiamo su ciò che è vostro, non a reinventare la ruota.":
+        {'en': "The second lever is banal but decisive: we start from our own foundations, proven across dozens of projects, not from a blank page every time. That doesn’t mean “all sites the same”: it means the technical scaffolding — speed, accessibility, SEO structure — is already solid, and we spend the three weeks on what’s yours, not on reinventing the wheel."},
+    "Settimana 1: analisi, preventivo chiuso, design":
+        {'en': "Week 1: analysis, fixed quote, design"},
+    "La prima settimana decide le altre due. Facciamo l’analisi — chi siete, chi volete raggiungere, cosa deve fare il sito — e da lì esce un preventivo chiuso, con prezzo bloccato e data. Poi il design: non venti bozze, ma una direzione condivisa e approvata, così la settimana dopo si sviluppa senza ripensamenti. È la settimana che richiede più presenza da parte vostra, ed è tempo ben speso: ogni decisione presa adesso è un ritardo evitato dopo.":
+        {'en': "The first week decides the other two. We do the analysis — who you are, who you want to reach, what the site has to do — and out of it comes a fixed quote, with locked price and date. Then the design: not twenty drafts, but one shared, approved direction, so the following week develops with no second thoughts. It’s the week that asks the most of you, and it’s time well spent: every decision taken now is a delay avoided later."},
+    "Dalla firma all’online in 21 giorni: analisi e design (settimana 1), sviluppo (settimana 2), contenuti, test e pubblicazione (settimana 3). La data è in contratto: ogni giorno lavorativo di ritardo vale l’1% di sconto. Tempi del sito aziendale; la vetrina è 2 settimane, l’e-commerce 6.":
+        {'en': "From signing to online in 21 days: analysis and design (week 1), development (week 2), content, testing and publishing (week 3). The date is in the contract: every working day of delay is 1% off. Business-website timing; a brochure site is 2 weeks, e-commerce 6."},
+    "Settimana 2: sviluppo, con la velocità già dentro":
+        {'en': "Week 2: development, with speed already built in"},
+    "Nella seconda settimana il design approvato diventa un sito che funziona. Qui la scelta di partire da fondamenta collaudate paga tutto il suo prezzo: la struttura tecnica che regge la velocità e l’accessibilità è già al suo posto, e lo sviluppo si concentra sulle vostre pagine, non sull’impalcatura. Non rincorriamo il PageSpeed 90+ alla fine come una toppa: lo costruiamo mentre sviluppiamo, perché la velocità non è un ritocco finale ma il modo in cui il sito è fatto.":
+        {'en': "In the second week the approved design becomes a site that works. Here the choice to start from proven foundations pays for itself in full: the technical structure that carries speed and accessibility is already in place, and development focuses on your pages, not the scaffolding. We don’t chase PageSpeed 90+ at the end like a patch: we build it as we develop, because speed isn’t a final touch-up but the way the site is made."},
+    "La terza settimana è quella dei dettagli che si vedono e di quelli che non si vedono. Impaginiamo i contenuti definitivi, poi testiamo: velocità reale su telefono, accessibilità secondo lo standard WCAG 2.1 AA — oggi anche un obbligo di legge — moduli, link, comportamento su schermi diversi. Solo quando i numeri tornano si va online. Un sito veloce che rispetta le persone non è un vezzo: è ciò che Google misura per posizionarvi e ciò che tiene le visite invece di farle scappare.":
+        {'en': "The third week is the one of the details you see and the ones you don’t. We lay out the final content, then test: real speed on a phone, accessibility to the WCAG 2.1 AA standard — today also a legal requirement — forms, links, behavior on different screens. Only when the numbers add up do we go live. A fast site that respects people isn’t a frill: it’s what Google measures to rank you and what keeps visits instead of sending them away."},
+    "Verifica la salute di un sito con il check-up completo →":
+        {'en': "Check a site’s health with the full check-up →"},
+    "E se sforiamo? La penale, e cosa serve da parte vostra":
+        {'en': "And if we overrun? The penalty, and what we need from you"},
+    "La data in contratto vale solo se ha un prezzo: ogni giorno lavorativo di ritardo è l’1% di sconto sul totale. È la ragione per cui prendiamo sul serio le tre settimane, ed è anche la ragione per cui vi chiediamo una cosa in cambio. Il rispetto della data dipende da due mani: perché tre settimane bastino, i contenuti e le decisioni devono arrivare quando li chiediamo, non a lavoro iniziato. La settimana 1 serve proprio a questo — a raccogliere tutto insieme, così le settimane 2 e 3 corrono.":
+        {'en': "The date in the contract only counts if it has a price: every working day of delay is 1% off the total. It’s the reason we take the three weeks seriously, and it’s also the reason we ask one thing in return. Meeting the date depends on two hands: for three weeks to be enough, content and decisions have to arrive when we ask for them, not once the work has started. Week 1 exists precisely for this — to gather everything together, so weeks 2 and 3 can run."},
+    "Chi promette «un sito in una settimana» senza chiedervi niente sta vendendo un template svuotato. Chi vi promette «quando sarà pronto» sta lasciando aperta una porta che costa cara. Tre settimane, con una data e una penale, è il punto onesto tra le due cose: veloce sul serio, ma senza scorciatoie sulla qualità.":
+        {'en': "Whoever promises “a site in a week” without asking you for anything is selling a hollowed-out template. Whoever promises you “whenever it’s ready” is leaving open a door that costs dearly. Three weeks, with a date and a penalty, is the honest point between the two: genuinely fast, but with no shortcuts on quality."},
+    "Cosa include un sito aziendale, a prezzo chiuso →":
+        {'en': "What a business website includes, at a fixed price →"},
+    "Prima di firmare: come leggere un preventivo sito web →":
+        {'en': "Before signing: how to read a website quote →"},
+    "Sito già online? Restyling o sito nuovo: il test delle 5 domande →":
+        {'en': "Already online? Redesign or new site: the test of 5 questions →"},
+    "La velocità mobile che garantiamo per contratto: il PageSpeed 90+ non è uno slogan, è una soglia misurabile.":
+        {'en': "The mobile speed we guarantee by contract: PageSpeed 90+ isn’t a slogan, it’s a measurable threshold."},
+    "Dal 2025 l’accessibilità è parte dello scopo di ogni sito nuovo, non un lavoro rimandabile.":
+        {'en': "Since 2025 accessibility is part of the scope of every new site, not a job to postpone."},
+    "Cosa Google considera qualità: lo sfondo del perché testiamo prima di andare online.":
+        {'en': "What Google considers quality: the backdrop to why we test before going live."},
+    "I dati strutturati fanno parte dell’impalcatura tecnica che è già pronta in partenza.":
+        {'en': "Structured data is part of the technical scaffolding that’s ready from the start."},
+    "Sito aziendale in 3 settimane, prezzo chiuso →":
+        {'en': "A business website in 3 weeks, fixed price →"},
+    "Sito web in 3 settimane: le tre settimane dalla firma all’online, analisi, sviluppo e messa online con data in contratto":
+        {'en': "A website in 3 weeks: the three weeks from signing to online, analysis, development and go-live with the date in the contract"},
+    "Le tre settimane dalla firma all’online: settimana 1 analisi e design, settimana 2 sviluppo, settimana 3 contenuti, test e messa online":
+        {'en': "The three weeks from signing to online: week 1 analysis and design, week 2 development, week 3 content, testing and go-live"},
+    "Restyling o sito nuovo? Il test delle 5 domande":
+        {'en': "Redesign or new website? The test of 5 questions"},
+    "C’è un momento in cui aprite il vostro sito dal telefono e qualcosa stona: carica piano, sembra vecchio, i contatti arrivano col contagocce. La domanda che segue è sempre la stessa — «lo ritocchiamo o lo rifacciamo da capo?» — e la risposta sbagliata costa in entrambe le direzioni: si può buttare via un sito ancora buono, o accanirsi a rattoppare una base ormai fusa. Non è una scelta da fare a sensazione. Bastano cinque domande per capire se al vostro sito serve un restyling o un rifacimento vero — e questo articolo ve le mette in mano.":
+        {'en': "There’s a moment when you open your site on your phone and something jars: it loads slowly, it looks old, the enquiries trickle in. The question that follows is always the same — “do we touch it up or rebuild it from scratch?” — and the wrong answer costs in both directions: you can throw away a site that’s still good, or keep patching a base that’s already burnt out. It isn’t a choice to make by feel. Five questions are enough to tell whether your site needs a redesign or a real rebuild — and this article puts them in your hands."},
+    "Restyling o rifacimento: non è la stessa spesa":
+        {'en': "Redesign or rebuild: not the same spend"},
+    "Prima di decidere, mettiamo d’accordo le parole. Un restyling lavora sopra una base che tiene: rinnova l’aspetto, riscrive dei contenuti, sistema la velocità e l’accessibilità, ma non demolisce le fondamenta. Un rifacimento rifà la base tecnica da zero — tema, struttura, spesso la piattaforma — e ci riporta sopra i contenuti che meritano di restare. Il primo costa meno e dura meno a farsi; il secondo costa di più ma risolve problemi che nessun ritocco può toccare.":
+        {'en': "Before deciding, let’s agree on the words. A redesign works on top of a base that holds: it refreshes the look, rewrites some content, fixes speed and accessibility, but doesn’t demolish the foundations. A rebuild redoes the technical base from scratch — theme, structure, often the platform — and carries back onto it the content that deserves to stay. The first costs less and takes less time; the second costs more but solves problems no touch-up can reach."},
+    "Sbagliare la diagnosi è la spesa più stupida di tutte. Fare un rifacimento completo quando bastava un restyling è buttare soldi; fare un restyling su una base marcia è come cambiare le gomme a un motore fuso — ogni intervento costa e il risultato resta mediocre. Le cinque domande servono esattamente a non sbagliare questa diagnosi.":
+        {'en': "Getting the diagnosis wrong is the dumbest spend of all. Doing a full rebuild when a redesign would have done is throwing money away; doing a redesign on a rotten base is like putting new tires on a blown engine — every fix costs and the result stays mediocre. The five questions exist precisely to avoid getting this diagnosis wrong."},
+    "Il test delle 5 domande":
+        {'en': "The test of 5 questions"},
+    "Rispondete con onestà. Più «sì» collezionate, più l’ago si sposta dal restyling verso il sito nuovo. Non è una formula magica, è un modo per guardare in faccia le cose che di solito si evitano.":
+        {'en': "Answer honestly. The more “yeses” you collect, the more the needle moves from redesign toward new site. It isn’t a magic formula, it’s a way to look in the face the things you usually avoid."},
+    "1. Il sito è lento su telefono anche dopo aver alleggerito le immagini? Se la lentezza sta nella base — tema pesante, plugin stratificati, PHP vecchio — ritoccare non basta.":
+        {'en': "1. Is the site slow on a phone even after you’ve lightened the images? If the slowness is in the base — heavy theme, layered plugins, old PHP — touching up isn’t enough."},
+    "2. Ogni modifica è una battaglia? Se aggiungere una pagina o cambiare un testo richiede un tecnico e mezza giornata, la struttura sta remando contro di voi.":
+        {'en': "2. Is every change a battle? If adding a page or changing a text needs a developer and half a day, the structure is rowing against you."},
+    "3. È inutilizzabile o inaccessibile da mobile? Se una persona su due arriva da telefono e fatica, non è un ritocco estetico: è un problema di fondamenta.":
+        {'en': "3. Is it unusable or inaccessible on mobile? If one person in two arrives by phone and struggles, it isn’t a cosmetic touch-up: it’s a foundations problem."},
+    "4. La piattaforma è ferma o insicura? Versioni obsolete, aggiornamenti impossibili, avvisi di sicurezza: sono crepe strutturali, non macchie da coprire.":
+        {'en': "4. Is the platform stuck or insecure? Obsolete versions, impossible updates, security warnings: these are structural cracks, not stains to cover."},
+    "5. Il sito non dice più cosa siete diventati? Se posizionamento, offerta e pubblico sono cambiati e il sito è rimasto indietro, il problema è la sostanza, non la vernice.":
+        {'en': "5. Does the site no longer say what you’ve become? If your positioning, offer and audience have changed and the site has stayed behind, the problem is substance, not paint."},
+    "Le cinque domande e dove portano: pochi «sì», e concentrati sull’aspetto, indicano un restyling; molti «sì», e sulle fondamenta (velocità, piattaforma, mobile), indicano un sito nuovo. La soglia non è matematica: conta quali domande.":
+        {'en': "The five questions and where they lead: few “yeses,” concentrated on appearance, point to a redesign; many “yeses,” on the foundations (speed, platform, mobile), point to a new site. The threshold isn’t mathematical: it’s which questions."},
+    "Quando basta un restyling":
+        {'en': "When a redesign is enough"},
+    "Se i «sì» sono pochi e riguardano l’aspetto — il sito invecchiato ma ancora rapido, facile da aggiornare, solido sotto il cofano — il restyling è la scelta giusta e la più intelligente. Rinnovate l’immagine, riscrivete i contenuti che vendono, sistemate accessibilità e velocità, e tenete tutto il valore che il sito ha già accumulato su Google. Prima di decidere, però, guardate i numeri e non l’impressione: un check-up del sito misura in un minuto velocità, SEO, accessibilità e privacy, e vi dice se la base regge davvero o se vi sta solo sembrando.":
+        {'en': "If the “yeses” are few and about appearance — the site aged but still fast, easy to update, solid under the hood — the redesign is the right and smartest choice. Refresh the image, rewrite the content that sells, fix accessibility and speed, and keep all the value the site has already built on Google. Before deciding, though, look at the numbers and not the impression: a site check-up measures speed, SEO, accessibility and privacy in a minute, and tells you whether the base really holds or only seems to."},
+    "Misura la salute del sito prima di scegliere: check-up completo →":
+        {'en': "Measure the site’s health before choosing: full check-up →"},
+    "Quando conviene il sito nuovo (e come non perdere Google)":
+        {'en': "When a new site is worth it (and how not to lose Google)"},
+    "Se i «sì» si accumulano sulle fondamenta — lentezza strutturale, piattaforma insicura, mobile inutilizzabile — il rifacimento non è uno spreco, è la fine di uno spreco. La paura giusta, a quel punto, è una sola: perdere le posizioni guadagnate in anni. È una paura legittima e gestibile. Con una mappa degli URL uno-a-uno e i redirect 301 fatti prima del lancio, il valore delle vecchie pagine si trasferisce alle nuove e il traffico continua come se niente fosse. Il crollo dopo un rifacimento non è una maledizione tecnica: è quasi sempre la conseguenza di redirect mancanti o fatti «tutti alla home».":
+        {'en': "If the “yeses” pile up on the foundations — structural slowness, an insecure platform, unusable mobile — the rebuild isn’t a waste, it’s the end of a waste. The right fear, at that point, is only one: losing the rankings earned over years. It’s a legitimate and manageable fear. With a one-to-one URL map and 301 redirects done before launch, the value of the old pages transfers to the new ones and traffic carries on as if nothing happened. The collapse after a rebuild isn’t a technical curse: it’s almost always the consequence of missing redirects, or ones done “all to the homepage.”"},
+    "Come funzionano i redirect quando si cambia sito (Google) →":
+        {'en': "How redirects work when you change site (Google) →"},
+    "Decidere con i numeri, non a sensazione":
+        {'en': "Deciding with numbers, not by feel"},
+    "La regola che ripetiamo sempre: prima si misura, poi si decide. Un check-up onesto trasforma «mi sembra vecchio» in una lista di problemi con una priorità, e da lì la scelta tra restyling e sito nuovo diventa quasi ovvia. Se dai numeri esce che la base regge, si ritocca; se esce che è finita, si rifà — e in entrambi i casi si parte da un dato, non da una sensazione o da un venditore che ha già deciso per voi.":
+        {'en': "The rule we always repeat: measure first, then decide. An honest check-up turns “it feels old” into a list of problems with a priority, and from there the choice between redesign and new site becomes almost obvious. If the numbers show the base holds, you touch it up; if they show it’s finished, you rebuild — and in both cases you start from a fact, not a feeling or a salesperson who has already decided for you."},
+    "Un ultimo criterio che quasi nessuno considera: il peso. Un sito vecchio è spesso anche un sito pesante, e un sito pesante è lento, costoso da servire e più inquinante. Rifare la base, quando serve, è anche l’occasione per alleggerire — e la velocità che ne esce si vede subito, sul telefono e nei contatti.":
+        {'en': "One last criterion almost nobody considers: weight. An old site is often also a heavy site, and a heavy site is slow, expensive to serve and more polluting. Rebuilding the base, when needed, is also the chance to lighten it — and the speed that comes out shows immediately, on the phone and in the enquiries."},
+    "Restyling e migrazione, senza perdere posizioni →":
+        {'en': "Redesign and migration, without losing rankings →"},
+    "Leggi anche: quanto pesa il vostro sito sull’ambiente (e sul portafoglio) →":
+        {'en': "Read also: how much your site weighs on the environment (and on your wallet) →"},
+    "La procedura ufficiale per rifare un sito senza perdere il posizionamento su Google.":
+        {'en': "The official procedure for rebuilding a site without losing your Google rankings."},
+    "Come impostare i redirect 301 perché Google trasferisca il valore delle vecchie pagine alle nuove.":
+        {'en': "How to set up 301 redirects so Google transfers the value of the old pages to the new ones."},
+    "Le metriche di velocità con cui distinguere un sito ancora buono da uno da rifare.":
+        {'en': "The speed metrics to tell a site that’s still good from one to rebuild."},
+    "Il modello che lega il peso della pagina al consumo: un sito vecchio è spesso anche pesante.":
+        {'en': "The model linking a page’s weight to its consumption: an old site is often also a heavy one."},
+    "Restyling sito web o sito nuovo: il test delle cinque domande per decidere con i numeri se ritoccare o ripartire da zero":
+        {'en': "Redesign or new website: the test of five questions to decide with numbers whether to touch up or start over"},
+    "Il test delle cinque domande su velocità, facilità di modifica, mobile, piattaforma e messaggio, con l’esito restyling o sito nuovo":
+        {'en': "The test of five questions on speed, ease of editing, mobile, platform and message, with the outcome redesign or new site"},
+    "Quanto pesa il vostro sito sull’ambiente (e sul portafoglio)":
+        {'en': "How much your site weighs on the environment (and on your wallet)"},
+    "Un sito web sembra immateriale, ma non lo è: ogni volta che qualcuno lo apre, dei byte viaggiano da un data center alla sua schermata, e quel viaggio consuma energia. Moltiplicate per decine di migliaia di visite al mese e l’«immateriale» diventa una bolletta e un po’ di anidride carbonica. La buona notizia è che l’impatto ambientale di un sito web si può stimare, e che ridurlo coincide quasi sempre con renderlo più veloce e meno costoso. Vediamo come si misura, cosa c’entrano i vostri conti e la nuova rendicontazione europea, e cosa potete fare in un pomeriggio.":
+        {'en': "A website seems immaterial, but it isn’t: every time someone opens it, bytes travel from a data center to their screen, and that journey consumes energy. Multiply by tens of thousands of visits a month and the “immaterial” becomes a bill and a bit of carbon dioxide. The good news is that a website’s environmental impact can be estimated, and that reducing it almost always coincides with making it faster and cheaper. Let’s see how it’s measured, what it has to do with your accounts and the new European reporting rules, and what you can do in an afternoon."},
+    "Un sito ha un peso, e il peso ha un costo":
+        {'en': "A site has a weight, and the weight has a cost"},
+    "Il peso di una pagina è la somma di tutto ciò che il browser deve scaricare per mostrarla: immagini, caratteri, script, video. Più è pesante, più energia serve per trasferirla e visualizzarla — nel data center, lungo la rete, sul dispositivo di chi guarda. Quell’energia ha due prezzi paralleli: uno ambientale, in grammi di CO₂, e uno economico, in server più cari, campagne che portano visite che scappano, e clienti che se ne vanno prima di vedere la prima riga perché il telefono arranca.":
+        {'en': "A page’s weight is the sum of everything the browser has to download to show it: images, fonts, scripts, video. The heavier it is, the more energy it takes to transfer and display — in the data center, along the network, on the viewer’s device. That energy has two parallel prices: an environmental one, in grams of CO₂, and an economic one, in more expensive servers, campaigns that bring visits that flee, and customers who leave before seeing the first line because the phone is struggling."},
+    "È il motivo per cui parliamo di ambiente e portafoglio nello stesso respiro: non sono due discorsi, è lo stesso discorso. La pagina che inquina di più è, quasi sempre, la stessa che carica più lentamente e costa di più mantenere.":
+        {'en': "That’s why we talk about the environment and the wallet in the same breath: they aren’t two conversations, it’s the same conversation. The page that pollutes most is, almost always, the same one that loads more slowly and costs more to maintain."},
+    "Come si stima l’impatto ambientale di un sito web":
+        {'en': "How to estimate a website’s environmental impact"},
+    "Non è una sensazione, è un calcolo. Si parte da un dato misurabile — il peso della pagina in byte — e gli si applica un modello che traduce i byte trasferiti in energia e poi in grammi di CO₂ equivalente. Il modello più usato è il Sustainable Web Design, reso disponibile dalla Green Web Foundation nella libreria open source co2.js: gli stessi strumenti che stanno dietro ai calcolatori di emissioni del web. Il riferimento comodo è la media: una pagina web produce intorno agli 0,8 grammi di CO₂ per visita. Sotto quella soglia siete leggeri; sensibilmente sopra, c’è margine per alleggerire.":
+        {'en': "It isn’t a feeling, it’s a calculation. You start from a measurable figure — the page weight in bytes — and apply a model that turns the transferred bytes into energy and then into grams of CO₂ equivalent. The most widely used model is Sustainable Web Design, made available by the Green Web Foundation in the open-source library co2.js: the same tools behind the web’s emission calculators. The handy reference is the average: a web page produces around 0.8 grams of CO₂ per visit. Below that threshold you’re light; noticeably above, there’s room to lighten."},
+    "Serve onestà sui limiti, perché qui è facile vendere fumo. È una stima con coefficienti medi mondiali: non conosce l’energia reale del vostro hosting né il comportamento di ogni visitatore. Non è un’impronta certificata, è un ordine di grandezza affidabile e confrontabile — e il suo pregio è proprio che si aggancia a un fatto tecnico su cui potete davvero intervenire: il peso.":
+        {'en': "Some honesty about the limits is in order, because it’s easy to sell smoke here. It’s an estimate with global average coefficients: it doesn’t know your hosting’s real energy or every visitor’s behavior. It isn’t a certified footprint, it’s a reliable, comparable order of magnitude — and its merit is precisely that it hangs on a technical fact you can actually act on: weight."},
+    "Dal peso ai grammi: i byte trasferiti diventano energia e poi CO₂ per visita, moltiplicata per il traffico dà la stima annua. Riferimento: media del web ≈ 0,8 g per visita. Modello: Sustainable Web Design (co2.js, Green Web Foundation).":
+        {'en': "From weight to grams: the transferred bytes become energy and then CO₂ per visit, which multiplied by traffic gives the yearly estimate. Reference: web average ≈ 0.8 g per visit. Model: Sustainable Web Design (co2.js, Green Web Foundation)."},
+    "Perché leggero vuol dire veloce e più economico":
+        {'en': "Why light means fast and cheaper"},
+    "Alleggerire una pagina e velocizzarla sono la stessa operazione, vista da due lati. Ogni byte tolto è meno energia trasferita — quindi meno CO₂ — e insieme meno tempo di caricamento, quindi più visite che restano. Le fotografie non ottimizzate sono quasi sempre la voce più pesante: convertirle nei formati moderni può tagliarne l’80% a parità di qualità visibile, e con esse taglia emissioni, costi di banda e secondi di attesa. Non dovete scegliere tra fare bene al pianeta e fare bene ai conti: è la stessa leva.":
+        {'en': "Lightening a page and speeding it up are the same operation seen from two sides. Every byte removed is less energy transferred — so less CO₂ — and at the same time less loading time, so more visits that stay. Unoptimized photos are almost always the heaviest item: converting them to modern formats can cut them by 80% at the same visible quality, and with them cuts emissions, bandwidth costs and seconds of waiting. You don’t have to choose between doing right by the planet and doing right by the accounts: it’s the same lever."},
+    "La CO₂ entra anche nei bilanci: la CSRD":
+        {'en': "CO₂ enters the balance sheets too: the CSRD"},
+    "Fino a ieri l’impatto ambientale di un sito era una questione di sensibilità. Da poco è anche una voce che può finire in un bilancio. La direttiva europea sulla rendicontazione di sostenibilità — la CSRD — allarga di molto la platea delle aziende che devono rendicontare i propri impatti ambientali, e chi ha questo obbligo lo estende ai fornitori. Se lavorate con o dentro aziende soggette alla CSRD, un sito misurabile e leggero smette di essere un vezzo e diventa un dato che qualcuno vi chiederà. Meglio arrivarci con un numero in mano che con un’alzata di spalle.":
+        {'en': "Until yesterday a site’s environmental impact was a matter of sensibility. Recently it’s also an item that can end up in a balance sheet. The European directive on sustainability reporting — the CSRD — greatly widens the pool of companies that must report their environmental impacts, and those under the obligation extend it to their suppliers. If you work with or inside companies subject to the CSRD, a measurable, light site stops being a nicety and becomes a figure someone will ask you for. Better to get there with a number in hand than with a shrug."},
+    "Diciamolo con onestà, come sempre: il nostro strumento dà una stima indicativa, non un audit certificato per una rendicontazione ufficiale. Ma è il primo passo giusto — vi dice dove siete e quanto margine avete, prima ancora di parlare con un consulente.":
+        {'en': "Let’s say it honestly, as always: our tool gives an indicative estimate, not a certified audit for official reporting. But it’s the right first step — it tells you where you are and how much room you have, even before you talk to a consultant."},
+    "La direttiva CSRD sulla rendicontazione di sostenibilità (EUR-Lex) →":
+        {'en': "The CSRD directive on sustainability reporting (EUR-Lex) →"},
+    "Cosa potete fare in un pomeriggio":
+        {'en': "What you can do in an afternoon"},
+    "Non serve rifare tutto per vedere il numero scendere. Le prime mosse sono semplici e rendono subito.":
+        {'en': "You don’t have to redo everything to see the number drop. The first moves are simple and pay off right away."},
+    "Alleggerite le immagini: convertitele in WebP o AVIF con caricamento differito. È quasi sempre l’intervento con il rapporto costo/beneficio più alto.":
+        {'en': "Lighten the images: convert them to WebP or AVIF with lazy loading. It’s almost always the intervention with the highest cost/benefit ratio."},
+    "Tagliate script e font superflui: ogni libreria di terze parti e ogni famiglia di caratteri in più è energia trasferita a ogni visita.":
+        {'en': "Trim superfluous scripts and fonts: every third-party library and every extra font family is energy transferred on every visit."},
+    "Sfruttate cache e CDN: evitano di ritrasferire gli stessi contenuti mille volte, meno traffico ripetuto e meno consumo.":
+        {'en': "Use cache and a CDN: they avoid re-transferring the same content a thousand times — less repeated traffic and less consumption."},
+    "Scegliete un hosting alimentato da rinnovabili: abbassa l’intensità di carbonio di ogni byte servito, con effetto immediato.":
+        {'en': "Choose hosting powered by renewables: it lowers the carbon intensity of every byte served, with immediate effect."},
+    "Misura gratis l’impronta di CO₂ del tuo sito →":
+        {'en': "Measure your site’s CO₂ footprint for free →"},
+    "Leggi anche: sito lento, le 7 cause reali (e quanto costa sistemarle) →":
+        {'en': "Read also: a slow site, the 7 real causes (and what it costs to fix them) →"},
+    "Il modello con cui si calcola l’impronta di CO₂ dal peso reale della pagina.":
+        {'en': "The model used to calculate the CO₂ footprint from the page’s real weight."},
+    "La libreria open source che traduce i byte trasferiti in grammi di CO₂ equivalente.":
+        {'en': "The open-source library that turns transferred bytes into grams of CO₂ equivalent."},
+    "Il testo ufficiale della rendicontazione di sostenibilità che allarga gli obblighi ambientali alle imprese.":
+        {'en': "The official text of the sustainability reporting rules that extend environmental obligations to businesses."},
+    "Dati reali sul peso delle pagine: dove si concentra davvero il consumo del web.":
+        {'en': "Real data on page weights: where the web’s consumption really concentrates."},
+    "Perché un sito leggero è anche veloce: le metriche che legano peso, velocità ed esperienza.":
+        {'en': "Why a light site is also a fast one: the metrics that link weight, speed and experience."},
+    "Misura ora l’impronta di CO₂ del tuo sito — gratis →":
+        {'en': "Measure your site’s CO₂ footprint now — free →"},
+    "Impatto ambientale sito web: dal peso della pagina in byte all’energia consumata e ai grammi di CO₂ per visita":
+        {'en': "Website environmental impact: from page weight in bytes to energy consumed and grams of CO₂ per visit"},
+    "Dal peso della pagina ai grammi di CO₂: byte trasferiti, energia consumata, emissioni per visita e stima annua col modello Sustainable Web Design":
+        {'en': "From page weight to grams of CO₂: transferred bytes, energy consumed, emissions per visit and yearly estimate with the Sustainable Web Design model"},
+    "C’è un documento di cui pochi parlano e che, dal 2025, molti siti devono avere: la dichiarazione di accessibilità. È la parte meno appariscente dell’adeguamento all’European Accessibility Act, e proprio per questo la più dimenticata — con una beffa dentro: un sito tecnicamente accessibile, ma senza dichiarazione pubblicata, resta comunque non a norma. In questa guida pratica vediamo cos’è la dichiarazione di accessibilità, cosa deve contenere per essere seria e non un copia-incolla, gli errori più comuni, e come si arriva a pubblicarla senza affidarsi a un punteggio automatico.":
+        {'en': "There’s a document few talk about and that, since 2025, many sites must have: the accessibility statement. It’s the least conspicuous part of European Accessibility Act compliance, and for that very reason the most forgotten — with a twist inside: a technically accessible site, but without a published statement, is still not compliant. In this practical guide we look at what the accessibility statement is, what it must contain to be serious and not a copy-paste, the most common mistakes, and how you get to publishing it without relying on an automated score."},
+    "Cos’è la dichiarazione di accessibilità (e perché è obbligatoria)":
+        {'en': "What the accessibility statement is (and why it’s mandatory)"},
+    "La dichiarazione di accessibilità è un documento pubblico in cui il sito dichiara, in chiaro, quanto è accessibile: quale standard applica, cosa funziona, cosa non è ancora a posto e a chi scrivere per segnalare un problema. Non è un attestato che vi date da soli per bellezza: è il modo in cui la norma vi chiede di prendere una posizione verificabile davanti a chi usa il sito, comprese le persone con disabilità.":
+        {'en': "The accessibility statement is a public document in which the site states, plainly, how accessible it is: which standard it applies, what works, what isn’t right yet, and who to write to in order to report a problem. It isn’t a certificate you award yourself for show: it’s the way the law asks you to take a verifiable stance before those who use the site, including people with disabilities."},
+    "L’obbligo nasce dall’European Accessibility Act — la direttiva europea 2019/882 — applicato in Italia dal 28 giugno 2025 per molti siti che vendono beni o servizi ai consumatori. Lo standard tecnico di riferimento sono le WCAG 2.1 di livello AA. E qui sta il punto che sorprende di più: la conformità non si esaurisce nel rendere il sito accessibile, chiede anche di dichiararlo. Senza il documento, il lavoro tecnico non basta.":
+        {'en': "The obligation comes from the European Accessibility Act — EU Directive 2019/882 — applied in Italy since 28 June 2025 for many sites that sell goods or services to consumers. The technical reference standard is WCAG 2.1 level AA. And here’s the point that surprises most: compliance doesn’t end with making the site accessible, it also asks you to declare it. Without the document, the technical work isn’t enough."},
+    "L’European Accessibility Act, il testo ufficiale (EUR-Lex) →":
+        {'en': "The European Accessibility Act, the official text (EUR-Lex) →"},
+    "Cosa deve contenere: l’anatomia di una dichiarazione seria":
+        {'en': "What it must contain: the anatomy of a serious statement"},
+    "Il World Wide Web Consortium, l’ente che scrive gli standard del web, indica cosa una dichiarazione dovrebbe sempre avere — e mette a disposizione perfino un generatore gratuito. Tradotto in pratica, gli elementi che non possono mancare sono pochi e chiari.":
+        {'en': "The World Wide Web Consortium, the body that writes the web’s standards, sets out what a statement should always have — and even provides a free generator. Put into practice, the elements that can’t be missing are few and clear."},
+    "L’impegno all’accessibilità: una frase che dichiara che vi rivolgete anche alle persone con disabilità, non un preambolo di circostanza.":
+        {'en': "The commitment to accessibility: a sentence stating that you address people with disabilities too, not a token preamble."},
+    "Lo standard applicato: quale livello WCAG (di norma 2.1 AA) avete preso come riferimento.":
+        {'en': "The standard applied: which WCAG level (usually 2.1 AA) you took as your reference."},
+    "Lo stato di conformità: cosa è accessibile e — onestà — quali parti non lo sono ancora, senza nascondere i limiti.":
+        {'en': "The conformance status: what is accessible and — honesty — which parts aren’t yet, without hiding the limits."},
+    "Un contatto per le segnalazioni: un indirizzo vero a cui una persona può scrivere se trova una barriera, con l’impegno a rispondere.":
+        {'en': "A contact for reports: a real address a person can write to if they hit a barrier, with a commitment to reply."},
+    "La data e l’aggiornamento: quando è stata redatta e revisionata, perché un sito cambia e la dichiarazione deve seguirlo.":
+        {'en': "The date and updates: when it was drafted and reviewed, because a site changes and the statement has to follow it."},
+    "I cinque elementi che una dichiarazione di accessibilità dovrebbe sempre avere: impegno, standard applicato, stato di conformità, parti non ancora accessibili e contatto per le segnalazioni, con data di redazione. Fonte: W3C/WAI, «Developing an Accessibility Statement».":
+        {'en': "The five elements an accessibility statement should always have: commitment, standard applied, conformance status, parts not yet accessible, and a contact for reports, with the drafting date. Source: W3C/WAI, “Developing an Accessibility Statement.”"},
+    "La guida e il generatore gratuito del W3C/WAI →":
+        {'en': "The W3C/WAI guide and free generator →"},
+    "Gli errori più comuni":
+        {'en': "The most common mistakes"},
+    "Le dichiarazioni che vediamo sbagliano quasi sempre negli stessi modi. Il primo: il copia-incolla scaricato da un altro sito, con dati che non c’entrano nulla — vale meno di niente, e in caso di controllo si nota subito. Il secondo: la dichiarazione «perfetta» che giura conformità totale mentre il sito è pieno di barriere, cioè una promessa che smentisce sé stessa alla prima prova. Il terzo: il gergo da avvocati e da tecnici, illeggibile per la persona a cui dovrebbe servire — «non soddisfa il criterio 1.2.2» invece di «i video non hanno i sottotitoli». Il quarto: nasconderla, così ben sepolta nel footer che nessuno la trova. Una dichiarazione onesta e imperfetta vale più di una perfetta e falsa.":
+        {'en': "The statements we see go wrong almost always in the same ways. The first: the copy-paste downloaded from another site, with data that has nothing to do with it — worth less than nothing, and in an inspection it shows at once. The second: the “perfect” statement that swears total conformance while the site is full of barriers, that is, a promise that contradicts itself at the first test. The third: lawyer-and-technician jargon, unreadable for the person it should serve — “does not meet Success Criterion 1.2.2” instead of “the videos have no captions.” The fourth: hiding it, buried so deep in the footer that no one finds it. An honest, imperfect statement is worth more than a perfect, false one."},
+    "Non basta un punteggio: la dichiarazione viene dopo l’audit":
+        {'en': "A score isn’t enough: the statement comes after the audit"},
+    "C’è un equivoco da smontare: «ho passato il test automatico, sono a posto». No. Un controllo automatico gratuito è un ottimo primo gradino — in un minuto scova contrasti, etichette e struttura — ma intercetta circa un terzo dei criteri WCAG: quello che una macchina sa misurare. Il resto — navigazione da tastiera, esperienza con uno screen reader, chiarezza dei contenuti — si verifica solo a mano. Una dichiarazione seria si scrive dopo un audit vero, non incollando il numero di uno strumento.":
+        {'en': "There’s a misconception to dismantle: “I passed the automated test, I’m fine.” No. A free automated check is an excellent first step — in a minute it flags contrast, labels and structure — but it catches about a third of the WCAG criteria: what a machine can measure. The rest — keyboard navigation, screen-reader experience, content clarity — can only be checked by hand. A serious statement is written after a real audit, not by pasting a tool’s number."},
+    "Per questo l’ordine giusto è preciso: prima l’audit, automatico e manuale; poi le correzioni; poi la dichiarazione che racconta con onestà il risultato; infine una verifica finale. Chi vi vende la dichiarazione senza l’audit vi sta vendendo una cornice senza il quadro.":
+        {'en': "That’s why the right order is precise: first the audit, automated and manual; then the fixes; then the statement that honestly reports the result; finally a final verification. Whoever sells you the statement without the audit is selling you a frame without the picture."},
+    "Guida EAA per il commercio online (Bird & Bird) →":
+        {'en': "EAA guide for online retail (Bird & Bird) →"},
+    "Come la prepariamo noi, in tre settimane":
+        {'en': "How we prepare it, in three weeks"},
+    "Nel nostro servizio la dichiarazione non è un foglio a parte, è l’ultimo passo di un percorso. Settimana 1: audit automatico e manuale, con il perimetro esatto delle barriere. Settimana 2: correzioni — contrasti, etichette dei moduli, gerarchia dei titoli, navigazione da tastiera. Settimana 3: redazione e pubblicazione della dichiarazione di accessibilità, e un audit di verifica che conferma lo standard WCAG 2.1 AA a correzioni fatte. Prezzo chiuso dopo l’audit, data in contratto con penale, come per ogni nostro lavoro.":
+        {'en': "In our service the statement isn’t a separate sheet, it’s the last step of a path. Week 1: automated and manual audit, with the exact scope of the barriers. Week 2: fixes — contrast, form labels, heading hierarchy, keyboard navigation. Week 3: drafting and publishing the accessibility statement, and a verification audit confirming the WCAG 2.1 AA standard once fixes are done. Fixed price after the audit, date in the contract with a penalty, as with all our work."},
+    "Se avete un e-commerce e volete capire prima cosa rischiate davvero — chi è obbligato, chi resta fuori, quali sanzioni — l’abbiamo raccontato a parte, senza allarmismi. La dichiarazione è il traguardo; ma il viaggio comincia dal sapere se, e quanto, l’obbligo vi riguarda.":
+        {'en': "If you run an e-commerce and want to understand first what you really risk — who’s covered, who’s left out, what fines — we told it separately, without scaremongering. The statement is the finish line; but the journey starts from knowing whether, and how much, the obligation concerns you."},
+    "Leggi anche: EAA 2026, cosa rischia davvero il vostro e-commerce →":
+        {'en': "Read also: EAA 2026, what your e-commerce site really risks →"},
+    "La guida ufficiale del W3C, con un generatore gratuito: cosa una dichiarazione deve contenere.":
+        {'en': "The official W3C guide, with a free generator: what a statement must contain."},
+    "Il testo dell’European Accessibility Act: da qui nasce l’obbligo, dichiarazione compresa.":
+        {'en': "The text of the European Accessibility Act: the source of the obligation, the statement included."},
+    "Lo standard tecnico di riferimento (livello AA) che la dichiarazione deve citare.":
+        {'en': "The technical reference standard (level AA) the statement must cite."},
+    "Il centro di competenza UE sull’accessibilità: conferma l’entrata in vigore del 28 giugno 2025.":
+        {'en': "The EU accessibility competence center: it confirms the entry into force on 28 June 2025."},
+    "Uno studio legale internazionale spiega perimetro, esenzioni e obblighi per chi vende online.":
+        {'en': "An international law firm explains scope, exemptions and obligations for those who sell online."},
+    "Dichiarazione di accessibilità: il documento richiesto dall’European Accessibility Act, cosa deve contenere e dove pubblicarlo":
+        {'en': "Accessibility statement: the document required by the European Accessibility Act, what it must contain and where to publish it"},
+    "L’anatomia di una dichiarazione di accessibilità: impegno, standard WCAG 2.1 AA, stato di conformità, parti non accessibili, contatto e data":
+        {'en': "The anatomy of an accessibility statement: commitment, WCAG 2.1 AA standard, conformance status, parts not accessible, contact and date"},
+    "Guida: quanto pesa il vostro sito sull’ambiente (e sul portafoglio) →":
+        {'en': "Guide: how much your site weighs on the environment (and on your wallet) →"},
+    "Guida pratica: la dichiarazione di accessibilità nel 2026 →":
+        {'en': "Practical guide: the accessibility statement in 2026 →"},
+}
+CHROME.update(CHROME_BLOG_BATCH2)
+
+
 # Prezzo lancio — promo sui primi 5 progetti (titolare, 15.07.2026). Solo
 # 'en': il RU si scrive a mano (translate_pages.py ru è vietato). I prezzi
 # stessi (es. "€ 1.900–2.800") non servono qui: sono nodi di testo puramente

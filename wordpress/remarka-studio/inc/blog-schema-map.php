@@ -5,7 +5,7 @@
  * обложка, для JSON-LD BlogPosting (см. remarka_blog_posting_schema).
  */
 return array(
-	'_modified' => '2026-07-15',
+	'_modified' => '2026-07-16',
 	'posts' => array(
 		'sito-quattro-lingue-costi-tempi' => array( 'date' => '2026-05-05', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg' ),
 		'website-four-languages-costs' => array( 'date' => '2026-05-05', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg' ),
@@ -39,5 +39,15 @@ return array(
 		'website-checkup-7-metrics' => array( 'date' => '2026-07-15', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/checkup-cover.svg' ),
 		'eeat-come-google-giudica-credibilita' => array( 'date' => '2026-07-15', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/eeat-cover.svg' ),
 		'eeat-how-google-judges-credibility' => array( 'date' => '2026-07-15', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/eeat-cover.svg' ),
+		'preventivo-sito-web-come-leggerlo' => array( 'date' => '2026-07-16', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/preventivo-cover.svg' ),
+		'website-quote-how-to-read-it' => array( 'date' => '2026-07-16', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/preventivo-cover.svg' ),
+		'sito-web-in-3-settimane' => array( 'date' => '2026-07-16', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/tresett-cover.svg' ),
+		'website-in-3-weeks' => array( 'date' => '2026-07-16', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/tresett-cover.svg' ),
+		'restyling-o-sito-nuovo-5-domande' => array( 'date' => '2026-07-16', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/restyling-cover.svg' ),
+		'redesign-or-new-website-5-questions' => array( 'date' => '2026-07-16', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/restyling-cover.svg' ),
+		'impatto-ambientale-sito-web' => array( 'date' => '2026-07-16', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/impatto-cover.svg' ),
+		'website-environmental-impact' => array( 'date' => '2026-07-16', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/impatto-cover.svg' ),
+		'dichiarazione-di-accessibilita-guida-2026' => array( 'date' => '2026-07-16', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/dichiarazione-cover.svg' ),
+		'accessibility-statement-guide-2026' => array( 'date' => '2026-07-16', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/dichiarazione-cover.svg' ),
 	),
 );

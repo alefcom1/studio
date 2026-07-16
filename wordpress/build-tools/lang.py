@@ -76,6 +76,12 @@ BLOG_SLUGS = {
     'farsi-trovare-da-chatgpt-geo':         {'en': 'get-cited-by-chatgpt-geo',            'ru': 'kak-popast-v-chatgpt'},
     'check-up-sito-web-7-misure':           {'en': 'website-checkup-7-metrics',           'ru': 'chek-ap-sajta-7-pokazatelej'},
     'eeat-come-google-giudica-credibilita': {'en': 'eeat-how-google-judges-credibility',  'ru': 'eeat-kak-google-ocenivaet'},
+    # Blog · Batch 2 — IT + EN (RU è un batch a sé: slug RU pianificati, IT+EN-only).
+    'preventivo-sito-web-come-leggerlo':    {'en': 'website-quote-how-to-read-it',        'ru': 'kak-chitat-smetu-na-sajt'},
+    'sito-web-in-3-settimane':              {'en': 'website-in-3-weeks',                  'ru': 'sajt-za-3-nedeli'},
+    'restyling-o-sito-nuovo-5-domande':     {'en': 'redesign-or-new-website-5-questions', 'ru': 'redizajn-ili-novyj-sajt'},
+    'impatto-ambientale-sito-web':          {'en': 'website-environmental-impact',        'ru': 'ekologicheskij-sled-sajta'},
+    'dichiarazione-di-accessibilita-guida-2026': {'en': 'accessibility-statement-guide-2026', 'ru': 'deklaracija-o-dostupnosti-2026'},
 }
 
 # Articoli del blog pubblicati solo in IT + EN in questa fase (la loro versione
@@ -88,6 +94,12 @@ BLOG_IT_EN_ONLY = {
     'farsi-trovare-da-chatgpt-geo',
     'check-up-sito-web-7-misure',
     'eeat-come-google-giudica-credibilita',
+    # Batch 2
+    'preventivo-sito-web-come-leggerlo',
+    'sito-web-in-3-settimane',
+    'restyling-o-sito-nuovo-5-domande',
+    'impatto-ambientale-sito-web',
+    'dichiarazione-di-accessibilita-guida-2026',
 }
 
 
