@@ -1350,6 +1350,25 @@ body.page .entry-title {
   display: block;
 }
 
+/*
+ * Двухвалютная цена (RU): рубли основной строкой, евро — мельче под ними.
+ * Так колонка вдвое уже, чем при «₽ · €» в одну строку, и таблица помещается
+ * без прокрутки вправо. nowrap не даёт разорвать число посередине («85 000»).
+ */
+.sr-cur-eur {
+  display: block;
+  font-size: 0.82em;
+  font-weight: 400;
+  color: var(--sr-grigio);
+  letter-spacing: 0;
+}
+.sr-lancio-price,
+.sr-lancio-listino,
+.sr-cur-eur,
+.sr-market-table__us .sr-lancio-price {
+  white-space: nowrap;
+}
+
 @media (max-width: 640px) {
   .sr-compare-table table { min-width: 720px; }
   .sr-compare-table th { padding: 14px; }
