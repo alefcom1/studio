@@ -1,0 +1,143 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Remarka Lab · Monitor — PRODUCTION override (path A: internal tool behind
+# Caddy Basic Auth on lab.remarka.biz).
+#
+# This file is an OVERRIDE. Always run it together with the platform's base
+# compose file, from inside the code checkout (~/remarka-lab/sitelens):
+#
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+#
+# What it changes vs. the base docker-compose.yml:
+#   • api/web host ports are UNPUBLISHED (only Caddy reaches them, over the
+#     internal Docker network). db/redis were never published — keep it that way
+#     (do NOT add docker-compose.expose.yml in production).
+#   • All secrets come from .env (POSTGRES_PASSWORD / DATABASE_URL / ...); the
+#     hardcoded `sitelens_secret` from the base file is overridden here.
+#   • CORS is pinned to the real origin.
+#   • web image is (re)built with NEXT_PUBLIC_API_URL baked in (same origin), so
+#     the browser calls https://lab.remarka.biz/api and /ws — no cross-origin.
+#   • memory limits sized for a 4 GB box (see numbers + rationale below).
+#   • a caddy service terminates TLS and enforces Basic Auth for the whole site.
+#
+# NOTE on `deploy.resources.limits`: with plain `docker compose up` (not Swarm),
+# Compose v2/v5 DOES honor deploy.resources.limits as container memory caps.
+# ─────────────────────────────────────────────────────────────────────────────
+
+services:
+  db:
+    environment:
+      POSTGRES_DB: sitelens
+      POSTGRES_USER: sitelens
+      # Override the hardcoded base password with the value from .env.
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    # No `ports:` — DB stays on the internal network only.
+    deploy:
+      resources:
+        limits:
+          # 512M: Postgres 16 with the default small shared_buffers is comfortable
+          # for this dataset (crawl pages/issues for a handful of projects). Room
+          # for autovacuum + a few connections from api/worker.
+          memory: 512M
+
+  redis:
+    deploy:
+      resources:
+        limits:
+          # 256M: Redis here is only BullMQ queues + crawl pub/sub, not a data
+          # store. Small working set; 256M leaves headroom before it would evict.
+          memory: 256M
+
+  api:
+    restart: unless-stopped
+    environment:
+      # Pull DB/Redis/CORS from .env instead of the base file's hardcoded values.
+      DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL in .env}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+      CORS_ORIGIN: ${CORS_ORIGIN:-https://lab.remarka.biz}
+      PORT: 3001
+      NODE_ENV: production
+    env_file: .env
+    # Remove the base file's `ports: ['3001:3001']` publication entirely.
+    # Compose CONCATENATES `ports` on merge, so a normal override would leave the
+    # public 0.0.0.0:3001 in place (and Docker's own iptables rules bypass ufw,
+    # so that would really be reachable). `!reset []` is the Compose-native way to
+    # drop an inherited attribute. Caddy still reaches the API as `api:3001` over
+    # the internal Docker network — nothing is published to the host.
+    ports: !reset []
+    deploy:
+      resources:
+        limits:
+          # 512M: Fastify + Prisma client. Mostly I/O-bound request handling and
+          # WebSocket fan-out; 512M is generous for this workload.
+          memory: 512M
+
+  worker:
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL in .env}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+      NODE_ENV: production
+    env_file: .env
+    deploy:
+      resources:
+        limits:
+          # 1G: the heavy one. Bundles Chromium for optional JS-rendering
+          # (renderJs) and runs up to 2 concurrent crawl jobs (BullMQ
+          # concurrency=2, hardcoded in crawl-worker.ts). Chromium + parsing can
+          # spike; 1G is the cap that keeps it from OOM-killing db/api. If you see
+          # the worker get OOM-killed, lower crawl concurrency to 1 (see setup.md
+          # → "Диагностика / OOM").
+          memory: 1024M
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        # CRITICAL: NEXT_PUBLIC_* is inlined at BUILD time. This bakes the public
+        # origin into the JS bundle so the browser calls the same origin
+        # (https://lab.remarka.biz/api, wss://lab.remarka.biz/ws). Requires the
+        # one-line ARG/ENV patch to apps/web/Dockerfile — see setup.md step 4.
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://lab.remarka.biz}
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      # Overrides the base file's leftover runtime `http://localhost:3001`. Note:
+      # for NEXT_PUBLIC_* this runtime value is a no-op (the real value is baked
+      # in at build via build.args above) — set here only to avoid a misleading
+      # localhost showing up on `docker inspect`.
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://lab.remarka.biz}
+    # Same as api: drop the inherited `ports: ['3000:3000']` publication.
+    # Caddy reaches web as `web:3000` over the internal Docker network.
+    ports: !reset []
+    deploy:
+      resources:
+        limits:
+          # 512M: Next.js standalone runtime is light (mostly SSR proxying to the
+          # API). 512M is comfortable headroom.
+          memory: 512M
+
+  # ─── Reverse proxy / TLS / Basic Auth ──────────────────────────────────────
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - web
+      - api
+    deploy:
+      resources:
+        limits:
+          # 128M: Caddy is a tiny Go binary; 128M is plenty for one or two sites.
+          memory: 128M
+
+volumes:
+  # pgdata / redisdata are declared in the base compose; re-declaring caddy vols:
+  caddy_data:
+  caddy_config:

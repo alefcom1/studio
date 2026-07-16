@@ -1,0 +1,82 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Remarka Lab · Monitor — Caddy v2 reverse proxy
+#
+#   Browser ──TLS/Basic Auth──▶ Caddy ─┬─ /api/*  /ws*  /health ─▶ api:3001
+#                                       └─ everything else        ─▶ web:3000
+#
+# The whole site sits behind HTTP Basic Auth (the app itself has NO auth). Caddy
+# gets a Let's Encrypt cert automatically for lab.remarka.biz (ports 80/443 must
+# be open — they are: ufw allows 80/443).
+#
+# Routing rationale (verified against the code, read-only):
+#   • API routes are registered with a literal `/api/...` prefix inside each
+#     route file (e.g. `fastify.get('/api/projects', ...)`), NOT via a Fastify
+#     prefix — so proxy /api/* verbatim (do NOT strip the prefix).
+#   • WebSocket lives at `/ws/crawl/:id` (apps/api/src/ws/index.ts). The web
+#     client (apps/web/src/lib/ws.ts) takes NEXT_PUBLIC_API_URL, swaps http→ws,
+#     and connects to `<origin>/ws/crawl/...`. With NEXT_PUBLIC_API_URL baked as
+#     https://lab.remarka.biz that becomes wss://lab.remarka.biz/ws/... — Caddy
+#     upgrades it transparently via the same reverse_proxy.
+#   • Health check is `/health` (no /api prefix) — routed to api so the owner can
+#     `curl -u user:pass https://lab.remarka.biz/health`.
+#   • The web client's BASE (apps/web/src/lib/api.ts) is NEXT_PUBLIC_API_URL, so
+#     with it baked to the public origin the browser calls the SAME origin →
+#     no CORS preflight needed (CORS_ORIGIN is still pinned server-side as belt +
+#     braces).
+# ─────────────────────────────────────────────────────────────────────────────
+
+{
+	# Contact address for Let's Encrypt expiry notices. Replace if desired.
+	email admin@remarka.biz
+}
+
+lab.remarka.biz {
+	# ── Gate the entire site behind Basic Auth ───────────────────────────────
+	# Generate the hash on the server with:
+	#   docker compose ... exec caddy caddy hash-password --plaintext 'YOURPASS'
+	# then paste it below (bcrypt hash, starts with $2a$). The value below is a
+	# PLACEHOLDER for the password "changeme" — REPLACE IT before going live.
+	basic_auth {
+		# username    bcrypt-hash
+		remarka $2a$14$bG0kjAVPVwxMXokL4tZLNuqz1Q8turCMt8qxhiaNlEOtVvXyTuVs.
+	}
+
+	# ── WebSocket: /ws and everything under it → api ─────────────────────────
+	@ws path /ws /ws/*
+	handle @ws {
+		reverse_proxy api:3001
+	}
+
+	# ── REST API: /api/* → api (prefix preserved) ────────────────────────────
+	handle /api/* {
+		reverse_proxy api:3001
+	}
+
+	# ── Health probe: /health → api ──────────────────────────────────────────
+	handle /health {
+		reverse_proxy api:3001
+	}
+
+	# ── Everything else → Next.js web ────────────────────────────────────────
+	handle {
+		reverse_proxy web:3000
+	}
+
+	# Access + error logs to stdout (view with: docker compose ... logs caddy).
+	log {
+		output stdout
+		format console
+	}
+}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# FUTURE: WordPress remarka.biz on this same server (path B, later).
+# When it arrives, add a second site block here, e.g.:
+#
+# remarka.biz, www.remarka.biz {
+# 	reverse_proxy wordpress:80          # or php-fpm/nginx container
+# 	# (NO basic_auth here — the public site is meant to be public)
+# }
+#
+# Caddy auto-provisions a separate cert per site block; no other change needed.
+# ─────────────────────────────────────────────────────────────────────────────
