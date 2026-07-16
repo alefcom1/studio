@@ -116,7 +116,7 @@ TEXT_NODE = re.compile(r'>([^<>]+)<')
 ATTRS = re.compile(
     r'\b(alt|aria-label|placeholder|data-verdict-[a-z0-9]+|data-label-[a-z-]+|'
     r'data-word-[a-z0-9]+|data-composite-[a-z0-9]+|data-calc-note|data-na-text|'
-    r'data-ai-suffix|data-notice|data-more-label|'
+    r'data-ai-suffix|data-notice|data-more-label|data-ai-[a-z-]+|'
     r'data-err|data-audits-empty|data-caption[a-z-]*)="([^"]+)"'
 )
 SR_LOCALE = re.compile(r'data-sr-locale="it"')
@@ -177,6 +177,39 @@ def translate_file(path, d, href_map, lang_code, report):
         return '[sr_shot ' + SR_SHOT_ATTR.sub(repl_attr, m.group(1)) + ']'
 
     src = SR_SHOT.sub(tr_sr_shot, src)
+
+    # Selettore lingua di suona-madrelingua (_widget_ai_suona in generate_pages.py,
+    # owner correction 16.07): le due opzioni mostrate sono le lingue "estere"
+    # rispetto alla pagina — sulla pagina IT sono "Inglese"/"Russo" (per
+    # verificare testi in quelle lingue), sulla EN sono "Italian"/"Russian",
+    # sulla RU "Итальянский"/"Английский". Non è una traduzione lessicale di
+    # "Inglese"/"Russo" (sostituirle genericamente nel dizionario globale
+    # sarebbe pericoloso: quella stringa può comparire altrove col significato
+    # letterale "English") — sostituzione mirata dell'intero blocco, PRIMA
+    # del passaggio generico su TEXT_NODE/ATTRS.
+    SUONA_LANG_BLOCK = re.compile(
+        r'<div class="sr-pill-group">\s*'
+        r'<label class="sr-pill"><input type="radio" class="sr-pill__input" name="text_lang" value="en" checked><span>Inglese</span></label>\s*'
+        r'<label class="sr-pill"><input type="radio" class="sr-pill__input" name="text_lang" value="ru"><span>Russo</span></label>\s*'
+        r'</div>'
+    )
+    SUONA_LANG_BLOCK_TR = {
+        'en': (
+            '<div class="sr-pill-group">\n'
+            '        <label class="sr-pill"><input type="radio" class="sr-pill__input" name="text_lang" value="it" checked><span>Italian</span></label>\n'
+            '        <label class="sr-pill"><input type="radio" class="sr-pill__input" name="text_lang" value="ru"><span>Russian</span></label>\n'
+            '      </div>'
+        ),
+        'ru': (
+            '<div class="sr-pill-group">\n'
+            '        <label class="sr-pill"><input type="radio" class="sr-pill__input" name="text_lang" value="it" checked><span>Итальянский</span></label>\n'
+            '        <label class="sr-pill"><input type="radio" class="sr-pill__input" name="text_lang" value="en"><span>Английский</span></label>\n'
+            '      </div>'
+        ),
+    }
+    if lang_code in SUONA_LANG_BLOCK_TR:
+        src = SUONA_LANG_BLOCK.sub(SUONA_LANG_BLOCK_TR[lang_code], src)
+
 
     def tr_text(m):
         raw = m.group(1)

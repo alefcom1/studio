@@ -128,7 +128,7 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Число страниц для оптимизации сверх первых 20.</span></div><div><span class="sr-mono">b</span><span>Многоязычный контент, требующий проработки.</span></div><div><span class="sr-mono">c</span><span>Технические ошибки прошлых лет, которые нужно исправить до начала работ.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:12px"><a href="/ru/instrumenty/seo-audit/">Проверить SEO вашей страницы →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/instrumenty/gotovnost-k-ii/">Проверить готовность сайта к ИИ →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/instrumenty/signaly-eeat/">Проверить сигналы доверия E-E-A-T →</a></p>
+<p class="sr-card-link" style="margin-top:12px"><a href="/ru/instrumenty/seo-audit/">Проверить SEO вашей страницы →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/instrumenty/gotovnost-k-ii/">Проверить готовность сайта к ИИ →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/instrumenty/signaly-eeat/">Проверить сигналы доверия E-E-A-T →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/instrumenty/sajt-glazami-ii/">Узнайте, как ИИ на самом деле читает ваш сайт →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/ru/instrumenty/generator-llms-txt/">Создайте llms.txt за минуту →</a></p>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/ru/ceny/">Сравнить все тарифы →</a></p>

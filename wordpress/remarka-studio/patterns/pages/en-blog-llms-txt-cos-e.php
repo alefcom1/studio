@@ -63,7 +63,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">If you don’t know where to begin, begin by measuring. In a minute you can check whether your site already exposes the four signals models look for — an llms.txt file, AI-crawler access, structured data and a sitemap — and see what’s missing before you write a single line.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/technical-seo/">It’s part of the technical SEO we deliver →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/get-cited-by-chatgpt-geo/">Read also: how to get found and cited by ChatGPT →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/technical-seo/">It’s part of the technical SEO we deliver →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/llms-txt-generator/">Create your llms.txt in a minute: free generator →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/get-cited-by-chatgpt-geo/">Read also: how to get found and cited by ChatGPT →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Sources<span class="sr-accent-dot">.</span></h2>

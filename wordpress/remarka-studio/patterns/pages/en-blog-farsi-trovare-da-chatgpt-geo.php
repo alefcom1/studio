@@ -63,7 +63,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">And if you want to understand the most talked-about piece of this world — the famous llms.txt file — we’ve covered it separately, no smoke: what it is, how to write it, and how much it really matters.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/technical-seo/">We set it up: it’s part of technical SEO →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/llms-txt-explained/">Read also: llms.txt, what it is and whether your site needs it →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/technical-seo/">We set it up: it’s part of technical SEO →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/read-by-ai/">See how AI actually reads your site — free →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/llms-txt-explained/">Read also: llms.txt, what it is and whether your site needs it →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Sources<span class="sr-accent-dot">.</span></h2>

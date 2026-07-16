@@ -229,6 +229,76 @@ EN — ≈152, RU — ≈153 — все ≤160.
 
 ---
 
+## 3 strumenti AI (Remarka Lab) — IT/EN/RU (docs/piano-ai-tools.md, docs/copy-ai-tools.md §6)
+
+> №2 «Suona madrelingua?» corretto per decisione del proprietario 16.07.2026 (verifica
+> lingue estere alla pagina, non solo l'italiano — vedi copy-ai-tools.md §2/§6). Slug:
+> IT `/strumenti/sito-letto-dallai/` · `/strumenti/suona-madrelingua/` · `/strumenti/generatore-llms-txt/`;
+> EN `/en/tools/read-by-ai/` · `/en/tools/does-it-sound-native/` · `/en/tools/llms-txt-generator/`;
+> RU `/ru/instrumenty/sajt-glazami-ii/` · `/ru/instrumenty/zvuchit-kak-u-nositelya/` · `/ru/instrumenty/generator-llms-txt/`.
+
+| URL | Focus keyword |
+|---|---|
+| `/strumenti/sito-letto-dallai/` | come l'AI legge il sito |
+| `/en/tools/read-by-ai/` | how AI reads your site |
+| `/ru/instrumenty/sajt-glazami-ii/` | как ИИ читает сайт |
+| `/strumenti/suona-madrelingua/` | il testo suona madrelingua |
+| `/en/tools/does-it-sound-native/` | does your text sound native |
+| `/ru/instrumenty/zvuchit-kak-u-nositelya/` | текст как у носителя |
+| `/strumenti/generatore-llms-txt/` | generatore llms.txt |
+| `/en/tools/llms-txt-generator/` | llms.txt generator |
+| `/ru/instrumenty/generator-llms-txt/` | генератор llms.txt |
+
+### IT — `/strumenti/sito-letto-dallai/`
+
+- **Title:** `Il vostro sito letto dall'AI, gratis | Studio Remarka`
+- **Description:** `Un'intelligenza artificiale legge la vostra home e vi dice cosa ha capito: di cosa vi occupate, per chi e quanto siete citabili. Verdetto e 3 mosse, gratis.`
+
+### EN — `/en/tools/read-by-ai/`
+
+- **Title:** `Your website, read by AI — free tool | Studio Remarka`
+- **Description:** `An AI reads your homepage and tells you what it understood: what you do, who for, and how citable you are. A verdict and three moves, free, no sign-up.`
+
+### RU — `/ru/instrumenty/sajt-glazami-ii/`
+
+- **Title:** `Ваш сайт глазами ИИ — бесплатно | Studio Remarka`
+- **Description:** `Искусственный интеллект читает вашу главную и говорит, что понял: чем вы заняты, для кого и насколько вас цитировать. Вердикт и 3 шага, бесплатно.`
+
+### IT — `/strumenti/suona-madrelingua/`
+
+- **Title:** `Il vostro testo suona madrelingua? | Studio Remarka`
+- **Description:** `Incollate un testo in inglese o russo: l'AI vi dice se suona nativo o se si sente la traduzione. Punteggio di naturalezza e 3 correzioni. Gratis.`
+
+### EN — `/en/tools/does-it-sound-native/`
+
+- **Title:** `Does your text sound native? AI test | Studio Remarka`
+- **Description:** `Paste a text in Italian or Russian: an AI tells you if it sounds native or translated. A naturalness score and three concrete fixes. Free, no sign-up.`
+
+### RU — `/ru/instrumenty/zvuchit-kak-u-nositelya/`
+
+- **Title:** `Текст звучит как у носителя? Тест ИИ | Studio Remarka`
+- **Description:** `Вставьте текст на итальянском или английском: ИИ скажет, звучит ли он как у носителя или чувствуется перевод. Оценка и 3 правки. Бесплатно.`
+
+### IT — `/strumenti/generatore-llms-txt/`
+
+- **Title:** `Generatore di llms.txt gratis | Studio Remarka`
+- **Description:** `Create il vostro llms.txt in un minuto: rispondete a tre domande o incollate l'indirizzo, l'AI scrive il file. Da copiare e scaricare, gratis.`
+
+### EN — `/en/tools/llms-txt-generator/`
+
+- **Title:** `Free llms.txt generator tool | Studio Remarka`
+- **Description:** `Create your llms.txt in a minute: answer three questions or paste your URL and the AI writes the file. Copy or download it. Free, no sign-up required.`
+
+### RU — `/ru/instrumenty/generator-llms-txt/`
+
+- **Title:** `Генератор llms.txt бесплатно | Studio Remarka`
+- **Description:** `Создайте llms.txt за минуту: ответьте на три вопроса или вставьте адрес — ИИ напишет файл. Скопируйте или скачайте. Бесплатно, без регистрации.`
+
+**Проверка длин (пересчитано программно).** Title: IT 53/51/46, EN 53/53/45, RU 48/53/45 —
+все ≤60. Description: IT 156/145/142, EN 151/150/150, RU 146/139/143 — все ≤160.
+
+---
+
 ## Adeguamento EAA — IT/EN/RU (E1)
 
 > Источник — `docs/copy-eaa.md` §2 (copy deck E1, услуга «специальная»: собственный dict

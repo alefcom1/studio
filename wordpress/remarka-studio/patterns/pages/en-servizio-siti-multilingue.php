@@ -126,7 +126,7 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Number of additional languages beyond the two included.</span></div><div><span class="sr-mono">b</span><span>Volume of content to translate beyond the base pages.</span></div><div><span class="sr-mono">c</span><span>Periodic review needed after delivery.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:12px"><a href="/en/tools/localization-roi/">Calculate your localization ROI →</a></p>
+<p class="sr-card-link" style="margin-top:12px"><a href="/en/tools/localization-roi/">Calculate your localization ROI →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/en/tools/does-it-sound-native/">Test whether your texts sound native →</a></p>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/en/pricing/">Compare all plans →</a></p>

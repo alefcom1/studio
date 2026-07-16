@@ -26,6 +26,12 @@
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="max-width:75ch">Три новых ИИ-инструмента. «Ваш сайт, прочитанный ИИ» показывает, что понимает искусственный ассистент, когда встречает вашу главную страницу. «Звучит как у носителя?» говорит, звучат ли ваши тексты на итальянском или английском как у носителя языка или чувствуется перевод — наше ремесло с 2001 года. «Генератор llms.txt» пишет для вас файл, который объясняет сайт ИИ-ассистентам, готовый к скачиванию. Бесплатно, без регистрации: искусственный интеллект на службе у вашего сайта, а не наоборот.</p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
@@ -144,6 +150,51 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/signaly-eeat/">Попробовать →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/09</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Ваш сайт глазами ИИ</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Что понимает ИИ о вашем сайте и как бы он вас процитировал.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/sajt-glazami-ii/">Попробовать →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/10</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Звучит как у носителя?</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Ваши тексты на итальянском или английском звучат как у носителя?</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/zvuchit-kak-u-nositelya/">Попробовать →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/11</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Генератор llms.txt</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Ваш llms.txt — написан и готов к скачиванию.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/generator-llms-txt/">Попробовать →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

@@ -86,6 +86,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size" style="margin-top:24px">A fixed price in the quote, as with all our services. E-invoicing, payment in three installments.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:12px"><a href="/en/tools/does-it-sound-native/">Test whether your texts sound native →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
