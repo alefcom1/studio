@@ -131,8 +131,17 @@ RUN pnpm --filter @sitelens/web build
 
 ## 5. Build and start
 
+Pre-flight: confirm the two compose files merge cleanly (checks the `!reset`
+tag support and .env interpolation; prints the merged config or an error):
+
 ```bash
 cd ~/remarka-lab/sitelens
+docker compose -f docker-compose.yml -f docker-compose.prod.yml config --quiet && echo "COMPOSE CONFIG OK"
+```
+
+Expect `COMPOSE CONFIG OK`. If it errors, stop and report the message. Then:
+
+```bash
 docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
 ```
 
