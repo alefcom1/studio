@@ -109,6 +109,17 @@ Host hetzner
   (2) перенос БД+медиа WordPress (dump/restore) с текущего хостинга;
   (3) SMTP (FluentSMTP) переезжает с сайтом; (4) ключи Anthropic/PSI/OAuth.
 
+### Статус миграции WP (16.07, вечер)
+
+Конфиги готовы и в репозитории: сервисы `wpdb`/`wordpress`/`wpcli` в
+`deploy/remarka-lab/docker-compose.prod.yml`, стейджинг-блок
+`new.remarka.biz` в Caddyfile (боевой блок remarka.biz закомментирован до
+cutover), `wp-uploads.ini`, бэкап WP в `backup.sh`. Пошаговый раннбук —
+**`docs/migrazione-wp-hetzner.md`** (стратегия: полный dump/restore,
+стейджинг на new.remarka.biz, cutover со свежим дампом и TTL 300).
+Пост-переездные сценарии деплоя сайта — `docs/deploy-cheatsheet.md`,
+раздел «После переезда на Hetzner». Рекомендован рескейл CX23→CX33 (8 ГБ).
+
 ## Кабинет заказчика — план K1–K3 (в плане с 16.07, решение владельца)
 
 Строим на базе платформы Remarka Lab (Next.js + Fastify + Prisma + BullMQ,

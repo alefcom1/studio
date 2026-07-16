@@ -82,9 +82,33 @@ else
   FILES_OUT=""
 fi
 
+# ── WordPress remarka.biz (миграция 16.07.2026) ──────────────────────────────
+# После переезда сайта на этот сервер бэкапим и его: mysqldump из wpdb +
+# tar wp-content (медиа/тема/плагины; core-файлы WP восстанавливаются образом).
+# Пока сервисы wpdb/wp-html не существуют (до миграции) — шаги тихо
+# пропускаются, скрипт остаётся совместимым.
+WP_DB_OUT="$BACKUP_DIR/wordpress-db-$STAMP.sql.gz"
+if $COMPOSE ps --services 2>/dev/null | grep -qx wpdb && [ -d "wp-html" ]; then
+  echo "[$(date -Is)] Dumping WordPress DB → $WP_DB_OUT"
+  $COMPOSE exec -T wpdb sh -c 'mariadb-dump -u root -p"$MARIADB_ROOT_PASSWORD" wordpress' \
+    | gzip -9 > "$WP_DB_OUT"
+  echo "[$(date -Is)] WordPress DB dump complete ($(du -h "$WP_DB_OUT" | cut -f1))"
+
+  WP_FILES_OUT="$BACKUP_DIR/wordpress-content-$STAMP.tar.gz"
+  echo "[$(date -Is)] Archiving wp-content → $WP_FILES_OUT"
+  tar -czf "$WP_FILES_OUT" -C "$COMPOSE_DIR/wp-html" wp-content
+  echo "[$(date -Is)] wp-content archive complete ($(du -h "$WP_FILES_OUT" | cut -f1))"
+else
+  echo "[$(date -Is)] WordPress not deployed on this box yet — skipping WP backup"
+  WP_DB_OUT=""
+  WP_FILES_OUT=""
+fi
+
 # ── Rotation ─────────────────────────────────────────────────────────────────
 find "$BACKUP_DIR" -name 'sitelens-*.sql.gz' -type f -mtime "+$RETENTION_DAYS" -print -delete
 find "$BACKUP_DIR" -name 'cabinet-files-*.tar.gz' -type f -mtime "+$RETENTION_DAYS" -print -delete
+find "$BACKUP_DIR" -name 'wordpress-db-*.sql.gz' -type f -mtime "+$RETENTION_DAYS" -print -delete
+find "$BACKUP_DIR" -name 'wordpress-content-*.tar.gz' -type f -mtime "+$RETENTION_DAYS" -print -delete
 echo "[$(date -Is)] Rotation done (kept last $RETENTION_DAYS days)"
 
 # ── Offsite copy (optional) ──────────────────────────────────────────────────
@@ -94,6 +118,8 @@ if [ -n "$OFFSITE_HOST" ] && [ -n "$OFFSITE_PATH" ]; then
   [ -n "$OFFSITE_SSH_KEY" ] && SCP_OPTS+=(-i "$OFFSITE_SSH_KEY")
   scp "${SCP_OPTS[@]}" "$OUT" "$OFFSITE_HOST:$OFFSITE_PATH"
   [ -n "$FILES_OUT" ] && scp "${SCP_OPTS[@]}" "$FILES_OUT" "$OFFSITE_HOST:$OFFSITE_PATH"
+  [ -n "$WP_DB_OUT" ] && scp "${SCP_OPTS[@]}" "$WP_DB_OUT" "$OFFSITE_HOST:$OFFSITE_PATH"
+  [ -n "$WP_FILES_OUT" ] && scp "${SCP_OPTS[@]}" "$WP_FILES_OUT" "$OFFSITE_HOST:$OFFSITE_PATH"
   echo "[$(date -Is)] Offsite copy done"
 else
   echo "[$(date -Is)] Offsite disabled (set OFFSITE_HOST/OFFSITE_PATH to enable)"

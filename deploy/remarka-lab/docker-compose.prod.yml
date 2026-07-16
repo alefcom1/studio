@@ -186,6 +186,88 @@ services:
           # box's full memory budget (3328M summed limits on a 4 GB host).
           memory: 384M
 
+  # ─── WordPress remarka.biz (миграция с РФ-хостинга, 16.07.2026) ────────────
+  # Сайт-визитка переезжает на этот же сервер (docs/migrazione-wp-hetzner.md).
+  # Не override: сервисов wpdb/wordpress/wpcli в базовом compose нет — это
+  # полные определения. Данные — на bind-mount'ах рядом с compose-файлом
+  # (./wp-html, ./wp-db), чтобы backup.sh брал их простым tar'ом.
+  wpdb:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: ${WP_DB_PASSWORD:?set WP_DB_PASSWORD in .env}
+      MARIADB_ROOT_PASSWORD: ${WP_DB_ROOT_PASSWORD:?set WP_DB_ROOT_PASSWORD in .env}
+    volumes:
+      - ./wp-db:/var/lib/mysql
+    # Не публикуется на хост — только внутренняя сеть (как db/redis).
+    healthcheck:
+      test: ['CMD', 'healthcheck.sh', '--connect', '--innodb_initialized']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          # 512M: дефолтный innodb_buffer_pool 128M + соединения PHP; для
+          # сайта-визитки с блогом этого достаточно с запасом.
+          memory: 512M
+
+  wordpress:
+    # Движущийся тег «последний WP на PHP 8.3»: при пересоздании контейнера
+    # может приехать новый минор WP — это ок, база обновляется автоматически
+    # (или `wp core update-db` через wpcli).
+    image: wordpress:php8.3-apache
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: wpdb
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${WP_DB_PASSWORD:?set WP_DB_PASSWORD in .env}
+      # ВАЖНО: префикс таблиц должен совпадать со старым wp-config.php
+      # (см. runbook, фаза 1: `grep table_prefix wp-config.php`).
+      WORDPRESS_TABLE_PREFIX: ${WP_TABLE_PREFIX:-wp_}
+      # Caddy терминирует TLS и проксирует по http — говорим WP, что снаружи
+      # https, иначе бесконечный редирект-цикл и mixed content.
+      WORDPRESS_CONFIG_EXTRA: |
+        if (isset($$_SERVER['HTTP_X_FORWARDED_PROTO']) && $$_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+          $$_SERVER['HTTPS'] = 'on';
+        }
+    volumes:
+      - ./wp-html:/var/www/html
+      - ./wp-uploads.ini:/usr/local/etc/php/conf.d/zz-uploads.ini:ro
+    ports: !reset []
+    depends_on:
+      wpdb:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          # 512M: Apache+PHP-FPM образа wordpress; хватает на витрину с
+          # инструментами Lab (обращения к Anthropic/PSI — исходящие HTTP,
+          # памяти почти не едят).
+          memory: 512M
+
+  # wp-cli тем же образом-компаньоном: НЕ стартует с `up` (profiles), только
+  # по требованию:  docker compose ... run --rm wpcli <команда>
+  # Пример:         docker compose ... run --rm wpcli core version
+  wpcli:
+    image: wordpress:cli-php8.3
+    profiles: ['tools']
+    user: '33:33'
+    environment:
+      WORDPRESS_DB_HOST: wpdb
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${WP_DB_PASSWORD:?set WP_DB_PASSWORD in .env}
+      WORDPRESS_TABLE_PREFIX: ${WP_TABLE_PREFIX:-wp_}
+    volumes:
+      - ./wp-html:/var/www/html
+    depends_on:
+      wpdb:
+        condition: service_healthy
+
   # ─── Reverse proxy / TLS / Basic Auth ──────────────────────────────────────
   caddy:
     image: caddy:2-alpine

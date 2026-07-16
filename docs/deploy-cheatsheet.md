@@ -72,6 +72,60 @@ grep -c 'sr-checkup' /var/www/alefcom/data/www/remarka.biz/wp-content/themes/rem
 
 ---
 
+## 🆕 После переезда на Hetzner (docs/migrazione-wp-hetzner.md)
+
+Когда remarka.biz живёт на Hetzner-сервере, сценарии 1–3 выше НЕ действуют
+(пути `/var/www/alefcom/...` остались на старом хостинге). Эквиваленты —
+все команды на **`ssh hetzner`**, из каталога `~/remarka-lab/sitelens`:
+
+### H0. Бэкап (перед любым сценарием)
+
+```bash
+cd ~/remarka-lab/sitelens && ./backup.sh
+```
+
+### H1. Полный цикл (изменился контент страниц)
+
+```bash
+cd ~/remarka-lab/sitelens
+COMPOSE="docker compose -f docker-compose.yml -f docker-compose.prod.yml"
+
+cd /tmp && git clone --depth 1 -b claude/new-project-prep-zhmkg5 https://github.com/alefcom1/studio.git
+cp -r studio/wordpress/remarka-studio ~/remarka-lab/sitelens/wp-html/wp-content/themes/
+cp studio/wordpress/build-tools/deploy-import.php ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio/deploy-import.php
+chown -R 33:33 ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio
+rm -rf /tmp/studio
+
+cd ~/remarka-lab/sitelens
+$COMPOSE run --rm -e REMARKA_FORCE=1 wpcli eval-file wp-content/themes/remarka-studio/deploy-import.php
+$COMPOSE run --rm wpcli cache flush
+```
+
+⚠️ `REMARKA_FORCE=1` теперь передаётся через `-e` у `docker compose run`
+(это тот же принцип «переменная окружения, не флаг»).
+
+### H2. Синк темы (изменился только код: CSS/JS/PHP/картинки)
+
+```bash
+cd /tmp && git clone --depth 1 -b claude/new-project-prep-zhmkg5 https://github.com/alefcom1/studio.git
+cp -r studio/wordpress/remarka-studio ~/remarka-lab/sitelens/wp-html/wp-content/themes/
+chown -R 33:33 ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio
+rm -rf /tmp/studio
+cd ~/remarka-lab/sitelens
+docker compose -f docker-compose.yml -f docker-compose.prod.yml run --rm wpcli cache flush
+```
+
+### H3. Точечный файл (только по хэшу коммита, как раньше)
+
+```bash
+curl -sL https://raw.githubusercontent.com/alefcom1/studio/<ХЭШ-КОММИТА>/wordpress/remarka-studio/assets/css/remarka.css \
+  -o ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio/assets/css/remarka.css
+chown 33:33 ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio/assets/css/remarka.css
+```
+
+Откат после переезда: восстановить из `~/backups/remarka-lab/wordpress-*`
+(см. RESTORE-комментарий в backup.sh; база — `mariadb` вместо `psql`).
+
 ## Проверка после обновления
 
 - Три главные: `/`, `/en/`, `/ru/` — открываются, блоки на месте.

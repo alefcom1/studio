@@ -97,13 +97,34 @@ cab.remarka.biz {
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
-# FUTURE: WordPress remarka.biz on this same server (path B, later).
-# When it arrives, add a second site block here, e.g.:
+# WordPress remarka.biz (миграция с РФ-хостинга — docs/migrazione-wp-hetzner.md)
 #
-# remarka.biz, www.remarka.biz {
-# 	reverse_proxy wordpress:80          # or php-fpm/nginx container
-# 	# (NO basic_auth here — the public site is meant to be public)
+# Стейджинг-хост new.remarka.biz активен сразу (для проверки ДО переключения
+# DNS). Боевые хосты remarka.biz/www закомментированы: Caddy не должен
+# долбиться в Let's Encrypt за сертификатом, пока A-запись remarka.biz ещё
+# указывает на старый хостинг. РАСКОММЕНТИРОВАТЬ на этапе cutover (фаза 5
+# раннбука) и перезапустить caddy.
+# ─────────────────────────────────────────────────────────────────────────────
+
+new.remarka.biz {
+	reverse_proxy wordpress:80
+
+	log {
+		output stdout
+		format console
+	}
+}
+
+# ── CUTOVER: раскомментировать блок ниже при переключении DNS (фаза 5) ──────
+# remarka.biz {
+# 	reverse_proxy wordpress:80
+#
+# 	log {
+# 		output stdout
+# 		format console
+# 	}
 # }
 #
-# Caddy auto-provisions a separate cert per site block; no other change needed.
-# ─────────────────────────────────────────────────────────────────────────────
+# www.remarka.biz {
+# 	redir https://remarka.biz{uri} permanent
+# }
