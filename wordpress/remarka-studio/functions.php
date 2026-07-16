@@ -1829,6 +1829,9 @@ function remarka_tool_report_handler(): void {
 
 	$data['consent_monthly'] = $consent_monthly;
 	$data['date_display']    = date_i18n( 'd.m.Y' );
+	// AI-insight (piano-ai-tools.md §7): abbozzo veloce (Haiku) sui 7 punteggi,
+	// chiave assente/fallback/limite → stringa vuota, il PDF non si rompe mai.
+	$data['ai_insight'] = remarka_tool_ai_insight_checkup( $data['scores'], $data['url'], $data['locale'] );
 
 	$pdf = remarka_checkup_render_pdf( $data, $data['locale'] );
 	if ( null === $pdf || '' === $pdf ) {
