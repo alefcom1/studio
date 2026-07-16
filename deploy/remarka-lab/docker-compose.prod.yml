@@ -117,6 +117,51 @@ services:
           # API). 512M is comfortable headroom.
           memory: 512M
 
+  # ─── Cabinet (client portal, K1) ────────────────────────────────────────────
+  # NOT an override of a base-compose service — `cabinet` does not exist in
+  # docker-compose.yml at all, this is the full and only definition. Separate
+  # app (apps/cabinet), its own Next.js standalone runtime + Route Handlers,
+  # same Postgres (tables cab_*), no Redis/worker dependency. Publicly
+  # reachable at cab.remarka.biz WITHOUT basic_auth (see Caddyfile) — the app
+  # does its own auth (magic-link + server-side sessions). See setup.md →
+  # "Cabinet" for the full deploy runbook.
+  cabinet:
+    build:
+      context: .
+      dockerfile: apps/cabinet/Dockerfile
+      args:
+        # Baked in at BUILD time (same NEXT_PUBLIC_* caveat as web above) —
+        # used for absolute links (e.g. in emails). Keep equal to CABINET_URL.
+        NEXT_PUBLIC_CABINET_URL: ${CABINET_URL:-https://cab.remarka.biz}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL in .env}
+      NODE_ENV: production
+      CABINET_URL: ${CABINET_URL:-https://cab.remarka.biz}
+      SESSION_TTL_DAYS: ${SESSION_TTL_DAYS:-7}
+      MAGIC_TTL_MINUTES: ${MAGIC_TTL_MINUTES:-15}
+      # Brevo transactional email (owner decision 16.07.2026, EU/GDPR). Empty
+      # key = dev mode: the app logs the magic link to stdout instead of
+      # sending — it does NOT fail startup or crash on a missing key, but a
+      # real pilot rollout needs a real key here.
+      BREVO_API_KEY: ${BREVO_API_KEY:-}
+      EMAIL_FROM: ${EMAIL_FROM:-no-reply@remarka.biz}
+    env_file: .env
+    # Not published to the host — Caddy reaches it as `cabinet:3002` over the
+    # internal Docker network only (same pattern as api/web above).
+    ports: !reset []
+    depends_on:
+      db:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          # 384M: Next.js standalone (SSR + Route Handlers), no Chromium, no
+          # heavy background work in K1 (mail is sent synchronously via one
+          # HTTPS call to Brevo). See piano-cabinet-k1.md §7.3 for the box's
+          # full memory budget (3328M summed limits on a 4 GB host).
+          memory: 384M
+
   # ─── Reverse proxy / TLS / Basic Auth ──────────────────────────────────────
   caddy:
     image: caddy:2-alpine
@@ -131,6 +176,7 @@ services:
     depends_on:
       - web
       - api
+      - cabinet
     deploy:
       resources:
         limits:

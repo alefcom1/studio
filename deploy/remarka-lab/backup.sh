@@ -12,6 +12,13 @@
 #
 # Cron (daily 03:30 server time) — `crontab -e`:
 #   30 3 * * * /home/massimo/remarka-lab/sitelens/backup.sh >> /home/massimo/backups/remarka-lab/backup.log 2>&1
+#
+# PII NOTE (added with the K1 client portal, piano-cabinet-k1.md §7.5/§8):
+# this dump now also contains the cabinet's cab_* tables — client e-mails,
+# names, login IPs/user-agents, audit log. No script change needed (the
+# dump already covers the whole `sitelens` DB), but if OFFSITE_HOST is
+# enabled below, that destination must stay in the EU and on encrypted
+# storage, and consider `gpg`-encrypting the dump before shipping it.
 # ─────────────────────────────────────────────────────────────────────────────
 set -euo pipefail
 

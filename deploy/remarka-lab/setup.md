@@ -247,3 +247,112 @@ docker image prune -f
 > in `README.md`), so schema changes from a pull are applied on restart. For a
 > destructive schema change `db push` will refuse and the api container will
 > fail to start — back up first (see `backup.sh`) and read the api logs.
+
+---
+
+## Cabinet (client portal, K1)
+
+Separate app (`apps/cabinet`), same server, same Postgres — see
+`docs/piano-cabinet-k1.md` for the full design. Public client login at
+**`cab.remarka.biz`**, deliberately NOT behind Basic Auth (the app does its
+own auth: magic-link email → server-side session cookie). Adds one container
+(`cabinet`, 384M limit) and one Caddy site block; `lab.remarka.biz` and its
+Basic Auth are untouched.
+
+### Prerequisites specific to Cabinet
+
+1. **DNS**: `cab.remarka.biz` → `178.105.192.76` (A-record) must resolve
+   BEFORE first start, same as step 3 above for `lab.remarka.biz`:
+   ```bash
+   dig +short cab.remarka.biz    # should print 178.105.192.76
+   ```
+2. **Brevo API key** (owner decision 16.07.2026 — EU region, GDPR). Get one
+   at https://app.brevo.com after verifying the `remarka.biz` sending domain
+   (SPF/DKIM/DMARC — Brevo's domain authentication page gives you the exact
+   DNS records to add). Free tier (300 emails/day) is enough for magic-link
+   volume. **Without a key**, the cabinet still starts and serves pages, but
+   runs in **dev mode**: instead of emailing the login link, it logs the URL
+   to the container's stdout — fine for a first smoke test, not for real
+   clients (nobody actually receives a login link).
+
+### Deploy Cabinet (after `lab.remarka.biz` is already running)
+
+```bash
+cd ~/remarka-lab/sitelens
+
+# 1) Pull the branch with the cabinet app (or your normal update flow if
+#    it has already been merged to the branch you deploy from).
+cd ~/remarka-lab && git fetch origin && git checkout claude/cabinet-k1 && git pull
+cd sitelens
+
+# 2) Add the Cabinet variables to the EXISTING .env (do not overwrite it —
+#    it already holds POSTGRES_PASSWORD/DATABASE_URL/etc from the lab.*
+#    setup). Append, then edit in the real values:
+cat >> .env <<'EOF'
+CABINET_URL=https://cab.remarka.biz
+BREVO_API_KEY=
+EMAIL_FROM=no-reply@remarka.biz
+MAGIC_TTL_MINUTES=15
+SESSION_TTL_DAYS=7
+EOF
+nano .env      # fill BREVO_API_KEY (or leave empty for dev-mode smoke test first)
+
+# 3) Confirm the merged compose config is still valid with the new service:
+docker compose -f docker-compose.yml -f docker-compose.prod.yml config --quiet && echo "COMPOSE CONFIG OK"
+
+# 4) Build and start ONLY the new pieces (cabinet + caddy reload for the new
+#    site block) — this does not touch db/api/worker/web:
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build cabinet caddy
+
+# 5) Watch the cert issuance for the new host:
+docker compose -f docker-compose.yml -f docker-compose.prod.yml logs -f caddy
+```
+
+### Verify
+
+```bash
+BASE="-f docker-compose.yml -f docker-compose.prod.yml"
+
+# Should return the login page (NO Basic Auth prompt, unlike lab.*):
+curl -i https://cab.remarka.biz/login | head -n 1     # HTTP/2 200
+
+# Container present and healthy, memory within the 384M cap:
+docker compose $BASE ps cabinet
+docker stats --no-stream cabinet
+
+# Cab_* tables exist in the shared DB (created by prisma db push, additive —
+# see piano-cabinet-k1.md §7.4 on why this is safe):
+docker compose $BASE exec db psql -U sitelens -d sitelens -c '\dt' | grep cab_
+```
+
+### Onboard the first pilot client
+
+Manual account creation (K1 has no self-service signup):
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.prod.yml \
+  exec cabinet node_modules/.bin/tsx ../../packages/db/prisma/seed-cabinet.ts \
+  --email cliente@esempio.it --client "Nome Cliente S.r.l." --locale it \
+  --project "Sito aziendale"
+```
+
+(If running the seed from a dev machine against the prod DB instead, use
+`pnpm --filter @sitelens/cabinet seed -- --email ... --client ... --locale
+it` with `DATABASE_URL` pointed at the server — see
+`packages/db/prisma/seed-cabinet.ts` header for both modes.)
+
+Then send the client to `https://cab.remarka.biz/login` to request their
+first magic link.
+
+### Diagnostics specific to Cabinet
+
+- `docker compose $BASE logs -f cabinet` — dev-mode magic-link logging shows
+  up here (`[cabinet:email:dev-mode] ... would send magic link to ...`) if
+  `BREVO_API_KEY` is empty; Brevo send failures also log here (never the raw
+  token, only an HTTP status).
+- If `cab.remarka.biz` doesn't get a cert: same TLS/cert troubleshooting as
+  `lab.remarka.biz` above (DNS + ports 80/443).
+- Memory: 384M is comfortable for Next standalone with no Chromium. If it
+  ever needs headroom, see piano-cabinet-k1.md §7.3 for the fallback (320M
+  floor, or trim elsewhere in the budget) — do not raise it without checking
+  the box's total (currently 3328M summed limits on a 4 GB host).

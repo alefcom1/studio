@@ -70,6 +70,33 @@ lab.remarka.biz {
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Cabinet (client portal, K1) — cab.remarka.biz
+#
+#   Browser ──TLS, NO Basic Auth──▶ Caddy ─▶ cabinet:3002 (everything)
+#
+# Deliberately separate from lab.remarka.biz above: this is the PUBLIC client
+# login, so it must NOT sit behind Basic Auth (a real client has no way to
+# get that username/password). The app does its own auth end-to-end
+# (magic-link + server-side session cookie) — see piano-cabinet-k1.md §4-5.
+# Monitor's api/web are NOT reachable from this site block at all; isolation
+# between "internal tool" and "public client portal" is at the Caddy-host
+# level, not by selectively filtering paths.
+#
+# Precondition: DNS A-record cab.remarka.biz → 178.105.192.76 must exist
+# BEFORE first start, or the ACME HTTP-01 challenge for the TLS cert fails.
+# ─────────────────────────────────────────────────────────────────────────────
+
+cab.remarka.biz {
+	# NO basic_auth block here — see rationale above.
+	reverse_proxy cabinet:3002
+
+	log {
+		output stdout
+		format console
+	}
+}
+
+# ─────────────────────────────────────────────────────────────────────────────
 # FUTURE: WordPress remarka.biz on this same server (path B, later).
 # When it arrives, add a second site block here, e.g.:
 #
