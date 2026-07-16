@@ -327,19 +327,27 @@ docker compose $BASE exec db psql -U sitelens -d sitelens -c '\dt' | grep cab_
 
 ### Onboard the first pilot client
 
-Manual account creation (K1 has no self-service signup):
+Manual account creation (K1 has no self-service signup). Run this via the
+**`api`** container, not `cabinet`: `cabinet`'s image is a slim Next.js
+standalone runtime (no devDependencies, no `tsx` — see `apps/cabinet/Dockerfile`),
+while `api`'s image keeps the full monorepo + `node_modules` from its build
+stage (`COPY --from=build /app .` in `apps/api/Dockerfile`), so it already
+has `pnpm`, `tsx`, and every workspace package on disk:
 
 ```bash
 docker compose -f docker-compose.yml -f docker-compose.prod.yml \
-  exec cabinet node_modules/.bin/tsx ../../packages/db/prisma/seed-cabinet.ts \
+  exec api pnpm --filter @sitelens/cabinet seed -- \
   --email cliente@esempio.it --client "Nome Cliente S.r.l." --locale it \
   --project "Sito aziendale"
 ```
 
-(If running the seed from a dev machine against the prod DB instead, use
+(If running the seed from a dev machine against the prod DB instead, run
 `pnpm --filter @sitelens/cabinet seed -- --email ... --client ... --locale
-it` with `DATABASE_URL` pointed at the server — see
-`packages/db/prisma/seed-cabinet.ts` header for both modes.)
+it` locally with `DATABASE_URL` pointed at the server's Postgres — see
+`packages/db/prisma/seed-cabinet.ts` header for both modes. That needs a
+tunnel/exposed port to the server's `db` service, e.g. via
+`docker-compose.expose.yml` or an SSH tunnel — do not open Postgres to the
+public internet.)
 
 Then send the client to `https://cab.remarka.biz/login` to request their
 first magic link.
