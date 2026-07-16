@@ -55,6 +55,9 @@ TOOLS_SLUGS = {
     'impatto-co2':            {'en': 'website-carbon',       'ru': 'uglerodnyj-sled'},
     'check-up-completo':      {'en': 'full-site-checkup',    'ru': 'polnaya-proverka-sajta'},
     'segnali-eeat':           {'en': 'eeat-signals',         'ru': 'signaly-eeat'},
+    'sito-letto-dallai':      {'en': 'read-by-ai',           'ru': 'sajt-glazami-ii'},
+    'suona-madrelingua':      {'en': 'does-it-sound-native', 'ru': 'zvuchit-kak-u-nositelya'},
+    'generatore-llms-txt':    {'en': 'llms-txt-generator',   'ru': 'generator-llms-txt'},
 }
 
 BLOG_SLUGS = {

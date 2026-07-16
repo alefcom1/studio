@@ -3,7 +3,7 @@
  * Title: Pagina — Strumenti (elenco)
  * Slug: remarka-studio/strumenti-index
  * Categories: remarka-pagine
- * Description: Elenco degli otto strumenti gratuiti, con il check-up completo in evidenza.
+ * Description: Elenco degli strumenti gratuiti, con il check-up completo in evidenza.
  * Viewport Width: 1400
  */
 ?>
@@ -23,6 +23,12 @@
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:html -->
 <div class="sr-card sr-card--carta" style="border-color:var(--sr-oltremare)"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">Novità · gratuito</p><h3 class="wp-block-heading" style="margin-top:10px">Check-up completo</h3><p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">Sette strumenti gratuiti in una sola analisi.</p><p class="sr-card-link" style="margin-top:18px"><a href="/strumenti/check-up-completo/">Prova →</a></p></div>
 <!-- /wp:html -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="max-width:75ch">Tre strumenti AI, nuovi. «Il vostro sito, letto dall’AI» vi mostra cosa capisce un assistente artificiale quando incontra la vostra home. «Suona madrelingua?» dice se i vostri testi in inglese o russo suonano nativi o sanno di traduzione — il nostro mestiere dal 2001. Il «Generatore di llms.txt» scrive per voi il file che spiega il sito agli assistenti AI, pronto da scaricare. Gratis, senza registrazione: è l’intelligenza artificiale al servizio del vostro sito, non del contrario.</p>
+<!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
@@ -144,6 +150,51 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/segnali-eeat/">Prova →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/09</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Il vostro sito, letto dall’AI</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Cosa capisce l’AI del vostro sito, e come vi citerebbe.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/sito-letto-dallai/">Prova →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/10</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Suona madrelingua?</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">I vostri testi in inglese o russo suonano nativi?</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/suona-madrelingua/">Prova →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">/11</p>
+<!-- /wp:html -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Generatore di llms.txt</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
+<p class="has-grigio-color has-text-color has-small-font-size">Il vostro llms.txt, scritto e pronto da scaricare.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/generatore-llms-txt/">Prova →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

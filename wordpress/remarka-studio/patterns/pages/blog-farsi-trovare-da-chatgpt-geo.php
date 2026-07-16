@@ -63,7 +63,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">E se volete capire il tassello più discusso di questo mondo — il famoso file llms.txt — l’abbiamo raccontato a parte, senza fumo: cos’è, come si scrive e quanto conta davvero.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/servizi/seo-tecnica/">Lo prepariamo noi: fa parte della SEO tecnica →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/blog/llms-txt-cos-e/">Leggi anche: llms.txt, cos’è e serve davvero al vostro sito →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/servizi/seo-tecnica/">Lo prepariamo noi: fa parte della SEO tecnica →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/strumenti/sito-letto-dallai/">Scoprite come l’AI legge davvero il vostro sito — gratis →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/blog/llms-txt-cos-e/">Leggi anche: llms.txt, cos’è e serve davvero al vostro sito →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Fonti<span class="sr-accent-dot">.</span></h2>

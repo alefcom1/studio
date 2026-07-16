@@ -63,7 +63,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Se non sapete da dove cominciare, cominciate misurando. In un minuto potete verificare se il vostro sito espone già i quattro segnali che i modelli cercano — file llms.txt, accesso dei crawler AI, dati strutturati e sitemap — e capire cosa manca prima di scrivere una sola riga.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/servizi/seo-tecnica/">Fa parte della SEO tecnica che consegniamo →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/blog/farsi-trovare-da-chatgpt-geo/">Leggi anche: come farsi trovare e citare da ChatGPT →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/servizi/seo-tecnica/">Fa parte della SEO tecnica che consegniamo →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/strumenti/generatore-llms-txt/">Create il vostro llms.txt in un minuto: generatore gratuito →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/blog/farsi-trovare-da-chatgpt-geo/">Leggi anche: come farsi trovare e citare da ChatGPT →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Fonti<span class="sr-accent-dot">.</span></h2>

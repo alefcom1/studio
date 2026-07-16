@@ -86,6 +86,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size" style="margin-top:24px">Prezzo chiuso nel preventivo, come per tutti i nostri servizi. Fattura elettronica, pagamento in tre tranche.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/suona-madrelingua/">Provate se i vostri testi suonano madrelingua →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->

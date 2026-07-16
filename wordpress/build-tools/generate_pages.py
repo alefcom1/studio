@@ -61,8 +61,11 @@ SERVICE_TOOL_LINKS = {
     'restyling-migrazione': [('Misura l’impatto CO₂ del sito attuale', '/strumenti/impatto-co2/')],
     'seo-tecnica':          [('Analizza la SEO on-page della vostra pagina', '/strumenti/analisi-seo/'),
                              ('Verifica se il sito è pronto per l’AI', '/strumenti/sito-pronto-ai/'),
-                             ('Misura i segnali E-E-A-T del sito', '/strumenti/segnali-eeat/')],
-    'siti-multilingue':     [('Calcola il ROI della localizzazione', '/strumenti/roi-localizzazione/')],
+                             ('Misura i segnali E-E-A-T del sito', '/strumenti/segnali-eeat/'),
+                             ('Scoprite come l’AI legge davvero il vostro sito', '/strumenti/sito-letto-dallai/'),
+                             ('Createvi un llms.txt in un minuto', '/strumenti/generatore-llms-txt/')],
+    'siti-multilingue':     [('Calcola il ROI della localizzazione', '/strumenti/roi-localizzazione/'),
+                             ('Provate se i vostri testi suonano madrelingua', '/strumenti/suona-madrelingua/')],
 }
 
 
@@ -460,6 +463,22 @@ def build_strumenti_index():
         classes='sr-section sr-section--bianco',
     )
 
+    # Intro ai 3 nuovi strumenti AI (copy-ai-tools.md §7), prima della griglia:
+    # stesso tono del resto del catalogo, nessuna promessa esagerata.
+    ai_intro = section(
+        paragraph(
+            'Tre strumenti AI, nuovi. «Il vostro sito, letto dall’AI» vi mostra cosa '
+            'capisce un assistente artificiale quando incontra la vostra home. «Suona '
+            'madrelingua?» dice se i vostri testi in inglese o russo suonano nativi o '
+            'sanno di traduzione — il nostro mestiere dal 2001. Il «Generatore di '
+            'llms.txt» scrive per voi il file che spiega il sito agli assistenti AI, '
+            'pronto da scaricare. Gratis, senza registrazione: è l’intelligenza '
+            'artificiale al servizio del vostro sito, non del contrario.',
+            color='grigio', size='base', extra_style='max-width:75ch',
+        ),
+        classes='sr-section sr-section--bianco',
+    )
+
     cards = []
     for t in altri:
         card = (
@@ -473,7 +492,8 @@ def build_strumenti_index():
     grid = section(group(''.join(cards), classes='', layout_type='grid', style='240px'),
                     classes='sr-section sr-section--bianco')
     write('strumenti-index', 'Pagina — Strumenti (elenco)',
-          'Elenco degli otto strumenti gratuiti, con il check-up completo in evidenza.', hero + featured + grid)
+          'Elenco degli strumenti gratuiti, con il check-up completo in evidenza.',
+          hero + featured + ai_intro + grid)
 
 
 # Markup del widget per tipo di strumento — segue STRETTAMENTE il contratto
@@ -901,6 +921,140 @@ def _widget_checkup():
 </div>'''
 
 
+# Widget dei 3 strumenti AI (Remarka Lab, docs/piano-ai-tools.md §6). Contratto
+# data-* condiviso con assets/js/remarka.js (blocco "Remarka Lab — 3 strumenti
+# AI"): data-sr-tool="ai-read|ai-suona|ai-llms", endpoint remarka_tool_ai.
+
+
+def _widget_ai_read():
+    return '''
+<div class="sr-tool-widget sr-card" data-sr-tool="ai-read" data-sr-locale="it"
+     data-ai-loading="L’AI sta leggendo il vostro sito…"
+     data-ai-maintenance="Strumento in manutenzione."
+     data-ai-limit="Avete raggiunto il limite di prove per oggi. Riprovate domani."
+     data-ai-err="Lo strumento non è disponibile in questo momento. Riprovate tra poco.">
+  <form data-sr-tool-form>
+    <div class="sr-tool-row">
+      <input type="text" placeholder="www.tuosito.it" class="sr-text-input" required />
+      <button type="submit" class="wp-block-button__link" style="padding:17px 30px">Analizza</button>
+    </div>
+  </form>
+  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>L’AI sta leggendo il vostro sito…<span class="sr-blink">…</span></p>
+  <div class="sr-tool-result" data-sr-tool-result hidden>
+    <p style="margin:0;font-size:17px;font-weight:500" data-sr-tool-verdict></p>
+    <p class="sr-eyebrow" style="margin-top:24px">Citabilità AI</p>
+    <div class="sr-tool-result__score">
+      <span class="sr-mono" data-ai-citabilita>0</span><span class="sr-mono" style="font-size:18px;color:var(--sr-grigio)">/100</span>
+    </div>
+    <div class="sr-barra" style="height:10px"><div class="sr-barra__fill" data-ai-citabilita-fill style="width:0%"></div><span class="sr-barra__tick" style="left:75%"></span><span class="sr-barra__tick" style="left:50%"></span></div>
+    <p class="sr-eyebrow" style="margin-top:28px">Le 3 mosse</p>
+    <div data-ai-azioni>
+      <template><div class="ai-azione"><span class="ai-azione-fai"></span><span class="ai-azione-arrow">→</span><span class="ai-azione-effetto"></span></div></template>
+    </div>
+    <p class="sr-disclaimer">Non salviamo il contenuto: è una lettura dell’AI, non un audit certificato.</p>
+
+    <div class="sr-ai-lead">
+      <p class="sr-eyebrow">Ricevete l’analisi completa via e-mail</p>
+      <form data-ai-lead-form>
+        <div class="sr-tool-row">
+          <input type="email" class="sr-text-input" placeholder="La vostra e-mail" required />
+          <button type="submit" class="wp-block-button__link" style="padding:15px 26px">Ricevi l’analisi completa</button>
+        </div>
+        <p style="margin-top:12px;font-size:13.5px"><label><input type="checkbox" data-ai-lead-consent required> Acconsento a essere ricontattato da Studio Remarka.</label></p>
+        <input type="text" name="sr_ai_hp" class="sr-hp-field" tabindex="-1" autocomplete="off">
+      </form>
+      <p data-ai-lead-success hidden>Fatto: controllate la posta.</p>
+      <p class="sr-form-error" data-ai-lead-error hidden>Lo strumento non è disponibile in questo momento. Riprovate tra poco.</p>
+    </div>
+  </div>
+</div>'''
+
+
+def _widget_ai_suona():
+    return '''
+<div class="sr-tool-widget sr-card" data-sr-tool="ai-suona" data-sr-locale="it"
+     data-ai-loading="L’AI sta valutando il testo…"
+     data-ai-maintenance="Strumento in manutenzione."
+     data-ai-limit="Avete raggiunto il limite di prove per oggi. Riprovate domani."
+     data-ai-err="Lo strumento non è disponibile in questo momento. Riprovate tra poco."
+     data-ai-err-short="Incollate almeno una frase."
+     data-ai-badge-yes="Suona nativo" data-ai-badge-no="Si sente la traduzione">
+  <form data-sr-tool-form>
+    <div class="sr-ai-lang">
+      <span class="sr-eyebrow">Lingua del testo:</span>
+      <div class="sr-pill-group">
+        <label class="sr-pill"><input type="radio" class="sr-pill__input" name="text_lang" value="en" checked><span>Inglese</span></label>
+        <label class="sr-pill"><input type="radio" class="sr-pill__input" name="text_lang" value="ru"><span>Russo</span></label>
+      </div>
+    </div>
+    <textarea class="sr-text-input" data-ai-suona-text placeholder="Incollate qui il testo da valutare (max ~2.000 caratteri)…" maxlength="2000" required></textarea>
+    <p class="sr-ai-counter" data-ai-counter>0 / 2000</p>
+    <div class="sr-tool-row">
+      <button type="submit" class="wp-block-button__link" style="padding:15px 28px">Valuta il testo</button>
+    </div>
+  </form>
+  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>L’AI sta valutando il testo…<span class="sr-blink">…</span></p>
+  <div class="sr-tool-result" data-sr-tool-result hidden>
+    <p style="margin:0;font-size:15.5px" data-sr-tool-verdict></p>
+    <p class="sr-ai-badge" data-ai-badge data-sr-flag style="margin-top:12px"></p>
+    <p class="sr-eyebrow" style="margin-top:20px">Naturalezza</p>
+    <div class="sr-tool-result__score">
+      <span class="sr-mono" data-ai-punteggio>0</span><span class="sr-mono" style="font-size:18px;color:var(--sr-grigio)">/100</span>
+    </div>
+    <div class="sr-barra" style="height:10px"><div class="sr-barra__fill" data-ai-punteggio-fill style="width:0%"></div><span class="sr-barra__tick" style="left:75%"></span><span class="sr-barra__tick" style="left:50%"></span></div>
+    <p style="margin-top:16px"><span class="sr-eyebrow">Registro</span><br><span data-ai-registro></span></p>
+    <p class="sr-eyebrow" style="margin-top:28px">3 correzioni</p>
+    <div data-ai-correzioni>
+      <template><div class="ai-correzione"><p><span class="sr-eyebrow">Prima</span><br><span class="ai-correzione-prima"></span></p><p><span class="sr-eyebrow">Dopo</span><br><span class="ai-correzione-dopo"></span></p><p class="ai-correzione-perche"></p></div></template>
+    </div>
+    <p class="sr-disclaimer">Non salviamo il testo: è una lettura dell’AI, non un audit certificato.</p>
+  </div>
+</div>'''
+
+
+def _widget_ai_llms():
+    return '''
+<div class="sr-tool-widget sr-card" data-sr-tool="ai-llms" data-sr-locale="it"
+     data-ai-loading="L’AI sta scrivendo il vostro llms.txt…"
+     data-ai-maintenance="Strumento in manutenzione."
+     data-ai-limit="Avete raggiunto il limite di prove per oggi. Riprovate domani."
+     data-ai-err="Lo strumento non è disponibile in questo momento. Riprovate tra poco."
+     data-ai-copy-done="Copiato">
+  <form data-sr-tool-form>
+    <div class="sr-pill-group">
+      <label class="sr-pill"><input type="radio" class="sr-pill__input" name="ai_llms_mode" value="form" checked><span>Compila i campi</span></label>
+      <label class="sr-pill"><input type="radio" class="sr-pill__input" name="ai_llms_mode" value="url"><span>Ho solo l’indirizzo</span></label>
+    </div>
+    <div data-ai-llms-form style="margin-top:16px">
+      <p><label class="sr-eyebrow" style="display:block;margin-bottom:6px">Nome del sito / attività</label><input type="text" name="ai_llms_nome" class="sr-text-input" style="width:100%;box-sizing:border-box" required></p>
+      <p><label class="sr-eyebrow" style="display:block;margin-bottom:6px">Di cosa vi occupate</label><textarea name="ai_llms_cosa" class="sr-text-input" style="min-height:90px" required></textarea></p>
+      <p><label class="sr-eyebrow" style="display:block;margin-bottom:6px">Pagine chiave (una per riga)</label><textarea name="ai_llms_pagine" class="sr-text-input" style="min-height:90px"></textarea></p>
+    </div>
+    <div data-ai-llms-url hidden style="margin-top:16px">
+      <div class="sr-tool-row">
+        <input type="text" name="ai_llms_url" placeholder="www.tuosito.it" class="sr-text-input">
+      </div>
+    </div>
+    <div class="sr-tool-row" style="margin-top:16px">
+      <button type="submit" class="wp-block-button__link" style="padding:15px 28px">Analizza</button>
+    </div>
+  </form>
+  <p class="sr-tool-pending sr-mono" data-sr-tool-pending hidden>L’AI sta scrivendo il vostro llms.txt…<span class="sr-blink">…</span></p>
+  <div class="sr-tool-result" data-sr-tool-result hidden>
+    <p style="font-size:15.5px" data-sr-tool-verdict></p>
+    <div class="sr-ai-llms-output">
+      <textarea class="sr-ai-llms-textarea" data-ai-llms-output readonly></textarea>
+    </div>
+    <div class="sr-ai-llms-actions">
+      <button type="button" class="wp-block-button__link" data-ai-copy>Copia</button>
+      <span class="sr-btn-outline"><button type="button" class="wp-block-button__link" data-ai-download>Scarica llms.txt</button></span>
+    </div>
+    <p class="sr-disclaimer" data-ai-llms-note></p>
+    <p class="sr-disclaimer">Non salviamo i dati: è una lettura dell’AI, non un audit certificato.</p>
+  </div>
+</div>'''
+
+
 def build_tool_widget(tool):
     tipo = tool['tipo']
     if tipo == 'speed':
@@ -930,6 +1084,12 @@ def build_tool_widget(tool):
         return _widget_checkup()
     if tipo == 'eeat':
         return _widget_eeat()
+    if tipo == 'ai-read':
+        return _widget_ai_read()
+    if tipo == 'ai-suona':
+        return _widget_ai_suona()
+    if tipo == 'ai-llms':
+        return _widget_ai_llms()
     raise ValueError(f'tipo strumento sconosciuto: {tipo}')
 
 
@@ -1191,7 +1351,8 @@ def build_export_ready():
         eyebrow('Due formati') + heading(2, 'Un mercato o una strategia') +
         group(formati_cards, classes='', layout_type='grid', style='320px') +
         paragraph('Prezzo chiuso nel preventivo, come per tutti i nostri servizi. Fattura elettronica, pagamento in tre tranche.',
-                   color='grigio', size='small', extra_style='margin-top:24px'),
+                   color='grigio', size='small', extra_style='margin-top:24px') +
+        raw_html('<p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/suona-madrelingua/">Provate se i vostri testi suonano madrelingua →</a></p>'),
         classes='sr-section',
     )
 

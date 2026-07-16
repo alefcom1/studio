@@ -126,7 +126,7 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Numero di pagine da ottimizzare oltre le prime 20.</span></div><div><span class="sr-mono">b</span><span>Presenza di contenuti multilingua da trattare.</span></div><div><span class="sr-mono">c</span><span>Storico tecnico da correggere prima di intervenire.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/analisi-seo/">Analizza la SEO on-page della vostra pagina →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/sito-pronto-ai/">Verifica se il sito è pronto per l’AI →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/segnali-eeat/">Misura i segnali E-E-A-T del sito →</a></p>
+<p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/analisi-seo/">Analizza la SEO on-page della vostra pagina →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/sito-pronto-ai/">Verifica se il sito è pronto per l’AI →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/segnali-eeat/">Misura i segnali E-E-A-T del sito →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/sito-letto-dallai/">Scoprite come l’AI legge davvero il vostro sito →</a></p><p class="sr-card-link" style="margin-top:12px"><a href="/strumenti/generatore-llms-txt/">Createvi un llms.txt in un minuto →</a></p>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:20px"><a href="/prezzi/">Confronta tutte le tariffe →</a></p>
