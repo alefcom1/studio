@@ -108,7 +108,8 @@
   verifica-accessibilita и sito-pronto-ai. Особенность: RU-страниц у этих
   статей нет по плану (RU-темы — батчи 5–6); hreflang решён через
   BLOG_IT_EN_ONLY в lang.py (переключатель RU ведёт на /ru/blog/, без 404).
-- Батч 2 — ✅ выполнен (16.07): 5 статей IT+EN «деньги и решения владельца»
+- Батч 2 — ✅ выполнен и вычитан оркестратором (16.07, коммит `468e664`):
+  5 статей IT+EN «деньги и решения владельца»
   (preventivo · sito in 3 settimane · restyling o sito nuovo · impatto
   ambientale · dichiarazione di accessibilità), 10 фирменных SVG, 4–8 внешних
   источников на статью (SDI, CSRD, Green Web Foundation, W3C/WAI + банк
