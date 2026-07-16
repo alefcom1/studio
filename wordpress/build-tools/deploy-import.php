@@ -202,6 +202,9 @@ $page_map = array(
 	'strumento-sito-pronto-ai'             => array( 'sito-pronto-ai', 'strumenti', null ),
 	'strumento-impatto-co2'                => array( 'impatto-co2', 'strumenti', null ),
 	'strumento-segnali-eeat'               => array( 'segnali-eeat', 'strumenti', null ),
+	'strumento-sito-letto-dallai'          => array( 'sito-letto-dallai', 'strumenti', null ),
+	'strumento-suona-madrelingua'          => array( 'suona-madrelingua', 'strumenti', null ),
+	'strumento-generatore-llms-txt'        => array( 'generatore-llms-txt', 'strumenti', null ),
 
 	'citta-milano'                         => array( 'milano', null, null ),
 	'citta-monza'                          => array( 'monza', null, null ),
