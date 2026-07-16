@@ -1321,12 +1321,43 @@ body.page .entry-title {
   color: var(--sr-grigio);
 }
 
+/*
+ * Difesa contro lo schiacciamento della colonna delle etichette: con
+ * table-layout:auto il browser distribuisce lo spazio in base al contenuto
+ * "preferito" di ogni colonna. La versione RU ha intestazioni di prezzo più
+ * lunghe (rubli + euro) delle IT/EN (solo euro): senza un minimo esplicito,
+ * una colonna 1 senza intestazione può essere compressa fino a spezzare le
+ * parole lettera per lettera. min-width blocca questo scenario a monte;
+ * word-break/overflow-wrap normal è una seconda rete di sicurezza esplicita
+ * (non deve MAI diventare break-all/anywhere in questa tabella).
+ */
+.sr-compare-table th:first-child,
+.sr-compare-table td:first-child {
+  min-width: 190px;
+}
+
+.sr-compare-table th,
+.sr-compare-table td {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
 .sr-compare-table .sr-yes { color: var(--sr-verde); }
 .sr-compare-table .sr-no { color: #A2A5AB; }
 
 .sr-compare-table th .sr-lancio-listino,
 .sr-compare-table th .sr-lancio-price {
   display: block;
+}
+
+@media (max-width: 640px) {
+  .sr-compare-table table { min-width: 720px; }
+  .sr-compare-table th { padding: 14px; }
+  .sr-compare-table th strong { font-size: 16px; }
+  .sr-compare-table th span { font-size: 13px; }
+  .sr-compare-table td { padding: 10px 14px; font-size: 13px; }
+  .sr-compare-table th:first-child,
+  .sr-compare-table td:first-child { min-width: 150px; }
 }
 
 /* ---------- Prezzo lancio (promo primi 5 progetti, 15.07.2026) ---------- */
