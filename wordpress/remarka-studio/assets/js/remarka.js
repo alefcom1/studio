@@ -1800,6 +1800,354 @@
 			});
 	}
 
+	/* ==========================================================================
+	 * Remarka Lab — 3 strumenti AI (Anthropic Messages API), docs/piano-ai-tools.md §6.
+	 *
+	 * Endpoint comune `remarka_tool_ai` (POST, admin-ajax.php), risposta sempre
+	 * { ok, code, data } incapsulata nella busta WP { success, data:{...} }.
+	 * Stati: idle → loading ([data-sr-tool-pending]) → result/error
+	 * ([data-sr-tool-result], errore scritto in [data-sr-tool-verdict]).
+	 *
+	 * CONTRATTO DATA-ATTRIBUTI (oltre a quello generale sopra):
+	 *   data-sr-tool="ai-read|ai-suona|ai-llms"    data-sr-locale come gli altri.
+	 *   data-ai-loading       testo "in corso" (specifico per strumento).
+	 *   data-ai-maintenance   strumento in manutenzione (code=maintenance).
+	 *   data-ai-limit         limite raggiunto (code=rate_limit|daily_cap).
+	 *   data-ai-err           errore generico (fallback per ogni altro code).
+	 *
+	 * ai-read: [data-ai-verdetto] [data-ai-citabilita] [data-ai-citabilita-fill]
+	 *   [data-ai-azioni] (contenitore, 3 righe renderizzate da JS con
+	 *   [data-ai-azione-tpl] <template> dentro: .ai-azione-fai/.ai-azione-effetto)
+	 *   [data-ai-lead-form] [data-ai-lead-email] [data-ai-lead-consent]
+	 *   [data-ai-lead-success] [data-ai-lead-error] [name=sr_ai_hp] honeypot.
+	 *
+	 * ai-suona: input[name=text_lang] radio ×2 (data-lang-name-it/en/ru per le
+	 *   etichette, nella lingua della pagina) + textarea[data-ai-suona-text] +
+	 *   [data-ai-counter]. Risultato: [data-ai-badge] (data-sr-flag good/bad),
+	 *   [data-ai-punteggio] [data-ai-punteggio-fill] [data-ai-registro]
+	 *   [data-ai-verdetto] [data-ai-correzioni] con <template data-ai-correzione-tpl>.
+	 *
+	 * ai-llms: due modalità via input[name=ai_llms_mode] radio (form|url),
+	 *   [data-ai-llms-form] [data-ai-llms-url] (i due blocchi campi, toggle
+	 *   hidden). Risultato: textarea[readonly][data-ai-llms-output]
+	 *   [data-ai-llms-note] [data-ai-copy] [data-ai-download].
+	 * ========================================================================== */
+
+	function aiErrorMessage(root, code) {
+		if ('maintenance' === code) return txt(root, 'data-ai-maintenance', 'Strumento in manutenzione.');
+		if ('rate_limit' === code || 'daily_cap' === code) return txt(root, 'data-ai-limit', 'Avete raggiunto il limite di prove per oggi. Riprovate domani.');
+		return txt(root, 'data-ai-err', 'Lo strumento non è disponibile in questo momento. Riprovate tra poco.');
+	}
+
+	/** POST generico verso un'azione admin-ajax (nonce 'remarka_tools' incluso). */
+	function aiPost(action, payload) {
+		var cfg = window.remarkaPSI || {};
+		if (!cfg.ajaxUrl || !window.fetch) {
+			return Promise.reject(new Error('strumento non disponibile'));
+		}
+		var data = new FormData();
+		data.set('action', action);
+		data.set('nonce', cfg.toolsNonce || '');
+		Object.keys(payload).forEach(function (k) {
+			data.set(k, payload[k] === null || payload[k] === undefined ? '' : String(payload[k]));
+		});
+		return window.fetch(cfg.ajaxUrl, { method: 'POST', body: data, credentials: 'same-origin' })
+			.then(function (r) { return r.json(); });
+	}
+
+	/**
+	 * Aggancia il submit del form: guardia "running", pending/result, dispatch
+	 * su onResult(data) se ok, altrimenti scrive il messaggio d'errore in
+	 * [data-sr-tool-verdict]. `buildPayload()` può restare null e occuparsi da
+	 * sé della UI (es. validazione locale) per abortire senza chiamata di rete.
+	 */
+	function aiSubmit(root, form, buildPayload, onResult) {
+		var running = false;
+		var pending = root.querySelector('[data-sr-tool-pending]');
+		var result = root.querySelector('[data-sr-tool-result]');
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+			if (running) return;
+			var payload = buildPayload();
+			if (!payload) return;
+			running = true;
+			if (pending) pending.hidden = false;
+			if (result) result.hidden = true;
+			aiPost('remarka_tool_ai', payload)
+				.then(function (json) {
+					var envelope = json && json.data;
+					var code = envelope && envelope.code;
+					if (json && json.success && envelope && envelope.ok && envelope.data) {
+						onResult(envelope.data);
+					} else {
+						setText(root, '[data-sr-tool-verdict]', aiErrorMessage(root, code));
+					}
+					if (result) result.hidden = false;
+				})
+				.catch(function () {
+					setText(root, '[data-sr-tool-verdict]', aiErrorMessage(root, null));
+					if (result) result.hidden = false;
+				})
+				.finally(function () {
+					if (pending) pending.hidden = true;
+					running = false;
+				});
+		});
+	}
+
+	/* ---------- ai-read: «Il vostro sito, letto dall'AI» ---------- */
+
+	function renderAiAzioni(root, azioni) {
+		var wrap = q(root, '[data-ai-azioni]');
+		if (!wrap) return;
+		var tpl = wrap.querySelector('template');
+		wrap.querySelectorAll('.ai-azione').forEach(function (n) { n.remove(); });
+		(azioni || []).forEach(function (a) {
+			var node;
+			if (tpl && tpl.content) {
+				node = tpl.content.firstElementChild.cloneNode(true);
+				var fai = node.querySelector('.ai-azione-fai');
+				var eff = node.querySelector('.ai-azione-effetto');
+				if (fai) fai.textContent = a.fai;
+				if (eff) eff.textContent = a.effetto;
+			} else {
+				node = document.createElement('div');
+				node.className = 'ai-azione sr-card';
+				node.textContent = a.fai + ' → ' + a.effetto;
+			}
+			node.classList.add('ai-azione');
+			wrap.appendChild(node);
+		});
+	}
+
+	function initAiReadTool(root) {
+		var form = q(root, '[data-sr-tool-form]');
+		if (!form) return;
+		var lastResult = null;
+		var lastUrl = null;
+
+		aiSubmit(root, form, function () {
+			var input = form.querySelector('input[type="text"], input[type="url"]');
+			var url = normalizeUrl(input && input.value);
+			if (!url) {
+				if (input) input.focus();
+				return null;
+			}
+			lastUrl = url;
+			return { tool: 'read-site', url: url, locale: toolLocale(root) };
+		}, function (data) {
+			lastResult = data;
+			setText(root, '[data-sr-tool-verdict]', data.verdetto);
+			setText(root, '[data-ai-citabilita]', String(data.citabilita));
+			animateFill(root, '[data-ai-citabilita-fill]', data.citabilita);
+			renderAiAzioni(root, data.azioni);
+		});
+
+		var leadForm = q(root, '[data-ai-lead-form]');
+		if (!leadForm) return;
+		leadForm.addEventListener('submit', function (e) {
+			e.preventDefault();
+			var successEl = q(root, '[data-ai-lead-success]');
+			var errorEl = q(root, '[data-ai-lead-error]');
+			if (successEl) successEl.hidden = true;
+			if (errorEl) errorEl.hidden = true;
+
+			var emailInput = leadForm.querySelector('input[type="email"]');
+			var consentInput = q(root, '[data-ai-lead-consent]');
+			if (!lastResult || !lastUrl || !emailInput || !emailInput.checkValidity() || !consentInput || !consentInput.checked) {
+				if (emailInput && emailInput.reportValidity) emailInput.reportValidity();
+				return;
+			}
+			var btn = leadForm.querySelector('button[type="submit"]');
+			if (btn) btn.disabled = true;
+			var hpInput = leadForm.querySelector('[name="sr_ai_hp"]');
+
+			aiPost('remarka_tool_ai_lead', {
+				url: lastUrl,
+				email: emailInput.value,
+				consent: '1',
+				locale: toolLocale(root),
+				sr_ai_hp: hpInput ? hpInput.value : ''
+			}).then(function (json) {
+				if (json && json.success) {
+					leadForm.hidden = true;
+					if (successEl) successEl.hidden = false;
+				} else if (errorEl) {
+					errorEl.hidden = false;
+				}
+			}).catch(function () {
+				if (errorEl) errorEl.hidden = false;
+			}).finally(function () {
+				if (btn) btn.disabled = false;
+			});
+		});
+	}
+
+	/* ---------- ai-suona: «Suona madrelingua?» (verifica lingue estere) ---------- */
+
+	/** Le due lingue "altre" rispetto a quella della pagina, in ordine fisso
+	 *  it→en→ru: la prima è il default (docs/piano-ai-tools.md, correzione
+	 *  proprietario 16.07). Il selettore mostra i nomi nella lingua della pagina. */
+	function aiSuonaOtherLangs(locale) {
+		return ['it', 'en', 'ru'].filter(function (c) { return c !== locale; });
+	}
+
+	function initAiSuonaTool(root) {
+		var form = q(root, '[data-sr-tool-form]');
+		if (!form) return;
+		var textarea = form.querySelector('textarea[data-ai-suona-text]');
+		var counter = q(root, '[data-ai-counter]');
+		var LIMIT = 2000;
+
+		function updateCounter() {
+			if (counter && textarea) counter.textContent = String(textarea.value.length) + ' / ' + LIMIT;
+		}
+		if (textarea) {
+			textarea.addEventListener('input', updateCounter);
+			updateCounter();
+		}
+
+		// Selettore lingua: due radio già presenti nel markup (per-pagina) —
+		// impostiamo solo il default (primo) se nessuno è checked.
+		var langInputs = form.querySelectorAll('input[name="text_lang"]');
+		if (langInputs.length && !form.querySelector('input[name="text_lang"]:checked')) {
+			langInputs[0].checked = true;
+		}
+
+		aiSubmit(root, form, function () {
+			var text = (textarea && textarea.value || '').trim();
+			if (!text) {
+				setText(root, '[data-sr-tool-verdict]', txt(root, 'data-ai-err-short', 'Incollate almeno una frase.'));
+				var result = q(root, '[data-sr-tool-result]');
+				if (result) result.hidden = false;
+				return null;
+			}
+			var checked = form.querySelector('input[name="text_lang"]:checked');
+			return {
+				tool: 'suona',
+				text: text.slice(0, LIMIT),
+				text_lang: checked ? checked.value : aiSuonaOtherLangs(toolLocale(root))[0],
+				locale: toolLocale(root)
+			};
+		}, function (data) {
+			var badge = q(root, '[data-ai-badge]');
+			if (badge) {
+				badge.textContent = data.suona
+					? txt(root, 'data-ai-badge-yes', 'Suona nativo')
+					: txt(root, 'data-ai-badge-no', 'Si sente la traduzione');
+				badge.setAttribute('data-sr-flag', data.suona ? 'good' : 'bad');
+			}
+			setText(root, '[data-ai-punteggio]', String(data.punteggio));
+			animateFill(root, '[data-ai-punteggio-fill]', data.punteggio);
+			setText(root, '[data-ai-registro]', data.registro);
+			setText(root, '[data-sr-tool-verdict]', data.verdetto);
+
+			var wrap = q(root, '[data-ai-correzioni]');
+			if (wrap) {
+				var tpl = wrap.querySelector('template');
+				wrap.querySelectorAll('.ai-correzione').forEach(function (n) { n.remove(); });
+				(data.correzioni || []).forEach(function (c) {
+					var node;
+					if (tpl && tpl.content) {
+						node = tpl.content.firstElementChild.cloneNode(true);
+						var prima = node.querySelector('.ai-correzione-prima');
+						var dopo = node.querySelector('.ai-correzione-dopo');
+						var perche = node.querySelector('.ai-correzione-perche');
+						if (prima) prima.textContent = c.prima;
+						if (dopo) dopo.textContent = c.dopo;
+						if (perche) perche.textContent = c.perche;
+					} else {
+						node = document.createElement('div');
+						node.className = 'ai-correzione sr-card';
+						node.textContent = c.prima + ' → ' + c.dopo + ' (' + c.perche + ')';
+					}
+					node.classList.add('ai-correzione');
+					wrap.appendChild(node);
+				});
+			}
+		});
+	}
+
+	/* ---------- ai-llms: «Generatore llms.txt» ---------- */
+
+	function initAiLlmsTool(root) {
+		var form = q(root, '[data-sr-tool-form]');
+		if (!form) return;
+		var formBlock = q(root, '[data-ai-llms-form]');
+		var urlBlock = q(root, '[data-ai-llms-url]');
+		var modeInputs = form.querySelectorAll('input[name="ai_llms_mode"]');
+
+		function syncMode() {
+			var checked = form.querySelector('input[name="ai_llms_mode"]:checked');
+			var mode = checked ? checked.value : 'form';
+			if (formBlock) formBlock.hidden = 'form' !== mode;
+			if (urlBlock) urlBlock.hidden = 'url' !== mode;
+		}
+		modeInputs.forEach(function (i) { i.addEventListener('change', syncMode); });
+		syncMode();
+
+		aiSubmit(root, form, function () {
+			var checked = form.querySelector('input[name="ai_llms_mode"]:checked');
+			var mode = checked ? checked.value : 'form';
+			if ('url' === mode) {
+				var urlInput = form.querySelector('input[name="ai_llms_url"]');
+				var url = normalizeUrl(urlInput && urlInput.value);
+				if (!url) {
+					if (urlInput) urlInput.focus();
+					return null;
+				}
+				return { tool: 'llms-txt', mode: 'url', url: url, locale: toolLocale(root) };
+			}
+			var nome = form.querySelector('[name="ai_llms_nome"]');
+			var cosa = form.querySelector('[name="ai_llms_cosa"]');
+			var pagine = form.querySelector('[name="ai_llms_pagine"]');
+			if (!nome || !nome.value.trim() || !cosa || !cosa.value.trim()) {
+				if (nome && !nome.value.trim()) nome.focus();
+				return null;
+			}
+			return {
+				tool: 'llms-txt',
+				mode: 'form',
+				nome: nome.value.trim(),
+				cosa: cosa.value.trim(),
+				pagine: pagine ? pagine.value.trim() : '',
+				locale: toolLocale(root)
+			};
+		}, function (data) {
+			var out = q(root, '[data-ai-llms-output]');
+			if (out) out.value = data.llms_txt;
+			setText(root, '[data-ai-llms-note]', data.note || '');
+
+			var copyBtn = q(root, '[data-ai-copy]');
+			if (copyBtn && !copyBtn.dataset.aiBound) {
+				copyBtn.dataset.aiBound = '1';
+				copyBtn.addEventListener('click', function () {
+					if (!out || !navigator.clipboard) return;
+					navigator.clipboard.writeText(out.value).then(function () {
+						var original = copyBtn.textContent;
+						copyBtn.textContent = txt(root, 'data-ai-copy-done', 'Copiato');
+						window.setTimeout(function () { copyBtn.textContent = original; }, 2000);
+					}).catch(function () { /* clipboard non disponibile: nessun crash */ });
+				});
+			}
+			var downloadBtn = q(root, '[data-ai-download]');
+			if (downloadBtn && !downloadBtn.dataset.aiBound) {
+				downloadBtn.dataset.aiBound = '1';
+				downloadBtn.addEventListener('click', function () {
+					if (!out || !window.Blob) return;
+					var blob = new Blob([out.value], { type: 'text/plain;charset=utf-8' });
+					var a = document.createElement('a');
+					a.href = URL.createObjectURL(blob);
+					a.download = 'llms.txt';
+					document.body.appendChild(a);
+					a.click();
+					document.body.removeChild(a);
+					window.setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+				});
+			}
+		});
+	}
+
 	/** Dispatcher: inizializza ogni widget in base a data-sr-tool. */
 	function initToolWidgets() {
 		document.querySelectorAll('[data-sr-tool]').forEach(function (root) {
@@ -1813,6 +2161,9 @@
 				case 'roi': initRoiTool(root); break;
 				case 'checkup': initCheckupTool(root); break;
 				case 'eeat': initEeatTool(root); break;
+				case 'ai-read': initAiReadTool(root); break;
+				case 'ai-suona': initAiSuonaTool(root); break;
+				case 'ai-llms': initAiLlmsTool(root); break;
 			}
 		});
 		// Retro-compatibilità: form velocità senza wrapper [data-sr-tool].

@@ -2892,3 +2892,107 @@ body.page .entry-title {
   pointer-events: auto;
   transform: translateY(0);
 }
+
+/* ---------- Remarka Lab — 3 strumenti AI (docs/piano-ai-tools.md §6) ---------- */
+/* mobile-first da 390px: colonna singola di default, reuse di sr-card/sr-barra/
+   wp-block-button__link/sr-pill/data-sr-flag già esistenti. */
+
+textarea.sr-text-input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 140px;
+  font-family: var(--sr-font-body);
+}
+
+.sr-ai-counter {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--sr-grigio);
+  text-align: right;
+}
+
+.sr-ai-lang {
+  margin-bottom: 16px;
+}
+
+.sr-ai-lang .sr-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ai-azione,
+.ai-correzione {
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  padding: 16px 18px;
+  margin-top: 12px;
+}
+
+.ai-azione__fai,
+.ai-correzione__prima {
+  font-weight: 500;
+}
+
+.ai-azione__arrow {
+  color: var(--sr-oltremare);
+  margin: 0 8px;
+}
+
+.ai-azione__effetto,
+.ai-correzione__dopo {
+  color: var(--sr-grigio);
+}
+
+.ai-correzione__perche {
+  margin-top: 6px;
+  font-size: 13.5px;
+  color: var(--sr-grigio);
+}
+
+.sr-ai-badge {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 15.5px;
+}
+
+.sr-ai-llms-output {
+  margin-top: 16px;
+}
+
+textarea.sr-ai-llms-textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 220px;
+  resize: vertical;
+  font-family: var(--sr-font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  background: var(--sr-bianco);
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  padding: 14px;
+  overflow: auto;
+  white-space: pre;
+}
+
+.sr-ai-llms-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.sr-ai-lead {
+  margin-top: 28px;
+  border-top: 1px solid var(--sr-bordo);
+  padding-top: 24px;
+}
+
+@media (min-width: 480px) {
+  .sr-ai-llms-actions {
+    flex-direction: row;
+  }
+}
