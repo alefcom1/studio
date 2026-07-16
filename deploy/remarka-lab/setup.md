@@ -364,3 +364,118 @@ first magic link.
   ever needs headroom, see piano-cabinet-k1.md §7.3 for the fallback (320M
   floor, or trim elsewhere in the budget) — do not raise it without checking
   the box's total (currently 3328M summed limits on a 4 GB host).
+
+## Cabinet — K2 update (approvazioni, file, fatture, richieste, staff)
+
+Adds no new container — same `cabinet` service. What changes (see
+`docs/piano-cabinet-k2.md` for the full design):
+
+- **File storage**: a new bind-mount `./cabinet-files` next to this compose
+  file (macket-up images the studio uploads, client-uploaded materials,
+  invoice PDFs — served only through an authorized stream handler, never
+  `public/`/static). Must be created once, BEFORE the first `up` with the K2
+  image (§7.1 below).
+- **`STAFF_NOTIFY_EMAIL`**: who gets staff-facing notifications (client
+  approved/requested changes, new ticket, client replied). Optional — falls
+  back to the first `isStaff=true` account if left empty.
+- **`isStaff` flag**: staff accounts are created ONLY by the seed script
+  (`seed -- --staff ...`) — there is no signup/API path for it. Run this once
+  per staff member after the K2 deploy (§7.3 below).
+- Schema change is additive only (new tables `cab_file`, `cab_approval`,
+  `cab_invoice`, `cab_ticket`, `cab_ticket_message` + one new column
+  `cab_user.isStaff`) — same `prisma db push` mechanism as K1, same
+  backup-before-push discipline.
+
+### 7.1. Create the file bind-mount and pull the K2 branch
+
+```bash
+cd ~/remarka-lab/sitelens
+
+# Pull the branch with K2 (or your normal update flow once merged):
+cd ~/remarka-lab && git fetch origin && git checkout claude/cabinet-k2 && git pull
+cd sitelens
+
+# Create the host directory for uploaded files BEFORE first `up` with this
+# image — Docker would otherwise auto-create it root-owned on first start,
+# which still works (the cabinet container also runs as root), but doing it
+# explicitly avoids any surprise about ownership/permissions later:
+mkdir -p ~/remarka-lab/sitelens/cabinet-files
+```
+
+### 7.2. Add the K2 env variable, backup first, then `db push` + rebuild
+
+```bash
+# BACKUP FIRST — same discipline as any schema change (§7.4 rationale in
+# piano-cabinet-k1.md still applies: db push is additive here, but always
+# snapshot before touching the shared schema):
+~/remarka-lab/sitelens/backup.sh
+
+# Append the one new K2 variable to the EXISTING .env (do not overwrite it):
+cat >> .env <<'EOF'
+STAFF_NOTIFY_EMAIL=info@remarka.biz
+EOF
+nano .env      # adjust STAFF_NOTIFY_EMAIL to a real inbox the studio checks
+
+# Confirm the merged compose config is still valid with the new volume/env:
+docker compose -f docker-compose.yml -f docker-compose.prod.yml config --quiet && echo "COMPOSE CONFIG OK"
+
+# Apply the additive schema change (via the api container, which already has
+# the full toolchain — same pattern as the seed command below) and rebuild +
+# restart ONLY cabinet:
+docker compose -f docker-compose.yml -f docker-compose.prod.yml \
+  exec api pnpm --filter @sitelens/db db:push
+
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build cabinet
+```
+
+### 7.3. Seed the first staff account
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.prod.yml \
+  exec api pnpm --filter @sitelens/cabinet seed -- \
+  --staff --email studio@remarka.biz --locale it
+```
+
+Send that person to `https://cab.remarka.biz/login` — after verifying their
+magic link they'll see the **STAFF** badge in the header and can reach
+`/staff`. A regular client account hitting `/staff` gets a plain 404.
+
+### 7.4. Verify
+
+```bash
+BASE="-f docker-compose.yml -f docker-compose.prod.yml"
+
+# New client-facing nav items render (Fatture/Richieste), still no Basic Auth:
+curl -s https://cab.remarka.biz/login | grep -q "Area clienti" && echo "login OK"
+
+# Bind-mount is actually mounted where the app expects it:
+docker compose $BASE exec cabinet sh -c 'ls -la /data/cabinet-files && echo MOUNT_OK'
+
+# New tables exist (additive — Monitor tables untouched):
+docker compose $BASE exec db psql -U sitelens -d sitelens -c '\dt' | grep -E 'cab_file|cab_approval|cab_invoice|cab_ticket'
+
+# isStaff column exists:
+docker compose $BASE exec db psql -U sitelens -d sitelens -c "\d cab_user" | grep isStaff
+
+# Memory still within the 384M cap after adding the file layer (streaming,
+# not buffering — should not move the needle):
+docker stats --no-stream cabinet
+```
+
+### Diagnostics specific to K2
+
+- Upload rejected unexpectedly: check `docker compose $BASE logs cabinet` —
+  the app never logs file *contents*, only the rejection reason
+  (`tooLarge`/`type`/`quota`/`ratelimited`) and file id.
+- A file 404s for a client who should see it: confirm the file's
+  `cab_file.clientId` matches one of that user's `cab_membership` rows —
+  `access_denied` audit rows land in `cab_auth_audit` with `meta.fileId`.
+- Notifications not arriving: with `BREVO_API_KEY` set, check
+  `docker compose $BASE logs cabinet` for `[cabinet:notify] ... failed` —
+  never fails the underlying action (approve/reply/etc.), only the email.
+  With no key, notifications are logged as
+  `[cabinet:notify:dev-mode] would send "..." to ...` — expected until a
+  real Brevo key is set.
+- Disk usage of `./cabinet-files` — this now needs to be watched alongside
+  Postgres growth; the 500MB/client quota bounds it, but check
+  `du -sh ~/remarka-lab/sitelens/cabinet-files` occasionally.

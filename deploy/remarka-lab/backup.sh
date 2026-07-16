@@ -19,6 +19,13 @@
 # dump already covers the whole `sitelens` DB), but if OFFSITE_HOST is
 # enabled below, that destination must stay in the EU and on encrypted
 # storage, and consider `gpg`-encrypting the dump before shipping it.
+#
+# K2 addition (piano-cabinet-k2.md §7.3): client/staff-uploaded files (macket-
+# ups, deliverables, invoice PDFs) now live on the host at ./cabinet-files
+# (bind-mounted into the cabinet container) — NOT in Postgres, so the pg_dump
+# above does NOT cover them. This script now also tars that directory
+# alongside the DB dump, with the SAME retention/offsite handling. Same PII
+# caveat applies (client-uploaded documents can contain personal data).
 # ─────────────────────────────────────────────────────────────────────────────
 set -euo pipefail
 
@@ -29,6 +36,10 @@ DB_SERVICE="db"
 DB_USER="sitelens"
 DB_NAME="sitelens"
 RETENTION_DAYS="${RETENTION_DAYS:-14}"
+# K2: host directory holding cabinet file uploads — the bind-mount source
+# side of `./cabinet-files:/data/cabinet-files` in docker-compose.prod.yml.
+# Relative to COMPOSE_DIR (same convention docker-compose.prod.yml uses).
+CABINET_FILES_DIR="${CABINET_FILES_DIR:-cabinet-files}"
 
 # Offsite (optional). Leave OFFSITE_HOST empty to skip the scp step.
 #   OFFSITE_HOST="user@REG-RU-VPS-HOST"
@@ -56,8 +67,24 @@ $COMPOSE exec -T "$DB_SERVICE" pg_dump -U "$DB_USER" --clean --if-exists "$DB_NA
 SIZE="$(du -h "$OUT" | cut -f1)"
 echo "[$(date -Is)] Dump complete ($SIZE)"
 
+# ── Cabinet files (K2) ───────────────────────────────────────────────────────
+# Same tar for every run, even if the directory is empty/missing (a fresh
+# install before the first client upload) — `tar` on an empty dir just
+# produces a near-empty archive, which is fine and keeps the script simple.
+FILES_OUT="$BACKUP_DIR/cabinet-files-$STAMP.tar.gz"
+if [ -d "$CABINET_FILES_DIR" ]; then
+  echo "[$(date -Is)] Archiving cabinet files → $FILES_OUT"
+  tar -czf "$FILES_OUT" -C "$COMPOSE_DIR" "$CABINET_FILES_DIR"
+  FILES_SIZE="$(du -h "$FILES_OUT" | cut -f1)"
+  echo "[$(date -Is)] Cabinet files archive complete ($FILES_SIZE)"
+else
+  echo "[$(date -Is)] $CABINET_FILES_DIR not found under $COMPOSE_DIR — skipping (cabinet not deployed yet?)"
+  FILES_OUT=""
+fi
+
 # ── Rotation ─────────────────────────────────────────────────────────────────
 find "$BACKUP_DIR" -name 'sitelens-*.sql.gz' -type f -mtime "+$RETENTION_DAYS" -print -delete
+find "$BACKUP_DIR" -name 'cabinet-files-*.tar.gz' -type f -mtime "+$RETENTION_DAYS" -print -delete
 echo "[$(date -Is)] Rotation done (kept last $RETENTION_DAYS days)"
 
 # ── Offsite copy (optional) ──────────────────────────────────────────────────
@@ -66,6 +93,7 @@ if [ -n "$OFFSITE_HOST" ] && [ -n "$OFFSITE_PATH" ]; then
   SCP_OPTS=(-o StrictHostKeyChecking=accept-new)
   [ -n "$OFFSITE_SSH_KEY" ] && SCP_OPTS+=(-i "$OFFSITE_SSH_KEY")
   scp "${SCP_OPTS[@]}" "$OUT" "$OFFSITE_HOST:$OFFSITE_PATH"
+  [ -n "$FILES_OUT" ] && scp "${SCP_OPTS[@]}" "$FILES_OUT" "$OFFSITE_HOST:$OFFSITE_PATH"
   echo "[$(date -Is)] Offsite copy done"
 else
   echo "[$(date -Is)] Offsite disabled (set OFFSITE_HOST/OFFSITE_PATH to enable)"
@@ -78,6 +106,10 @@ echo "[$(date -Is)] Backup finished OK"
 #   gunzip -c sitelens-YYYYMMDD-HHMMSS.sql.gz \
 #     | docker compose -f docker-compose.yml -f docker-compose.prod.yml \
 #         exec -T db psql -U sitelens -d sitelens
+#
+#   Cabinet files (K2) — restore alongside the DB (a file row with no blob
+#   on disk 404s cleanly, but restore both together to avoid that):
+#     tar -xzf cabinet-files-YYYYMMDD-HHMMSS.tar.gz -C ~/remarka-lab/sitelens/
 #
 # EXTERNAL UPTIME MONITORING (e.g. UptimeRobot / Better Uptime / healthchecks.io):
 #   Monitor this URL with HTTP Basic Auth (expect HTTP 200 + body {"status":"ok"}):

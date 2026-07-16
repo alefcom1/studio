@@ -117,7 +117,7 @@ services:
           # API). 512M is comfortable headroom.
           memory: 512M
 
-  # ─── Cabinet (client portal, K1) ────────────────────────────────────────────
+  # ─── Cabinet (client portal, K1 + K2) ───────────────────────────────────────
   # NOT an override of a base-compose service — `cabinet` does not exist in
   # docker-compose.yml at all, this is the full and only definition. Separate
   # app (apps/cabinet), its own Next.js standalone runtime + Route Handlers,
@@ -125,6 +125,13 @@ services:
   # reachable at cab.remarka.biz WITHOUT basic_auth (see Caddyfile) — the app
   # does its own auth (magic-link + server-side sessions). See setup.md →
   # "Cabinet" for the full deploy runbook.
+  #
+  # K2 addition (piano-cabinet-k2.md §7): client/staff file uploads (macket-
+  # up images, deliverables, invoice PDFs — §3) live on a bind-mount, NOT in
+  # the DB and NOT in a Docker named volume — a bind-mount lets backup.sh tar
+  # the directory straight off the host filesystem with no docker-exec
+  # gymnastics. Plain host directory `./cabinet-files` next to this compose
+  # file (create it once — see setup.md "Cabinet" section).
   cabinet:
     build:
       context: .
@@ -146,7 +153,23 @@ services:
       # real pilot rollout needs a real key here.
       BREVO_API_KEY: ${BREVO_API_KEY:-}
       EMAIL_FROM: ${EMAIL_FROM:-no-reply@remarka.biz}
+      # K2 §3.1: path INSIDE the container where uploaded files are read/
+      # written — must match the bind-mount target on the right of the
+      # `volumes:` line below. K2 §6: who gets `staff_action`-adjacent
+      # notifications addressed to "the studio" (approval decided, ticket
+      # created/replied-to-by-client) — falls back to the first isStaff=true
+      # CabUser if left empty (see lib/notify.ts).
+      CABINET_FILES_DIR: /data/cabinet-files
+      STAFF_NOTIFY_EMAIL: ${STAFF_NOTIFY_EMAIL:-}
     env_file: .env
+    # Bind-mount (not a named volume — see the K2 comment above): host
+    # ./cabinet-files ⇄ container /data/cabinet-files. Create the host
+    # directory once before first `up` (setup.md "Cabinet" → mkdir step);
+    # Docker will otherwise create it root-owned on first start, which still
+    # works (the cabinet container also runs as root per its Dockerfile) but
+    # is worth doing explicitly so permissions are never a surprise.
+    volumes:
+      - ./cabinet-files:/data/cabinet-files
     # Not published to the host — Caddy reaches it as `cabinet:3002` over the
     # internal Docker network only (same pattern as api/web above).
     ports: !reset []
@@ -156,10 +179,11 @@ services:
     deploy:
       resources:
         limits:
-          # 384M: Next.js standalone (SSR + Route Handlers), no Chromium, no
-          # heavy background work in K1 (mail is sent synchronously via one
-          # HTTPS call to Brevo). See piano-cabinet-k1.md §7.3 for the box's
-          # full memory budget (3328M summed limits on a 4 GB host).
+          # 384M unchanged from K1: uploaded files are streamed to/from disk
+          # (lib/storage.ts), never buffered whole in memory beyond the
+          # single request's body — the file layer does not raise this
+          # app's memory footprint. See piano-cabinet-k1.md §7.3 for the
+          # box's full memory budget (3328M summed limits on a 4 GB host).
           memory: 384M
 
   # ─── Reverse proxy / TLS / Basic Auth ──────────────────────────────────────
