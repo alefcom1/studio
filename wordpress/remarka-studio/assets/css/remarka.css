@@ -2930,22 +2930,22 @@ textarea.sr-text-input {
   margin-top: 12px;
 }
 
-.ai-azione__fai,
-.ai-correzione__prima {
+.ai-azione-fai,
+.ai-correzione-prima {
   font-weight: 500;
 }
 
-.ai-azione__arrow {
+.ai-azione-arrow {
   color: var(--sr-oltremare);
   margin: 0 8px;
 }
 
-.ai-azione__effetto,
-.ai-correzione__dopo {
+.ai-azione-effetto,
+.ai-correzione-dopo {
   color: var(--sr-grigio);
 }
 
-.ai-correzione__perche {
+.ai-correzione-perche {
   margin-top: 6px;
   font-size: 13.5px;
   color: var(--sr-grigio);
