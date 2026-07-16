@@ -7,7 +7,7 @@
 > и SEO-мета — IT/EN/RU. RU-страницы делаются руками отдельно (фаза B); здесь —
 > строки к вставке. №4 (AI-инсайт в PDF) страницы не имеет — его подписи в §5.
 
-Слаги (предложены): IT `/strumenti/sito-letto-dallai/`, `/strumenti/suona-italiano/`,
+Слаги (предложены): IT `/strumenti/sito-letto-dallai/`, `/strumenti/suona-madrelingua/` (*corretto 16.07*),
 `/strumenti/generatore-llms-txt/`.
 
 ---
@@ -58,48 +58,56 @@
 
 ---
 
-## 2. «Suona italiano?» — `/strumenti/suona-italiano/`
+## 2. «Suona madrelingua?» — `/strumenti/suona-madrelingua/`
+
+> **Corretto per decisione del proprietario (16.07.2026):** lo strumento non
+> verifica più «suona italiano?», ma se un testo suona madrelingua nelle
+> lingue ESTERE rispetto alla pagina in cui ci si trova — un italiano non
+> controlla il proprio italiano, controlla i propri testi export. Ogni
+> versione linguistica del sito propone le altre due lingue: IT → inglese/
+> russo (default inglese); EN → italiano/russo (default italiano); RU →
+> italiano/inglese (default italiano). Vecchio slug `suona-italiano` mai
+> pubblicato — sostituito senza redirect.
 
 ### 2.1. Hero
 
-**H1:** `Suona italiano?`
+**H1:** `Suona madrelingua?`
 
 **Sottotitolo:**
-`Incollate un testo del vostro sito: un'intelligenza artificiale vi dice se suona come l'avrebbe scritto un madrelingua, o se si sente la traduzione. Calchi, burocratese, quel sapore «automatico» che allontana il cliente italiano. In pochi secondi, un punteggio di naturalezza e tre correzioni concrete. Traduciamo per il mercato italiano dal 2001: questo è il nostro mestiere, in versione gratuita.`
+`Vendete anche in inglese o in russo? Incollate un testo del vostro sito: un'intelligenza artificiale vi dice se suona come l'avrebbe scritto un madrelingua, o se si sente la traduzione. Scegliete la lingua, incollate il testo: in pochi secondi un punteggio di naturalezza e tre correzioni concrete. Traduciamo per i mercati esteri dal 2001: questo è il nostro mestiere, in versione gratuita.`
 
-**descrizione (card):** `Il vostro italiano suona nativo, o si sente la traduzione?`
+**descrizione (card):** `I vostri testi in inglese o russo suonano nativi?`
 
 ### 2.2. Come funziona (3 шага)
 
-1. **`Incollate il testo`** — `Un paragrafo della home, la descrizione di un prodotto, il chi siamo. Fino a circa 2.000 caratteri. Niente registrazione.`
-2. **`L'AI lo legge come un italiano`** — `Un modello di intelligenza artificiale valuta il testo come lo sentirebbe un lettore madrelingua: scorrevolezza, tono, calchi dall'inglese o dal russo, espressioni che tradiscono una traduzione.`
-3. **`Leggete cosa cambiare`** — `Un punteggio di naturalezza da 0 a 100, il registro giusto per un compratore italiano, e tre correzioni «prima → dopo» spiegate.`
+1. **`Scegliete la lingua e incollate il testo`** — `Un paragrafo della home, la descrizione di un prodotto, il chi siamo: nella lingua in cui vendete all'estero. Fino a circa 2.000 caratteri. Niente registrazione.`
+2. **`L'AI lo legge come un madrelingua`** — `Un modello di intelligenza artificiale valuta il testo come lo sentirebbe un lettore madrelingua di quella lingua: scorrevolezza, tono, calchi dall'italiano o da un'altra lingua, espressioni che tradiscono una traduzione.`
+3. **`Leggete cosa cambiare`** — `Un punteggio di naturalezza da 0 a 100, il registro giusto per quel mercato, e tre correzioni «prima → dopo» spiegate.`
 
 ### 2.3. Cosa misura davvero (metodologia)
 
-**H2:** `Che cosa rende un testo «italiano vero»`
+**H2:** `Che cosa rende un testo «madrelingua»`
 
-- `Un testo può essere corretto e suonare comunque straniero. Succede quando la grammatica è a posto ma la costruzione è calcata su un'altra lingua: frasi troppo lunghe, un «voi» che dovrebbe essere «tu», parole giuste al posto sbagliato, quel tono da manuale tradotto. Un lettore italiano non lo analizza — lo sente, e si fida meno. Chiediamo al modello proprio questo: non «ci sono errori?», ma «suona come l'avrebbe scritto una persona di qui?».`
-- `Cosa non è. Non è un correttore ortografico: gli errori di battitura non sono il punto. Non è un giudizio letterario né un ranking SEO. È una valutazione di naturalezza e tono — la differenza tra un testo che passa e uno che vende. E come ogni lettura AI, è un parere, non un verdetto: la revisione vera la fa un redattore madrelingua, che è esattamente ciò che facciamo dal 2001.`
+- `Un testo può essere corretto e suonare comunque straniero. Succede quando la grammatica è a posto ma la costruzione è calcata su un'altra lingua: frasi troppo lunghe, un registro sbagliato, parole giuste al posto sbagliato, quel tono da manuale tradotto. Un lettore madrelingua non lo analizza — lo sente, e si fida meno. Chiediamo al modello proprio questo: non «ci sono errori?», ma «suona come l'avrebbe scritto una persona madrelingua?».`
+- `Cosa non è. Non è un correttore ortografico: gli errori di battitura non sono il punto. Non è un giudizio letterario né un ranking SEO. È una valutazione di naturalezza e tono — la differenza tra un testo che passa e uno che vende. E come ogni lettura AI, è un parere, non un verdetto: la revisione vera la fa un redattore madrelingua, lingua per lingua, che è esattamente ciò che facciamo dal 2001.`
 
 ### 2.4. Come si legge il risultato (lettura)
 
 **H2:** `Come leggere il punteggio di naturalezza`
 
-- `Il punteggio dice quanto il testo suona nativo. Da 75 in su siete a posto: un italiano lo leggerebbe senza inciampi. Tra 50 e 74 il senso c'è, ma qualcosa stona — un calco, una frase contorta, un registro sbagliato — e le tre correzioni vi dicono dove. Sotto 50 si sente la traduzione: il testo funziona per capirsi, non ancora per convincere. Partite dalle correzioni: sono le tre che spostano di più.`
+- `Il punteggio dice quanto il testo suona nativo in quella lingua. Da 75 in su siete a posto: un madrelingua lo leggerebbe senza inciampi. Tra 50 e 74 il senso c'è, ma qualcosa stona — un calco, una frase contorta, un registro sbagliato — e le tre correzioni vi dicono dove. Sotto 50 si sente la traduzione: il testo funziona per capirsi, non ancora per convincere. Partite dalle correzioni: sono le tre che spostano di più.`
 - `Un'avvertenza onesta. Un punteggio alto non certifica che il testo sia perfetto per il vostro pubblico: il tono giusto per una gioielleria non è quello giusto per un'officina. Usate il registro come bussola, non come voto finale. E ricordate che l'AI legge il testo che incollate, non l'intero sito: è una sonda, non un audit.`
 
 ### 2.5. FAQ
 
 - **`Conservate il testo che incollo?`** — `No. Il testo viene valutato una volta e non lo salviamo. In cache resta solo il risultato per 24 ore, così ripetere la stessa prova è immediato.`
 - **`Corregge anche il testo al posto mio?`** — `Vi dà tre correzioni «prima → dopo» come esempio, non riscrive tutto. La riscrittura completa e coerente su tutto il sito è un lavoro da redattore madrelingua: è il nostro servizio di localizzazione.`
-- **`Funziona solo con l'italiano?`** — `Questo strumento è tarato sull'italiano, perché è lì che serve di più a chi vende in Italia. Per le altre lingue del vostro sito lavoriamo con redattori madrelingua dedicati, lingua per lingua.`
-- **`È attendibile come un revisore umano?`** — `È una prima lettura veloce e onesta, utile per capire dove intervenire. Non sostituisce l'occhio di un madrelingua che conosce il vostro settore: lo anticipa.`
+- **`Quali lingue valuta?`** — `Le due lingue proposte in questa pagina: sono quelle utili a chi vende dall'Italia verso l'estero. La revisione completa la fanno redattori madrelingua, lingua per lingua, dal 2001.` (*sostituisce «Funziona solo con l'italiano?», non più pertinente*)
 
 ### 2.6. CTA
 
-**heading:** `Volete che il vostro sito parli italiano come un italiano?`
-**testo:** `Dal 2001 traduciamo e adattiamo siti per il mercato italiano ed europeo con redattori madrelingua — non un plugin, un deliverable con nome e cognome. Prezzo chiuso, consegna a data fissa.`
+**heading:** `Volete che i vostri testi parlino come un madrelingua?`
+**testo:** `Dal 2001 traduciamo e adattiamo siti per i mercati esteri con redattori madrelingua — non un plugin, un deliverable con nome e cognome. Prezzo chiuso, consegna a data fissa.`
 **buttons:** `Scopri i siti multilingue` → `/servizi/siti-multilingue/`; `Vedi tutti gli strumenti` → `/strumenti/` (outline)
 
 ---
@@ -186,19 +194,33 @@
 | Bottone invio | `Ricevi l'analisi completa` | `Send me the full analysis` | `Отправить полный разбор` |
 | Successo invio | `Fatto: controllate la posta.` | `Done — check your inbox.` | `Готово — проверьте почту.` |
 
-### 4.3. №2 suona-italiano
+### 4.3. №2 suona (pagina «Suona madrelingua?») — *corretto 16.07.2026*
+
+Selettore lingua sopra la textarea (radio/pill, riuso stile form): etichetta
++ 2 opzioni, le lingue ESTERE rispetto a quella della pagina, default la
+prima elencata:
+
+| Назначение | IT (opzioni: en, ru) | EN (opzioni: it, ru) | RU (opzioni: it, en) |
+|---|---|---|---|
+| Etichetta selettore | `Lingua del testo:` | `Text language:` | `Язык текста:` |
+| Opzione 1 (default) | `Inglese` | `Italian` | `Итальянский` |
+| Opzione 2 | `Russo` | `Russian` | `Английский` |
 
 | Назначение | IT | EN | RU |
 |---|---|---|---|
-| Placeholder textarea | `Incollate qui un testo del vostro sito (max ~2.000 caratteri)…` | `Paste a text from your site here (max ~2,000 characters)…` | `Вставьте сюда текст с сайта (макс. ~2000 знаков)…` |
+| Placeholder textarea | `Incollate qui il testo da valutare (max ~2.000 caratteri)…` | `Paste the text to check here (max ~2,000 characters)…` | `Вставьте текст для проверки (макс. ~2000 знаков)…` |
 | Contatore caratteri | `{n} / 2000` | `{n} / 2000` | `{n} / 2000` |
-| Badge «suona» sì | `Suona italiano` | `Sounds native` | `Звучит по-итальянски` |
+| Badge «suona» sì | `Suona nativo` | `Sounds native` | `Звучит как у носителя` |
 | Badge «suona» no | `Si sente la traduzione` | `Sounds translated` | `Слышен перевод` |
 | Etichetta punteggio | `Naturalezza` | `Naturalness` | `Естественность` |
 | Etichetta registro | `Registro` | `Tone` | `Тон` |
 | Titolo correzioni | `3 correzioni` | `3 fixes` | `3 правки` |
 | Prima / Dopo | `Prima` / `Dopo` | `Before` / `After` | `Было` / `Стало` |
 | Testo troppo corto | `Incollate almeno una frase.` | `Paste at least one sentence.` | `Вставьте хотя бы одно предложение.` |
+
+Client invia `text_lang` = valore dell'opzione selezionata (`it|en|ru`);
+`locale` (lingua della pagina, invariato) resta il parametro che determina
+la lingua di verdetto/registro/correzioni.
 
 ### 4.4. №3 llms-txt
 
@@ -241,7 +263,7 @@ partire» перед списком приоритетов (см. `piano-ai-tool
 | Страница | Focus IT | Focus EN | Focus RU |
 |---|---|---|---|
 | `/strumenti/sito-letto-dallai/` · `/en/tools/read-by-ai/` · `/ru/instrumenty/sajt-glazami-ii/` | come l'AI legge il sito | how AI reads your site | как ИИ читает сайт |
-| `/strumenti/suona-italiano/` · `/en/tools/does-it-sound-italian/` · `/ru/instrumenty/zvuchit-po-italyanski/` | il testo suona italiano | does your Italian sound native | текст звучит по-итальянски |
+| `/strumenti/suona-madrelingua/` · `/en/tools/does-it-sound-native/` · `/ru/instrumenty/zvuchit-kak-u-nositelya/` (*corretto 16.07*) | il testo suona madrelingua | does your text sound native | текст как у носителя |
 | `/strumenti/generatore-llms-txt/` · `/en/tools/llms-txt-generator/` · `/ru/instrumenty/generator-llms-txt/` | generatore llms.txt | llms.txt generator | генератор llms.txt |
 
 ### №1 — sito-letto-dallai
@@ -253,14 +275,14 @@ partire» перед списком приоритетов (см. `piano-ai-tool
 - **RU Title (52):** `Ваш сайт глазами ИИ — бесплатно | Studio Remarka`
 - **RU Description (150):** `Искусственный интеллект читает вашу главную и говорит, что понял: чем вы заняты, для кого и насколько вас цитировать. Вердикт и 3 шага, бесплатно.`
 
-### №2 — suona-italiano
+### №2 — suona-madrelingua (*corretto per decisione del proprietario 16.07.2026*)
 
-- **IT Title (48):** `Il vostro testo suona italiano? | Studio Remarka`
-- **IT Description (155):** `Incollate un testo del sito: l'AI vi dice se suona come un madrelingua o se si sente la traduzione. Punteggio di naturalezza e 3 correzioni. Gratis, dal 2001.`
-- **EN Title (53):** `Does your Italian sound native? AI test | Studio Remarka`
-- **EN Description (151):** `Paste a text from your site: an AI tells you if it sounds native or translated. A naturalness score and three concrete fixes. Free, no sign-up required.`
-- **RU Title (54):** `Ваш итальянский звучит естественно? | Studio Remarka`
-- **RU Description (152):** `Вставьте текст с сайта: ИИ скажет, звучит ли он как у носителя или чувствуется перевод. Оценка естественности и 3 правки. Бесплатно, без регистрации.`
+- **IT Title (51):** `Il vostro testo suona madrelingua? | Studio Remarka`
+- **IT Description (145):** `Incollate un testo in inglese o russo: l'AI vi dice se suona nativo o se si sente la traduzione. Punteggio di naturalezza e 3 correzioni. Gratis.`
+- **EN Title (53):** `Does your text sound native? AI test | Studio Remarka`
+- **EN Description (150):** `Paste a text in Italian or Russian: an AI tells you if it sounds native or translated. A naturalness score and three concrete fixes. Free, no sign-up.`
+- **RU Title (53):** `Текст звучит как у носителя? Тест ИИ | Studio Remarka`
+- **RU Description (139):** `Вставьте текст на итальянском или английском: ИИ скажет, звучит ли он как у носителя или чувствуется перевод. Оценка и 3 правки. Бесплатно.`
 
 ### №3 — generatore-llms-txt
 
@@ -271,7 +293,7 @@ partire» перед списком приоритетов (см. `piano-ai-tool
 - **RU Title (49):** `Генератор llms.txt бесплатно | Studio Remarka`
 - **RU Description (149):** `Создайте llms.txt за минуту: ответьте на три вопроса или вставьте адрес — ИИ напишет файл. Скопируйте или скачайте. Бесплатно, без регистрации.`
 
-**Проверка длин.** Title: IT 54/48/49, EN 52/53/48, RU 52/54/49 — все ≤60.
+**Проверка длин (пересчитано программно, №2 corretto 16.07).** Title: IT 53/51/46, EN 53/53/45, RU 48/53/45 — все ≤60.
 Description: IT 156/155/153, EN 154/151/150, RU 150/152/149 — все ≤160.
 
 ---
@@ -283,15 +305,16 @@ Description: IT 156/155/153, EN 154/151/150, RU 150/152/149 — все ≤160.
 
 > `Tre strumenti AI, nuovi. «Il vostro sito, letto dall'AI» vi mostra cosa
 > capisce un assistente artificiale quando incontra la vostra home. «Suona
-> italiano?» dice se i vostri testi suonano nativi o sanno di traduzione — il
-> nostro mestiere dal 2001. Il «Generatore di llms.txt» scrive per voi il file
-> che spiega il sito agli assistenti AI, pronto da scaricare. Gratis, senza
-> registrazione: è l'intelligenza artificiale al servizio del vostro sito, non
-> del contrario.`
+> madrelingua?» dice se i vostri testi in inglese o russo suonano nativi o
+> sanno di traduzione — il nostro mestiere dal 2001. Il «Generatore di
+> llms.txt» scrive per voi il file che spiega il sito agli assistenti AI,
+> pronto da scaricare. Gratis, senza registrazione: è l'intelligenza
+> artificiale al servizio del vostro sito, non del contrario.`
+> (*corretto 16.07.2026 per il nuovo §2*)
 
 Подписи карточек (краткие, = `descrizione`):
 - `Il vostro sito, letto dall'AI` — `Cosa capisce l'AI del vostro sito, e come vi citerebbe.`
-- `Suona italiano?` — `Il vostro italiano suona nativo, o si sente la traduzione?`
+- `Suona madrelingua?` — `I vostri testi in inglese o russo suonano nativi?`
 - `Generatore di llms.txt` — `Il vostro llms.txt, scritto e pronto da scaricare.`
 
 ---
@@ -308,13 +331,13 @@ Description: IT 156/155/153, EN 154/151/150, RU 150/152/149 — все ≤160.
 
 **Из услуг (по одной строке-ссылке в существующую секцию, без ломки структуры):**
 - `seo-tecnica` → `sito-letto-dallai` + `generatore-llms-txt` (усиление AI-визибилити);
-- `siti-multilingue` и `localizzazione`/`export-ready` → `suona-italiano`
+- `siti-multilingue` и `export-ready` → `suona-madrelingua` (*corretto 16.07*; теперь особенно уместно для export-ready)
   («provate se i vostri testi suonano nativi»).
 
 **Из блога:**
 - `/blog/llms-txt-cos-e/` → `generatore-llms-txt` (CTA «создайте свой сейчас»);
 - `/blog/farsi-trovare-da-chatgpt-geo/` → `sito-letto-dallai` (+ `sito-pronto-ai`);
-- будущая статья про локализацию/переводы → `suona-italiano`.
+- будущая статья про локализацию/переводы → `suona-madrelingua`.
 
 **Из PDF check-up (№4):** абзац AI-инсайта живёт внутри отчёта; на экране
 check-up ссылку не добавляем (не перегружать), но в письме-доставке можно
