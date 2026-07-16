@@ -18,6 +18,10 @@ require_once get_stylesheet_directory() . '/inc/multilang.php';
 // Check-up completo: copy deck del report PDF + rendering dompdf (M3).
 require_once get_stylesheet_directory() . '/inc/checkup-report-pdf.php';
 
+// Remarka Lab — 3 strumenti AI (Anthropic Messages API) + AI-insight nel PDF
+// check-up (docs/piano-ai-tools.md).
+require_once get_stylesheet_directory() . '/inc/ai-tools.php';
+
 // Segnaposto per gli screenshot dei casi studio reali, in attesa dei file
 // definitivi (docs/copy-casi-studio.md): shortcode [sr_shot], risolto a runtime.
 require_once get_stylesheet_directory() . '/inc/case-shots.php';
@@ -461,6 +465,17 @@ function remarka_customize_register( WP_Customize_Manager $wp_customize ): void 
 	$wp_customize->add_control( 'remarka_psi_api_key', array(
 		'label'       => __( 'Chiave Google PageSpeed Insights API (per test velocità reali; senza chiave la quota è limitata)', 'remarka-studio' ),
 		'description' => __( 'Gratuita: console.cloud.google.com → API e servizi → PageSpeed Insights API → Credenziali.', 'remarka-studio' ),
+		'section'     => 'remarka_contatti',
+		'type'        => 'text',
+	) );
+
+	$wp_customize->add_setting( 'remarka_anthropic_api_key', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+	$wp_customize->add_control( 'remarka_anthropic_api_key', array(
+		'label'       => __( 'Chiave Anthropic API (strumenti AI del Lab)', 'remarka-studio' ),
+		'description' => __( 'Senza chiave gli strumenti AI restano in «manutenzione». console.anthropic.com → API Keys.', 'remarka-studio' ),
 		'section'     => 'remarka_contatti',
 		'type'        => 'text',
 	) );
