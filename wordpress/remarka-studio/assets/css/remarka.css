@@ -2524,6 +2524,17 @@ body.page .entry-title {
   transform: translateY(0);
 }
 
+/* LCP: hero всегда над сгибом — он НЕ должен стартовать с opacity:0.
+   Иначе заголовок (LCP-элемент) невидим до срабатывания reveal-JS, и LCP
+   уезжает на секунды. Hero виден сразу; каскадная анимация остаётся для
+   секций ниже сгиба. Специфичность (0,2,0) перекрывает .sr-cascade > *. */
+.sr-hero.sr-cascade > *,
+.sr-hero .sr-cascade > * {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 /* Счётчик — просто маркер для JS */
 .sr-counter { font-variant-numeric: tabular-nums; }
 
