@@ -40,12 +40,11 @@ function remarka_enqueue_assets(): void {
 	$dir = get_stylesheet_directory_uri();
 
 	if ( remarka_has_local_fonts() ) {
-		wp_enqueue_style(
-			'remarka-fonts',
-			$dir . '/assets/css/fonts-local.css',
-			array(),
-			REMARKA_STUDIO_VERSION
-		);
+		// I @font-face self-hosted vengono stampati INLINE nel <head>
+		// (remarka_inline_local_fonts), non come foglio separato: fonts-local.css
+		// pesa <1 KB ma da solo era una richiesta render-blocking (~500 ms su 4G).
+		// Inline + preload dei woff2 = font sul percorso critico senza round-trip.
+		$noop = true;
 	} else {
 		wp_enqueue_style(
 			'remarka-fonts-cdn',
@@ -111,6 +110,40 @@ function remarka_enqueue_assets(): void {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'remarka_enqueue_assets', 20 );
+
+/**
+ * @font-face self-hosted stampati INLINE nel <head>, invece di fonts-local.css
+ * come foglio separato (che era render-blocking, ~500 ms su 4G). Inline: il
+ * browser conosce i font subito, senza una richiesta in più sul percorso
+ * critico. Gli url sono assoluti (l'inline sta nella pagina, non nel file CSS,
+ * quindi i relativi ../fonts/ non si risolverebbero). Solo in self-hosting;
+ * i pesi/nomi combaciano con assets/css/fonts-local.css (usato dall'editor).
+ */
+function remarka_inline_local_fonts(): void {
+	if ( ! remarka_has_local_fonts() ) {
+		return;
+	}
+	$base  = get_stylesheet_directory_uri() . '/assets/fonts/';
+	$faces = array(
+		array( 'Clash Display', 500, 'ClashDisplay-Medium.woff2' ),
+		array( 'Clash Display', 600, 'ClashDisplay-Semibold.woff2' ),
+		array( 'General Sans', 400, 'GeneralSans-Regular.woff2' ),
+		array( 'General Sans', 500, 'GeneralSans-Medium.woff2' ),
+		array( 'General Sans', 600, 'GeneralSans-Semibold.woff2' ),
+		array( 'Fragment Mono', 400, 'FragmentMono-Regular.woff2' ),
+	);
+	$css = '';
+	foreach ( $faces as $f ) {
+		$css .= sprintf(
+			"@font-face{font-family:'%s';src:url('%s') format('woff2');font-weight:%d;font-style:normal;font-display:swap;}",
+			$f[0],
+			esc_url( $base . $f[2] ),
+			$f[1]
+		);
+	}
+	echo '<style id="remarka-fonts-inline">' . $css . '</style>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput
+}
+add_action( 'wp_head', 'remarka_inline_local_fonts', 4 );
 
 /** Preload критичных начертаний при самохостинге. */
 function remarka_preload_fonts(): void {
