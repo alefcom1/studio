@@ -553,16 +553,13 @@ remarka_deploy_sync_footer_menu(
 	$force
 );
 
-// Niente città qui: le landing di città vivono SOLO nella fascia "Dove
-// operiamo" (remarka_cities_for_lang, 5 città con pagina reale), per non
-// duplicarle e non appesantire il footer. Questa colonna resta ai link
-// azienda/legali. Le città vanno linkate solo se hanno una pagina reale e
-// unica: aggiungerle qui a mano (senza pagina) crea link a doorway/404,
-// dannosi per la SEO.
 remarka_deploy_sync_footer_menu(
 	'Footer — Studio',
 	'footer-studio',
 	array(
+		array( 'title' => 'Siti web a Milano', 'slug' => 'milano' ),
+		array( 'title' => 'Siti web a Monza', 'slug' => 'monza' ),
+		array( 'title' => 'Siti web a Bergamo', 'slug' => 'bergamo' ),
 		array( 'title' => 'Contatti', 'url' => home_url( '/#contatti' ) ),
 		array( 'title' => 'Google Business Profile', 'url' => 'https://business.google.com/' ),
 		array( 'title' => 'Privacy', 'slug' => 'privacy' ),
