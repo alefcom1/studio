@@ -216,7 +216,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi preventivo in 24 ore</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"sr-btn-whatsapp"} -->
-<div class="wp-block-button sr-btn-whatsapp"><a class="wp-block-button__link wp-element-button" href="https://wa.me/390000000000" target="_blank" rel="noopener noreferrer">WhatsApp Business</a></div>
+<div class="wp-block-button sr-btn-whatsapp"><a class="wp-block-button__link wp-element-button" href="https://wa.me/393478311141" target="_blank" rel="noopener noreferrer">WhatsApp Business</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

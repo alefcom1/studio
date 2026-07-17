@@ -1391,7 +1391,7 @@ def build_city(c):
         paragraph('Primo incontro gratuito, da voi in azienda. Preventivo chiuso entro 24 ore.',
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
-                 ('WhatsApp Business', 'https://wa.me/390000000000', 'whatsapp')], justify='center', margin_top='28px'),
+                 ('WhatsApp Business', 'https://wa.me/393478311141', 'whatsapp')], justify='center', margin_top='28px'),
         classes='sr-section sr-cta-band',
     )
     write(f'citta-{c["slug"]}', f'Pagina — Città: {c["nome"]}',
@@ -1535,7 +1535,7 @@ def build_city_flagship(c):
         heading(2, c['cta_heading']) +
         paragraph(c['cta_testo'], color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
-                 ('WhatsApp Business', 'https://wa.me/390000000000', 'whatsapp')], justify='center', margin_top='28px'),
+                 ('WhatsApp Business', 'https://wa.me/393478311141', 'whatsapp')], justify='center', margin_top='28px'),
         classes='sr-section sr-cta-band',
     )
     # Descrizione onesta: le città con ufficio (Roma/Torino) restano invariate;
@@ -1630,7 +1630,7 @@ def build_dove_lavoriamo():
         paragraph('Primo incontro gratuito, in videochiamata o da voi su appuntamento. Preventivo chiuso entro 24 ore.',
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
-                 ('WhatsApp Business', 'https://wa.me/390000000000', 'whatsapp')], justify='center', margin_top='28px'),
+                 ('WhatsApp Business', 'https://wa.me/393478311141', 'whatsapp')], justify='center', margin_top='28px'),
         classes='sr-section sr-cta-band',
     )
 
