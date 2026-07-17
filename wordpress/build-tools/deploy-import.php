@@ -573,6 +573,7 @@ remarka_deploy_sync_footer_menu(
 		array( 'title' => 'Prezzi', 'slug' => 'prezzi' ),
 		array( 'title' => 'Strumenti gratuiti', 'slug' => 'strumenti' ),
 		array( 'title' => 'Blog', 'slug' => 'blog' ),
+		array( 'title' => 'Dove lavoriamo', 'slug' => 'dove-lavoriamo' ),
 	),
 	$force
 );
@@ -581,18 +582,12 @@ remarka_deploy_sync_footer_menu(
 	'Footer — Studio',
 	'footer-studio',
 	array(
-		array( 'title' => 'Siti web a Roma', 'slug' => 'roma' ),
-		array( 'title' => 'Siti web a Torino', 'slug' => 'torino' ),
-		array( 'title' => 'Siti web a Milano', 'slug' => 'milano' ),
-		array( 'title' => 'Siti web a Monza', 'slug' => 'monza' ),
-		array( 'title' => 'Siti web a Bergamo', 'slug' => 'bergamo' ),
-		array( 'title' => 'Siti web a Bologna', 'slug' => 'bologna' ),
-		array( 'title' => 'Siti web a Verona', 'slug' => 'verona' ),
-		array( 'title' => 'Siti web a Padova', 'slug' => 'padova' ),
-		array( 'title' => 'Siti web a Venezia', 'slug' => 'venezia' ),
-		array( 'title' => 'Siti web a Genova', 'slug' => 'genova' ),
+		// Ruolo della colonna STUDIO: contatto + fiducia legale. Le città
+		// vivono SOLO nella riga «Dove operiamo» (tutte e 17 + link all'hub)
+		// — non duplicarle qui (concetto footer, owner 17.07.2026). Il link
+		// «Google Business Profile» (business.google.com — servizio per
+		// titolari, inutile ai visitatori) è stato rimosso.
 		array( 'title' => 'Contatti', 'url' => home_url( '/#contatti' ) ),
-		array( 'title' => 'Google Business Profile', 'url' => 'https://business.google.com/' ),
 		array( 'title' => 'Privacy', 'slug' => 'privacy' ),
 		array( 'title' => 'Cookie policy', 'slug' => 'cookie-policy' ),
 	),
@@ -625,7 +620,6 @@ remarka_deploy_sync_footer_menu( 'Footer EN — Pages', '', array(
 remarka_deploy_sync_footer_menu( 'Footer EN — Studio', '', array(
 	array( 'title' => 'Websites in Milan', 'slug' => 'en/milan' ),
 	array( 'title' => 'Contact us', 'url' => home_url( '/en/#contatti' ) ),
-	array( 'title' => 'Google Business Profile', 'url' => 'https://business.google.com/' ),
 	array( 'title' => 'Privacy', 'slug' => 'en/privacy' ),
 	array( 'title' => 'Cookie policy', 'slug' => 'en/cookie-policy' ),
 ), $force );
@@ -652,7 +646,6 @@ remarka_deploy_sync_footer_menu( 'Footer RU — Страницы', '', array(
 remarka_deploy_sync_footer_menu( 'Footer RU — Студия', '', array(
 	array( 'title' => 'Сайты в Милане', 'slug' => 'ru/milan' ),
 	array( 'title' => 'Контакты', 'url' => home_url( '/ru/#contatti' ) ),
-	array( 'title' => 'Google Business Profile', 'url' => 'https://business.google.com/' ),
 	array( 'title' => 'Privacy', 'slug' => 'ru/privacy' ),
 	array( 'title' => 'Политика cookie', 'slug' => 'ru/cookie-policy' ),
 ), $force );
