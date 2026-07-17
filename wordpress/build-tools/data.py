@@ -871,13 +871,29 @@ TOOLS = [
 # никаких клонов с заменой топонима (doorway-риск). У milano есть офис (полный
 # блок «Dove siamo»); остальные города обслуживаются из Милана — честный блок
 # «Serviamo {città} da Milano» вместо выдуманного адреса.
+# Nota comune ai tre uffici REALI del gruppo (Milano/Torino/Roma, batch U1
+# indirizzi 17.07.2026): le schede Google Maps di questi uffici sono
+# registrate a nome di ATT · Agenzia di Traduzione Tecnica, l'agenzia di
+# traduzioni del gruppo Remarka (dal 2001), che condivide gli stessi uffici.
+# Lo diciamo apertamente per non spiazzare chi clicca la mappa e vede un
+# altro nome — è un dato a favore, non da nascondere (owner 17.07.2026).
+OFFICE_ATT_NOTA = ('L’ufficio è quello del gruppo Remarka, condiviso con ATT · Agenzia di '
+                    'Traduzione Tecnica, la nostra agenzia di traduzioni dal 2001: su Google Maps '
+                    'la sede è registrata con quel nome — non stupitevi cliccando la mappa, siamo '
+                    'sempre noi.')
+
 CITIES = [
     dict(
         slug='milano', nome='Milano', eyebrow='Web agency Milano', progetti=14, dal='2023',
         sub='Siti progressivi per PMI di Milano e provincia: PageSpeed 90+ garantito da contratto, consegna a data fissa, prezzo chiuso. Il primo incontro, da voi o in studio, non si paga.',
         has_office=True,
-        indirizzo='Via Andrea Solari 43, 20144 Milano (MI)', metro='M2 S. Agostino — 4 min a piedi',
-        orari='Lun–Ven 9:00–18:00', telefono='+39 02 8736 5412',
+        office_eyebrow='Ci incontriamo di persona',
+        office_heading='Un ufficio vero a Milano, su appuntamento',
+        office_testo='L’indirizzo è pubblico e l’ufficio è vero: ci veniamo a incontrare di persona, su appuntamento, per analizzare insieme il sito attuale e uscire con le priorità scritte nero su bianco. Il primo incontro non si paga.',
+        office_nota=OFFICE_ATT_NOTA,
+        office_aria='Realizzazione siti web a Milano: Studio Remarka, ufficio in città',
+        office_indirizzo='Milano, 20144, Vicolo Privato Lavandai, 2a',
+        office_maps_url='https://maps.app.goo.gl/Wvo8o9ZN6sEbGm7H8',
         case_slug='att-traduzione-tech', case_url_label='traduzione.tech',
         case_eyebrow='La stessa ingegneria, per un cliente italiano', case_title='ATT, il sito dell’agenzia di traduzioni',
         recensioni=[
@@ -887,8 +903,8 @@ CITIES = [
         ],
         faq=[
             ('Quanto costa un sito web a Milano?', 'Le agenzie milanesi chiedono in media 2.500–8.000 € per un sito aziendale. I nostri prezzi sono pubblici: vetrina da € 1.900, aziendale da € 3.900, e-commerce da € 7.500 — chiusi nel preventivo, con PageSpeed 90+ e data di consegna scritti nel contratto.'),
-            ('Lavorate solo su Milano città?', 'No: Milano e tutta la provincia, più Monza e Brianza. Il primo incontro non si paga, da voi o nel nostro studio in zona Solari.'),
-            ('Serve incontrarsi di persona?', 'Non è obbligatorio: analisi, preventivo e avanzamento lavori passano da videochiamate e da un ambiente di prova online. Ma se siete a Milano, il caffè lo offriamo noi.'),
+            ('Lavorate solo su Milano città?', 'No: Milano e tutta la provincia, più Monza e Brianza. Il primo incontro non si paga, da voi o nel nostro ufficio a Milano.'),
+            ('Serve incontrarsi di persona?', 'Non è obbligatorio: analisi, preventivo e avanzamento lavori passano da videochiamate e da un ambiente di prova online. Ma se siete a Milano, il caffè lo offriamo noi: il nostro ufficio è in Vicolo Privato Lavandai, 2a, 20144 Milano, solo su appuntamento.'),
         ],
     ),
     dict(
@@ -968,9 +984,10 @@ CITIES = [
     # più profonda di Milano: scena-lead, profilo di settore con cifre e fonti
     # ufficiali (verificate via WebSearch 07.2026), blocco «quali siti servono»
     # con 4 abbinamenti settore→servizio→caso, ufficio come differenziatore
-    # centrale (senza indirizzo: non ancora fornito dall'owner — NIENTE via/CAP/
-    # telefono inventati, NIENTE LocalBusiness-schema finché l'indirizzo manca).
-    # Renderizzati da build_city_flagship() (flag `flagship=True`).
+    # centrale. Indirizzi pubblici ricevuti dall'owner il 17.07.2026 (batch U1):
+    # NAP completo (office_indirizzo/office_maps_url) + LocalBusiness-schema
+    # (remarka_office_local_business_schema() in functions.php). Renderizzati
+    # da build_city_flagship() (flag `flagship=True`).
     dict(
         slug='roma', nome='Roma', eyebrow='Studio Remarka · Sede di Roma',
         flagship=True, progetti=160, dal='2001',
@@ -1023,11 +1040,13 @@ CITIES = [
         office_eyebrow='Ci incontriamo di persona',
         office_heading='Un ufficio vero a Roma, su appuntamento',
         office_testo='Molte web agency vendono online e poi spariscono dentro una casella email. Noi a Roma abbiamo un ufficio e ci veniamo a incontrare di persona, su appuntamento: analizziamo insieme il sito attuale, guardiamo i numeri e usciamo con le priorità scritte nero su bianco. Il primo incontro non si paga.',
-        office_nota='L’indirizzo esatto ve lo confermiamo quando fissiamo l’appuntamento. Preferite la videochiamata? Va benissimo lo stesso: identico metodo, identica data in contratto.',
+        office_nota=OFFICE_ATT_NOTA,
         office_aria='Realizzazione siti web a Roma: Studio Remarka, ufficio in città',
+        office_indirizzo='Roma, 00196, Via Flaminia, 122',
+        office_maps_url='https://maps.app.goo.gl/SRthgNGQxGHrmCeh8',
         faq=[
             ('Quanto costa un sito web a Roma?', 'I nostri prezzi sono pubblici e uguali ovunque, ufficio o no: vetrina da € 1.900, aziendale da € 3.900, e-commerce da € 7.500 — chiusi nel preventivo, con PageSpeed 90+ e data di consegna scritti nel contratto. <a href="/prezzi/">Confronta tutte le tariffe →</a>'),
-            ('Possiamo incontrarci di persona a Roma?', 'Sì, ed è la differenza a cui teniamo: a Roma abbiamo un ufficio e ci incontriamo di persona, su appuntamento — da noi o da voi. Il primo incontro non si paga. L’indirizzo esatto ve lo confermiamo quando fissiamo l’appuntamento.'),
+            ('Possiamo incontrarci di persona a Roma?', 'Sì, ed è la differenza a cui teniamo: a Roma abbiamo un ufficio — Via Flaminia, 122, 00196 Roma — e ci incontriamo di persona, su appuntamento, da noi o da voi. Il primo incontro non si paga.'),
             ('Seguite anche la SEO locale a Roma?', 'Sì: struttura tecnica, dati strutturati, velocità e contenuti pensati per chi cerca «a Roma» il vostro servizio. La SEO locale la costruiamo dalla base tecnica, non con trucchi — è lo stesso lavoro con cui portiamo i nostri progetti ai primi posti.'),
             ('Lavorate solo con aziende di Roma città?', 'No: Roma e tutta la provincia. L’ufficio in città rende gli incontri comodi, ma il metodo — ambiente di prova online, avanzamento visibile, un unico referente — funziona ovunque siate.'),
         ],
@@ -1086,11 +1105,13 @@ CITIES = [
         office_eyebrow='Ci incontriamo di persona',
         office_heading='Un ufficio vero a Torino, su appuntamento',
         office_testo='Molte web agency vendono online e poi spariscono dentro una casella email. Noi a Torino abbiamo un ufficio e ci veniamo a incontrare di persona, su appuntamento: analizziamo insieme il sito attuale, guardiamo i numeri e usciamo con le priorità scritte nero su bianco. Il primo incontro non si paga, e in azienda da voi veniamo volentieri.',
-        office_nota='L’indirizzo esatto ve lo confermiamo quando fissiamo l’appuntamento. Preferite la videochiamata? Va benissimo: identico metodo, identica data in contratto.',
+        office_nota=OFFICE_ATT_NOTA,
         office_aria='Realizzazione siti web a Torino: Studio Remarka, ufficio in città',
+        office_indirizzo='Torino, 10153, Corso Regina Margherita, 94',
+        office_maps_url='https://maps.app.goo.gl/GgfHyQ6z8NGSyVty5',
         faq=[
             ('Quanto costa un sito web a Torino?', 'I nostri prezzi sono pubblici e uguali ovunque, ufficio o no: vetrina da € 1.900, aziendale da € 3.900, e-commerce da € 7.500 — chiusi nel preventivo, con PageSpeed 90+ e data di consegna scritti nel contratto. <a href="/prezzi/">Confronta tutte le tariffe →</a>'),
-            ('Possiamo incontrarci di persona a Torino?', 'Sì: a Torino abbiamo un ufficio e ci incontriamo di persona, su appuntamento — da noi o in azienda da voi. Il primo incontro non si paga. Siamo anche a <a href="/milano/">Milano</a>, a meno di un’ora di treno: se serve, ci muoviamo noi.'),
+            ('Possiamo incontrarci di persona a Torino?', 'Sì: a Torino abbiamo un ufficio — Corso Regina Margherita, 94, 10153 Torino — e ci incontriamo di persona, su appuntamento, da noi o in azienda da voi. Il primo incontro non si paga. Siamo anche a <a href="/milano/">Milano</a>, a meno di un’ora di treno: se serve, ci muoviamo noi.'),
             ('Seguite anche la SEO locale a Torino?', 'Sì: struttura tecnica, dati strutturati, velocità e contenuti pensati per chi cerca «a Torino» il vostro prodotto o servizio. La SEO locale la costruiamo dalla base tecnica, non con trucchi — è lo stesso lavoro con cui portiamo i nostri progetti ai primi posti.'),
             ('Fate siti in tedesco e inglese per chi esporta?', 'Sì, ed è la nostra specialità: le traduzioni le fanno madrelingua del gruppo Remarka (nel settore linguistico dal 2001), non un plugin, con SEO internazionale corretta — hreflang e metadati per ogni mercato.'),
         ],

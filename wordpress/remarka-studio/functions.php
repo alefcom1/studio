@@ -733,10 +733,13 @@ function remarka_organization_schema(): void {
 		return;
 	}
 
-	// LocalBusiness на городских лендингах (piano-contenuti-seo §4.1):
-	// адрес указываем только миланский (реальный офис), остальные города —
-	// через areaServed, без выдуманных адресов.
-	$city_slugs = array( 'milano' => 'Milano', 'monza' => 'Monza', 'bergamo' => 'Bergamo', 'brescia' => 'Brescia', 'como' => 'Como' );
+	// LocalBusiness на городских лендингах без своего офиса (piano-contenuti-seo
+	// §4.1): адрес — миланский (единственный реальный офис на момент
+	// написания), areaServed — конкретный город. Milano/Torino/Roma больше НЕ
+	// входят сюда: с 17.07.2026 (batch U1) у них собственный, более полный
+	// LocalBusiness — remarka_office_local_business_schema() ниже, с
+	// legalName/vatID/parentOrganization — чтобы не дублировать разметку.
+	$city_slugs = array( 'monza' => 'Monza', 'bergamo' => 'Bergamo', 'brescia' => 'Brescia', 'como' => 'Como' );
 	if ( is_page( array_keys( $city_slugs ) ) ) {
 		$slug   = get_post_field( 'post_name', get_queried_object_id() );
 		$schema = array(
@@ -760,6 +763,78 @@ function remarka_organization_schema(): void {
 	}
 }
 add_action( 'wp_head', 'remarka_organization_schema' );
+
+/**
+ * LocalBusiness (JSON-LD) sui tre uffici REALI del gruppo Remarka — Milano,
+ * Torino, Roma — indirizzi pubblici forniti dal titolare il 17.07.2026
+ * (batch U1, piano-geo-citta.md). Segue lo stesso schema di
+ * remarka_blog_posting_schema(): un hook dedicato, una mappa dati statica
+ * qui sotto, nessuna duplicazione della Organization di home (qui è solo
+ * `parentOrganization`, un riferimento minimo per nome/URL).
+ *
+ * Scatta su 'milano'/'torino'/'roma' (IT) E su 'milan' (EN /en/milan/ e RU
+ * /ru/milan/: stesso slug in entrambe le lingue, ma è lo stesso ufficio
+ * fisico, quindi stessi dati) — le uniche varianti di lingua di una
+ * pagina-città che esistono (piano-geo-citta.md: «Milano EN/RU — eccezione»).
+ *
+ * Dati NAP (telefono/e-mail/P.IVA) da remarka_footer_mod(): sono
+ * indipendenti dalla lingua della pagina apposta — l'ufficio è uno, la
+ * S.r.l. che lo gestisce è una, anche se il footer RU mostra un soggetto
+ * giuridico diverso per la fatturazione in quella valuta/lingua (vedi
+ * remarka_company_lang_data()). Qui descriviamo l'ufficio fisico dove ci si
+ * incontra su appuntamento, non chi fattura: stesso telefono/e-mail/P.IVA
+ * ovunque.
+ *
+ * openingHours: assente di proposito (accesso solo su appuntamento — lo
+ * diciamo in prosa sulla pagina, non lo forziamo in uno schema che implica
+ * orari fissi). hasMap: assente di proposito — le schede Google Maps di
+ * questi uffici sono registrate a nome di ATT · Agenzia di Traduzione
+ * Tecnica (altro brand del gruppo che condivide l'ufficio, spiegato in
+ * chiaro nel testo della pagina): collegarla qui in schema.org mescolerebbe
+ * due nomi diversi sotto "Studio Remarka".
+ */
+function remarka_office_local_business_schema(): void {
+	$offices = array(
+		'milano' => array( 'street' => 'Vicolo Privato Lavandai, 2a', 'cap' => '20144', 'city' => 'Milano' ),
+		'milan'  => array( 'street' => 'Vicolo Privato Lavandai, 2a', 'cap' => '20144', 'city' => 'Milano' ),
+		'torino' => array( 'street' => 'Corso Regina Margherita, 94', 'cap' => '10153', 'city' => 'Torino' ),
+		'roma'   => array( 'street' => 'Via Flaminia, 122', 'cap' => '00196', 'city' => 'Roma' ),
+	);
+	if ( ! is_page( array_keys( $offices ) ) ) {
+		return;
+	}
+	$slug = get_post_field( 'post_name', get_queried_object_id() );
+	if ( ! isset( $offices[ $slug ] ) ) {
+		return;
+	}
+	$o      = $offices[ $slug ];
+	$schema = array(
+		'@context'           => 'https://schema.org',
+		'@type'              => 'ProfessionalService',
+		'name'               => 'Studio Remarka',
+		'legalName'          => 'Studio Remarka S.r.l.',
+		'url'                => get_permalink(),
+		'image'              => home_url( '/wp-content/themes/remarka-studio/assets/img/logo-full.png' ),
+		'telephone'          => remarka_footer_mod( 'remarka_company_phone' ),
+		'email'              => remarka_footer_mod( 'remarka_company_email' ),
+		'vatID'              => remarka_footer_mod( 'remarka_company_piva' ),
+		'address'            => array(
+			'@type'           => 'PostalAddress',
+			'streetAddress'   => $o['street'],
+			'postalCode'      => $o['cap'],
+			'addressLocality' => $o['city'],
+			'addressCountry'  => 'IT',
+		),
+		'areaServed'         => $o['city'],
+		'parentOrganization' => array(
+			'@type' => 'Organization',
+			'name'  => 'Studio Remarka',
+			'url'   => home_url( '/' ),
+		),
+	);
+	echo '<script type="application/ld+json">' . wp_json_encode( $schema ) . '</script>' . "\n";
+}
+add_action( 'wp_head', 'remarka_office_local_business_schema' );
 
 /**
  * WebApplication + FAQPage (JSON-LD) sulla pagina «Check-up completo del sito»

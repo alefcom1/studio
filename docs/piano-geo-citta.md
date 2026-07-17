@@ -84,11 +84,8 @@ Firenze, Genova, Verona, Padova, Bari, Venezia-Mestre, Palermo, Catania.
 
 ## Открытые вопросы владельцу
 
-1. **Адреса офисов Torino и Roma** (улица, CAP) — для NAP на страницах,
-   /contatti/ и LocalBusiness-schema. Плюс: есть ли ресепшн/приём по
-   записи (влияет на формулировку) и планируется ли Google Business
-   Profile для этих двух точек (рекомендую: это единственные города, где
-   он нам доступен честно).
+1. ~~**Адреса офисов Torino и Roma**~~ — закрыт 17.07 (см. «Решения владельца,
+   вторая волна» + «Статус», батч U1): адреса получены и опубликованы.
 2. Основная юр. точка (Milano? юр. адрес юрлица) — как позиционируем.
 
 ## Статус
@@ -104,3 +101,16 @@ Firenze, Genova, Verona, Padova, Bari, Venezia-Mestre, Palermo, Catania.
   Torino, ANFIA, Regione Piemonte, Roma Capitale). Офис — без адреса (не выдуман),
   LocalBusiness-schema НЕ добавлена. Открытый вопрос №1 (адреса) остаётся:
   после получения — добавить NAP в /roma/, /torino/, /contatti/ и LocalBusiness.
+- 17.07: **U1 выполнен** — открытый вопрос №1 закрыт. NAP публичный
+  (Studio Remarka S.r.l., индирiзzo/tel/email/P.IVA) добавлен на `/roma/`,
+  `/torino/`, `/milano/` + `/en/milan/` + `/ru/milan/`: карточка адреса,
+  карта Google click-to-load (GDPR — nessuna richiesta prima del click,
+  `office_dove_siamo()` in generate_pages.py, CSS `.sr-mappa` in remarka.css,
+  JS `initOfficeMap()` in remarka.js), спокойное пояснение про ATT ·
+  Agenzia di Traduzione Tecnica (стоит на тех же картах Maps — подано как
+  козырь доверия, не спрятано). LocalBusiness-schema (ProfessionalService,
+  legalName/vatID/parentOrganization) — новый хук
+  `remarka_office_local_business_schema()` в functions.php, на слагах
+  `milano`/`torino`/`roma`/`milan` (EN+RU). Milano получил офисный блок
+  флагманского уровня (раньше был плейсхолдер с вымышленным адресом/
+  телефоном — исправлено). Открытый вопрос №2 (юр. точка) остаётся.

@@ -95,27 +95,42 @@
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
-<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Ci incontriamo di persona</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Un ufficio vero a Milano, su appuntamento<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:html -->
 <div class="sr-dove-siamo">
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-dove-siamo__map" aria-hidden="true"></div>
+<div class="sr-mappa" role="region" aria-label="Realizzazione siti web a Milano: Studio Remarka, ufficio in città" data-sr-mappa data-sr-mappa-query="Studio%20Remarka%2C%20Milano%2C%2020144%2C%20Vicolo%20Privato%20Lavandai%2C%202a"><div class="sr-mappa__cta" data-sr-mappa-cta><span class="sr-btn-outline"><button type="button" class="wp-block-button__link" data-sr-mappa-btn>Apri la mappa</button></span><p class="sr-disclaimer" style="margin-top:12px">Il pulsante carica una mappa di Google: nessuna richiesta a Google finché non lo attivate.</p></div></div>
 <!-- /wp:html -->
 <!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Dove siamo</p>
 <!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p style="margin-top:12px;font-size:16px">Via Andrea Solari 43, 20144 Milano (MI)</p>
-<!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">M2 S. Agostino — 4 min a piedi</p>
+<p style="margin-top:12px;font-size:16px"><strong>Studio Remarka S.r.l.</strong><br>Milano, 20144, Vicolo Privato Lavandai, 2a</p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">Solo su appuntamento</p>
 <!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px">Lun–Ven 9:00–18:00</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px">L’indirizzo è pubblico e l’ufficio è vero: ci veniamo a incontrare di persona, su appuntamento, per analizzare insieme il sito attuale e uscire con le priorità scritte nero su bianco. Il primo incontro non si paga.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">L’ufficio è quello del gruppo Remarka, condiviso con ATT · Agenzia di Traduzione Tecnica, la nostra agenzia di traduzioni dal 2001: su Google Maps la sede è registrata con quel nome — non stupitevi cliccando la mappa, siamo sempre noi.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-mono" style="margin-top:6px;font-size:14px">+39 02 8736 5412</p>
+<p class="sr-mono" style="margin-top:16px;font-size:14px">Tel./WhatsApp +39 347 83 11141 · info@remarka.biz</p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="https://maps.app.goo.gl/Wvo8o9ZN6sEbGm7H8" target="_blank" rel="noopener noreferrer">Apri in Google Maps →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:4px"><a href="/#contatti">Fissa un appuntamento →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -150,12 +165,12 @@
 <!-- /wp:details -->
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Lavorate solo su Milano città?</summary><!-- wp:paragraph -->
-<p>No: Milano e tutta la provincia, più Monza e Brianza. Il primo incontro non si paga, da voi o nel nostro studio in zona Solari.</p>
+<p>No: Milano e tutta la provincia, più Monza e Brianza. Il primo incontro non si paga, da voi o nel nostro ufficio a Milano.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Serve incontrarsi di persona?</summary><!-- wp:paragraph -->
-<p>Non è obbligatorio: analisi, preventivo e avanzamento lavori passano da videochiamate e da un ambiente di prova online. Ma se siete a Milano, il caffè lo offriamo noi.</p>
+<p>Non è obbligatorio: analisi, preventivo e avanzamento lavori passano da videochiamate e da un ambiente di prova online. Ma se siete a Milano, il caffè lo offriamo noi: il nostro ufficio è in Vicolo Privato Lavandai, 2a, 20144 Milano, solo su appuntamento.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 </section>

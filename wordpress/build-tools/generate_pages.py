@@ -14,6 +14,7 @@ HTML-комментарии с JSON, очень многословные и ле
 """
 import os
 import sys
+from urllib.parse import quote
 
 sys.path.insert(0, os.path.dirname(__file__))
 from blocks import (  # noqa: E402
@@ -1201,6 +1202,47 @@ def build_tool(tool):
 
 # ---------------------------------------------------------------- Città
 
+def office_dove_siamo(indirizzo, maps_share_url, aria_label, office_testo, office_nota):
+    """Blocco «Dove siamo» dei tre uffici REALI (Milano/Torino/Roma, indirizzi
+    pubblici owner 17.07.2026 — piano-geo-citta.md). Due colonne (riusa
+    `.sr-dove-siamo`, prima un riquadro decorativo vuoto):
+      - sinistra `.sr-mappa`: mappa click-to-load, GDPR-safe — nessuna
+        richiesta a Google Maps finché non si preme «Apri la mappa» (nessun
+        iframe/script nel markup iniziale, lo inserisce assets/js/remarka.js
+        #11 al click, stile in assets/css/remarka.css). `role="region"` +
+        `aria-label` invece del vecchio `role="img"`: il pannello ora contiene
+        un bottone interattivo, `role="img"` lo nasconderebbe alla a11y tree;
+      - destra `.sr-card`: NAP testuale (funziona anche senza JS) — ragione
+        sociale, indirizzo pubblico, «solo su appuntamento», testo ufficio,
+        nota ATT (le schede Maps di questi uffici sono registrate a nome di
+        ATT · Agenzia di Traduzione Tecnica, altro brand del gruppo che
+        condivide l'ufficio — lo spieghiamo, non lo nascondiamo), contatti,
+        link esterno alla scheda proprietaria (stesso share-link della mappa)
+        e CTA. LocalBusiness-schema: remarka_office_local_business_schema()
+        in functions.php, sugli stessi tre slug (+ le due varianti /milan/ EN/RU).
+    """
+    query = quote(f'Studio Remarka, {indirizzo}')
+    mappa = raw_html(
+        f'<div class="sr-mappa" role="region" aria-label="{aria_label}" data-sr-mappa data-sr-mappa-query="{query}">'
+        '<div class="sr-mappa__cta" data-sr-mappa-cta>'
+        '<span class="sr-btn-outline"><button type="button" class="wp-block-button__link" data-sr-mappa-btn>Apri la mappa</button></span>'
+        '<p class="sr-disclaimer" style="margin-top:12px">Il pulsante carica una mappa di Google: nessuna richiesta a Google finché non lo attivate.</p>'
+        '</div></div>'
+    )
+    card = group(
+        eyebrow('Dove siamo') +
+        raw_html(f'<p style="margin-top:12px;font-size:16px"><strong>Studio Remarka S.r.l.</strong><br>{indirizzo}</p>') +
+        raw_html('<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">Solo su appuntamento</p>') +
+        paragraph(office_testo, color='grigio', size='base', extra_style='margin-top:16px') +
+        paragraph(office_nota, color='grigio', size='base', extra_style='margin-top:12px') +
+        raw_html('<p class="sr-mono" style="margin-top:16px;font-size:14px">Tel./WhatsApp +39 347 83 11141 · info@remarka.biz</p>') +
+        raw_html(f'<p class="sr-card-link" style="margin-top:16px"><a href="{maps_share_url}" target="_blank" rel="noopener noreferrer">Apri in Google Maps →</a></p>') +
+        raw_html('<p class="sr-card-link" style="margin-top:4px"><a href="/#contatti">Fissa un appuntamento →</a></p>'),
+        classes='sr-card',
+    )
+    return raw_html('<div class="sr-dove-siamo">') + mappa + card + raw_html('</div>')
+
+
 def build_city(c):
     """Городской лендинг под «realizzazione siti web {città}». Каждый город —
     свой кейс, свои отзывы с гео-привязкой и свой FAQ (piano-contenuti-seo §2:
@@ -1265,16 +1307,8 @@ def build_city(c):
 
     if c.get('has_office'):
         dove = section(
-            raw_html('<div class="sr-dove-siamo">') +
-            raw_html('<div class="sr-dove-siamo__map" aria-hidden="true"></div>') +
-            group(
-                eyebrow('Dove siamo') +
-                paragraph(c['indirizzo'], extra_style='margin-top:12px;font-size:16px') +
-                raw_html(f'<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">{c["metro"]}</p>') +
-                paragraph(c['orari'], color='grigio', size='base', extra_style='margin-top:16px') +
-                raw_html(f'<p class="sr-mono" style="margin-top:6px;font-size:14px">{c["telefono"]}</p>'),
-                classes='sr-card',
-            ) + raw_html('</div>'),
+            eyebrow(c['office_eyebrow']) + heading(2, c['office_heading']) +
+            office_dove_siamo(c['office_indirizzo'], c['office_maps_url'], c['office_aria'], c['office_testo'], c['office_nota']),
             classes='sr-section',
         )
     else:
@@ -1322,9 +1356,10 @@ def build_city_flagship(c):
     gruppo (batch G1a). Pagina più profonda di build_city(): scena-lead,
     profilo di settore con cifre e fonti ufficiali, blocco «quali siti servono»
     (4 abbinamenti settore→servizio→caso), ufficio come differenziatore centrale
-    SENZA indirizzo (non ancora fornito: niente via/CAP/telefono, niente
-    LocalBusiness-schema). Nessun blocco recensioni inventate: sulle pagine
-    flagship l'E-E-A-T si regge su fatti verificabili (piano-geo-citta §2)."""
+    CON indirizzo pubblico e mappa click-to-load (batch U1, indirizzi owner
+    17.07.2026 — office_dove_siamo(), LocalBusiness-schema in functions.php).
+    Nessun blocco recensioni inventate: sulle pagine flagship l'E-E-A-T si
+    regge su fatti verificabili (piano-geo-citta §2)."""
     hero = section(
         eyebrow(c['eyebrow']) + heading(1, f'Realizzazione siti web a {c["nome"]}', style='clamp(38px,4.6vw,64px)') +
         paragraph(c['sub'], color='grigio', size='medium') +
@@ -1414,25 +1449,18 @@ def build_city_flagship(c):
 
     # Presenza locale. Due rami, scelti dalla presenza del campo 'office_heading':
     #  - città con ufficio REALE (Roma, Torino, batch G1a): blocco ufficio,
-    #    differenziatore centrale, SENZA indirizzo (non ancora fornito). Riusa il
-    #    pannello decorativo .sr-dove-siamo__map con role="img"+aria-label (funge
-    #    da alt e porta la chiave focus).
+    #    differenziatore centrale, con indirizzo pubblico (owner 17.07.2026) e
+    #    mappa click-to-load GDPR-safe — vedi office_dove_siamo().
     #  - città SENZA ufficio (batch G1b): blocco «Come lavoriamo», formula onesta
-    #    (uffici a Torino e Roma; altrove video o incontro su appuntamento, veniamo
-    #    noi). Nessun ufficio/indirizzo/«team locale» inventato. La chiave focus è
-    #    portata da role="region"+aria-label. Il ramo su 'office_heading' garantisce
-    #    che le pagine flagship con ufficio (Roma/Torino) restino byte-identiche.
+    #    (uffici a Milano, Torino e Roma; altrove video o incontro su
+    #    appuntamento, veniamo noi). Nessun ufficio/indirizzo/«team locale»
+    #    inventato. La chiave focus è portata da role="region"+aria-label.
     if c.get('office_heading'):
         office = section(
             eyebrow(c['office_eyebrow']) + heading(2, c['office_heading']) +
-            raw_html('<div class="sr-dove-siamo" style="margin-top:28px">') +
-            raw_html(f'<div class="sr-dove-siamo__map" role="img" aria-label="{c["office_aria"]}"></div>') +
-            group(
-                paragraph(c['office_testo'], color='grigio', size='base') +
-                raw_html(f'<p class="sr-mono" style="margin-top:16px;font-size:13px;color:var(--sr-grigio)">{c["office_nota"]}</p>') +
-                raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="/#contatti">Fissa un appuntamento →</a></p>'),
-                classes='sr-card',
-            ) + raw_html('</div>'),
+            raw_html('<div style="margin-top:28px">') +
+            office_dove_siamo(c['office_indirizzo'], c['office_maps_url'], c['office_aria'], c['office_testo'], c['office_nota']) +
+            raw_html('</div>'),
             classes='sr-section sr-section--bianco',
         )
     else:

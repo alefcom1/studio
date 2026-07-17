@@ -95,27 +95,42 @@
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
-<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">We meet in person</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">A real office in Milan, by appointment<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:html -->
 <div class="sr-dove-siamo">
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-dove-siamo__map" aria-hidden="true"></div>
+<div class="sr-mappa" role="region" aria-label="Website development in Milan: Studio Remarka, our office in the city" data-sr-mappa data-sr-mappa-query="Studio%20Remarka%2C%20Milano%2C%2020144%2C%20Vicolo%20Privato%20Lavandai%2C%202a"><div class="sr-mappa__cta" data-sr-mappa-cta><span class="sr-btn-outline"><button type="button" class="wp-block-button__link" data-sr-mappa-btn>Open the map</button></span><p class="sr-disclaimer" style="margin-top:12px">The button loads a Google map: no request is sent to Google until you activate it.</p></div></div>
 <!-- /wp:html -->
 <!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Where we are</p>
 <!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p style="margin-top:12px;font-size:16px">Via Andrea Solari 43, 20144 Milano (MI)</p>
-<!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">M2 S. Agostino — a 4-minute walk</p>
+<p style="margin-top:12px;font-size:16px"><strong>Studio Remarka S.r.l.</strong><br>Milan, 20144, Vicolo Privato Lavandai, 2a</p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">By appointment only</p>
 <!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px">Mon–Fri 9:00–18:00</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px">The address is public and the office is real: we meet here in person, by appointment, to review your current site together and walk away with priorities written down in black and white. The first meeting is free.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">The office belongs to the Remarka group and is shared with ATT · Agenzia di Traduzione Tecnica, our translation agency since 2001: on Google Maps the listing is registered under that name — don’t be surprised when you click the map, it’s still us.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-mono" style="margin-top:6px;font-size:14px">+39 02 8736 5412</p>
+<p class="sr-mono" style="margin-top:16px;font-size:14px">Tel./WhatsApp +39 347 83 11141 · info@remarka.biz</p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="https://maps.app.goo.gl/Wvo8o9ZN6sEbGm7H8" target="_blank" rel="noopener noreferrer">Open in Google Maps →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:4px"><a href="/en/#contatti">Book an appointment →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -150,12 +165,12 @@
 <!-- /wp:details -->
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Do you only work in the city of Milan?</summary><!-- wp:paragraph -->
-<p>No: Milan and the whole province, plus Monza and Brianza. The first meeting is free, at your office or at our studio in the Solari district.</p>
+<p>No: Milan and the whole province, plus Monza and Brianza. The first meeting is free, at your office or at ours in Milan.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Do we need to meet in person?</summary><!-- wp:paragraph -->
-<p>It’s not required: analysis, quote, and progress reviews all run through video calls and an online staging environment. But if you’re in Milan, the coffee is on us.</p>
+<p>It’s not required: analysis, quote and progress reviews all run through video calls and an online staging environment. But if you’re in Milan, the coffee is on us: our office is at Vicolo Privato Lavandai, 2a, 20144 Milan, by appointment only.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 </section>

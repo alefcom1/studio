@@ -2443,6 +2443,39 @@
 		});
 	}
 
+	/* ---------- 11. Mappa click-to-load (uffici Milano/Torino/Roma) ----------
+	   patterns/pages/citta-{milano,roma,torino}.php (+ en-/ru-citta-milano),
+	   generate_pages.py:office_dove_siamo(): GDPR (piano-geo-citta.md, U1) —
+	   nessuna richiesta a Google Maps finché non si clicca «Apri la mappa».
+	   [data-sr-mappa] porta l'indirizzo già url-encoded in
+	   data-sr-mappa-query; l'iframe (embed pubblico, senza API key) viene
+	   creato ed inserito SOLO al click, poi il pulsante si nasconde con
+	   [hidden] (vince su .wp-block-button__link grazie a .sr-mappa [hidden]
+	   in CSS, stesso accorgimento di .sr-stepform/.sr-checkup). */
+	function initOfficeMap() {
+		var roots = document.querySelectorAll('[data-sr-mappa]');
+		if (!roots.length) return;
+
+		roots.forEach(function (root) {
+			var btn = root.querySelector('[data-sr-mappa-btn]');
+			var cta = root.querySelector('[data-sr-mappa-cta]');
+			if (!btn) return;
+
+			btn.addEventListener('click', function () {
+				var query = root.getAttribute('data-sr-mappa-query') || '';
+				var title = root.getAttribute('aria-label') || 'Google Maps';
+				var iframe = document.createElement('iframe');
+				iframe.className = 'sr-mappa__frame';
+				iframe.loading = 'lazy';
+				iframe.referrerPolicy = 'no-referrer-when-downgrade';
+				iframe.title = title;
+				iframe.src = 'https://www.google.com/maps?q=' + query + '&output=embed';
+				root.appendChild(iframe);
+				if (cta) cta.hidden = true;
+			});
+		});
+	}
+
 	onReady(function () {
 		initReveal();
 		initBarre();
@@ -2456,5 +2489,6 @@
 		initLangSwitch();
 		initContactForm();
 		initCaseFilter();
+		initOfficeMap();
 	});
 })();

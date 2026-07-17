@@ -2971,3 +2971,44 @@ CHROME.update({
     "Da dove partire": {"en": "Where to start"},
     "Cosa ci fa Google: i risultati ricchi": {"en": "What Google does with it: rich results"},
 })
+
+# Batch 4 — blocco ufficio + mappa click-to-load, indirizzi pubblici owner
+# 17.07.2026 (piano-geo-citta.md, batch U1). Usato su Milano/Torino/Roma;
+# solo Milano ha una pagina EN (/en/milan/), quindi solo le stringhe che
+# compaiono lì hanno bisogno di una traduzione EN (le altre restano inerti,
+# non tradotte, ed è corretto così — nessuna pagina EN le legge).
+CHROME.update({
+    "Ci incontriamo di persona": {"en": "We meet in person", "ru": "Встречаемся лично"},
+    "Un ufficio vero a Milano, su appuntamento": {"en": "A real office in Milan, by appointment", "ru": "Настоящий офис в Милане, по предварительной записи"},
+    "L’indirizzo è pubblico e l’ufficio è vero: ci veniamo a incontrare di persona, su appuntamento, per analizzare insieme il sito attuale e uscire con le priorità scritte nero su bianco. Il primo incontro non si paga.": {
+        "en": "The address is public and the office is real: we meet here in person, by appointment, to review your current site together and walk away with priorities written down in black and white. The first meeting is free.",
+        "ru": "Адрес открыт, а офис настоящий: мы встречаемся здесь лично, по предварительной записи, разбираем ваш нынешний сайт и уходите вы с приоритетами, зафиксированными чёрным по белому. Первая встреча бесплатна.",
+    },
+    "L’ufficio è quello del gruppo Remarka, condiviso con ATT · Agenzia di Traduzione Tecnica, la nostra agenzia di traduzioni dal 2001: su Google Maps la sede è registrata con quel nome — non stupitevi cliccando la mappa, siamo sempre noi.": {
+        "en": "The office belongs to the Remarka group and is shared with ATT · Agenzia di Traduzione Tecnica, our translation agency since 2001: on Google Maps the listing is registered under that name — don’t be surprised when you click the map, it’s still us.",
+        "ru": "Офис принадлежит группе Remarka и используется совместно с ATT · Agenzia di Traduzione Tecnica — нашим переводческим бюро, работающим с 2001 года: на Google Maps карточка зарегистрирована под этим названием — не удивляйтесь, кликнув по карте, это по-прежнему мы.",
+    },
+    "Solo su appuntamento": {"en": "By appointment only", "ru": "Только по предварительной записи"},
+    "Apri la mappa": {"en": "Open the map", "ru": "Открыть карту"},
+    "Il pulsante carica una mappa di Google: nessuna richiesta a Google finché non lo attivate.": {
+        "en": "The button loads a Google map: no request is sent to Google until you activate it.",
+        "ru": "Кнопка загружает карту Google: запрос к Google не отправляется, пока вы её не активируете.",
+    },
+    "Apri in Google Maps →": {"en": "Open in Google Maps →", "ru": "Открыть в Google Maps →"},
+    "Fissa un appuntamento →": {"en": "Book an appointment →", "ru": "Записаться на встречу →"},
+    "Milano, 20144, Vicolo Privato Lavandai, 2a": {"en": "Milan, 20144, Vicolo Privato Lavandai, 2a", "ru": "Милан, 20144, Vicolo Privato Lavandai, 2a"},
+    "Realizzazione siti web a Milano: Studio Remarka, ufficio in città": {
+        "en": "Website development in Milan: Studio Remarka, our office in the city",
+        "ru": "Разработка сайтов в Милане: Studio Remarka, наш офис в городе",
+    },
+    "Non è obbligatorio: analisi, preventivo e avanzamento lavori passano da videochiamate e da un ambiente di prova online. Ma se siete a Milano, il caffè lo offriamo noi: il nostro ufficio è in Vicolo Privato Lavandai, 2a, 20144 Milano, solo su appuntamento.": {
+        "en": "It’s not required: analysis, quote and progress reviews all run through video calls and an online staging environment. But if you’re in Milan, the coffee is on us: our office is at Vicolo Privato Lavandai, 2a, 20144 Milan, by appointment only.",
+        "ru": "Это не обязательно: анализ, смета и ход работ идут через видеозвонки и онлайн-среду для проверки. Но если вы в Милане, кофе — за наш счёт: наш офис находится по адресу Vicolo Privato Lavandai, 2a, 20144 Милан, только по предварительной записи.",
+    },
+    # Fix owner U1: rimosso il riferimento a "zona Solari" (indirizzo
+    # placeholder mai reale, sostituito dal vero indirizzo pubblico).
+    "No: Milano e tutta la provincia, più Monza e Brianza. Il primo incontro non si paga, da voi o nel nostro ufficio a Milano.": {
+        "en": "No: Milan and the whole province, plus Monza and Brianza. The first meeting is free, at your office or at ours in Milan.",
+        "ru": "Нет: Милан и вся провинция, плюс Монца и Брианца. Первая встреча бесплатна — у вас или в нашем офисе в Милане.",
+    },
+})

@@ -95,24 +95,42 @@
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
-<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Встречаемся лично</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Настоящий офис в Милане, по предварительной записи<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:html -->
 <div class="sr-dove-siamo">
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-dove-siamo__map" aria-hidden="true"></div>
+<div class="sr-mappa" role="region" aria-label="Разработка сайтов в Милане: Studio Remarka, наш офис в городе" data-sr-mappa data-sr-mappa-query="Studio%20Remarka%2C%20Milano%2C%2020144%2C%20Vicolo%20Privato%20Lavandai%2C%202a"><div class="sr-mappa__cta" data-sr-mappa-cta><span class="sr-btn-outline"><button type="button" class="wp-block-button__link" data-sr-mappa-btn>Открыть карту</button></span><p class="sr-disclaimer" style="margin-top:12px">Кнопка загружает карту Google: запрос к Google не отправляется, пока вы её не активируете.</p></div></div>
 <!-- /wp:html -->
 <!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Где мы находимся</p>
 <!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p style="margin-top:12px;font-size:16px">Vicolo Privato Lavandai, 2a, 20144 Milano (MI)</p>
+<!-- wp:html -->
+<p style="margin-top:12px;font-size:16px"><strong>Studio Remarka S.r.l.</strong><br>Милан, 20144, Vicolo Privato Lavandai, 2a</p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">Только по предварительной записи</p>
+<!-- /wp:html -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px">Адрес открыт, а офис настоящий: мы встречаем вас здесь лично, по предварительной записи, разбираем ваш текущий сайт и вместе с вами составляем приоритеты, зафиксированные чёрным по белому. Первая встреча бесплатна.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px">Пн–Пт 9:00–18:00</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">Офис принадлежит группе Remarka и используется совместно с ATT · Agenzia di Traduzione Tecnica — нашим переводческим бюро, работающим с 2001 года: на Google Maps карточка зарегистрирована под этим названием — не удивляйтесь, кликнув по карте, это по-прежнему мы.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-mono" style="margin-top:6px;font-size:14px">+39 347 83 11141</p>
+<p class="sr-mono" style="margin-top:16px;font-size:14px">Тел./WhatsApp +39 347 83 11141 · info@remarka.biz</p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="https://maps.app.goo.gl/Wvo8o9ZN6sEbGm7H8" target="_blank" rel="noopener noreferrer">Открыть в Google Maps →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:4px"><a href="/ru/#contatti">Записаться на встречу →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -147,12 +165,12 @@
 <!-- /wp:details -->
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Вы работаете только в самом Милане?</summary><!-- wp:paragraph -->
-<p>Нет: Милан и вся провинция, плюс Монца и Брианца. Первая встреча бесплатна — у вас или в нашей студии в районе Солари.</p>
+<p>Нет: Милан и вся провинция, плюс Монца и Брианца. Первая встреча бесплатна — у вас или в нашем офисе в Милане.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Обязательно встречаться лично?</summary><!-- wp:paragraph -->
-<p>Нет: анализ, смета и ход работ идут через видеозвонки и онлайн-доступ к тестовой среде. Но если вы в Милане — кофе за нами.</p>
+<p>Нет: анализ, смета и ход работ идут через видеозвонки и онлайн-доступ к тестовой среде. Но если вы в Милане — кофе за нами: наш офис находится по адресу Vicolo Privato Lavandai, 2a, 20144 Милан, только по предварительной записи.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 </section>

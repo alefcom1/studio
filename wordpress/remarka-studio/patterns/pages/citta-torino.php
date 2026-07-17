@@ -153,23 +153,44 @@
 <h2 class="wp-block-heading">Un ufficio vero a Torino, su appuntamento<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<div class="sr-dove-siamo" style="margin-top:28px">
+<div style="margin-top:28px">
 <!-- /wp:html -->
 <!-- wp:html -->
-<div class="sr-dove-siamo__map" role="img" aria-label="Realizzazione siti web a Torino: Studio Remarka, ufficio in città"></div>
+<div class="sr-dove-siamo">
+<!-- /wp:html -->
+<!-- wp:html -->
+<div class="sr-mappa" role="region" aria-label="Realizzazione siti web a Torino: Studio Remarka, ufficio in città" data-sr-mappa data-sr-mappa-query="Studio%20Remarka%2C%20Torino%2C%2010153%2C%20Corso%20Regina%20Margherita%2C%2094"><div class="sr-mappa__cta" data-sr-mappa-cta><span class="sr-btn-outline"><button type="button" class="wp-block-button__link" data-sr-mappa-btn>Apri la mappa</button></span><p class="sr-disclaimer" style="margin-top:12px">Il pulsante carica una mappa di Google: nessuna richiesta a Google finché non lo attivate.</p></div></div>
 <!-- /wp:html -->
 <!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size">Molte web agency vendono online e poi spariscono dentro una casella email. Noi a Torino abbiamo un ufficio e ci veniamo a incontrare di persona, su appuntamento: analizziamo insieme il sito attuale, guardiamo i numeri e usciamo con le priorità scritte nero su bianco. Il primo incontro non si paga, e in azienda da voi veniamo volentieri.</p>
+<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Dove siamo</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-mono" style="margin-top:16px;font-size:13px;color:var(--sr-grigio)">L’indirizzo esatto ve lo confermiamo quando fissiamo l’appuntamento. Preferite la videochiamata? Va benissimo: identico metodo, identica data in contratto.</p>
+<p style="margin-top:12px;font-size:16px"><strong>Studio Remarka S.r.l.</strong><br>Torino, 10153, Corso Regina Margherita, 94</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="/#contatti">Fissa un appuntamento →</a></p>
+<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">Solo su appuntamento</p>
+<!-- /wp:html -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px">Molte web agency vendono online e poi spariscono dentro una casella email. Noi a Torino abbiamo un ufficio e ci veniamo a incontrare di persona, su appuntamento: analizziamo insieme il sito attuale, guardiamo i numeri e usciamo con le priorità scritte nero su bianco. Il primo incontro non si paga, e in azienda da voi veniamo volentieri.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:12px">L’ufficio è quello del gruppo Remarka, condiviso con ATT · Agenzia di Traduzione Tecnica, la nostra agenzia di traduzioni dal 2001: su Google Maps la sede è registrata con quel nome — non stupitevi cliccando la mappa, siamo sempre noi.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-mono" style="margin-top:16px;font-size:14px">Tel./WhatsApp +39 347 83 11141 · info@remarka.biz</p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="https://maps.app.goo.gl/GgfHyQ6z8NGSyVty5" target="_blank" rel="noopener noreferrer">Apri in Google Maps →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:4px"><a href="/#contatti">Fissa un appuntamento →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
+<!-- wp:html -->
+</div>
+<!-- /wp:html -->
 <!-- wp:html -->
 </div>
 <!-- /wp:html -->
@@ -186,7 +207,7 @@
 <!-- /wp:details -->
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Possiamo incontrarci di persona a Torino?</summary><!-- wp:paragraph -->
-<p>Sì: a Torino abbiamo un ufficio e ci incontriamo di persona, su appuntamento — da noi o in azienda da voi. Il primo incontro non si paga. Siamo anche a <a href="/milano/">Milano</a>, a meno di un’ora di treno: se serve, ci muoviamo noi.</p>
+<p>Sì: a Torino abbiamo un ufficio — Corso Regina Margherita, 94, 10153 Torino — e ci incontriamo di persona, su appuntamento, da noi o in azienda da voi. Il primo incontro non si paga. Siamo anche a <a href="/milano/">Milano</a>, a meno di un’ora di treno: se serve, ci muoviamo noi.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 <!-- wp:details -->
