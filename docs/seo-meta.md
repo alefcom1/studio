@@ -25,6 +25,7 @@
 | `/milano/` | web agency Milano | (city IT-only, EN: web agency Milan) | ✅ (eyebrow, H2 servizi, alt) |
 | `/roma/` · `/torino/` (flagship, ufficio) | realizzazione siti web roma / torino | — (city IT-only) | ✅ (H1, primo paragrafo, aria-label, H2 «creazione siti web») — см. «Città flagship» sotto |
 | `/monza/ /bergamo/ /brescia/ /como/` | realizzazione siti web ‹città› | — | ✅ (H1, H2 servizi, alt) |
+| `/bologna/ /verona/ /padova/ /venezia/ /genova/` (flagship, senza ufficio) | realizzazione siti web ‹città› | — (city IT-only) | ✅ (H1, primo paragrafo, aria-label, H2 «creazione siti web») — см. «Città flagship SENZA ufficio» sotto |
 | `/strumenti/test-velocita/` | test velocità sito web | website speed test | ✅ (H1) |
 | `/strumenti/analisi-seo/` · `/strumenti/check-gdpr/` · `/strumenti/roi-localizzazione/` | analisi SEO gratuita / check GDPR e cookie / ROI localizzazione | free SEO audit / GDPR & cookie check / localization ROI | ✅ живой виджет (T2, вышли из «In arrivo» — ключи/мета этих 3 отдельно не проработаны в этой сессии) |
 | `/strumenti/verifica-accessibilita/` | verifica accessibilità sito | website accessibility check | ✅ (H1, hero-sub, come funziona, FAQ) — см. «Инструменты (Lab)» ниже |
@@ -62,6 +63,53 @@ Density») набивкой, точный ключ в каждом H2, «Content
 
 **Проверка длин.** Title: Roma — 46, Torino — 48 — ≤60. Description: Roma — 153,
 Torino — 155 — ≤160.
+
+## Città flagship SENZA ufficio (batch G1b-1, Nord Italia)
+
+> Bologna, Verona, Padova, Venezia/Mestre, Genova. Stessa profondità di
+> Roma/Torino ma **senza ufficio**: presenza onesta (uffici del gruppo solo a
+> Torino e Roma; altrove video o incontro su appuntamento). NIENTE ufficio/
+> indirizzo/«team locale» inventato, NIENTE LocalBusiness-schema. Cifre di
+> settore verificate via WebSearch 07.2026, ogni numero linkato alla fonte
+> (Camera di Commercio città, Veronafiere, Autorità Portuale, Unioncamere).
+> **Venezia — scelta slug:** `/venezia/` (piatto), non `/venezia-mestre/`.
+> Motivo: coerenza con tutti gli slug città esistenti (`/roma/`, `/milano/`,
+> `/torino/`… tutti a parola singola, nessuno con trattino) e con la
+> focus-key `realizzazione siti web venezia` (nessuno cerca «mestre»). Il nome
+> visualizzato è «Venezia», ma il contenuto copre onestamente Mestre e la
+> terraferma (dove sono porto, industria e la maggior parte delle imprese).
+
+### IT — `/bologna/`
+
+- **Focus Keyword:** `realizzazione siti web bologna`
+- **Title (49):** `Realizzazione siti web a Bologna | Studio Remarka`
+- **Description (160):** `Realizzazione siti web a Bologna per industria, packaging, food e studi: prezzo chiuso, consegna a data fissa, PageSpeed 90+. In video o da voi su appuntamento.`
+
+### IT — `/verona/`
+
+- **Focus Keyword:** `realizzazione siti web verona`
+- **Title (48):** `Realizzazione siti web a Verona | Studio Remarka`
+- **Description (158):** `Realizzazione siti web a Verona per cantine, agroalimentare ed export: prezzo chiuso, consegna a data fissa, PageSpeed 90+. In video o da voi su appuntamento.`
+
+### IT — `/padova/`
+
+- **Focus Keyword:** `realizzazione siti web padova`
+- **Title (48):** `Realizzazione siti web a Padova | Studio Remarka`
+- **Description (158):** `Realizzazione siti web a Padova per PMI, industria, servizi e ricerca: prezzo chiuso, consegna a data fissa, PageSpeed 90+. In video o da voi su appuntamento.`
+
+### IT — `/venezia/`
+
+- **Focus Keyword:** `realizzazione siti web venezia`
+- **Title (49):** `Realizzazione siti web a Venezia | Studio Remarka`
+- **Description (152):** `Realizzazione siti web a Venezia e Mestre per turismo e imprese: prezzo chiuso, consegna a data fissa, PageSpeed 90+. In video o da voi su appuntamento.`
+
+### IT — `/genova/`
+
+- **Focus Keyword:** `realizzazione siti web genova`
+- **Title (48):** `Realizzazione siti web a Genova | Studio Remarka`
+- **Description (156):** `Realizzazione siti web a Genova per porto, logistica e blue economy: prezzo chiuso, consegna a data fissa, PageSpeed 90+. In video o da voi su appuntamento.`
+
+**Проверка длин.** Все Title ≤60, все Description ≤160 (см. цифры в скобках).
 
 ## Главная `/` (IT)
 

@@ -1412,21 +1412,42 @@ def build_city_flagship(c):
         classes='sr-section',
     )
 
-    # Ufficio: differenziatore centrale, SENZA indirizzo (non ancora fornito).
-    # Riusa il pannello decorativo brandizzato .sr-dove-siamo__map (come Milano)
-    # con role="img"+aria-label che porta la chiave focus (funge da alt).
-    office = section(
-        eyebrow(c['office_eyebrow']) + heading(2, c['office_heading']) +
-        raw_html('<div class="sr-dove-siamo" style="margin-top:28px">') +
-        raw_html(f'<div class="sr-dove-siamo__map" role="img" aria-label="{c["office_aria"]}"></div>') +
-        group(
-            paragraph(c['office_testo'], color='grigio', size='base') +
-            raw_html(f'<p class="sr-mono" style="margin-top:16px;font-size:13px;color:var(--sr-grigio)">{c["office_nota"]}</p>') +
-            raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="/#contatti">Fissa un appuntamento →</a></p>'),
-            classes='sr-card',
-        ) + raw_html('</div>'),
-        classes='sr-section sr-section--bianco',
-    )
+    # Presenza locale. Due rami, scelti dalla presenza del campo 'office_heading':
+    #  - città con ufficio REALE (Roma, Torino, batch G1a): blocco ufficio,
+    #    differenziatore centrale, SENZA indirizzo (non ancora fornito). Riusa il
+    #    pannello decorativo .sr-dove-siamo__map con role="img"+aria-label (funge
+    #    da alt e porta la chiave focus).
+    #  - città SENZA ufficio (batch G1b): blocco «Come lavoriamo», formula onesta
+    #    (uffici a Torino e Roma; altrove video o incontro su appuntamento, veniamo
+    #    noi). Nessun ufficio/indirizzo/«team locale» inventato. La chiave focus è
+    #    portata da role="region"+aria-label. Il ramo su 'office_heading' garantisce
+    #    che le pagine flagship con ufficio (Roma/Torino) restino byte-identiche.
+    if c.get('office_heading'):
+        office = section(
+            eyebrow(c['office_eyebrow']) + heading(2, c['office_heading']) +
+            raw_html('<div class="sr-dove-siamo" style="margin-top:28px">') +
+            raw_html(f'<div class="sr-dove-siamo__map" role="img" aria-label="{c["office_aria"]}"></div>') +
+            group(
+                paragraph(c['office_testo'], color='grigio', size='base') +
+                raw_html(f'<p class="sr-mono" style="margin-top:16px;font-size:13px;color:var(--sr-grigio)">{c["office_nota"]}</p>') +
+                raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="/#contatti">Fissa un appuntamento →</a></p>'),
+                classes='sr-card',
+            ) + raw_html('</div>'),
+            classes='sr-section sr-section--bianco',
+        )
+    else:
+        office = section(
+            eyebrow(c['presenza_eyebrow']) + heading(2, c['presenza_heading']) +
+            paragraph(c['presenza_testo'], color='grigio', size='medium', extra_style='margin-top:16px;max-width:75ch') +
+            raw_html(f'<div role="region" aria-label="{c["presenza_aria"]}" style="margin-top:24px">') +
+            group(
+                paragraph(c['presenza_nota'], color='grigio', size='base') +
+                raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="/#come-lavoriamo">Come lavoriamo, passo per passo →</a></p>') +
+                raw_html('<p class="sr-card-link" style="margin-top:4px"><a href="/#contatti">Fissa una videochiamata o un incontro →</a></p>'),
+                classes='sr-card',
+            ) + raw_html('</div>'),
+            classes='sr-section sr-section--bianco',
+        )
 
     faq = section(
         eyebrow('Domande da ' + c['nome']) + details_faq(c['faq']),
@@ -1440,9 +1461,12 @@ def build_city_flagship(c):
                  ('WhatsApp Business', 'https://wa.me/390000000000', 'whatsapp')], justify='center', margin_top='28px'),
         classes='sr-section sr-dark',
     )
+    # Descrizione onesta: le città con ufficio (Roma/Torino) restano invariate;
+    # quelle senza ufficio non devono dichiararne uno (byte-identici per Roma/Torino).
+    _presenza_desc, _presenza_voce = ('ufficio in città', 'ufficio') if c.get('office_heading') else ('senza ufficio', 'come lavoriamo')
     write(f'citta-{c["slug"]}', f'Pagina — Città: {c["nome"]}',
-          f'Landing locale «realizzazione siti web {c["nome"].lower()}» (flagship, ufficio in città): '
-          f'scena, profilo di settore con fonti, servizi, casi, prezzi, ufficio, FAQ.',
+          f'Landing locale «realizzazione siti web {c["nome"].lower()}» (flagship, {_presenza_desc}): '
+          f'scena, profilo di settore con fonti, servizi, casi, prezzi, {_presenza_voce}, FAQ.',
           hero + lead + settore + servizi + pairings + caso + prezzi_local + office + faq + cta)
 
 
