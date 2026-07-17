@@ -26,6 +26,10 @@ require_once get_stylesheet_directory() . '/inc/ai-tools.php';
 // definitivi (docs/copy-casi-studio.md): shortcode [sr_shot], risolto a runtime.
 require_once get_stylesheet_directory() . '/inc/case-shots.php';
 
+// Punteggio PageSpeed reale in footer: cron giornaliero + bootstrap immediato
+// (docs/piano-implementazione-fase-A.md, decisione titolare 17.07.2026).
+require_once get_stylesheet_directory() . '/inc/psi-score.php';
+
 /**
  * Есть ли локальные шрифты? Маркер — главный woff2 Clash Display.
  * Пока владелец не положил файлы в assets/fonts, тема грузит CDN
@@ -457,7 +461,7 @@ function remarka_customize_register( WP_Customize_Manager $wp_customize ): void 
 		'sanitize_callback' => 'absint',
 	) );
 	$wp_customize->add_control( 'remarka_footer_pagespeed_score', array(
-		'label'       => __( 'Punteggio PageSpeed da mostrare in footer (aggiornare a mano dopo un test reale)', 'remarka-studio' ),
+		'label'       => __( 'Punteggio PageSpeed da mostrare in footer (fallback: dopo la prima misurazione automatica viene mostrato il punteggio reale)', 'remarka-studio' ),
 		'section'     => 'remarka_footer_cta',
 		'type'        => 'number',
 		'input_attrs' => array( 'min' => 0, 'max' => 100 ),
@@ -595,7 +599,21 @@ function remarka_cities_for_lang(): array {
 }
 
 function remarka_render_footer(): void {
-	$score   = (int) get_theme_mod( 'remarka_footer_pagespeed_score', 95 );
+	/*
+	 * Punteggio reale (inc/psi-score.php) se già misurato almeno una volta;
+	 * finché il cron non ha ancora salvato remarka_psi_score_auto (prima
+	 * installazione, chiave PSI non ancora inserita) resta il fallback
+	 * manuale del Customizer, come prima del 17.07.2026.
+	 */
+	$psi_auto     = get_option( 'remarka_psi_score_auto', false );
+	$score        = is_array( $psi_auto ) ? (int) $psi_auto['score'] : (int) get_theme_mod( 'remarka_footer_pagespeed_score', 95 );
+	$score_date   = '';
+	if ( is_array( $psi_auto ) && ! empty( $psi_auto['date'] ) ) {
+		$date_obj = DateTime::createFromFormat( 'Y-m-d', $psi_auto['date'] );
+		if ( $date_obj ) {
+			$score_date = $date_obj->format( 'd/m' );
+		}
+	}
 	$company = remarka_company_lang_data();
 	$cities  = remarka_cities_for_lang();
 	?>
@@ -679,7 +697,7 @@ function remarka_render_footer(): void {
 				<div class="sr-barra sr-barra--h4" data-sr-target="<?php echo esc_attr( $score ); ?>%" aria-hidden="true"><div class="sr-barra__fill"></div></div>
 				<div class="sr-footer-bottom__row">
 					<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( $company['name'] ); ?> — <?php echo esc_html( remarka_str( 'footer_diritti' ) ); ?></span>
-					<span class="sr-footer-score"><?php echo esc_html( remarka_str( 'footer_pagespeed' ) ); ?>: <b><?php echo esc_html( $score ); ?></b>/100</span>
+					<span class="sr-footer-score"><?php echo esc_html( remarka_str( 'footer_pagespeed' ) ); ?>: <b><?php echo esc_html( $score ); ?></b>/100<?php if ( $score_date ) : ?> · <?php echo esc_html( remarka_str( 'footer_pagespeed_rilevato' ) ); ?> <?php echo esc_html( $score_date ); ?><?php endif; ?></span>
 				</div>
 			</div>
 		</div>

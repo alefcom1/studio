@@ -228,6 +228,7 @@ function remarka_str( string $key ): string {
 		'footer_dati'      => array( 'it' => 'Dati societari', 'en' => 'Company details', 'ru' => 'Реквизиты' ),
 		'footer_diritti'   => array( 'it' => 'Tutti i diritti riservati', 'en' => 'All rights reserved', 'ru' => 'Все права защищены' ),
 		'footer_pagespeed' => array( 'it' => 'Punteggio PageSpeed medio', 'en' => 'Average PageSpeed score', 'ru' => 'Средний балл PageSpeed' ),
+		'footer_pagespeed_rilevato' => array( 'it' => 'rilevato il', 'en' => 'measured on', 'ru' => 'замерено' ),
 		'footer_tagline'   => array(
 			'it' => 'Siti progressivi per PMI italiane. Parte del gruppo Remarka, nel settore linguistico e digitale dal 2001.',
 			'en' => 'Progressive websites for Italian SMBs. Part of the Remarka group, in language and digital services since 2001.',
