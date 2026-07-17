@@ -65,8 +65,29 @@
 <!-- wp:html -->
 <ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://csa-research.com/Featured-Content/Global-Growth/CRWB-Series/CRWB-B2C" target="_blank" rel="noopener">CSA Research — «Can’t Read, Won’t Buy»</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Классическое исследование: большинство покупателей берут только на своём языке.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites" target="_blank" rel="noopener">Google — мультирегиональные и многоязычные сайты</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Официальный гайд, как строить сайт для нескольких стран и языков.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/specialty/international/localized-versions" target="_blank" rel="noopener">Google — локализованные версии и hreflang</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Как сказать Google, какую языковую версию кому показывать: важная техническая деталь.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=E-commerce_statistics" target="_blank" rel="noopener">Eurostat — статистика электронной торговли</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Вес трансграничной онлайн-торговли в Европе — рынок, который открывает зарубежная версия.</span></li></ul>
 <!-- /wp:html -->
-<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"40px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:40px"><!-- wp:button {"className":"is-style-outline"} -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
+<h2 class="wp-block-heading">Поговорим о вашем сайте<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px">Бесплатный анализ текущего сайта и фиксированная смета в течение 24 часов после звонка.</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"28px"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/ru/#contatti">Смета за 24 часа</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/instrumenty/polnaya-proverka-sajta/">Проверить сайт — бесплатно</a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:buttons {"style":{"spacing":{"blockGap":"14px"}},"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/blog/">← Все статьи</a></div>
 <!-- /wp:button -->
 </div>

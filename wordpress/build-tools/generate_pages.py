@@ -238,7 +238,7 @@ def build_servizio(svc):
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
                  analyze_cta_button(svc['slug'])],
                 justify='center', margin_top='28px'),
-        classes='sr-section sr-dark',
+        classes='sr-section sr-cta-band',
     )
 
     body = hero + per_chi + include + mini_caso + prezzo + faq + cta
@@ -339,7 +339,7 @@ def build_casi_studio_index():
             ('Richiedi un preventivo in 24 ore', '/#contatti', None),
             ('Guarda tutti i servizi', '/servizi/', 'outline'),
         ], justify='center', margin_top='28px'),
-        classes='sr-section sr-dark',
+        classes='sr-section sr-cta-band',
     )
     write('casi-studio-index', 'Pagina — Casi studio (elenco)',
           'Catalogo degli 11 casi studio reali del gruppo Remarka, con filtro per tipo di lavoro e link ai progetti vivi.',
@@ -453,7 +453,7 @@ def build_prezzi():
         paragraph('Descriveteci il progetto: ricevete prezzo e data di consegna, entrambi vincolanti.',
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo dettagliato', '/#contatti', None)], justify='center', margin_top='28px'),
-        classes='sr-section sr-dark',
+        classes='sr-section sr-cta-band',
     )
     write('prezzi', 'Pagina — Prezzi (completa)',
           'Pagina prezzi con tabella comparativa completa (min-width 840px, scroll orizzontale su mobile).',
@@ -512,9 +512,23 @@ def build_strumenti_index():
 
     grid = section(group(''.join(cards), classes='', layout_type='grid', style='240px'),
                     classes='sr-section sr-section--bianco')
+
+    # CTA di chiusura (owner 17.07.2026 — unificazione banner: l'indice non
+    # aveva mai una banda di contenuto, solo la .sr-footer-cta del footer;
+    # rimossa quella, restava zero). Stesso testo/stile riusato dalle pagine
+    # servizio/città/strumento (sr-cta-band), non un banner nuovo inventato.
+    cta = section(
+        heading(2, 'Parliamo del vostro sito', style=None) +
+        paragraph('Analisi gratuita del sito attuale, preventivo chiuso entro 24 ore dalla chiamata.',
+                   color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
+                 analyze_cta_button()],
+                justify='center', margin_top='28px'),
+        classes='sr-section sr-cta-band',
+    )
     write('strumenti-index', 'Pagina — Strumenti (elenco)',
           'Elenco degli strumenti gratuiti, con il check-up completo in evidenza.',
-          hero + featured + ai_intro + grid)
+          hero + featured + ai_intro + grid + cta)
 
 
 # Markup del widget per tipo di strumento — segue STRETTAMENTE il contratto
@@ -1200,7 +1214,7 @@ def build_tool(tool):
         heading(2, cta_heading.rstrip('?.'), dot_char=cta_dot) +
         paragraph(cta_data['testo'], color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons(cta_data['buttons'], justify='center', margin_top='28px'),
-        classes='sr-section sr-dark',
+        classes='sr-section sr-cta-band',
     )
 
     altri = [t for t in TOOLS if t['slug'] != tool['slug']]
@@ -1364,7 +1378,7 @@ def build_city(c):
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
                  ('WhatsApp Business', 'https://wa.me/390000000000', 'whatsapp')], justify='center', margin_top='28px'),
-        classes='sr-section sr-dark',
+        classes='sr-section sr-cta-band',
     )
     write(f'citta-{c["slug"]}', f'Pagina — Città: {c["nome"]}',
           f'Landing locale «realizzazione siti web {c["nome"].lower()}»: servizi, caso, prezzi, recensioni, FAQ.',
@@ -1508,7 +1522,7 @@ def build_city_flagship(c):
         paragraph(c['cta_testo'], color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
                  ('WhatsApp Business', 'https://wa.me/390000000000', 'whatsapp')], justify='center', margin_top='28px'),
-        classes='sr-section sr-dark',
+        classes='sr-section sr-cta-band',
     )
     # Descrizione onesta: le città con ufficio (Roma/Torino) restano invariate;
     # quelle senza ufficio non devono dichiararne uno (byte-identici per Roma/Torino).
@@ -1603,7 +1617,7 @@ def build_dove_lavoriamo():
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
                  ('WhatsApp Business', 'https://wa.me/390000000000', 'whatsapp')], justify='center', margin_top='28px'),
-        classes='sr-section sr-dark',
+        classes='sr-section sr-cta-band',
     )
 
     write('dove-lavoriamo', 'Pagina — Dove lavoriamo',
@@ -1672,7 +1686,7 @@ def build_export_ready():
         paragraph('Analisi gratuita del sito attuale e del mercato target. Preventivo chiuso entro 24 ore.',
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None)], justify='center', margin_top='28px'),
-        classes='sr-section sr-dark',
+        classes='sr-section sr-cta-band',
     )
     write('servizio-export-ready', 'Pagina — Servizio: Export Ready',
           'Flagship: sito + versione estera sotto un unico contratto, localizzazione da madrelingua, KPI per mercato.',
@@ -1728,7 +1742,7 @@ def build_web_app():
         paragraph('Analisi gratuita e un preventivo chiuso: perimetro, prezzo e data, tutti e tre nel contratto.',
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None)], justify='center', margin_top='28px'),
-        classes='sr-section sr-dark',
+        classes='sr-section sr-cta-band',
     )
     write('servizio-web-app', 'Pagina — Servizio: Web app su misura',
           'Linea Prodotti digitali: web app, aree clienti, configuratori. MVP Sprint e Product Build.',
@@ -1813,7 +1827,7 @@ def build_adeguamento_eaa():
         heading(2, e['cta']['heading']) +
         paragraph(e['cta']['testo'], color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons(e['cta']['buttons'], justify='center', margin_top='28px'),
-        classes='sr-section sr-dark',
+        classes='sr-section sr-cta-band',
     )
     write('servizio-adeguamento-eaa', 'Pagina — Servizio: Adeguamento EAA',
           'Servizio conformità European Accessibility Act: audit, correzioni, dichiarazione di accessibilità e verifica finale WCAG 2.1 AA.',
@@ -2008,11 +2022,28 @@ def build_blog_post(p):
         label, url = p['cta']
         inner += raw_html(f'<p class="sr-card-link" style="margin-top:32px"><a href="{url}">{label} →</a></p>')
 
-    body = section(
-        inner + buttons([('← Tutti gli articoli', '/blog/', 'outline')], margin_top='40px'),
+    body = section(inner, classes='sr-section')
+
+    # CTA di chiusura (owner 17.07.2026 — unificazione banner: prima gli
+    # articoli non avevano NESSUNA banda di contenuto, solo la .sr-footer-cta
+    # del footer; rimossa quella, restava zero. Stesso testo/stile della CTA
+    # servizi/città/strumenti (sr-cta-band), non un secondo banner diverso.
+    cta = section(
+        heading(2, 'Parliamo del vostro sito', style=None) +
+        paragraph('Analisi gratuita del sito attuale, preventivo chiuso entro 24 ore dalla chiamata.',
+                   color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
+                 analyze_cta_button()],
+                justify='center', margin_top='28px'),
+        classes='sr-section sr-cta-band',
+    )
+
+    torna = section(
+        buttons([('← Tutti gli articoli', '/blog/', 'outline')], justify='center'),
         classes='sr-section',
     )
-    write(f'blog-{p["slug"]}', f'Pagina — Articolo: {p["titolo"]}', f'Articolo blog: {p["titolo"]}', hero + body)
+    write(f'blog-{p["slug"]}', f'Pagina — Articolo: {p["titolo"]}', f'Articolo blog: {p["titolo"]}',
+          hero + body + cta + torna)
 
 
 # Mesi abbreviati italiani (campo `data` di BLOG_POSTS) → numero, per ISO 8601.

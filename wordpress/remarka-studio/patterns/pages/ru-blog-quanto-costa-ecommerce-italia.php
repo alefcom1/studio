@@ -77,8 +77,29 @@
 <!-- wp:html -->
 <ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://almanac.httparchive.org/en/2024/" target="_blank" rel="noopener">HTTP Archive — Web Almanac 2024</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Реальные данные о весе, технологиях и производительности сайтов, включая интернет-магазины.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=E-commerce_statistics" target="_blank" rel="noopener">Eurostat — статистика электронной торговли</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Сколько Европа продаёт онлайн: рыночный контекст за цифрами магазина.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev — Web Vitals</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Мобильная скорость, которую мы защищаем договором и которая влияет на продажи.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en" target="_blank" rel="noopener">AccessibleEU — Еврокомиссия</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">С 2025 года доступность — обязательный расход и для интернет-магазина: его нужно закладывать в смету.</span></li></ul>
 <!-- /wp:html -->
-<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"40px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:40px"><!-- wp:button {"className":"is-style-outline"} -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
+<h2 class="wp-block-heading">Поговорим о вашем сайте<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px">Бесплатный анализ текущего сайта и фиксированная смета в течение 24 часов после звонка.</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"28px"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/ru/#contatti">Смета за 24 часа</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/instrumenty/polnaya-proverka-sajta/">Проверить сайт — бесплатно</a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:buttons {"style":{"spacing":{"blockGap":"14px"}},"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/blog/">← Все статьи</a></div>
 <!-- /wp:button -->
 </div>

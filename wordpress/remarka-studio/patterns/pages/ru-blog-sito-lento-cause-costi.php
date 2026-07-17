@@ -74,8 +74,29 @@
 <!-- wp:html -->
 <ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev — Web Vitals</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Метрики, которыми Google измеряет воспринимаемую скорость страницы.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/lcp" target="_blank" rel="noopener">web.dev — Largest Contentful Paint (LCP)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Что такое LCP и почему изображения и хостинг влияют на него сильнее всего.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://almanac.httparchive.org/en/2024/" target="_blank" rel="noopener">HTTP Archive — Web Almanac 2024</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Сводные данные о весе страниц: где на самом деле сосредоточена медлительность веба.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://sustainablewebdesign.org/estimating-digital-emissions/" target="_blank" rel="noopener">Sustainable Web Design — оценка выбросов</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Модель, по которой вес страницы превращается в углеродный след.</span></li></ul>
 <!-- /wp:html -->
-<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"40px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:40px"><!-- wp:button {"className":"is-style-outline"} -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
+<h2 class="wp-block-heading">Поговорим о вашем сайте<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px">Бесплатный анализ текущего сайта и фиксированная смета в течение 24 часов после звонка.</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"28px"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/ru/#contatti">Смета за 24 часа</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/instrumenty/polnaya-proverka-sajta/">Проверить сайт — бесплатно</a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:buttons {"style":{"spacing":{"blockGap":"14px"}},"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/blog/">← Все статьи</a></div>
 <!-- /wp:button -->
 </div>

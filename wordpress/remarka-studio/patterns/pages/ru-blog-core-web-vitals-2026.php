@@ -71,8 +71,29 @@
 <!-- wp:html -->
 <ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev — Web Vitals</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Страница Google, которая вводит и определяет Core Web Vitals.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/lcp" target="_blank" rel="noopener">web.dev — Largest Contentful Paint (LCP)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Метрика загрузки: хороший порог — меньше 2,5 секунды.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/inp" target="_blank" rel="noopener">web.dev — Interaction to Next Paint (INP)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Метрика отзывчивости, с 2024 года заменившая прежний FID.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/cls" target="_blank" rel="noopener">web.dev — Cumulative Layout Shift (CLS)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Метрика визуальной стабильности: хороший порог — меньше 0,1.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developer.chrome.com/docs/crux" target="_blank" rel="noopener">Chrome UX Report (CrUX)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Полевые данные о реальных пользователях, которые Google и использует для ранжирования.</span></li></ul>
 <!-- /wp:html -->
-<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"40px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:40px"><!-- wp:button {"className":"is-style-outline"} -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
+<h2 class="wp-block-heading">Поговорим о вашем сайте<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px">Бесплатный анализ текущего сайта и фиксированная смета в течение 24 часов после звонка.</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"28px"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/ru/#contatti">Смета за 24 часа</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/instrumenty/polnaya-proverka-sajta/">Проверить сайт — бесплатно</a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:buttons {"style":{"spacing":{"blockGap":"14px"}},"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/blog/">← Все статьи</a></div>
 <!-- /wp:button -->
 </div>

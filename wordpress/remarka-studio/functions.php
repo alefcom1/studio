@@ -389,6 +389,11 @@ function remarka_footer_field_defs(): array {
 		'remarka_company_email'         => array( 'section' => 'remarka_contatti', 'label' => 'Email di contatto', 'type' => 'email', 'default' => 'info@remarka.biz' ),
 		'remarka_company_phone'         => array( 'section' => 'remarka_contatti', 'label' => 'Telefono/WhatsApp', 'type' => 'text', 'default' => '+39 347 83 11141' ),
 		'remarka_footer_tagline'        => array( 'section' => 'remarka_footer_cta', 'label' => 'Descrizione breve sotto il logo', 'type' => 'textarea', 'default' => 'Siti progressivi per PMI italiane. Parte del gruppo Remarka, nel settore linguistico e digitale dal 2001.' ),
+		// I 6 campi cta_* sotto NON sono più letti da remarka_render_footer()
+		// (banda .sr-footer-cta rimossa il 17.07.2026, duplicava .sr-cta-band
+		// nel contenuto). Restano qui — e i loro controlli restano nel
+		// Customizer — solo per non perdere valori già salvati da chi li
+		// avesse personalizzati; non cancellare senza decisione del titolare.
 		'remarka_footer_cta_heading'    => array( 'section' => 'remarka_footer_cta', 'label' => 'Titolo banner', 'type' => 'text', 'default' => 'Parliamo del vostro sito' ),
 		'remarka_footer_cta_text'       => array( 'section' => 'remarka_footer_cta', 'label' => 'Sottotitolo banner', 'type' => 'textarea', 'default' => 'Analisi gratuita del sito attuale, preventivo chiuso entro 24 ore dalla chiamata.' ),
 		'remarka_footer_cta_btn1_label' => array( 'section' => 'remarka_footer_cta', 'label' => 'Testo pulsante 1', 'type' => 'text', 'default' => 'Richiedi preventivo in 24 ore' ),
@@ -500,12 +505,6 @@ add_action( 'customize_register', 'remarka_customize_register' );
  * abbiamo il sorgente completo. Testi e link vengono da Customizer; le due
  * colonne di link sono normali menu WordPress (Aspetto → Menu).
  */
-/** Accetta sia percorsi relativi ("/#contatti") sia URL esterni completi. */
-function remarka_footer_link_url( string $theme_mod_key, string $default ): string {
-	$value = get_theme_mod( $theme_mod_key, $default );
-	return preg_match( '#^https?://#i', $value ) ? $value : home_url( $value );
-}
-
 /**
  * Dati societari per lingua: in IT vengono da Customizer (li modifica il
  * titolare), in EN/RU sono fissi — stessa scelta già fatta per i testi del
@@ -584,19 +583,19 @@ function remarka_render_footer(): void {
 	$cities  = remarka_cities_for_lang();
 	?>
 	<footer class="sr-footer">
-		<div class="sr-footer-cta">
-			<div class="sr-footer-cta__inner">
-				<div>
-					<h2 class="sr-footer-cta__heading"><?php echo esc_html( remarka_footer_text( 'remarka_footer_cta_heading', 'cta_heading' ) ); ?><span class="sr-accent-dot">.</span></h2>
-					<p class="sr-footer-cta__text"><?php echo esc_html( remarka_footer_text( 'remarka_footer_cta_text', 'cta_text' ) ); ?></p>
-				</div>
-				<div class="sr-footer-cta__buttons">
-					<a class="sr-footer-cta__btn sr-footer-cta__btn--primary" href="<?php echo esc_url( remarka_footer_link_url( 'remarka_footer_cta_btn1_url', '/#contatti' ) ); ?>"><?php echo esc_html( remarka_footer_text( 'remarka_footer_cta_btn1_label', 'cta_btn1' ) ); ?></a>
-					<a class="sr-footer-cta__btn sr-footer-cta__btn--outline" href="<?php echo esc_url( remarka_footer_link_url( 'remarka_footer_cta_btn2_url', '/' ) ); ?>"><?php echo esc_html( remarka_footer_text( 'remarka_footer_cta_btn2_label', 'cta_btn2' ) ); ?></a>
-				</div>
-			</div>
-		</div>
-
+		<?php
+		/**
+		 * Banda .sr-footer-cta RIMOSSA (owner 17.07.2026 — unificazione banner):
+		 * duplicava, subito sopra nel contenuto della pagina, il banner
+		 * .sr-cta-band generato da build-tools/generate_pages.py (stesso testo
+		 * di default: "Parliamo del vostro sito" — vedi i default dei campi
+		 * cta_* qui sotto). Ora il banner di contenuto è l'unico, il footer
+		 * nero lo segue subito senza polosa blu. I campi Customizer
+		 * remarka_footer_cta_* restano in remarka_footer_field_defs() sotto:
+		 * non li cancelliamo per non perdere valori salvati da chi li avesse
+		 * già personalizzati, semplicemente non li leggiamo più qui.
+		 */
+		?>
 		<div class="sr-footer-main">
 			<div class="sr-footer-main__inner">
 				<div class="sr-footer-col sr-footer-col--brand">

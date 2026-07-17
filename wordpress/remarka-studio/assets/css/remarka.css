@@ -258,6 +258,44 @@ body.dark-mode .site-description {
   color: #9BA3C4;
 }
 
+/* Banda CTA di contenuto — oltremare, non inchiostro (unificazione banner,
+   owner 17.07.2026: la vecchia banda "Parliamo del vostro sito" era
+   .sr-dark e duplicava, un blocco più sotto nella stessa pagina, la
+   .sr-footer-cta del footer — stesso testo, due grafiche diverse. Ora
+   .sr-cta-band è l'UNICO banner di contenuto, sempre seguito dal footer
+   nero senza polosa. Colori/pulsanti ripresi 1:1 dal vecchio
+   .sr-footer-cta (era il campione approvato dal titolare), non da .sr-dark:
+   su un fondo oltremare — non inchiostro quasi nero — serve più opacità
+   sul testo e pulsanti invertiti in carta, non nella tinta chiara
+   oltremare-chiaro che qui sparirebbe per mancanza di contrasto. */
+.sr-cta-band {
+  background: var(--sr-oltremare);
+  color: rgba(247, 246, 242, 0.85);
+  border-bottom: none;
+}
+
+.sr-cta-band h1, .sr-cta-band h2, .sr-cta-band h3 {
+  color: var(--sr-carta);
+}
+
+.sr-cta-band .sr-accent-dot {
+  color: var(--sr-carta);
+}
+
+.sr-cta-band .sr-eyebrow,
+.sr-cta-band .is-style-sr-eyebrow {
+  color: rgba(247, 246, 242, 0.75);
+}
+
+/* Il paragrafo del banner ha classe has-grigio-color (colore di default del
+   builder, pensato per sfondi chiari): la utility-class di WP core la
+   applica con !important, quindi vince sempre sul colore ereditato da
+   .sr-cta-band sopra — serve un override altrettanto !important, altrimenti
+   il testo resta grigio scuro (#5A5E66) su oltremare, illeggibile. */
+.sr-cta-band .has-grigio-color {
+  color: rgba(247, 246, 242, 0.85) !important;
+}
+
 /* Titolo automatico di Prespa (.entry-title, template pagina): ogni nostra
    pagina ha già il proprio H1 nel contenuto (pattern hero-home/hero-interno),
    quindi il titolo del tema sopra è sempre un doppione — visibile soprattutto
@@ -552,6 +590,34 @@ body.page .entry-title {
 .sr-dark .wp-block-button__link,
 .is-style-sr-dark .wp-block-button__link {
   background: var(--sr-oltremare-chiaro);
+}
+
+/* Pulsanti invertiti sulla banda CTA (stessi valori del vecchio
+   .sr-footer-cta__btn--primary/--outline, il campione approvato dal
+   titolare). Il bottone core di default è già oltremare-su-carta
+   (theme.json colorCategory "button"): su uno sfondo oltremare sparirebbe,
+   va invertito — carta piena per il primario, contorno carta per
+   l'outline. */
+.sr-cta-band .wp-block-button__link {
+  background: var(--sr-carta);
+  color: var(--sr-oltremare);
+}
+
+.sr-cta-band .wp-block-button__link:hover {
+  background: #ffffff;
+  color: var(--sr-oltremare);
+}
+
+.sr-cta-band .is-style-outline .wp-block-button__link {
+  background: transparent;
+  color: var(--sr-carta);
+  border-color: rgba(247, 246, 242, 0.6);
+}
+
+.sr-cta-band .is-style-outline .wp-block-button__link:hover {
+  border-color: var(--sr-carta);
+  background: rgba(247, 246, 242, 0.12);
+  color: var(--sr-carta);
 }
 
 .sr-btn-whatsapp .wp-block-button__link,
@@ -2615,80 +2681,14 @@ body.page .entry-title {
   color: rgba(247, 246, 242, 0.7);
 }
 
-/* CTA-полоса отделена от чёрного футера фирменным oltremare (замечание
-   владельца 17.07: на inchiostro блок сливался с футером в одну простыню).
-   Кнопки инвертированы под синий фон — см. --primary/--outline ниже. */
-.sr-footer-cta {
-  background: var(--sr-oltremare);
-}
-
-.sr-footer-cta__text {
-  color: rgba(247, 246, 242, 0.85);
-}
-
-.sr-footer-cta__inner {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: clamp(48px, 6vw, 80px) 24px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.sr-footer-cta__heading {
-  color: var(--sr-carta);
-  font-size: clamp(28px, 3.6vw, 42px);
-  margin: 0;
-}
-
-.sr-footer-cta__heading .sr-accent-dot {
-  color: var(--sr-carta);
-}
-
-.sr-footer-cta__text {
-  margin: 12px 0 0;
-  max-width: 46ch;
-}
-
-.sr-footer-cta__buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.sr-footer-cta__btn {
-  display: inline-block;
-  padding: 14px 26px;
-  border-radius: var(--sr-radius);
-  font-weight: 500;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-/* Селекторы с .sr-footer впереди: правило `.sr-footer a` ниже по файлу
-   специфичнее одиночного класса и перекрашивало текст кнопок. */
-.sr-footer .sr-footer-cta__btn--primary {
-  background: var(--sr-carta);
-  color: var(--sr-oltremare);
-}
-
-.sr-footer .sr-footer-cta__btn--primary:hover {
-  background: #ffffff;
-  color: var(--sr-oltremare);
-}
-
-.sr-footer .sr-footer-cta__btn--outline {
-  border: 1px solid rgba(247, 246, 242, 0.6);
-  color: var(--sr-carta);
-}
-
-.sr-footer .sr-footer-cta__btn--outline:hover {
-  border-color: var(--sr-carta);
-  background: rgba(247, 246, 242, 0.12);
-  color: var(--sr-carta);
-}
+/* .sr-footer-cta (banda blu dentro il footer) è stata rimossa dal markup
+   di remarka_render_footer (functions.php, 17.07.2026 — unificazione
+   banner): duplicava, subito sopra nella stessa pagina, il nuovo banner di
+   contenuto .sr-cta-band (vedi più sopra in questo file). Le regole CSS
+   dedicate sono state tolte con lei — i valori utili (fondo oltremare,
+   pulsanti invertiti) sono confluiti in .sr-cta-band. I campi Customizer
+   cta_* restano in remarka_footer_field_defs() per non perdere le
+   impostazioni salvate, semplicemente non più letti in output. */
 
 .sr-footer-main__inner {
   max-width: 1240px;
