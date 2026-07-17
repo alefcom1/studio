@@ -165,7 +165,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/ru/#contatti">Смета за 24 часа</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/instrumenty/test-skorosti/">Проверить сайт — бесплатно</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/instrumenty/seo-audit/">SEO-анализ — бесплатно</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

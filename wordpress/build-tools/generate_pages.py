@@ -70,6 +70,26 @@ SERVICE_TOOL_LINKS = {
 }
 
 
+# Bottone "Analizza il tuo sito" di hero/CTA scuro (owner 17.07.2026: bottone
+# contestuale, non più un unico link a test-velocità). Default: check-up
+# completo. Contestuale solo dove esiste già uno strumento gratuito che
+# risponde esattamente al servizio (non si inventano temi AI: nessuna pagina
+# fuori da /strumenti/ ne parla oggi).
+ANALYZE_CTA_DEFAULT = ('Analizza il tuo sito — gratis', '/strumenti/check-up-completo/')
+ANALYZE_CTA_BY_SERVICE = {
+    'siti-pwa':         ('Misura la velocità — gratis', '/strumenti/test-velocita/'),
+    'seo-tecnica':      ('Analisi SEO — gratis', '/strumenti/analisi-seo/'),
+    'siti-multilingue': ('Analisi SEO — gratis', '/strumenti/analisi-seo/'),
+}
+
+
+def analyze_cta_button(slug=None):
+    """Ritorna la tripla (label, href, style) per il bottone "outline" di
+    hero/CTA scuro. Un solo posto da aggiornare per default e contesti."""
+    label, href = ANALYZE_CTA_BY_SERVICE.get(slug, ANALYZE_CTA_DEFAULT)
+    return (label, href, 'outline')
+
+
 # Prezzo lancio (owner 15.07.2026): −50% sui primi 5 progetti, solo sui tre
 # prodotti "a scatola chiusa" (sito vetrina — solo nella tabella /prezzi/,
 # non ha una pagina servizio propria — sito aziendale, e-commerce). Il testo
@@ -216,7 +236,7 @@ def build_servizio(svc):
         paragraph('Analisi gratuita del sito attuale, preventivo chiuso entro 24 ore dalla chiamata.',
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
-                 ('Analizza il tuo sito — gratis', '/strumenti/test-velocita/', 'outline')],
+                 analyze_cta_button(svc['slug'])],
                 justify='center', margin_top='28px'),
         classes='sr-section sr-dark',
     )
@@ -1251,7 +1271,7 @@ def build_city(c):
         eyebrow(c['eyebrow']) + heading(1, f'Realizzazione siti web a {c["nome"]}', style='clamp(38px,4.6vw,64px)') +
         paragraph(c['sub'], color='grigio', size='medium') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
-                 ('Analizza il tuo sito — gratis', '/strumenti/test-velocita/', 'outline')], margin_top='28px') +
+                 analyze_cta_button()], margin_top='28px') +
         stat_block(str(c['progetti']), f'progetti consegnati a {c["nome"]} e provincia dal {c["dal"]}', '', counter=True),
         classes='sr-section sr-hero',
     )
@@ -1364,7 +1384,7 @@ def build_city_flagship(c):
         eyebrow(c['eyebrow']) + heading(1, f'Realizzazione siti web a {c["nome"]}', style='clamp(38px,4.6vw,64px)') +
         paragraph(c['sub'], color='grigio', size='medium') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
-                 ('Analizza il tuo sito — gratis', '/strumenti/test-velocita/', 'outline')], margin_top='28px') +
+                 analyze_cta_button()], margin_top='28px') +
         stat_block(str(c['progetti']), c['stat_label'], '', counter=True),
         classes='sr-section sr-hero',
     )

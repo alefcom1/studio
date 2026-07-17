@@ -163,7 +163,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/en/#contatti">Get a quote in 24 hours</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/en/tools/speed-test/">Test your website — free</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/en/tools/seo-audit/">SEO analysis — free</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

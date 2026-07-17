@@ -163,7 +163,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi preventivo in 24 ore</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/strumenti/test-velocita/">Analizza il tuo sito — gratis</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/strumenti/test-velocita/">Misura la velocità — gratis</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

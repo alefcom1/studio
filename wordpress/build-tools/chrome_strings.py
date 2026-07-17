@@ -145,6 +145,7 @@ CHROME = {
         'en': 'A free analysis and a fixed quote: scope, price and date — all three in the contract.',
         'ru': 'Бесплатный анализ и фиксированная смета: объём, цена и срок — все три пункта в договоре.',
     },
+    'Analisi SEO — gratis': {'en': 'SEO analysis — free', 'ru': 'SEO-анализ — бесплатно'},
     'Analizza il tuo sito — gratis': {'en': 'Test your website — free', 'ru': 'Проверить сайт — бесплатно'},
     'Aree clienti, configuratori, portali B2B e integrazioni: quando un sito non basta.': {
         'en': 'Client areas, product configurators, B2B portals and integrations: for when a website isn’t enough.',
@@ -201,6 +202,7 @@ CHROME = {
         'en': 'Measure your website now — free test →',
         'ru': 'Измерьте свой сайт сейчас — бесплатный тест →',
     },
+    'Misura la velocità — gratis': {'en': 'Measure your speed — free', 'ru': 'Измерить скорость — бесплатно'},
     'Niente marketing travestito da articolo: solo quello che impariamo consegnando siti veloci.': {
         'en': 'No marketing dressed up as articles: only what we learn shipping fast websites.',
         'ru': 'Никакого маркетинга под видом статей: только то, чему мы учимся, сдавая быстрые сайты.',
