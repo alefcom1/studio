@@ -97,16 +97,13 @@ cab.remarka.biz {
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
-# WordPress remarka.biz (миграция с РФ-хостинга — docs/migrazione-wp-hetzner.md)
-#
-# Стейджинг-хост new.remarka.biz активен сразу (для проверки ДО переключения
-# DNS). Боевые хосты remarka.biz/www закомментированы: Caddy не должен
-# долбиться в Let's Encrypt за сертификатом, пока A-запись remarka.biz ещё
-# указывает на старый хостинг. РАСКОММЕНТИРОВАТЬ на этапе cutover (фаза 5
-# раннбука) и перезапустить caddy.
+# WordPress remarka.biz — БОЕВОЙ (cutover выполнен 17.07.2026,
+# docs/migrazione-wp-hetzner.md). Стейджинг-блок new.remarka.biz удалён:
+# миграция шла сразу на боевой домен, A-записи new.* не существует, и блок
+# лишь заставлял Caddy бесконечно ретраить ACME-челлендж.
 # ─────────────────────────────────────────────────────────────────────────────
 
-new.remarka.biz {
+remarka.biz {
 	reverse_proxy wordpress:80
 
 	log {
@@ -115,16 +112,6 @@ new.remarka.biz {
 	}
 }
 
-# ── CUTOVER: раскомментировать блок ниже при переключении DNS (фаза 5) ──────
-# remarka.biz {
-# 	reverse_proxy wordpress:80
-#
-# 	log {
-# 		output stdout
-# 		format console
-# 	}
-# }
-#
-# www.remarka.biz {
-# 	redir https://remarka.biz{uri} permanent
-# }
+www.remarka.biz {
+	redir https://remarka.biz{uri} permanent
+}
