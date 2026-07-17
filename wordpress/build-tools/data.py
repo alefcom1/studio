@@ -1928,7 +1928,7 @@ BLOG_POSTS = [
                   links=[('Google — la galleria dei risultati ricchi', _S_GOOGLE_SD_GALLERY)]),
              dict(titolo='Come aggiungerli senza rifare il sito',
                   paragrafi=[
-                      "Una regola d’oro sopra tutte, ed è anche una regola di Google: i dati strutturati devono corrispondere a ciò che l’utente vede sulla pagina. Etichettare recensioni che non esistono, prezzi finti o orari sbagliati non è furbizia, è una violazione delle linee guida che può portare a una penalizzazione manuale. La microdati premia l’onestà, non i trucchi.",
+                      "Una regola d’oro sopra tutte, ed è anche una regola di Google: i dati strutturati devono corrispondere a ciò che l’utente vede sulla pagina. Etichettare recensioni che non esistono, prezzi finti o orari sbagliati non è furbizia, è una violazione delle linee guida che può portare a una penalizzazione manuale. Il markup premia l’onestà, non i trucchi.",
                       "La buona notizia è che i dati strutturati si aggiungono sopra il sito che avete, senza rifarlo. Sono un blocco JSON-LD nel codice della pagina: su WordPress lo si genera con un plugin SEO ben configurato o, meglio, con markup su misura che riflette davvero i vostri contenuti. Prima di pubblicare si prova: lo strumento gratuito di Google (il Rich Results Test) legge la pagina e vi dice quali risultati ricchi può generare e dove ci sono errori. È un controllo di mezz’ora che evita di scoprire il problema quando ormai è online. I dati strutturati sono parte della SEO tecnica che consegniamo di serie — non un extra da vedere «più avanti».",
                   ],
                   links=[('Fanno parte della SEO tecnica che consegniamo', '/servizi/seo-tecnica/'),
