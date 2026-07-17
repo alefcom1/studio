@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Hosting in Italia o in cloud">
+  <defs>
+    <pattern id="gridHc" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/></pattern>
+    <style>.mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}.disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}.body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}</style>
+  </defs>
+  <rect width="1200" height="630" fill="#F7F6F2"/>
+  <rect width="1200" height="630" fill="url(#gridHc)"/>
+  <line x1="80" y1="96" x2="1120" y2="96" stroke="#14161A" stroke-width="1.5"/>
+  <text x="80" y="82" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">REMARKA · STUDIO — BLOG</text>
+  <text x="1120" y="82" class="mono" font-size="15" letter-spacing="2" fill="#2440C8" text-anchor="end">VELOCITÀ · GDPR</text>
+  <text x="80" y="256" class="disp" font-size="104" letter-spacing="1" fill="#14161A">HOSTING</text>
+  <text x="84" y="318" class="body" font-size="34" font-weight="600" fill="#14161A">in Italia o in cloud: dove vive il vostro sito conta</text>
+  <text x="84" y="362" class="mono" font-size="20" fill="#5A5E66">la distanza cambia la velocità · il Paese cambia il GDPR</text>
+  <g transform="translate(80,410)">
+    <rect x="0" y="0" width="500" height="158" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+    <text x="24" y="42" class="mono" font-size="14" fill="#5A5E66">VICINO — ITALIA / UE</text>
+    <g class="mono" font-size="15" fill="#14161A"><text x="24" y="82">▸ tempo di risposta basso</text><text x="24" y="114">▸ dati dentro l'Unione</text><text x="24" y="146">▸ nessun trasferimento da gestire</text></g>
+  </g>
+  <g transform="translate(620,410)">
+    <rect x="0" y="0" width="500" height="158" fill="#14161A"/>
+    <rect x="0" y="0" width="500" height="8" fill="#2440C8"/>
+    <text x="24" y="44" class="mono" font-size="14" fill="#9AA0AA">LONTANO — EXTRA-UE</text>
+    <g class="mono" font-size="15" fill="#F7F6F2"><text x="24" y="84">▸ più latenza (serve una CDN)</text><text x="24" y="116">▸ dati fuori dall'Unione</text><text x="24" y="148">▸ misure supplementari GDPR</text></g>
+  </g>
+</svg>

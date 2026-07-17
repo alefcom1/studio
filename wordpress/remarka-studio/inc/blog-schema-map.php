@@ -5,7 +5,7 @@
  * обложка, для JSON-LD BlogPosting (см. remarka_blog_posting_schema).
  */
 return array(
-	'_modified' => '2026-07-16',
+	'_modified' => '2026-07-17',
 	'posts' => array(
 		'sito-quattro-lingue-costi-tempi' => array( 'date' => '2026-05-05', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg' ),
 		'website-four-languages-costs' => array( 'date' => '2026-05-05', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg' ),
@@ -49,5 +49,15 @@ return array(
 		'website-environmental-impact' => array( 'date' => '2026-07-16', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/impatto-cover.svg' ),
 		'dichiarazione-di-accessibilita-guida-2026' => array( 'date' => '2026-07-16', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/dichiarazione-cover.svg' ),
 		'accessibility-statement-guide-2026' => array( 'date' => '2026-07-16', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/dichiarazione-cover.svg' ),
+		'telegram-mini-app-business' => array( 'date' => '2026-07-17', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/tgminiapp-cover.svg' ),
+		'telegram-mini-app-for-business' => array( 'date' => '2026-07-17', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/tgminiapp-cover.svg' ),
+		'gestionale-su-misura-vs-excel' => array( 'date' => '2026-07-17', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/gestionale-cover.svg' ),
+		'custom-management-software-vs-excel' => array( 'date' => '2026-07-17', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/gestionale-cover.svg' ),
+		'dati-strutturati-schema-org' => array( 'date' => '2026-07-17', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/schema-cover.svg' ),
+		'schema-org-structured-data-for-smes' => array( 'date' => '2026-07-17', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/schema-cover.svg' ),
+		'gamification-b2b' => array( 'date' => '2026-07-17', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/gamification-cover.svg' ),
+		'gamification-in-b2b' => array( 'date' => '2026-07-17', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/gamification-cover.svg' ),
+		'hosting-sito-web-italia' => array( 'date' => '2026-07-17', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/hosting-cover.svg' ),
+		'website-hosting-italy-vs-cloud' => array( 'date' => '2026-07-17', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/hosting-cover.svg' ),
 	),
 );

@@ -498,6 +498,7 @@ TOOLS = [
              links=[
                  ('Vogliamo intervenire noi: scopri il restyling tecnico', '/servizi/restyling-migrazione/'),
                  ('Approfondisci: le 7 cause reali di un sito lento', '/blog/sito-lento-cause-costi/'),
+                 ('Guida: hosting in Italia o in cloud, cosa cambia per velocità e GDPR', '/blog/hosting-sito-web-italia/'),
              ]),
          cta=dict(heading='Vogliamo sistemare noi questi problemi?',
                   testo='Report gratuito con le cause, le priorità e un preventivo chiuso: PageSpeed 90+ garantito da contratto.',
@@ -779,6 +780,7 @@ TOOLS = [
                  ('Vogliamo sistemarli noi: fa parte della SEO tecnica', '/servizi/seo-tecnica/'),
                  ('Chi siamo, contatti e dati strutturati sono di serie nei siti aziendali', '/servizi/siti-aziendali/'),
                  ('Controllate anche la SEO on-page della pagina', '/strumenti/analisi-seo/'),
+                 ('Guida: i dati strutturati schema.org che Google premia', '/blog/dati-strutturati-schema-org/'),
              ]),
          cta=dict(heading='Vogliamo rafforzare la fiducia del vostro sito?',
                   testo='Chi siamo, contatti verificabili, identità legale e dati strutturati a posto: fanno parte della SEO tecnica e di ogni sito aziendale che consegniamo.',
@@ -1137,6 +1139,24 @@ _S_SDI           = 'https://www.agenziaentrate.gov.it/portale/aree-tematiche/fat
 _S_CSRD          = 'https://eur-lex.europa.eu/eli/dir/2022/2464/oj'
 _S_CO2JS         = 'https://www.thegreenwebfoundation.org/co2-js/'
 _S_WAI_STATEMENT = 'https://www.w3.org/WAI/planning/statements/'
+# --- Batch 3 (fonti verificate 17.07 via WebSearch): Telegram Mini Apps,
+#     EuSpRIG (rischi dei fogli di calcolo), schema.org + galleria risultati
+#     ricchi Google, Nielsen Norman Group (gamification/motivazione),
+#     web.dev TTFB + EDPB trasferimenti internazionali. ---
+_S_TG_WEBAPPS        = 'https://core.telegram.org/bots/webapps'
+_S_TG_PLATFORM       = 'https://core.telegram.org/api/bots/webapps'
+_S_TG_BOTS           = 'https://core.telegram.org/bots'
+_S_TG_1B             = 'https://techcrunch.com/2025/03/19/telegram-founder-pavel-durov-says-app-now-has-1b-users-calls-whatsapp-a-cheap-watered-down-imitation/'
+_S_EUSPRIG           = 'https://eusprig.org/research-info/research-and-best-practice/'
+_S_EUSPRIG_HORROR    = 'https://eusprig.org/research-info/horror-stories/'
+_S_SCHEMAORG         = 'https://schema.org/'
+_S_GOOGLE_SD_GALLERY = 'https://developers.google.com/search/docs/appearance/structured-data/search-gallery'
+_S_GOOGLE_SD_POLICIES = 'https://developers.google.com/search/docs/appearance/structured-data/sd-policies'
+_S_NNG_GAMIF         = 'https://www.nngroup.com/videos/gamification-user-experience/'
+_S_NNG_MOTIV         = 'https://www.nngroup.com/articles/autonomy-relatedness-competence/'
+_S_WEBDEV_TTFB       = 'https://web.dev/articles/ttfb'
+_S_WEBDEV_OPT_TTFB   = 'https://web.dev/articles/optimize-ttfb'
+_S_EDPB_TRANSFERS    = 'https://www.edpb.europa.eu/sme-data-protection-guide/international-data-transfers_en'
 
 BLOG_POSTS = [
     dict(slug='sito-quattro-lingue-costi-tempi', data='05 MAG 2026',
@@ -1749,6 +1769,294 @@ BLOG_POSTS = [
               'Il centro di competenza UE sull’accessibilità: conferma l’entrata in vigore del 28 giugno 2025.'),
              ('Guida EAA per il commercio online — Bird & Bird', _S_BIRDBIRD_EAA,
               'Uno studio legale internazionale spiega perimetro, esenzioni e obblighi per chi vende online.'),
+         ]),
+
+    # ---- Blog · Batch 3 (tecnologie che vendono) — IT + EN ----
+    # Fonti verificate 17.07 (WebSearch). Fatti d'esperienza SOLO reali, da
+    # docs/copy-casi-studio.md (Mini App, TMS, gioco). RU è un batch a sé.
+    dict(slug='telegram-mini-app-business', data='17 LUG 2026',
+         titolo='Telegram Mini App per il business: il canale che l’Italia ignora',
+         estratto='Un’app dentro Telegram, senza scaricare niente: ordini, prenotazioni e assistenza dove i clienti già scrivono. Cos’è una Telegram Mini App, quando conviene e perché in Italia quasi nessuno la usa.',
+         corpo='Un cliente vi scrive su Telegram per prenotare, come fa ogni settimana. Stavolta però, invece dei soliti quattro messaggi per mettersi d’accordo sull’orario, tocca un pulsante dentro la chat: si apre una piccola schermata, sceglie il giorno, conferma e ha chiuso — senza uscire da Telegram, senza installare nessuna app. Quella schermata è una Telegram Mini App, e per un’azienda è un canale che in Italia quasi nessuno usa ancora. Vediamo cos’è, quando conviene davvero al vostro business e perché il gruppo Remarka ne ha costruita una per il proprio lavoro, con numeri veri e non promesse.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/tgminiapp-cover.svg',
+                    alt='Telegram Mini App per il business: un’app che si apre dentro la chat, senza installare niente'),
+         cta=('Progettiamo la vostra web app su misura, a prezzo chiuso', '/servizi/web-app/'),
+         sezioni=[
+             dict(titolo='Che cos’è una Telegram Mini App (e cosa non è)',
+                  paragrafi=[
+                      "Una Telegram Mini App è, in una riga, un’app web che si apre dentro Telegram. Tecnicamente è un sito — fatto delle stesse cose di qualsiasi sito, pagine e codice — che Telegram mostra a tutto schermo dentro la chat quando l’utente tocca un pulsante. Non si scarica dallo store, non occupa memoria, non chiede aggiornamenti: vive a un tocco di distanza dalla conversazione. La documentazione ufficiale di Telegram la descrive proprio così, come un’interfaccia web che può sostituire del tutto un sito, ma dentro l’app di messaggistica.",
+                      "Serve distinguerla da due cose che le somigliano. Un bot Telegram risponde a comandi e messaggi di testo: utile, ma resta una conversazione a domande e risposte. Un’app nativa, quella dello store, è potente ma costa cara, va scaricata e mantenuta due volte per iOS e Android. La Mini App sta nel mezzo e prende il meglio: l’interfaccia ricca di un’app, ma dentro Telegram e senza installare niente. È il posto giusto quando l’interazione deve essere più di un messaggio, ma non merita un’app da scaricare.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/tgminiapp-canali.svg',
+                              alt='Telegram Mini App per il business a confronto con bot, sito web e app nativa: dove vive e cosa serve per usarla',
+                              caption='Quattro modi di stare online: il sito nel browser, l’app nativa nello store, il bot come chat di testo e la Mini App — un’app vera dentro Telegram, senza installare niente. Fonte: documentazione ufficiale Telegram, Mini Apps.')),
+             dict(titolo='Perché proprio dentro Telegram',
+                  paragrafi=[
+                      "La forza di una Mini App non è tecnica, è di posizione: sta dove le persone già sono. Telegram ha superato il miliardo di utenti attivi al mese nel 2025, e per molte attività — soprattutto quelle che parlano con clienti abituali — la chat è già il canale dove arrivano richieste e prenotazioni. Portare lì dentro un’interfaccia vera significa togliere l’attrito peggiore: quello di far uscire il cliente dalla conversazione per aprire un sito, cercare la pagina, fare login.",
+                      "C’è di più della sola comodità. La piattaforma di Telegram dà alle Mini App strumenti da vero prodotto: pagamenti integrati, notifiche mirate, autenticazione dell’utente senza moduli da compilare. Sono i mattoni con cui si costruisce un canale che non solo informa, ma vende e fa restare. Ed è qui che si apre lo spazio che il titolo chiama «il canale che l’Italia ignora»: tra le PMI italiane le Mini App sono ancora rarissime — non per un limite tecnico, ma perché quasi nessuno le propone. Chi arriva prima trova un terreno quasi vuoto.",
+                  ]),
+             dict(titolo='Un caso reale: il nostro gestionale, dentro Telegram',
+                  paragrafi=[
+                      "Non lo diciamo in teoria: una Mini App l’abbiamo costruita per noi. Il gruppo Remarka gestisce le traduzioni con un sistema interno (un TMS), e traduttori e project manager vivono nelle chat più che alle scrivanie. Aprire il gestionale dal browser solo per controllare lo stato di un ordine era troppo, ogni volta. Così abbiamo portato le funzioni chiave del sistema dentro una Telegram Mini App: ordini, stati e notifiche direttamente in chat, con la stessa logica del pannello web.",
+                      "I numeri sono piccoli e veri, e li diamo così come sono: la Mini App è stata sviluppata in due settimane e oggi gestisce oltre dieci utenti e ordini al giorno. Il gestionale entra in tasca — niente app da installare, niente login da browser — e sta dove il team già lavora. È esattamente il tipo di prodotto che sappiamo costruire quando l’interfaccia deve stare dove sono già le persone, e la stessa ingegneria che mettiamo in una web app su misura per voi.",
+                  ],
+                  links=[('Il caso completo, con il link al progetto vivo', '/casi-studio/'),
+                         ('Una web app o Mini App su misura per la vostra azienda', '/servizi/web-app/')]),
+             dict(titolo='Quando conviene al vostro business (e quando no)',
+                  paragrafi=[
+                      "Onestà prima dell’entusiasmo: una Mini App non serve a tutti. Conviene quando ricorrono certe condizioni, e in quei casi è spesso la scelta più intelligente — più economica e più rapida di un’app nativa.",
+                  ],
+                  lista=[
+                      'I vostri clienti sono già su Telegram e vi scrivono lì: un ristorante che prende prenotazioni, uno studio che fissa appuntamenti, un negozio con clienti abituali.',
+                      'L’interazione è ricorrente e va oltre il testo: scegliere una data, sfogliare un catalogo, controllare lo stato di un ordine, pagare.',
+                      'Non c’è budget per un’app nativa da mantenere su due store: la Mini App è una sola, e vive dove vive Telegram.',
+                  ]),
+             dict(titolo='Da dove partire',
+                  paragrafi=[
+                      "E quando non conviene? Se il vostro pubblico non usa Telegram, la porta si apre su una stanza vuota: il canale giusto è un altro. Se il prodotto ha bisogno di funzioni profonde del telefono — fotocamera avanzata, sensori, elaborazione pesante offline — o se la presenza nello store è essa stessa parte del marchio, allora l’app nativa ha un senso che una Mini App non copre. Fuori da questi casi, però, si finisce spesso a pagare un’app da migliaia di euro per fare ciò che una Mini App farebbe con una frazione della spesa.",
+                      "Il primo passo non è tecnico, è una domanda: dove sono già i vostri clienti, e cosa vorrebbero fare senza dover cambiare app? Da lì si disegna l’interazione essenziale — poche schermate, un’azione chiara — e la si collega ai sistemi che già usate. Una Mini App resta comunque web, e sul web la velocità conta: vale la pena misurarne le prestazioni fin dall’inizio, come per qualsiasi sito. E se volete capire prima se il vostro pubblico è pronto anche per un’app installabile senza store, il confronto tra PWA e app nativa lo abbiamo raccontato a parte.",
+                  ],
+                  links=[('Progettiamo la vostra web app o Mini App su misura', '/servizi/web-app/'),
+                         ('Misura gratis la velocità del vostro sito', '/strumenti/test-velocita/'),
+                         ('Leggi anche: PWA per le PMI, quando l’app non serve', '/blog/pwa-per-pmi-quando-app-non-serve/')]),
+         ],
+         fonti=[
+             ('Telegram — Mini Apps per sviluppatori', _S_TG_WEBAPPS,
+              'La documentazione ufficiale: cos’è una Mini App e come si costruisce dentro Telegram.'),
+             ('Telegram — la piattaforma delle Mini App', _S_TG_PLATFORM,
+              'Come le Mini App si integrano in Telegram: avvio, autorizzazione, notifiche e pagamenti.'),
+             ('Telegram — la piattaforma dei bot', _S_TG_BOTS,
+              'Le fondamenta su cui poggiano bot e Mini App: cosa un’azienda può automatizzare in chat.'),
+             ('TechCrunch — Telegram supera il miliardo di utenti (2025)', _S_TG_1B,
+              'Il dato sulla scala del canale: oltre un miliardo di utenti attivi al mese.'),
+         ]),
+
+    dict(slug='gestionale-su-misura-vs-excel', data='17 LUG 2026',
+         titolo='Gestionale su misura vs Excel: quando conviene il salto',
+         estratto='Excel regge finché non vi frena: ordini persi tra fogli ed email, errori che nessuno vede, dati che non tornano. Quando conviene passare a un gestionale su misura, con un caso reale e i numeri.',
+         corpo='«Con Excel ce la caviamo.» È vero, fino a un certo punto. Il foglio di calcolo è geniale finché l’attività è piccola: costa zero, lo sanno usare tutti, si piega a qualsiasi esigenza. Poi cresce il numero di ordini, di clienti, di persone che mettono mano allo stesso file — e quello che era una comodità diventa un collo di bottiglia: la versione giusta che non si trova, la riga sovrascritta per sbaglio, l’ordine sparito tra un foglio e una mail. A quel punto la domanda non è più «Excel o no», ma quando conviene passare a un gestionale su misura. In questo articolo proviamo a rispondere con onestà — e con un caso reale del gruppo Remarka, numeri compresi.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/gestionale-cover.svg',
+                    alt='Gestionale su misura contro Excel: da fogli di calcolo sparsi a un unico sistema con ordini, clienti e ruoli'),
+         cta=('Progettiamo il vostro gestionale su misura, a prezzo chiuso', '/servizi/web-app/'),
+         sezioni=[
+             dict(titolo='Perché Excel regge — finché non vi frena',
+                  paragrafi=[
+                      "Il foglio di calcolo non è il nemico: è il punto di partenza giusto per quasi tutti. Un’attività che segue venti ordini al mese non ha bisogno di un sistema, ha bisogno di una tabella — ed Excel, o un foglio condiviso, la fa benissimo. Il problema non è lo strumento, è la soglia oltre la quale lo strumento smette di aiutare e comincia a rallentare. Quella soglia arriva quasi sempre insieme a tre segnali: più persone lavorano sullo stesso file, i dati diventano tanti, e le stesse informazioni vanno ricopiate da un foglio all’altro.",
+                      "Ed è qui che nasce il rischio silenzioso. Il gruppo di ricerca europeo che studia i rischi dei fogli di calcolo — l’EuSpRIG — stima che oltre il 90% dei fogli usati in azienda contenga errori, e che circa la metà di quelli operativi abbia difetti concreti. Non perché chi li compila sia sbadato, ma perché un foglio non avvisa quando una formula si rompe o una riga viene sovrascritta: l’errore resta lì, invisibile, finché non costa qualcosa.",
+                  ]),
+             dict(titolo='I costi nascosti dei fogli di calcolo',
+                  paragrafi=[
+                      "Il prezzo di Excel non è nella licenza, è nel tempo e negli errori. Prendiamo i sintomi più comuni, quelli che ogni azienda cresciuta con i fogli riconosce al volo.",
+                  ],
+                  lista=[
+                      'La versione giusta che non si trova: «ordini_finale_v3_DEF_buono.xlsx» è una barzelletta che tutti hanno vissuto — e ogni copia è un dato che diverge dagli altri.',
+                      'Il lavoro perso tra fogli ed email: un ordine confermato in una chat, un preventivo in un altro file, una scadenza nella testa di una persona sola. Basta che quella persona sia in ferie.',
+                      'Gli errori che nessuno vede: una formula trascinata male, un incolla sulla cella sbagliata, un totale che non torna e che nessuno controlla perché «è sempre andato bene».',
+                      'L’assenza di ruoli: tutti possono cambiare tutto, senza traccia di chi ha modificato cosa e quando.',
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/gestionale-excel-vs.svg',
+                              alt='Da Excel e email sparsi a un gestionale su misura: ordini, clienti, scadenze e ruoli in un unico sistema',
+                              caption='A sinistra il lavoro sparso tra fogli, email e teste delle persone; a destra un gestionale su misura dove ordini, clienti, scadenze e ruoli vivono in un solo sistema. Fonte del dato sugli errori: EuSpRIG, ricerca sui fogli di calcolo.')),
+             dict(titolo='Quando conviene il salto a un gestionale su misura',
+                  paragrafi=[
+                      "Nessuno di questi problemi è drammatico da solo. Insieme, però, formano una tassa quotidiana sul tempo del team — e ogni tanto un errore che finisce in fattura o in una consegna saltata. Le cronache raccolte dall’EuSpRIG sono piene di casi in cui un singolo sbaglio di foglio è costato bilanci da rifare e numeri sbagliati presi per buoni. Il momento giusto per il salto non è una dimensione, è un insieme di sintomi: se ne riconoscete tre o più, il foglio ha finito di aiutarvi.",
+                  ],
+                  lista=[
+                      'Più persone lavorano sugli stessi dati contemporaneamente, e vi trovate a fondere versioni a mano.',
+                      'Le stesse informazioni vanno ricopiate da un posto all’altro — dal preventivo all’ordine, dall’ordine alla fattura — con il rischio di errore a ogni passaggio.',
+                      'Vi servono ruoli diversi: chi vede tutto, chi solo la propria parte, chi non deve toccare i prezzi.',
+                      'Volete sapere in ogni momento lo stato di ogni pratica, senza aprire cinque file e chiedere a tre persone.',
+                      'State perdendo ordini o scadenze perché l’informazione vive nella testa di qualcuno, non in un sistema.',
+                  ]),
+             dict(titolo='Un caso reale: il sistema che manda avanti un’agenzia',
+                  paragrafi=[
+                      "Attenzione: «gestionale su misura» non vuol dire per forza un progetto enorme. Vuol dire un sistema costruito sul vostro modo di lavorare, invece di piegare il lavoro a un software preconfezionato che fa il 70% di ciò che serve e vi obbliga al restante 30% a mano. Anche qui parliamo di ciò che abbiamo costruito per noi. Gestire centinaia di ordini di traduzione — clienti, traduttori, scadenze, preventivi, fatture — con fogli ed email era diventato il collo di bottiglia che rompeva le consegne.",
+                      "Così il gruppo Remarka ha costruito un TMS, un gestionale su misura dove ogni ordine ha uno stato, ogni cliente una scheda, ogni traduttore un carico e ogni lavoro la sua fattura: bacheca degli ordini, anagrafiche, preventivi e contabilità in un’unica web app. I numeri, reali: il sistema è in produzione da due anni e gestisce 180 ordini al mese, oltre 2.000 l’anno. Dentro ci lavorano 2 amministratori, 8 project manager e 4 agenzie partner con la propria base clienti — e gli ordini non si perdono più tra le email. È la stessa ingegneria che mettiamo in una web app su misura per la vostra azienda.",
+                  ],
+                  links=[('Il caso completo, con il link al progetto vivo', '/casi-studio/'),
+                         ('Una web app gestionale su misura per voi', '/servizi/web-app/')]),
+             dict(titolo='Prima di decidere: due domande e un numero',
+                  paragrafi=[
+                      "Non serve rifare tutto domani. Prima di parlare di un gestionale, fatevi due domande oneste: quante ore alla settimana il team spende a sistemare, cercare e ricopiare dati tra fogli ed email? E quante volte, nell’ultimo anno, un errore o un’informazione persa vi è costato un cliente, una consegna o una figuraccia? Se le risposte vi mettono a disagio, il conto del «gratis» di Excel è più salato di quanto sembri.",
+                      "Il passo successivo è mappare il flusso reale — come nasce un ordine, chi lo tocca, dove si incaglia — e capire quali passaggi un sistema su misura può togliere. Da lì esce un progetto con un prezzo chiuso, non un salto nel buio. E se il vostro lavoro vive già dentro le chat, val la pena sapere che quel gestionale può entrare anche dentro Telegram, in tasca al team.",
+                  ],
+                  links=[('Progettiamo il vostro gestionale su misura, a prezzo chiuso', '/servizi/web-app/'),
+                         ('Misura la salute tecnica del vostro sito attuale', '/strumenti/check-up-completo/'),
+                         ('Leggi anche: la Telegram Mini App, il gestionale in tasca', '/blog/telegram-mini-app-business/')]),
+         ],
+         fonti=[
+             ('EuSpRIG — ricerca sui rischi dei fogli di calcolo', _S_EUSPRIG,
+              'Il gruppo europeo che studia gli errori nei fogli: oltre il 90% ne contiene, metà di quelli operativi ha difetti.'),
+             ('EuSpRIG — le «horror stories» dei fogli di calcolo', _S_EUSPRIG_HORROR,
+              'Casi reali in cui un errore di Excel è costato bilanci sbagliati e decisioni prese su numeri falsi.'),
+             ('Regolamento (UE) 2016/679 — GDPR (EUR-Lex)', _S_GDPR,
+              'Gestire dati di clienti sparsi tra fogli ed email è anche un rischio di protezione dei dati: un sistema con ruoli lo riduce.'),
+         ]),
+
+    dict(slug='dati-strutturati-schema-org', data='17 LUG 2026',
+         titolo='Schema.org per le PMI: i dati strutturati che Google premia',
+         estratto='I dati strutturati raccontano il vostro sito a Google in una lingua che capisce: prezzi, orari, recensioni, eventi. Cosa sono, come funziona schema.org e quali risultati ricchi potete ottenere.',
+         corpo='Cercate su Google il nome di un ristorante e, prima ancora di aprire il sito, vedete già le stelline delle recensioni, l’orario di apertura, la fascia di prezzo. Cercate una ricetta e compaiono i tempi di cottura e la foto. Non è magia né fortuna: quei siti hanno detto a Google, in modo esplicito, cosa contengono — usando i dati strutturati di schema.org. È uno degli strumenti più sottovalutati dalle PMI italiane, eppure è tra i pochi che potete aggiungere senza riscrivere il sito e con un effetto visibile nei risultati. Vediamo cosa sono i dati strutturati schema.org, come funzionano e cosa Google ci fa davvero.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/schema-cover.svg',
+                    alt='Dati strutturati schema.org: un blocco JSON-LD invisibile che diventa un risultato ricco su Google'),
+         cta=('Dati strutturati e SEO tecnica, di serie in ogni sito', '/servizi/seo-tecnica/'),
+         sezioni=[
+             dict(titolo='Cosa sono i dati strutturati (in parole vostre)',
+                  paragrafi=[
+                      "Una pagina web, per un motore di ricerca, è un muro di testo da interpretare. «€ 25» è un prezzo, un codice postale o una taglia? «Chiuso» si riferisce a un negozio, a una strada o a un commento? Gli esseri umani lo capiscono dal contesto; una macchina deve indovinare. I dati strutturati servono esattamente a togliere di mezzo l’indovinello: sono un blocco di codice, invisibile al visitatore, che etichetta le informazioni una per una — «questo è il nome dell’attività, questo l’orario, questo il prezzo, queste le recensioni».",
+                      "Il vocabolario con cui si scrivono queste etichette si chiama schema.org: un dizionario condiviso, nato da un accordo tra Google, Microsoft e altri motori, che definisce come descrivere un’azienda, un prodotto, un evento, un articolo. Google raccomanda di scriverlo in un formato preciso, il JSON-LD: un piccolo blocco che si mette nel codice della pagina senza toccarne l’aspetto. Il visitatore non lo vede; il motore lo legge e capisce.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/schema-jsonld.svg',
+                              alt='Anatomia dei dati strutturati schema.org in JSON-LD: tipo, nome, orari e prezzo che diventano un risultato ricco su Google',
+                              caption='Un blocco JSON-LD etichetta le informazioni — tipo, nome, indirizzo, orari, prezzo, recensioni — e Google le trasforma in un risultato ricco: stelline, orari e mappa. Fonte: Google, introduzione ai dati strutturati; vocabolario schema.org.')),
+             dict(titolo='Cosa ci fa Google: i risultati ricchi',
+                  paragrafi=[
+                      "I dati strutturati non sono un vezzo tecnico: servono a ottenere i risultati ricchi (rich results), cioè quelle schede più grandi e complete che superano il classico link blu. Google li mostra proprio a partire dalle informazioni etichettate con schema.org — le stelline di una recensione, le briciole di navigazione, le FAQ che si aprono sotto il risultato, la foto e i tempi di una ricetta, la data di un evento. La galleria ufficiale di Google elenca decine di questi formati, e cresce di continuo.",
+                      "Il vantaggio è doppio e concreto. Il primo: un risultato ricco occupa più spazio e attira più clic, a parità di posizione. Il secondo, più sottile: le stesse etichette che Google legge le leggono anche gli assistenti AI, che pescano dai dati strutturati per capire chi siete e cosa offrite. Diciamolo con onestà, però: i dati strutturati non fanno salire il sito nella classifica di per sé — Google lo dice chiaramente. Rendono il risultato più bello e più leggibile, non più in alto. Sono un moltiplicatore di clic, non una scorciatoia di posizione.",
+                  ]),
+             dict(titolo='Quali dati strutturati servono davvero a una PMI',
+                  paragrafi=[
+                      "Non serve etichettare tutto: servono i tipi giusti per la vostra attività. Ecco quelli che, per una piccola o media impresa italiana, rendono di più con meno sforzo.",
+                  ],
+                  lista=[
+                      'Organization o LocalBusiness: nome, logo, indirizzo, telefono, orari. È la carta d’identità del sito, e per un’attività locale quella che alimenta la scheda con orari e mappa.',
+                      'Product e Offer: per chi vende, prezzo, disponibilità e valuta, così Google può mostrarli direttamente nel risultato.',
+                      'Review e AggregateRating: le recensioni reali, con le stelline — ma solo se sono vere e verificabili, mai inventate.',
+                      'FAQPage: le domande frequenti, che possono comparire già aperte sotto il risultato.',
+                      'BlogPosting e Article: autore, data e immagine di un articolo — gli stessi dati strutturati che mettiamo di serie su ogni pezzo di questo blog.',
+                  ],
+                  links=[('Google — la galleria dei risultati ricchi', _S_GOOGLE_SD_GALLERY)]),
+             dict(titolo='Come aggiungerli senza rifare il sito',
+                  paragrafi=[
+                      "Una regola d’oro sopra tutte, ed è anche una regola di Google: i dati strutturati devono corrispondere a ciò che l’utente vede sulla pagina. Etichettare recensioni che non esistono, prezzi finti o orari sbagliati non è furbizia, è una violazione delle linee guida che può portare a una penalizzazione manuale. La microdati premia l’onestà, non i trucchi.",
+                      "La buona notizia è che i dati strutturati si aggiungono sopra il sito che avete, senza rifarlo. Sono un blocco JSON-LD nel codice della pagina: su WordPress lo si genera con un plugin SEO ben configurato o, meglio, con markup su misura che riflette davvero i vostri contenuti. Prima di pubblicare si prova: lo strumento gratuito di Google (il Rich Results Test) legge la pagina e vi dice quali risultati ricchi può generare e dove ci sono errori. È un controllo di mezz’ora che evita di scoprire il problema quando ormai è online. I dati strutturati sono parte della SEO tecnica che consegniamo di serie — non un extra da vedere «più avanti».",
+                  ],
+                  links=[('Fanno parte della SEO tecnica che consegniamo', '/servizi/seo-tecnica/'),
+                         ('Google — linee guida sui dati strutturati', _S_GOOGLE_SD_POLICIES)]),
+             dict(titolo='Dati strutturati, un pezzo del quadro più grande',
+                  paragrafi=[
+                      "Un errore comune è trattare i dati strutturati come una bacchetta magica. In realtà sono un tassello: dicono a Google e agli assistenti AI chi siete, ma valgono davvero solo se il resto regge — contenuti chiari, un sito veloce, segnali di fiducia in ordine. Le stesse etichette che descrivono la vostra azienda sono, non a caso, uno dei segnali E-E-A-T che i motori leggono per capire quanto siete affidabili.",
+                      "Il modo giusto di iniziare è misurare cosa c’è già. In un minuto potete verificare se la vostra home espone i dati strutturati — insieme agli altri segnali di fiducia — e capire cosa manca prima di aggiungere una sola riga di codice. Da lì, i risultati ricchi diventano un obiettivo concreto, non una speranza.",
+                  ],
+                  links=[('Misura gratis i segnali E-E-A-T e i dati strutturati della tua home', '/strumenti/segnali-eeat/'),
+                         ('Fa parte della SEO tecnica a prezzo chiuso', '/servizi/seo-tecnica/'),
+                         ('Leggi anche: E-E-A-T, come Google giudica la vostra credibilità', '/blog/eeat-come-google-giudica-credibilita/')]),
+         ],
+         fonti=[
+             ('schema.org — il vocabolario dei dati strutturati', _S_SCHEMAORG,
+              'Il dizionario condiviso da Google e Microsoft con cui si descrivono aziende, prodotti ed eventi.'),
+             ('Google — introduzione ai dati strutturati', _S_GOOGLE_SD,
+              'Come funziona il markup, perché JSON-LD è il formato consigliato e cosa Google ne fa.'),
+             ('Google — galleria dei risultati ricchi', _S_GOOGLE_SD_GALLERY,
+              'L’elenco ufficiale dei formati di risultato ricco che i dati strutturati possono attivare.'),
+             ('Google — linee guida generali sui dati strutturati', _S_GOOGLE_SD_POLICIES,
+              'Le regole da rispettare: i dati devono corrispondere ai contenuti visibili, o scatta la penalizzazione.'),
+         ]),
+
+    dict(slug='gamification-b2b', data='17 LUG 2026',
+         titolo='Gamification nel B2B: quando un gioco vende servizi seri',
+         estratto='Un servizio B2B «serio» fatica a farsi ricordare. La gamification può tenere le persone sul sito e raccontare cosa fate — se è strumento di marketing, non gadget. Come funziona, con un caso reale.',
+         corpo='Un servizio B2B serio — una consulenza, una traduzione tecnica, un software gestionale — ha un problema che nessuno confessa volentieri: è noioso da raccontare. La brochure la legge chi già vi conosce; il sito lo si apre, si scorre e si chiude in trenta secondi. La gamification, cioè usare meccaniche da gioco fuori dal gioco, promette di rompere questa noia: tenere le persone sulla pagina, farle interagire, lasciare un ricordo. Ma funziona davvero nel marketing B2B, o è un gadget costoso? In questo articolo vediamo quando un gioco vende servizi seri, con un caso reale del gruppo Remarka e i suoi numeri.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/gamification-cover.svg',
+                    alt='Gamification nel marketing B2B: meccaniche di gioco che tengono le persone sul sito e raccontano un servizio serio'),
+         cta=('Restyling e idee di marketing per il vostro sito', '/servizi/restyling-migrazione/'),
+         sezioni=[
+             dict(titolo='Cos’è la gamification (e cosa non è)',
+                  paragrafi=[
+                      "Gamification non vuol dire «trasformare l’azienda in un videogioco». Vuol dire prendere alcune meccaniche che rendono i giochi coinvolgenti — un obiettivo chiaro, un progresso visibile, una piccola sfida, una ricompensa — e usarle in un contesto che gioco non è: un sito, un percorso di prova, un modulo. Il Nielsen Norman Group, autorità nel campo dell’esperienza utente, la definisce proprio così: l’uso di meccaniche di gioco in contesti non di gioco.",
+                      "E chiariamo subito cosa non è, perché è qui che si sbaglia. Non è appiccicare un punteggio a caso o una barra di progresso finta: quella è decorazione, e si vede. La gamification funziona quando tocca leve psicologiche reali. Sempre il Nielsen Norman Group le riconduce a tre bisogni fondamentali — autonomia, competenza, senso di relazione: le persone si coinvolgono quando possono scegliere, quando sentono di migliorare, quando quello che fanno ha un significato. Un gioco che ignora questi bisogni è solo un fastidio in più.",
+                  ]),
+             dict(titolo='Perché nel B2B è più difficile (e più prezioso)',
+                  paragrafi=[
+                      "Nel B2C la gamification è ovunque: raccolte punti, badge, classifiche. Nel B2B l’istinto è opposto — «siamo un’azienda seria, non un luna park» — e proprio per questo l’occasione è più grande. In un settore dove tutti i siti si somigliano, con gli stessi claim e le stesse foto stock, un contenuto che coinvolge davvero è una rarità che si nota e si ricorda. Il punto non è divertire per divertire: è dare al visitatore un motivo per restare, e al marchio qualcosa da raccontare.",
+                      "C’è anche un ritorno tecnico spesso ignorato. Il tempo che le persone passano sul sito e il modo in cui interagiscono sono segnali di qualità dei contenuti — Google premia le pagine che rispondono davvero e trattengono, non quelle che si abbandonano in due secondi. Un contenuto che intrattiene mentre spiega chi siete lavora quindi su due fronti insieme: la memoria di chi lo vive e la salute del sito agli occhi dei motori.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/gamification-loop.svg',
+                              alt='Il ciclo della gamification nel marketing B2B: obiettivo, azione, progresso e ricompensa, sui bisogni di autonomia, competenza e relazione',
+                              caption='Il ciclo che rende coinvolgente un’esperienza: un obiettivo chiaro, un’azione, un progresso visibile, una ricompensa — poggiato sui tre bisogni di autonomia, competenza e relazione. Fonte: Nielsen Norman Group.')),
+             dict(titolo='Un caso reale: un gioco per raccontare le traduzioni',
+                  paragrafi=[
+                      "Anche qui, prima di venderlo a voi l’abbiamo fatto per noi. Un servizio B2B «serio» come la traduzione fatica a farsi ricordare: volevamo un modo per far restare le persone sul sito dell’agenzia e raccontare il nostro mondo senza una brochure noiosa. Così abbiamo creato «L’Impero delle Traduzioni», un gioco browser in italiano dentro il sito: gamification al servizio del marketing, un contenuto che intrattiene e allo stesso tempo racconta cosa facciamo.",
+                      "I numeri, così come sono: 984 partite giocate e oltre 200 ore complessive passate sul sito dell’agenzia — 12.086 minuti — grazie al gioco. Per un servizio che «non si può raccontare», è tempo di attenzione reale, non un dato gonfiato. È il lato creativo dello stesso team che vi fa il restyling: quando serve far restare l’utente, sappiamo anche divertirlo.",
+                  ],
+                  links=[('Il caso completo, con il link al progetto vivo', '/casi-studio/'),
+                         ('Restyling e idee di marketing per il vostro sito', '/servizi/restyling-migrazione/')]),
+             dict(titolo='Quando un gioco vende (e quando è solo un costo)',
+                  paragrafi=[
+                      "La gamification non è la risposta a ogni problema di marketing. Conviene quando ci sono le condizioni giuste, ed è uno spreco quando le si forza.",
+                  ],
+                  lista=[
+                      'Avete qualcosa da spiegare che a parole annoia: un processo, un mestiere, un concetto tecnico che un’esperienza rende chiaro in un modo che il testo non può.',
+                      'Il vostro pubblico torna sul sito o ci passa del tempo: un gioco ha senso dove c’è attenzione da coltivare, non dove si cerca un numero di telefono e via.',
+                      'Volete distinguervi in un settore uniforme: dove i concorrenti si somigliano tutti, un contenuto vivo è un vantaggio di memoria.',
+                  ]),
+             dict(titolo='Da dove partire, senza buttare budget',
+                  paragrafi=[
+                      "E quando è solo un costo? Quando il gioco non c’entra niente con ciò che vendete, quando è messo lì per moda e non risolve un problema reale del visitatore, quando complica il percorso invece di arricchirlo. Un gioco che allontana la persona dall’azione che conta — chiedere un preventivo, capire un servizio — è un gadget che avete pagato per rallentarvi. La domanda giusta, sempre, è: questo gioco fa restare e capire, o solo fare scena?",
+                      "Non si comincia dal gioco, si comincia dal messaggio. Cosa volete che una persona ricordi dopo essere passata dal vostro sito? Se quella cosa si spiega meglio facendola che leggendola, allora la gamification ha un senso — e va disegnata attorno a quel messaggio, non attorno al divertimento fine a sé stesso. È il tipo di idea che nasce quando restyling e marketing lavorano insieme: se state ripensando il sito e cercate un modo per farlo ricordare, questo è il momento giusto per valutarlo, con i piedi per terra e un occhio ai numeri.",
+                  ],
+                  links=[('Restyling e marketing per un sito che si ricorda', '/servizi/restyling-migrazione/'),
+                         ('Misura la salute del tuo sito attuale, gratis', '/strumenti/check-up-completo/'),
+                         ('Leggi anche: check-up del sito web, le 7 misure che contano', '/blog/check-up-sito-web-7-misure/')]),
+         ],
+         fonti=[
+             ('Nielsen Norman Group — la gamification nell’esperienza utente', _S_NNG_GAMIF,
+              'L’autorità mondiale della UX definisce cos’è la gamification e quando funziona davvero.'),
+             ('Nielsen Norman Group — autonomia, competenza e relazione', _S_NNG_MOTIV,
+              'I tre bisogni psicologici che rendono un’esperienza coinvolgente, base di ogni buona gamification.'),
+             ('Google — creare contenuti utili e affidabili', _S_GOOGLE_HELPFUL,
+              'Perché un contenuto che coinvolge e trattiene è anche un segnale di qualità per la ricerca.'),
+         ]),
+
+    dict(slug='hosting-sito-web-italia', data='17 LUG 2026',
+         titolo='Hosting in Italia o in cloud: cosa cambia per velocità e GDPR',
+         estratto='Dove vive il vostro sito conta più di quanto pensiate: cambia la velocità di caricamento e la conformità al GDPR. Hosting in Italia, cloud europeo o extra-UE: cosa scegliere e perché.',
+         corpo='«Tanto l’hosting è tutto uguale, prendo il più economico.» È l’idea con cui si firmano contratti che poi costano cari in due valute diverse: secondi di attesa e grattacapi legali. Dove vivono fisicamente i vostri file — un server in Italia, un cloud europeo, un data center oltreoceano — cambia due cose che pesano davvero: quanto in fretta la pagina si apre a un visitatore italiano, e quanto è semplice restare in regola con il GDPR sui dati dei clienti. In questo articolo vediamo cosa cambia per l’hosting di un sito web in Italia rispetto al cloud, senza tecnicismi inutili e con le domande giuste da fare prima di scegliere.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/hosting-cover.svg',
+                    alt='Hosting di un sito web in Italia o in cloud: distanza dal visitatore, velocità e dove finiscono i dati secondo il GDPR'),
+         cta=('Un sito aziendale con hosting e GDPR inclusi, a prezzo chiuso', '/servizi/siti-aziendali/'),
+         sezioni=[
+             dict(titolo='Cosa cambia per la velocità: la distanza conta',
+                  paragrafi=[
+                      "Ogni volta che qualcuno apre il vostro sito, il suo browser deve dialogare con il server dove vivono i file. La prima risposta del server ha un nome tecnico — Time to First Byte, il tempo fino al primo byte — ed è la base su cui si costruisce tutta la velocità percepita. Su questo tempo pesano due cose: quanto è veloce il server a rispondere, e quanto è lontano da chi lo interroga. La documentazione di Google su questa metrica è netta: la scelta dell’hosting è determinante, e i server condivisi e sovraffollati sono generalmente più lenti.",
+                      "La distanza fisica non è un dettaglio. Un server lontano dai vostri visitatori aggiunge latenza a ogni richiesta — millisecondi che, sommati, diventano secondi di attesa in più su una connessione mobile. Se il vostro pubblico è italiano, un hosting vicino (in Italia o comunque in Europa) parte avvantaggiato. La soluzione che scavalca il problema si chiama CDN, una rete di server che tiene copie del sito vicino agli utenti ovunque siano: con una buona CDN davanti, anche un’origine lontana può servire in fretta un visitatore italiano.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/hosting-italia-cloud.svg',
+                              alt='Hosting di un sito web in Italia o in cloud: distanza dal visitatore, tempo di risposta e dove risiedono i dati secondo il GDPR',
+                              caption='Dal visitatore italiano al server: vicino (Italia o UE) significa tempo di risposta basso e dati che restano nell’Unione; lontano (extra-UE) significa più latenza e, per il GDPR, misure supplementari. Una CDN avvicina i contenuti. Fonti: web.dev (TTFB), EDPB (trasferimenti dati).')),
+             dict(titolo='Cosa cambia per il GDPR: dove finiscono i dati',
+                  paragrafi=[
+                      "Qui il discorso si sposta dalla velocità alla legge, e diventa serio. Il vostro sito, quasi sempre, raccoglie dati personali: un modulo contatti, un e-commerce, persino i log del server con gli indirizzi IP. Il GDPR — il regolamento europeo sulla protezione dei dati — stabilisce che questi dati godono di una tutela precisa, e pone regole stringenti quando escono dall’Unione Europea. Non è un divieto di usare fornitori extra-UE, ma un obbligo di garantire che, ovunque vadano, i dati mantengano lo stesso livello di protezione.",
+                      "La differenza pratica è questa. Se ospitate il sito in Italia o in un data center europeo, i dati restano nell’UE e il capitolo dei trasferimenti internazionali, semplicemente, non si apre: una complicazione in meno. Se invece scegliete un fornitore che archivia o elabora i dati fuori dall’Unione — molti grandi cloud hanno server in tutto il mondo — dovete verificare le garanzie previste dal GDPR. Il Comitato europeo per la protezione dei dati (EDPB), dopo la sentenza «Schrems II», ha chiarito che in questi casi servono valutazioni e, spesso, misure supplementari. Tradotto: più burocrazia e più responsabilità sulle vostre spalle.",
+                  ]),
+             dict(titolo='Italia, Europa o extra-UE: come scegliere',
+                  paragrafi=[
+                      "Non esiste una risposta unica valida per tutti, ma esistono criteri chiari. Ecco come ragionare, senza farsi guidare solo dal prezzo mensile.",
+                  ],
+                  lista=[
+                      'Se il vostro pubblico è italiano o europeo: un hosting in Italia o nell’UE è la scelta più semplice — vicino per la velocità, dentro l’UE per il GDPR.',
+                      'Se avete traffico o clienti in più continenti: conta la copertura, e una CDN europea davanti a un’origine ben scelta risolve la velocità senza portare i dati fuori dall’UE.',
+                      'Se guardate un grande cloud extra-UE: verificate dove risiedono davvero i dati — molti offrono regioni europee — e mettete a bilancio la conformità, non solo il canone.',
+                      'In ogni caso: chiedete un server non sovraffollato e una CDN inclusa, sono le due leve che spostano di più il tempo di risposta.',
+                  ]),
+             dict(titolo='Come sapere dove siete oggi (e se vi frena)',
+                  paragrafi=[
+                      "Un dettaglio che vale doppio: un hosting adeguato migliora insieme velocità e sostenibilità. Un server efficiente, vicino e alimentato da energia rinnovabile serve i vostri byte con meno attesa e meno emissioni — la stessa leva, letta da due lati. Ma prima di cambiare hosting, misurate quello che avete.",
+                      "Il tempo di risposta del server si vede in qualsiasi test di velocità: se la pagina impiega più di un secondo a dare il primo segno di vita, l’hosting è quasi sempre tra gli indiziati principali. È un numero, non una sensazione. Sul fronte dati, la domanda da fare al fornitore è secca: dove sono fisicamente archiviati i dati del mio sito e dei miei utenti? Se la risposta è vaga, è già un segnale. Nei siti che consegniamo l’hosting è scelto perché i dati restino nell’Unione Europea, come parte del progetto e non come dettaglio da sistemare dopo.",
+                  ],
+                  links=[('Cosa include un sito aziendale, hosting e GDPR compresi', '/servizi/siti-aziendali/'),
+                         ('Misura gratis la velocità e il tempo di risposta del server', '/strumenti/test-velocita/'),
+                         ('Leggi anche: quanto pesa il vostro sito sull’ambiente (e sul portafoglio)', '/blog/impatto-ambientale-sito-web/')]),
+         ],
+         fonti=[
+             ('web.dev — Time to First Byte (TTFB)', _S_WEBDEV_TTFB,
+              'La metrica del tempo di risposta del server: perché l’hosting decide la velocità di partenza.'),
+             ('web.dev — ottimizzare il TTFB', _S_WEBDEV_OPT_TTFB,
+              'Come hosting, prossimità e CDN incidono sul tempo di risposta, con i rimedi concreti.'),
+             ('Regolamento (UE) 2016/679 — GDPR (EUR-Lex)', _S_GDPR,
+              'Il testo del GDPR: la tutela dei dati personali e le regole sui trasferimenti fuori dall’UE.'),
+             ('EDPB — trasferimenti internazionali di dati', _S_EDPB_TRANSFERS,
+              'La guida del Comitato europeo: cosa serve quando i dati escono dall’Unione Europea (post Schrems II).'),
          ]),
 ]
 

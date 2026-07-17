@@ -54,4 +54,9 @@ return array(
 	array( 'it' => 'blog/restyling-o-sito-nuovo-5-domande', 'en' => 'en/blog/redesign-or-new-website-5-questions', 'ru' => 'ru/blog' ),
 	array( 'it' => 'blog/impatto-ambientale-sito-web', 'en' => 'en/blog/website-environmental-impact', 'ru' => 'ru/blog' ),
 	array( 'it' => 'blog/dichiarazione-di-accessibilita-guida-2026', 'en' => 'en/blog/accessibility-statement-guide-2026', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/telegram-mini-app-business', 'en' => 'en/blog/telegram-mini-app-for-business', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/gestionale-su-misura-vs-excel', 'en' => 'en/blog/custom-management-software-vs-excel', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/dati-strutturati-schema-org', 'en' => 'en/blog/schema-org-structured-data-for-smes', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/gamification-b2b', 'en' => 'en/blog/gamification-in-b2b', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/hosting-sito-web-italia', 'en' => 'en/blog/website-hosting-italy-vs-cloud', 'ru' => 'ru/blog' ),
 );

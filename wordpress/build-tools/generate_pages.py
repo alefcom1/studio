@@ -1681,7 +1681,7 @@ def build_blog_schema_map():
     gestito dall'hook. Gli articoli solo-IT+EN (batch 1) non emettono la
     riga RU: la pagina RU non esiste ancora (piano-blog batch 5–6)."""
     import lang as L  # noqa: E402
-    RETROFIT = '2026-07-16'  # ultima rigenerazione della mappa (dateModified); batch 2 pubblicato oggi
+    RETROFIT = '2026-07-17'  # ultima rigenerazione della mappa (dateModified); batch 3 pubblicato oggi
     lines = [
         '<?php',
         '/**',

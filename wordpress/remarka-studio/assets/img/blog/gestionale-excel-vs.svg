@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-label="Da fogli sparsi a un sistema unico">
+  <defs>
+    <pattern id="gridGv" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/></pattern>
+    <style>.mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}.body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}</style>
+  </defs>
+  <rect width="1200" height="480" fill="#F7F6F2"/>
+  <rect width="1200" height="480" fill="url(#gridGv)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">DA FOGLI SPARSI A UN UNICO SISTEMA</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <!-- left: scattered -->
+  <text x="80" y="126" class="mono" font-size="14" fill="#5A5E66">PRIMA</text>
+  <g>
+    <rect x="80" y="150" width="150" height="96" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5" transform="rotate(-4 155 198)"/>
+    <rect x="150" y="220" width="150" height="96" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5" transform="rotate(3 225 268)"/>
+    <rect x="60" y="270" width="150" height="96" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5" transform="rotate(2 135 318)"/>
+    <text x="100" y="200" class="mono" font-size="12" fill="#14161A">ordini_v3.xlsx</text>
+    <text x="172" y="272" class="mono" font-size="12" fill="#14161A">preventivi.xlsx</text>
+    <text x="80" y="322" class="mono" font-size="12" fill="#14161A">email · chat</text>
+  </g>
+  <text x="140" y="410" class="mono" font-size="13" fill="#5A5E66" text-anchor="middle">>90% dei fogli contiene errori</text>
+  <!-- arrow -->
+  <g transform="translate(470,250)"><line x1="0" y1="0" x2="120" y2="0" stroke="#2440C8" stroke-width="3"/><path d="M120 -9 L140 0 L120 9 Z" fill="#2440C8"/></g>
+  <!-- right: unified -->
+  <text x="660" y="126" class="mono" font-size="14" fill="#5A5E66">DOPO</text>
+  <g transform="translate(660,150)">
+    <rect x="0" y="0" width="460" height="230" fill="#14161A"/>
+    <rect x="0" y="0" width="460" height="8" fill="#2440C8"/>
+    <text x="24" y="46" class="mono" font-size="14" fill="#9AA0AA">GESTIONALE SU MISURA</text>
+    <g class="mono" font-size="15" fill="#F7F6F2">
+      <text x="24" y="90">▸ ordini — stato e scadenza</text>
+      <text x="24" y="124">▸ clienti — scheda e storico</text>
+      <text x="24" y="158">▸ fatture — senza reinserire</text>
+      <text x="24" y="192">▸ ruoli — chi vede cosa</text>
+    </g>
+  </g>
+</svg>

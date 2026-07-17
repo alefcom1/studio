@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-label="Distanza, velocità e GDPR dell'hosting">
+  <defs>
+    <pattern id="gridHm" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/></pattern>
+    <style>.mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}.body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}</style>
+  </defs>
+  <rect width="1200" height="500" fill="#F7F6F2"/>
+  <rect width="1200" height="500" fill="url(#gridHm)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">DAL VISITATORE AL SERVER: DISTANZA E DATI</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <!-- visitor -->
+  <g transform="translate(80,150)"><circle cx="40" cy="40" r="26" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/><text x="40" y="46" class="mono" font-size="13" fill="#14161A" text-anchor="middle">IT</text><text x="40" y="98" class="mono" font-size="13" fill="#5A5E66" text-anchor="middle">visitatore</text></g>
+  <!-- near server -->
+  <g transform="translate(430,120)">
+    <line x1="-290" y1="70" x2="-10" y2="35" stroke="#2440C8" stroke-width="3"/>
+    <rect x="0" y="0" width="230" height="120" fill="#FFFFFF" stroke="#2440C8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="230" height="8" fill="#2440C8"/>
+    <text x="20" y="42" class="mono" font-size="14" fill="#2440C8">SERVER IT / UE</text>
+    <text x="20" y="76" class="body" font-size="18" fill="#14161A">TTFB basso</text>
+    <text x="20" y="104" class="mono" font-size="13" fill="#14161A">dati nell'Unione ✓</text>
+  </g>
+  <!-- far server -->
+  <g transform="translate(830,120)">
+    <line x1="-370" y1="105" x2="-10" y2="55" stroke="#9AA0AA" stroke-width="3" stroke-dasharray="8 6"/>
+    <rect x="0" y="0" width="270" height="120" fill="#14161A"/>
+    <rect x="0" y="0" width="270" height="8" fill="#9AA0AA"/>
+    <text x="20" y="42" class="mono" font-size="14" fill="#9AA0AA">SERVER EXTRA-UE</text>
+    <text x="20" y="76" class="body" font-size="18" fill="#FFFFFF">TTFB alto</text>
+    <text x="20" y="104" class="mono" font-size="13" fill="#F7F6F2">misure GDPR + CDN</text>
+  </g>
+  <!-- gdpr band -->
+  <g transform="translate(80,340)">
+    <rect x="0" y="0" width="1040" height="96" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+    <text x="24" y="38" class="mono" font-size="14" fill="#5A5E66">REGOLA GDPR</text>
+    <text x="24" y="72" class="body" font-size="19" fill="#14161A">dati nell'UE = capitolo trasferimenti chiuso · dati fuori dall'UE = valutazioni e misure supplementari</text>
+  </g>
+</svg>

@@ -85,6 +85,12 @@ BLOG_SLUGS = {
     'restyling-o-sito-nuovo-5-domande':     {'en': 'redesign-or-new-website-5-questions', 'ru': 'redizajn-ili-novyj-sajt'},
     'impatto-ambientale-sito-web':          {'en': 'website-environmental-impact',        'ru': 'ekologicheskij-sled-sajta'},
     'dichiarazione-di-accessibilita-guida-2026': {'en': 'accessibility-statement-guide-2026', 'ru': 'deklaracija-o-dostupnosti-2026'},
+    # Blog · Batch 3 — IT + EN (RU è un batch a sé: slug RU pianificati, IT+EN-only).
+    'telegram-mini-app-business':           {'en': 'telegram-mini-app-for-business',       'ru': 'telegram-mini-app-dlja-biznesa'},
+    'gestionale-su-misura-vs-excel':        {'en': 'custom-management-software-vs-excel',  'ru': 'gestionale-vs-excel'},
+    'dati-strutturati-schema-org':          {'en': 'schema-org-structured-data-for-smes',  'ru': 'schema-org-mikrorazmetka'},
+    'gamification-b2b':                      {'en': 'gamification-in-b2b',                  'ru': 'gejmifikacija-v-b2b'},
+    'hosting-sito-web-italia':              {'en': 'website-hosting-italy-vs-cloud',       'ru': 'hosting-v-italii-ili-oblako'},
 }
 
 # Articoli del blog pubblicati solo in IT + EN in questa fase (la loro versione
@@ -103,6 +109,12 @@ BLOG_IT_EN_ONLY = {
     'restyling-o-sito-nuovo-5-domande',
     'impatto-ambientale-sito-web',
     'dichiarazione-di-accessibilita-guida-2026',
+    # Batch 3
+    'telegram-mini-app-business',
+    'gestionale-su-misura-vs-excel',
+    'dati-strutturati-schema-org',
+    'gamification-b2b',
+    'hosting-sito-web-italia',
 }
 
 

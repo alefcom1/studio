@@ -2590,3 +2590,384 @@ CHROME_CASI_STUDIO = {
     'Dal nostro catalogo': {'en': 'From our own catalogue'},
 }
 CHROME.update(CHROME_CASI_STUDIO)
+
+# CHROME_BLOG_BATCH3 — Blog · Batch 3 (5 articoli IT → EN) + i due backlink
+# aggiunti nei tool test-velocita / segnali-eeat. Copre ogni nodo di testo
+# generato da build_blog_post (titoli, lead, corpo, liste, alt/didascalie SVG,
+# link contestuali e CTA con « →», etichette e note del blocco «Fonti»).
+# Solo EN: il blog RU e' un batch a se'. Numeri in formato US.
+CHROME_BLOG_BATCH3 = {
+    "17 LUG 2026": {"en": "17 JUL 2026"},
+
+    # ---- Articolo 11 · Telegram Mini App ----
+    "Telegram Mini App per il business: il canale che l’Italia ignora":
+        {"en": "Telegram Mini Apps for business: the channel Italy is ignoring"},
+    "Un’app dentro Telegram, senza scaricare niente: ordini, prenotazioni e assistenza dove i clienti già scrivono. Cos’è una Telegram Mini App, quando conviene e perché in Italia quasi nessuno la usa.":
+        {"en": "An app inside Telegram, with nothing to download: orders, bookings and support where your customers already write. What a Telegram Mini App is, when it pays off, and why almost nobody in Italy uses one."},
+    "Un cliente vi scrive su Telegram per prenotare, come fa ogni settimana. Stavolta però, invece dei soliti quattro messaggi per mettersi d’accordo sull’orario, tocca un pulsante dentro la chat: si apre una piccola schermata, sceglie il giorno, conferma e ha chiuso — senza uscire da Telegram, senza installare nessuna app. Quella schermata è una Telegram Mini App, e per un’azienda è un canale che in Italia quasi nessuno usa ancora. Vediamo cos’è, quando conviene davvero al vostro business e perché il gruppo Remarka ne ha costruita una per il proprio lavoro, con numeri veri e non promesse.":
+        {"en": "A customer messages you on Telegram to book, like every week. This time, though, instead of the usual four messages to settle on a time, they tap a button inside the chat: a small screen opens, they pick the day, confirm, and they’re done — without leaving Telegram, without installing any app. That screen is a Telegram Mini App, and for a business it’s a channel almost nobody in Italy uses yet. Let’s see what it is, when it really pays off for your business, and why the Remarka group built one for its own work — with real numbers, not promises."},
+    "Che cos’è una Telegram Mini App (e cosa non è)":
+        {"en": "What a Telegram Mini App is (and what it isn’t)"},
+    "Una Telegram Mini App è, in una riga, un’app web che si apre dentro Telegram. Tecnicamente è un sito — fatto delle stesse cose di qualsiasi sito, pagine e codice — che Telegram mostra a tutto schermo dentro la chat quando l’utente tocca un pulsante. Non si scarica dallo store, non occupa memoria, non chiede aggiornamenti: vive a un tocco di distanza dalla conversazione. La documentazione ufficiale di Telegram la descrive proprio così, come un’interfaccia web che può sostituire del tutto un sito, ma dentro l’app di messaggistica.":
+        {"en": "A Telegram Mini App is, in one line, a web app that opens inside Telegram. Technically it’s a website — made of the same things as any site, pages and code — that Telegram shows full-screen inside the chat when the user taps a button. There’s nothing to download from a store, it takes no memory, it asks for no updates: it lives one tap away from the conversation. Telegram’s official documentation describes it exactly this way, as a web interface that can completely replace a website, but inside the messaging app."},
+    "Serve distinguerla da due cose che le somigliano. Un bot Telegram risponde a comandi e messaggi di testo: utile, ma resta una conversazione a domande e risposte. Un’app nativa, quella dello store, è potente ma costa cara, va scaricata e mantenuta due volte per iOS e Android. La Mini App sta nel mezzo e prende il meglio: l’interfaccia ricca di un’app, ma dentro Telegram e senza installare niente. È il posto giusto quando l’interazione deve essere più di un messaggio, ma non merita un’app da scaricare.":
+        {"en": "It helps to tell it apart from two things it resembles. A Telegram bot replies to commands and text messages: useful, but it stays a question-and-answer conversation. A native app, the kind from the store, is powerful but expensive, has to be downloaded and maintained twice for iOS and Android. The Mini App sits in the middle and takes the best of both: the rich interface of an app, but inside Telegram and with nothing to install. It’s the right place when the interaction has to be more than a message, yet doesn’t deserve an app to download."},
+    "Quattro modi di stare online: il sito nel browser, l’app nativa nello store, il bot come chat di testo e la Mini App — un’app vera dentro Telegram, senza installare niente. Fonte: documentazione ufficiale Telegram, Mini Apps.":
+        {"en": "Four ways to be online: the website in the browser, the native app in the store, the bot as a text chat, and the Mini App — a real app inside Telegram, with nothing to install. Source: Telegram official documentation, Mini Apps."},
+    "La forza di una Mini App non è tecnica, è di posizione: sta dove le persone già sono. Telegram ha superato il miliardo di utenti attivi al mese nel 2025, e per molte attività — soprattutto quelle che parlano con clienti abituali — la chat è già il canale dove arrivano richieste e prenotazioni. Portare lì dentro un’interfaccia vera significa togliere l’attrito peggiore: quello di far uscire il cliente dalla conversazione per aprire un sito, cercare la pagina, fare login.":
+        {"en": "A Mini App’s strength isn’t technical, it’s about position: it sits where people already are. Telegram passed one billion monthly active users in 2025, and for many businesses — especially those that talk to regular customers — the chat is already the channel where requests and bookings come in. Bringing a real interface in there removes the worst friction of all: pushing the customer out of the conversation to open a website, find the page, log in."},
+    "C’è di più della sola comodità. La piattaforma di Telegram dà alle Mini App strumenti da vero prodotto: pagamenti integrati, notifiche mirate, autenticazione dell’utente senza moduli da compilare. Sono i mattoni con cui si costruisce un canale che non solo informa, ma vende e fa restare. Ed è qui che si apre lo spazio che il titolo chiama «il canale che l’Italia ignora»: tra le PMI italiane le Mini App sono ancora rarissime — non per un limite tecnico, ma perché quasi nessuno le propone. Chi arriva prima trova un terreno quasi vuoto.":
+        {"en": "There’s more than convenience. Telegram’s platform gives Mini Apps real-product tools: built-in payments, targeted notifications, user authentication with no forms to fill in. These are the bricks for a channel that doesn’t just inform, but sells and keeps people. And this is where the space the title calls “the channel Italy is ignoring” opens up: among Italian SMBs Mini Apps are still extremely rare — not for a technical limit, but because almost nobody offers them. Whoever gets there first finds an almost empty field."},
+    "Un caso reale: il nostro gestionale, dentro Telegram":
+        {"en": "A real case: our management system, inside Telegram"},
+    "Non lo diciamo in teoria: una Mini App l’abbiamo costruita per noi. Il gruppo Remarka gestisce le traduzioni con un sistema interno (un TMS), e traduttori e project manager vivono nelle chat più che alle scrivanie. Aprire il gestionale dal browser solo per controllare lo stato di un ordine era troppo, ogni volta. Così abbiamo portato le funzioni chiave del sistema dentro una Telegram Mini App: ordini, stati e notifiche direttamente in chat, con la stessa logica del pannello web.":
+        {"en": "We don’t say it in theory: we built a Mini App for ourselves. The Remarka group runs its translations on an internal system (a TMS), and translators and project managers live in chats more than at desks. Opening the management system in a browser just to check an order’s status was too much, every time. So we brought the system’s key functions into a Telegram Mini App: orders, statuses and notifications right in the chat, with the same logic as the web dashboard."},
+    "I numeri sono piccoli e veri, e li diamo così come sono: la Mini App è stata sviluppata in due settimane e oggi gestisce oltre dieci utenti e ordini al giorno. Il gestionale entra in tasca — niente app da installare, niente login da browser — e sta dove il team già lavora. È esattamente il tipo di prodotto che sappiamo costruire quando l’interfaccia deve stare dove sono già le persone, e la stessa ingegneria che mettiamo in una web app su misura per voi.":
+        {"en": "The numbers are small and real, and we give them as they are: the Mini App was built in two weeks and today handles over ten users and orders a day. The management system fits in your pocket — no app to install, no browser login — and lives where the team already works. It’s exactly the kind of product we know how to build when the interface has to be where people already are, and the same engineering we put into a custom web app for you."},
+    "Il caso completo, con il link al progetto vivo →":
+        {"en": "The full case, with a link to the live project →"},
+    "Una web app o Mini App su misura per la vostra azienda →":
+        {"en": "A custom web app or Mini App for your company →"},
+    "Quando conviene al vostro business (e quando no)":
+        {"en": "When it pays off for your business (and when it doesn’t)"},
+    "Onestà prima dell’entusiasmo: una Mini App non serve a tutti. Conviene quando ricorrono certe condizioni, e in quei casi è spesso la scelta più intelligente — più economica e più rapida di un’app nativa.":
+        {"en": "Honesty before enthusiasm: a Mini App isn’t for everyone. It pays off when certain conditions recur, and in those cases it’s often the smartest choice — cheaper and faster than a native app."},
+    "I vostri clienti sono già su Telegram e vi scrivono lì: un ristorante che prende prenotazioni, uno studio che fissa appuntamenti, un negozio con clienti abituali.":
+        {"en": "Your customers are already on Telegram and write to you there: a restaurant taking bookings, a practice setting appointments, a shop with regular customers."},
+    "L’interazione è ricorrente e va oltre il testo: scegliere una data, sfogliare un catalogo, controllare lo stato di un ordine, pagare.":
+        {"en": "The interaction is recurring and goes beyond text: picking a date, browsing a catalogue, checking an order’s status, paying."},
+    "Non c’è budget per un’app nativa da mantenere su due store: la Mini App è una sola, e vive dove vive Telegram.":
+        {"en": "There’s no budget for a native app to maintain on two stores: the Mini App is a single one, and lives where Telegram lives."},
+    "E quando non conviene? Se il vostro pubblico non usa Telegram, la porta si apre su una stanza vuota: il canale giusto è un altro. Se il prodotto ha bisogno di funzioni profonde del telefono — fotocamera avanzata, sensori, elaborazione pesante offline — o se la presenza nello store è essa stessa parte del marchio, allora l’app nativa ha un senso che una Mini App non copre. Fuori da questi casi, però, si finisce spesso a pagare un’app da migliaia di euro per fare ciò che una Mini App farebbe con una frazione della spesa.":
+        {"en": "And when doesn’t it pay off? If your audience doesn’t use Telegram, the door opens onto an empty room: the right channel is another one. If the product needs deep phone functions — advanced camera, sensors, heavy offline processing — or if the store presence is itself part of the brand, then the native app makes a sense a Mini App doesn’t cover. Outside these cases, though, you often end up paying for an app worth thousands of euros to do what a Mini App would do for a fraction of the cost."},
+    "Il primo passo non è tecnico, è una domanda: dove sono già i vostri clienti, e cosa vorrebbero fare senza dover cambiare app? Da lì si disegna l’interazione essenziale — poche schermate, un’azione chiara — e la si collega ai sistemi che già usate. Una Mini App resta comunque web, e sul web la velocità conta: vale la pena misurarne le prestazioni fin dall’inizio, come per qualsiasi sito. E se volete capire prima se il vostro pubblico è pronto anche per un’app installabile senza store, il confronto tra PWA e app nativa lo abbiamo raccontato a parte.":
+        {"en": "The first step isn’t technical, it’s a question: where are your customers already, and what would they like to do without switching apps? From there you design the essential interaction — a few screens, one clear action — and connect it to the systems you already use. A Mini App is still web, and on the web speed matters: it’s worth measuring its performance from the start, as with any site. And if you first want to understand whether your audience is ready for an installable app without a store too, we’ve covered the PWA versus native app comparison separately."},
+    "Progettiamo la vostra web app o Mini App su misura →":
+        {"en": "We design your custom web app or Mini App →"},
+    "Misura gratis la velocità del vostro sito →":
+        {"en": "Measure your site’s speed for free →"},
+    "Leggi anche: PWA per le PMI, quando l’app non serve →":
+        {"en": "Read also: PWAs for SMBs, when the app isn’t needed →"},
+    "Telegram — Mini Apps per sviluppatori":
+        {"en": "Telegram — Mini Apps for developers"},
+    "La documentazione ufficiale: cos’è una Mini App e come si costruisce dentro Telegram.":
+        {"en": "The official documentation: what a Mini App is and how to build one inside Telegram."},
+    "Telegram — la piattaforma delle Mini App":
+        {"en": "Telegram — the Mini Apps platform"},
+    "Come le Mini App si integrano in Telegram: avvio, autorizzazione, notifiche e pagamenti.":
+        {"en": "How Mini Apps integrate into Telegram: launch, authorisation, notifications and payments."},
+    "Telegram — la piattaforma dei bot":
+        {"en": "Telegram — the bot platform"},
+    "Le fondamenta su cui poggiano bot e Mini App: cosa un’azienda può automatizzare in chat.":
+        {"en": "The foundations bots and Mini Apps rest on: what a business can automate in chat."},
+    "TechCrunch — Telegram supera il miliardo di utenti (2025)":
+        {"en": "TechCrunch — Telegram passes one billion users (2025)"},
+    "Il dato sulla scala del canale: oltre un miliardo di utenti attivi al mese.":
+        {"en": "The figure on the channel’s scale: over one billion monthly active users."},
+    "Progettiamo la vostra web app su misura, a prezzo chiuso →":
+        {"en": "We design your custom web app, at a fixed price →"},
+    "Telegram Mini App per il business: un’app che si apre dentro la chat, senza installare niente":
+        {"en": "Telegram Mini App for business: an app that opens inside the chat, with nothing to install"},
+    "Telegram Mini App per il business a confronto con bot, sito web e app nativa: dove vive e cosa serve per usarla":
+        {"en": "Telegram Mini App for business compared with bot, website and native app: where it lives and what it takes to use it"},
+
+    # ---- Articolo 12 · Gestionale su misura vs Excel ----
+    "Gestionale su misura vs Excel: quando conviene il salto":
+        {"en": "Custom management software vs Excel: when the leap pays off"},
+    "Excel regge finché non vi frena: ordini persi tra fogli ed email, errori che nessuno vede, dati che non tornano. Quando conviene passare a un gestionale su misura, con un caso reale e i numeri.":
+        {"en": "Excel holds up until it holds you back: orders lost between sheets and email, errors nobody sees, figures that don’t add up. When it pays to move to custom management software, with a real case and the numbers."},
+    "«Con Excel ce la caviamo.» È vero, fino a un certo punto. Il foglio di calcolo è geniale finché l’attività è piccola: costa zero, lo sanno usare tutti, si piega a qualsiasi esigenza. Poi cresce il numero di ordini, di clienti, di persone che mettono mano allo stesso file — e quello che era una comodità diventa un collo di bottiglia: la versione giusta che non si trova, la riga sovrascritta per sbaglio, l’ordine sparito tra un foglio e una mail. A quel punto la domanda non è più «Excel o no», ma quando conviene passare a un gestionale su misura. In questo articolo proviamo a rispondere con onestà — e con un caso reale del gruppo Remarka, numeri compresi.":
+        {"en": "“We get by with Excel.” True, up to a point. The spreadsheet is brilliant while the business is small: it costs nothing, everyone knows how to use it, it bends to any need. Then the number of orders, of clients, of people touching the same file grows — and what was a convenience becomes a bottleneck: the right version that can’t be found, the row overwritten by mistake, the order vanished between a sheet and an email. At that point the question is no longer “Excel or not,” but when it pays to move to custom management software. In this article we try to answer honestly — and with a real case from the Remarka group, numbers included."},
+    "Perché Excel regge — finché non vi frena":
+        {"en": "Why Excel holds up — until it holds you back"},
+    "Il foglio di calcolo non è il nemico: è il punto di partenza giusto per quasi tutti. Un’attività che segue venti ordini al mese non ha bisogno di un sistema, ha bisogno di una tabella — ed Excel, o un foglio condiviso, la fa benissimo. Il problema non è lo strumento, è la soglia oltre la quale lo strumento smette di aiutare e comincia a rallentare. Quella soglia arriva quasi sempre insieme a tre segnali: più persone lavorano sullo stesso file, i dati diventano tanti, e le stesse informazioni vanno ricopiate da un foglio all’altro.":
+        {"en": "The spreadsheet isn’t the enemy: it’s the right starting point for almost everyone. A business handling twenty orders a month doesn’t need a system, it needs a table — and Excel, or a shared sheet, does it perfectly. The problem isn’t the tool, it’s the threshold past which the tool stops helping and starts slowing you down. That threshold almost always arrives with three signs: more people working on the same file, the data growing large, and the same information having to be copied from one sheet to another."},
+    "Ed è qui che nasce il rischio silenzioso. Il gruppo di ricerca europeo che studia i rischi dei fogli di calcolo — l’EuSpRIG — stima che oltre il 90% dei fogli usati in azienda contenga errori, e che circa la metà di quelli operativi abbia difetti concreti. Non perché chi li compila sia sbadato, ma perché un foglio non avvisa quando una formula si rompe o una riga viene sovrascritta: l’errore resta lì, invisibile, finché non costa qualcosa.":
+        {"en": "And this is where the silent risk begins. The European research group that studies spreadsheet risks — EuSpRIG — estimates that over 90% of spreadsheets used in business contain errors, and that around half of those used operationally have real defects. Not because whoever fills them in is careless, but because a spreadsheet doesn’t warn you when a formula breaks or a row is overwritten: the error stays there, invisible, until it costs something."},
+    "I costi nascosti dei fogli di calcolo":
+        {"en": "The hidden costs of spreadsheets"},
+    "Il prezzo di Excel non è nella licenza, è nel tempo e negli errori. Prendiamo i sintomi più comuni, quelli che ogni azienda cresciuta con i fogli riconosce al volo.":
+        {"en": "Excel’s price isn’t in the licence, it’s in time and errors. Take the most common symptoms, the ones every company grown on spreadsheets recognises at a glance."},
+    "La versione giusta che non si trova: «ordini_finale_v3_DEF_buono.xlsx» è una barzelletta che tutti hanno vissuto — e ogni copia è un dato che diverge dagli altri.":
+        {"en": "The right version that can’t be found: “orders_final_v3_DEF_good.xlsx” is a joke everyone has lived — and every copy is data that drifts from the rest."},
+    "Il lavoro perso tra fogli ed email: un ordine confermato in una chat, un preventivo in un altro file, una scadenza nella testa di una persona sola. Basta che quella persona sia in ferie.":
+        {"en": "Work lost between sheets and email: an order confirmed in a chat, a quote in another file, a deadline in one person’s head alone. All it takes is for that person to be on holiday."},
+    "Gli errori che nessuno vede: una formula trascinata male, un incolla sulla cella sbagliata, un totale che non torna e che nessuno controlla perché «è sempre andato bene».":
+        {"en": "The errors nobody sees: a formula dragged wrong, a paste into the wrong cell, a total that doesn’t add up and that nobody checks because “it’s always been fine.”"},
+    "L’assenza di ruoli: tutti possono cambiare tutto, senza traccia di chi ha modificato cosa e quando.":
+        {"en": "The absence of roles: everyone can change everything, with no trace of who changed what, and when."},
+    "A sinistra il lavoro sparso tra fogli, email e teste delle persone; a destra un gestionale su misura dove ordini, clienti, scadenze e ruoli vivono in un solo sistema. Fonte del dato sugli errori: EuSpRIG, ricerca sui fogli di calcolo.":
+        {"en": "On the left, work scattered across sheets, email and people’s heads; on the right, custom management software where orders, clients, deadlines and roles live in a single system. Source for the error figure: EuSpRIG, spreadsheet research."},
+    "Quando conviene il salto a un gestionale su misura":
+        {"en": "When the leap to custom management software pays off"},
+    "Nessuno di questi problemi è drammatico da solo. Insieme, però, formano una tassa quotidiana sul tempo del team — e ogni tanto un errore che finisce in fattura o in una consegna saltata. Le cronache raccolte dall’EuSpRIG sono piene di casi in cui un singolo sbaglio di foglio è costato bilanci da rifare e numeri sbagliati presi per buoni. Il momento giusto per il salto non è una dimensione, è un insieme di sintomi: se ne riconoscete tre o più, il foglio ha finito di aiutarvi.":
+        {"en": "None of these problems is dramatic on its own. Together, though, they form a daily tax on the team’s time — and every so often an error that ends up on an invoice or in a missed delivery. The records collected by EuSpRIG are full of cases where a single spreadsheet mistake cost restated accounts and wrong numbers taken as true. The right moment for the leap isn’t a size, it’s a set of symptoms: if you recognise three or more, the spreadsheet has finished helping you."},
+    "Più persone lavorano sugli stessi dati contemporaneamente, e vi trovate a fondere versioni a mano.":
+        {"en": "Several people work on the same data at the same time, and you find yourselves merging versions by hand."},
+    "Le stesse informazioni vanno ricopiate da un posto all’altro — dal preventivo all’ordine, dall’ordine alla fattura — con il rischio di errore a ogni passaggio.":
+        {"en": "The same information has to be copied from one place to another — from quote to order, from order to invoice — with the risk of error at every step."},
+    "Vi servono ruoli diversi: chi vede tutto, chi solo la propria parte, chi non deve toccare i prezzi.":
+        {"en": "You need different roles: who sees everything, who only their own part, who mustn’t touch the prices."},
+    "Volete sapere in ogni momento lo stato di ogni pratica, senza aprire cinque file e chiedere a tre persone.":
+        {"en": "You want to know the status of every case at any moment, without opening five files and asking three people."},
+    "State perdendo ordini o scadenze perché l’informazione vive nella testa di qualcuno, non in un sistema.":
+        {"en": "You’re losing orders or deadlines because the information lives in someone’s head, not in a system."},
+    "Un caso reale: il sistema che manda avanti un’agenzia":
+        {"en": "A real case: the system that runs an agency"},
+    "Attenzione: «gestionale su misura» non vuol dire per forza un progetto enorme. Vuol dire un sistema costruito sul vostro modo di lavorare, invece di piegare il lavoro a un software preconfezionato che fa il 70% di ciò che serve e vi obbliga al restante 30% a mano. Anche qui parliamo di ciò che abbiamo costruito per noi. Gestire centinaia di ordini di traduzione — clienti, traduttori, scadenze, preventivi, fatture — con fogli ed email era diventato il collo di bottiglia che rompeva le consegne.":
+        {"en": "Careful: “custom management software” doesn’t necessarily mean a huge project. It means a system built around your way of working, instead of bending the work to off-the-shelf software that does 70% of what you need and forces you to do the remaining 30% by hand. Here too we’re talking about what we built for ourselves. Running hundreds of translation orders — clients, translators, deadlines, quotes, invoices — on sheets and email had become the bottleneck that broke deliveries."},
+    "Così il gruppo Remarka ha costruito un TMS, un gestionale su misura dove ogni ordine ha uno stato, ogni cliente una scheda, ogni traduttore un carico e ogni lavoro la sua fattura: bacheca degli ordini, anagrafiche, preventivi e contabilità in un’unica web app. I numeri, reali: il sistema è in produzione da due anni e gestisce 180 ordini al mese, oltre 2.000 l’anno. Dentro ci lavorano 2 amministratori, 8 project manager e 4 agenzie partner con la propria base clienti — e gli ordini non si perdono più tra le email. È la stessa ingegneria che mettiamo in una web app su misura per la vostra azienda.":
+        {"en": "So the Remarka group built a TMS, custom management software where every order has a status, every client a record, every translator a workload, and every job its invoice: order board, contacts, quotes and accounting in a single web app. The numbers, real: the system has been in production for two years and handles 180 orders a month, over 2,000 a year. Inside it work 2 administrators, 8 project managers and 4 partner agencies with their own client base — and orders no longer get lost in email. It’s the same engineering we put into custom web software for your company."},
+    "Una web app gestionale su misura per voi →":
+        {"en": "A custom management web app for you →"},
+    "Prima di decidere: due domande e un numero":
+        {"en": "Before deciding: two questions and one number"},
+    "Non serve rifare tutto domani. Prima di parlare di un gestionale, fatevi due domande oneste: quante ore alla settimana il team spende a sistemare, cercare e ricopiare dati tra fogli ed email? E quante volte, nell’ultimo anno, un errore o un’informazione persa vi è costato un cliente, una consegna o una figuraccia? Se le risposte vi mettono a disagio, il conto del «gratis» di Excel è più salato di quanto sembri.":
+        {"en": "You don’t need to redo everything tomorrow. Before talking about a management system, ask yourselves two honest questions: how many hours a week does the team spend fixing, searching and re-copying data between sheets and email? And how many times, in the past year, has an error or a lost piece of information cost you a client, a delivery or an embarrassment? If the answers make you uncomfortable, the bill for Excel’s “free” is steeper than it looks."},
+    "Il passo successivo è mappare il flusso reale — come nasce un ordine, chi lo tocca, dove si incaglia — e capire quali passaggi un sistema su misura può togliere. Da lì esce un progetto con un prezzo chiuso, non un salto nel buio. E se il vostro lavoro vive già dentro le chat, val la pena sapere che quel gestionale può entrare anche dentro Telegram, in tasca al team.":
+        {"en": "The next step is to map the real flow — how an order is born, who touches it, where it gets stuck — and work out which steps a custom system can remove. Out of that comes a project with a fixed price, not a leap in the dark. And if your work already lives inside chats, it’s worth knowing that management system can go inside Telegram too, in the team’s pocket."},
+    "Progettiamo il vostro gestionale su misura, a prezzo chiuso →":
+        {"en": "We design your custom management software, at a fixed price →"},
+    "Misura la salute tecnica del vostro sito attuale →":
+        {"en": "Measure the technical health of your current site →"},
+    "Leggi anche: la Telegram Mini App, il gestionale in tasca →":
+        {"en": "Read also: the Telegram Mini App, the management system in your pocket →"},
+    "EuSpRIG — ricerca sui rischi dei fogli di calcolo":
+        {"en": "EuSpRIG — research on spreadsheet risks"},
+    "Il gruppo europeo che studia gli errori nei fogli: oltre il 90% ne contiene, metà di quelli operativi ha difetti.":
+        {"en": "The European group that studies spreadsheet errors: over 90% contain them, half of those used operationally have defects."},
+    "EuSpRIG — le «horror stories» dei fogli di calcolo":
+        {"en": "EuSpRIG — the spreadsheet “horror stories”"},
+    "Casi reali in cui un errore di Excel è costato bilanci sbagliati e decisioni prese su numeri falsi.":
+        {"en": "Real cases where an Excel error cost wrong accounts and decisions made on false numbers."},
+    "Gestire dati di clienti sparsi tra fogli ed email è anche un rischio di protezione dei dati: un sistema con ruoli lo riduce.":
+        {"en": "Managing client data scattered across sheets and email is also a data-protection risk: a system with roles reduces it."},
+    "Gestionale su misura contro Excel: da fogli di calcolo sparsi a un unico sistema con ordini, clienti e ruoli":
+        {"en": "Custom management software versus Excel: from scattered spreadsheets to a single system with orders, clients and roles"},
+    "Da Excel e email sparsi a un gestionale su misura: ordini, clienti, scadenze e ruoli in un unico sistema":
+        {"en": "From scattered Excel and email to custom management software: orders, clients, deadlines and roles in a single system"},
+
+    # ---- Articolo 13 · Dati strutturati schema.org ----
+    "Schema.org per le PMI: i dati strutturati che Google premia":
+        {"en": "Schema.org for SMEs: the structured data Google rewards"},
+    "I dati strutturati raccontano il vostro sito a Google in una lingua che capisce: prezzi, orari, recensioni, eventi. Cosa sono, come funziona schema.org e quali risultati ricchi potete ottenere.":
+        {"en": "Structured data tells Google about your site in a language it understands: prices, opening hours, reviews, events. What it is, how schema.org works, and which rich results you can get."},
+    "Cercate su Google il nome di un ristorante e, prima ancora di aprire il sito, vedete già le stelline delle recensioni, l’orario di apertura, la fascia di prezzo. Cercate una ricetta e compaiono i tempi di cottura e la foto. Non è magia né fortuna: quei siti hanno detto a Google, in modo esplicito, cosa contengono — usando i dati strutturati di schema.org. È uno degli strumenti più sottovalutati dalle PMI italiane, eppure è tra i pochi che potete aggiungere senza riscrivere il sito e con un effetto visibile nei risultati. Vediamo cosa sono i dati strutturati schema.org, come funzionano e cosa Google ci fa davvero.":
+        {"en": "Search Google for a restaurant’s name and, before you even open the site, you already see the review stars, the opening hours, the price range. Search for a recipe and the cooking times and the photo appear. It isn’t magic or luck: those sites told Google, explicitly, what they contain — using schema.org structured data. It’s one of the most underrated tools among Italian SMEs, yet one of the few you can add without rewriting the site and with a visible effect in the results. Let’s see what schema.org structured data is, how it works, and what Google actually does with it."},
+    "Cosa sono i dati strutturati (in parole vostre)":
+        {"en": "What structured data is (in your words)"},
+    "Una pagina web, per un motore di ricerca, è un muro di testo da interpretare. «€ 25» è un prezzo, un codice postale o una taglia? «Chiuso» si riferisce a un negozio, a una strada o a un commento? Gli esseri umani lo capiscono dal contesto; una macchina deve indovinare. I dati strutturati servono esattamente a togliere di mezzo l’indovinello: sono un blocco di codice, invisibile al visitatore, che etichetta le informazioni una per una — «questo è il nome dell’attività, questo l’orario, questo il prezzo, queste le recensioni».":
+        {"en": "A web page, to a search engine, is a wall of text to interpret. Is “€ 25” a price, a postcode or a size? Does “Closed” refer to a shop, a road or a comment? Humans work it out from context; a machine has to guess. Structured data exists precisely to take the guesswork out: it’s a block of code, invisible to the visitor, that labels the information one item at a time — “this is the business name, this the opening hours, this the price, these the reviews.”"},
+    "Il vocabolario con cui si scrivono queste etichette si chiama schema.org: un dizionario condiviso, nato da un accordo tra Google, Microsoft e altri motori, che definisce come descrivere un’azienda, un prodotto, un evento, un articolo. Google raccomanda di scriverlo in un formato preciso, il JSON-LD: un piccolo blocco che si mette nel codice della pagina senza toccarne l’aspetto. Il visitatore non lo vede; il motore lo legge e capisce.":
+        {"en": "The vocabulary these labels are written in is called schema.org: a shared dictionary, born of an agreement between Google, Microsoft and other engines, that defines how to describe a business, a product, an event, an article. Google recommends writing it in a specific format, JSON-LD: a small block placed in the page’s code without touching its appearance. The visitor doesn’t see it; the engine reads it and understands."},
+    "Un blocco JSON-LD etichetta le informazioni — tipo, nome, indirizzo, orari, prezzo, recensioni — e Google le trasforma in un risultato ricco: stelline, orari e mappa. Fonte: Google, introduzione ai dati strutturati; vocabolario schema.org.":
+        {"en": "A JSON-LD block labels the information — type, name, address, hours, price, reviews — and Google turns it into a rich result: stars, hours and map. Source: Google, intro to structured data; schema.org vocabulary."},
+    "I dati strutturati non sono un vezzo tecnico: servono a ottenere i risultati ricchi (rich results), cioè quelle schede più grandi e complete che superano il classico link blu. Google li mostra proprio a partire dalle informazioni etichettate con schema.org — le stelline di una recensione, le briciole di navigazione, le FAQ che si aprono sotto il risultato, la foto e i tempi di una ricetta, la data di un evento. La galleria ufficiale di Google elenca decine di questi formati, e cresce di continuo.":
+        {"en": "Structured data isn’t a technical affectation: it exists to earn rich results, those larger, fuller listings that go beyond the classic blue link. Google shows them precisely from the information labelled with schema.org — a review’s stars, breadcrumbs, the FAQs that open under the result, a recipe’s photo and times, an event’s date. Google’s official gallery lists dozens of these formats, and it keeps growing."},
+    "Il vantaggio è doppio e concreto. Il primo: un risultato ricco occupa più spazio e attira più clic, a parità di posizione. Il secondo, più sottile: le stesse etichette che Google legge le leggono anche gli assistenti AI, che pescano dai dati strutturati per capire chi siete e cosa offrite. Diciamolo con onestà, però: i dati strutturati non fanno salire il sito nella classifica di per sé — Google lo dice chiaramente. Rendono il risultato più bello e più leggibile, non più in alto. Sono un moltiplicatore di clic, non una scorciatoia di posizione.":
+        {"en": "The advantage is twofold and concrete. First: a rich result takes up more space and attracts more clicks, at the same position. Second, subtler: the same labels Google reads are read by AI assistants too, which draw on structured data to understand who you are and what you offer. Let’s be honest, though: structured data doesn’t lift the site up the rankings by itself — Google says so plainly. It makes the result nicer and more readable, not higher. It’s a click multiplier, not a ranking shortcut."},
+    "Quali dati strutturati servono davvero a una PMI":
+        {"en": "Which structured data an SME really needs"},
+    "Non serve etichettare tutto: servono i tipi giusti per la vostra attività. Ecco quelli che, per una piccola o media impresa italiana, rendono di più con meno sforzo.":
+        {"en": "You don’t need to label everything: you need the right types for your business. Here are the ones that, for a small or medium Italian business, give the most for the least effort."},
+    "Organization o LocalBusiness: nome, logo, indirizzo, telefono, orari. È la carta d’identità del sito, e per un’attività locale quella che alimenta la scheda con orari e mappa.":
+        {"en": "Organization or LocalBusiness: name, logo, address, phone, opening hours. It’s the site’s ID card, and for a local business the one that feeds the listing with hours and a map."},
+    "Product e Offer: per chi vende, prezzo, disponibilità e valuta, così Google può mostrarli direttamente nel risultato.":
+        {"en": "Product and Offer: for sellers, price, availability and currency, so Google can show them directly in the result."},
+    "Review e AggregateRating: le recensioni reali, con le stelline — ma solo se sono vere e verificabili, mai inventate.":
+        {"en": "Review and AggregateRating: real reviews, with the stars — but only if they’re genuine and verifiable, never invented."},
+    "FAQPage: le domande frequenti, che possono comparire già aperte sotto il risultato.":
+        {"en": "FAQPage: the frequently asked questions, which can appear already open under the result."},
+    "BlogPosting e Article: autore, data e immagine di un articolo — gli stessi dati strutturati che mettiamo di serie su ogni pezzo di questo blog.":
+        {"en": "BlogPosting and Article: an article’s author, date and image — the same structured data we put as standard on every piece of this blog."},
+    "Google — la galleria dei risultati ricchi →":
+        {"en": "Google — the rich results gallery →"},
+    "Come aggiungerli senza rifare il sito":
+        {"en": "How to add them without rebuilding the site"},
+    "Una regola d’oro sopra tutte, ed è anche una regola di Google: i dati strutturati devono corrispondere a ciò che l’utente vede sulla pagina. Etichettare recensioni che non esistono, prezzi finti o orari sbagliati non è furbizia, è una violazione delle linee guida che può portare a una penalizzazione manuale. La microdati premia l’onestà, non i trucchi.":
+        {"en": "One golden rule above all, and it’s a Google rule too: structured data must match what the user sees on the page. Labelling reviews that don’t exist, fake prices or wrong hours isn’t cleverness, it’s a guideline violation that can lead to a manual penalty. Structured data rewards honesty, not tricks."},
+    "La buona notizia è che i dati strutturati si aggiungono sopra il sito che avete, senza rifarlo. Sono un blocco JSON-LD nel codice della pagina: su WordPress lo si genera con un plugin SEO ben configurato o, meglio, con markup su misura che riflette davvero i vostri contenuti. Prima di pubblicare si prova: lo strumento gratuito di Google (il Rich Results Test) legge la pagina e vi dice quali risultati ricchi può generare e dove ci sono errori. È un controllo di mezz’ora che evita di scoprire il problema quando ormai è online. I dati strutturati sono parte della SEO tecnica che consegniamo di serie — non un extra da vedere «più avanti».":
+        {"en": "The good news is that structured data is added on top of the site you have, without rebuilding it. It’s a JSON-LD block in the page’s code: on WordPress it’s generated with a well-configured SEO plugin or, better, with bespoke markup that truly reflects your content. Before publishing you test it: Google’s free tool (the Rich Results Test) reads the page and tells you which rich results it can generate and where the errors are. It’s a half-hour check that saves you from finding the problem once it’s already online. Structured data is part of the technical SEO we deliver as standard — not an extra to look at “later.”"},
+    "Fanno parte della SEO tecnica che consegniamo →":
+        {"en": "They’re part of the technical SEO we deliver →"},
+    "Dati strutturati, un pezzo del quadro più grande":
+        {"en": "Structured data, one piece of a bigger picture"},
+    "Un errore comune è trattare i dati strutturati come una bacchetta magica. In realtà sono un tassello: dicono a Google e agli assistenti AI chi siete, ma valgono davvero solo se il resto regge — contenuti chiari, un sito veloce, segnali di fiducia in ordine. Le stesse etichette che descrivono la vostra azienda sono, non a caso, uno dei segnali E-E-A-T che i motori leggono per capire quanto siete affidabili.":
+        {"en": "A common mistake is treating structured data as a magic wand. In reality it’s one piece: it tells Google and AI assistants who you are, but it really counts only if the rest holds up — clear content, a fast site, trust signals in order. The same labels that describe your business are, not by chance, one of the E-E-A-T signals engines read to gauge how trustworthy you are."},
+    "Il modo giusto di iniziare è misurare cosa c’è già. In un minuto potete verificare se la vostra home espone i dati strutturati — insieme agli altri segnali di fiducia — e capire cosa manca prima di aggiungere una sola riga di codice. Da lì, i risultati ricchi diventano un obiettivo concreto, non una speranza.":
+        {"en": "The right way to start is to measure what’s already there. In a minute you can check whether your homepage exposes structured data — along with the other trust signals — and see what’s missing before adding a single line of code. From there, rich results become a concrete goal, not a hope."},
+    "Misura gratis i segnali E-E-A-T e i dati strutturati della tua home →":
+        {"en": "Measure your homepage’s E-E-A-T signals and structured data for free →"},
+    "Fa parte della SEO tecnica a prezzo chiuso →":
+        {"en": "It’s part of technical SEO at a fixed price →"},
+    "Leggi anche: E-E-A-T, come Google giudica la vostra credibilità →":
+        {"en": "Read also: E-E-A-T, how Google judges your credibility →"},
+    "schema.org — il vocabolario dei dati strutturati":
+        {"en": "schema.org — the structured data vocabulary"},
+    "Il dizionario condiviso da Google e Microsoft con cui si descrivono aziende, prodotti ed eventi.":
+        {"en": "The dictionary shared by Google and Microsoft used to describe businesses, products and events."},
+    "Google — introduzione ai dati strutturati":
+        {"en": "Google — intro to structured data"},
+    "Come funziona il markup, perché JSON-LD è il formato consigliato e cosa Google ne fa.":
+        {"en": "How the markup works, why JSON-LD is the recommended format, and what Google does with it."},
+    "Google — galleria dei risultati ricchi":
+        {"en": "Google — rich results gallery"},
+    "L’elenco ufficiale dei formati di risultato ricco che i dati strutturati possono attivare.":
+        {"en": "The official list of rich result formats that structured data can unlock."},
+    "Google — linee guida generali sui dati strutturati":
+        {"en": "Google — general structured data guidelines"},
+    "Le regole da rispettare: i dati devono corrispondere ai contenuti visibili, o scatta la penalizzazione.":
+        {"en": "The rules to follow: the data must match the visible content, or the penalty kicks in."},
+    "Dati strutturati e SEO tecnica, di serie in ogni sito →":
+        {"en": "Structured data and technical SEO, standard in every site →"},
+    "Dati strutturati schema.org: un blocco JSON-LD invisibile che diventa un risultato ricco su Google":
+        {"en": "Schema.org structured data: an invisible JSON-LD block that becomes a rich result on Google"},
+    "Anatomia dei dati strutturati schema.org in JSON-LD: tipo, nome, orari e prezzo che diventano un risultato ricco su Google":
+        {"en": "Anatomy of schema.org structured data in JSON-LD: type, name, hours and price that become a rich result on Google"},
+
+    # ---- Articolo 14 · Gamification B2B ----
+    "Gamification nel B2B: quando un gioco vende servizi seri":
+        {"en": "Gamification in B2B: when a game sells serious services"},
+    "Un servizio B2B «serio» fatica a farsi ricordare. La gamification può tenere le persone sul sito e raccontare cosa fate — se è strumento di marketing, non gadget. Come funziona, con un caso reale.":
+        {"en": "A “serious” B2B service struggles to be remembered. Gamification can keep people on the site and tell them what you do — if it’s a marketing tool, not a gadget. How it works, with a real case."},
+    "Un servizio B2B serio — una consulenza, una traduzione tecnica, un software gestionale — ha un problema che nessuno confessa volentieri: è noioso da raccontare. La brochure la legge chi già vi conosce; il sito lo si apre, si scorre e si chiude in trenta secondi. La gamification, cioè usare meccaniche da gioco fuori dal gioco, promette di rompere questa noia: tenere le persone sulla pagina, farle interagire, lasciare un ricordo. Ma funziona davvero nel marketing B2B, o è un gadget costoso? In questo articolo vediamo quando un gioco vende servizi seri, con un caso reale del gruppo Remarka e i suoi numeri.":
+        {"en": "A serious B2B service — a consultancy, a technical translation, a management software — has a problem nobody likes to admit: it’s boring to tell. The brochure is read by those who already know you; the site is opened, scrolled and closed in thirty seconds. Gamification, that is using game mechanics outside a game, promises to break this boredom: keep people on the page, get them interacting, leave a memory. But does it really work in B2B marketing, or is it an expensive gadget? In this article we see when a game sells serious services, with a real case from the Remarka group and its numbers."},
+    "Cos’è la gamification (e cosa non è)":
+        {"en": "What gamification is (and what it isn’t)"},
+    "Gamification non vuol dire «trasformare l’azienda in un videogioco». Vuol dire prendere alcune meccaniche che rendono i giochi coinvolgenti — un obiettivo chiaro, un progresso visibile, una piccola sfida, una ricompensa — e usarle in un contesto che gioco non è: un sito, un percorso di prova, un modulo. Il Nielsen Norman Group, autorità nel campo dell’esperienza utente, la definisce proprio così: l’uso di meccaniche di gioco in contesti non di gioco.":
+        {"en": "Gamification doesn’t mean “turning the company into a video game.” It means taking some of the mechanics that make games engaging — a clear goal, visible progress, a small challenge, a reward — and using them in a context that isn’t a game: a site, a trial journey, a form. The Nielsen Norman Group, an authority in user experience, defines it exactly that way: the use of game mechanics in non-game contexts."},
+    "E chiariamo subito cosa non è, perché è qui che si sbaglia. Non è appiccicare un punteggio a caso o una barra di progresso finta: quella è decorazione, e si vede. La gamification funziona quando tocca leve psicologiche reali. Sempre il Nielsen Norman Group le riconduce a tre bisogni fondamentali — autonomia, competenza, senso di relazione: le persone si coinvolgono quando possono scegliere, quando sentono di migliorare, quando quello che fanno ha un significato. Un gioco che ignora questi bisogni è solo un fastidio in più.":
+        {"en": "And let’s be clear at once about what it isn’t, because this is where people go wrong. It isn’t slapping on a random score or a fake progress bar: that’s decoration, and it shows. Gamification works when it touches real psychological levers. Again the Nielsen Norman Group traces them to three fundamental needs — autonomy, competence, a sense of relatedness: people engage when they can choose, when they feel they’re improving, when what they do has meaning. A game that ignores these needs is just one more annoyance."},
+    "Perché nel B2B è più difficile (e più prezioso)":
+        {"en": "Why in B2B it’s harder (and more valuable)"},
+    "Nel B2C la gamification è ovunque: raccolte punti, badge, classifiche. Nel B2B l’istinto è opposto — «siamo un’azienda seria, non un luna park» — e proprio per questo l’occasione è più grande. In un settore dove tutti i siti si somigliano, con gli stessi claim e le stesse foto stock, un contenuto che coinvolge davvero è una rarità che si nota e si ricorda. Il punto non è divertire per divertire: è dare al visitatore un motivo per restare, e al marchio qualcosa da raccontare.":
+        {"en": "In B2C, gamification is everywhere: points schemes, badges, leaderboards. In B2B the instinct is the opposite — “we’re a serious company, not a funfair” — and precisely for that the opportunity is bigger. In a sector where all the sites look alike, with the same claims and the same stock photos, content that genuinely engages is a rarity that gets noticed and remembered. The point isn’t to entertain for entertainment’s sake: it’s to give the visitor a reason to stay, and the brand something to talk about."},
+    "C’è anche un ritorno tecnico spesso ignorato. Il tempo che le persone passano sul sito e il modo in cui interagiscono sono segnali di qualità dei contenuti — Google premia le pagine che rispondono davvero e trattengono, non quelle che si abbandonano in due secondi. Un contenuto che intrattiene mentre spiega chi siete lavora quindi su due fronti insieme: la memoria di chi lo vive e la salute del sito agli occhi dei motori.":
+        {"en": "There’s also a technical return that’s often ignored. The time people spend on the site and the way they interact are signals of content quality — Google rewards pages that genuinely answer and hold attention, not those abandoned in two seconds. Content that entertains while it explains who you are therefore works on two fronts at once: the memory of those who experience it and the site’s health in the eyes of the engines."},
+    "Il ciclo che rende coinvolgente un’esperienza: un obiettivo chiaro, un’azione, un progresso visibile, una ricompensa — poggiato sui tre bisogni di autonomia, competenza e relazione. Fonte: Nielsen Norman Group.":
+        {"en": "The loop that makes an experience engaging: a clear goal, an action, visible progress, a reward — resting on the three needs of autonomy, competence and relatedness. Source: Nielsen Norman Group."},
+    "Un caso reale: un gioco per raccontare le traduzioni":
+        {"en": "A real case: a game to tell the story of translation"},
+    "Anche qui, prima di venderlo a voi l’abbiamo fatto per noi. Un servizio B2B «serio» come la traduzione fatica a farsi ricordare: volevamo un modo per far restare le persone sul sito dell’agenzia e raccontare il nostro mondo senza una brochure noiosa. Così abbiamo creato «L’Impero delle Traduzioni», un gioco browser in italiano dentro il sito: gamification al servizio del marketing, un contenuto che intrattiene e allo stesso tempo racconta cosa facciamo.":
+        {"en": "Here too, before selling it to you we did it for ourselves. A “serious” B2B service like translation struggles to be remembered: we wanted a way to keep people on the agency’s site and tell our world without a boring brochure. So we created “Translation Empire,” a browser game in Italian inside the site: gamification in the service of marketing, content that entertains while it tells what we do."},
+    "I numeri, così come sono: 984 partite giocate e oltre 200 ore complessive passate sul sito dell’agenzia — 12.086 minuti — grazie al gioco. Per un servizio che «non si può raccontare», è tempo di attenzione reale, non un dato gonfiato. È il lato creativo dello stesso team che vi fa il restyling: quando serve far restare l’utente, sappiamo anche divertirlo.":
+        {"en": "The numbers, as they are: 984 games played and over 200 hours in total spent on the agency’s site — 12,086 minutes — thanks to the game. For a service that “can’t be told,” that’s real attention time, not an inflated figure. It’s the creative side of the same team that handles your redesign: when the job is to keep the user around, we know how to entertain them too."},
+    "Quando un gioco vende (e quando è solo un costo)":
+        {"en": "When a game sells (and when it’s just a cost)"},
+    "La gamification non è la risposta a ogni problema di marketing. Conviene quando ci sono le condizioni giuste, ed è uno spreco quando le si forza.":
+        {"en": "Gamification isn’t the answer to every marketing problem. It pays off when the right conditions are there, and it’s a waste when you force them."},
+    "Avete qualcosa da spiegare che a parole annoia: un processo, un mestiere, un concetto tecnico che un’esperienza rende chiaro in un modo che il testo non può.":
+        {"en": "You have something to explain that bores in words: a process, a craft, a technical concept that an experience makes clear in a way text can’t."},
+    "Il vostro pubblico torna sul sito o ci passa del tempo: un gioco ha senso dove c’è attenzione da coltivare, non dove si cerca un numero di telefono e via.":
+        {"en": "Your audience comes back to the site or spends time on it: a game makes sense where there’s attention to cultivate, not where people look up a phone number and leave."},
+    "Volete distinguervi in un settore uniforme: dove i concorrenti si somigliano tutti, un contenuto vivo è un vantaggio di memoria.":
+        {"en": "You want to stand out in a uniform sector: where competitors all look alike, living content is an advantage in memory."},
+    "Da dove partire, senza buttare budget":
+        {"en": "Where to start, without wasting budget"},
+    "E quando è solo un costo? Quando il gioco non c’entra niente con ciò che vendete, quando è messo lì per moda e non risolve un problema reale del visitatore, quando complica il percorso invece di arricchirlo. Un gioco che allontana la persona dall’azione che conta — chiedere un preventivo, capire un servizio — è un gadget che avete pagato per rallentarvi. La domanda giusta, sempre, è: questo gioco fa restare e capire, o solo fare scena?":
+        {"en": "And when is it just a cost? When the game has nothing to do with what you sell, when it’s there for fashion and solves no real problem for the visitor, when it complicates the journey instead of enriching it. A game that pulls the person away from the action that matters — asking for a quote, understanding a service — is a gadget you paid to slow yourself down. The right question, always, is: does this game make people stay and understand, or just put on a show?"},
+    "Non si comincia dal gioco, si comincia dal messaggio. Cosa volete che una persona ricordi dopo essere passata dal vostro sito? Se quella cosa si spiega meglio facendola che leggendola, allora la gamification ha un senso — e va disegnata attorno a quel messaggio, non attorno al divertimento fine a sé stesso. È il tipo di idea che nasce quando restyling e marketing lavorano insieme: se state ripensando il sito e cercate un modo per farlo ricordare, questo è il momento giusto per valutarlo, con i piedi per terra e un occhio ai numeri.":
+        {"en": "You don’t start from the game, you start from the message. What do you want a person to remember after passing through your site? If that thing is explained better by doing it than by reading it, then gamification makes sense — and it should be designed around that message, not around fun for its own sake. It’s the kind of idea that comes up when redesign and marketing work together: if you’re rethinking the site and looking for a way to make it memorable, this is the right time to weigh it up, feet on the ground and an eye on the numbers."},
+    "Restyling e marketing per un sito che si ricorda →":
+        {"en": "Redesign and marketing for a site that gets remembered →"},
+    "Misura la salute del tuo sito attuale, gratis →":
+        {"en": "Measure the health of your current site, free →"},
+    "Leggi anche: check-up del sito web, le 7 misure che contano →":
+        {"en": "Read also: website check-up, the 7 metrics that matter →"},
+    "Nielsen Norman Group — la gamification nell’esperienza utente":
+        {"en": "Nielsen Norman Group — gamification in the user experience"},
+    "L’autorità mondiale della UX definisce cos’è la gamification e quando funziona davvero.":
+        {"en": "The world authority on UX defines what gamification is and when it really works."},
+    "Nielsen Norman Group — autonomia, competenza e relazione":
+        {"en": "Nielsen Norman Group — autonomy, competence and relatedness"},
+    "I tre bisogni psicologici che rendono un’esperienza coinvolgente, base di ogni buona gamification.":
+        {"en": "The three psychological needs that make an experience engaging, the basis of any good gamification."},
+    "Perché un contenuto che coinvolge e trattiene è anche un segnale di qualità per la ricerca.":
+        {"en": "Why content that engages and holds attention is also a quality signal for search."},
+    "Gamification nel marketing B2B: meccaniche di gioco che tengono le persone sul sito e raccontano un servizio serio":
+        {"en": "Gamification in B2B marketing: game mechanics that keep people on the site and tell a serious service’s story"},
+    "Il ciclo della gamification nel marketing B2B: obiettivo, azione, progresso e ricompensa, sui bisogni di autonomia, competenza e relazione":
+        {"en": "The gamification loop in B2B marketing: goal, action, progress and reward, on the needs of autonomy, competence and relatedness"},
+
+    # ---- Articolo 15 · Hosting Italia o cloud ----
+    "Hosting in Italia o in cloud: cosa cambia per velocità e GDPR":
+        {"en": "Website hosting in Italy or the cloud: what changes for speed and GDPR"},
+    "Dove vive il vostro sito conta più di quanto pensiate: cambia la velocità di caricamento e la conformità al GDPR. Hosting in Italia, cloud europeo o extra-UE: cosa scegliere e perché.":
+        {"en": "Where your site lives matters more than you think: it changes load speed and GDPR compliance. Hosting in Italy, European cloud or outside the EU: what to choose and why."},
+    "«Tanto l’hosting è tutto uguale, prendo il più economico.» È l’idea con cui si firmano contratti che poi costano cari in due valute diverse: secondi di attesa e grattacapi legali. Dove vivono fisicamente i vostri file — un server in Italia, un cloud europeo, un data center oltreoceano — cambia due cose che pesano davvero: quanto in fretta la pagina si apre a un visitatore italiano, e quanto è semplice restare in regola con il GDPR sui dati dei clienti. In questo articolo vediamo cosa cambia per l’hosting di un sito web in Italia rispetto al cloud, senza tecnicismi inutili e con le domande giuste da fare prima di scegliere.":
+        {"en": "“Hosting is all the same anyway, I’ll take the cheapest.” It’s the idea behind contracts that then cost dearly in two different currencies: seconds of waiting and legal headaches. Where your files physically live — a server in Italy, a European cloud, a data center overseas — changes two things that really weigh: how fast the page opens for an Italian visitor, and how simple it is to stay compliant with the GDPR on your customers’ data. In this article we see what changes for website hosting in Italy versus the cloud, without needless jargon and with the right questions to ask before choosing."},
+    "Cosa cambia per la velocità: la distanza conta":
+        {"en": "What changes for speed: distance matters"},
+    "Ogni volta che qualcuno apre il vostro sito, il suo browser deve dialogare con il server dove vivono i file. La prima risposta del server ha un nome tecnico — Time to First Byte, il tempo fino al primo byte — ed è la base su cui si costruisce tutta la velocità percepita. Su questo tempo pesano due cose: quanto è veloce il server a rispondere, e quanto è lontano da chi lo interroga. La documentazione di Google su questa metrica è netta: la scelta dell’hosting è determinante, e i server condivisi e sovraffollati sono generalmente più lenti.":
+        {"en": "Every time someone opens your site, their browser has to talk to the server where the files live. The server’s first response has a technical name — Time to First Byte, the time to the first byte — and it’s the base on which all perceived speed is built. Two things weigh on this time: how fast the server responds, and how far it is from whoever queries it. Google’s documentation on this metric is blunt: the choice of hosting is decisive, and shared, overcrowded servers are generally slower."},
+    "La distanza fisica non è un dettaglio. Un server lontano dai vostri visitatori aggiunge latenza a ogni richiesta — millisecondi che, sommati, diventano secondi di attesa in più su una connessione mobile. Se il vostro pubblico è italiano, un hosting vicino (in Italia o comunque in Europa) parte avvantaggiato. La soluzione che scavalca il problema si chiama CDN, una rete di server che tiene copie del sito vicino agli utenti ovunque siano: con una buona CDN davanti, anche un’origine lontana può servire in fretta un visitatore italiano.":
+        {"en": "Physical distance isn’t a detail. A server far from your visitors adds latency to every request — milliseconds that, added up, become extra seconds of waiting on a mobile connection. If your audience is Italian, hosting that’s close (in Italy or at least in Europe) starts with an advantage. The solution that gets around the problem is called a CDN, a network of servers that keeps copies of the site near users wherever they are: with a good CDN in front, even a distant origin can serve an Italian visitor quickly."},
+    "Dal visitatore italiano al server: vicino (Italia o UE) significa tempo di risposta basso e dati che restano nell’Unione; lontano (extra-UE) significa più latenza e, per il GDPR, misure supplementari. Una CDN avvicina i contenuti. Fonti: web.dev (TTFB), EDPB (trasferimenti dati).":
+        {"en": "From the Italian visitor to the server: close (Italy or EU) means low response time and data that stays in the Union; far (outside the EU) means more latency and, for the GDPR, supplementary measures. A CDN brings the content closer. Sources: web.dev (TTFB), EDPB (data transfers)."},
+    "Cosa cambia per il GDPR: dove finiscono i dati":
+        {"en": "What changes for the GDPR: where the data ends up"},
+    "Qui il discorso si sposta dalla velocità alla legge, e diventa serio. Il vostro sito, quasi sempre, raccoglie dati personali: un modulo contatti, un e-commerce, persino i log del server con gli indirizzi IP. Il GDPR — il regolamento europeo sulla protezione dei dati — stabilisce che questi dati godono di una tutela precisa, e pone regole stringenti quando escono dall’Unione Europea. Non è un divieto di usare fornitori extra-UE, ma un obbligo di garantire che, ovunque vadano, i dati mantengano lo stesso livello di protezione.":
+        {"en": "Here the talk shifts from speed to law, and gets serious. Your site, almost always, collects personal data: a contact form, an e-commerce, even server logs with IP addresses. The GDPR — the European data protection regulation — establishes that this data enjoys a precise protection, and sets strict rules when it leaves the European Union. It isn’t a ban on using non-EU providers, but an obligation to ensure that, wherever it goes, the data keeps the same level of protection."},
+    "La differenza pratica è questa. Se ospitate il sito in Italia o in un data center europeo, i dati restano nell’UE e il capitolo dei trasferimenti internazionali, semplicemente, non si apre: una complicazione in meno. Se invece scegliete un fornitore che archivia o elabora i dati fuori dall’Unione — molti grandi cloud hanno server in tutto il mondo — dovete verificare le garanzie previste dal GDPR. Il Comitato europeo per la protezione dei dati (EDPB), dopo la sentenza «Schrems II», ha chiarito che in questi casi servono valutazioni e, spesso, misure supplementari. Tradotto: più burocrazia e più responsabilità sulle vostre spalle.":
+        {"en": "The practical difference is this. If you host the site in Italy or in a European data center, the data stays in the EU and the chapter on international transfers simply doesn’t open: one complication fewer. If instead you choose a provider that stores or processes data outside the Union — many large clouds have servers all over the world — you have to verify the safeguards required by the GDPR. The European Data Protection Board (EDPB), after the “Schrems II” ruling, clarified that in these cases assessments and, often, supplementary measures are needed. Translated: more bureaucracy and more responsibility on your shoulders."},
+    "Italia, Europa o extra-UE: come scegliere":
+        {"en": "Italy, Europe or outside the EU: how to choose"},
+    "Non esiste una risposta unica valida per tutti, ma esistono criteri chiari. Ecco come ragionare, senza farsi guidare solo dal prezzo mensile.":
+        {"en": "There’s no single answer for everyone, but there are clear criteria. Here’s how to reason, without being guided by the monthly price alone."},
+    "Se il vostro pubblico è italiano o europeo: un hosting in Italia o nell’UE è la scelta più semplice — vicino per la velocità, dentro l’UE per il GDPR.":
+        {"en": "If your audience is Italian or European: hosting in Italy or the EU is the simplest choice — close for speed, inside the EU for the GDPR."},
+    "Se avete traffico o clienti in più continenti: conta la copertura, e una CDN europea davanti a un’origine ben scelta risolve la velocità senza portare i dati fuori dall’UE.":
+        {"en": "If you have traffic or clients across continents: coverage matters, and a European CDN in front of a well-chosen origin solves the speed without moving the data outside the EU."},
+    "Se guardate un grande cloud extra-UE: verificate dove risiedono davvero i dati — molti offrono regioni europee — e mettete a bilancio la conformità, non solo il canone.":
+        {"en": "If you’re looking at a large non-EU cloud: check where the data really resides — many offer European regions — and budget for compliance, not just the fee."},
+    "In ogni caso: chiedete un server non sovraffollato e una CDN inclusa, sono le due leve che spostano di più il tempo di risposta.":
+        {"en": "In any case: ask for a server that isn’t overcrowded and a CDN included, they’re the two levers that move response time the most."},
+    "Come sapere dove siete oggi (e se vi frena)":
+        {"en": "How to know where you are today (and whether it’s holding you back)"},
+    "Un dettaglio che vale doppio: un hosting adeguato migliora insieme velocità e sostenibilità. Un server efficiente, vicino e alimentato da energia rinnovabile serve i vostri byte con meno attesa e meno emissioni — la stessa leva, letta da due lati. Ma prima di cambiare hosting, misurate quello che avete.":
+        {"en": "A detail that counts double: adequate hosting improves speed and sustainability together. An efficient server, close and powered by renewable energy, serves your bytes with less waiting and fewer emissions — the same lever, read from two sides. But before changing hosting, measure what you have."},
+    "Il tempo di risposta del server si vede in qualsiasi test di velocità: se la pagina impiega più di un secondo a dare il primo segno di vita, l’hosting è quasi sempre tra gli indiziati principali. È un numero, non una sensazione. Sul fronte dati, la domanda da fare al fornitore è secca: dove sono fisicamente archiviati i dati del mio sito e dei miei utenti? Se la risposta è vaga, è già un segnale. Nei siti che consegniamo l’hosting è scelto perché i dati restino nell’Unione Europea, come parte del progetto e non come dettaglio da sistemare dopo.":
+        {"en": "The server’s response time shows up in any speed test: if the page takes more than a second to give its first sign of life, hosting is almost always among the prime suspects. It’s a number, not a feeling. On the data front, the question to ask the provider is blunt: where is my site’s and my users’ data physically stored? If the answer is vague, that’s already a signal. In the sites we deliver, hosting is chosen so the data stays in the European Union, as part of the project and not a detail to sort out later."},
+    "Cosa include un sito aziendale, hosting e GDPR compresi →":
+        {"en": "What a business website includes, hosting and GDPR included →"},
+    "Misura gratis la velocità e il tempo di risposta del server →":
+        {"en": "Measure your server’s speed and response time for free →"},
+    "La metrica del tempo di risposta del server: perché l’hosting decide la velocità di partenza.":
+        {"en": "The server response-time metric: why hosting decides your starting speed."},
+    "web.dev — ottimizzare il TTFB":
+        {"en": "web.dev — optimize TTFB"},
+    "Come hosting, prossimità e CDN incidono sul tempo di risposta, con i rimedi concreti.":
+        {"en": "How hosting, proximity and CDN affect response time, with concrete fixes."},
+    "Il testo del GDPR: la tutela dei dati personali e le regole sui trasferimenti fuori dall’UE.":
+        {"en": "The GDPR text: the protection of personal data and the rules on transfers outside the EU."},
+    "EDPB — trasferimenti internazionali di dati":
+        {"en": "EDPB — international data transfers"},
+    "La guida del Comitato europeo: cosa serve quando i dati escono dall’Unione Europea (post Schrems II).":
+        {"en": "The European Board’s guide: what’s needed when data leaves the European Union (post Schrems II)."},
+    "Un sito aziendale con hosting e GDPR inclusi, a prezzo chiuso →":
+        {"en": "A business website with hosting and GDPR included, at a fixed price →"},
+    "Hosting di un sito web in Italia o in cloud: distanza dal visitatore, velocità e dove finiscono i dati secondo il GDPR":
+        {"en": "Website hosting in Italy or the cloud: distance from the visitor, speed and where the data ends up under the GDPR"},
+    "Hosting di un sito web in Italia o in cloud: distanza dal visitatore, tempo di risposta e dove risiedono i dati secondo il GDPR":
+        {"en": "Website hosting in Italy or the cloud: distance from the visitor, response time and where the data resides under the GDPR"},
+
+    # ---- Backlink aggiunti nei tool (test-velocita, segnali-eeat) ----
+    "Guida: hosting in Italia o in cloud, cosa cambia per velocità e GDPR →":
+        {"en": "Guide: website hosting in Italy or the cloud, what changes for speed and GDPR →"},
+    "Guida: i dati strutturati schema.org che Google premia →":
+        {"en": "Guide: the schema.org structured data Google rewards →"},
+}
+CHROME.update(CHROME_BLOG_BATCH3)
+
+# Batch 3 — fix: etichetta link inline esterno (art. dati strutturati, sez. 4)
+CHROME.update({
+    "Google — linee guida sui dati strutturati →":
+        {"en": "Google — structured data guidelines →"},
+})
+
+# Batch 3 — fix: titoli H2 senza parole in ITALIAN_HINT (non intercettati dal report)
+CHROME.update({
+    "Perché proprio dentro Telegram": {"en": "Why inside Telegram, of all places"},
+    "Da dove partire": {"en": "Where to start"},
+    "Cosa ci fa Google: i risultati ricchi": {"en": "What Google does with it: rich results"},
+})

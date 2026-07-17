@@ -116,7 +116,17 @@
   ретрофита), JSON-LD BlogPosting через blog-schema-map, перелинковка услуга +
   инструмент + соседняя статья, бэклинки из инструментов impatto-co2 и
   verifica-accessibilita. RU-страниц нет (BLOG_IT_EN_ONLY, как в батче 1).
-- Батчи 3–6 — очередь, по одному в день (триггер 05:00 UTC ежедневно).
+- Батч 3 — ✅ выполнен (17.07): 5 статей IT+EN «технологии, которые продают»
+  (telegram-mini-app-business · gestionale-su-misura-vs-excel ·
+  dati-strutturati-schema-org · gamification-b2b · hosting-sito-web-italia),
+  10 фирменных SVG (обложка + схема на статью), 3–4 внешних источника на статью
+  (Telegram Mini Apps + TechCrunch · EuSpRIG + GDPR · schema.org + Google rich
+  results · Nielsen Norman Group + Google · web.dev TTFB + EDPB + GDPR),
+  JSON-LD BlogPosting через blog-schema-map, перелинковка услуга + инструмент +
+  соседняя статья, реальные факты только из copy-casi-studio.md (Mini App, TMS,
+  gioco). Бэклинки из инструментов test-velocita (→ hosting) и segnali-eeat
+  (→ schema.org). RU-страниц нет (BLOG_IT_EN_ONLY, как в батчах 1–2).
+- Батчи 4–6 — очередь, по одному в день (триггер 05:00 UTC ежедневно).
 - **Ретрофит выполнен отдельным проходом 15.07** (коммит «Blog retrofit:
   external sources, BlogPosting schema, content enrichment»). Охват — ВСЕ 13
   готовых статей (8 старых + 5 батча 1):
