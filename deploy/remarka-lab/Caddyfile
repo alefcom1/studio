@@ -31,6 +31,8 @@
 }
 
 lab.remarka.biz {
+	encode zstd gzip
+
 	# ── Gate the entire site behind Basic Auth ───────────────────────────────
 	# Generate the hash on the server with:
 	#   docker compose ... exec caddy caddy hash-password --plaintext 'YOURPASS'
@@ -88,6 +90,7 @@ lab.remarka.biz {
 
 cab.remarka.biz {
 	# NO basic_auth block here — see rationale above.
+	encode zstd gzip
 	reverse_proxy cabinet:3002
 
 	log {
@@ -104,6 +107,12 @@ cab.remarka.biz {
 # ─────────────────────────────────────────────────────────────────────────────
 
 remarka.biz {
+	# Prestazioni (17.07.2026, регрессия после миграции): сжатие + кэш статики.
+	# Старый хостинг делал gzip/expires на nginx — Caddy по умолчанию НЕ сжимает.
+	encode zstd gzip
+	@static path *.css *.js *.woff2 *.woff *.svg *.png *.jpg *.jpeg *.webp *.ico
+	header @static Cache-Control "public, max-age=2592000"
+
 	reverse_proxy wordpress:80
 
 	log {
