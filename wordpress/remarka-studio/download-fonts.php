@@ -67,7 +67,9 @@ function remarka_fonts_parse_css( string $css ): array {
 		if ( ! preg_match( '/font-weight:\s*(\d+)/i', $block, $wgt ) ) {
 			continue;
 		}
-		if ( ! preg_match( '/url\(\s*[\'"]?(https?:\/\/[^)\'"]+\.woff2)/i', $block, $url ) ) {
+		// Fontshare usa url protocol-relative (//cdn.fontshare.com/...), Google
+		// url assolute (https://fonts.gstatic.com/...): accettiamo entrambe.
+		if ( ! preg_match( '/url\(\s*[\'"]?((?:https?:)?\/\/[^)\'"]+\.woff2)/i', $block, $url ) ) {
 			continue;
 		}
 		$key      = strtolower( trim( $fam[1] ) ) . '|' . $wgt[1];
@@ -105,7 +107,11 @@ foreach ( $targets as $key => $filename ) {
 		WP_CLI::warning( "  ✗ url non trovato per $filename ($key)" );
 		continue;
 	}
-	$resp = wp_remote_get( $catalog[ $key ]['url'], array( 'timeout' => 30, 'headers' => array( 'User-Agent' => $ua ) ) );
+	$file_url = $catalog[ $key ]['url'];
+	if ( 0 === strpos( $file_url, '//' ) ) {
+		$file_url = 'https:' . $file_url; // normalizza protocol-relative (Fontshare).
+	}
+	$resp = wp_remote_get( $file_url, array( 'timeout' => 30, 'headers' => array( 'User-Agent' => $ua ) ) );
 	$body = is_wp_error( $resp ) ? '' : wp_remote_retrieve_body( $resp );
 	// woff2 valido inizia con la signature 'wOF2'.
 	if ( strlen( $body ) < 1000 || 'wOF2' !== substr( $body, 0, 4 ) ) {
