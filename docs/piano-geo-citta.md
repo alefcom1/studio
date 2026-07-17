@@ -101,7 +101,13 @@ Firenze, Genova, Verona, Padova, Bari, Venezia-Mestre, Palermo, Catania.
   Torino, ANFIA, Regione Piemonte, Roma Capitale). Офис — без адреса (не выдуман),
   LocalBusiness-schema НЕ добавлена. Открытый вопрос №1 (адреса) остаётся:
   после получения — добавить NAP в /roma/, /torino/, /contatti/ и LocalBusiness.
-- 17.07: **U1 выполнен** — открытый вопрос №1 закрыт. NAP публичный
+- 17.07: **G1b-2 выполнен и вычитан оркестратором** (коммит `b5be5b4`):
+  Firenze, Napoli, Bari, Palermo, Catania + хаб `/dove-lavoriamo/` (3 офиса
+  с адресами и ATT-пояснением, 17 городов по макрозонам, метка футера —
+  ссылка на хаб) + строка доставки BRT/Poste/DHL во всех 10 городах без
+  офисов. **Tier 1 полностью завершён: 17 городских страниц + хаб.**
+  Следующий шаг после деплоя и 2–3 недель наблюдения GSC/Monitor — Tier 2.
+- 17.07: **U1 выполнен и вычитан оркестратором** (коммит `7014617`) — открытый вопрос №1 закрыт. NAP публичный
   (Studio Remarka S.r.l., индирiзzo/tel/email/P.IVA) добавлен на `/roma/`,
   `/torino/`, `/milano/` + `/en/milan/` + `/ru/milan/`: карточка адреса,
   карта Google click-to-load (GDPR — nessuna richiesta prima del click,
