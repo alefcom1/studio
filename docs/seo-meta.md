@@ -23,6 +23,7 @@
 | `/servizi/web-app/` | sviluppo web app | custom web app | ✅ (hero-sub, H2 «per chi») |
 | `/servizi/adeguamento-eaa/` | adeguamento EAA | EAA compliance | ✅ (H1, hero-sub, H2 «per chi», FAQ) — см. «Adeguamento EAA» sotto |
 | `/milano/` | web agency Milano | (city IT-only, EN: web agency Milan) | ✅ (eyebrow, H2 servizi, alt) |
+| `/roma/` · `/torino/` (flagship, ufficio) | realizzazione siti web roma / torino | — (city IT-only) | ✅ (H1, primo paragrafo, aria-label, H2 «creazione siti web») — см. «Città flagship» sotto |
 | `/monza/ /bergamo/ /brescia/ /como/` | realizzazione siti web ‹città› | — | ✅ (H1, H2 servizi, alt) |
 | `/strumenti/test-velocita/` | test velocità sito web | website speed test | ✅ (H1) |
 | `/strumenti/analisi-seo/` · `/strumenti/check-gdpr/` · `/strumenti/roi-localizzazione/` | analisi SEO gratuita / check GDPR e cookie / ROI localizzazione | free SEO audit / GDPR & cookie check / localization ROI | ✅ живой виджет (T2, вышли из «In arrivo» — ключи/мета этих 3 отдельно не проработаны в этой сессии) |
@@ -37,6 +38,30 @@
 Density») набивкой, точный ключ в каждом H2, «Content AI» (платный апселл) —
 это ухудшает премиальный копирайт и не влияет на Google. Целевой ориентир
 после простановки ключей: 75–90/100.
+
+## Città flagship — Roma e Torino (batch G1a)
+
+> Le uniche due città con un **ufficio reale** del gruppo (decisione owner
+> 17.07.2026). L'ufficio è il differenziatore E-E-A-T centrale: menzionato in
+> Title/Description (`Uffici a Roma e Torino` — magnete CTR), lead, CTA e FAQ.
+> Indirizzo NON ancora fornito → nessun via/CAP/telefono, nessuna
+> LocalBusiness-schema (Service+areaServed come le altre città). Cifre di
+> settore verificate via WebSearch 07.2026, ogni numero linkato alla fonte.
+
+### IT — `/roma/`
+
+- **Focus Keyword:** `realizzazione siti web roma`
+- **Title (46):** `Realizzazione siti web a Roma | Studio Remarka`
+- **Description (153):** `Siti web a Roma con ufficio vero: ci incontriamo di persona su appuntamento. Prezzo chiuso, consegna a data fissa, PageSpeed 90+. Uffici a Roma e Torino.`
+
+### IT — `/torino/`
+
+- **Focus Keyword:** `realizzazione siti web torino`
+- **Title (48):** `Realizzazione siti web a Torino | Studio Remarka`
+- **Description (155):** `Siti web a Torino con ufficio vero: ci incontriamo di persona su appuntamento. Prezzo chiuso, consegna a data fissa, PageSpeed 90+. Uffici a Roma e Torino.`
+
+**Проверка длин.** Title: Roma — 46, Torino — 48 — ≤60. Description: Roma — 153,
+Torino — 155 — ≤160.
 
 ## Главная `/` (IT)
 

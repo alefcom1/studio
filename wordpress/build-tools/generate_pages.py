@@ -1317,6 +1317,135 @@ def build_city(c):
           hero + servizi + caso + prezzi_local + dove + recensioni + faq + cta)
 
 
+def build_city_flagship(c):
+    """Città flagship (Roma, Torino): le uniche due con un ufficio REALE del
+    gruppo (batch G1a). Pagina più profonda di build_city(): scena-lead,
+    profilo di settore con cifre e fonti ufficiali, blocco «quali siti servono»
+    (4 abbinamenti settore→servizio→caso), ufficio come differenziatore centrale
+    SENZA indirizzo (non ancora fornito: niente via/CAP/telefono, niente
+    LocalBusiness-schema). Nessun blocco recensioni inventate: sulle pagine
+    flagship l'E-E-A-T si regge su fatti verificabili (piano-geo-citta §2)."""
+    hero = section(
+        eyebrow(c['eyebrow']) + heading(1, f'Realizzazione siti web a {c["nome"]}', style='clamp(38px,4.6vw,64px)') +
+        paragraph(c['sub'], color='grigio', size='medium') +
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
+                 ('Analizza il tuo sito — gratis', '/strumenti/test-velocita/', 'outline')], margin_top='28px') +
+        stat_block(str(c['progetti']), c['stat_label'], '', counter=True),
+        classes='sr-section sr-hero',
+    )
+
+    # Scena-lead: un business locale tipico, in stile blog (numeri, non aggettivi).
+    lead_paras = ''.join(
+        paragraph(p, color='grigio', size='medium', extra_style='margin-top:16px;max-width:75ch')
+        for p in c['lead']
+    )
+    lead = section(
+        eyebrow(c['lead_eyebrow']) + heading(2, c['lead_heading']) + lead_paras,
+        classes='sr-section sr-section--bianco',
+    )
+
+    # Profilo di settore con cifre reali e fonti ufficiali (Camera di Commercio,
+    # ISTAT/enti) — verificate via WebSearch 07.2026, ogni numero linkato.
+    settore = section(
+        eyebrow(c['settore_eyebrow']) + heading(2, c['settore_heading']) +
+        paragraph(c['settore_intro'], color='grigio', size='medium', extra_style='margin-top:16px;max-width:75ch') +
+        metric_rows(c['settore_metrics']) +
+        paragraph(c['settore_nota'], color='grigio', size='base', extra_style='margin-top:24px;max-width:75ch'),
+        classes='sr-section',
+    )
+
+    servizi_rows = ''.join(
+        f'<div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">{s["title"]}</span>'
+        f'<a href="/servizi/{s["slug"]}/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div>'
+        for s in SERVICES
+    )
+    servizi = section(
+        eyebrow('Cosa facciamo') + heading(2, c['servizi_heading']) +
+        raw_html(f'<div class="sr-servizi-rows" style="margin-top:32px">{servizi_rows}</div>'),
+        classes='sr-section sr-section--bianco',
+    )
+
+    # «Quali siti servono»: 4 abbinamenti settore→servizio→caso reale.
+    pairing_cards = ''.join(
+        '<div class="sr-card">'
+        f'<p class="sr-mono" style="color:var(--sr-oltremare)">{p["eyebrow"]}</p>'
+        f'<h3 style="margin-top:12px;font-size:20px;line-height:1.3">{p["titolo"]}</h3>'
+        f'<p style="margin-top:12px;font-size:15.5px;line-height:1.6;color:var(--sr-grigio)">{p["testo"]}</p>'
+        f'<p class="sr-card-link" style="margin-top:16px"><a href="{p["service_href"]}">{p["service_label"]} →</a></p>'
+        f'<p class="sr-card-link" style="margin-top:4px"><a href="/casi-studio/#{p["case_slug"]}">Vedi il caso: {CASES_BY_SLUG[p["case_slug"]]["url_label"]} →</a></p>'
+        '</div>'
+        for p in c['pairings']
+    )
+    pairings = section(
+        eyebrow('Su misura, non a stampino') + heading(2, c['pairings_heading']) +
+        paragraph(c['pairings_intro'], color='grigio', size='medium', extra_style='margin-top:16px;max-width:75ch') +
+        group(pairing_cards, classes='', layout_type='grid', style='460px'),
+        classes='sr-section',
+    )
+
+    local_case = CASES_BY_SLUG[c['case_slug']]
+    main_shot = local_case['shots'][0]
+    caso = section(
+        columns([
+            column(browser_frame_shot(c['case_url_label'], main_shot['file'], local_case['alt'], main_shot['caption'], mobile=main_shot['mobile']), width='55%'),
+            column(eyebrow(c['case_eyebrow']) + heading(3, c['case_title'], accent_dot=False) +
+                   paragraph(local_case['risultato'], color='grigio', size='base', extra_style='margin-top:12px') +
+                   raw_html(f'<p class="sr-card-link" style="margin-top:20px"><a href="/casi-studio/#{local_case["slug"]}">Leggi il caso completo →</a></p>'),
+                   width='45%'),
+        ], valign='center'),
+        classes='sr-section sr-section--bianco',
+    )
+
+    prezzi_rows = ''.join(
+        f'<div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">{t}</span>'
+        f'<span class="sr-mono" style="color:var(--sr-oltremare)">{p}</span></div>'
+        for t, p in [('Sito vetrina', '€ 1.900–2.800'), ('Sito aziendale', '€ 3.900–5.800'), ('E-commerce', '€ 7.500–14.000')]
+    )
+    prezzi_local = section(
+        eyebrow('Prezzi chiari, anche qui') +
+        heading(2, f'Quanto costa un sito web a {c["nome"]}', dot_char='?') +
+        raw_html(f'<div class="sr-servizi-rows" style="margin-top:32px">{prezzi_rows}</div>') +
+        paragraph('Prezzo chiuso nel preventivo, PageSpeed 90+ e data di consegna scritti nel contratto. Gli stessi prezzi pubblici, ovunque siate.',
+                   color='grigio', size='base', extra_style='margin-top:24px') +
+        raw_html('<p class="sr-card-link" style="margin-top:12px"><a href="/prezzi/">Confronta tutte le tariffe →</a></p>') +
+        raw_html(f'<p class="sr-card-link" style="margin-top:4px"><a href="{c["tool_link"][1]}">{c["tool_link"][0]} →</a></p>'),
+        classes='sr-section',
+    )
+
+    # Ufficio: differenziatore centrale, SENZA indirizzo (non ancora fornito).
+    # Riusa il pannello decorativo brandizzato .sr-dove-siamo__map (come Milano)
+    # con role="img"+aria-label che porta la chiave focus (funge da alt).
+    office = section(
+        eyebrow(c['office_eyebrow']) + heading(2, c['office_heading']) +
+        raw_html('<div class="sr-dove-siamo" style="margin-top:28px">') +
+        raw_html(f'<div class="sr-dove-siamo__map" role="img" aria-label="{c["office_aria"]}"></div>') +
+        group(
+            paragraph(c['office_testo'], color='grigio', size='base') +
+            raw_html(f'<p class="sr-mono" style="margin-top:16px;font-size:13px;color:var(--sr-grigio)">{c["office_nota"]}</p>') +
+            raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="/#contatti">Fissa un appuntamento →</a></p>'),
+            classes='sr-card',
+        ) + raw_html('</div>'),
+        classes='sr-section sr-section--bianco',
+    )
+
+    faq = section(
+        eyebrow('Domande da ' + c['nome']) + details_faq(c['faq']),
+        classes='sr-section',
+    )
+
+    cta = section(
+        heading(2, c['cta_heading']) +
+        paragraph(c['cta_testo'], color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
+                 ('WhatsApp Business', 'https://wa.me/390000000000', 'whatsapp')], justify='center', margin_top='28px'),
+        classes='sr-section sr-dark',
+    )
+    write(f'citta-{c["slug"]}', f'Pagina — Città: {c["nome"]}',
+          f'Landing locale «realizzazione siti web {c["nome"].lower()}» (flagship, ufficio in città): '
+          f'scena, profilo di settore con fonti, servizi, casi, prezzi, ufficio, FAQ.',
+          hero + lead + settore + servizi + pairings + caso + prezzi_local + office + faq + cta)
+
+
 # ---------------------------------------------------------------- Export Ready (линия 2)
 
 def build_export_ready():
@@ -1737,7 +1866,10 @@ def main():
 
     print('Città:')
     for c in CITIES:
-        build_city(c)
+        if c.get('flagship'):
+            build_city_flagship(c)
+        else:
+            build_city(c)
 
     print('Chi siamo e pagine legali:')
     build_chi_siamo()

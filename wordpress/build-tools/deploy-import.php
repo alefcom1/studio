@@ -206,6 +206,8 @@ $page_map = array(
 	'strumento-suona-madrelingua'          => array( 'suona-madrelingua', 'strumenti', null ),
 	'strumento-generatore-llms-txt'        => array( 'generatore-llms-txt', 'strumenti', null ),
 
+	'citta-roma'                           => array( 'roma', null, null ),
+	'citta-torino'                         => array( 'torino', null, null ),
 	'citta-milano'                         => array( 'milano', null, null ),
 	'citta-monza'                          => array( 'monza', null, null ),
 	'citta-bergamo'                        => array( 'bergamo', null, null ),
@@ -567,6 +569,8 @@ remarka_deploy_sync_footer_menu(
 	'Footer — Studio',
 	'footer-studio',
 	array(
+		array( 'title' => 'Siti web a Roma', 'slug' => 'roma' ),
+		array( 'title' => 'Siti web a Torino', 'slug' => 'torino' ),
 		array( 'title' => 'Siti web a Milano', 'slug' => 'milano' ),
 		array( 'title' => 'Siti web a Monza', 'slug' => 'monza' ),
 		array( 'title' => 'Siti web a Bergamo', 'slug' => 'bergamo' ),

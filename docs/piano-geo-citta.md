@@ -75,3 +75,10 @@ Firenze, Genova, Verona, Padova, Bari, Venezia-Mestre, Palermo, Catania.
 
 ## Статус
 - 17.07: план утверждён; G1a (Roma+Torino) запущен.
+- 17.07: **G1a выполнен** — страницы `/roma/` и `/torino/` (флагманы с офисами)
+  сгенерированы (`build_city_flagship` в generate_pages.py, данные в
+  data.py `CITIES`), зарегистрированы в deploy-import (page_map + footer-studio),
+  мета в seo-meta.md. Цифры настроя с источниками (Camera di Commercio Roma/
+  Torino, ANFIA, Regione Piemonte, Roma Capitale). Офис — без адреса (не выдуман),
+  LocalBusiness-schema НЕ добавлена. Открытый вопрос №1 (адреса) остаётся:
+  после получения — добавить NAP в /roma/, /torino/, /contatti/ и LocalBusiness.
