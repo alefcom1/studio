@@ -104,6 +104,14 @@ cab.remarka.biz {
 # ─────────────────────────────────────────────────────────────────────────────
 
 remarka.biz {
+	# Кэш статики: длинный Cache-Control для ассетов (CSS/JS/шрифты/картинки),
+	# закрывает пункт PageSpeed «эффективный период хранения кеша». Матч по
+	# расширению — HTML-страницы и *.php (admin-ajax, инструменты) НЕ попадают
+	# и кэшируются как раньше. CSS/JS тема отдаёт с ?ver=filemtime, поэтому
+	# при правке URL меняется и год кэша не мешает обновлению.
+	@static path *.css *.js *.mjs *.woff2 *.woff *.ttf *.otf *.svg *.jpg *.jpeg *.png *.webp *.avif *.gif *.ico
+	header @static Cache-Control "public, max-age=31536000"
+
 	reverse_proxy wordpress:80
 
 	log {
