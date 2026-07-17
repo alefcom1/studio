@@ -2148,6 +2148,28 @@
 		});
 	}
 
+	/* ---------- Бегущая строка прогресса для всех тестов ----------
+	   Все виджеты (speed/seo/a11y/co2/gdpr/ai/eeat/checkup + 3 AI-инструмента
+	   + hero) показывают проверку одинаково: контейнер [data-sr-tool-pending]
+	   (или [data-sr-hero-pending]) переключается через hidden. Вставляем в
+	   каждый такой контейнер один раз ленту прогресса в фирменном стиле:
+	   контейнер скрыт по умолчанию, поэтому CSS-анимация идёт только пока
+	   тест выполняется. Так пользователю видно, что тест не завис. */
+	function initPendingBars() {
+		document.querySelectorAll('[data-sr-tool-pending], [data-sr-hero-pending]').forEach(function (el) {
+			if (el.querySelector('.sr-progress')) {
+				return;
+			}
+			var track = document.createElement('span');
+			track.className = 'sr-progress';
+			track.setAttribute('aria-hidden', 'true');
+			var bar = document.createElement('span');
+			bar.className = 'sr-progress__bar';
+			track.appendChild(bar);
+			el.appendChild(track);
+		});
+	}
+
 	/** Dispatcher: inizializza ogni widget in base a data-sr-tool. */
 	function initToolWidgets() {
 		document.querySelectorAll('[data-sr-tool]').forEach(function (root) {
@@ -2449,6 +2471,7 @@
 		initCounters();
 		initPrespaFallback();
 		initHeroWidgets();
+		initPendingBars();
 		initToolWidgets();
 		initCheckupHomeForm();
 		initCookieBanner();
