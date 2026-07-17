@@ -64,6 +64,24 @@ Firenze, Genova, Verona, Padova, Bari, Venezia-Mestre, Palermo, Catania.
 7. Механика конвейера — как всегда: точечные build-вызовы (main()
    запрещён), git diff, php -l, коммит без ID моделей.
 
+## Решения владельца (17.07, вторая волна)
+
+- **Адреса офисов получены** (Milano Vicolo Privato Lavandai 2a · Torino
+  Corso Regina Margherita 94 · Roma Via Flaminia 122; Tel./WhatsApp
+  +39 347 83 11141, info@remarka.biz, P.IVA GE 302230994). Приём только
+  по записи. Карточки Google Maps существуют давно, НО зарегистрированы
+  под брендом **ATT · Agenzia di Traduzione Tecnica** (переводческое
+  агентство группы, те же офисы) — на страницах подаём как козырь
+  доверия с пояснением, в schema бренды не смешиваем (LocalBusiness =
+  Studio Remarka, hasMap не указываем). Апдейт U1 запущен.
+- **Доставка документов**: без карт пунктов выдачи; на страницах городов
+  без офисов — одна строка в блоке «Come lavoriamo»: печатные документы
+  (traduzioni giurate, contratti) доставляем по всей Италии курьером
+  **BRT / Poste Italiane / DHL** (только эти три — реально используемые).
+- **CTA-блок «Parliamo» сливается с футером** (замечание владельца):
+  перекрасить CTA-полосу в oltremare #2440C8, кнопки инвертировать.
+  Делает оркестратор после U1.
+
 ## Открытые вопросы владельцу
 
 1. **Адреса офисов Torino и Roma** (улица, CAP) — для NAP на страницах,
