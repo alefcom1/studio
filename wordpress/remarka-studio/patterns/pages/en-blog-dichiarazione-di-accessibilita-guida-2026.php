@@ -12,7 +12,7 @@
 <p class="sr-mono" style="color:var(--sr-grigio);font-size:13px">16 JUL 2026</p>
 <!-- /wp:html -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Dichiarazione di accessibilità: guida pratica 2026</h1>
+<h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Accessibility statement: a practical 2026 guide</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
 <figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/dichiarazione-cover.svg" alt="Accessibility statement: the document required by the European Accessibility Act, what it must contain and where to publish it" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>

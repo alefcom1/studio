@@ -2534,6 +2534,12 @@ CHROME_BLOG_BATCH2 = {
         {'en': "Guide: how much your site weighs on the environment (and on your wallet) →"},
     "Guida pratica: la dichiarazione di accessibilità nel 2026 →":
         {'en': "Practical guide: the accessibility statement in 2026 →"},
+    # Fix (17.07): titolo dell'articolo (H1 + riga in blog-index) senza
+    # parola in ITALIAN_HINT — non intercettato dal report del conveyor,
+    # stesso tipo di falso negativo già corretto per altri titoli in
+    # "Batch 3 — fix" più sotto.
+    "Dichiarazione di accessibilità: guida pratica 2026":
+        {'en': "Accessibility statement: a practical 2026 guide"},
 }
 CHROME.update(CHROME_BLOG_BATCH2)
 
