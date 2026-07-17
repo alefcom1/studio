@@ -2538,8 +2538,15 @@ body.page .entry-title {
   color: rgba(247, 246, 242, 0.7);
 }
 
+/* CTA-полоса отделена от чёрного футера фирменным oltremare (замечание
+   владельца 17.07: на inchiostro блок сливался с футером в одну простыню).
+   Кнопки инвертированы под синий фон — см. --primary/--outline ниже. */
 .sr-footer-cta {
-  border-bottom: 1px solid rgba(247, 246, 242, 0.14);
+  background: var(--sr-oltremare);
+}
+
+.sr-footer-cta__text {
+  color: rgba(247, 246, 242, 0.85);
 }
 
 .sr-footer-cta__inner {
@@ -2560,7 +2567,7 @@ body.page .entry-title {
 }
 
 .sr-footer-cta__heading .sr-accent-dot {
-  color: var(--sr-oltremare-chiaro);
+  color: var(--sr-carta);
 }
 
 .sr-footer-cta__text {
@@ -2583,23 +2590,27 @@ body.page .entry-title {
   white-space: nowrap;
 }
 
-.sr-footer-cta__btn--primary {
-  background: var(--sr-oltremare-chiaro);
+/* Селекторы с .sr-footer впереди: правило `.sr-footer a` ниже по файлу
+   специфичнее одиночного класса и перекрашивало текст кнопок. */
+.sr-footer .sr-footer-cta__btn--primary {
+  background: var(--sr-carta);
+  color: var(--sr-oltremare);
+}
+
+.sr-footer .sr-footer-cta__btn--primary:hover {
+  background: #ffffff;
+  color: var(--sr-oltremare);
+}
+
+.sr-footer .sr-footer-cta__btn--outline {
+  border: 1px solid rgba(247, 246, 242, 0.6);
   color: var(--sr-carta);
 }
 
-.sr-footer-cta__btn--primary:hover {
-  background: var(--sr-oltremare);
-}
-
-.sr-footer-cta__btn--outline {
-  border: 1px solid rgba(247, 246, 242, 0.35);
+.sr-footer .sr-footer-cta__btn--outline:hover {
+  border-color: var(--sr-carta);
+  background: rgba(247, 246, 242, 0.12);
   color: var(--sr-carta);
-}
-
-.sr-footer-cta__btn--outline:hover {
-  border-color: var(--sr-oltremare-chiaro);
-  color: var(--sr-oltremare-chiaro);
 }
 
 .sr-footer-main__inner {
