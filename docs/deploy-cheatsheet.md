@@ -90,10 +90,13 @@ cd ~/remarka-lab/sitelens && ./backup.sh
 cd ~/remarka-lab/sitelens
 COMPOSE="docker compose -f docker-compose.yml -f docker-compose.prod.yml"
 
-cd /tmp && git clone --depth 1 -b claude/new-project-prep-zhmkg5 https://github.com/alefcom1/studio.git
-cp -r studio/wordpress/remarka-studio ~/remarka-lab/sitelens/wp-html/wp-content/themes/
-cp studio/wordpress/build-tools/deploy-import.php ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio/deploy-import.php
-chown -R 33:33 ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio
+cd /tmp && rm -rf studio && git clone --depth 1 -b claude/new-project-prep-zhmkg5 https://github.com/alefcom1/studio.git
+# sudo обязателен: файлы темы на сервере принадлежат www-data (33) после
+# предыдущего деплоя, обычный cp массимо их НЕ перезапишет (тихо, частично).
+sudo rm -rf ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio
+sudo cp -r studio/wordpress/remarka-studio ~/remarka-lab/sitelens/wp-html/wp-content/themes/
+sudo cp studio/wordpress/build-tools/deploy-import.php ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio/deploy-import.php
+sudo chown -R 33:33 ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio
 rm -rf /tmp/studio
 
 cd ~/remarka-lab/sitelens
@@ -107,9 +110,10 @@ $COMPOSE run --rm wpcli cache flush
 ### H2. Синк темы (изменился только код: CSS/JS/PHP/картинки)
 
 ```bash
-cd /tmp && git clone --depth 1 -b claude/new-project-prep-zhmkg5 https://github.com/alefcom1/studio.git
-cp -r studio/wordpress/remarka-studio ~/remarka-lab/sitelens/wp-html/wp-content/themes/
-chown -R 33:33 ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio
+cd /tmp && rm -rf studio && git clone --depth 1 -b claude/new-project-prep-zhmkg5 https://github.com/alefcom1/studio.git
+sudo rm -rf ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio
+sudo cp -r studio/wordpress/remarka-studio ~/remarka-lab/sitelens/wp-html/wp-content/themes/
+sudo chown -R 33:33 ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio
 rm -rf /tmp/studio
 cd ~/remarka-lab/sitelens
 docker compose -f docker-compose.yml -f docker-compose.prod.yml run --rm wpcli cache flush
@@ -118,9 +122,9 @@ docker compose -f docker-compose.yml -f docker-compose.prod.yml run --rm wpcli c
 ### H3. Точечный файл (только по хэшу коммита, как раньше)
 
 ```bash
-curl -sL https://raw.githubusercontent.com/alefcom1/studio/<ХЭШ-КОММИТА>/wordpress/remarka-studio/assets/css/remarka.css \
+sudo curl -sL https://raw.githubusercontent.com/alefcom1/studio/<ХЭШ-КОММИТА>/wordpress/remarka-studio/assets/css/remarka.css \
   -o ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio/assets/css/remarka.css
-chown 33:33 ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio/assets/css/remarka.css
+sudo chown 33:33 ~/remarka-lab/sitelens/wp-html/wp-content/themes/remarka-studio/assets/css/remarka.css
 ```
 
 Откат после переезда: восстановить из `~/backups/remarka-lab/wordpress-*`
