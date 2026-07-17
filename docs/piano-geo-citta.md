@@ -75,7 +75,11 @@ Firenze, Genova, Verona, Padova, Bari, Venezia-Mestre, Palermo, Catania.
 
 ## Статус
 - 17.07: план утверждён; G1a (Roma+Torino) запущен.
-- 17.07: **G1a выполнен** — страницы `/roma/` и `/torino/` (флагманы с офисами)
+- 17.07: **G1a выполнен и вычитан оркестратором** (коммит `eddf4f7`; проверены
+  честность цифр — автокомпоненты поданы как общеитальянские с оговоркой,
+  аэроспейс как пьемонтский; «160 progetti dal 2001» и цены сверены с
+  casi-studio/prezzi; пустой блок на превью — штатный [sr_shot]-плейсхолдер).
+  Страницы `/roma/` и `/torino/` (флагманы с офисами)
   сгенерированы (`build_city_flagship` в generate_pages.py, данные в
   data.py `CITIES`), зарегистрированы в deploy-import (page_map + footer-studio),
   мета в seo-meta.md. Цифры настроя с источниками (Camera di Commercio Roma/
