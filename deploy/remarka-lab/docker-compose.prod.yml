@@ -142,6 +142,11 @@ services:
         NEXT_PUBLIC_CABINET_URL: ${CABINET_URL:-https://cab.remarka.biz}
     restart: unless-stopped
     environment:
+      # Явный PORT обязателен: standalone-сервер Next читает его на старте, а
+      # Dockerfile кабинета оставляет дефолт 3001 — без этой строки контейнер
+      # слушает 3001, Caddy проксирует на 3002 и отдаёт 502 (поймано на проде
+      # 17.07.2026 при миграции).
+      PORT: 3002
       DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL in .env}
       NODE_ENV: production
       CABINET_URL: ${CABINET_URL:-https://cab.remarka.biz}
