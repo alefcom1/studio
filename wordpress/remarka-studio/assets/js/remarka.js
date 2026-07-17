@@ -2410,11 +2410,15 @@
 		});
 	}
 
-	/* ---------- 10. Filtro a chip del catalogo casi studio ----------
+	/* ---------- 10. Filtro a chip (catalogo casi studio + indice blog) ----------
 	   patterns/pages/casi-studio-index.php (+ en-): righe di pulsanti
 	   [data-sr-case-filter="all|siti|webapp|seo|restyling"] sopra la
-	   griglia di sezioni [data-cat] .sr-case-card. Nessuna dipendenza da
-	   framework: solo hidden/show, coerente con lo stile del resto del file. */
+	   griglia di sezioni [data-cat] .sr-case-card. Stessa meccanica
+	   riusata da patterns/pages/blog-index.php (+ en-) per il filtro a
+	   rubrica [data-sr-case-filter="all|seo|norme|decisioni|prodotti|
+	   prestazioni"] sopra le righe [data-cat] .sr-blog-row — da qui il
+	   selettore delle "carte" copre entrambe le classi. Nessuna dipendenza
+	   da framework: solo hidden/show, coerente con lo stile del resto del file. */
 	function initCaseFilter() {
 		var bars = document.querySelectorAll('[data-sr-case-filter-bar]');
 		if (!bars.length) return;
@@ -2422,7 +2426,7 @@
 		bars.forEach(function (bar) {
 			var scope = bar.closest('[data-sr-case-scope]') || document;
 			var btns = bar.querySelectorAll('[data-sr-case-filter]');
-			var cards = scope.querySelectorAll('.sr-case-card[data-cat]');
+			var cards = scope.querySelectorAll('.sr-case-card[data-cat], .sr-blog-row[data-cat]');
 
 			function apply(key) {
 				cards.forEach(function (card) {

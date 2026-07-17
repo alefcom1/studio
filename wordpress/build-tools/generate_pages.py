@@ -1826,21 +1826,81 @@ def build_legal_page(slug, title, eyebrow_text, body_text):
 
 # ---------------------------------------------------------------- Blog
 
+# Rubriche dell'indice blog (richiesta del titolare 17.07, redesign indice:
+# «In evidenza» + filtro a chip). Chiave = valore del campo `tema` di ogni
+# dict in BLOG_POSTS (data.py) → usato sia come data-cat delle righe sia
+# come data-sr-case-filter dei bottoni. Etichette EN in
+# chrome_strings.py:CHROME_BLOG_INDEX.
+BLOG_RUBRICHE = [
+    ('seo', 'SEO e visibilità AI'),
+    ('norme', 'Norme e accessibilità'),
+    ('decisioni', 'Prezzi e decisioni'),
+    ('prodotti', 'Tecnologie che vendono'),
+    ('prestazioni', 'Velocità e sostenibilità'),
+]
+
+
 def build_blog_index():
     hero = section(eyebrow('Blog') + heading(1, 'Appunti tecnici, in italiano', style='clamp(38px,4.6vw,64px)') +
                     paragraph('Niente marketing travestito da articolo: solo quello che impariamo consegnando siti veloci.',
                                color='grigio', size='medium'),
                     classes='sr-section sr-hero')
 
+    # Ordine: dalla più recente (richiesta del titolare 17.07) — i batch
+    # vengono APPESI a BLOG_POSTS, quindi senza sort i nuovi finirebbero in
+    # fondo. Sort stabile: articoli dello stesso giorno restano nell'ordine
+    # del batch.
+    posts_sorted = sorted(BLOG_POSTS, key=lambda p: _blog_iso_date(p['data']), reverse=True)
+
+    # «In evidenza»: le 2 uscite più recenti come card grandi (copertina SVG,
+    # data, titolo, estratto, freccia) — vetrina sopra il catalogo completo.
+    # Le stesse 2 storie restano ANCHE come riga nell'elenco sotto (la
+    # vetrina non sostituisce il catalogo).
+    feat_posts = [p for p in posts_sorted if p.get('cover')][:2]
+    feat_cards = ''.join(
+        f'<a href="/blog/{p["slug"]}/" class="sr-blog-feat-card">'
+        f'<img src="{p["cover"]["src"]}" alt="{p["cover"]["alt"]}" loading="lazy" class="sr-blog-feat-card__img"/>'
+        f'<span class="sr-blog-feat-card__body">'
+        f'<span class="sr-blog-feat-card__date sr-mono">{p["data"]}</span>'
+        f'<span class="sr-blog-feat-card__title">{p["titolo"]}</span>'
+        f'<span class="sr-blog-feat-card__excerpt">{p["estratto"]}</span>'
+        f'<span class="sr-blog-feat-card__arrow">→</span>'
+        f'</span></a>'
+        for p in feat_posts
+    )
+    featured = section(
+        eyebrow('In evidenza') +
+        raw_html(f'<div class="sr-blog-feat-grid">{feat_cards}</div>'),
+        classes='sr-section sr-section--bianco',
+    )
+
+    # Filtro a chip per rubrica: stessa meccanica/classi del filtro casi
+    # studio (CASE_FILTER_LABELS più sopra, assets/js/remarka.js
+    # initCaseFilter()) — generalizzato per riconoscere anche
+    # .sr-blog-row[data-cat] oltre a .sr-case-card[data-cat], senza toccare
+    # il comportamento sui casi studio.
+    chip_btns = (
+        '<button type="button" class="sr-case-filter__btn is-active" '
+        'data-sr-case-filter="all" aria-pressed="true">Tutti</button>' +
+        ''.join(
+            f'<button type="button" class="sr-case-filter__btn" '
+            f'data-sr-case-filter="{key}" aria-pressed="false">{label}</button>'
+            for key, label in BLOG_RUBRICHE
+        )
+    )
+    chips = raw_html(f'<div class="sr-case-filter" data-sr-case-filter-bar>{chip_btns}</div>')
+
     rows = ''.join(
-        f'<a href="/blog/{p["slug"]}/" class="sr-blog-row" style="color:inherit">'
+        f'<a href="/blog/{p["slug"]}/" class="sr-blog-row" data-cat="{p["tema"]}" style="color:inherit">'
         f'<span class="sr-blog-date">{p["data"]}</span>'
         f'<span class="sr-blog-body"><span style="font-family:var(--sr-font-display);font-weight:500;font-size:26px">{p["titolo"]}</span>'
         f'<span style="font-size:15.5px;color:var(--sr-grigio)">{p["estratto"]}</span></span></a>'
-        for p in BLOG_POSTS
+        for p in posts_sorted
     )
-    list_section = section(raw_html(rows), classes='sr-section')
-    write('blog-index', 'Pagina — Blog (elenco)', 'Elenco articoli, riga data + titolo + estratto.', hero + list_section)
+    list_section = section(chips + raw_html(rows), classes='sr-section')
+    write('blog-index', 'Pagina — Blog (elenco)',
+          'Indice blog: 2 articoli più recenti in evidenza, filtro a chip per rubrica, elenco completo per data.',
+          hero + featured + list_section)
 
 
 def blog_figure(fig, cover=False):

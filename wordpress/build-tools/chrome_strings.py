@@ -3012,3 +3012,18 @@ CHROME.update({
         "ru": "Нет: Милан и вся провинция, плюс Монца и Брианца. Первая встреча бесплатна — у вас или в нашем офисе в Милане.",
     },
 })
+
+# CHROME_BLOG_INDEX — redesign dell'indice blog (richiesta del titolare
+# 17.07): eyebrow «In evidenza» delle 2 card di copertina e le etichette del
+# filtro a chip per rubrica (generate_pages.py:BLOG_RUBRICHE). Solo EN: il
+# blog RU resta un batch a sé (ru-blog-index.php non passa dal conveyor).
+CHROME_BLOG_INDEX = {
+    "In evidenza": {"en": "Featured"},
+    "Tutti": {"en": "All"},
+    "SEO e visibilità AI": {"en": "SEO & AI visibility"},
+    "Norme e accessibilità": {"en": "Rules & accessibility"},
+    "Prezzi e decisioni": {"en": "Pricing & decisions"},
+    "Tecnologie che vendono": {"en": "Tech that sells"},
+    "Velocità e sostenibilità": {"en": "Speed & sustainability"},
+}
+CHROME.update(CHROME_BLOG_INDEX)

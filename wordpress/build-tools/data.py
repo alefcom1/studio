@@ -1957,37 +1957,37 @@ _S_WEBDEV_OPT_TTFB   = 'https://web.dev/articles/optimize-ttfb'
 _S_EDPB_TRANSFERS    = 'https://www.edpb.europa.eu/sme-data-protection-guide/international-data-transfers_en'
 
 BLOG_POSTS = [
-    dict(slug='sito-quattro-lingue-costi-tempi', data='05 MAG 2026',
+    dict(slug='sito-quattro-lingue-costi-tempi', data='05 MAG 2026', tema='decisioni',
          titolo='Un sito in quattro lingue: costi, tempi e gli errori da evitare',
          estratto='Quando la traduzione automatica basta e quando vi costa clienti. Con i prezzi reali per lingua e un caso reale del gruppo Remarka.',
          corpo="La traduzione automatica basta per un menu o un orario di apertura. Non basta per una scheda prodotto tecnica o una pagina di vendita, dove un errore di registro costa un cliente prima ancora che scriva. In questo articolo spieghiamo quando conviene la traduzione automatica, quando serve un madrelingua, e cosa cambia davvero nei costi e nei tempi per lingua, con un caso reale del gruppo Remarka.",
          cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg',
                     alt='Un sito in quattro lingue: costi, tempi e la differenza tra tradurre e localizzare')),
-    dict(slug='cookie-banner-checklist-garante-2026', data='08 APR 2026',
+    dict(slug='cookie-banner-checklist-garante-2026', data='08 APR 2026', tema='norme',
          titolo='Cookie banner a norma: la checklist 2026 del Garante',
          estratto='Rifiuta equivalente ad accetta, niente cookie wall, consenso documentabile. Cosa controllare sul vostro sito, punto per punto.',
          corpo='Il Garante Privacy richiede che il pulsante «Rifiuta» abbia lo stesso peso visivo del pulsante «Accetta» in un cookie banner, e che il consenso sia documentabile nel tempo. Sono regole semplici, ma ignorate dalla maggior parte dei siti italiani che analizziamo. Ecco la checklist punto per punto che usiamo per verificare un sito, e come costruiamo i nostri banner per essere a norma fin dal primo giorno.',
          cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/cookie-cover.svg',
                     alt='Cookie banner a norma nel 2026: «Rifiuta» con lo stesso peso di «Accetta» e consenso documentabile secondo il Garante Privacy')),
-    dict(slug='migrare-wordpress-senza-perdere-seo', data='17 MAR 2026',
+    dict(slug='migrare-wordpress-senza-perdere-seo', data='17 MAR 2026', tema='seo',
          titolo='Migrare da WordPress senza perdere le posizioni su Google',
          estratto='Redirect, struttura degli URL e cosa succede nelle prime sei settimane. Il protocollo che usiamo su ogni migrazione.',
          corpo='Ogni migrazione tecnica comporta il rischio di perdere anni di posizionamento organico. In questo articolo spieghiamo il protocollo di audit, mappatura URL e redirect 301 che applichiamo prima di ogni migrazione da WordPress, cosa monitoriamo nelle prime sei settimane dopo il cambio, e un caso reale in cui il posizionamento è rimasto invariato.',
          cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/migrare-cover.svg',
                     alt='Migrare da WordPress senza perdere la SEO: redirect 301, mappa degli URL e sei settimane di monitoraggio')),
-    dict(slug='pwa-per-pmi-quando-app-non-serve', data='24 FEB 2026',
+    dict(slug='pwa-per-pmi-quando-app-non-serve', data='24 FEB 2026', tema='prodotti',
          titolo="PWA per le PMI: quando l’app non serve",
          estratto="Un sito progressivo si installa, funziona offline e costa un quinto di un’app nativa. I tre casi in cui conviene davvero.",
          corpo="Sviluppare un’app nativa costa in media 15.000–30.000 euro e richiede manutenzione separata per iOS e Android. Un sito progressivo (PWA) offre installabilità, notifiche e funzionamento offline a una frazione del costo, senza revisione degli store. In questo articolo i tre casi concreti in cui una PWA conviene davvero a una PMI italiana, e i due in cui serve ancora un’app nativa.",
          cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/pwa-cover.svg',
                     alt='PWA per le PMI: quando l’app nativa non serve, con installabilità, uso offline e notifiche')),
-    dict(slug='quanto-costa-sito-aziendale-italia', data='03 FEB 2026',
+    dict(slug='quanto-costa-sito-aziendale-italia', data='03 FEB 2026', tema='decisioni',
          titolo='Quanto costa un sito aziendale in Italia: i prezzi veri',
          estratto='Da 800 a 50.000 euro: cosa cambia davvero tra le fasce e le domande da fare prima di firmare qualunque preventivo.',
          corpo="Il mercato dei siti web in Italia è frammentato e poco trasparente: si va dagli 800 euro dei costruttori fai-da-te ai 50.000 euro delle grandi agenzie. In questo articolo mappiamo onestamente cosa si compra a ogni fascia di prezzo, incluso il nostro, e le domande da fare prima di firmare qualunque preventivo.",
          cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/costo-sito-cover.svg',
                     alt='Quanto costa un sito aziendale in Italia: le fasce di prezzo dagli 800 ai 50.000 euro')),
-    dict(slug='core-web-vitals-2026', data='12 GEN 2026',
+    dict(slug='core-web-vitals-2026', data='12 GEN 2026', tema='prestazioni',
          titolo='Core Web Vitals nel 2026: cosa misura davvero Google',
          estratto='LCP, INP e CLS spiegati con esempi di negozi e officine, non di startup. E perché il punteggio desktop non conta quasi nulla.',
          corpo="LCP, INP e CLS sono le tre metriche che Google usa per valutare l’esperienza utente di un sito, e per decidere chi mostrare per primo nei risultati di ricerca mobile. In questo articolo le spieghiamo senza gergo tecnico, con esempi reali di negozi e officine — non di startup — e perché il punteggio desktop, su cui si concentrano ancora molte agenzie, conta ormai quasi nulla.",
@@ -1995,7 +1995,7 @@ BLOG_POSTS = [
                     alt='Core Web Vitals nel 2026: LCP, INP e CLS, le tre metriche che Google misura sul mobile')),
 
     # ---- Mese 1 del piano contenuti (piano-contenuti-seo.md §4.3) ----
-    dict(slug='quanto-costa-ecommerce-italia', data='13 LUG 2026',
+    dict(slug='quanto-costa-ecommerce-italia', data='13 LUG 2026', tema='decisioni',
          titolo='Quanto costa un e-commerce in Italia nel 2026: le cifre vere',
          estratto='Dai 6.000 ai 25.000 euro e oltre: cosa cambia davvero tra le fasce, quali costi ricorrenti nessuno mette nel preventivo, e le domande da fare prima di firmare.',
          corpo="«Quanto costa un e-commerce?» è la domanda con cui inizia quasi ogni nostra prima telefonata. La risposta onesta è una forchetta larga — sul mercato italiano da 6.000 a 25.000 euro e oltre — perché due negozi online con lo stesso numero di prodotti possono nascondere complessità completamente diverse. In questo articolo mettiamo in fila le cifre reali del mercato 2026, i costi che i preventivi tacciono e i tre fattori che spostano davvero il prezzo.",
@@ -2034,7 +2034,7 @@ BLOG_POSTS = [
                       'Quanto carica il sito su mobile — e chi lo garantisce, per iscritto?',
                   ]),
          ]),
-    dict(slug='sito-lento-cause-costi', data='13 LUG 2026',
+    dict(slug='sito-lento-cause-costi', data='13 LUG 2026', tema='prestazioni',
          titolo='Sito lento: le 7 cause reali (e quanto costa sistemarle)',
          estratto='Perché un sito carica in 5 secondi nel 2026, quali interventi costano poco e rendono molto, e quando invece conviene rifare la base tecnica.',
          corpo="Quattro secondi di caricamento su mobile sembrano un dettaglio tecnico. Non lo sono: sono il motivo per cui le campagne portano visite che se ne vanno prima di vedere la prima riga. Dopo decine di audit su siti di PMI italiane, le cause della lentezza sono quasi sempre le stesse sette — e non tutte costano care da sistemare. Eccole, in ordine di frequenza, con l’ordine di grandezza dell’intervento.",
@@ -2075,7 +2075,7 @@ BLOG_POSTS = [
     # chrome_strings.py). Le versioni EN/RU sono pagine separate: IT+EN via
     # translate_pages.py en; RU del blog è un batch successivo a parte
     # (piano-blog.md, batch 5–6), non una traduzione di queste.
-    dict(slug='european-accessibility-act-ecommerce', data='15 LUG 2026',
+    dict(slug='european-accessibility-act-ecommerce', data='15 LUG 2026', tema='norme',
          titolo='EAA 2026: cosa rischia davvero il vostro e-commerce',
          estratto='Dal 28 giugno 2025 l’accessibilità è un obbligo di legge, con sanzioni fino al 5% del fatturato. Chi è coinvolto, chi resta fuori e da dove partire, senza allarmismi.',
          corpo='Il 28 giugno 2025 è passato in sordina, e proprio per questo fa più danni. Da quella data l’European Accessibility Act è una legge applicata anche in Italia, e tocca molti più e-commerce di quanti se ne siano accorti: se vendete online a dei consumatori, con ogni probabilità il vostro negozio deve essere usabile anche dalle persone con disabilità — non come cortesia, ma per obbligo, con sanzioni che il recepimento italiano fissa fino al 5% del fatturato. Niente panico e niente finta indifferenza: vediamo cosa rischia davvero il vostro e-commerce, chi resta fuori e cosa conviene fare adesso.',
@@ -2122,7 +2122,7 @@ BLOG_POSTS = [
                   links=[('Vogliamo sistemarlo noi: il servizio Adeguamento EAA, a prezzo chiuso', '/servizi/adeguamento-eaa/')]),
          ]),
 
-    dict(slug='llms-txt-cos-e', data='15 LUG 2026',
+    dict(slug='llms-txt-cos-e', data='15 LUG 2026', tema='seo',
          titolo='llms.txt: cos’è e serve davvero al vostro sito?',
          estratto='Un file di testo che spiega il vostro sito ai modelli AI, come robots.txt fa con Google. Cos’è, come si scrive e quanto conta davvero, senza esagerazioni.',
          corpo='Nel giro di un anno è comparso un nuovo file di cui tutti parlano e che quasi nessuno ha: llms.txt. La promessa è semplice — un foglietto di istruzioni che spiega il vostro sito ai modelli di intelligenza artificiale, come robots.txt fa da vent’anni con i motori di ricerca. Ma serve davvero, o è l’ennesima sigla che qualcuno vi venderà a caro prezzo? Vediamo cos’è llms.txt, come si scrive in mezz’ora e quanto conta oggi, senza gonfiarne l’importanza e senza liquidarlo con un’alzata di spalle.',
@@ -2157,7 +2157,7 @@ BLOG_POSTS = [
                          ('Leggi anche: come farsi trovare e citare da ChatGPT', '/blog/farsi-trovare-da-chatgpt-geo/')]),
          ]),
 
-    dict(slug='farsi-trovare-da-chatgpt-geo', data='15 LUG 2026',
+    dict(slug='farsi-trovare-da-chatgpt-geo', data='15 LUG 2026', tema='seo',
          titolo='Come farsi trovare (e citare) da ChatGPT: guida alla GEO',
          estratto='Sempre più persone chiedono a ChatGPT invece che a Google. La GEO è l’arte di farsi citare nelle risposte generate: cosa cambia rispetto alla SEO e cosa fare.',
          corpo='C’è una domanda che un anno fa era da nerd e oggi la fa anche vostro cugino: «l’hai chiesto a ChatGPT?». Sempre più persone cercano una risposta parlando con un assistente AI invece di sfogliare dieci link blu, e questo apre una partita nuova: non basta più essere primi su Google, bisogna essere citati nelle risposte generate. Farsi trovare su ChatGPT, Perplexity e simili ha persino un nome — GEO, Generative Engine Optimization. Vediamo cos’è, in cosa somiglia alla SEO e in cosa se ne allontana, e soprattutto cosa potete fare concretamente.',
@@ -2196,7 +2196,7 @@ BLOG_POSTS = [
                          ('Leggi anche: llms.txt, cos’è e serve davvero al vostro sito', '/blog/llms-txt-cos-e/')]),
          ]),
 
-    dict(slug='check-up-sito-web-7-misure', data='15 LUG 2026',
+    dict(slug='check-up-sito-web-7-misure', data='15 LUG 2026', tema='prestazioni',
          titolo='Check-up del sito web: le 7 misure che contano',
          estratto='Un sito «va bene» o «va male» non si decide a sensazione. Ci sono sette misure che ne raccontano la salute — e un modo per leggerle in un minuto, gratis.',
          corpo='«Secondo voi il nostro sito è messo bene?» È la domanda con cui inizia metà delle nostre chiamate, e la risposta seria non è «sì» o «no»: è «dipende da cosa misurate». Un sito bellissimo può essere lentissimo; uno velocissimo può essere invisibile a Google; uno perfetto per Google può respingere una persona su dieci per un problema di accessibilità. Fare il check-up di un sito web significa guardarlo su più fronti insieme, con dei numeri, non a occhio. Ecco le sette misure che contano davvero, e come leggerle senza diventare tecnici.',
@@ -2234,7 +2234,7 @@ BLOG_POSTS = [
                          ('Se serve rifare la base: restyling e migrazione', '/servizi/restyling-migrazione/')]),
          ]),
 
-    dict(slug='eeat-come-google-giudica-credibilita', data='15 LUG 2026',
+    dict(slug='eeat-come-google-giudica-credibilita', data='15 LUG 2026', tema='seo',
          titolo='E-E-A-T: come Google giudica la vostra credibilità',
          estratto='Esperienza, competenza, autorevolezza, affidabilità: la cornice con cui Google valuta di chi fidarsi. Cos’è l’E-E-A-T e come rafforzarla, senza trucchi.',
          corpo='Se avete letto qualcosa di SEO nell’ultimo anno vi sarà rimbalzato addosso un acronimo dall’aria misteriosa: E-E-A-T. Suona come una password, ed è invece il modo in cui Google prova a rispondere a una domanda molto umana: di questo sito, ci si può fidare? Non è un punteggio segreto e non si compra. È una cornice fatta di quattro parole — esperienza, competenza, autorevolezza, affidabilità — che vale la pena capire, perché tocca da vicino chiunque venda servizi o consigli online. Vediamo cos’è l’E-E-A-T e, soprattutto, cosa potete fare per rafforzarla senza scorciatoie.',
@@ -2273,7 +2273,7 @@ BLOG_POSTS = [
     # fonti autorevoli (blocco «Fonti» + link contestuali, URL verificati),
     # JSON-LD BlogPosting via blog-schema-map, IT+EN (RU è un batch a parte).
     # Le versioni EN sono pagine separate (translate_pages.py en, CHROME_BLOG_BATCH2).
-    dict(slug='preventivo-sito-web-come-leggerlo', data='16 LUG 2026',
+    dict(slug='preventivo-sito-web-come-leggerlo', data='16 LUG 2026', tema='decisioni',
          titolo='Preventivo sito web: come leggerlo senza sorprese',
          estratto='Tre preventivi per lo stesso sito, tre cifre che non c’entrano niente. La griglia per leggerli riga per riga e le domande da fare prima di firmare.',
          corpo='Avete chiesto tre preventivi per lo stesso sito e vi tornano tre cifre che sembrano parlare di progetti diversi: 2.400, 6.900, 14.000 euro. Vi pare di confrontare mele con biciclette, e in un certo senso è vero. Un preventivo sito web non è il listino del pane: dentro la stessa parola — «sito da dieci pagine» — ci stanno lavori che valgono il triplo l’uno dell’altro. In questo articolo vi diamo la griglia per leggere un preventivo riga per riga, capire dove si nasconde il prezzo vero e quali domande fare prima di firmare, così le sorprese non arrivano in fattura.',
@@ -2338,7 +2338,7 @@ BLOG_POSTS = [
               'La velocità mobile che va garantita con un numero: la differenza tra un preventivo serio e uno vago.'),
          ]),
 
-    dict(slug='sito-web-in-3-settimane', data='16 LUG 2026',
+    dict(slug='sito-web-in-3-settimane', data='16 LUG 2026', tema='decisioni',
          titolo='Sito web in 3 settimane: com’è possibile (davvero)',
          estratto='Il mercato ci mette 6–10 settimane, noi tre. Non è magia né lavoro fatto a metà: è metodo. Ecco cosa succede in ognuna delle tre settimane, e la penale se sforiamo.',
          corpo='«Un sito web in 3 settimane? O è una fregatura, o è un template riempito in fretta.» È la reazione più comune, ed è sana: sul mercato italiano un sito aziendale richiede in media 6–10 settimane, quindi promettere tre suona come promettere di dimagrire dormendo. Eppure lo facciamo, con la data scritta in contratto e una penale se sforiamo. Non c’è nessun trucco e nessun lavoro fatto a metà: c’è un metodo che toglie i tempi morti, non la qualità. Vediamo, giorno per giorno, com’è possibile un sito web in 3 settimane — e cosa serve da parte vostra perché funzioni.',
@@ -2392,7 +2392,7 @@ BLOG_POSTS = [
               'I dati strutturati fanno parte dell’impalcatura tecnica che è già pronta in partenza.'),
          ]),
 
-    dict(slug='restyling-o-sito-nuovo-5-domande', data='16 LUG 2026',
+    dict(slug='restyling-o-sito-nuovo-5-domande', data='16 LUG 2026', tema='decisioni',
          titolo='Restyling o sito nuovo? Il test delle 5 domande',
          estratto='Rifare tutto o ritoccare? Cinque domande per capire, con i numeri e non a sensazione, se al vostro sito basta un restyling o serve ripartire da zero.',
          corpo='C’è un momento in cui aprite il vostro sito dal telefono e qualcosa stona: carica piano, sembra vecchio, i contatti arrivano col contagocce. La domanda che segue è sempre la stessa — «lo ritocchiamo o lo rifacciamo da capo?» — e la risposta sbagliata costa in entrambe le direzioni: si può buttare via un sito ancora buono, o accanirsi a rattoppare una base ormai fusa. Non è una scelta da fare a sensazione. Bastano cinque domande per capire se al vostro sito serve un restyling o un rifacimento vero — e questo articolo ve le mette in mano.',
@@ -2449,7 +2449,7 @@ BLOG_POSTS = [
               'Il modello che lega il peso della pagina al consumo: un sito vecchio è spesso anche pesante.'),
          ]),
 
-    dict(slug='impatto-ambientale-sito-web', data='16 LUG 2026',
+    dict(slug='impatto-ambientale-sito-web', data='16 LUG 2026', tema='prestazioni',
          titolo='Quanto pesa il vostro sito sull’ambiente (e sul portafoglio)',
          estratto='Ogni visita consuma energia e produce CO₂. Come si misura l’impatto ambientale di un sito web, perché leggero vuol dire anche veloce ed economico, e cosa c’entra la CSRD.',
          corpo='Un sito web sembra immateriale, ma non lo è: ogni volta che qualcuno lo apre, dei byte viaggiano da un data center alla sua schermata, e quel viaggio consuma energia. Moltiplicate per decine di migliaia di visite al mese e l’«immateriale» diventa una bolletta e un po’ di anidride carbonica. La buona notizia è che l’impatto ambientale di un sito web si può stimare, e che ridurlo coincide quasi sempre con renderlo più veloce e meno costoso. Vediamo come si misura, cosa c’entrano i vostri conti e la nuova rendicontazione europea, e cosa potete fare in un pomeriggio.',
@@ -2508,7 +2508,7 @@ BLOG_POSTS = [
               'Perché un sito leggero è anche veloce: le metriche che legano peso, velocità ed esperienza.'),
          ]),
 
-    dict(slug='dichiarazione-di-accessibilita-guida-2026', data='16 LUG 2026',
+    dict(slug='dichiarazione-di-accessibilita-guida-2026', data='16 LUG 2026', tema='norme',
          titolo='Dichiarazione di accessibilità: guida pratica 2026',
          estratto='È il documento che la legge pretende, e che un sito accessibile senza non è a norma. Cos’è la dichiarazione di accessibilità, cosa deve contenere e gli errori da evitare.',
          corpo='C’è un documento di cui pochi parlano e che, dal 2025, molti siti devono avere: la dichiarazione di accessibilità. È la parte meno appariscente dell’adeguamento all’European Accessibility Act, e proprio per questo la più dimenticata — con una beffa dentro: un sito tecnicamente accessibile, ma senza dichiarazione pubblicata, resta comunque non a norma. In questa guida pratica vediamo cos’è la dichiarazione di accessibilità, cosa deve contenere per essere seria e non un copia-incolla, gli errori più comuni, e come si arriva a pubblicarla senza affidarsi a un punteggio automatico.',
@@ -2572,7 +2572,7 @@ BLOG_POSTS = [
     # ---- Blog · Batch 3 (tecnologie che vendono) — IT + EN ----
     # Fonti verificate 17.07 (WebSearch). Fatti d'esperienza SOLO reali, da
     # docs/copy-casi-studio.md (Mini App, TMS, gioco). RU è un batch a sé.
-    dict(slug='telegram-mini-app-business', data='17 LUG 2026',
+    dict(slug='telegram-mini-app-business', data='17 LUG 2026', tema='prodotti',
          titolo='Telegram Mini App per il business: il canale che l’Italia ignora',
          estratto='Un’app dentro Telegram, senza scaricare niente: ordini, prenotazioni e assistenza dove i clienti già scrivono. Cos’è una Telegram Mini App, quando conviene e perché in Italia quasi nessuno la usa.',
          corpo='Un cliente vi scrive su Telegram per prenotare, come fa ogni settimana. Stavolta però, invece dei soliti quattro messaggi per mettersi d’accordo sull’orario, tocca un pulsante dentro la chat: si apre una piccola schermata, sceglie il giorno, conferma e ha chiuso — senza uscire da Telegram, senza installare nessuna app. Quella schermata è una Telegram Mini App, e per un’azienda è un canale che in Italia quasi nessuno usa ancora. Vediamo cos’è, quando conviene davvero al vostro business e perché il gruppo Remarka ne ha costruita una per il proprio lavoro, con numeri veri e non promesse.',
@@ -2629,7 +2629,7 @@ BLOG_POSTS = [
               'Il dato sulla scala del canale: oltre un miliardo di utenti attivi al mese.'),
          ]),
 
-    dict(slug='gestionale-su-misura-vs-excel', data='17 LUG 2026',
+    dict(slug='gestionale-su-misura-vs-excel', data='17 LUG 2026', tema='prodotti',
          titolo='Gestionale su misura vs Excel: quando conviene il salto',
          estratto='Excel regge finché non vi frena: ordini persi tra fogli ed email, errori che nessuno vede, dati che non tornano. Quando conviene passare a un gestionale su misura, con un caso reale e i numeri.',
          corpo='«Con Excel ce la caviamo.» È vero, fino a un certo punto. Il foglio di calcolo è geniale finché l’attività è piccola: costa zero, lo sanno usare tutti, si piega a qualsiasi esigenza. Poi cresce il numero di ordini, di clienti, di persone che mettono mano allo stesso file — e quello che era una comodità diventa un collo di bottiglia: la versione giusta che non si trova, la riga sovrascritta per sbaglio, l’ordine sparito tra un foglio e una mail. A quel punto la domanda non è più «Excel o no», ma quando conviene passare a un gestionale su misura. In questo articolo proviamo a rispondere con onestà — e con un caso reale del gruppo Remarka, numeri compresi.',
@@ -2691,7 +2691,7 @@ BLOG_POSTS = [
               'Gestire dati di clienti sparsi tra fogli ed email è anche un rischio di protezione dei dati: un sistema con ruoli lo riduce.'),
          ]),
 
-    dict(slug='dati-strutturati-schema-org', data='17 LUG 2026',
+    dict(slug='dati-strutturati-schema-org', data='17 LUG 2026', tema='seo',
          titolo='Schema.org per le PMI: i dati strutturati che Google premia',
          estratto='I dati strutturati raccontano il vostro sito a Google in una lingua che capisce: prezzi, orari, recensioni, eventi. Cosa sono, come funziona schema.org e quali risultati ricchi potete ottenere.',
          corpo='Cercate su Google il nome di un ristorante e, prima ancora di aprire il sito, vedete già le stelline delle recensioni, l’orario di apertura, la fascia di prezzo. Cercate una ricetta e compaiono i tempi di cottura e la foto. Non è magia né fortuna: quei siti hanno detto a Google, in modo esplicito, cosa contengono — usando i dati strutturati di schema.org. È uno degli strumenti più sottovalutati dalle PMI italiane, eppure è tra i pochi che potete aggiungere senza riscrivere il sito e con un effetto visibile nei risultati. Vediamo cosa sono i dati strutturati schema.org, come funzionano e cosa Google ci fa davvero.',
@@ -2751,7 +2751,7 @@ BLOG_POSTS = [
               'Le regole da rispettare: i dati devono corrispondere ai contenuti visibili, o scatta la penalizzazione.'),
          ]),
 
-    dict(slug='gamification-b2b', data='17 LUG 2026',
+    dict(slug='gamification-b2b', data='17 LUG 2026', tema='prodotti',
          titolo='Gamification nel B2B: quando un gioco vende servizi seri',
          estratto='Un servizio B2B «serio» fatica a farsi ricordare. La gamification può tenere le persone sul sito e raccontare cosa fate — se è strumento di marketing, non gadget. Come funziona, con un caso reale.',
          corpo='Un servizio B2B serio — una consulenza, una traduzione tecnica, un software gestionale — ha un problema che nessuno confessa volentieri: è noioso da raccontare. La brochure la legge chi già vi conosce; il sito lo si apre, si scorre e si chiude in trenta secondi. La gamification, cioè usare meccaniche da gioco fuori dal gioco, promette di rompere questa noia: tenere le persone sulla pagina, farle interagire, lasciare un ricordo. Ma funziona davvero nel marketing B2B, o è un gadget costoso? In questo articolo vediamo quando un gioco vende servizi seri, con un caso reale del gruppo Remarka e i suoi numeri.',
@@ -2806,7 +2806,7 @@ BLOG_POSTS = [
               'Perché un contenuto che coinvolge e trattiene è anche un segnale di qualità per la ricerca.'),
          ]),
 
-    dict(slug='hosting-sito-web-italia', data='17 LUG 2026',
+    dict(slug='hosting-sito-web-italia', data='17 LUG 2026', tema='prestazioni',
          titolo='Hosting in Italia o in cloud: cosa cambia per velocità e GDPR',
          estratto='Dove vive il vostro sito conta più di quanto pensiate: cambia la velocità di caricamento e la conformità al GDPR. Hosting in Italia, cloud europeo o extra-UE: cosa scegliere e perché.',
          corpo='«Tanto l’hosting è tutto uguale, prendo il più economico.» È l’idea con cui si firmano contratti che poi costano cari in due valute diverse: secondi di attesa e grattacapi legali. Dove vivono fisicamente i vostri file — un server in Italia, un cloud europeo, un data center oltreoceano — cambia due cose che pesano davvero: quanto in fretta la pagina si apre a un visitatore italiano, e quanto è semplice restare in regola con il GDPR sui dati dei clienti. In questo articolo vediamo cosa cambia per l’hosting di un sito web in Italia rispetto al cloud, senza tecnicismi inutili e con le domande giuste da fare prima di scegliere.',
