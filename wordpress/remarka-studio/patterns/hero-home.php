@@ -28,7 +28,7 @@
 
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"36px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:36px"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/strumenti/test-velocita/">Analizza il vostro sito — gratis</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/strumenti/check-up-completo/">Analizza il vostro sito — gratis</a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-outline"} -->
