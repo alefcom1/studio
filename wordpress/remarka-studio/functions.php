@@ -1588,15 +1588,23 @@ function remarka_register_sr_lead_cpt(): void {
 			'show_in_rest'     => false,
 			'menu_icon'        => 'dashicons-clipboard',
 			'capability_type'  => 'page',
+			// SOLO capacità primitive qui. Le meta-capability (edit_post,
+			// read_post, delete_post) NON vanno mai mappate su una capacità
+			// generica come manage_options: register_post_type le registra in
+			// una mappa GLOBALE dei meta-cap, e da quel momento OGNI
+			// current_user_can('manage_options') del sito viene risolto come
+			// "edit_post senza post" → do_not_allow: l'admin perde le
+			// Impostazioni e ogni pagina gated (successo il 17.07.2026 dopo la
+			// migrazione, WP 6.8). Con map_meta_cap => true le meta-cap si
+			// derivano da sole dalle primitive qui sotto.
 			'capabilities'     => array(
-				'edit_post'          => 'manage_options',
-				'read_post'          => 'manage_options',
-				'delete_post'        => 'manage_options',
-				'edit_posts'         => 'manage_options',
-				'edit_others_posts'  => 'manage_options',
-				'publish_posts'      => 'manage_options',
-				'read_private_posts' => 'manage_options',
-				'delete_posts'       => 'manage_options',
+				'edit_posts'          => 'manage_options',
+				'edit_others_posts'   => 'manage_options',
+				'publish_posts'       => 'manage_options',
+				'read_private_posts'  => 'manage_options',
+				'delete_posts'        => 'manage_options',
+				'delete_others_posts' => 'manage_options',
+				'create_posts'        => 'manage_options',
 			),
 			'map_meta_cap'     => true,
 			'supports'         => array( 'title' ),
