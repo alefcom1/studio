@@ -156,8 +156,22 @@ def build_servizi_index():
         group(premium_cards, classes='', layout_type='grid', style='320px'),
         classes='sr-section sr-section--bianco',
     )
+
+    # CTA di chiusura (owner 17.07.2026 — unificazione banner: pagina
+    # commerciale, non ha senso l'asimmetria con strumenti-index/casi-studio/
+    # prezzi, che un banner ce l'hanno). Stesso testo/stile riusato dalle
+    # altre pagine (sr-cta-band), non un banner nuovo inventato.
+    cta = section(
+        heading(2, 'Parliamo del vostro sito', style=None) +
+        paragraph('Analisi gratuita del sito attuale, preventivo chiuso entro 24 ore dalla chiamata.',
+                   color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
+                 analyze_cta_button()],
+                justify='center', margin_top='28px'),
+        classes='sr-section sr-cta-band',
+    )
     write('servizi-index', 'Pagina — Servizi (elenco)', 'Elenco dei servizi con link alle pagine dettaglio + linee premium.',
-          hero + grid + premium)
+          hero + grid + premium + cta)
 
 
 def build_servizio(svc):
