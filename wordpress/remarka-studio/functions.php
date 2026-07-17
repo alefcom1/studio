@@ -178,6 +178,45 @@ function remarka_async_font_css( string $tag, string $handle ): string {
 }
 add_filter( 'style_loader_tag', 'remarka_async_font_css', 10, 2 );
 
+/**
+ * Il plugin nasio-blocks carica su OGNI pagina front-end Chart.js (~200 KB) +
+ * Swiper (JS+CSS) + il proprio CSS, ma non usiamo nessun blocco nasio nei
+ * nostri contenuti (verificato: nessuna occorrenza nei pattern). È peso morto
+ * che blocca il render e gonfia il «JavaScript inutilizzato» di PageSpeed. Lo
+ * togliamo dal front-end lasciando il plugin attivo (i blocchi restano
+ * disponibili nell'editor). Priorità 100: dopo l'enqueue del plugin. Se un
+ * domani una pagina userà davvero un blocco nasio, togliere il suo handle da
+ * questa lista.
+ */
+function remarka_dequeue_unused_assets(): void {
+	if ( is_admin() ) {
+		return;
+	}
+	foreach ( array( 'nasio-chart-js', 'nasio-swiper-js' ) as $handle ) {
+		wp_dequeue_script( $handle );
+	}
+	foreach ( array( 'nasio-blocks-style', 'nasio-swiper-css' ) as $handle ) {
+		wp_dequeue_style( $handle );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'remarka_dequeue_unused_assets', 100 );
+
+/**
+ * Prespa carica app.js e core-add.js senza defer → bloccano il render. Sono
+ * bundle compilati che agiscono su DOMContentLoaded, quindi il defer è sicuro
+ * e li toglie dal percorso critico (il nostro remarka.js è già defer; Chart e
+ * Swiper sono rimossi sopra). Se dopo il deploy il menu o altre interazioni di
+ * Prespa si rompessero, togliere l'handle corrispondente da questa lista.
+ */
+function remarka_defer_parent_scripts( string $tag, string $handle ): string {
+	$defer = array( 'prespa-script', 'prespa-block-scripts' );
+	if ( in_array( $handle, $defer, true ) && false === strpos( $tag, ' defer' ) && false !== strpos( $tag, ' src=' ) ) {
+		$tag = str_replace( ' src=', ' defer src=', $tag );
+	}
+	return $tag;
+}
+add_filter( 'script_loader_tag', 'remarka_defer_parent_scripts', 10, 2 );
+
 /** Стили редактора: паттерны в Gutenberg выглядят как на фронте. */
 function remarka_editor_setup(): void {
 	add_theme_support( 'editor-styles' );
