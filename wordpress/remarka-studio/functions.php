@@ -129,6 +129,55 @@ function remarka_preload_fonts(): void {
 }
 add_action( 'wp_head', 'remarka_preload_fonts', 5 );
 
+/**
+ * Preconnect ai CDN dei font quando NON siamo in self-hosting: i due CSS dei
+ * font (Fontshare + Google) sono su origin esterni, e finché il browser non
+ * apre DNS+TLS verso di essi il render resta bloccato. Il preconnect anticipa
+ * l'handshake, togliendolo dal percorso critico (riduce FCP/LCP). Quando i
+ * font sono self-hosted questa funzione non emette nulla: sono same-origin e
+ * già in preload (remarka_preload_fonts).
+ */
+function remarka_font_preconnect(): void {
+	if ( remarka_has_local_fonts() ) {
+		return;
+	}
+	$origins = array(
+		'https://api.fontshare.com',  // CSS @font-face Clash Display / General Sans
+		'https://cdn.fontshare.com',  // file .woff2 Fontshare
+		'https://fonts.googleapis.com', // CSS @font-face Fragment Mono
+		'https://fonts.gstatic.com',  // file .woff2 Google
+	);
+	foreach ( $origins as $origin ) {
+		printf( '<link rel="preconnect" href="%s" crossorigin>' . "\n", esc_url( $origin ) );
+	}
+}
+add_action( 'wp_head', 'remarka_font_preconnect', 2 );
+
+/**
+ * Rende non-bloccanti i due CSS dei font CDN (Fontshare + Google): li carica
+ * con media="print" e li riattiva a onload (this.media='all'), così il primo
+ * render non aspetta la richiesta del CSS dei font. Il <noscript> conserva il
+ * caricamento classico senza JavaScript. I @font-face usano già display=swap,
+ * quindi il testo compare subito nel fallback e passa al font web quando è
+ * pronto — nessun cambiamento di comportamento oltre al render più rapido.
+ * Attivo solo sui due handle dei font CDN, non sugli altri stili.
+ */
+function remarka_async_font_css( string $tag, string $handle ): string {
+	if ( ! in_array( $handle, array( 'remarka-fonts-cdn', 'remarka-fonts-mono-cdn' ), true ) ) {
+		return $tag;
+	}
+	$async = str_replace(
+		array( " media='all'", ' media="all"' ),
+		" media='print' onload=\"this.media='all'\"",
+		$tag
+	);
+	if ( $async === $tag ) { // WP non ha emesso media='all': iniettiamo gli attributi.
+		$async = preg_replace( '/<link /', '<link media="print" onload="this.media=\'all\'" ', $tag, 1 );
+	}
+	return $async . '<noscript>' . $tag . '</noscript>' . "\n";
+}
+add_filter( 'style_loader_tag', 'remarka_async_font_css', 10, 2 );
+
 /** Стили редактора: паттерны в Gutenberg выглядят как на фронте. */
 function remarka_editor_setup(): void {
 	add_theme_support( 'editor-styles' );
