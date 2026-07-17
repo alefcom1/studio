@@ -648,7 +648,7 @@ function remarka_render_footer(): void {
 		<?php if ( count( $cities ) > 1 ) : ?>
 		<div class="sr-footer-cities">
 			<div class="sr-footer-cities__inner">
-				<span class="sr-footer-cities__label"><?php echo esc_html( remarka_str( 'footer_citta' ) ); ?></span>
+				<span class="sr-footer-cities__label"><a href="<?php echo esc_url( home_url( '/dove-lavoriamo/' ) ); ?>"><?php echo esc_html( remarka_str( 'footer_citta' ) ); ?></a></span>
 				<ul class="sr-footer-cities__list">
 					<?php foreach ( $cities as $label => $url ) : ?>
 						<li><a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $label ); ?></a></li>

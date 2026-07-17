@@ -1,21 +1,21 @@
 <?php
 /**
- * Title: Pagina — Città: Verona
- * Slug: remarka-studio/citta-verona
+ * Title: Pagina — Città: Firenze
+ * Slug: remarka-studio/citta-firenze
  * Categories: remarka-pagine
- * Description: Landing locale «realizzazione siti web verona» (flagship, senza ufficio): scena, profilo di settore con fonti, servizi, casi, prezzi, come lavoriamo, FAQ.
+ * Description: Landing locale «realizzazione siti web firenze» (flagship, senza ufficio): scena, profilo di settore con fonti, servizi, casi, prezzi, come lavoriamo, FAQ.
  * Viewport Width: 1400
  */
 ?>
 <!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Studio Remarka · Verona</p>
+<p class="sr-eyebrow">Studio Remarka · Firenze</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(38px,4.6vw,64px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Realizzazione siti web a Verona<span class="sr-accent-dot">.</span></h1>
+<h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Realizzazione siti web a Firenze<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size">Realizzazione siti web a Verona per cantine, aziende agroalimentari, logistica e PMI che esportano: PageSpeed 90+ garantito da contratto, consegna a data fissa, prezzo chiuso. Lavoriamo in tutta Italia — a Verona ci incontriamo in videochiamata o, su appuntamento, veniamo noi da voi.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size">Realizzazione siti web a Firenze per moda e pelletteria di lusso, artigianato, turismo e PMI che esportano: PageSpeed 90+ garantito da contratto, consegna a data fissa, prezzo chiuso. Lavoriamo in tutta Italia — a Firenze ci incontriamo in videochiamata o, su appuntamento, veniamo noi da voi.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"28px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button -->
@@ -36,31 +36,31 @@
 <p class="sr-eyebrow">Una scena che conosciamo</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">La cantina che a Vinitaly incanta e online fa aspettare sei secondi<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">La pelletteria che il buyer di Parigi giudica dal telefono, in sei secondi<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:16px;max-width:75ch">Una cantina in Valpolicella che a Vinitaly raccoglie contatti da mezzo mondo, un’azienda agroalimentare che spedisce in Germania e negli Stati Uniti, un operatore logistico al Quadrante Europa: prodotti che vendono, buyer esteri interessati — e un sito che apre le schede prodotto in sei secondi, quando l’importatore americano ne aspetta meno di uno. A Verona il prodotto c’è ed è forte. Spesso manca il sito che lo racconta alla stessa velocità.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:16px;max-width:75ch">Un laboratorio di pelletteria a Scandicci che lavora per i grandi nomi del lusso, un artigiano del centro storico con una bottega e una storia da raccontare, un piccolo albergo a due passi dal Duomo: prodotti e luoghi che il mondo invidia — e un sito che apre le collezioni o le camere in sei secondi, quando il buyer di Parigi o il turista di New York, dal telefono, ne aspetta meno di uno. A Firenze la qualità e la bellezza non mancano mai. Spesso manca il sito che le mostra alla stessa velocità.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:16px;max-width:75ch">Noi partiamo dai numeri: quanto carica oggi il vostro sito, cosa vede Google, come si presenta la versione in inglese o tedesco a chi vi ha conosciuto in fiera. Poi una data in contratto e un prezzo chiuso. Ci incontriamo in videochiamata o, su appuntamento, veniamo noi in cantina o in azienda — gli uffici del gruppo sono a <a href="/torino/">Torino</a> e <a href="/roma/">Roma</a>, ma con il Veneto lavoriamo ogni giorno.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:16px;max-width:75ch">Noi partiamo dai numeri: quanto carica oggi il vostro sito, cosa vede Google, come si presenta la versione in inglese o francese a chi vi ha conosciuto in fiera o in vetrina. Poi una data in contratto e un prezzo chiuso. Ci incontriamo in videochiamata o, su appuntamento, veniamo noi da voi — gli uffici del gruppo sono a <a href="/torino/">Torino</a> e <a href="/roma/">Roma</a>, ma con la Toscana lavoriamo ogni giorno.</p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Verona in cifre</p>
+<p class="sr-eyebrow">Firenze in cifre</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Perché a Verona il sito parla inglese e tedesco prima ancora di voi<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Perché a Firenze il sito parla inglese e francese prima ancora di voi<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:16px;max-width:75ch">Verona è la capitale italiana dell’export agroalimentare e del vino, e uno dei poli fieristici più internazionali del Paese. Qui il primo cliente estero spesso arriva dal sito, non da un venditore. I numeri lo dicono meglio di noi.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:16px;max-width:75ch">Firenze è moda e pelletteria di lusso, artigianato, turismo d’arte da record. Il filo comune è un cliente spesso estero, che vi trova — o vi perde — online, nella sua lingua. I numeri lo raccontano meglio di noi.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div class="sr-metric-rows"><div><span class="sr-mono">4,6 mld €</span><span>l’export agroalimentare della provincia di Verona nel 2024: primato nazionale, davanti a ogni altra provincia italiana. <a href="https://www.vr.camcom.it/index.php/it/ultime-news/settore-agroalimentare-veronese-export-46-miliardi-nel-2024-53-nei-primi-sei-mesi-del" target="_blank" rel="noopener nofollow">Camera di Commercio di Verona</a></span></div><div><span class="sr-mono">2,8 mld €</span><span>il solo export di vino veronese — oltre un terzo (36%) di tutto il vino italiano esportato nel mondo. <a href="https://www.vr.camcom.it/index.php/it/ultime-news/settore-agroalimentare-veronese-export-46-miliardi-nel-2024-53-nei-primi-sei-mesi-del" target="_blank" rel="noopener nofollow">Camera di Commercio di Verona</a></span></div><div><span class="sr-mono">97.000</span><span>presenze a Vinitaly 2024, con oltre 30.000 operatori esteri da 140 Paesi: a Verona il buyer internazionale vi cerca poi online, nella sua lingua. <a href="https://www.veronafiere.it/en/news/vinitaly-2024-closes-with-attendance-of-97000-more-than-30000-international-operators-took-part-31-of-total/" target="_blank" rel="noopener nofollow">Veronafiere</a></span></div></div>
+<div class="sr-metric-rows"><div><span class="sr-mono">116.000</span><span>imprese complessivamente attive nell’area metropolitana di Firenze; il solo sistema moda ne rappresenta oltre il 9%, con circa 11.000 imprese e 50.000 addetti. <a href="https://www.ansa.it/toscana/notizie/2024/09/19/moda-export-firenze-cala-a-meta-2024-pelletteria-soffre-di-piu_d91d489e-2ee9-43e1-8535-4c97ef7139f5.html" target="_blank" rel="noopener nofollow">Camera di Commercio di Firenze · Ansa</a></span></div><div><span class="sr-mono">3,9 mld €</span><span>l’export della moda fiorentina nella prima metà del 2024: Scandicci è il primo distretto della pelletteria di lusso d’Europa, e la moda pesa il 40% dell’export metropolitano. <a href="https://www.ansa.it/sito/notizie/economia/pmi/2025/02/06/distretto-di-firenze-ha-perso-112-pelletterie-4.000-in-cig_5bb28bf0-32fc-4500-9551-f3c7856cb758.html" target="_blank" rel="noopener nofollow">Camera di Commercio di Firenze · Ansa</a></span></div><div><span class="sr-mono">~15 mln</span><span>presenze turistiche verso il record storico nel 2024: Firenze è tra le città d’arte più visitate d’Italia, con un pubblico in larga parte estero. <a href="https://askanews.it/2024/11/08/turismo-firenze-nel-2024-verso-il-record-di-15-milioni-presenze/" target="_blank" rel="noopener nofollow">Città Metropolitana di Firenze · askanews</a></span></div></div>
 <!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:24px;max-width:75ch">Vino, agroalimentare, logistica del Quadrante Europa e un calendario fieristico — da Vinitaly a Fieragricola — che porta a Verona buyer da tutto il mondo. In questo contesto un sito lento o senza una versione estera curata è un contatto di fiera che si perde a distanza di un clic.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:24px;max-width:75ch">Moda e pelletteria di lusso, artigianato d’eccellenza, turismo d’arte e un tessuto di piccole imprese che vendono nel mondo. In una città così il sito non è una brochure: è la vetrina con cui il marchio, la bottega o la struttura si presentano a un cliente spesso estero, prima ancora del primo contatto.</p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
@@ -69,7 +69,7 @@
 <p class="sr-eyebrow">Cosa facciamo</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Creazione siti web a Verona: sei servizi, una garanzia<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Creazione siti web a Firenze: sei servizi, una garanzia<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:html -->
 <div class="sr-servizi-rows" style="margin-top:32px"><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Siti aziendali</span><a href="/servizi/siti-aziendali/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">E-commerce</span><a href="/servizi/e-commerce/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Siti progressivi PWA</span><a href="/servizi/siti-pwa/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Restyling e migrazione</span><a href="/servizi/restyling-migrazione/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">SEO tecnica</span><a href="/servizi/seo-tecnica/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Siti multilingue</span><a href="/servizi/siti-multilingue/" class="sr-mono" style="color:var(--sr-oltremare)">→</a></div></div>
@@ -81,13 +81,13 @@
 <p class="sr-eyebrow">Su misura, non a stampino</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Quali siti servono davvero al business veronese<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Quali siti servono davvero al business fiorentino<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:16px;max-width:75ch">Non facciamo un sito uguale per tutti. Ecco quattro tipi di progetto che a Verona costruiamo più spesso — ognuno con dietro un caso reale del gruppo Remarka, non una promessa.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:16px;max-width:75ch">Non facciamo un sito uguale per tutti. Ecco quattro tipi di progetto che a Firenze costruiamo più spesso — ognuno con dietro un caso reale del gruppo Remarka, non una promessa.</p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"460px"}} -->
-<div class="wp-block-group is-layout-grid" style="--sr-grid-min:460px"><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">Vino e agroalimentare</p><h3 style="margin-top:12px;font-size:20px;line-height:1.3">Un sito multilingue che fa ordinare il buyer estero</h3><p style="margin-top:12px;font-size:15.5px;line-height:1.6;color:var(--sr-grigio)">Cantine e aziende del food vendono su fiducia e su lingua. Schede prodotto veloci, versioni in inglese e tedesco tradotte da madrelingua del gruppo (non da un plugin), con SEO internazionale corretta: il contatto di fiera arriva sul sito e trova tutto nella sua lingua.</p><p class="sr-card-link" style="margin-top:16px"><a href="/servizi/siti-multilingue/">Siti multilingue →</a></p><p class="sr-card-link" style="margin-top:4px"><a href="/casi-studio/#ai-perevod4">Vedi il caso: ai.perevod4.ru →</a></p></div><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">Cataloghi e SEO tecnica</p><h3 style="margin-top:12px;font-size:20px;line-height:1.3">Centinaia di referenze che Google indicizza davvero</h3><p style="margin-top:12px;font-size:15.5px;line-height:1.6;color:var(--sr-grigio)">Annate, formati, linee di prodotto: quando il catalogo si conta a centinaia di voci, la SEO tecnica è la differenza tra farsi trovare e non esistere. Struttura, dati strutturati e velocità tenuti sotto controllo su tutto il volume.</p><p class="sr-card-link" style="margin-top:16px"><a href="/servizi/seo-tecnica/">SEO tecnica →</a></p><p class="sr-card-link" style="margin-top:4px"><a href="/casi-studio/#perevod4-catalogo">Vedi il caso: perevod4.ru →</a></p></div><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">Turismo del vino e ospitalità</p><h3 style="margin-top:12px;font-size:20px;line-height:1.3">Un sito vetrina che fa prenotare degustazioni e soggiorni diretti</h3><p style="margin-top:12px;font-size:15.5px;line-height:1.6;color:var(--sr-grigio)">Wine resort, agriturismi, cantine visitabili sul Garda e in Valpolicella: la prenotazione diretta vale più di ogni portale. Foto che vendono, contatti a portata di mano, caricamento rapido anche da mobile.</p><p class="sr-card-link" style="margin-top:16px"><a href="/servizi/siti-aziendali/">Siti aziendali →</a></p><p class="sr-card-link" style="margin-top:4px"><a href="/casi-studio/#ukrinitsy">Vedi il caso: ukrinitsy.ru →</a></p></div><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">Logistica e ordini</p><h3 style="margin-top:12px;font-size:20px;line-height:1.3">Una web app o un’area riservata per la filiera</h3><p style="margin-top:12px;font-size:15.5px;line-height:1.6;color:var(--sr-grigio)">Ordini, spedizioni, listini per cliente gestiti a mano: costruiamo l’applicazione che li tiene in un solo posto. La stessa ingegneria dei sistemi interni con cui il gruppo Remarka lavora ogni giorno.</p><p class="sr-card-link" style="margin-top:16px"><a href="/servizi/web-app/">Web app su misura →</a></p><p class="sr-card-link" style="margin-top:4px"><a href="/casi-studio/#tms-perevod4">Vedi il caso: tms.perevod4.ru →</a></p></div></div>
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:460px"><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">Moda, pelletteria, lusso</p><h3 style="margin-top:12px;font-size:20px;line-height:1.3">Un sito multilingue all’altezza del vostro marchio</h3><p style="margin-top:12px;font-size:15.5px;line-height:1.6;color:var(--sr-grigio)">Nella moda il sito è parte del prodotto. Versioni in inglese e francese tradotte da madrelingua del gruppo (non da un plugin), immagini leggere che caricano in un istante, SEO internazionale corretta: il buyer estero vi trova e legge tutto nella sua lingua.</p><p class="sr-card-link" style="margin-top:16px"><a href="/servizi/siti-multilingue/">Siti multilingue →</a></p><p class="sr-card-link" style="margin-top:4px"><a href="/casi-studio/#ai-perevod4">Vedi il caso: ai.perevod4.ru →</a></p></div><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">Collezioni e cataloghi</p><h3 style="margin-top:12px;font-size:20px;line-height:1.3">Centinaia di referenze che Google indicizza davvero</h3><p style="margin-top:12px;font-size:15.5px;line-height:1.6;color:var(--sr-grigio)">Modelli, materiali, stagioni: quando il catalogo si conta a centinaia di voci, la SEO tecnica è la differenza tra farsi trovare e non esistere. Struttura, dati strutturati e velocità tenuti sotto controllo su tutto il volume.</p><p class="sr-card-link" style="margin-top:16px"><a href="/servizi/seo-tecnica/">SEO tecnica →</a></p><p class="sr-card-link" style="margin-top:4px"><a href="/casi-studio/#perevod4-catalogo">Vedi il caso: perevod4.ru →</a></p></div><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">Artigianato e botteghe</p><h3 style="margin-top:12px;font-size:20px;line-height:1.3">Un sito aziendale che porta richieste, non solo visite</h3><p style="margin-top:12px;font-size:15.5px;line-height:1.6;color:var(--sr-grigio)">Artigiani, atelier, piccole realtà d’eccellenza: a Firenze la storia e la mano si vendono sulla fiducia e sulla chiarezza. Prodotti e servizi leggibili in secondi, richiesta di contatto in pochi passaggi, SEO tecnica dalla prima riga.</p><p class="sr-card-link" style="margin-top:16px"><a href="/servizi/siti-aziendali/">Siti aziendali →</a></p><p class="sr-card-link" style="margin-top:4px"><a href="/casi-studio/#att-traduzione-tech">Vedi il caso: traduzione.tech →</a></p></div><div class="sr-card"><p class="sr-mono" style="color:var(--sr-oltremare)">Turismo e ospitalità</p><h3 style="margin-top:12px;font-size:20px;line-height:1.3">Un sito vetrina multilingue che fa prenotare diretto</h3><p style="margin-top:12px;font-size:15.5px;line-height:1.6;color:var(--sr-grigio)">Hotel, B&B, esperienze, ristoranti: con milioni di visitatori l’anno, a Firenze la prenotazione diretta vale più di ogni portale. Foto che vendono, contatti a portata di mano, versioni estere tradotte da madrelingua e caricamento rapido da mobile.</p><p class="sr-card-link" style="margin-top:16px"><a href="/servizi/siti-multilingue/">Siti multilingue →</a></p><p class="sr-card-link" style="margin-top:4px"><a href="/casi-studio/#ukrinitsy">Vedi il caso: ukrinitsy.ru →</a></p></div></div>
 <!-- /wp:group -->
 </section>
 <!-- /wp:group -->
@@ -129,7 +129,7 @@
 <p class="sr-eyebrow">Prezzi chiari, anche qui</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Quanto costa un sito web a Verona<span class="sr-accent-dot">?</span></h2>
+<h2 class="wp-block-heading">Quanto costa un sito web a Firenze<span class="sr-accent-dot">?</span></h2>
 <!-- /wp:heading -->
 <!-- wp:html -->
 <div class="sr-servizi-rows" style="margin-top:32px"><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Sito vetrina</span><span class="sr-mono" style="color:var(--sr-oltremare)">€ 1.900–2.800</span></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">Sito aziendale</span><span class="sr-mono" style="color:var(--sr-oltremare)">€ 3.900–5.800</span></div><div><span style="font-size:16px;font-weight:500;color:var(--sr-inchiostro)">E-commerce</span><span class="sr-mono" style="color:var(--sr-oltremare)">€ 7.500–14.000</span></div></div>
@@ -147,20 +147,20 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Come lavoriamo con Verona</p>
+<p class="sr-eyebrow">Come lavoriamo con Firenze</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Senza ufficio a Verona, ma con un metodo che non cambia<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Senza ufficio a Firenze, ma con un metodo che non cambia<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:16px;max-width:75ch">Siamo onesti: a Verona non abbiamo un ufficio. Gli uffici del gruppo Remarka sono a <a href="/torino/">Torino</a> e a <a href="/roma/">Roma</a>. Ma lavoriamo con aziende in tutto il Veneto allo stesso modo: analisi, preventivo e avanzamento passano da videochiamate e da un ambiente di prova online che vedete aggiornarsi ogni venerdì. E se preferite incontrarci di persona, su appuntamento veniamo noi da voi, in cantina o in azienda.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:16px;max-width:75ch">Siamo onesti: a Firenze non abbiamo un ufficio. Gli uffici del gruppo Remarka sono a <a href="/torino/">Torino</a> e a <a href="/roma/">Roma</a>. Ma lavoriamo con aziende in tutta la Toscana allo stesso modo: analisi, preventivo e avanzamento passano da videochiamate e da un ambiente di prova online che vedete aggiornarsi ogni venerdì. E se preferite incontrarci di persona, su appuntamento veniamo noi da voi.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<div role="region" aria-label="Realizzazione siti web a Verona: come lavora Studio Remarka" style="margin-top:24px">
+<div role="region" aria-label="Realizzazione siti web a Firenze: come lavora Studio Remarka" style="margin-top:24px">
 <!-- /wp:html -->
 <!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card"><!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size">Niente «team locale» inventato, niente indirizzo di comodo: un unico referente, la stessa data in contratto e lo stesso prezzo chiuso, da Verona città alla Valpolicella al Garda. E i documenti stampati — traduzioni giurate, contratti, materiali — ve li recapitiamo in tutta Italia in 24–48 ore con corriere BRT, Poste Italiane o DHL.</p>
+<p class="has-grigio-color has-text-color has-base-font-size">Niente «team locale» inventato, niente indirizzo di comodo: un unico referente, la stessa data in contratto e lo stesso prezzo chiuso, da Firenze città a Prato, Scandicci e tutta la provincia. E i documenti stampati — traduzioni giurate, contratti, materiali — ve li recapitiamo in tutta Italia in 24–48 ore con corriere BRT, Poste Italiane o DHL.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/#come-lavoriamo">Come lavoriamo, passo per passo →</a></p>
@@ -180,36 +180,36 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Domande da Verona</p>
+<p class="sr-eyebrow">Domande da Firenze</p>
 <!-- /wp:paragraph -->
 <!-- wp:details -->
-<details class="wp-block-details"><summary>Quanto costa un sito web a Verona?</summary><!-- wp:paragraph -->
+<details class="wp-block-details"><summary>Quanto costa un sito web a Firenze?</summary><!-- wp:paragraph -->
 <p>I nostri prezzi sono pubblici e uguali ovunque: vetrina da € 1.900, aziendale da € 3.900, e-commerce da € 7.500 — chiusi nel preventivo, con PageSpeed 90+ e data di consegna scritti nel contratto. <a href="/prezzi/">Confronta tutte le tariffe →</a></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 <!-- wp:details -->
-<details class="wp-block-details"><summary>Possiamo incontrarci di persona a Verona?</summary><!-- wp:paragraph -->
-<p>Non abbiamo un ufficio a Verona — gli uffici del gruppo sono a Torino e Roma — ma su appuntamento veniamo noi da voi, in cantina o in azienda. In alternativa lavoriamo in videochiamata, con lo stesso metodo e la stessa data in contratto.</p>
+<details class="wp-block-details"><summary>Possiamo incontrarci di persona a Firenze?</summary><!-- wp:paragraph -->
+<p>Non abbiamo un ufficio a Firenze — gli uffici del gruppo sono a Torino e Roma — ma su appuntamento veniamo noi da voi. In alternativa lavoriamo in videochiamata, con lo stesso metodo e la stessa data in contratto.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 <!-- wp:details -->
-<details class="wp-block-details"><summary>Fate siti in inglese e tedesco per cantine ed esportatori?</summary><!-- wp:paragraph -->
-<p>Sì, ed è la nostra specialità: le traduzioni le fanno madrelingua del gruppo Remarka (nel settore linguistico dal 2001), non un plugin, con SEO internazionale corretta. La versione estera del vostro sito è un deliverable con nome e cognome, non un’aggiunta automatica.</p>
+<details class="wp-block-details"><summary>Fate siti in inglese e francese per la moda e chi esporta?</summary><!-- wp:paragraph -->
+<p>Sì, ed è la nostra specialità: le traduzioni le fanno madrelingua del gruppo Remarka (nel settore linguistico dal 2001), non un plugin, con SEO internazionale corretta — hreflang e metadati per ogni mercato. La versione estera del vostro sito è un deliverable con nome e cognome.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 <!-- wp:details -->
-<details class="wp-block-details"><summary>Lavorate solo con aziende di Verona città?</summary><!-- wp:paragraph -->
-<p>No: Verona e provincia, e più in generale il Nord-Est. Lavoriamo allo stesso modo anche a <a href="/padova/">Padova</a>, <a href="/venezia/">Venezia</a> e <a href="/bologna/">Bologna</a>: ambiente di prova online, avanzamento visibile ogni venerdì, un unico referente ovunque siate.</p>
+<details class="wp-block-details"><summary>Lavorate solo con aziende di Firenze città?</summary><!-- wp:paragraph -->
+<p>No: Firenze e tutta la Toscana, e lavoriamo allo stesso modo in tutta Italia — da <a href="/bologna/">Bologna</a> a <a href="/roma/">Roma</a>. Ambiente di prova online, avanzamento visibile ogni venerdì, un unico referente ovunque siate. <a href="/dove-lavoriamo/">Guarda dove lavoriamo →</a></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-dark","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-dark"><!-- wp:heading -->
-<h2 class="wp-block-heading">Parliamo del vostro sito, a Verona<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Parliamo del vostro sito, a Firenze<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px">Primo incontro gratuito, in videochiamata o in cantina/azienda da voi su appuntamento. Preventivo chiuso entro 24 ore.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:12px">Primo incontro gratuito, in videochiamata o da voi su appuntamento. Preventivo chiuso entro 24 ore.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"28px"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button -->

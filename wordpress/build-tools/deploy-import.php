@@ -218,6 +218,13 @@ $page_map = array(
 	'citta-padova'                         => array( 'padova', null, null ),
 	'citta-venezia'                        => array( 'venezia', null, null ),
 	'citta-genova'                         => array( 'genova', null, null ),
+	'citta-firenze'                        => array( 'firenze', null, null ),
+	'citta-napoli'                         => array( 'napoli', null, null ),
+	'citta-bari'                           => array( 'bari', null, null ),
+	'citta-palermo'                        => array( 'palermo', null, null ),
+	'citta-catania'                        => array( 'catania', null, null ),
+
+	'dove-lavoriamo'                       => array( 'dove-lavoriamo', null, 'Dove lavoriamo' ),
 	'chi-siamo'                            => array( 'chi-siamo', null, null ),
 	'privacy'                              => array( 'privacy', null, null ),
 	'cookie-policy'                        => array( 'cookie-policy', null, null ),

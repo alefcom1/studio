@@ -1471,6 +1471,7 @@ def build_city_flagship(c):
             group(
                 paragraph(c['presenza_nota'], color='grigio', size='base') +
                 raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="/#come-lavoriamo">Come lavoriamo, passo per passo →</a></p>') +
+                raw_html('<p class="sr-card-link" style="margin-top:4px"><a href="/dove-lavoriamo/">Dove lavoriamo, in tutta Italia →</a></p>') +
                 raw_html('<p class="sr-card-link" style="margin-top:4px"><a href="/#contatti">Fissa una videochiamata o un incontro →</a></p>'),
                 classes='sr-card',
             ) + raw_html('</div>'),
@@ -1496,6 +1497,98 @@ def build_city_flagship(c):
           f'Landing locale «realizzazione siti web {c["nome"].lower()}» (flagship, {_presenza_desc}): '
           f'scena, profilo di settore con fonti, servizi, casi, prezzi, {_presenza_voce}, FAQ.',
           hero + lead + settore + servizi + pairings + caso + prezzi_local + office + faq + cta)
+
+
+def build_dove_lavoriamo():
+    """Hub di navigazione «Dove lavoriamo» (batch G1b-2). Nessuna focus-key:
+    pagina navigazionale. Racconta il modello (tre uffici REALI a Milano,
+    Torino e Roma — solo su appuntamento — e lavoro in tutta Italia: video,
+    incontri da voi, consegna documenti con corriere BRT/Poste/DHL), mostra le
+    tre schede ufficio con indirizzo e link alle città flagship, e la griglia
+    di tutte le 17 landing città raggruppate per macro-area (Nord/Centro/Sud
+    e Isole). Registrata in deploy-import (page_map) e linkata dal footer
+    (etichetta «Dove operiamo») e dai blocchi «Come lavoriamo» delle città."""
+    hero = section(
+        eyebrow('Studio Remarka · In tutta Italia') +
+        heading(1, 'Dove lavoriamo', style='clamp(38px,4.6vw,64px)') +
+        paragraph('Tre uffici veri — Milano, Torino e Roma, solo su appuntamento — e progetti in tutta Italia. '
+                  'Dove non abbiamo un ufficio lavoriamo allo stesso modo: analisi e avanzamento in videochiamata, '
+                  'un ambiente di prova online che vedete aggiornarsi ogni venerdì e, su appuntamento, veniamo noi da voi. '
+                  'I documenti stampati — traduzioni giurate, contratti, materiali — li recapitiamo in tutta Italia in '
+                  '24–48 ore con corriere BRT, Poste Italiane o DHL.',
+                  color='grigio', size='medium'),
+        classes='sr-section sr-hero',
+    )
+
+    uffici_data = [
+        ('Milano', 'Vicolo Privato Lavandai, 2a — 20144', '/milano/'),
+        ('Torino', 'Corso Regina Margherita, 94 — 10153', '/torino/'),
+        ('Roma', 'Via Flaminia, 122 — 00196', '/roma/'),
+    ]
+    uffici_cards = ''.join(
+        '<div class="sr-card">'
+        f'<p class="sr-mono" style="color:var(--sr-oltremare)">{nome}</p>'
+        f'<p style="margin-top:12px;font-size:16px"><strong>Studio Remarka S.r.l.</strong><br>{ind}</p>'
+        '<p class="sr-mono" style="margin-top:8px;font-size:13px;color:var(--sr-grigio)">Solo su appuntamento</p>'
+        f'<p class="sr-card-link" style="margin-top:16px"><a href="{href}">Siti web a {nome} →</a></p>'
+        '</div>'
+        for nome, ind, href in uffici_data
+    )
+    uffici = section(
+        eyebrow('I nostri uffici') + heading(2, 'Tre indirizzi veri, su appuntamento') +
+        paragraph('Le schede Google Maps di questi uffici sono registrate a nome di ATT · Agenzia di Traduzione '
+                  'Tecnica, l’altro marchio del gruppo che condivide gli stessi spazi. Riceviamo solo su '
+                  'appuntamento: il primo incontro non si paga.',
+                   color='grigio', size='base', extra_style='margin-top:16px;max-width:75ch') +
+        group(uffici_cards, classes='', layout_type='grid', style='300px'),
+        classes='sr-section sr-section--bianco',
+    )
+
+    # Griglia di TUTTE le 17 città, per macro-area. I link puntano agli slug
+    # piatti già registrati in page_map (build_city / build_city_flagship).
+    gruppi = [
+        ('Nord', [('Milano', '/milano/'), ('Torino', '/torino/'), ('Genova', '/genova/'),
+                  ('Monza', '/monza/'), ('Bergamo', '/bergamo/'), ('Brescia', '/brescia/'),
+                  ('Como', '/como/'), ('Bologna', '/bologna/'), ('Verona', '/verona/'),
+                  ('Padova', '/padova/'), ('Venezia', '/venezia/')]),
+        ('Centro', [('Roma', '/roma/'), ('Firenze', '/firenze/')]),
+        ('Sud e Isole', [('Napoli', '/napoli/'), ('Bari', '/bari/'),
+                         ('Palermo', '/palermo/'), ('Catania', '/catania/')]),
+    ]
+    area_cards = ''
+    for titolo, cs in gruppi:
+        links = ''.join(
+            f'<li style="margin:0"><a href="{href}" style="font-size:16px">{nome}</a></li>'
+            for nome, href in cs
+        )
+        area_cards += (
+            '<div class="sr-card">'
+            f'<p class="sr-mono" style="color:var(--sr-oltremare)">{titolo}</p>'
+            f'<ul style="list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 20px">{links}</ul>'
+            '</div>'
+        )
+    citta = section(
+        eyebrow('Le città con cui lavoriamo') + heading(2, 'Diciassette città, un unico metodo') +
+        paragraph('Ogni città ha la sua pagina, con il profilo di settore, i casi e le domande locali. Dove non c’è '
+                  'un ufficio, lavoriamo in video o veniamo noi da voi su appuntamento — la stessa data in contratto '
+                  'e lo stesso prezzo chiuso, ovunque siate.',
+                  color='grigio', size='medium', extra_style='margin-top:16px;max-width:75ch') +
+        group(area_cards, classes='', layout_type='grid', style='320px'),
+        classes='sr-section',
+    )
+
+    cta = section(
+        heading(2, 'Parliamo del vostro progetto') +
+        paragraph('Primo incontro gratuito, in videochiamata o da voi su appuntamento. Preventivo chiuso entro 24 ore.',
+                   color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
+                 ('WhatsApp Business', 'https://wa.me/390000000000', 'whatsapp')], justify='center', margin_top='28px'),
+        classes='sr-section sr-dark',
+    )
+
+    write('dove-lavoriamo', 'Pagina — Dove lavoriamo',
+          'Hub di navigazione: uffici del gruppo (Milano, Torino, Roma) e tutte le città con cui lavora Studio Remarka.',
+          hero + uffici + citta + cta)
 
 
 # ---------------------------------------------------------------- Export Ready (линия 2)

@@ -160,10 +160,13 @@
 <!-- /wp:html -->
 <!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card"><!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
-<p class="has-grigio-color has-text-color has-base-font-size">Niente «team locale» inventato, niente indirizzo di comodo: un unico referente, la stessa data in contratto e lo stesso prezzo chiuso, da Genova al Levante al Ponente ligure.</p>
+<p class="has-grigio-color has-text-color has-base-font-size">Niente «team locale» inventato, niente indirizzo di comodo: un unico referente, la stessa data in contratto e lo stesso prezzo chiuso, da Genova al Levante al Ponente ligure. E i documenti stampati — traduzioni giurate, contratti, materiali — ve li recapitiamo in tutta Italia in 24–48 ore con corriere BRT, Poste Italiane o DHL.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/#come-lavoriamo">Come lavoriamo, passo per passo →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:4px"><a href="/dove-lavoriamo/">Dove lavoriamo, in tutta Italia →</a></p>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:4px"><a href="/#contatti">Fissa una videochiamata o un incontro →</a></p>

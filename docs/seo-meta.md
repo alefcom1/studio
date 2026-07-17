@@ -26,6 +26,8 @@
 | `/roma/` · `/torino/` (flagship, ufficio) | realizzazione siti web roma / torino | — (city IT-only) | ✅ (H1, primo paragrafo, aria-label, H2 «creazione siti web») — см. «Città flagship» sotto |
 | `/monza/ /bergamo/ /brescia/ /como/` | realizzazione siti web ‹città› | — | ✅ (H1, H2 servizi, alt) |
 | `/bologna/ /verona/ /padova/ /venezia/ /genova/` (flagship, senza ufficio) | realizzazione siti web ‹città› | — (city IT-only) | ✅ (H1, primo paragrafo, aria-label, H2 «creazione siti web») — см. «Città flagship SENZA ufficio» sotto |
+| `/firenze/ /napoli/ /bari/ /palermo/ /catania/` (flagship, senza ufficio, G1b-2) | realizzazione siti web ‹città› | — (city IT-only) | ✅ (H1, primo paragrafo, aria-label, H2 «creazione siti web») — см. «Città flagship SENZA ufficio (batch G1b-2)» sotto |
+| `/dove-lavoriamo/` (hub navigazionale) | брендовая/навигационная — фокус-ключ не задавать | — | — (см. «Hub Dove lavoriamo» sotto) |
 | `/strumenti/test-velocita/` | test velocità sito web | website speed test | ✅ (H1) |
 | `/strumenti/analisi-seo/` · `/strumenti/check-gdpr/` · `/strumenti/roi-localizzazione/` | analisi SEO gratuita / check GDPR e cookie / ROI localizzazione | free SEO audit / GDPR & cookie check / localization ROI | ✅ живой виджет (T2, вышли из «In arrivo» — ключи/мета этих 3 отдельно не проработаны в этой сессии) |
 | `/strumenti/verifica-accessibilita/` | verifica accessibilità sito | website accessibility check | ✅ (H1, hero-sub, come funziona, FAQ) — см. «Инструменты (Lab)» ниже |
@@ -110,6 +112,58 @@ Torino — 155 — ≤160.
 - **Description (156):** `Realizzazione siti web a Genova per porto, logistica e blue economy: prezzo chiuso, consegna a data fissa, PageSpeed 90+. In video o da voi su appuntamento.`
 
 **Проверка длин.** Все Title ≤60, все Description ≤160 (см. цифры в скобках).
+
+## Città flagship SENZA ufficio (batch G1b-2, Centro e Sud)
+
+> Firenze, Napoli, Bari, Palermo, Catania. Stessa profondità e struttura delle
+> città G1b-1 (senza ufficio: presenza onesta, uffici del gruppo solo a Torino
+> e Roma; NIENTE ufficio/indirizzo/«team locale»/LocalBusiness-schema inventati).
+> Cifre di settore verificate via WebSearch 07.2026, ogni numero linkato alla
+> fonte (Camera di Commercio, Autorità Portuale, Regione, consorzi, enti
+> aeroportuali). Blocco «Come lavoriamo» con la riga consegna documenti
+> (corriere BRT / Poste Italiane / DHL) e link all'hub `/dove-lavoriamo/`.
+
+### IT — `/firenze/`
+
+- **Focus Keyword:** `realizzazione siti web firenze`
+- **Title (49):** `Realizzazione siti web a Firenze | Studio Remarka`
+- **Description (153):** `Realizzazione siti web a Firenze per moda, pelletteria e turismo: prezzo chiuso, consegna a data fissa, PageSpeed 90+. In video o da voi su appuntamento.`
+
+### IT — `/napoli/`
+
+- **Focus Keyword:** `realizzazione siti web napoli`
+- **Title (48):** `Realizzazione siti web a Napoli | Studio Remarka`
+- **Description (156):** `Realizzazione siti web a Napoli per turismo, porto e agroalimentare: prezzo chiuso, consegna a data fissa, PageSpeed 90+. In video o da voi su appuntamento.`
+
+### IT — `/bari/`
+
+- **Focus Keyword:** `realizzazione siti web bari`
+- **Title (46):** `Realizzazione siti web a Bari | Studio Remarka`
+- **Description (149):** `Realizzazione siti web a Bari per agroalimentare, olio e ICT: prezzo chiuso, consegna a data fissa, PageSpeed 90+. In video o da voi su appuntamento.`
+
+### IT — `/palermo/`
+
+- **Focus Keyword:** `realizzazione siti web palermo`
+- **Title (49):** `Realizzazione siti web a Palermo | Studio Remarka`
+- **Description (157):** `Realizzazione siti web a Palermo per turismo, servizi e blue economy: prezzo chiuso, consegna a data fissa, PageSpeed 90+. In video o da voi su appuntamento.`
+
+### IT — `/catania/`
+
+- **Focus Keyword:** `realizzazione siti web catania`
+- **Title (49):** `Realizzazione siti web a Catania | Studio Remarka`
+- **Description (155):** `Realizzazione siti web a Catania per Etna Valley, agrumi e turismo: prezzo chiuso, consegna a data fissa, PageSpeed 90+. In video o da voi su appuntamento.`
+
+**Проверка длин.** Все Title ≤60, все Description ≤160 (см. цифры в скобках).
+
+## Hub «Dove lavoriamo» — `/dove-lavoriamo/` (batch G1b-2)
+
+> Pagina navigazionale (non SEO-target): nessuna focus-key. Elenca i tre uffici
+> reali (Milano, Torino, Roma — solo su appuntamento) e tutte le 17 landing
+> città per macro-area. Linkata dal footer (etichetta «Dove operiamo») e dai
+> blocchi «Come lavoriamo» delle città senza ufficio.
+
+- **Title (56):** `Dove lavoriamo: uffici e città in tutta Italia | Remarka`
+- **Description (155):** `Uffici a Milano, Torino e Roma, solo su appuntamento — e progetti in tutta Italia: video, incontri da voi e consegna documenti. Le città con cui lavoriamo.`
 
 ## Главная `/` (IT)
 
