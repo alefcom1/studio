@@ -567,12 +567,29 @@ function remarka_cities_for_lang(): array {
 		case 'ru':
 			return array( 'Милан' => home_url( '/ru/milan/' ) );
 		default:
+			// Tier 1 completo (17 città, gen. 17.07.2026): prima le sedi
+			// (Milano/Torino/Roma), poi Nord→Sud. La riga è anche linking
+			// interno per l'indicizzazione delle pagine città — non ridurla
+			// a "le principali". La pagina-hub è /dove-lavoriamo/ (etichetta
+			// della riga).
 			return array(
 				'Milano'  => home_url( '/milano/' ),
+				'Torino'  => home_url( '/torino/' ),
+				'Roma'    => home_url( '/roma/' ),
 				'Monza'   => home_url( '/monza/' ),
 				'Bergamo' => home_url( '/bergamo/' ),
 				'Brescia' => home_url( '/brescia/' ),
 				'Como'    => home_url( '/como/' ),
+				'Bologna' => home_url( '/bologna/' ),
+				'Verona'  => home_url( '/verona/' ),
+				'Padova'  => home_url( '/padova/' ),
+				'Venezia' => home_url( '/venezia/' ),
+				'Genova'  => home_url( '/genova/' ),
+				'Firenze' => home_url( '/firenze/' ),
+				'Napoli'  => home_url( '/napoli/' ),
+				'Bari'    => home_url( '/bari/' ),
+				'Palermo' => home_url( '/palermo/' ),
+				'Catania' => home_url( '/catania/' ),
 			);
 	}
 }
