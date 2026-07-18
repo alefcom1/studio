@@ -3,13 +3,13 @@
  * Title: Pagina — Strumenti (elenco)
  * Slug: remarka-studio/en-strumenti-index
  * Categories: remarka-pagine
- * Description: Elenco degli strumenti gratuiti, con il check-up completo in evidenza.
+ * Description: Elenco degli strumenti gratuiti, con il check-up completo in evidenza e la sezione Gratis/Monitor.
  * Viewport Width: 1400
  */
 ?>
 <!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Free tools</p>
+<p class="sr-eyebrow">Remarka Lab · Free tools</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(38px,4.6vw,64px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Measure first, then decide<span class="sr-accent-dot">.</span></h1>
@@ -228,6 +228,48 @@
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/en/tools/llms-txt-generator/">Try it →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"monitor"} -->
+<section class="wp-block-group is-layout-constrained sr-section" id="monitor"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Remarka Lab</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Free today. Under watch tomorrow<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:75ch">A score can be measured for free, once. Keeping it high over time is work — and it’s ours: for clients with an active maintenance plan the site stays under watch after launch, on the same platform we build these tools with.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"320px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:320px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Free · for everyone</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">One-off checks</h3>
+<!-- /wp:heading -->
+<!-- wp:html -->
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>12 free checks: speed, SEO, accessibility, GDPR, AI, E-E-A-T, CO₂, ROI</span></div><div><span class="sr-mono">✓</span><span>Result in about a minute, no sign-up</span></div><div><span class="sr-mono">✓</span><span>Every tool shows what to fix — and the right service if you need a hand</span></div></div>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">For clients · with a maintenance plan</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Remarka Lab · Monitor</h3>
+<!-- /wp:heading -->
+<!-- wp:html -->
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Your site watched continuously after launch: periodic checks and uptime</span></div><div><span class="sr-mono">✓</span><span>Real-user Core Web Vitals, month after month</span></div><div><span class="sr-mono">✓</span><span>If a metric slips, we see it — and step in before it becomes a problem</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/" target="_blank" rel="noopener">The platform: lab.remarka.biz →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="/en/#contatti">Included in projects with a maintenance plan — let’s talk →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

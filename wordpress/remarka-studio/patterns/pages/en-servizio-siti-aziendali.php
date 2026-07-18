@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Up to 15 pages, structured around your funnel</span></div><div><span class="sr-mono">✓</span><span>Two languages included, translated by native speakers</span></div><div><span class="sr-mono">✓</span><span>CMS: you update copy and photos yourselves</span></div><div><span class="sr-mono">✓</span><span>Full technical SEO and structured data</span></div><div><span class="sr-mono">✓</span><span>GDPR: compliant banner, policies, and consents</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ guaranteed by contract</span></div><div><span class="sr-mono">✓</span><span>Contact form with instant notifications</span></div><div><span class="sr-mono">✓</span><span>12 months of support and monthly measurements</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/client-area/">Every project includes the client area: stages, approvals and files in one place →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

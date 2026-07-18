@@ -3445,3 +3445,108 @@ CHROME_TOOLS_IMG_ALT = {
         {"en": "Preview of the automatically generated llms.txt file"},
 }
 CHROME.update(CHROME_TOOLS_IMG_ALT)
+
+# Area clienti (cab.remarka.biz) + sezione Gratis/Monitor del Lab
+# (docs/piano-promo-cabinet-lab.md). Solo 'en': le pagine RU sono scritte a
+# mano (translate_pages.py ru è vietato — piano-strumenti-lab.md).
+CHROME_AREA_CLIENTI = {
+    # Pagina /area-clienti/
+    'Area clienti': {'en': 'Client area'},
+    'Il progetto, nero su bianco': {'en': 'The project, in black and white'},
+    'Ogni progetto Remarka include l’accesso all’area clienti: la fase del lavoro visibile ogni giorno, approvazioni e file in un unico posto — in italiano, inglese o russo.':
+        {'en': 'Every Remarka project includes access to the client area: the current stage visible every day, approvals and files in one place — in Italian, English or Russian.'},
+    'Accedi all’area clienti': {'en': 'Log in to the client area'},
+    'Non siete ancora clienti? Parliamone': {'en': 'Not a client yet? Let’s talk'},
+    'fasi del progetto, visibili in ogni momento — dal brief al lancio':
+        {'en': 'project stages, visible at any moment — from brief to launch'},
+    'Tre passaggi, zero password': {'en': 'Three steps, zero passwords'},
+    'Passo 1': {'en': 'Step 1'},
+    'Passo 2': {'en': 'Step 2'},
+    'Passo 3': {'en': 'Step 3'},
+    'Entrate senza password': {'en': 'Log in without a password'},
+    'Inserite la vostra e-mail: vi mandiamo un link di accesso monouso, valido 15 minuti. Niente password da ricordare, niente password da rubare.':
+        {'en': 'Enter your e-mail: we send you a single-use login link, valid for 15 minutes. No passwords to remember, no passwords to steal.'},
+    'Vedete a che punto siamo': {'en': 'See where we are'},
+    'Il progetto avanza su 8 fasi, dal brief al lancio: quella corrente è sempre evidenziata. Non serve chiedere «a che punto siamo?» — si vede.':
+        {'en': 'The project moves through 8 stages, from brief to launch: the current one is always highlighted. No need to ask “where are we?” — you can see it.'},
+    'Approvate e scaricate': {'en': 'Approve and download'},
+    'Bozze e testi si approvano con un click, con data e nome; file e fatture restano archiviati. Ogni domanda ha un filo tracciato, non una e-mail persa.':
+        {'en': 'Drafts and copy are approved in one click, with date and name; files and invoices stay on record. Every question has a tracked thread, not a lost e-mail.'},
+    'Cosa trovate dentro': {'en': 'What you find inside'},
+    'Tutto il progetto, in un posto solo': {'en': 'The whole project, in one place'},
+    'Fasi del progetto': {'en': 'Project stages'},
+    'Dal brief al lancio, 8 fasi con la corrente evidenziata: l’avanzamento si vede a colpo d’occhio, ogni giorno.':
+        {'en': 'From brief to launch, 8 stages with the current one highlighted: progress is visible at a glance, every day.'},
+    'Approvazioni con storico': {'en': 'Approvals with history'},
+    'Bozze e testi da approvare o rimandare con un commento. Ogni decisione resta agli atti: chi, cosa, quando.':
+        {'en': 'Drafts and copy to approve, or send back with a comment. Every decision stays on record: who, what, when.'},
+    'File in un unico posto': {'en': 'Files in one place'},
+    'I materiali del progetto — bozze, consegne, documenti — sempre scaricabili. E potete caricare i vostri: loghi, testi, foto.':
+        {'en': 'Project materials — drafts, deliverables, documents — always available to download. And you can upload yours: logos, copy, photos.'},
+    'Fatture e stato dei pagamenti': {'en': 'Invoices and payment status'},
+    'Numero, data, importo e stato di ogni fattura, con il PDF scaricabile. Niente da chiedere, niente da cercare.':
+        {'en': 'Number, date, amount and status of every invoice, with the PDF ready to download. Nothing to ask for, nothing to dig up.'},
+    'Richieste tracciate': {'en': 'Tracked requests'},
+    'Ogni domanda apre un filo con storico e risposta: niente e-mail perse tra le caselle di tre persone.':
+        {'en': 'Every question opens a thread with its history and answer: no e-mails lost across three inboxes.'},
+    'Tre lingue': {'en': 'Three languages'},
+    'Interfaccia e notifiche in italiano, inglese o russo: ognuno del vostro team la usa nella propria lingua.':
+        {'en': 'Interface and notifications in Italian, English or Russian: everyone on your team uses it in their own language.'},
+    'Perché l’abbiamo costruita': {'en': 'Why we built it'},
+    'Costruita da noi, come i siti che vendiamo': {'en': 'Built by us, like the websites we sell'},
+    'Sviluppiamo web app per i clienti — e l’area clienti è la nostra: stessa piattaforma, stessi standard, stesso design. Nessun gestionale di terzi: i dati restano su server nell’Unione Europea e ne raccogliamo solo il minimo necessario per lavorare insieme.':
+        {'en': 'We build web apps for clients — and the client area is ours: same platform, same standards, same design. No third-party tools: data stays on servers in the European Union, and we only collect the minimum needed to work together.'},
+    'Sicurezza e privacy': {'en': 'Security and privacy'},
+    'Accesso senza password: link monouso via e-mail, valido 15 minuti':
+        {'en': 'Passwordless access: a single-use link by e-mail, valid for 15 minutes'},
+    'Sessioni revocabili e registro degli accessi': {'en': 'Revocable sessions and an access log'},
+    'Dati su server nell’Unione Europea (Germania), GDPR by design':
+        {'en': 'Data on servers in the European Union (Germany), GDPR by design'},
+    'Solo i dati necessari: e-mail, nome, lingua — nient’altro':
+        {'en': 'Only the data we need: e-mail, name, language — nothing else'},
+    'Quanto costa l’area clienti?': {'en': 'How much does the client area cost?'},
+    'Niente: è inclusa in ogni progetto Remarka, dal sito vetrina all’e-commerce.':
+        {'en': 'Nothing: it’s included in every Remarka project, from a brochure site to an e-commerce store.'},
+    'Serve installare qualcosa?': {'en': 'Do I need to install anything?'},
+    'No. Funziona dal browser, anche dal telefono. Entrate con la vostra e-mail: niente password, niente app da installare.':
+        {'en': 'No. It works in the browser, on your phone too. You log in with your e-mail: no passwords, no apps to install.'},
+    'In che lingua è l’interfaccia?': {'en': 'What language is the interface in?'},
+    'Italiano, inglese o russo: la scegliete voi, e ogni membro del vostro team può usarne una diversa.':
+        {'en': 'Italian, English or Russian: you choose, and each member of your team can use a different one.'},
+    'Chi vede i vostri dati?': {'en': 'Who sees your data?'},
+    'Solo voi e noi. Ogni cliente vede esclusivamente i propri progetti; i dati stanno su server nell’Unione Europea e non li cediamo a terzi.':
+        {'en': 'Only you and us. Each client sees exclusively their own projects; data lives on servers in the European Union and we never pass it to third parties.'},
+
+    # Riga area clienti nelle pagine servizio / riga prezzi / chi-siamo
+    'Ogni progetto include l’area clienti: fasi, approvazioni e file in un unico posto →':
+        {'en': 'Every project includes the client area: stages, approvals and files in one place →'},
+    'Area clienti: fasi, approvazioni, fatture': {'en': 'Client area: stages, approvals, invoices'},
+    'Costruiamo anche i nostri strumenti: Remarka Lab, con 12 check gratuiti e il monitoraggio continuo dei siti che seguiamo, e l’area clienti dove ogni progetto è visibile fase per fase. La stessa tecnologia che vendiamo, usata ogni giorno da noi.':
+        {'en': 'We also build our own tools: Remarka Lab, with 12 free checks and continuous monitoring of the websites we look after, and the client area where every project is visible stage by stage. The same technology we sell, used by us every day.'},
+    'Gli strumenti gratuiti del Lab →': {'en': 'The Lab’s free tools →'},
+    'Com’è fatta l’area clienti →': {'en': 'Inside the client area →'},
+
+    # Indice strumenti: brand Lab + sezione Gratis/Monitor (#monitor)
+    'Remarka Lab · Strumenti gratuiti': {'en': 'Remarka Lab · Free tools'},
+    'Gratis · per tutti': {'en': 'Free · for everyone'},
+    'Strumenti una tantum': {'en': 'One-off checks'},
+    '12 check gratuiti: velocità, SEO, accessibilità, GDPR, AI, E-E-A-T, CO₂, ROI':
+        {'en': '12 free checks: speed, SEO, accessibility, GDPR, AI, E-E-A-T, CO₂, ROI'},
+    'Risultato in circa un minuto, senza registrazione': {'en': 'Result in about a minute, no sign-up'},
+    'Ogni strumento indica cosa correggere — e il servizio giusto se serve una mano':
+        {'en': 'Every tool shows what to fix — and the right service if you need a hand'},
+    'Per i clienti · con l’assistenza': {'en': 'For clients · with a maintenance plan'},
+    'Il sito osservato in continuo dopo il lancio: controlli periodici e uptime':
+        {'en': 'Your site watched continuously after launch: periodic checks and uptime'},
+    'Core Web Vitals reali degli utenti, mese dopo mese':
+        {'en': 'Real-user Core Web Vitals, month after month'},
+    'Se un valore peggiora, lo vediamo noi — e interveniamo prima che diventi un problema':
+        {'en': 'If a metric slips, we see it — and step in before it becomes a problem'},
+    'La piattaforma: lab.remarka.biz →': {'en': 'The platform: lab.remarka.biz →'},
+    'Incluso nei progetti con assistenza — parliamone →':
+        {'en': 'Included in projects with a maintenance plan — let’s talk →'},
+    'Gratis oggi. Sotto controllo domani': {'en': 'Free today. Under watch tomorrow'},
+    'Un punteggio si può misurare gratis, una volta. Tenerlo alto nel tempo è un lavoro — ed è il nostro: per i clienti con assistenza attiva il sito resta osservato anche dopo il lancio, sulla stessa piattaforma con cui costruiamo questi strumenti.':
+        {'en': 'A score can be measured for free, once. Keeping it high over time is work — and it’s ours: for clients with an active maintenance plan the site stays under watch after launch, on the same platform we build these tools with.'},
+}
+CHROME.update(CHROME_AREA_CLIENTI)

@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Installs on smartphones like an app</span></div><div><span class="sr-mono">✓</span><span>Works offline for pages already visited</span></div><div><span class="sr-mono">✓</span><span>Optional push notifications</span></div><div><span class="sr-mono">✓</span><span>Instant loading after the first visit</span></div><div><span class="sr-mono">✓</span><span>Service worker configured and tested</span></div><div><span class="sr-mono">✓</span><span>Full technical SEO and structured data</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ guaranteed by contract</span></div><div><span class="sr-mono">✓</span><span>12 months of support and monthly measurements</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/client-area/">Every project includes the client area: stages, approvals and files in one place →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

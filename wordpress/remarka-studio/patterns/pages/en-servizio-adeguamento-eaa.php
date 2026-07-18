@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Full audit: automated test (Lighthouse) plus manual review — keyboard, screen reader, content.</span></div><div><span class="sr-mono">✓</span><span>Fixes to theme, contrast, form labels and heading structure.</span></div><div><span class="sr-mono">✓</span><span>Keyboard navigation and a visible focus state on every interactive element.</span></div><div><span class="sr-mono">✓</span><span>A published accessibility statement, the document the law requires.</span></div><div><span class="sr-mono">✓</span><span>A final verification audit against the WCAG 2.1 AA standard, once fixes are done.</span></div><div><span class="sr-mono">✓</span><span>Fixed price after the audit, delivery in 3 weeks with a contractual penalty.</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/client-area/">Every project includes the client area: stages, approvals and files in one place →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->

@@ -88,6 +88,9 @@
 <div class="wp-block-column" style="flex-basis:62%"><!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px">Not just for clients: the Remarka group builds and runs its own digital products in production — an AI translation platform, a TMS for language projects, and a standard-documents service. We publish them as case studies with real technical metrics, under the “Product Lab” label.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/client-area/">Every project includes the client area: stages, approvals and files in one place →</a></p>
+<!-- /wp:html -->
 </div>
 <!-- /wp:column -->
 </div>

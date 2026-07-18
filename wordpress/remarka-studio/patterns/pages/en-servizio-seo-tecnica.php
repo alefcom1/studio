@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Complete technical SEO audit</span></div><div><span class="sr-mono">✓</span><span>Structured data (schema.org) for every page type</span></div><div><span class="sr-mono">✓</span><span>Core Web Vitals optimization</span></div><div><span class="sr-mono">✓</span><span>Optimized XML sitemap and robots file</span></div><div><span class="sr-mono">✓</span><span>URL structure and content hierarchy</span></div><div><span class="sr-mono">✓</span><span>Meta title and description optimization</span></div><div><span class="sr-mono">✓</span><span>Monthly ranking report</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ guaranteed by contract</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/client-area/">Every project includes the client area: stages, approvals and files in one place →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

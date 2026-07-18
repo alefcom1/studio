@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Technical audit of the current site</span></div><div><span class="sr-mono">✓</span><span>Migration of existing content</span></div><div><span class="sr-mono">✓</span><span>301 redirects to preserve SEO rankings</span></div><div><span class="sr-mono">✓</span><span>New high-performance technical foundation</span></div><div><span class="sr-mono">✓</span><span>Image and font optimization</span></div><div><span class="sr-mono">✓</span><span>Before/after comparison test on PageSpeed</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ guaranteed by contract</span></div><div><span class="sr-mono">✓</span><span>12 months of support and monthly measurements</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/client-area/">Every project includes the client area: stages, approvals and files in one place →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
