@@ -110,7 +110,7 @@ WP_CLI::log( '=================================' );
 WP_CLI::log( "\nHome:" );
 $home_sections = array(
 	'hero-home', 'checkup-home', 'trust-strip', 'tre-numeri', 'manifesto', 'lingue-mercati', 'servizi-cards', 'caso-evidenza',
-	'come-lavoriamo', 'garanzie-dark', 'prezzi-teaser', 'strumenti-cards', 'faq', 'contatti',
+	'come-lavoriamo', 'garanzie-dark', 'area-clienti-blocco', 'prezzi-teaser', 'strumenti-cards', 'faq', 'contatti',
 );
 
 /*
@@ -120,7 +120,7 @@ $home_sections = array(
  */
 $home_sections_ru = array(
 	'hero-home', 'checkup-home', 'trust-strip', 'vyhod-evropa', 'tre-numeri', 'manifesto', 'seo-lingue', 'servizi-cards',
-	'caso-evidenza', 'come-lavoriamo', 'garanzie-dark', 'prezzi-teaser', 'faq', 'contatti',
+	'caso-evidenza', 'come-lavoriamo', 'garanzie-dark', 'area-clienti-blocco', 'prezzi-teaser', 'faq', 'contatti',
 );
 $home_content = '';
 foreach ( $home_sections as $slug ) {
@@ -225,6 +225,7 @@ $page_map = array(
 	'citta-catania'                        => array( 'catania', null, null ),
 
 	'dove-lavoriamo'                       => array( 'dove-lavoriamo', null, 'Dove lavoriamo' ),
+	'area-clienti'                         => array( 'area-clienti', null, 'Area clienti' ),
 	'chi-siamo'                            => array( 'chi-siamo', null, null ),
 	'privacy'                              => array( 'privacy', null, null ),
 	'cookie-policy'                        => array( 'cookie-policy', null, null ),
@@ -316,6 +317,7 @@ $page_map = array(
 	'en-blog-manutenzione-wordpress'               => array( 'wordpress-maintenance', 'en/blog', null ),
 	'en-prezzi'                                    => array( 'pricing', 'en', null ),
 	'en-citta-milano'                              => array( 'milan', 'en', null ),
+	'en-area-clienti'                              => array( 'client-area', 'en', 'Client area' ),
 	'en-chi-siamo'                                 => array( 'about', 'en', null ),
 	'en-privacy'                                   => array( 'privacy', 'en', null ),
 	'en-cookie-policy'                             => array( 'cookie-policy', 'en', null ),
@@ -359,6 +361,7 @@ $page_map = array(
 	'ru-blog-sito-lento-cause-costi'               => array( 'medlennyj-sajt-prichiny', 'ru/blog', null ),
 	'ru-prezzi'                                    => array( 'ceny', 'ru', null ),
 	'ru-citta-milano'                              => array( 'milan', 'ru', null ),
+	'ru-area-clienti'                              => array( 'kabinet-klienta', 'ru', 'Кабинет клиента' ),
 	'ru-chi-siamo'                                 => array( 'o-studii', 'ru', null ),
 	'ru-privacy'                                   => array( 'privacy', 'ru', null ),
 	'ru-cookie-policy'                             => array( 'cookie-policy', 'ru', null ),
@@ -589,6 +592,7 @@ remarka_deploy_sync_footer_menu(
 		array( 'title' => 'Casi studio', 'slug' => 'casi-studio' ),
 		array( 'title' => 'Prezzi', 'slug' => 'prezzi' ),
 		array( 'title' => 'Blog', 'slug' => 'blog' ),
+		array( 'title' => 'Area clienti', 'slug' => 'area-clienti' ),
 		array( 'title' => 'Contatti', 'url' => home_url( '/#contatti' ) ),
 	),
 	$force
@@ -639,6 +643,7 @@ remarka_deploy_sync_footer_menu( 'Footer EN — Pages', '', array(
 	array( 'title' => 'Case studies', 'slug' => 'en/case-studies' ),
 	array( 'title' => 'Pricing', 'slug' => 'en/pricing' ),
 	array( 'title' => 'Blog', 'slug' => 'en/blog' ),
+	array( 'title' => 'Client area', 'slug' => 'en/client-area' ),
 	array( 'title' => 'Contact us', 'url' => home_url( '/en/#contatti' ) ),
 	// Unica landing città tradotta in EN: la conserviamo qui (in fondo) per non
 	// perdere l'unico link cittadino di questa lingua (ex colonna Studio).
@@ -677,6 +682,7 @@ remarka_deploy_sync_footer_menu( 'Footer RU — Страницы', '', array(
 	array( 'title' => 'Кейсы', 'slug' => 'ru/kejsy' ),
 	array( 'title' => 'Цены', 'slug' => 'ru/ceny' ),
 	array( 'title' => 'Блог', 'slug' => 'ru/blog' ),
+	array( 'title' => 'Кабинет клиента', 'slug' => 'ru/kabinet-klienta' ),
 	array( 'title' => 'Контакты', 'url' => home_url( '/ru/#contatti' ) ),
 	array( 'title' => 'Сайты в Милане', 'slug' => 'ru/milan' ),
 ), $force );

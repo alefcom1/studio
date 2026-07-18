@@ -9,7 +9,7 @@
 ?>
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco sr-rule-top","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group sr-section sr-section--bianco sr-rule-top"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Free tools</p>
+<p class="sr-eyebrow">Remarka Lab · Free tools</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
@@ -160,5 +160,13 @@
 <p class="sr-card-link sr-no-margin"><a href="/en/tools/eeat-signals/">Try it →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"className":"sr-card-link","style":{"spacing":{"margin":{"top":"36px"}}}} -->
+<p class="sr-card-link" style="margin-top:36px"><a href="/en/tools/">All 12 free tools →</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link","style":{"spacing":{"margin":{"top":"8px"}}}} -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/en/tools/#monitor">And for clients: your site monitored continuously, even after launch →</a></p>
+<!-- /wp:paragraph --></section>
 <!-- /wp:group -->
