@@ -130,7 +130,19 @@
   соседняя статья, реальные факты только из copy-casi-studio.md (Mini App, TMS,
   gioco). Бэклинки из инструментов test-velocita (→ hosting) и segnali-eeat
   (→ schema.org). RU-страниц нет (BLOG_IT_EN_ONLY, как в батчах 1–2).
-- Батчи 4–6 — очередь, по одному в день (триггер 05:00 UTC ежедневно).
+- Батч 4 — ✅ выполнен и вычитан оркестратором (18.07, коммит `9ec09f0`):
+  5 статей IT+EN «локальный SEO и города» (seo-locale-milano ·
+  google-business-profile-guida · hreflang-sito-multilingue · sito-per-export ·
+  manutenzione-wordpress), рубрики проставлены, 10 фирменных SVG, 3–4
+  источника на статью (Google guidelines ×6, BrightLocal, CSA Research,
+  Eurostat, WordPress.org, Patchstack), перелинковка на новые городские
+  страницы (/milano/, /dove-lavoriamo/), GBP-статья с честным разделом
+  «Una nota onesta sul nostro caso» (карточки группы под брендом ATT —
+  не выдаём за образец). Цифры сверены: «8% отбор переводчиков» — из
+  copy-casi-studio, «96% уязвимостей в плагинах 2024» — Patchstack.
+  Бэклог-заметка: en-blog-* батчей 1–3 ждут width/height-синхронизации
+  (IT уже имеет, EN подтянется ближайшим полным EN-прогоном).
+- Батчи 5–6 (RU руками) — очередь, по одному в день (триггер 05:00 UTC).
 - **Ретрофит выполнен отдельным проходом 15.07** (коммит «Blog retrofit:
   external sources, BlogPosting schema, content enrichment»). Охват — ВСЕ 13
   готовых статей (8 старых + 5 батча 1):
