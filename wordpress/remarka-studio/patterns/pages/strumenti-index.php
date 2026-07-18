@@ -21,7 +21,7 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:html -->
-<div class="sr-card sr-card--carta" style="border-color:var(--sr-oltremare)"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">Novità · gratuito</p><h3 class="wp-block-heading" style="margin-top:10px">Check-up completo</h3><p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">Sette strumenti gratuiti in una sola analisi.</p><p class="sr-card-link" style="margin-top:18px"><a href="/strumenti/check-up-completo/">Prova →</a></p></div>
+<div class="sr-card sr-card--carta" style="border-color:var(--sr-oltremare)"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">Novità · gratuito</p><h3 class="wp-block-heading" style="margin-top:10px">Check-up completo</h3><p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">Sette strumenti gratuiti in una sola analisi.</p><img src="/wp-content/themes/remarka-studio/assets/img/tools/tools-hero.webp" alt="Dashboard del check-up con punteggio di salute 87 su 100 e grafico delle prestazioni" width="192" height="113" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/><p class="sr-card-link" style="margin-top:18px"><a href="/strumenti/check-up-completo/">Prova →</a></p></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -44,6 +44,9 @@
 <p class="has-grigio-color has-text-color has-small-font-size">Il PageSpeed reale del vostro sito, spiegato in italiano.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-test-velocita.webp" alt="Grafico dell’andamento di velocità e tachimetro del punteggio PageSpeed" width="135" height="33" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/test-velocita/">Prova →</a></p>
 <!-- /wp:html -->
 </div>
@@ -58,6 +61,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size">Titoli, struttura e dati mancanti sulla pagina che conta di più.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-analisi-seo.webp" alt="Checklist SEO on-page e grafico di crescita della visibilità in ricerca" width="124" height="33" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/analisi-seo/">Prova →</a></p>
 <!-- /wp:html -->
@@ -74,6 +80,9 @@
 <p class="has-grigio-color has-text-color has-small-font-size">Banner, informative e consensi: cosa manca per essere a norma.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-check-gdpr.webp" alt="Icone di verifica cookie, informative privacy e badge di conformità GDPR" width="124" height="30" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/check-gdpr/">Prova →</a></p>
 <!-- /wp:html -->
 </div>
@@ -88,6 +97,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size">Quanto rende tradurre il sito in inglese o tedesco.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-roi-localizzazione.webp" alt="Grafico a barre crescenti con icona di ritorno economico della localizzazione" width="124" height="32" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/roi-localizzazione/">Prova →</a></p>
 <!-- /wp:html -->
@@ -104,6 +116,9 @@
 <p class="has-grigio-color has-text-color has-small-font-size">Le barriere di accessibilità più comuni, misurate con Google.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-verifica-accessibilita.webp" alt="Icona di accessibilità con indicatori di conformità verificati" width="124" height="32" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/verifica-accessibilita/">Prova →</a></p>
 <!-- /wp:html -->
 </div>
@@ -118,6 +133,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size">llms.txt, crawler AI, dati strutturati e sitemap: quattro segnali.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-sito-pronto-ai.webp" alt="Diagramma di segnali tecnici collegati e checklist di prontezza per l’AI" width="124" height="32" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/sito-pronto-ai/">Prova →</a></p>
 <!-- /wp:html -->
@@ -134,6 +152,9 @@
 <p class="has-grigio-color has-text-color has-small-font-size">Quanta CO₂ produce ogni visita — e quanta all’anno.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-impatto-co2.webp" alt="Grafico dell’impronta di CO₂ generata dalle visite al sito" width="124" height="32" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/impatto-co2/">Prova →</a></p>
 <!-- /wp:html -->
 </div>
@@ -148,6 +169,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size">Otto segnali di fiducia on-page, raggruppati nei quattro pilastri E-E-A-T.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-segnali-eeat.webp" alt="Quattro icone dei pilastri E-E-A-T: esperienza, autorevolezza, verifica e affidabilità" width="124" height="32" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/segnali-eeat/">Prova →</a></p>
 <!-- /wp:html -->
@@ -164,6 +188,9 @@
 <p class="has-grigio-color has-text-color has-small-font-size">Cosa capisce l’AI del vostro sito, e come vi citerebbe.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-sito-letto-dallai.webp" alt="Blocchi di testo della pagina analizzati e icona a forma di occhio dell’AI" width="124" height="32" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/sito-letto-dallai/">Prova →</a></p>
 <!-- /wp:html -->
 </div>
@@ -179,6 +206,9 @@
 <p class="has-grigio-color has-text-color has-small-font-size">I vostri testi in inglese o russo suonano nativi?</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-suona-madrelingua.webp" alt="Forma d’onda audio del testo con punteggio di naturalezza 92" width="124" height="20" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/suona-madrelingua/">Prova →</a></p>
 <!-- /wp:html -->
 </div>
@@ -193,6 +223,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size">Il vostro llms.txt, scritto e pronto da scaricare.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-generatore-llms-txt.webp" alt="Anteprima del file llms.txt generato automaticamente" width="127" height="20" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/generatore-llms-txt/">Prova →</a></p>
 <!-- /wp:html -->

@@ -21,7 +21,7 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:html -->
-<div class="sr-card sr-card--carta" style="border-color:var(--sr-oltremare)"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">Новинка · бесплатно</p><h3 class="wp-block-heading" style="margin-top:10px">Полная проверка сайта</h3><p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">Семь бесплатных инструментов в одном анализе.</p><p class="sr-card-link" style="margin-top:18px"><a href="/ru/instrumenty/polnaya-proverka-sajta/">Попробовать →</a></p></div>
+<div class="sr-card sr-card--carta" style="border-color:var(--sr-oltremare)"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">Новинка · бесплатно</p><h3 class="wp-block-heading" style="margin-top:10px">Полная проверка сайта</h3><p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">Семь бесплатных инструментов в одном анализе.</p><img src="/wp-content/themes/remarka-studio/assets/img/tools/tools-hero.webp" alt="Дашборд проверки сайта с оценкой здоровья 87 из 100 и графиком показателей" width="192" height="113" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/><p class="sr-card-link" style="margin-top:18px"><a href="/ru/instrumenty/polnaya-proverka-sajta/">Попробовать →</a></p></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -44,6 +44,9 @@
 <p class="has-grigio-color has-text-color has-small-font-size">Реальный PageSpeed вашего сайта, объяснённый понятным языком.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-test-velocita.webp" alt="График изменения скорости и спидометр с оценкой PageSpeed" width="135" height="33" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/test-skorosti/">Попробовать →</a></p>
 <!-- /wp:html -->
 </div>
@@ -58,6 +61,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size">Баннер, уведомления и согласия: чего не хватает до полного соответствия.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-check-gdpr.webp" alt="Иконки проверки cookie, уведомлений о конфиденциальности и значок соответствия GDPR" width="124" height="30" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/proverka-gdpr/">Попробовать →</a></p>
 <!-- /wp:html -->
@@ -74,6 +80,9 @@
 <p class="has-grigio-color has-text-color has-small-font-size">Заголовки, структура и недостающие данные на самой важной странице.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-analisi-seo.webp" alt="Чек-лист SEO-факторов на странице и растущий график видимости в поиске" width="124" height="33" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/seo-audit/">Попробовать →</a></p>
 <!-- /wp:html -->
 </div>
@@ -88,6 +97,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size">Сколько приносит перевод сайта на английский или немецкий.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-roi-localizzazione.webp" alt="Растущая столбчатая диаграмма с иконкой выгоды от локализации" width="124" height="32" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/roi-lokalizacii/">Попробовать →</a></p>
 <!-- /wp:html -->
@@ -104,6 +116,9 @@
 <p class="has-grigio-color has-text-color has-small-font-size">Самые частые барьеры доступности, измеренные через Google.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-verifica-accessibilita.webp" alt="Иконка доступности с подтверждёнными индикаторами соответствия" width="124" height="32" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/proverka-dostupnosti/">Попробовать →</a></p>
 <!-- /wp:html -->
 </div>
@@ -118,6 +133,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size">llms.txt, AI-краулеры, структурированные данные и sitemap: четыре сигнала.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-sito-pronto-ai.webp" alt="Схема связанных технических сигналов и чек-лист готовности к ИИ" width="124" height="32" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/gotovnost-k-ii/">Попробовать →</a></p>
 <!-- /wp:html -->
@@ -134,6 +152,9 @@
 <p class="has-grigio-color has-text-color has-small-font-size">Сколько CO₂ создаёт каждый визит — и сколько за год.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-impatto-co2.webp" alt="График углеродного следа, создаваемого визитами на сайт" width="124" height="32" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/uglerodnyj-sled/">Попробовать →</a></p>
 <!-- /wp:html -->
 </div>
@@ -148,6 +169,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size">Восемь сигналов доверия на странице, разложенных по четырём осям E-E-A-T.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-segnali-eeat.webp" alt="Четыре иконки столпов E-E-A-T: опыт, авторитетность, проверка и доверие" width="124" height="32" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/signaly-eeat/">Попробовать →</a></p>
 <!-- /wp:html -->
@@ -164,6 +188,9 @@
 <p class="has-grigio-color has-text-color has-small-font-size">Что понимает ИИ о вашем сайте и как бы он вас процитировал.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-sito-letto-dallai.webp" alt="Проанализированные блоки текста страницы рядом с иконкой глаза ИИ" width="124" height="32" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/sajt-glazami-ii/">Попробовать →</a></p>
 <!-- /wp:html -->
 </div>
@@ -179,6 +206,9 @@
 <p class="has-grigio-color has-text-color has-small-font-size">Ваши тексты на итальянском или английском звучат как у носителя?</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-suona-madrelingua.webp" alt="Аудио-волна текста с оценкой естественности 92" width="124" height="20" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/zvuchit-kak-u-nositelya/">Попробовать →</a></p>
 <!-- /wp:html -->
 </div>
@@ -193,6 +223,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size">Ваш llms.txt — написан и готов к скачиванию.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<img src="/wp-content/themes/remarka-studio/assets/img/tools/tool-generatore-llms-txt.webp" alt="Предпросмотр автоматически сгенерированного файла llms.txt" width="127" height="20" loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>
+<!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/generator-llms-txt/">Попробовать →</a></p>
 <!-- /wp:html -->

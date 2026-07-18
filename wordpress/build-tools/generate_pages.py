@@ -477,6 +477,45 @@ def build_prezzi():
 
 # ---------------------------------------------------------------- Strumenti
 
+# Grafiche ritagliate dal macro-mockup owner 18.07.2026 (docs/piano-toolimg,
+# nessun redisegno SVG — decisione owner finale, si ritaglia il PNG sorgente).
+# Dimensioni display = metà dei px del ritaglio (regola retina 2x, vedi
+# generazione in scratchpad/toolimg/); file in assets/img/tools/.
+TOOLS_HERO_IMG = dict(file='tools-hero.webp', w=192, h=113,
+                       alt='Dashboard del check-up con punteggio di salute 87 su 100 e grafico delle prestazioni')
+
+TOOLS_CARD_IMG = {
+    'test-velocita': dict(file='tool-test-velocita.webp', w=135, h=33,
+                           alt='Grafico dell’andamento di velocità e tachimetro del punteggio PageSpeed'),
+    'analisi-seo': dict(file='tool-analisi-seo.webp', w=124, h=33,
+                         alt='Checklist SEO on-page e grafico di crescita della visibilità in ricerca'),
+    'check-gdpr': dict(file='tool-check-gdpr.webp', w=124, h=30,
+                        alt='Icone di verifica cookie, informative privacy e badge di conformità GDPR'),
+    'roi-localizzazione': dict(file='tool-roi-localizzazione.webp', w=124, h=32,
+                                alt='Grafico a barre crescenti con icona di ritorno economico della localizzazione'),
+    'verifica-accessibilita': dict(file='tool-verifica-accessibilita.webp', w=124, h=32,
+                                    alt='Icona di accessibilità con indicatori di conformità verificati'),
+    'sito-pronto-ai': dict(file='tool-sito-pronto-ai.webp', w=124, h=32,
+                            alt='Diagramma di segnali tecnici collegati e checklist di prontezza per l’AI'),
+    'impatto-co2': dict(file='tool-impatto-co2.webp', w=124, h=32,
+                         alt='Grafico dell’impronta di CO₂ generata dalle visite al sito'),
+    'segnali-eeat': dict(file='tool-segnali-eeat.webp', w=124, h=32,
+                          alt='Quattro icone dei pilastri E-E-A-T: esperienza, autorevolezza, verifica e affidabilità'),
+    'sito-letto-dallai': dict(file='tool-sito-letto-dallai.webp', w=124, h=32,
+                               alt='Blocchi di testo della pagina analizzati e icona a forma di occhio dell’AI'),
+    'suona-madrelingua': dict(file='tool-suona-madrelingua.webp', w=124, h=20,
+                               alt='Forma d’onda audio del testo con punteggio di naturalezza 92'),
+    'generatore-llms-txt': dict(file='tool-generatore-llms-txt.webp', w=127, h=20,
+                                 alt='Anteprima del file llms.txt generato automaticamente'),
+}
+
+
+def _tool_img_html(img):
+    src = f'/wp-content/themes/remarka-studio/assets/img/tools/{img["file"]}'
+    return (f'<img src="{src}" alt="{img["alt"]}" width="{img["w"]}" height="{img["h"]}" '
+            f'loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>')
+
+
 def build_strumenti_index():
     hero = section(eyebrow('Strumenti gratuiti') + heading(1, 'Prima misurate, poi decidete', style='clamp(38px,4.6vw,64px)') +
                     paragraph('Strumenti professionali, gratuiti, senza registrazione.', color='grigio', size='medium'),
@@ -493,6 +532,7 @@ def build_strumenti_index():
             '<p class="sr-eyebrow" style="color:var(--sr-oltremare)">Novità · gratuito</p>'
             f'<h3 class="wp-block-heading" style="margin-top:10px">{checkup["titolo"]}</h3>'
             f'<p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">{checkup["descrizione"]}</p>'
+            f'{_tool_img_html(TOOLS_HERO_IMG)}'
             f'<p class="sr-card-link" style="margin-top:18px"><a href="/strumenti/{checkup["slug"]}/">Prova →</a></p>'
             '</div>'
         ),
@@ -517,10 +557,12 @@ def build_strumenti_index():
 
     cards = []
     for t in altri:
+        img = TOOLS_CARD_IMG.get(t['slug'])
         card = (
             raw_html(f'<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">{t["idx"]}</p>') +
             heading(3, t['titolo'], accent_dot=False) +
             paragraph(t['descrizione'], color='grigio', size='small') +
+            (raw_html(_tool_img_html(img)) if img else raw_html('')) +
             raw_html(f'<p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/{t["slug"]}/">Prova →</a></p>')
         )
         cards.append(group(card, classes='sr-card sr-card--carta'))
