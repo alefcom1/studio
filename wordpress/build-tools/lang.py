@@ -22,6 +22,7 @@ SINGLES = {
     'prezzi':            {'en': 'pricing',            'ru': 'ceny'},
     'milano':            {'en': 'milan',              'ru': 'milan'},
     'chi-siamo':         {'en': 'about',              'ru': 'o-studii'},
+    'area-clienti':      {'en': 'client-area',        'ru': 'kabinet-klienta'},
     'privacy':           {'en': 'privacy',            'ru': 'privacy'},
     'cookie-policy':     {'en': 'cookie-policy',      'ru': 'cookie-policy'},
     'cookie-preferenze': {'en': 'cookie-preferences', 'ru': 'cookie-preferences'},

@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Catalogo prodotti illimitato con varianti</span></div><div><span class="sr-mono">✓</span><span>Checkout in un solo passaggio</span></div><div><span class="sr-mono">✓</span><span>Pagamenti con carta, PayPal e bonifico</span></div><div><span class="sr-mono">✓</span><span>Fatturazione elettronica via SDI integrata</span></div><div><span class="sr-mono">✓</span><span>Gestione magazzino e spedizioni</span></div><div><span class="sr-mono">✓</span><span>SEO tecnica per le pagine prodotto</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ garantito da contratto</span></div><div><span class="sr-mono">✓</span><span>12 mesi di assistenza e misurazioni mensili</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/area-clienti/">Ogni progetto include l’area clienti: fasi, approvazioni e file in un unico posto →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

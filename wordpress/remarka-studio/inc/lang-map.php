@@ -12,6 +12,7 @@ return array(
 	array( 'it' => 'prezzi', 'en' => 'en/pricing', 'ru' => 'ru/ceny' ),
 	array( 'it' => 'milano', 'en' => 'en/milan', 'ru' => 'ru/milan' ),
 	array( 'it' => 'chi-siamo', 'en' => 'en/about', 'ru' => 'ru/o-studii' ),
+	array( 'it' => 'area-clienti', 'en' => 'en/client-area', 'ru' => 'ru/kabinet-klienta' ),
 	array( 'it' => 'privacy', 'en' => 'en/privacy', 'ru' => 'ru/privacy' ),
 	array( 'it' => 'cookie-policy', 'en' => 'en/cookie-policy', 'ru' => 'ru/cookie-policy' ),
 	array( 'it' => 'cookie-preferenze', 'en' => 'en/cookie-preferences', 'ru' => 'ru/cookie-preferences' ),

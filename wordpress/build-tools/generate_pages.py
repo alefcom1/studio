@@ -132,6 +132,17 @@ def _lancio_banner_html():
     )
 
 
+# Riga area clienti nelle pagine servizio (docs/piano-promo-cabinet-lab.md §3.5):
+# ogni progetto include il cabinet — una riga sobria, stessa classe delle
+# righe strumento, link alla pagina /area-clienti/ (localizzato dal conveyor).
+AREA_CLIENTI_LINE = ('Ogni progetto include l’area clienti: fasi, approvazioni e file in un unico posto →')
+
+
+def _area_clienti_line_html(margin_top='18px'):
+    return (f'<p class="sr-card-link" style="margin-top:{margin_top}">'
+            f'<a href="/area-clienti/">{AREA_CLIENTI_LINE}</a></p>')
+
+
 def _service_tool_links_html(slug):
     links = SERVICE_TOOL_LINKS.get(slug)
     if not links:
@@ -212,7 +223,8 @@ def build_servizio(svc):
     )
 
     include = section(
-        eyebrow('Cosa include') + heading(2, svc['include_heading']) + checklist(svc['include']),
+        eyebrow('Cosa include') + heading(2, svc['include_heading']) + checklist(svc['include']) +
+        raw_html(_area_clienti_line_html()),
         classes='sr-section sr-section--bianco',
     )
 
@@ -418,6 +430,7 @@ def build_prezzi():
         ('SEO tecnica e dati strutturati', ['base', 'completa', 'completa']),
         ('PageSpeed 90+ da contratto', [True, True, True]),
         ('Assistenza inclusa', ['12 mesi', '12 mesi', '12 mesi']),
+        ('Area clienti: fasi, approvazioni, fatture', [True, True, True]),
         ('Consegna', ['2 sett.', '3 sett.', '6 sett.']),
     ]
     thead = '<tr>' + ''.join(f'<th>{h}</th>' for h in headers) + '</tr>'
@@ -543,7 +556,7 @@ def _tool_img_html(img, style=None):
 
 
 def build_strumenti_index():
-    hero = section(eyebrow('Strumenti gratuiti') + heading(1, 'Prima misurate, poi decidete', style='clamp(38px,4.6vw,64px)') +
+    hero = section(eyebrow('Remarka Lab · Strumenti gratuiti') + heading(1, 'Prima misurate, poi decidete', style='clamp(38px,4.6vw,64px)') +
                     paragraph('Strumenti professionali, gratuiti, senza registrazione.', color='grigio', size='medium'),
                     classes='sr-section sr-hero')
 
@@ -601,6 +614,42 @@ def build_strumenti_index():
     grid = section(group(''.join(cards), classes='', layout_type='grid', style='240px'),
                     classes='sr-section sr-section--bianco')
 
+    # Gratis vs Monitor (docs/piano-promo-cabinet-lab.md §4.4): àncora #monitor
+    # linkata dalla home (strumenti-cards). lab.remarka.biz per ora chiede le
+    # credenziali (piattaforma interna): il link c'è — decisione owner 18.07 —
+    # ma il percorso commerciale resta /#contatti finché non apre la vetrina.
+    monitor_free = group(
+        eyebrow('Gratis · per tutti') +
+        heading(3, 'Strumenti una tantum', accent_dot=False) +
+        checklist([
+            '12 check gratuiti: velocità, SEO, accessibilità, GDPR, AI, E-E-A-T, CO₂, ROI',
+            'Risultato in circa un minuto, senza registrazione',
+            'Ogni strumento indica cosa correggere — e il servizio giusto se serve una mano',
+        ]),
+        classes='sr-card sr-card--carta',
+    )
+    monitor_pro = group(
+        eyebrow('Per i clienti · con l’assistenza') +
+        heading(3, 'Remarka Lab · Monitor', accent_dot=False) +
+        checklist([
+            'Il sito osservato in continuo dopo il lancio: controlli periodici e uptime',
+            'Core Web Vitals reali degli utenti, mese dopo mese',
+            'Se un valore peggiora, lo vediamo noi — e interveniamo prima che diventi un problema',
+        ]) +
+        raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/" target="_blank" rel="noopener">La piattaforma: lab.remarka.biz →</a></p>'
+                 '<p class="sr-card-link" style="margin-top:8px"><a href="/#contatti">Incluso nei progetti con assistenza — parliamone →</a></p>'),
+        classes='sr-card sr-card--carta',
+    )
+    monitor = section(
+        eyebrow('Remarka Lab') + heading(2, 'Gratis oggi. Sotto controllo domani') +
+        paragraph('Un punteggio si può misurare gratis, una volta. Tenerlo alto nel tempo è un lavoro — ed è il nostro: '
+                  'per i clienti con assistenza attiva il sito resta osservato anche dopo il lancio, sulla stessa '
+                  'piattaforma con cui costruiamo questi strumenti.',
+                   color='grigio', size='medium', extra_style='max-width:75ch') +
+        group(monitor_free + monitor_pro, classes='', layout_type='grid', style='320px'),
+        classes='sr-section', anchor='monitor',
+    )
+
     # CTA di chiusura (owner 17.07.2026 — unificazione banner: l'indice non
     # aveva mai una banda di contenuto, solo la .sr-footer-cta del footer;
     # rimossa quella, restava zero). Stesso testo/stile riusato dalle pagine
@@ -616,8 +665,8 @@ def build_strumenti_index():
         classes='sr-section sr-cta-band',
     )
     write('strumenti-index', 'Pagina — Strumenti (elenco)',
-          'Elenco degli strumenti gratuiti, con il check-up completo in evidenza.',
-          hero + featured + ai_intro + grid + cta)
+          'Elenco degli strumenti gratuiti, con il check-up completo in evidenza e la sezione Gratis/Monitor.',
+          hero + featured + ai_intro + grid + monitor + cta)
 
 
 # Markup del widget per tipo di strumento — segue STRETTAMENTE il contratto
@@ -1738,7 +1787,8 @@ def build_export_ready():
     )
 
     garanzie = section(
-        eyebrow('Garanzie') + heading(2, e['garanzie_heading']) + checklist(e['garanzie']),
+        eyebrow('Garanzie') + heading(2, e['garanzie_heading']) + checklist(e['garanzie']) +
+        raw_html(_area_clienti_line_html()),
         classes='sr-section sr-section--bianco',
     )
 
@@ -1821,7 +1871,8 @@ def build_web_app():
     prove = section(
         columns([
             column(eyebrow('Product Lab') + heading(2, w['prove_heading']), width='38%'),
-            column(paragraph(w['prove_testo'], size='base', extra_style='font-size:17px'), width='62%'),
+            column(paragraph(w['prove_testo'], size='base', extra_style='font-size:17px') +
+                   raw_html(_area_clienti_line_html(margin_top='14px')), width='62%'),
         ]),
         classes='sr-section',
     )
@@ -1867,7 +1918,8 @@ def build_adeguamento_eaa():
     )
 
     include = section(
-        eyebrow('Cosa include') + heading(2, e['include_heading']) + checklist(e['include']),
+        eyebrow('Cosa include') + heading(2, e['include_heading']) + checklist(e['include']) +
+        raw_html(_area_clienti_line_html()),
         classes='sr-section sr-section--bianco',
     )
 
@@ -1928,6 +1980,127 @@ def build_adeguamento_eaa():
     write('servizio-adeguamento-eaa', 'Pagina — Servizio: Adeguamento EAA',
           'Servizio conformità European Accessibility Act: audit, correzioni, dichiarazione di accessibilità e verifica finale WCAG 2.1 AA.',
           hero + per_chi + include + processo + prezzo + garanzie + faq + cta)
+
+
+# ---------------------------------------------------------------- Area clienti
+# Pagina trust (docs/piano-promo-cabinet-lab.md): non vende un servizio, vende
+# la trasparenza del processo — il cabinet su cab.remarka.biz è incluso in ogni
+# progetto. Nome pubblico IT «area clienti» (mai «CAB»: per un italiano è il
+# Codice di Avviamento Bancario — piano-cabinet-k1 §10.2).
+
+def build_area_clienti():
+    hero = hero_interno(
+        'Area clienti', 'Il progetto, nero su bianco',
+        'Ogni progetto Remarka include l’accesso all’area clienti: la fase del lavoro visibile ogni giorno, '
+        'approvazioni e file in un unico posto — in italiano, inglese o russo.',
+        extra_html=buttons([
+            ('Accedi all’area clienti', 'https://cab.remarka.biz/', None),
+            ('Non siete ancora clienti? Parliamone', '/#contatti', 'outline'),
+        ], margin_top='36px'),
+        stat=('8', 'fasi del progetto, visibili in ogni momento — dal brief al lancio'),
+    )
+
+    passi = [
+        ('Passo 1', 'Entrate senza password',
+         'Inserite la vostra e-mail: vi mandiamo un link di accesso monouso, valido 15 minuti. '
+         'Niente password da ricordare, niente password da rubare.'),
+        ('Passo 2', 'Vedete a che punto siamo',
+         'Il progetto avanza su 8 fasi, dal brief al lancio: quella corrente è sempre evidenziata. '
+         'Non serve chiedere «a che punto siamo?» — si vede.'),
+        ('Passo 3', 'Approvate e scaricate',
+         'Bozze e testi si approvano con un click, con data e nome; file e fatture restano archiviati. '
+         'Ogni domanda ha un filo tracciato, non una e-mail persa.'),
+    ]
+    week_cols = ''.join(
+        f'<div class="sr-week"><p class="sr-week-chip sr-no-margin">{chip}</p>'
+        f'<div class="sr-week__steps"><div class="sr-week__step">'
+        f'<p class="sr-step__head sr-no-margin"><span class="sr-step-num">{i:02d}</span></p>'
+        f'<h4>{titolo}</h4><p>{testo}</p></div></div></div>'
+        for i, (chip, titolo, testo) in enumerate(passi, start=1)
+    )
+    come_funziona = section(
+        eyebrow('Come funziona') + heading(2, 'Tre passaggi, zero password') +
+        raw_html(f'<div class="sr-weeks sr-cascade">{week_cols}</div>'),
+        classes='sr-section sr-section--bianco',
+    )
+
+    feature_cards = [
+        ('/01', 'Fasi del progetto',
+         'Dal brief al lancio, 8 fasi con la corrente evidenziata: l’avanzamento si vede a colpo d’occhio, ogni giorno.'),
+        ('/02', 'Approvazioni con storico',
+         'Bozze e testi da approvare o rimandare con un commento. Ogni decisione resta agli atti: chi, cosa, quando.'),
+        ('/03', 'File in un unico posto',
+         'I materiali del progetto — bozze, consegne, documenti — sempre scaricabili. E potete caricare i vostri: loghi, testi, foto.'),
+        ('/04', 'Fatture e stato dei pagamenti',
+         'Numero, data, importo e stato di ogni fattura, con il PDF scaricabile. Niente da chiedere, niente da cercare.'),
+        ('/05', 'Richieste tracciate',
+         'Ogni domanda apre un filo con storico e risposta: niente e-mail perse tra le caselle di tre persone.'),
+        ('/06', 'Tre lingue',
+         'Interfaccia e notifiche in italiano, inglese o russo: ognuno del vostro team la usa nella propria lingua.'),
+    ]
+    cards = ''.join(
+        group(
+            raw_html(f'<p class="sr-mono" style="color:var(--sr-oltremare);font-size:12px">{idx}</p>') +
+            heading(3, titolo, accent_dot=False) +
+            paragraph(testo, color='grigio', size='small'),
+            classes='sr-card sr-card--carta',
+        )
+        for idx, titolo, testo in feature_cards
+    )
+    dentro = section(
+        eyebrow('Cosa trovate dentro') + heading(2, 'Tutto il progetto, in un posto solo') +
+        group(cards, classes='', layout_type='grid', style='240px'),
+        classes='sr-section',
+    )
+
+    perche = section(
+        columns([
+            column(eyebrow('Perché l’abbiamo costruita') +
+                   heading(2, 'Costruita da noi, come i siti che vendiamo') +
+                   paragraph(
+                       'Sviluppiamo web app per i clienti — e l’area clienti è la nostra: stessa piattaforma, '
+                       'stessi standard, stesso design. Nessun gestionale di terzi: i dati restano su server '
+                       'nell’Unione Europea e ne raccogliamo solo il minimo necessario per lavorare insieme.',
+                       size='base', extra_style='margin-top:16px;font-size:16px'),
+                   width='50%'),
+            column(eyebrow('Sicurezza e privacy') + checklist([
+                'Accesso senza password: link monouso via e-mail, valido 15 minuti',
+                'Sessioni revocabili e registro degli accessi',
+                'Dati su server nell’Unione Europea (Germania), GDPR by design',
+                'Solo i dati necessari: e-mail, nome, lingua — nient’altro',
+            ]), width='50%'),
+        ]),
+        classes='sr-section sr-section--bianco',
+    )
+
+    faq = section(
+        eyebrow('Domande frequenti') + details_faq([
+            ('Quanto costa l’area clienti?',
+             'Niente: è inclusa in ogni progetto Remarka, dal sito vetrina all’e-commerce.'),
+            ('Serve installare qualcosa?',
+             'No. Funziona dal browser, anche dal telefono. Entrate con la vostra e-mail: niente password, niente app da installare.'),
+            ('In che lingua è l’interfaccia?',
+             'Italiano, inglese o russo: la scegliete voi, e ogni membro del vostro team può usarne una diversa.'),
+            ('Chi vede i vostri dati?',
+             'Solo voi e noi. Ogni cliente vede esclusivamente i propri progetti; i dati stanno su server nell’Unione Europea e non li cediamo a terzi.'),
+        ]),
+        classes='sr-section',
+    )
+
+    cta = section(
+        heading(2, 'Parliamo del vostro sito', style=None) +
+        paragraph('Analisi gratuita del sito attuale, preventivo chiuso entro 24 ore dalla chiamata.',
+                   color='grigio', size='medium', extra_style='margin-top:12px') +
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
+                 analyze_cta_button()],
+                justify='center', margin_top='28px') +
+        cta_trust_row(),
+        classes='sr-section sr-cta-band',
+    )
+
+    write('area-clienti', 'Pagina — Area clienti',
+          'L’area clienti su cab.remarka.biz: fasi del progetto, approvazioni, file e fatture. Inclusa in ogni progetto.',
+          hero + come_funziona + dentro + perche + faq + cta)
 
 
 # ---------------------------------------------------------------- Chi siamo / legal
