@@ -153,5 +153,8 @@
 <!-- wp:paragraph {"className":"sr-card-link"} -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/uslugi/seo-prodvizhenie/">Продвижение в Google Италии и ЕС →</a></p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<div class="sr-cta-band__trust"><div class="sr-cta-band__trust-item"><strong>100% бесплатно</strong><span>Никаких обязательств</span></div><div class="sr-cta-band__trust-item"><strong>Ответ за 24 часа</strong><span>Подробная смета</span></div><div class="sr-cta-band__trust-item"><strong>Данные под защитой</strong><span>Полная конфиденциальность</span></div></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
