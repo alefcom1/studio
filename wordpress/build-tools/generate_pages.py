@@ -13,6 +13,7 @@ HTML-комментарии с JSON, очень многословные и ле
 паттерны (см. assets/css/remarka.css).
 """
 import os
+import re
 import sys
 from urllib.parse import quote
 
@@ -2382,18 +2383,55 @@ def build_blog_index():
           hero + featured + list_section)
 
 
+_THEME_DIR = os.path.join(os.path.dirname(__file__), '..', 'remarka-studio')
+_THEME_URL_PREFIX = '/wp-content/themes/remarka-studio/'
+
+
+def _svg_dims(src):
+    """width/height (int, int) letti dal viewBox (o dagli attributi width/
+    height) di un SVG locale del tema, per gli attributi HTML width/height
+    dell'<img> (audit "elementi immagine senza width/height espliciti" —
+    senza questi attributi il browser non può riservare lo spazio prima del
+    caricamento → CLS). None se `src` non è un SVG locale del tema o il
+    file/attributo manca — in quel caso il chiamante omette gli attributi
+    invece di scriverne di sbagliati."""
+    if not src.startswith(_THEME_URL_PREFIX) or not src.lower().endswith('.svg'):
+        return None
+    path = os.path.join(_THEME_DIR, src[len(_THEME_URL_PREFIX):])
+    try:
+        with open(path, 'r', encoding='utf-8') as fh:
+            head = fh.read(2000)
+    except OSError:
+        return None
+    m = re.search(
+        r'<svg\b[^>]*\bviewBox=["\']\s*[\d.+-]+\s+[\d.+-]+\s+([\d.]+)\s+([\d.]+)\s*["\']',
+        head,
+    )
+    if not m:
+        m = re.search(
+            r'<svg\b[^>]*\bwidth=["\'](\d+(?:\.\d+)?)["\'][^>]*\bheight=["\'](\d+(?:\.\d+)?)["\']',
+            head,
+        )
+    if not m:
+        return None
+    return int(round(float(m.group(1)))), int(round(float(m.group(2))))
+
+
 def blog_figure(fig, cover=False):
     """Иллюстрация статьи (фирменный SVG). cover=True — обложка под H1
     (без подписи, с рамкой), иначе — схема/диаграмма с mono-подписью.
-    loading=lazy, max-width:100% (адаптив), alt переводится конвейером."""
+    loading=lazy, max-width:100% (адаптив), alt переводится конвейером.
+    width/height — dal viewBox del file SVG (_svg_dims), per il CLS."""
     margin = '8px 0 8px' if cover else '36px 0 8px'
     cap = ''
     if not cover and fig.get('caption'):
         cap = (f'<figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;'
                f'letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">{fig["caption"]}</figcaption>')
+    dims = _svg_dims(fig['src'])
+    size_attrs = f' width="{dims[0]}" height="{dims[1]}"' if dims else ''
     return raw_html(
         f'<figure class="wp-block-image size-large" style="margin:{margin}">'
-        f'<img src="{fig["src"]}" alt="{fig["alt"]}" loading="lazy" '
+        f'<img src="{fig["src"]}" alt="{fig["alt"]}"{size_attrs} loading="lazy" '
         f'style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/>'
         f'{cap}</figure>'
     )

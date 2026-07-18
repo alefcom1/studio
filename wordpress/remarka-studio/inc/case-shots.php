@@ -44,10 +44,24 @@ function remarka_sr_shot_shortcode( $atts ): string {
 
 	if ( $filename && file_exists( $abs_path ) ) {
 		$src = get_stylesheet_directory_uri() . '/' . $rel_path;
+		/*
+		 * width/height espliciti (audit "elementi immagine senza width/
+		 * height" — senza, il browser non riserva lo spazio prima del
+		 * caricamento → CLS). getimagesize() legge le dimensioni reali del
+		 * file caricato; se per qualche motivo fallisce, ripieghiamo sui
+		 * rapporti fissi della cornice .sr-browser (remarka.css: 16/10
+		 * desktop, 9/19.5 mobile) così l'attributo resta comunque coerente
+		 * con lo spazio che il CSS riserva.
+		 */
+		$size   = @getimagesize( $abs_path );
+		$width  = $size ? $size[0] : ( $mobile ? 375 : 1440 );
+		$height = $size ? $size[1] : ( $mobile ? 812 : 900 );
 		return sprintf(
-			'<figure class="wp-block-image size-large"><img src="%1$s" alt="%2$s" loading="lazy"/></figure>',
+			'<figure class="wp-block-image size-large"><img src="%1$s" alt="%2$s" width="%3$d" height="%4$d" loading="lazy"/></figure>',
 			esc_url( $src ),
-			esc_attr( $atts['alt'] )
+			esc_attr( $atts['alt'] ),
+			$width,
+			$height
 		);
 	}
 

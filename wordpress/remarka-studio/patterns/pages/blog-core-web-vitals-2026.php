@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Core Web Vitals nel 2026: cosa misura davvero Google</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cwv-cover.svg" alt="Core Web Vitals nel 2026: LCP, INP e CLS, le tre metriche che Google misura sul mobile" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cwv-cover.svg" alt="Core Web Vitals nel 2026: LCP, INP e CLS, le tre metriche che Google misura sul mobile" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -33,7 +33,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">INP (Interaction to Next Paint) misura la reattività: tocco un pulsante, quanto ci mette il sito a rispondere? Dal 2024 ha sostituito il vecchio FID come metrica ufficiale, ed è la più sottovalutata. CLS (Cumulative Layout Shift) misura invece la stabilità: quante volte, mentre la pagina carica, gli elementi «saltano» e vi fanno cliccare la cosa sbagliata. Chi ha provato a premere «Aggiungi al carrello» e ha comprato un altro prodotto perché la pagina si è mossa sa esattamente di cosa parliamo.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cwv-soglie.svg" alt="Le soglie «buono», «da migliorare» e «scarso» di LCP, INP e CLS" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Le soglie dei tre Core Web Vitals. LCP sotto 2,5 secondi e CLS sotto 0,1 sono i valori citati nell’articolo; l’INP sotto 200 ms è la soglia «buono» ufficiale. Fonte: web.dev (Google), Web Vitals.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cwv-soglie.svg" alt="Le soglie «buono», «da migliorare» e «scarso» di LCP, INP e CLS" width="1200" height="500" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Le soglie dei tre Core Web Vitals. LCP sotto 2,5 secondi e CLS sotto 0,1 sono i valori citati nell’articolo; l’INP sotto 200 ms è la soglia «buono» ufficiale. Fonte: web.dev (Google), Web Vitals.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Perché il punteggio mobile è l’unico che conta<span class="sr-accent-dot">.</span></h2>

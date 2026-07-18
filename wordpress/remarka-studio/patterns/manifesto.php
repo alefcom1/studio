@@ -46,9 +46,9 @@
 <div class="sr-office">
 <p class="sr-office__cap">Il nostro studio, Milano</p>
 <div class="sr-office__grid">
-<figure class="sr-office__item sr-office__item--facade"><img src="/wp-content/themes/remarka-studio/assets/img/studio-facciata.webp" alt="Realizzazione siti web a Milano — la sede di Studio Remarka" loading="lazy"/></figure>
-<figure class="sr-office__item sr-office__item--interno"><img src="/wp-content/themes/remarka-studio/assets/img/studio-interno.webp" alt="Lo spazio di lavoro dello studio" loading="lazy"/></figure>
-<figure class="sr-office__item sr-office__item--ingresso"><img src="/wp-content/themes/remarka-studio/assets/img/studio-ingresso.webp" alt="Ingresso dello studio, civico 12" loading="lazy"/></figure>
+<figure class="sr-office__item sr-office__item--facade"><img src="/wp-content/themes/remarka-studio/assets/img/studio-facciata.webp" alt="Realizzazione siti web a Milano — la sede di Studio Remarka" width="1200" height="800" loading="lazy"/></figure>
+<figure class="sr-office__item sr-office__item--interno"><img src="/wp-content/themes/remarka-studio/assets/img/studio-interno.webp" alt="Lo spazio di lavoro dello studio" width="1200" height="800" loading="lazy"/></figure>
+<figure class="sr-office__item sr-office__item--ingresso"><img src="/wp-content/themes/remarka-studio/assets/img/studio-ingresso.webp" alt="Ingresso dello studio, civico 12" width="900" height="1125" loading="lazy"/></figure>
 </div>
 </div>
 <!-- /wp:html --></div>

@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">PWA per le PMI: quando l’app non serve</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/pwa-cover.svg" alt="PWA per le PMI: quando l’app nativa non serve, con installabilità, uso offline e notifiche" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/pwa-cover.svg" alt="PWA per le PMI: quando l’app nativa non serve, con installabilità, uso offline e notifiche" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -57,7 +57,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Un test pratico prima di decidere: elencate le tre cose che l’app «dovrebbe fare». Se sono aprirsi in fretta, funzionare offline, stare sullo schermo e mandare una notifica, siete in territorio PWA. Se invece serve la fotocamera con riconoscimenti, i pagamenti dentro lo store o funzioni hardware profonde, allora l’app nativa ha senso. Il costo di sbagliare questa scelta si conta in decine di migliaia di euro.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/pwa-confronto.svg" alt="Confronto tra sito, PWA e app nativa per installabilità, uso offline, notifiche, store e costo di partenza" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Sito, PWA e app nativa a confronto: la PWA aggiunge installabilità, offline e notifiche partendo dallo stesso sito, mentre un’app nativa parte da € 15.000. Fonti: web.dev e MDN sulle Progressive Web App.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/pwa-confronto.svg" alt="Confronto tra sito, PWA e app nativa per installabilità, uso offline, notifiche, store e costo di partenza" width="1200" height="500" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Sito, PWA e app nativa a confronto: la PWA aggiunge installabilità, offline e notifiche partendo dallo stesso sito, mentre un’app nativa parte da € 15.000. Fonti: web.dev e MDN sulle Progressive Web App.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:14px"><a href="/servizi/siti-pwa/">Come realizziamo i siti PWA →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/servizi/web-app/">Quando invece serve una web app su misura →</a></p>
