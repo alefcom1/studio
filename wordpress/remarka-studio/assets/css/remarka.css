@@ -258,28 +258,60 @@ body.dark-mode .site-description {
   color: #9BA3C4;
 }
 
-/* Banda CTA di contenuto — oltremare, non inchiostro (unificazione banner,
-   owner 17.07.2026: la vecchia banda "Parliamo del vostro sito" era
-   .sr-dark e duplicava, un blocco più sotto nella stessa pagina, la
-   .sr-footer-cta del footer — stesso testo, due grafiche diverse. Ora
-   .sr-cta-band è l'UNICO banner di contenuto, sempre seguito dal footer
-   nero senza polosa. Colori/pulsanti ripresi 1:1 dal vecchio
-   .sr-footer-cta (era il campione approvato dal titolare), non da .sr-dark:
-   su un fondo oltremare — non inchiostro quasi nero — serve più opacità
-   sul testo e pulsanti invertiti in carta, non nella tinta chiara
-   oltremare-chiaro che qui sparirebbe per mancanza di contrasto. */
+/* Banda CTA di contenuto — carta premium separata (redesign owner 18.07.2026,
+   macro-mockup "Parliamo del vostro sito" approvato dal titolare — vedi
+   docs/piano-implementazione-fase-A.md e la sessione di redesign CTA).
+   Prima era una banda oltremare full-bleed incollata al contenuto sopra e
+   al footer nero sotto (lamentela storica del titolare: "si fondono").
+   Ora è una vera card: larghezza massima 1240px con margini laterali (gap
+   visibile anche a piena larghezza), angoli arrotondati, sfondo blu notte
+   (gradiente ravvicinato ai pixel del mockup, non oltremare piatto) e
+   l'illustrazione (laptop+globo, assets/img/cta-analisi.webp — stesso
+   ritaglio del mockup, bordo sinistro che si dissolve nel fondo tinta
+   unita) agganciata a destra. Testo allineato a sinistra come nel mockup
+   (i bottoni restano centrati via layout JSON nel generatore per markup
+   invariato — qui l'allineamento è puro CSS, override del flex). */
 .sr-cta-band {
-  background: var(--sr-oltremare);
+  background-image: url('../img/cta-analisi.webp'), linear-gradient(135deg, #0A153F 0%, #12225E 58%, #172A63 100%);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right center, center;
+  background-size: auto 100%, cover;
   color: rgba(247, 246, 242, 0.85);
   border-bottom: none;
+  max-width: 1200px;
+  width: calc(100% - 48px);
+  margin: 56px auto;
+  border-radius: 28px;
+  padding-top: clamp(48px, 6vw, 80px);
+  padding-bottom: clamp(48px, 6vw, 80px);
+  text-align: left;
+}
+
+/* .sr-section > :not(.sr-watermark) (sopra in questo file) centra ogni
+   figlio diretto con max-width:1240px + margin-left/right:auto — pensato
+   per sezioni a piena larghezza dove i figli restano larghi quanto il
+   contenitore, quindi il margin:auto non sposta nulla in pratica. Qui
+   invece restringiamo i figli a 620px (colonna di testo più stretta
+   dell'illustrazione, stessa proporzione del mockup ~55/45): senza
+   azzerare i margini esplicitamente, quell'auto ereditato centrerebbe il
+   testo dentro la card invece di tenerlo a sinistra — stessa identica
+   specificità del selettore "> :not()", vince solo perché dichiarato
+   dopo. Nessun !important necessario. */
+.sr-cta-band > :not(.sr-watermark) {
+  max-width: 620px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: clamp(28px, 5vw, 64px);
+  padding-right: clamp(28px, 5vw, 64px);
 }
 
 .sr-cta-band h1, .sr-cta-band h2, .sr-cta-band h3 {
   color: var(--sr-carta);
+  text-align: left;
 }
 
 .sr-cta-band .sr-accent-dot {
-  color: var(--sr-carta);
+  color: var(--sr-oltremare-chiaro);
 }
 
 .sr-cta-band .sr-eyebrow,
@@ -291,9 +323,82 @@ body.dark-mode .site-description {
    builder, pensato per sfondi chiari): la utility-class di WP core la
    applica con !important, quindi vince sempre sul colore ereditato da
    .sr-cta-band sopra — serve un override altrettanto !important, altrimenti
-   il testo resta grigio scuro (#5A5E66) su oltremare, illeggibile. */
+   il testo resta grigio scuro (#5A5E66) su blu notte, illeggibile. */
 .sr-cta-band .has-grigio-color {
   color: rgba(247, 246, 242, 0.85) !important;
+  max-width: 560px;
+}
+
+/* I bottoni arrivano dal generatore con justifyContent:center (markup
+   condiviso con le altre CTA centrate del sito, non toccato) — qui la
+   card è allineata a sinistra come nel mockup: si sovrascrive solo il
+   flex del wrapper .wp-block-buttons, non l'HTML. */
+.sr-cta-band .wp-block-buttons {
+  justify-content: flex-start;
+}
+
+/* Riga di fiducia (trust row) sotto i bottoni — mono, tre voci separate da
+   un separatore verticale sottile, come i chip mono già in uso nel sito
+   (.sr-mono). Markup: generate_pages.py:cta_trust_row(). */
+.sr-cta-band__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(247, 246, 242, 0.16);
+  max-width: 620px;
+}
+
+.sr-cta-band__trust-item {
+  font-family: var(--sr-font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+.sr-cta-band__trust-item strong {
+  display: block;
+  color: var(--sr-carta);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 11.5px;
+}
+
+.sr-cta-band__trust-item span {
+  display: block;
+  color: rgba(247, 246, 242, 0.6);
+  margin-top: 3px;
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: var(--sr-font-body);
+  font-size: 13px;
+}
+
+/* <640px: illustrazione tolta (spazio di testo troppo stretto perché
+   resti leggibile sopra di lei) — resta solo il gradiente blu notte,
+   card più stretta e angoli meno pronunciati. */
+@media (max-width: 640px) {
+  .sr-cta-band {
+    background-image: linear-gradient(160deg, #0A153F 0%, #12225E 55%, #172A63 100%);
+    width: calc(100% - 24px);
+    margin: 32px auto;
+    border-radius: 18px;
+  }
+
+  .sr-cta-band > :not(.sr-watermark),
+  .sr-cta-band .has-grigio-color {
+    max-width: none;
+  }
+
+  .sr-cta-band .wp-block-buttons {
+    justify-content: flex-start;
+  }
+
+  .sr-cta-band__trust {
+    gap: 16px 24px;
+  }
 }
 
 /* Titolo automatico di Prespa (.entry-title, template pagina): ogni nostra
@@ -592,20 +697,21 @@ body.page .entry-title {
   background: var(--sr-oltremare-chiaro);
 }
 
-/* Pulsanti invertiti sulla banda CTA (stessi valori del vecchio
-   .sr-footer-cta__btn--primary/--outline, il campione approvato dal
-   titolare). Il bottone core di default è già oltremare-su-carta
-   (theme.json colorCategory "button"): su uno sfondo oltremare sparirebbe,
-   va invertito — carta piena per il primario, contorno carta per
-   l'outline. */
+/* Pulsanti della card premium (redesign 18.07.2026, mockup approvato):
+   primario blu vivo pieno con testo carta (colore ripreso a pipetta dal
+   mockup, hover più scuro come da convenzione theme.json colorCategory
+   "button" — non il bianco pieno della vecchia versione, che qui
+   sparirebbe contro un fondo blu notte molto più scuro dell'oltremare
+   piatto). Il secondario resta lo stile "outline" sotto: contorno carta
+   su trasparente, già coerente col mockup, invariato. */
 .sr-cta-band .wp-block-button__link {
-  background: var(--sr-carta);
-  color: var(--sr-oltremare);
+  background: var(--sr-oltremare);
+  color: var(--sr-carta);
 }
 
 .sr-cta-band .wp-block-button__link:hover {
-  background: #ffffff;
-  color: var(--sr-oltremare);
+  background: var(--sr-oltremare-scuro);
+  color: var(--sr-carta);
 }
 
 .sr-cta-band .is-style-outline .wp-block-button__link {

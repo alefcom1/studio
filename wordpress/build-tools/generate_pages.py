@@ -91,6 +91,25 @@ def analyze_cta_button(slug=None):
     return (label, href, 'outline')
 
 
+# Riga di fiducia sotto i bottoni della card premium .sr-cta-band (redesign
+# 18.07.2026, mockup approvato dal titolare). Testo fisso identico su tutte
+# le 13 varianti della banda — niente icone SVG nel contenuto (wp_kses le
+# taglierebbe), solo tipografia mono (vedi .sr-cta-band__trust in remarka.css).
+CTA_TRUST_ITEMS = [
+    ('100% gratuito', 'Nessun impegno'),
+    ('Risposta in 24 ore', 'Preventivo dettagliato'),
+    ('Dati al sicuro', 'Massima riservatezza'),
+]
+
+
+def cta_trust_row():
+    items = ''.join(
+        f'<div class="sr-cta-band__trust-item"><strong>{title}</strong><span>{sub}</span></div>'
+        for title, sub in CTA_TRUST_ITEMS
+    )
+    return raw_html(f'<div class="sr-cta-band__trust">{items}</div>')
+
+
 # Prezzo lancio (owner 15.07.2026): −50% sui primi 5 progetti, solo sui tre
 # prodotti "a scatola chiusa" (sito vetrina — solo nella tabella /prezzi/,
 # non ha una pagina servizio propria — sito aziendale, e-commerce). Il testo
@@ -168,7 +187,8 @@ def build_servizi_index():
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
                  analyze_cta_button()],
-                justify='center', margin_top='28px'),
+                justify='center', margin_top='28px') +
+        cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
     write('servizi-index', 'Pagina — Servizi (elenco)', 'Elenco dei servizi con link alle pagine dettaglio + linee premium.',
@@ -252,7 +272,8 @@ def build_servizio(svc):
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
                  analyze_cta_button(svc['slug'])],
-                justify='center', margin_top='28px'),
+                justify='center', margin_top='28px') +
+        cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
 
@@ -353,7 +374,8 @@ def build_casi_studio_index():
         buttons([
             ('Richiedi un preventivo in 24 ore', '/#contatti', None),
             ('Guarda tutti i servizi', '/servizi/', 'outline'),
-        ], justify='center', margin_top='28px'),
+        ], justify='center', margin_top='28px') +
+        cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
     write('casi-studio-index', 'Pagina — Casi studio (elenco)',
@@ -467,7 +489,8 @@ def build_prezzi():
         heading(2, 'Preventivo chiuso in 24 ore') +
         paragraph('Descriveteci il progetto: ricevete prezzo e data di consegna, entrambi vincolanti.',
                    color='grigio', size='medium', extra_style='margin-top:12px') +
-        buttons([('Richiedi preventivo dettagliato', '/#contatti', None)], justify='center', margin_top='28px'),
+        buttons([('Richiedi preventivo dettagliato', '/#contatti', None)], justify='center', margin_top='28px') +
+        cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
     write('prezzi', 'Pagina — Prezzi (completa)',
@@ -588,7 +611,8 @@ def build_strumenti_index():
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
                  analyze_cta_button()],
-                justify='center', margin_top='28px'),
+                justify='center', margin_top='28px') +
+        cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
     write('strumenti-index', 'Pagina — Strumenti (elenco)',
@@ -1278,7 +1302,8 @@ def build_tool(tool):
     cta = section(
         heading(2, cta_heading.rstrip('?.'), dot_char=cta_dot) +
         paragraph(cta_data['testo'], color='grigio', size='medium', extra_style='margin-top:12px') +
-        buttons(cta_data['buttons'], justify='center', margin_top='28px'),
+        buttons(cta_data['buttons'], justify='center', margin_top='28px') +
+        cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
 
@@ -1442,7 +1467,8 @@ def build_city(c):
         paragraph('Primo incontro gratuito, da voi in azienda. Preventivo chiuso entro 24 ore.',
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
-                 ('WhatsApp Business', 'https://wa.me/393478311141', 'whatsapp')], justify='center', margin_top='28px'),
+                 ('WhatsApp Business', 'https://wa.me/393478311141', 'whatsapp')], justify='center', margin_top='28px') +
+        cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
     write(f'citta-{c["slug"]}', f'Pagina — Città: {c["nome"]}',
@@ -1586,7 +1612,8 @@ def build_city_flagship(c):
         heading(2, c['cta_heading']) +
         paragraph(c['cta_testo'], color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
-                 ('WhatsApp Business', 'https://wa.me/393478311141', 'whatsapp')], justify='center', margin_top='28px'),
+                 ('WhatsApp Business', 'https://wa.me/393478311141', 'whatsapp')], justify='center', margin_top='28px') +
+        cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
     # Descrizione onesta: le città con ufficio (Roma/Torino) restano invariate;
@@ -1681,7 +1708,8 @@ def build_dove_lavoriamo():
         paragraph('Primo incontro gratuito, in videochiamata o da voi su appuntamento. Preventivo chiuso entro 24 ore.',
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
-                 ('WhatsApp Business', 'https://wa.me/393478311141', 'whatsapp')], justify='center', margin_top='28px'),
+                 ('WhatsApp Business', 'https://wa.me/393478311141', 'whatsapp')], justify='center', margin_top='28px') +
+        cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
 
@@ -1750,7 +1778,8 @@ def build_export_ready():
         heading(2, 'Il vostro prossimo mercato parla un’altra lingua', dot_char='?') +
         paragraph('Analisi gratuita del sito attuale e del mercato target. Preventivo chiuso entro 24 ore.',
                    color='grigio', size='medium', extra_style='margin-top:12px') +
-        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None)], justify='center', margin_top='28px'),
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None)], justify='center', margin_top='28px') +
+        cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
     write('servizio-export-ready', 'Pagina — Servizio: Export Ready',
@@ -1806,7 +1835,8 @@ def build_web_app():
         heading(2, 'Raccontateci il processo da automatizzare') +
         paragraph('Analisi gratuita e un preventivo chiuso: perimetro, prezzo e data, tutti e tre nel contratto.',
                    color='grigio', size='medium', extra_style='margin-top:12px') +
-        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None)], justify='center', margin_top='28px'),
+        buttons([('Richiedi preventivo in 24 ore', '/#contatti', None)], justify='center', margin_top='28px') +
+        cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
     write('servizio-web-app', 'Pagina — Servizio: Web app su misura',
@@ -1891,7 +1921,8 @@ def build_adeguamento_eaa():
     cta = section(
         heading(2, e['cta']['heading']) +
         paragraph(e['cta']['testo'], color='grigio', size='medium', extra_style='margin-top:12px') +
-        buttons(e['cta']['buttons'], justify='center', margin_top='28px'),
+        buttons(e['cta']['buttons'], justify='center', margin_top='28px') +
+        cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
     write('servizio-adeguamento-eaa', 'Pagina — Servizio: Adeguamento EAA',
@@ -2546,7 +2577,8 @@ def build_blog_post(p):
                    color='grigio', size='medium', extra_style='margin-top:12px') +
         buttons([('Richiedi preventivo in 24 ore', '/#contatti', None),
                  analyze_cta_button()],
-                justify='center', margin_top='28px'),
+                justify='center', margin_top='28px') +
+        cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
 

@@ -137,5 +137,8 @@
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
+<!-- wp:html -->
+<div class="sr-cta-band__trust"><div class="sr-cta-band__trust-item"><strong>100% gratuito</strong><span>Nessun impegno</span></div><div class="sr-cta-band__trust-item"><strong>Risposta in 24 ore</strong><span>Preventivo dettagliato</span></div><div class="sr-cta-band__trust-item"><strong>Dati al sicuro</strong><span>Massima riservatezza</span></div></div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->

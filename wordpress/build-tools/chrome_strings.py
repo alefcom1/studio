@@ -6,6 +6,15 @@ EN "fixed quote" / RU «фиксированная смета»; цены в EN 
 Формат: {it_string: {'en': ..., 'ru': ...}}"""
 
 CHROME = {
+    # Riga di fiducia sotto i bottoni della card premium .sr-cta-band
+    # (redesign 18.07.2026, generate_pages.py:cta_trust_row()).
+    '100% gratuito': {'en': '100% free', 'ru': '100% бесплатно'},
+    'Nessun impegno': {'en': 'No obligation', 'ru': 'Никаких обязательств'},
+    'Risposta in 24 ore': {'en': 'Response within 24 hours', 'ru': 'Ответ за 24 часа'},
+    'Preventivo dettagliato': {'en': 'Detailed quote', 'ru': 'Подробная смета'},
+    'Dati al sicuro': {'en': 'Your data, protected', 'ru': 'Данные под защитой'},
+    'Massima riservatezza': {'en': 'Full confidentiality', 'ru': 'Полная конфиденциальность'},
+
     'Scopri i siti multilingue': {'en': 'Discover our multilingual websites', 'ru': 'Многоязычные сайты'},
     'Manca l’llms.txt? Createlo qui in un minuto →': {'en': 'Missing an llms.txt? Create one here in a minute →', 'ru': 'Нет llms.txt? Создайте его здесь за минуту →'},
     'Volete sapere come l’AI legge davvero il vostro sito? →': {'en': 'Want to know how AI actually reads your site? →', 'ru': 'Хотите узнать, как ИИ на самом деле читает ваш сайт? →'},
