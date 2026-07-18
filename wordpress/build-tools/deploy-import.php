@@ -564,32 +564,44 @@ function remarka_deploy_sync_footer_menu( string $menu_name, string $location, a
 	}
 }
 
+// Colonna «Servizi» (footer-pagine): servizi principali + pagine commerciali.
+// L'elenco completo dei servizi vive sull'indice /servizi/, linkato dal titolo
+// della colonna (vedi remarka_render_footer). Contatti è migrato qui dalla ex
+// colonna Studio; i link legali sono nella riga di chiusura del footer.
 remarka_deploy_sync_footer_menu(
 	'Footer — Pagine',
 	'footer-pagine',
 	array(
-		array( 'title' => 'Servizi', 'slug' => 'servizi' ),
+		array( 'title' => 'Siti aziendali', 'slug' => 'servizi/siti-aziendali' ),
+		array( 'title' => 'E-commerce', 'slug' => 'servizi/e-commerce' ),
+		array( 'title' => 'Web app su misura', 'slug' => 'servizi/web-app' ),
+		array( 'title' => 'SEO tecnica', 'slug' => 'servizi/seo-tecnica' ),
 		array( 'title' => 'Casi studio', 'slug' => 'casi-studio' ),
 		array( 'title' => 'Prezzi', 'slug' => 'prezzi' ),
-		array( 'title' => 'Strumenti gratuiti', 'slug' => 'strumenti' ),
 		array( 'title' => 'Blog', 'slug' => 'blog' ),
-		array( 'title' => 'Dove lavoriamo', 'slug' => 'dove-lavoriamo' ),
+		array( 'title' => 'Contatti', 'url' => home_url( '/#contatti' ) ),
 	),
 	$force
 );
 
+// Colonna «Strumenti gratuiti» (footer-strumenti): TUTTI gli strumenti del Lab
+// (ordine di data.py:TOOLS). Il titolo della colonna linka l'indice /strumenti/.
 remarka_deploy_sync_footer_menu(
-	'Footer — Studio',
-	'footer-studio',
+	'Footer — Strumenti',
+	'footer-strumenti',
 	array(
-		// Ruolo della colonna STUDIO: contatto + fiducia legale. Le città
-		// vivono SOLO nella riga «Dove operiamo» (tutte e 17 + link all'hub)
-		// — non duplicarle qui (concetto footer, owner 17.07.2026). Il link
-		// «Google Business Profile» (business.google.com — servizio per
-		// titolari, inutile ai visitatori) è stato rimosso.
-		array( 'title' => 'Contatti', 'url' => home_url( '/#contatti' ) ),
-		array( 'title' => 'Privacy', 'slug' => 'privacy' ),
-		array( 'title' => 'Cookie policy', 'slug' => 'cookie-policy' ),
+		array( 'title' => 'Check-up completo', 'slug' => 'strumenti/check-up-completo' ),
+		array( 'title' => 'Test velocità', 'slug' => 'strumenti/test-velocita' ),
+		array( 'title' => 'Analisi SEO on-page', 'slug' => 'strumenti/analisi-seo' ),
+		array( 'title' => 'Check GDPR e cookie', 'slug' => 'strumenti/check-gdpr' ),
+		array( 'title' => 'ROI localizzazione', 'slug' => 'strumenti/roi-localizzazione' ),
+		array( 'title' => 'Verifica accessibilità', 'slug' => 'strumenti/verifica-accessibilita' ),
+		array( 'title' => 'Sito pronto per l’AI', 'slug' => 'strumenti/sito-pronto-ai' ),
+		array( 'title' => 'Impatto CO₂', 'slug' => 'strumenti/impatto-co2' ),
+		array( 'title' => 'Segnali E-E-A-T', 'slug' => 'strumenti/segnali-eeat' ),
+		array( 'title' => 'Il vostro sito, letto dall’AI', 'slug' => 'strumenti/sito-letto-dallai' ),
+		array( 'title' => 'Suona madrelingua?', 'slug' => 'strumenti/suona-madrelingua' ),
+		array( 'title' => 'Generatore di llms.txt', 'slug' => 'strumenti/generatore-llms-txt' ),
 	),
 	$force
 );
@@ -610,18 +622,32 @@ remarka_deploy_sync_footer_menu( 'Menu EN — Remarka', '', array(
 ), $force );
 
 remarka_deploy_sync_footer_menu( 'Footer EN — Pages', '', array(
-	array( 'title' => 'Services', 'slug' => 'en/services' ),
+	array( 'title' => 'Business websites', 'slug' => 'en/services/business-websites' ),
+	array( 'title' => 'E-commerce', 'slug' => 'en/services/e-commerce' ),
+	array( 'title' => 'Custom web apps', 'slug' => 'en/services/custom-web-apps' ),
+	array( 'title' => 'Technical SEO', 'slug' => 'en/services/technical-seo' ),
 	array( 'title' => 'Case studies', 'slug' => 'en/case-studies' ),
 	array( 'title' => 'Pricing', 'slug' => 'en/pricing' ),
-	array( 'title' => 'Free tools', 'slug' => 'en/tools' ),
 	array( 'title' => 'Blog', 'slug' => 'en/blog' ),
+	array( 'title' => 'Contact us', 'url' => home_url( '/en/#contatti' ) ),
+	// Unica landing città tradotta in EN: la conserviamo qui (in fondo) per non
+	// perdere l'unico link cittadino di questa lingua (ex colonna Studio).
+	array( 'title' => 'Websites in Milan', 'slug' => 'en/milan' ),
 ), $force );
 
-remarka_deploy_sync_footer_menu( 'Footer EN — Studio', '', array(
-	array( 'title' => 'Websites in Milan', 'slug' => 'en/milan' ),
-	array( 'title' => 'Contact us', 'url' => home_url( '/en/#contatti' ) ),
-	array( 'title' => 'Privacy', 'slug' => 'en/privacy' ),
-	array( 'title' => 'Cookie policy', 'slug' => 'en/cookie-policy' ),
+remarka_deploy_sync_footer_menu( 'Footer EN — Tools', '', array(
+	array( 'title' => 'Full check-up', 'slug' => 'en/tools/full-site-checkup' ),
+	array( 'title' => 'Speed test', 'slug' => 'en/tools/speed-test' ),
+	array( 'title' => 'On-page SEO analysis', 'slug' => 'en/tools/seo-audit' ),
+	array( 'title' => 'GDPR and cookie check', 'slug' => 'en/tools/gdpr-check' ),
+	array( 'title' => 'Localization ROI', 'slug' => 'en/tools/localization-roi' ),
+	array( 'title' => 'Accessibility check', 'slug' => 'en/tools/accessibility-check' ),
+	array( 'title' => 'AI readiness check', 'slug' => 'en/tools/ai-readiness' ),
+	array( 'title' => 'CO₂ impact', 'slug' => 'en/tools/website-carbon' ),
+	array( 'title' => 'E-E-A-T signals', 'slug' => 'en/tools/eeat-signals' ),
+	array( 'title' => 'Your website, read by AI', 'slug' => 'en/tools/read-by-ai' ),
+	array( 'title' => 'Does it sound native?', 'slug' => 'en/tools/does-it-sound-native' ),
+	array( 'title' => 'llms.txt generator', 'slug' => 'en/tools/llms-txt-generator' ),
 ), $force );
 
 remarka_deploy_sync_footer_menu( 'Menu RU — Remarka', '', array(
@@ -633,21 +659,31 @@ remarka_deploy_sync_footer_menu( 'Menu RU — Remarka', '', array(
 	array( 'title' => 'Смета за 24 часа', 'url' => home_url( '/ru/#contatti' ) ),
 ), $force );
 
+// Colonna «Услуги» RU — elenco esatto dettato dal titolare (18.07.2026).
+// «Сайты в Милане» chiude la colonna (unica landing città RU, ex colonna Студия).
 remarka_deploy_sync_footer_menu( 'Footer RU — Страницы', '', array(
-	array( 'title' => 'Услуги', 'slug' => 'ru/uslugi' ),
-	array( 'title' => 'Сайт для выхода на рынок Европы', 'slug' => 'ru/uslugi/sajt-dlya-evropy' ),
+	array( 'title' => 'Разработка сайтов для Европы', 'slug' => 'ru/uslugi/sajt-dlya-evropy' ),
 	array( 'title' => 'SEO-продвижение', 'slug' => 'ru/uslugi/seo-prodvizhenie' ),
 	array( 'title' => 'Кейсы', 'slug' => 'ru/kejsy' ),
 	array( 'title' => 'Цены', 'slug' => 'ru/ceny' ),
-	array( 'title' => 'Бесплатные инструменты', 'slug' => 'ru/instrumenty' ),
 	array( 'title' => 'Блог', 'slug' => 'ru/blog' ),
+	array( 'title' => 'Контакты', 'url' => home_url( '/ru/#contatti' ) ),
+	array( 'title' => 'Сайты в Милане', 'slug' => 'ru/milan' ),
 ), $force );
 
-remarka_deploy_sync_footer_menu( 'Footer RU — Студия', '', array(
-	array( 'title' => 'Сайты в Милане', 'slug' => 'ru/milan' ),
-	array( 'title' => 'Контакты', 'url' => home_url( '/ru/#contatti' ) ),
-	array( 'title' => 'Privacy', 'slug' => 'ru/privacy' ),
-	array( 'title' => 'Политика cookie', 'slug' => 'ru/cookie-policy' ),
+remarka_deploy_sync_footer_menu( 'Footer RU — Инструменты', '', array(
+	array( 'title' => 'Полная проверка сайта', 'slug' => 'ru/instrumenty/polnaya-proverka-sajta' ),
+	array( 'title' => 'Тест скорости', 'slug' => 'ru/instrumenty/test-skorosti' ),
+	array( 'title' => 'SEO-анализ страницы', 'slug' => 'ru/instrumenty/seo-audit' ),
+	array( 'title' => 'Проверка GDPR и cookie', 'slug' => 'ru/instrumenty/proverka-gdpr' ),
+	array( 'title' => 'ROI локализации', 'slug' => 'ru/instrumenty/roi-lokalizacii' ),
+	array( 'title' => 'Проверка доступности', 'slug' => 'ru/instrumenty/proverka-dostupnosti' ),
+	array( 'title' => 'Готовность к ИИ', 'slug' => 'ru/instrumenty/gotovnost-k-ii' ),
+	array( 'title' => 'Углеродный след', 'slug' => 'ru/instrumenty/uglerodnyj-sled' ),
+	array( 'title' => 'Сигналы E-E-A-T', 'slug' => 'ru/instrumenty/signaly-eeat' ),
+	array( 'title' => 'Ваш сайт глазами ИИ', 'slug' => 'ru/instrumenty/sajt-glazami-ii' ),
+	array( 'title' => 'Звучит как у носителя?', 'slug' => 'ru/instrumenty/zvuchit-kak-u-nositelya' ),
+	array( 'title' => 'Генератор llms.txt', 'slug' => 'ru/instrumenty/generator-llms-txt' ),
 ), $force );
 
 WP_CLI::log( "\nFatto. Pagine create/verificate: " . count( $created_ids ) . ' + Home.' );

@@ -150,8 +150,14 @@ add_action( 'after_setup_theme', 'remarka_editor_setup' );
  */
 function remarka_register_footer_menus(): void {
 	register_nav_menus( array(
-		'footer-pagine' => __( 'Footer — Pagine', 'remarka-studio' ),
-		'footer-studio' => __( 'Footer — Studio', 'remarka-studio' ),
+		// footer-pagine ospita la colonna «Servizi» (indice servizi + pagine
+		// commerciali); footer-strumenti la colonna «Strumenti gratuiti» (tutti
+		// gli strumenti del Lab). La vecchia location footer-studio è stata
+		// rimossa il 18.07.2026: Contatti è passato nella colonna Servizi e i
+		// link legali (Privacy/Cookie policy/Preferenze) sono migrati nella riga
+		// di chiusura del footer (vedi remarka_render_footer).
+		'footer-pagine'    => __( 'Footer — Servizi', 'remarka-studio' ),
+		'footer-strumenti' => __( 'Footer — Strumenti', 'remarka-studio' ),
 	) );
 }
 add_action( 'after_setup_theme', 'remarka_register_footer_menus', 20 );
@@ -356,9 +362,9 @@ function remarka_footer_widgets(): void {
 		<div class="sr-cookie-banner__inner">
 			<p class="sr-cookie-banner__text">
 				<?php echo esc_html( remarka_str( 'cookie_testo' ) ); ?>
-				<a href="<?php echo esc_url( home_url( '/cookie-preferenze/' ) ); ?>"><?php echo esc_html( remarka_str( 'cookie_preferenze' ) ); ?></a>
+				<a href="<?php echo esc_url( remarka_legal_url( 'cookie-preferenze' ) ); ?>"><?php echo esc_html( remarka_str( 'cookie_preferenze' ) ); ?></a>
 				·
-				<a href="<?php echo esc_url( home_url( '/cookie-policy/' ) ); ?>"><?php echo esc_html( remarka_str( 'cookie_policy' ) ); ?></a>
+				<a href="<?php echo esc_url( remarka_legal_url( 'cookie-policy' ) ); ?>"><?php echo esc_html( remarka_str( 'cookie_policy' ) ); ?></a>
 			</p>
 			<div class="sr-cookie-banner__actions">
 				<button type="button" class="sr-cookie-btn" data-sr-cookie-choice="rejected"><?php echo esc_html( remarka_str( 'cookie_rifiuta' ) ); ?></button>
@@ -598,6 +604,39 @@ function remarka_cities_for_lang(): array {
 	}
 }
 
+/**
+ * URL delle pagine legali per lingua. Gli slug EN/RU NON sono semplici
+ * prefissi dell'italiano: la pagina «Preferenze cookie» vive su
+ * /en/cookie-preferences/ e /ru/cookie-preferences/ (non «…preferenze»), da
+ * inc/lang-map.php. Un unico posto per non ripetere l'errore nei link (footer
+ * + banner cookie), dove prima erano hardcoded gli slug italiani su tutte le
+ * lingue.
+ */
+function remarka_legal_url( string $which ): string {
+	$paths = array(
+		'privacy'           => array( 'it' => 'privacy', 'en' => 'en/privacy', 'ru' => 'ru/privacy' ),
+		'cookie-policy'     => array( 'it' => 'cookie-policy', 'en' => 'en/cookie-policy', 'ru' => 'ru/cookie-policy' ),
+		'cookie-preferenze' => array( 'it' => 'cookie-preferenze', 'en' => 'en/cookie-preferences', 'ru' => 'ru/cookie-preferences' ),
+	);
+	$lang = remarka_current_lang();
+	$path = $paths[ $which ][ $lang ] ?? $paths[ $which ]['it'] ?? '';
+	return home_url( '/' . $path . '/' );
+}
+
+/**
+ * URL dell'indice servizi/strumenti per lingua (titolo-link delle colonne
+ * footer). Slug da inc/lang-map.php.
+ */
+function remarka_footer_index_url( string $which ): string {
+	$paths = array(
+		'servizi'   => array( 'it' => 'servizi', 'en' => 'en/services', 'ru' => 'ru/uslugi' ),
+		'strumenti' => array( 'it' => 'strumenti', 'en' => 'en/tools', 'ru' => 'ru/instrumenty' ),
+	);
+	$lang = remarka_current_lang();
+	$path = $paths[ $which ][ $lang ] ?? $paths[ $which ]['it'] ?? '';
+	return home_url( '/' . $path . '/' );
+}
+
 function remarka_render_footer(): void {
 	/*
 	 * Punteggio reale (inc/psi-score.php) se già misurato almeno una volta;
@@ -639,7 +678,7 @@ function remarka_render_footer(): void {
 				</div>
 
 				<div class="sr-footer-col">
-					<p class="sr-footer-col__title"><?php echo esc_html( remarka_str( 'footer_pagine' ) ); ?></p>
+					<p class="sr-footer-col__title"><a href="<?php echo esc_url( remarka_footer_index_url( 'servizi' ) ); ?>"><?php echo esc_html( remarka_str( 'footer_servizi' ) ); ?></a></p>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'footer-pagine',
@@ -652,10 +691,10 @@ function remarka_render_footer(): void {
 				</div>
 
 				<div class="sr-footer-col">
-					<p class="sr-footer-col__title"><?php echo esc_html( remarka_str( 'footer_studio' ) ); ?></p>
+					<p class="sr-footer-col__title"><a href="<?php echo esc_url( remarka_footer_index_url( 'strumenti' ) ); ?>"><?php echo esc_html( remarka_str( 'footer_strumenti' ) ); ?></a></p>
 					<?php
 					wp_nav_menu( array(
-						'theme_location' => 'footer-studio',
+						'theme_location' => 'footer-strumenti',
 						'container'      => false,
 						'menu_class'     => '',
 						'items_wrap'     => '<ul class="sr-footer-links">%3$s</ul>',
@@ -696,7 +735,12 @@ function remarka_render_footer(): void {
 			<div class="sr-footer-bottom__inner">
 				<div class="sr-barra sr-barra--h4" data-sr-target="<?php echo esc_attr( $score ); ?>%" aria-hidden="true"><div class="sr-barra__fill"></div></div>
 				<div class="sr-footer-bottom__row">
-					<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( $company['name'] ); ?> — <?php echo esc_html( remarka_str( 'footer_diritti' ) ); ?></span>
+					<span class="sr-footer-legal">
+						&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( $company['name'] ); ?> — <?php echo esc_html( remarka_str( 'footer_diritti' ) ); ?>
+						<a href="<?php echo esc_url( remarka_legal_url( 'privacy' ) ); ?>"><?php echo esc_html( remarka_str( 'footer_privacy' ) ); ?></a>
+						<a href="<?php echo esc_url( remarka_legal_url( 'cookie-policy' ) ); ?>"><?php echo esc_html( remarka_str( 'cookie_policy' ) ); ?></a>
+						<a href="<?php echo esc_url( remarka_legal_url( 'cookie-preferenze' ) ); ?>"><?php echo esc_html( remarka_str( 'footer_cookie_pref' ) ); ?></a>
+					</span>
 					<span class="sr-footer-score"><?php echo esc_html( remarka_str( 'footer_pagespeed' ) ); ?>: <b><?php echo esc_html( $score ); ?></b>/100<?php if ( $score_date ) : ?> · <?php echo esc_html( remarka_str( 'footer_pagespeed_rilevato' ) ); ?> <?php echo esc_html( $score_date ); ?><?php endif; ?></span>
 				</div>
 			</div>

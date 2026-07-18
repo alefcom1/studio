@@ -193,14 +193,14 @@ add_action( 'template_redirect', 'remarka_redirect_legacy_flat_urls', 1 );
 function remarka_lang_menu_name( string $location, string $lang ): ?string {
 	$names = array(
 		'en' => array(
-			'menu-1'        => 'Menu EN — Remarka',
-			'footer-pagine' => 'Footer EN — Pages',
-			'footer-studio' => 'Footer EN — Studio',
+			'menu-1'           => 'Menu EN — Remarka',
+			'footer-pagine'    => 'Footer EN — Pages',
+			'footer-strumenti' => 'Footer EN — Tools',
 		),
 		'ru' => array(
-			'menu-1'        => 'Menu RU — Remarka',
-			'footer-pagine' => 'Footer RU — Страницы',
-			'footer-studio' => 'Footer RU — Студия',
+			'menu-1'           => 'Menu RU — Remarka',
+			'footer-pagine'    => 'Footer RU — Страницы',
+			'footer-strumenti' => 'Footer RU — Инструменты',
 		),
 	);
 	return $names[ $lang ][ $location ] ?? null;
@@ -223,8 +223,12 @@ add_filter( 'wp_nav_menu_args', 'remarka_swap_menu_by_lang' );
 
 function remarka_str( string $key ): string {
 	static $table = array(
-		'footer_pagine'    => array( 'it' => 'Pagine', 'en' => 'Pages', 'ru' => 'Страницы' ),
-		'footer_studio'    => array( 'it' => 'Studio', 'en' => 'Studio', 'ru' => 'Студия' ),
+		// Titoli-link delle colonne footer (nuova struttura 18.07.2026):
+		// «Servizi» → indice servizi, «Strumenti gratuiti» → indice strumenti.
+		'footer_servizi'   => array( 'it' => 'Servizi', 'en' => 'Services', 'ru' => 'Услуги' ),
+		'footer_strumenti' => array( 'it' => 'Strumenti gratuiti', 'en' => 'Free tools', 'ru' => 'Бесплатные инструменты' ),
+		'footer_privacy'   => array( 'it' => 'Privacy', 'en' => 'Privacy', 'ru' => 'Конфиденциальность' ),
+		'footer_cookie_pref' => array( 'it' => 'Preferenze cookie', 'en' => 'Cookie preferences', 'ru' => 'Настройки cookie' ),
 		'footer_dati'      => array( 'it' => 'Dati societari', 'en' => 'Company details', 'ru' => 'Реквизиты' ),
 		'footer_diritti'   => array( 'it' => 'Tutti i diritti riservati', 'en' => 'All rights reserved', 'ru' => 'Все права защищены' ),
 		'footer_pagespeed' => array( 'it' => 'Punteggio PageSpeed medio', 'en' => 'Average PageSpeed score', 'ru' => 'Средний балл PageSpeed' ),

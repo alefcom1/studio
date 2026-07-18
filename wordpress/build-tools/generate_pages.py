@@ -1863,13 +1863,444 @@ def build_chi_siamo():
     write('chi-siamo', 'Pagina — Chi siamo', 'Storia dello studio e del gruppo Remarka.', hero)
 
 
-def build_legal_page(slug, title, eyebrow_text, body_text):
-    hero = section(
-        eyebrow(eyebrow_text) + heading(1, title, style='clamp(30px,3.6vw,44px)') +
-        paragraph(body_text, size='base', extra_style='margin-top:20px;font-size:16px'),
-        classes='sr-section sr-hero',
+def _legal_list(items):
+    lis = ''.join(f'<li>{it}</li>' for it in items)
+    return f'<!-- wp:list -->\n<ul class="wp-block-list">{lis}</ul>\n<!-- /wp:list -->\n'
+
+
+def _legal_blocks(blocks):
+    """blocks: lista di tuple ('p'|'h3'|'ul'|'raw', valore)."""
+    out = ''
+    for kind, val in blocks:
+        if kind == 'p':
+            out += paragraph(val, size='base',
+                             extra_style='margin-top:14px;font-size:16px;line-height:1.7;max-width:760px')
+        elif kind == 'h3':
+            out += heading(3, val, accent_dot=False, style='19px')
+        elif kind == 'ul':
+            out += _legal_list(val)
+        elif kind == 'raw':
+            out += raw_html(val)
+    return out
+
+
+def build_legal_from_data(slug, d):
+    """Pagina legale ricca (privacy / cookie policy / preferenze) da una
+    struttura dati: hero + sezioni h2 con paragrafi ed elenchi. Testo scritto a
+    mano nelle tre lingue (niente traduzione automatica sui testi legali)."""
+    hero = (
+        eyebrow(d['eyebrow']) +
+        heading(1, d['h1'], style='clamp(30px,3.6vw,44px)') +
+        paragraph(d['intro'], size='base',
+                  extra_style='margin-top:20px;font-size:16px;line-height:1.7;max-width:760px')
     )
-    write(slug, f'Pagina — {title}', f'Testo segnaposto per {title}: da sostituire con testo legale definitivo.', hero)
+    if d.get('updated'):
+        hero += paragraph(d['updated'],
+                          extra_style='margin-top:10px;font-size:14px;color:var(--sr-grigio)')
+    body = section(hero, classes='sr-section sr-hero')
+    for h2, blocks in d['sections']:
+        body += section(heading(2, h2) + _legal_blocks(blocks), classes='sr-section')
+    write(slug, f'Pagina — {d["title"]}', d['description'], body)
+
+
+def _cookie_reset_html(label, done):
+    return (
+        '<div class="sr-cookie-reset">'
+        f'<button type="button" class="wp-block-button__link wp-element-button" data-sr-cookie-reset>{label}</button>'
+        f'<p class="sr-cookie-reset__done" data-sr-cookie-reset-done hidden>{done}</p>'
+        '</div>'
+    )
+
+
+def build_all_legal():
+    """Genera privacy / cookie-policy / cookie-preferenze in IT, EN e RU
+    (9 file). I contenuti vivono in LEGAL_CONTENT più sotto."""
+    for base_slug, langs in LEGAL_CONTENT.items():
+        for lang, prefix in (('it', ''), ('en', 'en-'), ('ru', 'ru-')):
+            build_legal_from_data(prefix + base_slug, langs[lang])
+
+
+# --------------------------------------------------- Contenuto pagine legali
+#
+# Testi scritti a mano nelle tre lingue (i testi legali non passano da
+# translate_pages.py). Dicono SOLO quello che il sito fa davvero: modulo
+# contatti, strumenti gratuiti (lead), area clienti cab.remarka.biz, log del
+# server; responsabili reali (Hetzner in Germania, Brevo nell'UE, Google
+# PageSpeed API, Anthropic API); mappe Google click-to-load. Nessun DPO
+# inventato, nessun numero di registro inventato. Data di aggiornamento in alto.
+
+LEGAL_UPDATED = {
+    'it': 'Ultimo aggiornamento: 18 luglio 2026',
+    'en': 'Last updated: 18 July 2026',
+    'ru': 'Последнее обновление: 18 июля 2026',
+}
+
+LEGAL_CONTENT = {
+    'privacy': {
+        'it': {
+            'title': 'Privacy policy', 'eyebrow': 'Privacy policy', 'h1': 'Privacy policy',
+            'updated': LEGAL_UPDATED['it'],
+            'description': 'Come trattiamo i dati personali su questo sito: quali raccogliamo, perché, a chi li affidiamo e come esercitare i vostri diritti.',
+            'intro': 'Questa pagina spiega, senza giri di parole, quali dati raccogliamo quando usate questo sito, perché lo facciamo e come potete chiederci di cancellarli. Raccogliamo il minimo indispensabile: nessuna profilazione pubblicitaria, nessuna vendita di dati a terzi.',
+            'sections': [
+                ('Chi tratta i vostri dati', [
+                    ('p', 'Il titolare del trattamento è Studio Remarka S.r.l. (P.IVA GE 302230994). Ci trovate in tre uffici, su appuntamento: Milano — Vicolo Privato Lavandai 2a, 20144; Torino — Corso Regina Margherita 94, 10153; Roma — Via Flaminia 122, 00196. Per qualsiasi domanda sui vostri dati scriveteci a info@remarka.biz: risponde una persona, non un modulo.'),
+                ]),
+                ('Quali dati raccogliamo e perché', [
+                    ('p', 'Trattiamo solo i dati che ci servono per rispondervi o per farvi usare gli strumenti gratuiti.'),
+                    ('h3', 'Modulo di contatto e richiesta di preventivo'),
+                    ('ul', [
+                        'Cosa: il vostro nome, un recapito (email o telefono) e il testo del messaggio, più eventuali allegati che scegliete di caricare.',
+                        'Perché: per rispondervi e prepararvi un preventivo. Base giuridica: la vostra richiesta (misure precontrattuali).',
+                        'Le richieste ci arrivano via email; non le usiamo per inviarvi pubblicità.',
+                    ]),
+                    ('h3', 'Strumenti gratuiti e check-up del sito'),
+                    ('ul', [
+                        'Cosa: l’indirizzo del sito che analizzate e, se chiedete il report via email, il vostro indirizzo email; registriamo anche il punteggio ottenuto e la lingua della pagina.',
+                        'Perché: per generarvi l’analisi, inviarvi il PDF e — solo se lo avete acconsentito — ricontattarvi con un’offerta o un promemoria. Base giuridica: il vostro consenso, revocabile in qualsiasi momento.',
+                        'Conserviamo queste richieste in un archivio interno di potenziali clienti.',
+                    ]),
+                    ('h3', 'Area clienti (cab.remarka.biz)'),
+                    ('ul', [
+                        'Cosa: email, nome, lingua preferita e, nei log di accesso, l’indirizzo IP e il browser (user-agent) usati per entrare. Non salviamo password: si entra con un link temporaneo inviato via email.',
+                        'Perché: per darvi accesso ai vostri progetti. Base giuridica: l’esecuzione del contratto di servizio.',
+                        'L’area clienti è riservata a chi lavora già con noi.',
+                    ]),
+                    ('h3', 'Log tecnici del server'),
+                    ('ul', [
+                        'Cosa: gli indirizzi IP e le richieste che ogni server web registra per funzionare e difendersi dagli abusi.',
+                        'Perché: sicurezza e diagnostica. Base giuridica: il nostro legittimo interesse a tenere il sito online e sicuro.',
+                    ]),
+                ]),
+                ('A chi affidiamo i dati', [
+                    ('p', 'Per far funzionare il sito ci appoggiamo ad alcuni fornitori, che trattano i dati solo per nostro conto. I dati dei moduli e dell’area clienti restano nell’Unione Europea:'),
+                    ('ul', [
+                        'Hetzner — hosting del sito su server in Germania (UE).',
+                        'Brevo — invio delle email transazionali (risposte, report PDF, link di accesso all’area clienti); fornitore con sede nell’UE.',
+                    ]),
+                    ('p', 'Due funzioni tecniche comunicano un dato a un fornitore con sede fuori dall’UE, ma solo quando siete voi ad avviarle e limitatamente a quanto segue:'),
+                    ('ul', [
+                        'Google PageSpeed Insights API — quando misurate velocità o SEO di una pagina, inviamo a Google soltanto l’indirizzo di quella pagina, per ottenere il punteggio. Nessun vostro dato personale.',
+                        'Anthropic (Claude API) — gli strumenti basati su AI inviano ad Anthropic il testo o l’indirizzo che voi stessi incollate, solo quando premete il pulsante, per generare il risultato. Quei contenuti non vengono usati per addestrare modelli.',
+                    ]),
+                    ('p', 'Non cediamo i vostri dati a terzi per finalità di marketing.'),
+                ]),
+                ('Mappe e contenuti esterni', [
+                    ('p', 'Le mappe di Google si caricano solo se le richiedete voi: mostriamo un’anteprima e la mappa interattiva parte — con la relativa connessione a Google — soltanto dopo che avete cliccato. Finché non cliccate, il vostro browser non contatta Google Maps.'),
+                ]),
+                ('Per quanto tempo teniamo i dati', [
+                    ('ul', [
+                        'Richieste dal modulo contatti: il tempo necessario a gestire la richiesta e gli adempimenti conseguenti.',
+                        'Lead dagli strumenti gratuiti: finché sono utili al ricontatto o finché non ne chiedete la cancellazione.',
+                        'Area clienti: i log di accesso per 12 mesi; l’account finché dura la collaborazione. Alla chiusura, o su vostra richiesta, i dati collegati vengono eliminati a cascata.',
+                        'Log tecnici del server: per un periodo breve, poi sovrascritti.',
+                    ]),
+                ]),
+                ('I vostri diritti', [
+                    ('p', 'Sui vostri dati potete esercitare i diritti previsti dal GDPR: accesso, rettifica, cancellazione, limitazione, opposizione e portabilità. Potete revocare in qualsiasi momento un consenso già dato, senza togliere validità a quanto fatto prima.'),
+                    ('p', 'Per esercitarli basta un’email a info@remarka.biz: ce ne occupiamo noi, anche per l’area clienti (esportazione o cancellazione a cascata). Se pensate che qualcosa non vada, potete rivolgervi al Garante per la protezione dei dati personali.'),
+                ]),
+                ('Aggiornamenti a questa pagina', [
+                    ('p', 'Se cambieremo strumenti o finalità, aggiorneremo questa pagina e la data indicata in alto.'),
+                ]),
+            ],
+        },
+        'en': {
+            'title': 'Privacy policy', 'eyebrow': 'Privacy policy', 'h1': 'Privacy policy',
+            'updated': LEGAL_UPDATED['en'],
+            'description': 'How we handle personal data on this site: what we collect, why, who we entrust it to, and how to exercise your rights.',
+            'intro': 'This page explains, plainly, what data we collect when you use this website, why we do it, and how you can ask us to delete it. We collect the bare minimum: no advertising profiling, no selling of data to third parties.',
+            'sections': [
+                ('Who processes your data', [
+                    ('p', 'The data controller is Studio Remarka S.r.l. (VAT GE 302230994). You can meet us at three offices, by appointment: Milan — Vicolo Privato Lavandai 2a, 20144; Turin — Corso Regina Margherita 94, 10153; Rome — Via Flaminia 122, 00196. For any question about your data, write to info@remarka.biz: a person replies, not a form.'),
+                ]),
+                ('What we collect and why', [
+                    ('p', 'We only process the data we need to reply to you or let you use the free tools.'),
+                    ('h3', 'Contact form and quote request'),
+                    ('ul', [
+                        'What: your name, one contact detail (email or phone) and the message text, plus any attachments you choose to upload.',
+                        'Why: to reply and prepare a quote. Legal basis: your request (pre-contractual steps).',
+                        'Requests reach us by email; we do not use them to send you advertising.',
+                    ]),
+                    ('h3', 'Free tools and site check-up'),
+                    ('ul', [
+                        'What: the address of the site you analyse and, if you ask for the report by email, your email address; we also record the score obtained and the page language.',
+                        'Why: to generate your analysis, send you the PDF and — only if you consented — get back to you with an offer or a reminder. Legal basis: your consent, which you can withdraw at any time.',
+                        'We keep these requests in an internal list of prospective clients.',
+                    ]),
+                    ('h3', 'Client area (cab.remarka.biz)'),
+                    ('ul', [
+                        'What: email, name, preferred language and, in the access logs, the IP address and browser (user-agent) used to log in. We do not store passwords: you sign in with a temporary link sent by email.',
+                        'Why: to give you access to your projects. Legal basis: performance of the service contract.',
+                        'The client area is reserved for people already working with us.',
+                    ]),
+                    ('h3', 'Server technical logs'),
+                    ('ul', [
+                        'What: the IP addresses and requests that every web server records in order to run and to defend against abuse.',
+                        'Why: security and diagnostics. Legal basis: our legitimate interest in keeping the site online and secure.',
+                    ]),
+                ]),
+                ('Who we entrust the data to', [
+                    ('p', 'To run the site we rely on a few providers, which process data only on our behalf. Data from the forms and the client area stays within the European Union:'),
+                    ('ul', [
+                        'Hetzner — site hosting on servers in Germany (EU).',
+                        'Brevo — sending transactional emails (replies, PDF reports, client-area sign-in links); an EU-based provider.',
+                    ]),
+                    ('p', 'Two technical features send one piece of data to a provider based outside the EU, but only when you trigger them and limited to the following:'),
+                    ('ul', [
+                        'Google PageSpeed Insights API — when you measure a page’s speed or SEO, we send Google only that page’s address, to obtain the score. None of your personal data.',
+                        'Anthropic (Claude API) — the AI-based tools send Anthropic the text or address you paste in yourself, only when you press the button, to generate the result. That content is not used to train models.',
+                    ]),
+                    ('p', 'We do not pass your data to third parties for marketing purposes.'),
+                ]),
+                ('Maps and external content', [
+                    ('p', 'Google maps load only if you ask for them: we show a preview, and the interactive map starts — with its connection to Google — only after you click. Until you click, your browser does not contact Google Maps.'),
+                ]),
+                ('How long we keep the data', [
+                    ('ul', [
+                        'Contact-form requests: for as long as needed to handle the request and any resulting obligations.',
+                        'Leads from the free tools: as long as they are useful for follow-up, or until you ask for their deletion.',
+                        'Client area: access logs for 12 months; the account for as long as the collaboration lasts. On closure, or at your request, the linked data is deleted in cascade.',
+                        'Server technical logs: for a short period, then overwritten.',
+                    ]),
+                ]),
+                ('Your rights', [
+                    ('p', 'Over your data you can exercise the rights granted by the GDPR: access, rectification, erasure, restriction, objection and portability. You can withdraw a consent already given at any time, without affecting what was done before.'),
+                    ('p', 'To exercise them, just email info@remarka.biz: we handle it, including for the client area (export or cascade deletion). If you think something is wrong, you can contact the Italian data protection authority (Garante).'),
+                ]),
+                ('Updates to this page', [
+                    ('p', 'If we change tools or purposes, we will update this page and the date shown at the top.'),
+                ]),
+            ],
+        },
+        'ru': {
+            'title': 'Политика конфиденциальности', 'eyebrow': 'Конфиденциальность',
+            'h1': 'Политика конфиденциальности',
+            'updated': LEGAL_UPDATED['ru'],
+            'description': 'Как мы обрабатываем персональные данные на этом сайте: что собираем, зачем, кому доверяем и как реализовать ваши права.',
+            'intro': 'Эта страница простыми словами объясняет, какие данные мы собираем, когда вы пользуетесь сайтом, зачем это делаем и как попросить их удалить. Собираем только необходимый минимум: без рекламного профилирования и без продажи данных третьим лицам.',
+            'sections': [
+                ('Кто обрабатывает ваши данные', [
+                    ('p', 'Оператор обработки — Studio Remarka S.r.l. (НДС-номер GE 302230994). Нас можно встретить в трёх офисах по предварительной записи: Милан — Vicolo Privato Lavandai 2a, 20144; Турин — Corso Regina Margherita 94, 10153; Рим — Via Flaminia 122, 00196. По любым вопросам о ваших данных пишите на info@remarka.biz: отвечает человек, а не форма.'),
+                ]),
+                ('Какие данные мы собираем и зачем', [
+                    ('p', 'Мы обрабатываем только те данные, которые нужны, чтобы ответить вам или дать воспользоваться бесплатными инструментами.'),
+                    ('h3', 'Форма обратной связи и запрос сметы'),
+                    ('ul', [
+                        'Что: ваше имя, контакт (email или телефон) и текст сообщения, а также файлы, которые вы решите приложить.',
+                        'Зачем: чтобы ответить и подготовить смету. Правовое основание: ваш запрос (преддоговорные меры).',
+                        'Запросы приходят к нам по email; мы не используем их для рекламных рассылок.',
+                    ]),
+                    ('h3', 'Бесплатные инструменты и проверка сайта'),
+                    ('ul', [
+                        'Что: адрес сайта, который вы анализируете, и — если вы запрашиваете отчёт по email — ваш адрес email; мы также сохраняем полученный балл и язык страницы.',
+                        'Зачем: чтобы сформировать анализ, отправить PDF и — только с вашего согласия — связаться с предложением или напоминанием. Правовое основание: ваше согласие, которое можно отозвать в любой момент.',
+                        'Эти запросы мы храним во внутренней базе потенциальных клиентов.',
+                    ]),
+                    ('h3', 'Личный кабинет (cab.remarka.biz)'),
+                    ('ul', [
+                        'Что: email, имя, предпочитаемый язык и — в журнале входов — IP-адрес и браузер (user-agent), с которых выполнен вход. Пароли не храним: вход по временной ссылке, отправленной на email.',
+                        'Зачем: чтобы дать вам доступ к вашим проектам. Правовое основание: исполнение договора об оказании услуг.',
+                        'Кабинет доступен только тем, кто уже работает с нами.',
+                    ]),
+                    ('h3', 'Технические журналы сервера'),
+                    ('ul', [
+                        'Что: IP-адреса и запросы, которые любой веб-сервер записывает для работы и защиты от злоупотреблений.',
+                        'Зачем: безопасность и диагностика. Правовое основание: наш законный интерес держать сайт онлайн и в безопасности.',
+                    ]),
+                ]),
+                ('Кому мы доверяем данные', [
+                    ('p', 'Чтобы сайт работал, мы пользуемся несколькими подрядчиками, которые обрабатывают данные только по нашему поручению. Данные из форм и кабинета остаются в Европейском союзе:'),
+                    ('ul', [
+                        'Hetzner — хостинг сайта на серверах в Германии (ЕС).',
+                        'Brevo — отправка транзакционных писем (ответы, PDF-отчёты, ссылки для входа в кабинет); подрядчик с местонахождением в ЕС.',
+                    ]),
+                    ('p', 'Две технические функции передают один элемент данных подрядчику за пределами ЕС, но только когда вы сами их запускаете и только в следующем объёме:'),
+                    ('ul', [
+                        'Google PageSpeed Insights API — когда вы измеряете скорость или SEO страницы, мы передаём Google лишь адрес этой страницы, чтобы получить балл. Никаких ваших персональных данных.',
+                        'Anthropic (Claude API) — инструменты на основе ИИ передают Anthropic текст или адрес, которые вы сами вставляете, только когда вы нажимаете кнопку, чтобы получить результат. Эти материалы не используются для обучения моделей.',
+                    ]),
+                    ('p', 'Мы не передаём ваши данные третьим лицам в маркетинговых целях.'),
+                ]),
+                ('Карты и внешний контент', [
+                    ('p', 'Карты Google загружаются только по вашему запросу: мы показываем превью, а интерактивная карта — вместе с соответствующим соединением с Google — запускается лишь после клика. Пока вы не кликнули, ваш браузер не обращается к Google Maps.'),
+                ]),
+                ('Сколько мы храним данные', [
+                    ('ul', [
+                        'Запросы из формы обратной связи: столько, сколько нужно для обработки запроса и связанных с этим обязанностей.',
+                        'Лиды из бесплатных инструментов: пока они полезны для повторного контакта или пока вы не попросите удалить.',
+                        'Кабинет: журналы входов — 12 месяцев; учётная запись — пока длится сотрудничество. При завершении или по вашему запросу связанные данные удаляются каскадно.',
+                        'Технические журналы сервера: короткий срок, затем перезапись.',
+                    ]),
+                ]),
+                ('Ваши права', [
+                    ('p', 'В отношении своих данных вы можете реализовать права по GDPR: доступ, исправление, удаление, ограничение, возражение и переносимость. Ранее данное согласие можно отозвать в любой момент — это не отменяет законность обработки до отзыва.'),
+                    ('p', 'Чтобы воспользоваться правами, достаточно письма на info@remarka.biz: мы всё сделаем сами, в том числе по кабинету (экспорт или каскадное удаление). Если считаете, что что-то не так, вы можете обратиться в надзорный орган по защите данных.'),
+                ]),
+                ('Обновления этой страницы', [
+                    ('p', 'Если мы поменяем инструменты или цели обработки, мы обновим эту страницу и дату вверху.'),
+                ]),
+            ],
+        },
+    },
+    'cookie-policy': {
+        'it': {
+            'title': 'Cookie policy', 'eyebrow': 'Cookie policy', 'h1': 'Cookie policy',
+            'updated': LEGAL_UPDATED['it'],
+            'description': 'Su questo sito solo cookie tecnici: nessuna profilazione, nessuna analisi, nessuna pubblicità. Ecco cosa usiamo e come cambiare la scelta.',
+            'intro': 'Questo sito usa solo cookie tecnici, quelli indispensabili per funzionare. Niente cookie di profilazione, niente analisi del comportamento, niente pubblicità. Per questo il banner vi chiede una scelta semplice, non un consenso a decine di tracciatori.',
+            'sections': [
+                ('Cosa sono i cookie tecnici', [
+                    ('p', 'I cookie tecnici sono piccoli file (o voci di memoria del browser) che servono a far funzionare il sito: ricordare una scelta, tenere aperta una sessione. Per legge non richiedono consenso preventivo, ma ve li elenchiamo lo stesso, per trasparenza.'),
+                ]),
+                ('Quali usiamo davvero', [
+                    ('ul', [
+                        'Scelta sui cookie: quando accettate o rifiutate dal banner, salviamo la vostra scelta nella memoria del browser (localStorage), così il banner non ricompare a ogni visita. Nessun dato lascia il vostro dispositivo.',
+                        'Sessione e login di WordPress: cookie tecnici attivi solo per chi entra nell’area di amministrazione del sito (lo staff). Un visitatore normale non li riceve.',
+                        'Area clienti (cab.remarka.biz): un cookie di sessione tecnico (cab_session), impostato solo dopo il login, per tenervi autenticati. È strettamente necessario e non richiede consenso.',
+                    ]),
+                ]),
+                ('Cosa NON usiamo', [
+                    ('ul', [
+                        'Nessun cookie di Google Analytics o di altri strumenti di statistica.',
+                        'Nessun pixel pubblicitario (Meta, Google Ads e simili).',
+                        'Nessun cookie di profilazione o di remarketing.',
+                    ]),
+                ]),
+                ('Servizi esterni, solo su vostra azione', [
+                    ('p', 'Alcune funzioni contattano un servizio esterno soltanto quando siete voi ad attivarle, non prima:'),
+                    ('ul', [
+                        'Le mappe di Google partono solo dopo che cliccate sull’anteprima.',
+                        'Gli strumenti basati su AI inviano il testo o l’URL che incollate solo quando premete il pulsante.',
+                    ]),
+                ]),
+                ('Come cambiare la vostra scelta', [
+                    ('p', 'Potete rivedere la vostra scelta in qualsiasi momento dalla pagina Preferenze cookie: un clic azzera la selezione salvata e fa ricomparire il banner. In alternativa, potete cancellare i dati del sito dalle impostazioni del vostro browser.'),
+                ]),
+            ],
+        },
+        'en': {
+            'title': 'Cookie policy', 'eyebrow': 'Cookie policy', 'h1': 'Cookie policy',
+            'updated': LEGAL_UPDATED['en'],
+            'description': 'This site uses technical cookies only: no profiling, no analytics, no advertising. Here is what we use and how to change your choice.',
+            'intro': 'This site uses only technical cookies, the ones essential for it to work. No profiling cookies, no behavioural analytics, no advertising. That is why the banner asks you a simple choice, not consent to dozens of trackers.',
+            'sections': [
+                ('What technical cookies are', [
+                    ('p', 'Technical cookies are small files (or browser-storage entries) that make the site work: remembering a choice, keeping a session open. By law they do not require prior consent, but we list them anyway, for transparency.'),
+                ]),
+                ('What we actually use', [
+                    ('ul', [
+                        'Cookie choice: when you accept or decline from the banner, we save your choice in the browser’s storage (localStorage), so the banner does not reappear on every visit. No data leaves your device.',
+                        'WordPress session and login: technical cookies active only for those who log into the site’s admin area (staff). A regular visitor never receives them.',
+                        'Client area (cab.remarka.biz): a technical session cookie (cab_session), set only after login, to keep you authenticated. It is strictly necessary and requires no consent.',
+                    ]),
+                ]),
+                ('What we do NOT use', [
+                    ('ul', [
+                        'No Google Analytics or other statistics cookies.',
+                        'No advertising pixels (Meta, Google Ads and the like).',
+                        'No profiling or remarketing cookies.',
+                    ]),
+                ]),
+                ('External services, only on your action', [
+                    ('p', 'Some features contact an external service only when you trigger them, not before:'),
+                    ('ul', [
+                        'Google maps start only after you click the preview.',
+                        'The AI-based tools send the text or URL you paste only when you press the button.',
+                    ]),
+                ]),
+                ('How to change your choice', [
+                    ('p', 'You can review your choice at any time from the Cookie preferences page: one click clears the saved selection and brings the banner back. Alternatively, you can clear the site’s data from your browser settings.'),
+                ]),
+            ],
+        },
+        'ru': {
+            'title': 'Политика cookie', 'eyebrow': 'Политика cookie', 'h1': 'Политика cookie',
+            'updated': LEGAL_UPDATED['ru'],
+            'description': 'На этом сайте только технические cookie: без профилирования, без аналитики, без рекламы. Что мы используем и как изменить выбор.',
+            'intro': 'Этот сайт использует только технические cookie — те, что необходимы для работы. Никакого профилирования, никакого анализа поведения, никакой рекламы. Поэтому баннер предлагает простой выбор, а не согласие на десятки трекеров.',
+            'sections': [
+                ('Что такое технические cookie', [
+                    ('p', 'Технические cookie — это небольшие файлы (или записи в памяти браузера), которые нужны, чтобы сайт работал: запомнить выбор, держать открытой сессию. По закону они не требуют предварительного согласия, но мы всё равно перечисляем их — ради прозрачности.'),
+                ]),
+                ('Что мы действительно используем', [
+                    ('ul', [
+                        'Выбор по cookie: когда вы принимаете или отклоняете через баннер, мы сохраняем ваш выбор в памяти браузера (localStorage), чтобы баннер не появлялся при каждом визите. Никакие данные не покидают ваше устройство.',
+                        'Сессия и вход в WordPress: технические cookie, активные только для тех, кто входит в административную часть сайта (сотрудники). Обычный посетитель их не получает.',
+                        'Личный кабинет (cab.remarka.biz): технический cookie сессии (cab_session), устанавливается только после входа, чтобы держать вас авторизованным. Строго необходим и не требует согласия.',
+                    ]),
+                ]),
+                ('Что мы НЕ используем', [
+                    ('ul', [
+                        'Никаких cookie Google Analytics или других инструментов статистики.',
+                        'Никаких рекламных пикселей (Meta, Google Ads и подобных).',
+                        'Никаких cookie профилирования или ремаркетинга.',
+                    ]),
+                ]),
+                ('Внешние сервисы — только по вашему действию', [
+                    ('p', 'Некоторые функции обращаются к внешнему сервису только тогда, когда вы сами их запускаете, не раньше:'),
+                    ('ul', [
+                        'Карты Google запускаются только после клика по превью.',
+                        'Инструменты на основе ИИ передают текст или URL, которые вы вставили, только когда вы нажимаете кнопку.',
+                    ]),
+                ]),
+                ('Как изменить свой выбор', [
+                    ('p', 'Пересмотреть выбор можно в любой момент на странице «Настройки cookie»: один клик сбрасывает сохранённый выбор и возвращает баннер. Также можно очистить данные сайта в настройках браузера.'),
+                ]),
+            ],
+        },
+    },
+    'cookie-preferenze': {
+        'it': {
+            'title': 'Preferenze cookie', 'eyebrow': 'Preferenze cookie', 'h1': 'Preferenze cookie',
+            'updated': LEGAL_UPDATED['it'],
+            'description': 'Gestisci la tua scelta sui cookie tecnici: azzera la selezione salvata e fai ricomparire il banner.',
+            'intro': 'Su questo sito c’è poco da configurare: usiamo solo cookie tecnici necessari, che non si possono disattivare senza rompere il funzionamento di base. Non ci sono cookie di analisi o di pubblicità da accettare o rifiutare.',
+            'sections': [
+                ('La vostra scelta attuale', [
+                    ('p', 'Alla prima visita il banner vi ha chiesto se accettare o rifiutare. Quella scelta è salvata nella memoria del vostro browser. Se volete rivederla — per rileggere il banner o ripartire da zero — azzeratela qui:'),
+                    ('raw', _cookie_reset_html('Reimposta le preferenze cookie', 'Fatto: la scelta è stata azzerata. Il banner ricomparirà.')),
+                ]),
+                ('Cosa succede quando azzerate', [
+                    ('p', 'Il pulsante cancella solo la vostra scelta salvata su questo dispositivo. Al prossimo caricamento di una pagina il banner ricomparirà e potrete decidere di nuovo. Nessun altro dato viene toccato.'),
+                    ('p', 'Per i dettagli su quali cookie usiamo, trovate tutto nella Cookie policy.'),
+                ]),
+            ],
+        },
+        'en': {
+            'title': 'Cookie preferences', 'eyebrow': 'Cookie preferences', 'h1': 'Cookie preferences',
+            'updated': LEGAL_UPDATED['en'],
+            'description': 'Manage your choice about technical cookies: clear the saved selection and bring the banner back.',
+            'intro': 'There is little to configure on this site: we use only necessary technical cookies, which cannot be turned off without breaking basic functionality. There are no analytics or advertising cookies to accept or decline.',
+            'sections': [
+                ('Your current choice', [
+                    ('p', 'On your first visit the banner asked whether to accept or decline. That choice is saved in your browser’s storage. If you want to review it — to read the banner again or start over — clear it here:'),
+                    ('raw', _cookie_reset_html('Reset cookie preferences', 'Done: your choice has been cleared. The banner will appear again.')),
+                ]),
+                ('What happens when you clear it', [
+                    ('p', 'The button clears only your choice saved on this device. On the next page load the banner will reappear and you can decide again. No other data is touched.'),
+                    ('p', 'For details on which cookies we use, everything is in the Cookie policy.'),
+                ]),
+            ],
+        },
+        'ru': {
+            'title': 'Настройки cookie', 'eyebrow': 'Настройки cookie', 'h1': 'Настройки cookie',
+            'updated': LEGAL_UPDATED['ru'],
+            'description': 'Управляйте выбором по техническим cookie: сбросьте сохранённый выбор и верните баннер.',
+            'intro': 'На этом сайте почти нечего настраивать: мы используем только необходимые технические cookie, которые нельзя отключить, не сломав базовую работу. Нет ни аналитических, ни рекламных cookie, которые нужно принимать или отклонять.',
+            'sections': [
+                ('Ваш текущий выбор', [
+                    ('p', 'При первом визите баннер спросил, принять или отклонить. Этот выбор сохранён в памяти вашего браузера. Если хотите пересмотреть его — перечитать баннер или начать заново — сбросьте его здесь:'),
+                    ('raw', _cookie_reset_html('Сбросить настройки cookie', 'Готово: выбор сброшен. Баннер появится снова.')),
+                ]),
+                ('Что происходит при сбросе', [
+                    ('p', 'Кнопка удаляет только ваш выбор, сохранённый на этом устройстве. При следующей загрузке страницы баннер появится снова, и вы сможете решить заново. Никакие другие данные не затрагиваются.'),
+                    ('p', 'Подробности о том, какие cookie мы используем, есть в Политике cookie.'),
+                ]),
+            ],
+        },
+    },
+}
 
 
 # ---------------------------------------------------------------- Blog
@@ -2143,12 +2574,7 @@ def main():
 
     print('Chi siamo e pagine legali:')
     build_chi_siamo()
-    build_legal_page('privacy', 'Privacy policy', 'Privacy policy',
-                      'Contenuto legale da redigere con un consulente privacy prima del lancio. I dati raccolti tramite il modulo contatti restano nell’Unione Europea, come indicato nel sito, e non vengono ceduti a terzi per finalità di profilazione.')
-    build_legal_page('cookie-policy', 'Cookie policy', 'Cookie policy',
-                      'Usiamo solo cookie tecnici necessari al funzionamento del sito. Nessun cookie di profilazione o tracciamento pubblicitario è attivo senza consenso esplicito. Contenuto legale completo da redigere con un consulente privacy prima del lancio.')
-    build_legal_page('cookie-preferenze', 'Preferenze cookie', 'Preferenze cookie',
-                      'Il sito usa solo cookie tecnici necessari: non esistono al momento preferenze facoltative da gestire. Questa pagina sarà ampliata se in futuro verranno introdotti cookie di terze parti.')
+    build_all_legal()
 
     print('Blog:')
     build_blog_index()

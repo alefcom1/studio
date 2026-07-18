@@ -2174,14 +2174,15 @@
 
 	/* ---------- 6. Cookie banner + WhatsApp FAB ---------- */
 
+	var COOKIE_KEY = 'sr-cookie-choice';
+
 	function initCookieBanner() {
 		var banner = document.querySelector('[data-sr-cookie-banner]');
 		if (!banner) {
 			return;
 		}
-		var KEY = 'sr-cookie-choice';
 		try {
-			if (!window.localStorage.getItem(KEY)) {
+			if (!window.localStorage.getItem(COOKIE_KEY)) {
 				banner.hidden = false;
 			}
 		} catch (err) {
@@ -2190,10 +2191,33 @@
 		banner.querySelectorAll('[data-sr-cookie-choice]').forEach(function (btn) {
 			btn.addEventListener('click', function () {
 				try {
-					window.localStorage.setItem(KEY, btn.getAttribute('data-sr-cookie-choice'));
+					window.localStorage.setItem(COOKIE_KEY, btn.getAttribute('data-sr-cookie-choice'));
 				} catch (err) { /* privacy mode: la scelta vale solo per la sessione */ }
 				banner.hidden = true;
 			});
+		});
+	}
+
+	/* Pagina «Preferenze cookie»: il bottone di reset azzera la scelta salvata
+	   e fa ricomparire il banner (o mostra una conferma se il banner non è nel
+	   DOM). Unico punto che conosce la chiave localStorage insieme al banner. */
+	function initCookieReset() {
+		var btn = document.querySelector('[data-sr-cookie-reset]');
+		if (!btn) {
+			return;
+		}
+		btn.addEventListener('click', function () {
+			try {
+				window.localStorage.removeItem(COOKIE_KEY);
+			} catch (err) { /* privacy mode: niente da azzerare */ }
+			var done = document.querySelector('[data-sr-cookie-reset-done]');
+			if (done) {
+				done.hidden = false;
+			}
+			var banner = document.querySelector('[data-sr-cookie-banner]');
+			if (banner) {
+				banner.hidden = false;
+			}
 		});
 	}
 
@@ -2489,6 +2513,7 @@
 		initToolWidgets();
 		initCheckupHomeForm();
 		initCookieBanner();
+		initCookieReset();
 		initWaFab();
 		initLangSwitch();
 		initContactForm();

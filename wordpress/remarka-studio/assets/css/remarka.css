@@ -2708,6 +2708,17 @@ body.page .entry-title {
   margin: 0 0 16px;
 }
 
+/* Titolo-colonna cliccabile (Servizi → indice servizi, Strumenti → indice
+   strumenti): mantiene il colore del titolo, si accende in hover. */
+.sr-footer-col__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sr-footer-col__title a:hover {
+  color: var(--sr-oltremare-chiaro);
+}
+
 .sr-footer-logo {
   display: flex;
   align-items: center;
@@ -2834,6 +2845,26 @@ body.page .entry-title {
   justify-content: space-between;
   gap: 12px;
   font-size: 13px;
+}
+
+/* Copyright + link legali (Privacy · Cookie policy · Preferenze cookie),
+   migrati qui dalla ex colonna Studio (18.07.2026). Link piccoli, separati da
+   un punto mediano, accanto al copyright. */
+.sr-footer-legal {
+  color: rgba(247, 246, 242, 0.7);
+}
+
+.sr-footer-legal a {
+  margin-left: 14px;
+  position: relative;
+  white-space: nowrap;
+}
+
+.sr-footer-legal a::before {
+  content: "·";
+  position: absolute;
+  left: -9px;
+  color: rgba(247, 246, 242, 0.35);
 }
 
 @media (max-width: 782px) {
@@ -2990,6 +3021,22 @@ body.page .entry-title {
 .sr-cookie-btn:hover {
   color: var(--sr-oltremare);
   border-color: var(--sr-oltremare);
+}
+
+/* Reset preferenze cookie (pagina /cookie-preferenze/): azzera la scelta
+   salvata e fa ricomparire il banner. Conferma inline sotto il bottone. */
+.sr-cookie-reset {
+  margin-top: 28px;
+}
+
+.sr-cookie-reset__done {
+  margin-top: 14px;
+  font-size: 15px;
+  color: var(--sr-verde);
+}
+
+.sr-cookie-reset__done[hidden] {
+  display: none;
 }
 
 .sr-wa-fab {
