@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Профессиональный перевод носителями (не плагин)</span></div><div><span class="sr-mono">✓</span><span>До 4 языков: итальянский, английский, немецкий, французский</span></div><div><span class="sr-mono">✓</span><span>Постоянный переключатель языка</span></div><div><span class="sr-mono">✓</span><span>Многоязычная SEO с корректными hreflang</span></div><div><span class="sr-mono">✓</span><span>Контент локализован, а не просто переведён</span></div><div><span class="sr-mono">✓</span><span>Лингвистическая вычитка силами группы Remarka</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ — гарантия в договоре</span></div><div><span class="sr-mono">✓</span><span>12 месяцев поддержки и ежемесячные замеры</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/ru/kabinet-klienta/">В каждый проект входит кабинет клиента: стадии, согласования и файлы в одном месте →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
