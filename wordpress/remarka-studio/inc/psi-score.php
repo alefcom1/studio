@@ -42,7 +42,10 @@ function remarka_psi_score_measure_url( string $url, string $key ): ?float {
 	$endpoint = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' . rawurlencode( $url )
 		. '&strategy=mobile&category=PERFORMANCE&key=' . rawurlencode( $key );
 
-	$resp = wp_remote_get( $endpoint, array( 'timeout' => 15 ) );
+	// 45s: l'API PSI per strategy=mobile impiega regolarmente 20-35s a URL —
+	// con 15s le richieste scadevano e la misurazione falliva in silenzio.
+	// Gira in cron (mai in una richiesta di pagina), un timeout lungo è ok.
+	$resp = wp_remote_get( $endpoint, array( 'timeout' => 45 ) );
 	if ( is_wp_error( $resp ) ) {
 		return null;
 	}
