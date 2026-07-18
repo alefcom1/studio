@@ -477,43 +477,46 @@ def build_prezzi():
 
 # ---------------------------------------------------------------- Strumenti
 
-# Grafiche ritagliate dal macro-mockup owner 18.07.2026 (docs/piano-toolimg,
+# Grafiche ritagliate dal macro-mockup owner 18.07.2026, v2 (sorgenti owner
+# migliorate — foglio 11 carte 3x + hero dedicato, docs/piano-toolimg,
 # nessun redisegno SVG — decisione owner finale, si ritaglia il PNG sorgente).
-# Dimensioni display = metà dei px del ritaglio (regola retina 2x, vedi
-# generazione in scratchpad/toolimg/); file in assets/img/tools/.
-TOOLS_HERO_IMG = dict(file='tools-hero.webp', w=192, h=113,
+# Dimensioni display = 1/3 dei px del ritaglio (i sorgenti v2 sono ad alta
+# risoluzione: divisore 3 tiene l'ingombro visivo vicino alla v1 dando
+# nitidezza retina 3x); file in assets/img/tools/.
+TOOLS_HERO_IMG = dict(file='tools-hero.webp', w=328, h=249,
                        alt='Dashboard del check-up con punteggio di salute 87 su 100 e grafico delle prestazioni')
 
 TOOLS_CARD_IMG = {
-    'test-velocita': dict(file='tool-test-velocita.webp', w=135, h=33,
+    'test-velocita': dict(file='tool-test-velocita.webp', w=94, h=35,
                            alt='Grafico dell’andamento di velocità e tachimetro del punteggio PageSpeed'),
-    'analisi-seo': dict(file='tool-analisi-seo.webp', w=124, h=33,
+    'analisi-seo': dict(file='tool-analisi-seo.webp', w=99, h=38,
                          alt='Checklist SEO on-page e grafico di crescita della visibilità in ricerca'),
-    'check-gdpr': dict(file='tool-check-gdpr.webp', w=124, h=30,
+    'check-gdpr': dict(file='tool-check-gdpr.webp', w=107, h=38,
                         alt='Icone di verifica cookie, informative privacy e badge di conformità GDPR'),
-    'roi-localizzazione': dict(file='tool-roi-localizzazione.webp', w=124, h=32,
+    'roi-localizzazione': dict(file='tool-roi-localizzazione.webp', w=105, h=38,
                                 alt='Grafico a barre crescenti con icona di ritorno economico della localizzazione'),
-    'verifica-accessibilita': dict(file='tool-verifica-accessibilita.webp', w=124, h=32,
+    'verifica-accessibilita': dict(file='tool-verifica-accessibilita.webp', w=99, h=38,
                                     alt='Icona di accessibilità con indicatori di conformità verificati'),
-    'sito-pronto-ai': dict(file='tool-sito-pronto-ai.webp', w=124, h=32,
+    'sito-pronto-ai': dict(file='tool-sito-pronto-ai.webp', w=107, h=40,
                             alt='Diagramma di segnali tecnici collegati e checklist di prontezza per l’AI'),
-    'impatto-co2': dict(file='tool-impatto-co2.webp', w=124, h=32,
+    'impatto-co2': dict(file='tool-impatto-co2.webp', w=105, h=35,
                          alt='Grafico dell’impronta di CO₂ generata dalle visite al sito'),
-    'segnali-eeat': dict(file='tool-segnali-eeat.webp', w=124, h=32,
+    'segnali-eeat': dict(file='tool-segnali-eeat.webp', w=98, h=35,
                           alt='Quattro icone dei pilastri E-E-A-T: esperienza, autorevolezza, verifica e affidabilità'),
-    'sito-letto-dallai': dict(file='tool-sito-letto-dallai.webp', w=124, h=32,
+    'sito-letto-dallai': dict(file='tool-sito-letto-dallai.webp', w=107, h=29,
                                alt='Blocchi di testo della pagina analizzati e icona a forma di occhio dell’AI'),
-    'suona-madrelingua': dict(file='tool-suona-madrelingua.webp', w=124, h=20,
+    'suona-madrelingua': dict(file='tool-suona-madrelingua.webp', w=105, h=23,
                                alt='Forma d’onda audio del testo con punteggio di naturalezza 92'),
-    'generatore-llms-txt': dict(file='tool-generatore-llms-txt.webp', w=127, h=20,
+    'generatore-llms-txt': dict(file='tool-generatore-llms-txt.webp', w=110, h=22,
                                  alt='Anteprima del file llms.txt generato automaticamente'),
 }
 
 
-def _tool_img_html(img):
+def _tool_img_html(img, style=None):
     src = f'/wp-content/themes/remarka-studio/assets/img/tools/{img["file"]}'
+    style = style if style is not None else 'margin-top:14px;display:block;max-width:100%;height:auto'
     return (f'<img src="{src}" alt="{img["alt"]}" width="{img["w"]}" height="{img["h"]}" '
-            f'loading="lazy" style="margin-top:14px;display:block;max-width:100%;height:auto"/>')
+            f'loading="lazy" style="{style}"/>')
 
 
 def build_strumenti_index():
@@ -526,14 +529,19 @@ def build_strumenti_index():
     checkup = next(t for t in TOOLS if t['tipo'] == 'checkup')
     altri = [t for t in TOOLS if t['tipo'] != 'checkup']
 
+    # Layout a due colonne (owner 18.07.2026 v2): testo+Prova a sinistra,
+    # grafica hero a destra, centrata verticalmente da ≥640px; impilati su
+    # mobile con la grafica sotto il testo (.sr-tools-feat, assets/css).
     featured = section(
         raw_html(
-            '<div class="sr-card sr-card--carta" style="border-color:var(--sr-oltremare)">'
+            '<div class="sr-card sr-card--carta sr-tools-feat" style="border-color:var(--sr-oltremare)">'
+            '<div class="sr-tools-feat__text">'
             '<p class="sr-eyebrow" style="color:var(--sr-oltremare)">Novità · gratuito</p>'
             f'<h3 class="wp-block-heading" style="margin-top:10px">{checkup["titolo"]}</h3>'
             f'<p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">{checkup["descrizione"]}</p>'
-            f'{_tool_img_html(TOOLS_HERO_IMG)}'
             f'<p class="sr-card-link" style="margin-top:18px"><a href="/strumenti/{checkup["slug"]}/">Prova →</a></p>'
+            '</div>'
+            f'<div class="sr-tools-feat__img">{_tool_img_html(TOOLS_HERO_IMG, style="display:block;max-width:100%;height:auto")}</div>'
             '</div>'
         ),
         classes='sr-section sr-section--bianco',

@@ -666,6 +666,40 @@ body.page .entry-title {
   color: var(--sr-oltremare);
 }
 
+/* Featured Check-up completo su /strumenti/: due colonne da ≥640px, testo
+   a sinistra + grafica a destra centrata verticalmente (owner 18.07.2026 v2);
+   impilata su mobile con la grafica sotto il testo. Prefisso sr-tools-feat
+   per non toccare .sr-card generica. */
+.sr-tools-feat {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sr-tools-feat__img {
+  order: 2;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .sr-tools-feat {
+    flex-direction: row;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .sr-tools-feat__text {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .sr-tools-feat__img {
+    order: 2;
+    flex: 0 0 auto;
+    text-align: right;
+  }
+}
+
 /* mono-индекс карточки (01/02/03) — используется в vyhod-evropa (RU) */
 .sr-feat-num {
   font-family: var(--sr-font-mono);
