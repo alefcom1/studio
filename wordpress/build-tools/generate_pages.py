@@ -2148,8 +2148,8 @@ LEGAL_CONTENT = {
         'it': {
             'title': 'Cookie policy', 'eyebrow': 'Cookie policy', 'h1': 'Cookie policy',
             'updated': LEGAL_UPDATED['it'],
-            'description': 'Su questo sito solo cookie tecnici: nessuna profilazione, nessuna analisi, nessuna pubblicità. Ecco cosa usiamo e come cambiare la scelta.',
-            'intro': 'Questo sito usa solo cookie tecnici, quelli indispensabili per funzionare. Niente cookie di profilazione, niente analisi del comportamento, niente pubblicità. Per questo il banner vi chiede una scelta semplice, non un consenso a decine di tracciatori.',
+            'description': 'I cookie tecnici di questo sito: a cosa servono, quali sono e come cambiare la vostra scelta in qualsiasi momento.',
+            'intro': 'Questa pagina elenca i cookie tecnici del sito — quelli necessari al suo funzionamento — e i servizi esterni che si attivano solo su vostra azione. Il banner vi chiede una scelta semplice; qui trovate che cosa c’è dietro.',
             'sections': [
                 ('Cosa sono i cookie tecnici', [
                     ('p', 'I cookie tecnici sono piccoli file (o voci di memoria del browser) che servono a far funzionare il sito: ricordare una scelta, tenere aperta una sessione. Per legge non richiedono consenso preventivo, ma ve li elenchiamo lo stesso, per trasparenza.'),
@@ -2159,13 +2159,6 @@ LEGAL_CONTENT = {
                         'Scelta sui cookie: quando accettate o rifiutate dal banner, salviamo la vostra scelta nella memoria del browser (localStorage), così il banner non ricompare a ogni visita. Nessun dato lascia il vostro dispositivo.',
                         'Sessione e login di WordPress: cookie tecnici attivi solo per chi entra nell’area di amministrazione del sito (lo staff). Un visitatore normale non li riceve.',
                         'Area clienti (cab.remarka.biz): un cookie di sessione tecnico (cab_session), impostato solo dopo il login, per tenervi autenticati. È strettamente necessario e non richiede consenso.',
-                    ]),
-                ]),
-                ('Cosa NON usiamo', [
-                    ('ul', [
-                        'Nessun cookie di Google Analytics o di altri strumenti di statistica.',
-                        'Nessun pixel pubblicitario (Meta, Google Ads e simili).',
-                        'Nessun cookie di profilazione o di remarketing.',
                     ]),
                 ]),
                 ('Servizi esterni, solo su vostra azione', [
@@ -2183,8 +2176,8 @@ LEGAL_CONTENT = {
         'en': {
             'title': 'Cookie policy', 'eyebrow': 'Cookie policy', 'h1': 'Cookie policy',
             'updated': LEGAL_UPDATED['en'],
-            'description': 'This site uses technical cookies only: no profiling, no analytics, no advertising. Here is what we use and how to change your choice.',
-            'intro': 'This site uses only technical cookies, the ones essential for it to work. No profiling cookies, no behavioural analytics, no advertising. That is why the banner asks you a simple choice, not consent to dozens of trackers.',
+            'description': 'The technical cookies on this site: what they do, which ones they are, and how to change your choice at any time.',
+            'intro': 'This page lists the site’s technical cookies — the ones needed for it to work — and the external services that start only when you act. The banner asks you a simple choice; here is what sits behind it.',
             'sections': [
                 ('What technical cookies are', [
                     ('p', 'Technical cookies are small files (or browser-storage entries) that make the site work: remembering a choice, keeping a session open. By law they do not require prior consent, but we list them anyway, for transparency.'),
@@ -2194,13 +2187,6 @@ LEGAL_CONTENT = {
                         'Cookie choice: when you accept or decline from the banner, we save your choice in the browser’s storage (localStorage), so the banner does not reappear on every visit. No data leaves your device.',
                         'WordPress session and login: technical cookies active only for those who log into the site’s admin area (staff). A regular visitor never receives them.',
                         'Client area (cab.remarka.biz): a technical session cookie (cab_session), set only after login, to keep you authenticated. It is strictly necessary and requires no consent.',
-                    ]),
-                ]),
-                ('What we do NOT use', [
-                    ('ul', [
-                        'No Google Analytics or other statistics cookies.',
-                        'No advertising pixels (Meta, Google Ads and the like).',
-                        'No profiling or remarketing cookies.',
                     ]),
                 ]),
                 ('External services, only on your action', [
@@ -2218,8 +2204,8 @@ LEGAL_CONTENT = {
         'ru': {
             'title': 'Политика cookie', 'eyebrow': 'Политика cookie', 'h1': 'Политика cookie',
             'updated': LEGAL_UPDATED['ru'],
-            'description': 'На этом сайте только технические cookie: без профилирования, без аналитики, без рекламы. Что мы используем и как изменить выбор.',
-            'intro': 'Этот сайт использует только технические cookie — те, что необходимы для работы. Никакого профилирования, никакого анализа поведения, никакой рекламы. Поэтому баннер предлагает простой выбор, а не согласие на десятки трекеров.',
+            'description': 'Технические cookie этого сайта: зачем они нужны, какие именно и как изменить свой выбор в любой момент.',
+            'intro': 'На этой странице — технические cookie сайта (те, что нужны для его работы) и внешние сервисы, которые включаются только по вашему действию. Баннер предлагает простой выбор; здесь описано, что за ним стоит.',
             'sections': [
                 ('Что такое технические cookie', [
                     ('p', 'Технические cookie — это небольшие файлы (или записи в памяти браузера), которые нужны, чтобы сайт работал: запомнить выбор, держать открытой сессию. По закону они не требуют предварительного согласия, но мы всё равно перечисляем их — ради прозрачности.'),
@@ -2229,13 +2215,6 @@ LEGAL_CONTENT = {
                         'Выбор по cookie: когда вы принимаете или отклоняете через баннер, мы сохраняем ваш выбор в памяти браузера (localStorage), чтобы баннер не появлялся при каждом визите. Никакие данные не покидают ваше устройство.',
                         'Сессия и вход в WordPress: технические cookie, активные только для тех, кто входит в административную часть сайта (сотрудники). Обычный посетитель их не получает.',
                         'Личный кабинет (cab.remarka.biz): технический cookie сессии (cab_session), устанавливается только после входа, чтобы держать вас авторизованным. Строго необходим и не требует согласия.',
-                    ]),
-                ]),
-                ('Что мы НЕ используем', [
-                    ('ul', [
-                        'Никаких cookie Google Analytics или других инструментов статистики.',
-                        'Никаких рекламных пикселей (Meta, Google Ads и подобных).',
-                        'Никаких cookie профилирования или ремаркетинга.',
                     ]),
                 ]),
                 ('Внешние сервисы — только по вашему действию', [
@@ -2256,7 +2235,7 @@ LEGAL_CONTENT = {
             'title': 'Preferenze cookie', 'eyebrow': 'Preferenze cookie', 'h1': 'Preferenze cookie',
             'updated': LEGAL_UPDATED['it'],
             'description': 'Gestisci la tua scelta sui cookie tecnici: azzera la selezione salvata e fai ricomparire il banner.',
-            'intro': 'Su questo sito c’è poco da configurare: usiamo solo cookie tecnici necessari, che non si possono disattivare senza rompere il funzionamento di base. Non ci sono cookie di analisi o di pubblicità da accettare o rifiutare.',
+            'intro': 'I cookie tecnici su cui si regge il sito non si possono disattivare senza comprometterne il funzionamento di base. Qui potete azzerare la scelta salvata nel banner — e farla di nuovo.',
             'sections': [
                 ('La vostra scelta attuale', [
                     ('p', 'Alla prima visita il banner vi ha chiesto se accettare o rifiutare. Quella scelta è salvata nella memoria del vostro browser. Se volete rivederla — per rileggere il banner o ripartire da zero — azzeratela qui:'),
@@ -2272,7 +2251,7 @@ LEGAL_CONTENT = {
             'title': 'Cookie preferences', 'eyebrow': 'Cookie preferences', 'h1': 'Cookie preferences',
             'updated': LEGAL_UPDATED['en'],
             'description': 'Manage your choice about technical cookies: clear the saved selection and bring the banner back.',
-            'intro': 'There is little to configure on this site: we use only necessary technical cookies, which cannot be turned off without breaking basic functionality. There are no analytics or advertising cookies to accept or decline.',
+            'intro': 'The technical cookies this site relies on cannot be turned off without breaking basic functionality. What you can do here is clear your saved banner choice and make it appear again.',
             'sections': [
                 ('Your current choice', [
                     ('p', 'On your first visit the banner asked whether to accept or decline. That choice is saved in your browser’s storage. If you want to review it — to read the banner again or start over — clear it here:'),
@@ -2288,7 +2267,7 @@ LEGAL_CONTENT = {
             'title': 'Настройки cookie', 'eyebrow': 'Настройки cookie', 'h1': 'Настройки cookie',
             'updated': LEGAL_UPDATED['ru'],
             'description': 'Управляйте выбором по техническим cookie: сбросьте сохранённый выбор и верните баннер.',
-            'intro': 'На этом сайте почти нечего настраивать: мы используем только необходимые технические cookie, которые нельзя отключить, не сломав базовую работу. Нет ни аналитических, ни рекламных cookie, которые нужно принимать или отклонять.',
+            'intro': 'Технические cookie, на которых держится сайт, нельзя отключить, не сломав его базовую работу. Здесь можно сбросить сохранённый выбор в баннере — и сделать его заново.',
             'sections': [
                 ('Ваш текущий выбор', [
                     ('p', 'При первом визите баннер спросил, принять или отклонить. Этот выбор сохранён в памяти вашего браузера. Если хотите пересмотреть его — перечитать баннер или начать заново — сбросьте его здесь:'),

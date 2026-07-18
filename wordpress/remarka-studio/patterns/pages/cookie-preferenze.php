@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(30px,3.6vw,44px)">Preferenze cookie<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:20px;font-size:16px;line-height:1.7;max-width:760px">Su questo sito c’è poco da configurare: usiamo solo cookie tecnici necessari, che non si possono disattivare senza rompere il funzionamento di base. Non ci sono cookie di analisi o di pubblicità da accettare o rifiutare.</p>
+<p class="has-base-font-size" style="margin-top:20px;font-size:16px;line-height:1.7;max-width:760px">I cookie tecnici su cui si regge il sito non si possono disattivare senza comprometterne il funzionamento di base. Qui potete azzerare la scelta salvata nel banner — e farla di nuovo.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p style="margin-top:10px;font-size:14px;color:var(--sr-grigio)">Ultimo aggiornamento: 18 luglio 2026</p>

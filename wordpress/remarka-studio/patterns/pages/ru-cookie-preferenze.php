@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(30px,3.6vw,44px)">Настройки cookie<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:20px;font-size:16px;line-height:1.7;max-width:760px">На этом сайте почти нечего настраивать: мы используем только необходимые технические cookie, которые нельзя отключить, не сломав базовую работу. Нет ни аналитических, ни рекламных cookie, которые нужно принимать или отклонять.</p>
+<p class="has-base-font-size" style="margin-top:20px;font-size:16px;line-height:1.7;max-width:760px">Технические cookie, на которых держится сайт, нельзя отключить, не сломав его базовую работу. Здесь можно сбросить сохранённый выбор в баннере — и сделать его заново.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p style="margin-top:10px;font-size:14px;color:var(--sr-grigio)">Последнее обновление: 18 июля 2026</p>

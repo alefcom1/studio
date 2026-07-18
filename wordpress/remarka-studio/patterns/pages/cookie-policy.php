@@ -3,7 +3,7 @@
  * Title: Pagina — Cookie policy
  * Slug: remarka-studio/cookie-policy
  * Categories: remarka-pagine
- * Description: Su questo sito solo cookie tecnici: nessuna profilazione, nessuna analisi, nessuna pubblicità. Ecco cosa usiamo e come cambiare la scelta.
+ * Description: I cookie tecnici di questo sito: a cosa servono, quali sono e come cambiare la vostra scelta in qualsiasi momento.
  * Viewport Width: 1400
  */
 ?>
@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(30px,3.6vw,44px)">Cookie policy<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:20px;font-size:16px;line-height:1.7;max-width:760px">Questo sito usa solo cookie tecnici, quelli indispensabili per funzionare. Niente cookie di profilazione, niente analisi del comportamento, niente pubblicità. Per questo il banner vi chiede una scelta semplice, non un consenso a decine di tracciatori.</p>
+<p class="has-base-font-size" style="margin-top:20px;font-size:16px;line-height:1.7;max-width:760px">Questa pagina elenca i cookie tecnici del sito — quelli necessari al suo funzionamento — e i servizi esterni che si attivano solo su vostra azione. Il banner vi chiede una scelta semplice; qui trovate che cosa c’è dietro.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p style="margin-top:10px;font-size:14px;color:var(--sr-grigio)">Ultimo aggiornamento: 18 luglio 2026</p>
@@ -37,15 +37,6 @@
 <!-- /wp:heading -->
 <!-- wp:list -->
 <ul class="wp-block-list"><li>Scelta sui cookie: quando accettate o rifiutate dal banner, salviamo la vostra scelta nella memoria del browser (localStorage), così il banner non ricompare a ogni visita. Nessun dato lascia il vostro dispositivo.</li><li>Sessione e login di WordPress: cookie tecnici attivi solo per chi entra nell’area di amministrazione del sito (lo staff). Un visitatore normale non li riceve.</li><li>Area clienti (cab.remarka.biz): un cookie di sessione tecnico (cab_session), impostato solo dopo il login, per tenervi autenticati. È strettamente necessario e non richiede consenso.</li></ul>
-<!-- /wp:list -->
-</section>
-<!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
-<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:heading -->
-<h2 class="wp-block-heading">Cosa NON usiamo<span class="sr-accent-dot">.</span></h2>
-<!-- /wp:heading -->
-<!-- wp:list -->
-<ul class="wp-block-list"><li>Nessun cookie di Google Analytics o di altri strumenti di statistica.</li><li>Nessun pixel pubblicitario (Meta, Google Ads e simili).</li><li>Nessun cookie di profilazione o di remarketing.</li></ul>
 <!-- /wp:list -->
 </section>
 <!-- /wp:group -->

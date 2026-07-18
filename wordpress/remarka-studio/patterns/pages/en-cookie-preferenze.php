@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(30px,3.6vw,44px)">Cookie preferences<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:20px;font-size:16px;line-height:1.7;max-width:760px">There is little to configure on this site: we use only necessary technical cookies, which cannot be turned off without breaking basic functionality. There are no analytics or advertising cookies to accept or decline.</p>
+<p class="has-base-font-size" style="margin-top:20px;font-size:16px;line-height:1.7;max-width:760px">The technical cookies this site relies on cannot be turned off without breaking basic functionality. What you can do here is clear your saved banner choice and make it appear again.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p style="margin-top:10px;font-size:14px;color:var(--sr-grigio)">Last updated: 18 July 2026</p>

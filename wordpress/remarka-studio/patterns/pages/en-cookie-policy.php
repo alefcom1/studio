@@ -3,7 +3,7 @@
  * Title: Pagina — Cookie policy
  * Slug: remarka-studio/en-cookie-policy
  * Categories: remarka-pagine
- * Description: This site uses technical cookies only: no profiling, no analytics, no advertising. Here is what we use and how to change your choice.
+ * Description: The technical cookies on this site: what they do, which ones they are, and how to change your choice at any time.
  * Viewport Width: 1400
  */
 ?>
@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(30px,3.6vw,44px)">Cookie policy<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:20px;font-size:16px;line-height:1.7;max-width:760px">This site uses only technical cookies, the ones essential for it to work. No profiling cookies, no behavioural analytics, no advertising. That is why the banner asks you a simple choice, not consent to dozens of trackers.</p>
+<p class="has-base-font-size" style="margin-top:20px;font-size:16px;line-height:1.7;max-width:760px">This page lists the site’s technical cookies — the ones needed for it to work — and the external services that start only when you act. The banner asks you a simple choice; here is what sits behind it.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p style="margin-top:10px;font-size:14px;color:var(--sr-grigio)">Last updated: 18 July 2026</p>
@@ -37,15 +37,6 @@
 <!-- /wp:heading -->
 <!-- wp:list -->
 <ul class="wp-block-list"><li>Cookie choice: when you accept or decline from the banner, we save your choice in the browser’s storage (localStorage), so the banner does not reappear on every visit. No data leaves your device.</li><li>WordPress session and login: technical cookies active only for those who log into the site’s admin area (staff). A regular visitor never receives them.</li><li>Client area (cab.remarka.biz): a technical session cookie (cab_session), set only after login, to keep you authenticated. It is strictly necessary and requires no consent.</li></ul>
-<!-- /wp:list -->
-</section>
-<!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
-<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:heading -->
-<h2 class="wp-block-heading">What we do NOT use<span class="sr-accent-dot">.</span></h2>
-<!-- /wp:heading -->
-<!-- wp:list -->
-<ul class="wp-block-list"><li>No Google Analytics or other statistics cookies.</li><li>No advertising pixels (Meta, Google Ads and the like).</li><li>No profiling or remarketing cookies.</li></ul>
 <!-- /wp:list -->
 </section>
 <!-- /wp:group -->
