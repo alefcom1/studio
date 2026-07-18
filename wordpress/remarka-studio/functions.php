@@ -44,12 +44,11 @@ function remarka_enqueue_assets(): void {
 	$dir = get_stylesheet_directory_uri();
 
 	if ( remarka_has_local_fonts() ) {
-		wp_enqueue_style(
-			'remarka-fonts',
-			$dir . '/assets/css/fonts-local.css',
-			array(),
-			REMARKA_STUDIO_VERSION
-		);
+		// @font-face встраивается инлайном (см. ниже, после enqueue
+		// remarka-studio): файл 0,8 КиБ, а как отдельный <link> он стоил
+		// ~600 мс блокирующей задержки на мобильной сети (аудит PSI
+		// «Запросы, блокирующие отрисовку», 18.07.2026). Относительные
+		// url('../fonts/…') при инлайне переписываются на абсолютные.
 	} else {
 		wp_enqueue_style(
 			'remarka-fonts-cdn',
@@ -74,6 +73,17 @@ function remarka_enqueue_assets(): void {
 		array( 'prespa-style' ),
 		file_exists( $css_path ) ? (string) filemtime( $css_path ) : REMARKA_STUDIO_VERSION
 	);
+
+	// Инлайн @font-face при самохостинге шрифтов (см. комментарий выше):
+	// содержимое fonts-local.css с перепиской относительных путей на
+	// абсолютные (инлайн-CSS резолвится от URL страницы, не от файла).
+	if ( remarka_has_local_fonts() ) {
+		$fonts_css = file_get_contents( get_stylesheet_directory() . '/assets/css/fonts-local.css' );
+		if ( false !== $fonts_css ) {
+			$fonts_css = str_replace( '../fonts/', $dir . '/assets/fonts/', $fonts_css );
+			wp_add_inline_style( 'remarka-studio', $fonts_css );
+		}
+	}
 
 	wp_enqueue_script(
 		'remarka-studio',
