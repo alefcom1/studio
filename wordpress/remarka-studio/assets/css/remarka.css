@@ -307,17 +307,14 @@ body.dark-mode .site-description {
 }
 
 /* .sr-section > :not(.sr-watermark) (sopra in questo file) centra ogni
-   figlio diretto con max-width:1240px + margin-left/right:auto — pensato
-   per sezioni a piena larghezza dove i figli restano larghi quanto il
-   contenitore, quindi il margin:auto non sposta nulla in pratica. Qui
-   invece restringiamo i figli a 620px (colonna di testo più stretta
-   dell'illustrazione, stessa proporzione del mockup ~55/45): senza
-   azzerare i margini esplicitamente, quell'auto ereditato centrerebbe il
-   testo dentro la card invece di tenerlo a sinistra — stessa identica
-   specificità del selettore "> :not()", vince solo perché dichiarato
-   dopo. Nessun !important necessario. */
+   figlio diretto con max-width + margin-left/right:auto. Qui azzeriamo il
+   margine auto per tenere il testo a sinistra, ma NON limitiamo più la
+   larghezza (richiesta del titolare 18.07.2026: «убери ограничения
+   внутреннего контейнера, пусть по ширине будет не ограничен»). Il testo
+   usa tutta la larghezza della card, anche sopra l'illustrazione a destra:
+   il titolare accetta esplicitamente la sovrapposizione. */
 .sr-cta-band > :not(.sr-watermark) {
-  max-width: 620px;
+  max-width: none;
   margin-left: 0;
   margin-right: 0;
   padding-left: clamp(28px, 5vw, 64px);
@@ -345,7 +342,7 @@ body.dark-mode .site-description {
    il testo resta grigio scuro (#5A5E66) su blu notte, illeggibile. */
 .sr-cta-band .has-grigio-color {
   color: rgba(247, 246, 242, 0.85) !important;
-  max-width: 560px;
+  max-width: none;
 }
 
 /* I bottoni arrivano dal generatore con justifyContent:center (markup
@@ -366,7 +363,7 @@ body.dark-mode .site-description {
   margin-top: 32px;
   padding-top: 24px;
   border-top: 1px solid rgba(247, 246, 242, 0.16);
-  max-width: 620px;
+  max-width: none;
 }
 
 .sr-cta-band__trust-item {
@@ -808,6 +805,21 @@ body.page .entry-title {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+/* La card è figlia diretta di .sr-section, quindi eredita max-width:1440px:
+   il suo bordo cadeva sul filo del box da 1440 (a 120px dal margine su
+   schermo largo), mentre le card degli strumenti sotto stanno dentro una
+   griglia col padding da 24px e partono da 144px — la featured sporgeva di
+   24px per lato. Il titolare (18.07.2026) ha chiesto lo stesso rientro dei
+   «blocchi dei test»: 1392 = 1440 − 2×24, così i bordi coincidono. Solo da
+   ≥1024px, sotto vale il gutter pieno della sezione. */
+@media (min-width: 1024px) {
+  .sr-section > .sr-tools-feat,
+  .sr-section--bianco > .sr-tools-feat,
+  .is-style-sr-section > .sr-tools-feat {
+    max-width: 1392px;
+  }
 }
 
 .sr-tools-feat__img {
