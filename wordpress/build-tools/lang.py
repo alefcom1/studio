@@ -91,6 +91,12 @@ BLOG_SLUGS = {
     'dati-strutturati-schema-org':          {'en': 'schema-org-structured-data-for-smes',  'ru': 'schema-org-mikrorazmetka'},
     'gamification-b2b':                      {'en': 'gamification-in-b2b',                  'ru': 'gejmifikacija-v-b2b'},
     'hosting-sito-web-italia':              {'en': 'website-hosting-italy-vs-cloud',       'ru': 'hosting-v-italii-ili-oblako'},
+    # Blog · Batch 4 — IT + EN (RU è un batch a sé: slug RU pianificati, IT+EN-only).
+    'seo-locale-milano':                    {'en': 'local-seo-milan',                     'ru': 'lokalnoe-seo-milan'},
+    'google-business-profile-guida':        {'en': 'google-business-profile-guide',        'ru': 'google-business-profile-gid'},
+    'hreflang-sito-multilingue':            {'en': 'hreflang-multilingual-website',        'ru': 'hreflang-mnogojazychnyj-sajt'},
+    'sito-per-export':                      {'en': 'website-for-export',                   'ru': 'sajt-dlja-eksporta'},
+    'manutenzione-wordpress':               {'en': 'wordpress-maintenance',                'ru': 'obsluzhivanie-wordpress'},
 }
 
 # Articoli del blog pubblicati solo in IT + EN in questa fase (la loro versione
@@ -115,6 +121,12 @@ BLOG_IT_EN_ONLY = {
     'dati-strutturati-schema-org',
     'gamification-b2b',
     'hosting-sito-web-italia',
+    # Batch 4
+    'seo-locale-milano',
+    'google-business-profile-guida',
+    'hreflang-sito-multilingue',
+    'sito-per-export',
+    'manutenzione-wordpress',
 }
 
 

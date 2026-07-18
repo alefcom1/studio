@@ -5,7 +5,7 @@
  * обложка, для JSON-LD BlogPosting (см. remarka_blog_posting_schema).
  */
 return array(
-	'_modified' => '2026-07-17',
+	'_modified' => '2026-07-18',
 	'posts' => array(
 		'sito-quattro-lingue-costi-tempi' => array( 'date' => '2026-05-05', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg' ),
 		'website-four-languages-costs' => array( 'date' => '2026-05-05', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg' ),
@@ -59,5 +59,15 @@ return array(
 		'gamification-in-b2b' => array( 'date' => '2026-07-17', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/gamification-cover.svg' ),
 		'hosting-sito-web-italia' => array( 'date' => '2026-07-17', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/hosting-cover.svg' ),
 		'website-hosting-italy-vs-cloud' => array( 'date' => '2026-07-17', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/hosting-cover.svg' ),
+		'seo-locale-milano' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/seolocale-cover.svg' ),
+		'local-seo-milan' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/seolocale-cover.svg' ),
+		'google-business-profile-guida' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/gbp-cover.svg' ),
+		'google-business-profile-guide' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/gbp-cover.svg' ),
+		'hreflang-sito-multilingue' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/hreflang-cover.svg' ),
+		'hreflang-multilingual-website' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/hreflang-cover.svg' ),
+		'sito-per-export' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/export-cover.svg' ),
+		'website-for-export' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/export-cover.svg' ),
+		'manutenzione-wordpress' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/manutenzione-cover.svg' ),
+		'wordpress-maintenance' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/manutenzione-cover.svg' ),
 	),
 );

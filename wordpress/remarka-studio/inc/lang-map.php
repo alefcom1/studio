@@ -59,4 +59,9 @@ return array(
 	array( 'it' => 'blog/dati-strutturati-schema-org', 'en' => 'en/blog/schema-org-structured-data-for-smes', 'ru' => 'ru/blog' ),
 	array( 'it' => 'blog/gamification-b2b', 'en' => 'en/blog/gamification-in-b2b', 'ru' => 'ru/blog' ),
 	array( 'it' => 'blog/hosting-sito-web-italia', 'en' => 'en/blog/website-hosting-italy-vs-cloud', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/seo-locale-milano', 'en' => 'en/blog/local-seo-milan', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/google-business-profile-guida', 'en' => 'en/blog/google-business-profile-guide', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/hreflang-sito-multilingue', 'en' => 'en/blog/hreflang-multilingual-website', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/sito-per-export', 'en' => 'en/blog/website-for-export', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/manutenzione-wordpress', 'en' => 'en/blog/wordpress-maintenance', 'ru' => 'ru/blog' ),
 );

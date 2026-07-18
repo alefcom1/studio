@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Export digitale: il sito che apre mercati esteri">
+  <defs>
+    <pattern id="gridEx" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/></pattern>
+    <style>.mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}.disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}.body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}</style>
+  </defs>
+  <rect width="1200" height="630" fill="#F7F6F2"/>
+  <rect width="1200" height="630" fill="url(#gridEx)"/>
+  <line x1="80" y1="96" x2="1120" y2="96" stroke="#14161A" stroke-width="1.5"/>
+  <text x="80" y="82" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">REMARKA · STUDIO — BLOG</text>
+  <text x="1120" y="82" class="mono" font-size="15" letter-spacing="2" fill="#2440C8" text-anchor="end">EXPORT DIGITALE</text>
+  <text x="80" y="240" class="disp" font-size="82" letter-spacing="1" fill="#14161A">EXPORT</text>
+  <text x="80" y="322" class="disp" font-size="82" letter-spacing="1" fill="#2440C8">DIGITALE</text>
+  <text x="84" y="384" class="body" font-size="30" font-weight="600" fill="#14161A">il sito che apre mercati esteri</text>
+  <text x="84" y="424" class="mono" font-size="19" fill="#5A5E66">vendere all'estero non è tradurre la home</text>
+  <!-- market nodes -->
+  <g transform="translate(700,470)">
+    <line x1="40" y1="60" x2="180" y2="20" stroke="#2440C8" stroke-width="2.5"/>
+    <line x1="40" y1="60" x2="200" y2="70" stroke="#2440C8" stroke-width="2.5"/>
+    <line x1="40" y1="60" x2="150" y2="112" stroke="#2440C8" stroke-width="2.5"/>
+    <circle cx="40" cy="60" r="26" fill="#14161A"/><text x="40" y="65" class="mono" font-size="13" fill="#F7F6F2" text-anchor="middle">IT</text>
+    <circle cx="200" cy="20" r="22" fill="#FFFFFF" stroke="#2440C8" stroke-width="1.5"/><text x="200" y="25" class="mono" font-size="12" fill="#2440C8" text-anchor="middle">DE</text>
+    <circle cx="220" cy="70" r="22" fill="#FFFFFF" stroke="#2440C8" stroke-width="1.5"/><text x="220" y="75" class="mono" font-size="12" fill="#2440C8" text-anchor="middle">EN</text>
+    <circle cx="170" cy="112" r="22" fill="#FFFFFF" stroke="#2440C8" stroke-width="1.5"/><text x="170" y="117" class="mono" font-size="12" fill="#2440C8" text-anchor="middle">FR</text>
+  </g>
+</svg>

@@ -1955,6 +1955,19 @@ _S_NNG_MOTIV         = 'https://www.nngroup.com/articles/autonomy-relatedness-co
 _S_WEBDEV_TTFB       = 'https://web.dev/articles/ttfb'
 _S_WEBDEV_OPT_TTFB   = 'https://web.dev/articles/optimize-ttfb'
 _S_EDPB_TRANSFERS    = 'https://www.edpb.europa.eu/sme-data-protection-guide/international-data-transfers_en'
+# --- Batch 4 (fonti verificate 18.07 via WebSearch): SEO locale/Google Business
+#     Profile (guida al ranking locale, linee guida di rappresentazione, policy),
+#     BrightLocal Local Consumer Review Survey, hreflang/siti multi-regionali
+#     (Google Search Central), Eurostat e-commerce, CSA «Can't Read, Won't Buy»,
+#     manutenzione WordPress (documentazione WordPress.org + Patchstack). ---
+_S_GBP_LOCALRANK  = 'https://support.google.com/business/answer/7091'
+_S_GBP_GUIDELINES = 'https://support.google.com/business/answer/3038177'
+_S_GBP_POLICIES   = 'https://support.google.com/business/answer/13762416'
+_S_BRIGHTLOCAL    = 'https://www.brightlocal.com/research/local-consumer-review-survey/'
+_S_WP_UPDATING    = 'https://wordpress.org/documentation/article/updating-wordpress/'
+_S_WP_HARDENING   = 'https://developer.wordpress.org/advanced-administration/security/hardening/'
+_S_WP_BACKUP      = 'https://developer.wordpress.org/advanced-administration/security/backup/'
+_S_PATCHSTACK_24  = 'https://patchstack.com/whitepaper/state-of-wordpress-security-in-2024/'
 
 BLOG_POSTS = [
     dict(slug='sito-quattro-lingue-costi-tempi', data='05 MAG 2026', tema='decisioni',
@@ -2855,6 +2868,293 @@ BLOG_POSTS = [
               'Il testo del GDPR: la tutela dei dati personali e le regole sui trasferimenti fuori dall’UE.'),
              ('EDPB — trasferimenti internazionali di dati', _S_EDPB_TRANSFERS,
               'La guida del Comitato europeo: cosa serve quando i dati escono dall’Unione Europea (post Schrems II).'),
+         ]),
+
+    # ======================================================================
+    # Batch 4 (18.07) — SEO locale e città. 5 articoli IT+EN «locale»:
+    # SEO locale a Milano, Google Business Profile, hreflang, sito per l’export,
+    # manutenzione WordPress. Perelinkovka: servizio + strumento Lab + articolo
+    # vicino; gli articoli 16–17 linkano le pagine città (/milano/ tradotta;
+    # /roma/ /torino/ /dove-lavoriamo/ solo-IT). Esperienza reale solo verificata
+    # (ufficio Milano, casi ATT/ukrinitsy/пере.рф/TMS, 28 progetti in
+    # manutenzione). Onestà articolo GBP: la scheda Google del gruppo è sotto il
+    # marchio dell’agenzia di traduzioni (ATT), non sotto Studio Remarka — detto
+    # esplicitamente, non spacciato per modello. Fonti verificate via WebSearch.
+    # ======================================================================
+    dict(slug='seo-locale-milano', data='18 LUG 2026', tema='seo',
+         titolo='SEO locale a Milano: come emergere nella città più competitiva',
+         estratto='A Milano si cerca «vicino a me» e si sceglie chi appare per primo nella mappa. Come funziona la SEO locale, cosa pesa davvero nel ranking e da dove partire — con il nostro ufficio in città come banco di prova.',
+         corpo="Un artigiano ai Navigli, un fisioterapista in Città Studi, un ristorante a Porta Romana: a Milano ognuno di loro compete con altri venti nel raggio di un chilometro. E quando un cliente cerca «fisioterapista vicino a me» dal telefono, non scorre dieci pagine di risultati — guarda i primi tre nella mappa e sceglie lì. La SEO locale a Milano è la disciplina che decide chi finisce in quei tre posti. Non è una questione di magia né di budget: è un lavoro fatto di segnali precisi, che quasi nessuno cura fino in fondo. Vediamo come funziona davvero, cosa pesa nel ranking e da dove partire — con il nostro ufficio in città come esempio concreto.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/seolocale-cover.svg',
+                    alt='SEO locale a Milano: la mappa con i primi tre risultati che un cliente vede cercando «vicino a me»'),
+         cta=('SEO tecnica e locale, di serie in ogni sito, a prezzo chiuso', '/servizi/seo-tecnica/'),
+         sezioni=[
+             dict(titolo='Perché a Milano la SEO locale è una gara diversa',
+                  paragrafi=[
+                      "Milano è il mercato più affollato d’Italia per quasi ogni servizio: per lo stesso mestiere convivono in città centinaia di attività, e la concorrenza non è nazionale, è a isolati di distanza. Questo cambia le regole. Farsi trovare per «commercialista Milano» non serve a niente se non si compare quando qualcuno, a due fermate di metro, cerca proprio in quel momento. La SEO locale non punta al primo posto nazionale: punta a essere il più rilevante per chi è vicino, adesso.",
+                      "Il campo di battaglia ha un nome preciso: il «local pack», quel blocco con la mappa e tre attività che Google mostra in cima ai risultati di ricerca a intento locale. Sotto ci sono i link classici, ma l’occhio — soprattutto da mobile — cade lì. Entrare in quei tre riquadri vale più di dieci posizioni organiche: è la vetrina che il cliente vede prima di tutto il resto. E a Milano, dove i concorrenti sono tanti, la differenza tra esserci e non esserci è la differenza tra squillare e restare muti.",
+                  ]),
+             dict(titolo='I tre fattori che decidono la mappa',
+                  paragrafi=[
+                      "Google è insolitamente esplicito su come sceglie chi mostrare nel local pack. Nella sua guida ufficiale al ranking locale indica tre fattori, e vale la pena conoscerli perché su tutti e tre si può lavorare.",
+                  ],
+                  lista=[
+                      'Rilevanza: quanto la vostra scheda corrisponde a ciò che la persona cerca. Più le informazioni sono complete e precise — categoria giusta, servizi, descrizione — più Google vi abbina alle ricerche pertinenti.',
+                      'Distanza: quanto siete lontani da chi cerca. Non la controllate, ma la potete assecondare: un indirizzo esatto e una zona di servizio dichiarata dicono a Google dove operate davvero.',
+                      'Prominenza: quanto siete conosciuti. Pesano le recensioni, le citazioni del nome e dell’indirizzo su altri siti, e — sì — anche quanti siti autorevoli parlano di voi. Qui la SEO locale incontra quella «classica».',
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/seolocale-fattori.svg',
+                              alt='I tre fattori della SEO locale a Milano secondo Google: rilevanza, distanza e prominenza, che decidono il local pack',
+                              caption='I tre fattori con cui Google decide il local pack: rilevanza (quanto la scheda corrisponde alla ricerca), distanza (quanto siete vicini a chi cerca) e prominenza (quanto siete conosciuti, recensioni comprese). Su tutti e tre si lavora. Fonte: Google, guida ufficiale al ranking locale.')),
+             dict(titolo='La scheda Google: il vostro negozio prima del negozio',
+                  paragrafi=[
+                      "Il motore della SEO locale è la scheda Google (Google Business Profile): è lei a comparire nella mappa, con nome, orari, foto, telefono e recensioni. Per molte ricerche locali il cliente decide guardando solo quella, senza aprire il sito. Curarla non è un dettaglio, è la base: una scheda incompleta o con orari sbagliati vi taglia fuori dai risultati pertinenti prima ancora della concorrenza.",
+                      "E poi ci sono le recensioni, che pesano su fiducia e ranking insieme. Secondo l’indagine annuale di BrightLocal sui consumatori, la quasi totalità delle persone legge le recensioni prima di scegliere un’attività locale. Non significa inventarle — sarebbe un boomerang, oltre che una violazione — ma chiederle con metodo a chi è stato bene. Alla scheda Google e a come si cura senza trucchi abbiamo dedicato un articolo a parte, perché merita una guida sua.",
+                  ],
+                  links=[('Google — guida al ranking locale', _S_GBP_LOCALRANK),
+                         ('Leggi anche: Google Business Profile, la vetrina che nessuno cura', '/blog/google-business-profile-guida/')]),
+             dict(titolo='Il sito conta ancora: dati strutturati e contenuti locali',
+                  paragrafi=[
+                      "La scheda Google non vive da sola: si appoggia al vostro sito, e un sito curato rafforza tutto il resto. Il primo mattone sono i dati strutturati — quel blocco di codice, invisibile al visitatore, che dice a Google «questa è un’attività locale, ecco nome, indirizzo, orari e zona». È il tipo LocalBusiness di schema.org, e Google lo legge per capire e mostrare meglio la vostra scheda. Il secondo mattone è la coerenza: nome, indirizzo e telefono devono essere identici ovunque compaiano, sul sito e sulle directory.",
+                      "Poi vengono i contenuti che parlano davvero del territorio. Non «keyword Milano» ripetute a forza, ma pagine e testi che rispondono a domande locali reali: le zone che servite, i casi seguiti in città, i tempi di intervento in provincia. È lavoro di SEO tecnica e di contenuto insieme, ed è esattamente quello che consegniamo di serie — non un extra da vedere «più avanti». Prima di aggiungere una riga, però, conviene misurare i segnali che il vostro sito già manda a Google.",
+                  ],
+                  links=[('Dati strutturati e SEO tecnica in ogni sito', '/servizi/seo-tecnica/'),
+                         ('Misura gratis i segnali E-E-A-T e i dati strutturati della vostra home', '/strumenti/segnali-eeat/'),
+                         ('Google — dati strutturati e LocalBusiness', _S_GOOGLE_SD)]),
+             dict(titolo='Da dove partire, a Milano e oltre',
+                  paragrafi=[
+                      "L’ordine giusto è controintuitivo: prima la scheda Google (completa, verificata, con recensioni vere), poi il sito (dati strutturati, NAP coerente, contenuti locali), infine la prominenza (citazioni e link autorevoli, che arrivano col tempo). Saltare il primo passo per rincorrere il terzo è l’errore più comune, e il più costoso. A Milano, dove i concorrenti curano già almeno la scheda, la partita si gioca sui dettagli che gli altri trascurano.",
+                      "Questo lavoro lo facciamo dove i clienti sono, non solo online: a Milano abbiamo un ufficio vero, in Vicolo Privato Lavandai, e il primo incontro — da voi o da noi — non si paga. Ma il metodo è lo stesso in tutta Italia: analizziamo la scheda e il sito attuali, vi diciamo cosa manca nero su bianco, e lavoriamo per farvi entrare in quella mappa. Il nostro biglietto da visita, del resto, è un sito che abbiamo costruito per un’agenzia del gruppo con la stessa cura che mettiamo per voi.",
+                  ],
+                  links=[('Realizzazione siti web a Milano: come lavoriamo in città', '/milano/'),
+                         ('Dove lavoriamo, in tutta Italia', '/dove-lavoriamo/'),
+                         ('Il caso ATT, il sito dell’agenzia di traduzioni', '/casi-studio/')]),
+         ],
+         fonti=[
+             ('Google — migliorare il ranking locale su Google', _S_GBP_LOCALRANK,
+              'La guida ufficiale: i tre fattori (rilevanza, distanza, prominenza) e come Google sceglie il local pack.'),
+             ('Google — dati strutturati e LocalBusiness', _S_GOOGLE_SD,
+              'Come il markup LocalBusiness aiuta Google a capire e mostrare un’attività locale.'),
+             ('BrightLocal — Local Consumer Review Survey', _S_BRIGHTLOCAL,
+              'L’indagine annuale sui consumatori: quasi tutti leggono le recensioni prima di scegliere un’attività locale.'),
+         ]),
+
+    dict(slug='google-business-profile-guida', data='18 LUG 2026', tema='seo',
+         titolo='Google Business Profile: la vetrina gratuita che nessuno cura',
+         estratto='È gratis, la vede più gente della vostra home e decide se vi scelgono o passano oltre. Cos’è un Google Business Profile, come si cura sul serio e gli errori che vi tagliano fuori dai risultati.',
+         corpo="C’è una pagina che, per molte ricerche, la gente vede prima del vostro sito: la scheda che compare a destra quando cercano il vostro nome, o nella mappa quando cercano un servizio «vicino a me». È il vostro Google Business Profile, ed è gratuito. Eppure è la cosa peggio curata del marketing di quasi ogni PMI italiana: orari vecchi, foto sfocate, una descrizione scritta di fretta anni fa e mai più toccata. Chi la cura sul serio si prende un vantaggio che i concorrenti gli regalano ogni giorno. Vediamo cos’è davvero un Google Business Profile, come si tiene in ordine senza trucchi, e quali errori vi tagliano fuori dai risultati.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/gbp-cover.svg',
+                    alt='Google Business Profile: la scheda gratuita con nome, orari, foto e recensioni che i clienti vedono prima del sito'),
+         cta=('SEO tecnica e locale che lavora insieme alla scheda Google', '/servizi/seo-tecnica/'),
+         sezioni=[
+             dict(titolo='Cos’è (e perché la vede più gente della vostra home)',
+                  paragrafi=[
+                      "Un Google Business Profile è la scheda gratuita che rappresenta la vostra attività su Google Search e Google Maps. Contiene nome, categoria, indirizzo o zona di servizio, orari, telefono, sito, foto e recensioni. Non è il vostro sito e non lo sostituisce: è ciò che Google mostra di voi quando qualcuno vi cerca, spesso senza che quel qualcuno arrivi mai alla vostra home. Per un’attività locale è, di fatto, la prima pagina — quella su cui si decide se chiamarvi o passare al prossimo.",
+                      "Il paradosso è che questa vetrina costa zero e la vede tantissima gente, e proprio per questo viene trascurata: è gratis, quindi sembra meno importante di una campagna a pagamento. È l’opposto. Una scheda completa e aggiornata è tra gli investimenti a più alto ritorno che esistano, perché lavora su ogni ricerca del vostro nome e su quelle a intento locale, tutti i giorni, senza costo per clic.",
+                  ]),
+             dict(titolo='Come si cura sul serio: completezza, recensioni, coerenza',
+                  paragrafi=[
+                      "La cura di una scheda non è un gesto una tantum, è manutenzione. Tre leve contano più delle altre, e sono le stesse che Google indica nella sua guida al ranking locale.",
+                  ],
+                  lista=[
+                      'Completezza: compilate ogni campo — categoria principale corretta, servizi, descrizione onesta, orari veri (festivi compresi), foto reali e recenti. Una scheda completa è più probabile che compaia per le ricerche pertinenti.',
+                      'Recensioni: chiedetele con metodo a chi è stato bene, rispondete a tutte con educazione, anche alle critiche. Contano per la fiducia e per il ranking — ma solo se sono vere.',
+                      'Coerenza (NAP): nome, indirizzo e telefono devono essere identici sulla scheda, sul sito e su ogni directory. Le incoerenze confondono Google e vi fanno perdere posizioni.',
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/gbp-scheda.svg',
+                              alt='Anatomia di un Google Business Profile curato: nome, categoria, orari veri, foto reali, recensioni con risposte e NAP coerente',
+                              caption='Una scheda Google curata, campo per campo: categoria corretta, orari veri, foto reali, recensioni con risposte e un NAP (nome, indirizzo, telefono) identico ovunque. La completezza è ciò che la fa comparire nelle ricerche pertinenti. Fonte: Google, guida al ranking locale e linee guida di rappresentazione.')),
+             dict(titolo='Gli errori che vi tagliano fuori dai risultati',
+                  paragrafi=[
+                      "Google ha regole precise su come un’attività va rappresentata, e violarle non è furbizia: porta a sospensioni della scheda, cioè a sparire dai risultati. Le linee guida ufficiali sono chiare, e gli errori più comuni sono anche i più facili da evitare.",
+                  ],
+                  lista=[
+                      'Nome «arricchito» con parole chiave: «Mario Rossi Idraulico Milano Pronto Intervento 24h» viola le regole. Il nome deve essere quello reale dell’attività, punto.',
+                      'Indirizzo finto o casella postale per simulare una sede che non c’è: è tra le violazioni prese più sul serio.',
+                      'Categorie a raffica: sceglietene poche e pertinenti, non tutte quelle possibili. La precisione batte la quantità.',
+                      'Promozioni e prezzi nella descrizione, o link vietati: la descrizione racconta chi siete, non «tutto al -50%».',
+                  ],
+                  links=[('Google — linee guida per rappresentare la vostra attività', _S_GBP_GUIDELINES),
+                         ('Google — panoramica delle policy del Business Profile', _S_GBP_POLICIES)]),
+             dict(titolo='Una nota onesta sul nostro caso',
+                  paragrafi=[
+                      "Qui serve trasparenza, perché è facile spacciare la propria situazione per modello. La presenza su Google del nostro gruppo è storicamente registrata sotto il marchio dell’agenzia di traduzioni (ATT), non sotto Studio Remarka: non vi mostriamo «la nostra scheda perfetta» come esempio, perché non sarebbe onesto. Quello che vi diamo sono le regole che valgono per tutti, applicate come si deve — e il fatto, questo sì reale, che a Milano abbiamo un ufficio vero su cui una scheda locale poggia su un indirizzo che esiste.",
+                      "Il punto è proprio questo: una scheda Google funziona quando dietro c’è qualcosa di vero — un indirizzo, degli orari, un servizio reso davvero. Nessun trucco regge a lungo, e Google è sempre più bravo a smascherarli. La buona notizia è che la maggior parte dei vostri concorrenti la scheda non la cura affatto: bastano completezza, onestà e costanza per stare davanti.",
+                  ]),
+             dict(titolo='La scheda è metà del lavoro: l’altra metà è il sito',
+                  paragrafi=[
+                      "Una scheda curata porta la persona a un passo dalla scelta; poi, spesso, quella persona clicca sul sito per confermare la decisione. Se il sito è lento, vecchio o poco chiaro, il lavoro fatto sulla scheda si perde all’ultimo metro. Scheda Google e sito lavorano in coppia: dati strutturati LocalBusiness, NAP coerente, contenuti locali e velocità sono ciò che tiene insieme le due metà. È SEO tecnica, ed è quella che mettiamo di serie.",
+                      "Da dove cominciare, in pratica? Rivendicate e verificate la scheda, completatela campo per campo, avviate una raccolta onesta di recensioni. In parallelo, misurate cosa dice di voi il sito oggi. E se volete il quadro completo del perché a Milano — e in ogni città competitiva — questa partita conti così tanto, l’abbiamo raccontato nell’articolo sulla SEO locale.",
+                  ],
+                  links=[('SEO tecnica e locale, a prezzo chiuso', '/servizi/seo-tecnica/'),
+                         ('Analizza gratis la SEO on-page della vostra pagina', '/strumenti/analisi-seo/'),
+                         ('Leggi anche: SEO locale a Milano, come emergere', '/blog/seo-locale-milano/'),
+                         ('Che siate a Milano, Roma o Torino: dove lavoriamo', '/dove-lavoriamo/')]),
+         ],
+         fonti=[
+             ('Google — migliorare il ranking locale su Google', _S_GBP_LOCALRANK,
+              'La guida ufficiale: perché completezza, recensioni e verifica della scheda aiutano a comparire.'),
+             ('Google — linee guida per rappresentare la vostra attività', _S_GBP_GUIDELINES,
+              'Le regole su nome, indirizzo e categorie: cosa è ammesso e cosa porta alla sospensione della scheda.'),
+             ('Google — panoramica delle policy del Business Profile', _S_GBP_POLICIES,
+              'Le policy generali del profilo: contenuti proibiti e limitati, e come Google le applica.'),
+             ('BrightLocal — Local Consumer Review Survey', _S_BRIGHTLOCAL,
+              'L’indagine annuale: quanto le recensioni pesano nella scelta di un’attività locale.'),
+         ]),
+
+    dict(slug='hreflang-sito-multilingue', data='18 LUG 2026', tema='seo',
+         titolo='Sito multilingue: hreflang senza mal di testa',
+         estratto='Un sito in più lingue mal collegato manda l’inglese a chi cerca in italiano e si fa concorrenza da solo. Cos’è l’hreflang, come si imposta senza errori e perché è ingegneria, non un plugin.',
+         corpo="Avete tradotto il sito in inglese e tedesco, giustamente. Ma ora un cliente italiano cerca su Google e si ritrova la pagina inglese; un tedesco atterra sulla versione italiana; e le vostre due pagine — stesso contenuto, lingue diverse — si fanno concorrenza a vicenda nei risultati. Il colpevole è quasi sempre lo stesso: manca, o è sbagliato, l’hreflang. È l’attributo con cui si dice a Google «questa pagina è la versione italiana, quest’altra l’inglese, servile alla persona giusta». Si sente parlare di hreflang per un sito multilingue come di qualcosa di ostico: lo è, se lo si tratta come un plugin da attivare. Vediamo cos’è davvero, come si imposta senza errori e perché è ingegneria, non fortuna.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/hreflang-cover.svg',
+                    alt='Hreflang per un sito multilingue: le versioni italiana, inglese e tedesca collegate così che Google serva la lingua giusta'),
+         cta=('Siti multilingue con hreflang e madrelingua, a prezzo chiuso', '/servizi/siti-multilingue/'),
+         sezioni=[
+             dict(titolo='Cos’è l’hreflang (in parole vostre)',
+                  paragrafi=[
+                      "Immaginate di avere la stessa pagina in tre lingue: italiano, inglese, tedesco. Per un motore di ricerca sono tre indirizzi diversi con contenuti che si somigliano molto — e senza un’indicazione esplicita, Google deve indovinare quale mostrare a chi, rischiando di sbagliare o di considerarle contenuti duplicati. L’hreflang è quell’indicazione esplicita: un piccolo segnale, presente su ogni versione, che dice «esisto in queste lingue, ecco gli indirizzi di tutte, e io sono quella per l’italiano».",
+                      "La regola d’oro è la reciprocità: se la pagina italiana punta all’inglese, l’inglese deve puntare all’italiano, e ogni versione deve elencare tutte le altre — sé stessa compresa. Google, nella sua documentazione ufficiale sulle versioni localizzate, insiste proprio su questo: i riferimenti devono essere bidirezionali e completi, altrimenti li ignora. È qui che nascono la maggior parte dei mal di testa: non nel concetto, ma nella coerenza da mantenere su decine di pagine.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/hreflang-versioni.svg',
+                              alt='Come funziona l’hreflang in un sito multilingue: le versioni italiana, inglese e tedesca si citano a vicenda in modo reciproco',
+                              caption='L’hreflang collega le versioni di una pagina: ognuna dichiara sé stessa e tutte le altre, in modo reciproco (se IT punta a EN, EN deve puntare a IT). Così Google serve la lingua giusta e non le tratta come contenuti duplicati. Fonte: Google Search Central, versioni localizzate.')),
+             dict(titolo='Gli errori che rompono un sito multilingue',
+                  paragrafi=[
+                      "Quasi tutti i problemi di hreflang nascono da pochi errori ricorrenti. Conoscerli è metà del lavoro, perché sono quasi sempre gli stessi.",
+                  ],
+                  lista=[
+                      'Riferimenti non reciproci: la pagina IT cita la EN, ma la EN non ricambia. Google scarta l’intera coppia e torna a indovinare.',
+                      'Codici lingua sbagliati: «en-UK» non esiste (è «en-GB»), e un codice inventato viene ignorato in silenzio.',
+                      'URL relativi o pagine che rimandano a versioni in «noindex»: l’hreflang deve puntare a indirizzi assoluti e indicizzabili, o non serve a nulla.',
+                      'Manca l’autoreferenza: ogni versione deve elencare anche sé stessa. Dimenticarlo è l’errore più comune e più silenzioso.',
+                  ],
+                  links=[('Google — dire a Google le versioni localizzate (hreflang)', _S_GOOGLE_HREFLANG)]),
+             dict(titolo='Hreflang non è tutto: la lingua deve suonare vera',
+                  paragrafi=[
+                      "C’è un equivoco da smontare: l’hreflang risolve il «quale versione mostrare», non il «la versione è buona». Potete avere l’hreflang perfetto e perdere comunque il cliente, se la traduzione suona finta. Una scheda prodotto tradotta a macchina, con un registro sbagliato, allontana chi la legge nella propria lingua — e nessun attributo tecnico lo compensa. La ricerca di CSA («Can’t Read, Won’t Buy») lo dice da anni: le persone comprano molto più volentieri nella propria lingua, e diffidano dei testi che suonano stranieri.",
+                      "Per questo, da noi, il multilingue è due mestieri in uno: l’ingegneria che collega le versioni (hreflang, sitemap, struttura degli URL) e i redattori madrelingua che scrivono, non traducono a macchina. Le lingue le curano madrelingua del gruppo Remarka, nel settore dal 2001, selezionati da una piattaforma di test interna che scarta la stragrande maggioranza dei candidati — la stessa che tiene la qualità di ogni nostro progetto multilingue. E se un mercato ha regole proprie — per la Germania, l’Austria — la parte tecnica va oltre l’hreflang: è la gestione dei siti multi-regionali.",
+                  ],
+                  links=[('Siti multilingue con redattori madrelingua', '/servizi/siti-multilingue/'),
+                         ('Google — gestire i siti multi-regionali e multilingue', _S_GOOGLE_MULTIREG),
+                         ('La piattaforma che seleziona chi traduce (solo l’8% passa)', '/casi-studio/')]),
+             dict(titolo='Come si tiene in ordine, senza impazzire',
+                  paragrafi=[
+                      "Il segreto per non impazzire con l’hreflang è non gestirlo a mano. Su decine di pagine e tre lingue, mantenere a mano i riferimenti reciproci è una fonte inesauribile di errori. La soluzione è generare l’hreflang da un’unica mappa delle corrispondenze — una fonte di verità sola, da cui ogni pagina eredita i propri collegamenti — così che aggiungere una pagina non significhi aggiornarne trenta. È esattamente l’approccio con cui è costruito questo sito: italiano alla radice, inglese e russo come alberi coerenti, collegati da una mappa che non si tocca a mano.",
+                      "In pratica, prima di aggiungere lingue conviene verificare come Google legge già il vostro sito: se le versioni esistenti si citano correttamente, se ci sono codici sbagliati, se qualcosa finisce fuori indice. Un’analisi SEO on-page fa emergere questi problemi prima che costino posizioni. E se state pensando non solo a tradurre ma ad aprire un mercato estero per davvero, l’hreflang è solo il primo pezzo di un discorso più grande: quello dell’export digitale.",
+                  ],
+                  links=[('Analizza gratis la SEO on-page della vostra pagina', '/strumenti/analisi-seo/'),
+                         ('Progettiamo il vostro sito multilingue a prezzo chiuso', '/servizi/siti-multilingue/'),
+                         ('Leggi anche: export digitale, il sito che apre mercati esteri', '/blog/sito-per-export/')]),
+         ],
+         fonti=[
+             ('Google Search Central — versioni localizzate (hreflang)', _S_GOOGLE_HREFLANG,
+              'La documentazione ufficiale: come dichiarare le versioni per lingua, con riferimenti reciproci e completi.'),
+             ('Google Search Central — siti multi-regionali e multilingue', _S_GOOGLE_MULTIREG,
+              'Come gestire lingua e Paese insieme: struttura degli URL, targeting e insidie da evitare.'),
+             ('CSA Research — «Can’t Read, Won’t Buy»', _S_CSA,
+              'La ricerca sul comportamento d’acquisto: le persone comprano molto più volentieri nella propria lingua.'),
+         ]),
+
+    dict(slug='sito-per-export', data='18 LUG 2026', tema='decisioni',
+         titolo='Export digitale: il sito che apre mercati esteri',
+         estratto='Vendere all’estero non è tradurre la home. Cosa serve davvero a un sito per l’export — lingue native, SEO internazionale, pagamenti e fiducia — e i casi reali che l’hanno fatto.',
+         corpo="Un’azienda manifatturiera bresciana fa il 40% del fatturato in Germania, ma il suo sito è solo in italiano — e i clienti tedeschi ordinano per telefono, quando va bene. Una guest house sul lago di Como riempie le stanze con ospiti stranieri, ma online si presenta in una lingua sola. È lo spreco silenzioso di tantissime PMI italiane: il prodotto è pronto per l’estero, il sito no. Un sito per l’export non è la home tradotta con un plugin: è uno strumento pensato per farsi trovare, capire e scegliere da chi vive in un altro mercato. Vediamo cosa serve davvero, e i casi reali del gruppo Remarka che l’hanno fatto — con numeri, non promesse.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/export-cover.svg',
+                    alt='Un sito per l’export che apre mercati esteri: lingue native, SEO internazionale, pagamenti e fiducia oltre confine'),
+         cta=('Sito export-ready per i vostri mercati esteri, a prezzo chiuso', '/servizi/export-ready/'),
+         sezioni=[
+             dict(titolo='Perché «tradurre la home» non è export',
+                  paragrafi=[
+                      "L’errore di partenza è pensare all’export come a un problema di traduzione. Tradurre è l’ultimo strato, non il primo. Un sito per l’export deve rispondere a domande che la versione italiana non si pone: la persona in Germania trova il sito quando cerca nella sua lingua? Capisce come comprare, con quali pagamenti, in quale valuta? Si fida di un’azienda straniera che non conosce? Se anche una sola di queste risposte è «no», la traduzione più bella del mondo non porta un ordine.",
+                      "La statistica di fondo è impietosa. La ricerca di CSA Research («Can’t Read, Won’t Buy») mostra che la stragrande maggioranza dei consumatori compra molto più volentieri nella propria lingua, e molti evitano del tutto i siti che non la parlano. E l’e-commerce transfrontaliero, dicono i dati Eurostat, è una fetta in crescita ma ancora frenata proprio da lingua, fiducia e logistica. L’export digitale è colmare quel divario, non solo aprire il traduttore automatico.",
+                  ]),
+             dict(titolo='Cosa serve davvero a un sito per l’export',
+                  paragrafi=[
+                      "Un sito che vende all’estero poggia su quattro pilastri, e la traduzione è solo uno dei quattro. Toglietene uno e il mercato resta chiuso.",
+                  ],
+                  lista=[
+                      'Lingue native, non automatiche: testi scritti da chi la lingua la vive, con il registro giusto per quel mercato. È il pilastro della fiducia.',
+                      'SEO internazionale: hreflang corretto, struttura per lingua e Paese, contenuti pensati per come si cerca là. Se non vi trovano, non esistete.',
+                      'Pagamenti e valute locali: i metodi che quel mercato usa davvero, non solo la carta. In Germania, per dire, contano mezzi diversi dai nostri.',
+                      'Fiducia oltre confine: informazioni chiare su spedizioni, resi, tempi e assistenza nella lingua del cliente. La fiducia si costruisce sui dettagli.',
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/export-mercati.svg',
+                              alt='I quattro pilastri di un sito per l’export: lingue native, SEO internazionale, pagamenti locali e fiducia oltre confine',
+                              caption='Un sito per l’export poggia su quattro pilastri: lingue native (non automatiche), SEO internazionale (hreflang e struttura per mercato), pagamenti e valute locali, fiducia oltre confine (spedizioni, resi, assistenza nella lingua del cliente). La traduzione è uno dei quattro, non il tutto. Fonti: CSA Research, Eurostat.')),
+             dict(titolo='I casi reali: chi ha aperto un mercato per davvero',
+                  paragrafi=[
+                      "Non parliamo in teoria. Una guest house sul lago di Como, ukrinitsy.ru, dopo un sito vetrina veloce e in più lingue ha visto le prenotazioni dirette crescere di oltre il 450% in una stagione: gli ospiti stranieri prenotano dal sito, senza passare dai portali. Un’agenzia del gruppo, con пере.рф, è arrivata al primo posto su Yandex per le query di settore con la sola SEO tecnica su un dominio-caso-limite — la prova che il posizionamento in un mercato estero lo fa l’ingegneria, non la fortuna del nome.",
+                      "E c’è il caso che conosciamo meglio, perché è il nostro biglietto da visita: ATT (traduzione.tech) lavora su oltre 40 combinazioni e direzioni linguistiche, con un sito costruito per parlare la lingua del cliente B2B in ogni mercato. La stessa ingegneria — lingue native, SEO internazionale, struttura pulita — è quella che mettiamo in un sito export-ready per voi. I casi, con il link al progetto vivo, sono tutti aperti e verificabili.",
+                  ],
+                  links=[('Sito export-ready: cosa include e per quali mercati', '/servizi/export-ready/'),
+                         ('I casi reali del gruppo, con link al progetto vivo', '/casi-studio/')]),
+             dict(titolo='Quanto rende: misurare prima di partire',
+                  paragrafi=[
+                      "Aprire un mercato costa, ed è giusto chiedersi se rende prima di partire. La domanda non è «quanto costa tradurre», ma «quanto vale un cliente in più in quel mercato, e quanti ne servono per ripagare il lavoro». Un catalogo tradotto da madrelingua e un checkout ridotto all’osso sono le due leve che spostano più vendite dirette all’estero — ma vanno dimensionate sul ritorno atteso, non sull’entusiasmo. Meglio partire da un mercato solo, fatto bene, che da cinque fatti a metà.",
+                      "Uno strumento per iniziare a ragionare c’è: un calcolo del ritorno della localizzazione, che mette in fila costo del lavoro linguistico e vendite potenziali per capire da quale lingua conviene partire. E se il primo mercato è dietro l’angolo — la Germania, l’Austria, la Svizzera per chi esporta manifattura — il pezzo tecnico da non sbagliare resta quello dell’hreflang, che abbiamo raccontato a parte.",
+                  ],
+                  links=[('Calcola il ROI della localizzazione', '/strumenti/roi-localizzazione/'),
+                         ('Siti multilingue con redattori madrelingua', '/servizi/siti-multilingue/'),
+                         ('Leggi anche: sito multilingue, hreflang senza mal di testa', '/blog/hreflang-sito-multilingue/')]),
+         ],
+         fonti=[
+             ('CSA Research — «Can’t Read, Won’t Buy»', _S_CSA,
+              'La ricerca sul comportamento d’acquisto: la maggioranza compra nella propria lingua ed evita i siti che non la parlano.'),
+             ('Eurostat — statistiche sull’e-commerce', _S_EUROSTAT_ECOM,
+              'I dati europei: quanto pesa l’e-commerce transfrontaliero e cosa ancora lo frena.'),
+             ('Google Search Central — siti multi-regionali e multilingue', _S_GOOGLE_MULTIREG,
+              'Come impostare lingua e Paese per farsi trovare correttamente nei mercati esteri.'),
+         ]),
+
+    dict(slug='manutenzione-wordpress', data='18 LUG 2026', tema='prestazioni',
+         titolo='Manutenzione WordPress: cosa succede se non la fate',
+         estratto='Un WordPress non aggiornato non «resta com’è»: invecchia, si buca e un giorno non si apre più. Cosa comporta la manutenzione, cosa rischia chi la salta e perché non è un costo ma un’assicurazione.',
+         corpo="«Il sito funziona, perché pagare la manutenzione?» È la domanda con cui si risparmiano cento euro l’anno e se ne perdono mille in una notte. Un sito WordPress non è un quadro appeso al muro: è un software vivo, fatto di un core, di plugin e di un tema che il mondo intorno — browser, PHP, standard di sicurezza — continua a cambiare. Non aggiornarlo non vuol dire «lasciarlo com’è»: vuol dire lasciarlo invecchiare finché un giorno non si apre più, o peggio, finché qualcuno ci entra. Vediamo cosa comporta davvero la manutenzione di un sito WordPress, cosa rischia chi la salta, e perché non è un costo ma un’assicurazione.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/manutenzione-cover.svg',
+                    alt='Manutenzione WordPress: backup, aggiornamenti, test e monitoraggio che tengono un sito sicuro e in piedi nel tempo'),
+         cta=('Un sito aziendale con 12 mesi di manutenzione inclusa, a prezzo chiuso', '/servizi/siti-aziendali/'),
+         sezioni=[
+             dict(titolo='Perché un WordPress non «resta com’è»',
+                  paragrafi=[
+                      "WordPress fa girare una fetta enorme del web, e questa diffusione ha un rovescio: è anche il bersaglio preferito di chi cerca falle da sfruttare. Il core è mantenuto bene e riceve aggiornamenti di sicurezza in continuazione — spesso automatici — ma il sito non è solo il core: è il core più i plugin più il tema. Ed è lì che si apre il problema. Secondo il report annuale di Patchstack sulla sicurezza di WordPress, la quasi totalità delle vulnerabilità scoperte non sta nel core, ma nei plugin e nei temi di terze parti.",
+                      "Il dato è netto: nel 2024 sono state trovate quasi ottomila nuove vulnerabilità nell’ecosistema WordPress, e circa il 96% riguardava i plugin. Ogni plugin non aggiornato è una porta che qualcuno, prima o poi, prova ad aprire. Non aggiornare non congela il sito in uno stato sicuro: lo lascia esposto a falle che diventano pubbliche e sfruttabili col passare dei mesi. Il «resta com’è» è un’illusione — quello che resta è solo il rischio, che cresce.",
+                  ]),
+             dict(titolo='Cosa comporta la manutenzione (fatta bene)',
+                  paragrafi=[
+                      "Manutenzione non vuol dire «cliccare aggiorna a caso». Vuol dire un ciclo ordinato che tiene il sito sicuro, veloce e recuperabile. Sono poche cose, ma vanno fatte con metodo — la documentazione ufficiale di WordPress.org insiste su ognuna di esse.",
+                  ],
+                  lista=[
+                      'Backup prima di ogni intervento: database e file, completi e verificati. Senza un backup che funziona, un aggiornamento andato male è un disastro; con quello, è un contrattempo di dieci minuti.',
+                      'Aggiornamenti controllati: core, plugin e tema aggiornati con criterio, testati prima su un ambiente di prova quando l’aggiornamento è delicato — non alla cieca sul sito vivo.',
+                      'Sicurezza e hardening: password forti, accessi limitati, plugin inutilizzati rimossi (un plugin disattivato ma presente può ancora essere sfruttato).',
+                      'Monitoraggio: uptime, velocità e integrità controllati nel tempo, così un problema si vede prima che lo veda un cliente.',
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/manutenzione-ciclo.svg',
+                              alt='Il ciclo di manutenzione di un sito WordPress: backup, aggiornamenti controllati, test, hardening e monitoraggio',
+                              caption='Il ciclo della manutenzione WordPress fatta bene: backup completo, aggiornamenti controllati (core, plugin, tema), test su ambiente di prova, hardening e monitoraggio continuo. Il 96% delle vulnerabilità sta nei plugin: aggiornarli con metodo è la difesa principale. Fonti: WordPress.org, Patchstack.')),
+             dict(titolo='Cosa rischia chi la salta',
+                  paragrafi=[
+                      "I rischi non sono ipotesi da manuale, sono le telefonate che riceviamo. Il sito bucato che rimanda a pagine di spam o distribuisce malware — e Google lo segnala come «pericoloso» ai visitatori, bruciando in un giorno anni di reputazione. Il sito che dopo un aggiornamento di PHP del server smette semplicemente di aprirsi, perché un plugin fermo a tre anni fa non è più compatibile. La schermata bianca senza backup, con l’unica copia «da qualche parte» che nessuno trova.",
+                      "E poi c’è il costo silenzioso, quello che non fa rumore: il modulo contatti che ha smesso di inviare email da mesi e nessuno se n’è accorto, le richieste dei clienti finite nel vuoto. La manutenzione non è la voce di spesa che sembra: è ciò che tiene lontani questi disastri, e quasi sempre costa una frazione di quello che costa rimediare dopo. Un check-up periodico è il modo più economico per sapere in che stato è davvero il vostro sito, prima che ve lo dica un cliente.",
+                  ],
+                  links=[('WordPress.org — aggiornare WordPress', _S_WP_UPDATING),
+                         ('Misura gratis la salute tecnica del vostro sito', '/strumenti/check-up-completo/')]),
+             dict(titolo='Il nostro approccio: inclusa, poi facoltativa',
+                  paragrafi=[
+                      "Sappiamo che «manutenzione» suona come un abbonamento imposto, e non ci piace nemmeno a noi. Per questo nei siti che consegniamo i primi 12 mesi di assistenza, aggiornamenti e misurazioni sono inclusi nel prezzo di costruzione, senza sorprese. Dopo, il canone è facoltativo — oppure il sito resta a voi così com’è: codice e dati sono vostri dal primo giorno. Nessun ricatto tecnico, nessuna dipendenza forzata.",
+                      "E non lo diciamo in astratto: teniamo in manutenzione continua 28 progetti, e mandiamo avanti da due anni un gestionale interno — il TMS del gruppo — che gestisce oltre 2.000 ordini l’anno e non può permettersi di fermarsi un’ora. La manutenzione la facciamo prima di tutto sui nostri sistemi, con i nostri soldi e la nostra reputazione in gioco. È la stessa cura, e la stessa ingegneria, che mettiamo in un sito aziendale per voi.",
+                  ],
+                  links=[('Un sito aziendale con manutenzione inclusa i primi 12 mesi', '/servizi/siti-aziendali/'),
+                         ('Fate il check-up del vostro sito attuale, gratis', '/strumenti/check-up-completo/'),
+                         ('Leggi anche: hosting in Italia o in cloud, velocità e GDPR', '/blog/hosting-sito-web-italia/')]),
+         ],
+         fonti=[
+             ('WordPress.org — aggiornare WordPress', _S_WP_UPDATING,
+              'La documentazione ufficiale: perché il backup prima di ogni aggiornamento è il passo che non si salta.'),
+             ('WordPress.org — hardening (mettere in sicurezza WordPress)', _S_WP_HARDENING,
+              'Le misure ufficiali per ridurre la superficie d’attacco: accessi, plugin, permessi.'),
+             ('Patchstack — State of WordPress Security 2024', _S_PATCHSTACK_24,
+              'Il report annuale: quasi 8.000 vulnerabilità nel 2024, circa il 96% nei plugin, pochissime nel core.'),
          ]),
 ]
 

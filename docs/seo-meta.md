@@ -624,6 +624,63 @@ Description (IT/EN): 141/141 · 135/135 · 134/132 · 135/137 · 136/132 — в�
 
 ---
 
+## Blog · Batch 4 — IT/EN (5 статей: локальный SEO и города)
+
+> 5 статей блога с фирменными SVG (`assets/img/blog/`). Опубликованы в IT + EN
+> (RU-блог — отдельный батч, не перевод, см. `piano-blog.md`). Фокус-ключ у
+> каждой статьи в лиде, одном H2 и одном alt. Слаги — `build-tools/lang.py`
+> (`BLOG_SLUGS`, `BLOG_IT_EN_ONLY`). Перелинковка: статьи 16–17 контекстно
+> ссылаются на городские страницы (/milano/ переведена; /roma/ /torino/
+> /dove-lavoriamo/ — только IT).
+
+| Страница IT · EN | Focus Keyword IT | Focus Keyword EN |
+|---|---|---|
+| `/blog/seo-locale-milano/` · `/en/blog/local-seo-milan/` | seo locale milano | local seo milan |
+| `/blog/google-business-profile-guida/` · `/en/blog/google-business-profile-guide/` | google business profile | google business profile |
+| `/blog/hreflang-sito-multilingue/` · `/en/blog/hreflang-multilingual-website/` | hreflang sito multilingue | hreflang multilingual website |
+| `/blog/sito-per-export/` · `/en/blog/website-for-export/` | sito per export | website for export |
+| `/blog/manutenzione-wordpress/` · `/en/blog/wordpress-maintenance/` | manutenzione wordpress | wordpress maintenance |
+
+### 16 — SEO locale a Milano
+
+- **IT Title:** `SEO locale a Milano: emergere in città | Remarka`
+- **IT Description:** `SEO locale a Milano: come funziona, i tre fattori del ranking (rilevanza, distanza, prominenza) e da dove partire per entrare nella mappa.`
+- **EN Title:** `Local SEO in Milan: how to stand out | Remarka`
+- **EN Description:** `Local SEO in Milan: how it works, the three ranking factors (relevance, distance, prominence) and where to start to make it onto the map.`
+
+### 17 — Google Business Profile
+
+- **IT Title:** `Google Business Profile: la vetrina gratuita | Remarka`
+- **IT Description:** `Cos’è un Google Business Profile, come si cura sul serio (completezza, recensioni, coerenza) e gli errori che vi tagliano fuori dai risultati.`
+- **EN Title:** `Google Business Profile: the free storefront | Remarka`
+- **EN Description:** `What a Google Business Profile is, how to tend it properly (completeness, reviews, consistency) and the mistakes that cut you out of results.`
+
+### 18 — Hreflang sito multilingue
+
+- **IT Title:** `Hreflang: sito multilingue senza errori | Remarka`
+- **IT Description:** `Hreflang per un sito multilingue: cos’è, la regola della reciprocità, gli errori che lo rompono e perché è ingegneria, non un plugin.`
+- **EN Title:** `Hreflang: multilingual site done right | Remarka`
+- **EN Description:** `Hreflang for a multilingual website: what it is, the reciprocity rule, the mistakes that break it and why it’s engineering, not a plugin.`
+
+### 19 — Sito per l’export
+
+- **IT Title:** `Export digitale: il sito che apre mercati | Remarka`
+- **IT Description:** `Un sito per l’export non è la home tradotta: lingue native, SEO internazionale, pagamenti e fiducia. Con casi reali e numeri veri.`
+- **EN Title:** `Digital export: the site that opens markets | Remarka`
+- **EN Description:** `A website for export isn’t a translated home page: native languages, international SEO, payments and trust. With real cases and real numbers.`
+
+### 20 — Manutenzione WordPress
+
+- **IT Title:** `Manutenzione WordPress: se non la fate | Remarka`
+- **IT Description:** `Manutenzione WordPress: cosa comporta, cosa rischia chi la salta (il 96% delle falle è nei plugin) e perché è un’assicurazione, non un costo.`
+- **EN Title:** `WordPress maintenance: if you skip it | Remarka`
+- **EN Description:** `WordPress maintenance: what it involves, what skipping it risks (96% of flaws are in plugins) and why it’s insurance, not a cost.`
+
+**Проверка длин.** Title (IT/EN): 48/45 · 52/50 · 47/47 · 51/51 · 47/45 — все ≤60.
+Description (IT/EN): 137/136 · 143/139 · 133/136 · 128/138 · 141/131 — все ≤160.
+
+---
+
 ## RU-версия (фаза B)
 
 > Источник текстов — `docs/copy-fase-B.md`, Часть 3 «SEO-мета» (главная и оба

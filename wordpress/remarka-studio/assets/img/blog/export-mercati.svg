@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-label="I quattro pilastri di un sito per l'export">
+  <defs>
+    <pattern id="gridEm" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/></pattern>
+    <style>.mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}.body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}</style>
+  </defs>
+  <rect width="1200" height="500" fill="#F7F6F2"/>
+  <rect width="1200" height="500" fill="url(#gridEm)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">I QUATTRO PILASTRI DELL'EXPORT</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <g transform="translate(80,120)">
+    <rect x="0" y="0" width="240" height="230" fill="#FFFFFF" stroke="#2440C8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="240" height="8" fill="#2440C8"/>
+    <text x="22" y="52" class="mono" font-size="14" fill="#2440C8">01</text>
+    <text x="22" y="96" class="body" font-size="22" fill="#14161A">Lingue</text>
+    <text x="22" y="124" class="body" font-size="22" fill="#14161A">native</text>
+    <text x="22" y="164" class="mono" font-size="13" fill="#5A5E66">scritte da chi</text>
+    <text x="22" y="182" class="mono" font-size="13" fill="#5A5E66">la lingua la vive,</text>
+    <text x="22" y="200" class="mono" font-size="13" fill="#5A5E66">non a macchina</text>
+  </g>
+  <g transform="translate(345,120)">
+    <rect x="0" y="0" width="240" height="230" fill="#FFFFFF" stroke="#2440C8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="240" height="8" fill="#2440C8"/>
+    <text x="22" y="52" class="mono" font-size="14" fill="#2440C8">02</text>
+    <text x="22" y="96" class="body" font-size="22" fill="#14161A">SEO</text>
+    <text x="22" y="124" class="body" font-size="22" fill="#14161A">internazionale</text>
+    <text x="22" y="164" class="mono" font-size="13" fill="#5A5E66">hreflang, struttura</text>
+    <text x="22" y="182" class="mono" font-size="13" fill="#5A5E66">per lingua e Paese</text>
+  </g>
+  <g transform="translate(610,120)">
+    <rect x="0" y="0" width="240" height="230" fill="#FFFFFF" stroke="#2440C8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="240" height="8" fill="#2440C8"/>
+    <text x="22" y="52" class="mono" font-size="14" fill="#2440C8">03</text>
+    <text x="22" y="96" class="body" font-size="22" fill="#14161A">Pagamenti</text>
+    <text x="22" y="124" class="body" font-size="22" fill="#14161A">locali</text>
+    <text x="22" y="164" class="mono" font-size="13" fill="#5A5E66">i metodi e le valute</text>
+    <text x="22" y="182" class="mono" font-size="13" fill="#5A5E66">che quel mercato usa</text>
+  </g>
+  <g transform="translate(875,120)">
+    <rect x="0" y="0" width="240" height="230" fill="#14161A"/>
+    <rect x="0" y="0" width="240" height="8" fill="#E0A21A"/>
+    <text x="22" y="52" class="mono" font-size="14" fill="#E0A21A">04</text>
+    <text x="22" y="96" class="body" font-size="22" fill="#F7F6F2">Fiducia</text>
+    <text x="22" y="124" class="body" font-size="22" fill="#F7F6F2">oltre confine</text>
+    <text x="22" y="164" class="mono" font-size="13" fill="#9AA0AA">spedizioni, resi e</text>
+    <text x="22" y="182" class="mono" font-size="13" fill="#9AA0AA">assistenza nella</text>
+    <text x="22" y="200" class="mono" font-size="13" fill="#9AA0AA">lingua del cliente</text>
+  </g>
+  <text x="80" y="400" class="mono" font-size="14" fill="#5A5E66">la traduzione è UNO dei quattro, non il tutto</text>
+</svg>

@@ -2980,6 +2980,375 @@ CHROME.update({
     "Cosa ci fa Google: i risultati ricchi": {"en": "What Google does with it: rich results"},
 })
 
+# CHROME_BLOG_BATCH4 — Blog · Batch 4 (5 articoli IT → EN): SEO locale a Milano,
+# Google Business Profile, hreflang, sito per l'export, manutenzione WordPress.
+# Copre ogni nodo di testo generato da build_blog_post. Solo EN (il blog RU è un
+# batch a sé). Numeri in formato US (li normalizza il conveyor).
+CHROME_BLOG_BATCH4 = {
+    "18 LUG 2026": {"en": "18 JUL 2026"},
+
+    # ================= Articolo 16 · SEO locale a Milano =================
+    "SEO locale a Milano: come emergere nella città più competitiva":
+        {"en": "Local SEO in Milan: how to stand out in Italy’s most competitive city"},
+    "A Milano si cerca «vicino a me» e si sceglie chi appare per primo nella mappa. Come funziona la SEO locale, cosa pesa davvero nel ranking e da dove partire — con il nostro ufficio in città come banco di prova.":
+        {"en": "In Milan people search “near me” and pick whoever shows up first on the map. How local SEO works, what really weighs in the ranking and where to start — with our own office in the city as a test bed."},
+    "Un artigiano ai Navigli, un fisioterapista in Città Studi, un ristorante a Porta Romana: a Milano ognuno di loro compete con altri venti nel raggio di un chilometro. E quando un cliente cerca «fisioterapista vicino a me» dal telefono, non scorre dieci pagine di risultati — guarda i primi tre nella mappa e sceglie lì. La SEO locale a Milano è la disciplina che decide chi finisce in quei tre posti. Non è una questione di magia né di budget: è un lavoro fatto di segnali precisi, che quasi nessuno cura fino in fondo. Vediamo come funziona davvero, cosa pesa nel ranking e da dove partire — con il nostro ufficio in città come esempio concreto.":
+        {"en": "A tradesperson on the Navigli, a physiotherapist in Città Studi, a restaurant in Porta Romana: in Milan each of them competes with twenty others within a kilometre. And when a customer searches “physiotherapist near me” on their phone, they don’t scroll through ten pages of results — they look at the top three on the map and choose there. Local SEO in Milan is the discipline that decides who lands in those three spots. It’s not a matter of magic or budget: it’s work made of precise signals that almost nobody sees all the way through. Let’s look at how it really works, what weighs in the ranking, and where to start — with our own office in the city as a concrete example."},
+    "SEO locale a Milano: la mappa con i primi tre risultati che un cliente vede cercando «vicino a me»":
+        {"en": "Local SEO in Milan: the map with the top three results a customer sees when searching “near me”"},
+    "Perché a Milano la SEO locale è una gara diversa":
+        {"en": "Why local SEO in Milan is a different race"},
+    "Milano è il mercato più affollato d’Italia per quasi ogni servizio: per lo stesso mestiere convivono in città centinaia di attività, e la concorrenza non è nazionale, è a isolati di distanza. Questo cambia le regole. Farsi trovare per «commercialista Milano» non serve a niente se non si compare quando qualcuno, a due fermate di metro, cerca proprio in quel momento. La SEO locale non punta al primo posto nazionale: punta a essere il più rilevante per chi è vicino, adesso.":
+        {"en": "Milan is Italy’s most crowded market for almost every service: hundreds of businesses in the same trade coexist in the city, and the competition isn’t national, it’s a few blocks away. That changes the rules. Getting found for “accountant Milan” is useless if you don’t show up when someone two metro stops away is searching right at that moment. Local SEO doesn’t aim for the top national spot: it aims to be the most relevant to whoever is nearby, now."},
+    "Il campo di battaglia ha un nome preciso: il «local pack», quel blocco con la mappa e tre attività che Google mostra in cima ai risultati di ricerca a intento locale. Sotto ci sono i link classici, ma l’occhio — soprattutto da mobile — cade lì. Entrare in quei tre riquadri vale più di dieci posizioni organiche: è la vetrina che il cliente vede prima di tutto il resto. E a Milano, dove i concorrenti sono tanti, la differenza tra esserci e non esserci è la differenza tra squillare e restare muti.":
+        {"en": "The battlefield has a precise name: the “local pack,” that block with the map and three businesses Google shows at the top of local-intent search results. The classic links sit below it, but the eye — especially on mobile — lands there. Making it into those three boxes is worth more than ten organic positions: it’s the storefront the customer sees before anything else. And in Milan, where competitors are many, the difference between being there and not is the difference between your phone ringing and staying silent."},
+    "I tre fattori che decidono la mappa":
+        {"en": "The three factors that decide the map"},
+    "Google è insolitamente esplicito su come sceglie chi mostrare nel local pack. Nella sua guida ufficiale al ranking locale indica tre fattori, e vale la pena conoscerli perché su tutti e tre si può lavorare.":
+        {"en": "Google is unusually explicit about how it picks who to show in the local pack. In its official guide to local ranking it names three factors, and they’re worth knowing because you can work on all three."},
+    "Rilevanza: quanto la vostra scheda corrisponde a ciò che la persona cerca. Più le informazioni sono complete e precise — categoria giusta, servizi, descrizione — più Google vi abbina alle ricerche pertinenti.":
+        {"en": "Relevance: how well your profile matches what the person is searching for. The more complete and precise the information — right category, services, description — the more Google matches you to relevant searches."},
+    "Distanza: quanto siete lontani da chi cerca. Non la controllate, ma la potete assecondare: un indirizzo esatto e una zona di servizio dichiarata dicono a Google dove operate davvero.":
+        {"en": "Distance: how far you are from the person searching. You don’t control it, but you can play to it: an exact address and a declared service area tell Google where you actually operate."},
+    "Prominenza: quanto siete conosciuti. Pesano le recensioni, le citazioni del nome e dell’indirizzo su altri siti, e — sì — anche quanti siti autorevoli parlano di voi. Qui la SEO locale incontra quella «classica».":
+        {"en": "Prominence: how well known you are. Reviews count, so do mentions of your name and address on other sites, and — yes — how many authoritative sites talk about you. Here local SEO meets the “classic” kind."},
+    "I tre fattori della SEO locale a Milano secondo Google: rilevanza, distanza e prominenza, che decidono il local pack":
+        {"en": "The three factors of local SEO in Milan according to Google: relevance, distance and prominence, which decide the local pack"},
+    "I tre fattori con cui Google decide il local pack: rilevanza (quanto la scheda corrisponde alla ricerca), distanza (quanto siete vicini a chi cerca) e prominenza (quanto siete conosciuti, recensioni comprese). Su tutti e tre si lavora. Fonte: Google, guida ufficiale al ranking locale.":
+        {"en": "The three factors Google uses to decide the local pack: relevance (how well the profile matches the search), distance (how close you are to the searcher) and prominence (how well known you are, reviews included). You can work on all three. Source: Google, official guide to local ranking."},
+    "La scheda Google: il vostro negozio prima del negozio":
+        {"en": "Your Google profile: the shop before the shop"},
+    "Il motore della SEO locale è la scheda Google (Google Business Profile): è lei a comparire nella mappa, con nome, orari, foto, telefono e recensioni. Per molte ricerche locali il cliente decide guardando solo quella, senza aprire il sito. Curarla non è un dettaglio, è la base: una scheda incompleta o con orari sbagliati vi taglia fuori dai risultati pertinenti prima ancora della concorrenza.":
+        {"en": "The engine of local SEO is your Google profile (Google Business Profile): it’s what appears on the map, with name, hours, photos, phone and reviews. For many local searches the customer decides looking at that alone, without ever opening the site. Looking after it isn’t a detail, it’s the foundation: an incomplete profile or one with wrong hours cuts you out of the relevant results before the competition even does."},
+    "E poi ci sono le recensioni, che pesano su fiducia e ranking insieme. Secondo l’indagine annuale di BrightLocal sui consumatori, la quasi totalità delle persone legge le recensioni prima di scegliere un’attività locale. Non significa inventarle — sarebbe un boomerang, oltre che una violazione — ma chiederle con metodo a chi è stato bene. Alla scheda Google e a come si cura senza trucchi abbiamo dedicato un articolo a parte, perché merita una guida sua.":
+        {"en": "And then there are reviews, which weigh on trust and ranking at once. According to BrightLocal’s annual consumer survey, almost everyone reads reviews before choosing a local business. That doesn’t mean inventing them — it would be a boomerang, and a violation too — but asking for them methodically from people who had a good experience. We’ve devoted a separate article to the Google profile and how to look after it without tricks, because it deserves a guide of its own."},
+    "Google — guida al ranking locale →":
+        {"en": "Google — guide to local ranking →"},
+    "Leggi anche: Google Business Profile, la vetrina che nessuno cura →":
+        {"en": "Read also: Google Business Profile, the storefront nobody tends →"},
+    "Il sito conta ancora: dati strutturati e contenuti locali":
+        {"en": "The site still matters: structured data and local content"},
+    "La scheda Google non vive da sola: si appoggia al vostro sito, e un sito curato rafforza tutto il resto. Il primo mattone sono i dati strutturati — quel blocco di codice, invisibile al visitatore, che dice a Google «questa è un’attività locale, ecco nome, indirizzo, orari e zona». È il tipo LocalBusiness di schema.org, e Google lo legge per capire e mostrare meglio la vostra scheda. Il secondo mattone è la coerenza: nome, indirizzo e telefono devono essere identici ovunque compaiano, sul sito e sulle directory.":
+        {"en": "The Google profile doesn’t live alone: it leans on your site, and a well-kept site strengthens everything else. The first brick is structured data — that block of code, invisible to the visitor, that tells Google “this is a local business, here’s the name, address, hours and area.” It’s schema.org’s LocalBusiness type, and Google reads it to understand and show your profile better. The second brick is consistency: name, address and phone must be identical everywhere they appear, on the site and in directories."},
+    "Poi vengono i contenuti che parlano davvero del territorio. Non «keyword Milano» ripetute a forza, ma pagine e testi che rispondono a domande locali reali: le zone che servite, i casi seguiti in città, i tempi di intervento in provincia. È lavoro di SEO tecnica e di contenuto insieme, ed è esattamente quello che consegniamo di serie — non un extra da vedere «più avanti». Prima di aggiungere una riga, però, conviene misurare i segnali che il vostro sito già manda a Google.":
+        {"en": "Then come the contents that really speak about the area. Not “Milan keyword” hammered in, but pages and copy that answer real local questions: the zones you serve, the jobs you’ve handled in the city, response times across the province. It’s technical SEO and content work together, and it’s exactly what we deliver as standard — not an extra to look at “later on.” Before adding a single line, though, it’s worth measuring the signals your site already sends Google."},
+    "Dati strutturati e SEO tecnica in ogni sito →":
+        {"en": "Structured data and technical SEO in every site →"},
+    "Misura gratis i segnali E-E-A-T e i dati strutturati della vostra home →":
+        {"en": "Measure your home page’s E-E-A-T signals and structured data for free →"},
+    "Google — dati strutturati e LocalBusiness →":
+        {"en": "Google — structured data and LocalBusiness →"},
+    "Da dove partire, a Milano e oltre":
+        {"en": "Where to start, in Milan and beyond"},
+    "L’ordine giusto è controintuitivo: prima la scheda Google (completa, verificata, con recensioni vere), poi il sito (dati strutturati, NAP coerente, contenuti locali), infine la prominenza (citazioni e link autorevoli, che arrivano col tempo). Saltare il primo passo per rincorrere il terzo è l’errore più comune, e il più costoso. A Milano, dove i concorrenti curano già almeno la scheda, la partita si gioca sui dettagli che gli altri trascurano.":
+        {"en": "The right order is counterintuitive: first the Google profile (complete, verified, with real reviews), then the site (structured data, consistent NAP, local content), and finally prominence (citations and authoritative links, which come with time). Skipping the first step to chase the third is the most common mistake, and the most expensive. In Milan, where competitors at least tend to their profile, the game is won on the details the others neglect."},
+    "Questo lavoro lo facciamo dove i clienti sono, non solo online: a Milano abbiamo un ufficio vero, in Vicolo Privato Lavandai, e il primo incontro — da voi o da noi — non si paga. Ma il metodo è lo stesso in tutta Italia: analizziamo la scheda e il sito attuali, vi diciamo cosa manca nero su bianco, e lavoriamo per farvi entrare in quella mappa. Il nostro biglietto da visita, del resto, è un sito che abbiamo costruito per un’agenzia del gruppo con la stessa cura che mettiamo per voi.":
+        {"en": "We do this work where the customers are, not only online: in Milan we have a real office, on Vicolo Privato Lavandai, and the first meeting — at your place or ours — is free. But the method is the same across Italy: we analyse your current profile and site, tell you what’s missing in black and white, and work to get you onto that map. Our calling card, after all, is a site we built for a group agency with the same care we put into yours."},
+    "Realizzazione siti web a Milano: come lavoriamo in città →":
+        {"en": "Websites in Milan: how we work in the city →"},
+    "Dove lavoriamo, in tutta Italia →":
+        {"en": "Where we work, across Italy →"},
+    "Il caso ATT, il sito dell’agenzia di traduzioni →":
+        {"en": "The ATT case, the translation agency’s website →"},
+    "SEO tecnica e locale, di serie in ogni sito, a prezzo chiuso →":
+        {"en": "Technical and local SEO, standard in every site, at a fixed price →"},
+    "Google — migliorare il ranking locale su Google":
+        {"en": "Google — improve your local ranking on Google"},
+    "La guida ufficiale: i tre fattori (rilevanza, distanza, prominenza) e come Google sceglie il local pack.":
+        {"en": "The official guide: the three factors (relevance, distance, prominence) and how Google picks the local pack."},
+    "Google — dati strutturati e LocalBusiness":
+        {"en": "Google — structured data and LocalBusiness"},
+    "Come il markup LocalBusiness aiuta Google a capire e mostrare un’attività locale.":
+        {"en": "How LocalBusiness markup helps Google understand and display a local business."},
+    "BrightLocal — Local Consumer Review Survey":
+        {"en": "BrightLocal — Local Consumer Review Survey"},
+    "L’indagine annuale sui consumatori: quasi tutti leggono le recensioni prima di scegliere un’attività locale.":
+        {"en": "The annual consumer survey: almost everyone reads reviews before choosing a local business."},
+
+    # ============= Articolo 17 · Google Business Profile =============
+    "Google Business Profile: la vetrina gratuita che nessuno cura":
+        {"en": "Google Business Profile: the free storefront nobody tends"},
+    "È gratis, la vede più gente della vostra home e decide se vi scelgono o passano oltre. Cos’è un Google Business Profile, come si cura sul serio e gli errori che vi tagliano fuori dai risultati.":
+        {"en": "It’s free, more people see it than your home page, and it decides whether they pick you or move on. What a Google Business Profile is, how to tend it properly and the mistakes that cut you out of the results."},
+    "C’è una pagina che, per molte ricerche, la gente vede prima del vostro sito: la scheda che compare a destra quando cercano il vostro nome, o nella mappa quando cercano un servizio «vicino a me». È il vostro Google Business Profile, ed è gratuito. Eppure è la cosa peggio curata del marketing di quasi ogni PMI italiana: orari vecchi, foto sfocate, una descrizione scritta di fretta anni fa e mai più toccata. Chi la cura sul serio si prende un vantaggio che i concorrenti gli regalano ogni giorno. Vediamo cos’è davvero un Google Business Profile, come si tiene in ordine senza trucchi, e quali errori vi tagliano fuori dai risultati.":
+        {"en": "There’s a page that, for many searches, people see before your site: the panel that appears on the right when they search your name, or on the map when they search a service “near me.” It’s your Google Business Profile, and it’s free. Yet it’s the worst-tended piece of marketing at almost every Italian SMB: old hours, blurry photos, a description dashed off years ago and never touched since. Whoever tends it properly gains an edge their competitors hand them every day. Let’s see what a Google Business Profile really is, how to keep it in order without tricks, and which mistakes cut you out of the results."},
+    "Google Business Profile: la scheda gratuita con nome, orari, foto e recensioni che i clienti vedono prima del sito":
+        {"en": "Google Business Profile: the free listing with name, hours, photos and reviews that customers see before the site"},
+    "Cos’è (e perché la vede più gente della vostra home)":
+        {"en": "What it is (and why more people see it than your home page)"},
+    "Un Google Business Profile è la scheda gratuita che rappresenta la vostra attività su Google Search e Google Maps. Contiene nome, categoria, indirizzo o zona di servizio, orari, telefono, sito, foto e recensioni. Non è il vostro sito e non lo sostituisce: è ciò che Google mostra di voi quando qualcuno vi cerca, spesso senza che quel qualcuno arrivi mai alla vostra home. Per un’attività locale è, di fatto, la prima pagina — quella su cui si decide se chiamarvi o passare al prossimo.":
+        {"en": "A Google Business Profile is the free listing that represents your business on Google Search and Google Maps. It holds name, category, address or service area, hours, phone, website, photos and reviews. It isn’t your site and doesn’t replace it: it’s what Google shows of you when someone searches for you, often without that someone ever reaching your home page. For a local business it is, in effect, the first page — the one where they decide whether to call you or move on to the next."},
+    "Il paradosso è che questa vetrina costa zero e la vede tantissima gente, e proprio per questo viene trascurata: è gratis, quindi sembra meno importante di una campagna a pagamento. È l’opposto. Una scheda completa e aggiornata è tra gli investimenti a più alto ritorno che esistano, perché lavora su ogni ricerca del vostro nome e su quelle a intento locale, tutti i giorni, senza costo per clic.":
+        {"en": "The paradox is that this storefront costs nothing and huge numbers of people see it, and precisely for that reason it gets neglected: it’s free, so it seems less important than a paid campaign. It’s the opposite. A complete, up-to-date profile is among the highest-return investments there are, because it works on every search of your name and every local-intent search, every day, at no cost per click."},
+    "Come si cura sul serio: completezza, recensioni, coerenza":
+        {"en": "How to tend it properly: completeness, reviews, consistency"},
+    "La cura di una scheda non è un gesto una tantum, è manutenzione. Tre leve contano più delle altre, e sono le stesse che Google indica nella sua guida al ranking locale.":
+        {"en": "Tending a profile isn’t a one-off gesture, it’s maintenance. Three levers count more than the rest, and they’re the same ones Google names in its guide to local ranking."},
+    "Completezza: compilate ogni campo — categoria principale corretta, servizi, descrizione onesta, orari veri (festivi compresi), foto reali e recenti. Una scheda completa è più probabile che compaia per le ricerche pertinenti.":
+        {"en": "Completeness: fill in every field — correct primary category, services, an honest description, real hours (holidays included), real and recent photos. A complete profile is more likely to appear for relevant searches."},
+    "Recensioni: chiedetele con metodo a chi è stato bene, rispondete a tutte con educazione, anche alle critiche. Contano per la fiducia e per il ranking — ma solo se sono vere.":
+        {"en": "Reviews: ask for them methodically from people who had a good experience, reply to all of them politely, criticism included. They count for trust and for ranking — but only if they’re genuine."},
+    "Coerenza (NAP): nome, indirizzo e telefono devono essere identici sulla scheda, sul sito e su ogni directory. Le incoerenze confondono Google e vi fanno perdere posizioni.":
+        {"en": "Consistency (NAP): name, address and phone must be identical on the profile, on the site and in every directory. Inconsistencies confuse Google and cost you positions."},
+    "Anatomia di un Google Business Profile curato: nome, categoria, orari veri, foto reali, recensioni con risposte e NAP coerente":
+        {"en": "Anatomy of a well-tended Google Business Profile: name, category, real hours, real photos, reviews with replies and consistent NAP"},
+    "Una scheda Google curata, campo per campo: categoria corretta, orari veri, foto reali, recensioni con risposte e un NAP (nome, indirizzo, telefono) identico ovunque. La completezza è ciò che la fa comparire nelle ricerche pertinenti. Fonte: Google, guida al ranking locale e linee guida di rappresentazione.":
+        {"en": "A well-tended Google profile, field by field: correct category, real hours, real photos, reviews with replies and a NAP (name, address, phone) identical everywhere. Completeness is what makes it appear in relevant searches. Source: Google, guide to local ranking and representation guidelines."},
+    "Gli errori che vi tagliano fuori dai risultati":
+        {"en": "The mistakes that cut you out of the results"},
+    "Google ha regole precise su come un’attività va rappresentata, e violarle non è furbizia: porta a sospensioni della scheda, cioè a sparire dai risultati. Le linee guida ufficiali sono chiare, e gli errori più comuni sono anche i più facili da evitare.":
+        {"en": "Google has precise rules on how a business should be represented, and breaking them isn’t clever: it leads to profile suspensions, meaning you vanish from the results. The official guidelines are clear, and the most common mistakes are also the easiest to avoid."},
+    "Nome «arricchito» con parole chiave: «Mario Rossi Idraulico Milano Pronto Intervento 24h» viola le regole. Il nome deve essere quello reale dell’attività, punto.":
+        {"en": "A name “stuffed” with keywords: “Mario Rossi Plumber Milan 24h Emergency Call-Out” breaks the rules. The name must be the business’s real one, full stop."},
+    "Indirizzo finto o casella postale per simulare una sede che non c’è: è tra le violazioni prese più sul serio.":
+        {"en": "A fake address or a PO box to fake a location that doesn’t exist: it’s among the violations taken most seriously."},
+    "Categorie a raffica: sceglietene poche e pertinenti, non tutte quelle possibili. La precisione batte la quantità.":
+        {"en": "Categories by the fistful: pick a few relevant ones, not every possible one. Precision beats quantity."},
+    "Promozioni e prezzi nella descrizione, o link vietati: la descrizione racconta chi siete, non «tutto al -50%».":
+        {"en": "Promotions and prices in the description, or forbidden links: the description tells who you are, not “everything 50% off.”"},
+    "Google — linee guida per rappresentare la vostra attività →":
+        {"en": "Google — guidelines for representing your business →"},
+    "Google — panoramica delle policy del Business Profile →":
+        {"en": "Google — overview of Business Profile policies →"},
+    "Una nota onesta sul nostro caso":
+        {"en": "An honest note on our own case"},
+    "Qui serve trasparenza, perché è facile spacciare la propria situazione per modello. La presenza su Google del nostro gruppo è storicamente registrata sotto il marchio dell’agenzia di traduzioni (ATT), non sotto Studio Remarka: non vi mostriamo «la nostra scheda perfetta» come esempio, perché non sarebbe onesto. Quello che vi diamo sono le regole che valgono per tutti, applicate come si deve — e il fatto, questo sì reale, che a Milano abbiamo un ufficio vero su cui una scheda locale poggia su un indirizzo che esiste.":
+        {"en": "Here transparency matters, because it’s easy to pass your own situation off as a model. Our group’s presence on Google is historically registered under the translation agency’s brand (ATT), not under Studio Remarka: we don’t show you “our perfect profile” as an example, because that wouldn’t be honest. What we give you are the rules that apply to everyone, applied properly — plus the fact, and this one is real, that in Milan we have a real office on which a local listing rests on an address that exists."},
+    "Il punto è proprio questo: una scheda Google funziona quando dietro c’è qualcosa di vero — un indirizzo, degli orari, un servizio reso davvero. Nessun trucco regge a lungo, e Google è sempre più bravo a smascherarli. La buona notizia è che la maggior parte dei vostri concorrenti la scheda non la cura affatto: bastano completezza, onestà e costanza per stare davanti.":
+        {"en": "That’s exactly the point: a Google profile works when there’s something real behind it — an address, real hours, a service genuinely provided. No trick holds up for long, and Google keeps getting better at unmasking them. The good news is that most of your competitors don’t tend their profile at all: completeness, honesty and consistency are enough to stay ahead."},
+    "La scheda è metà del lavoro: l’altra metà è il sito":
+        {"en": "The profile is half the job: the other half is the site"},
+    "Una scheda curata porta la persona a un passo dalla scelta; poi, spesso, quella persona clicca sul sito per confermare la decisione. Se il sito è lento, vecchio o poco chiaro, il lavoro fatto sulla scheda si perde all’ultimo metro. Scheda Google e sito lavorano in coppia: dati strutturati LocalBusiness, NAP coerente, contenuti locali e velocità sono ciò che tiene insieme le due metà. È SEO tecnica, ed è quella che mettiamo di serie.":
+        {"en": "A well-tended profile brings the person a step from the choice; then, often, that person clicks through to the site to confirm the decision. If the site is slow, old or unclear, the work done on the profile is lost at the last metre. The Google profile and the site work as a pair: LocalBusiness structured data, a consistent NAP, local content and speed are what holds the two halves together. That’s technical SEO, and it’s what we deliver as standard."},
+    "Da dove cominciare, in pratica? Rivendicate e verificate la scheda, completatela campo per campo, avviate una raccolta onesta di recensioni. In parallelo, misurate cosa dice di voi il sito oggi. E se volete il quadro completo del perché a Milano — e in ogni città competitiva — questa partita conti così tanto, l’abbiamo raccontato nell’articolo sulla SEO locale.":
+        {"en": "Where to begin, in practice? Claim and verify the profile, complete it field by field, start an honest push for reviews. In parallel, measure what your site says about you today. And if you want the full picture of why in Milan — and in every competitive city — this game matters so much, we’ve told it in the article on local SEO."},
+    "SEO tecnica e locale, a prezzo chiuso →":
+        {"en": "Technical and local SEO, at a fixed price →"},
+    "Analizza gratis la SEO on-page della vostra pagina →":
+        {"en": "Analyse your page’s on-page SEO for free →"},
+    "Leggi anche: SEO locale a Milano, come emergere →":
+        {"en": "Read also: local SEO in Milan, how to stand out →"},
+    "Che siate a Milano, Roma o Torino: dove lavoriamo →":
+        {"en": "Whether you’re in Milan, Rome or Turin: where we work →"},
+    "SEO tecnica e locale che lavora insieme alla scheda Google →":
+        {"en": "Technical and local SEO that works alongside your Google profile →"},
+    "Google — migliorare il ranking locale su Google":
+        {"en": "Google — improve your local ranking on Google"},
+    "La guida ufficiale: perché completezza, recensioni e verifica della scheda aiutano a comparire.":
+        {"en": "The official guide: why completeness, reviews and profile verification help you appear."},
+    "Google — linee guida per rappresentare la vostra attività":
+        {"en": "Google — guidelines for representing your business"},
+    "Le regole su nome, indirizzo e categorie: cosa è ammesso e cosa porta alla sospensione della scheda.":
+        {"en": "The rules on name, address and categories: what’s allowed and what leads to profile suspension."},
+    "Google — panoramica delle policy del Business Profile":
+        {"en": "Google — overview of Business Profile policies"},
+    "Le policy generali del profilo: contenuti proibiti e limitati, e come Google le applica.":
+        {"en": "The profile’s general policies: prohibited and restricted content, and how Google enforces them."},
+    "L’indagine annuale: quanto le recensioni pesano nella scelta di un’attività locale.":
+        {"en": "The annual survey: how much reviews weigh in the choice of a local business."},
+
+    # ============= Articolo 18 · Hreflang sito multilingue =============
+    "Sito multilingue: hreflang senza mal di testa":
+        {"en": "Multilingual website: hreflang without the headache"},
+    "Un sito in più lingue mal collegato manda l’inglese a chi cerca in italiano e si fa concorrenza da solo. Cos’è l’hreflang, come si imposta senza errori e perché è ingegneria, non un plugin.":
+        {"en": "A poorly linked multilingual site sends English to people searching in Italian and competes with itself. What hreflang is, how to set it up without errors and why it’s engineering, not a plugin."},
+    "Avete tradotto il sito in inglese e tedesco, giustamente. Ma ora un cliente italiano cerca su Google e si ritrova la pagina inglese; un tedesco atterra sulla versione italiana; e le vostre due pagine — stesso contenuto, lingue diverse — si fanno concorrenza a vicenda nei risultati. Il colpevole è quasi sempre lo stesso: manca, o è sbagliato, l’hreflang. È l’attributo con cui si dice a Google «questa pagina è la versione italiana, quest’altra l’inglese, servile alla persona giusta». Si sente parlare di hreflang per un sito multilingue come di qualcosa di ostico: lo è, se lo si tratta come un plugin da attivare. Vediamo cos’è davvero, come si imposta senza errori e perché è ingegneria, non fortuna.":
+        {"en": "You’ve translated the site into English and German, rightly so. But now an Italian customer searches Google and ends up on the English page; a German lands on the Italian version; and your two pages — same content, different languages — compete with each other in the results. The culprit is almost always the same: hreflang is missing or wrong. It’s the attribute that tells Google “this page is the Italian version, that one is English, serve each to the right person.” People talk about hreflang for a multilingual website as something forbidding: it is, if you treat it as a plugin to switch on. Let’s see what it really is, how to set it up without errors and why it’s engineering, not luck."},
+    "Hreflang per un sito multilingue: le versioni italiana, inglese e tedesca collegate così che Google serva la lingua giusta":
+        {"en": "Hreflang for a multilingual website: the Italian, English and German versions linked so Google serves the right language"},
+    "Cos’è l’hreflang (in parole vostre)":
+        {"en": "What hreflang is (in plain terms)"},
+    "Immaginate di avere la stessa pagina in tre lingue: italiano, inglese, tedesco. Per un motore di ricerca sono tre indirizzi diversi con contenuti che si somigliano molto — e senza un’indicazione esplicita, Google deve indovinare quale mostrare a chi, rischiando di sbagliare o di considerarle contenuti duplicati. L’hreflang è quell’indicazione esplicita: un piccolo segnale, presente su ogni versione, che dice «esisto in queste lingue, ecco gli indirizzi di tutte, e io sono quella per l’italiano».":
+        {"en": "Imagine you have the same page in three languages: Italian, English, German. To a search engine they’re three different addresses with contents that look very much alike — and without an explicit signal, Google has to guess which to show to whom, risking mistakes or treating them as duplicate content. Hreflang is that explicit signal: a small marker, present on every version, that says “I exist in these languages, here are the addresses of all of them, and I’m the one for Italian.”"},
+    "La regola d’oro è la reciprocità: se la pagina italiana punta all’inglese, l’inglese deve puntare all’italiano, e ogni versione deve elencare tutte le altre — sé stessa compresa. Google, nella sua documentazione ufficiale sulle versioni localizzate, insiste proprio su questo: i riferimenti devono essere bidirezionali e completi, altrimenti li ignora. È qui che nascono la maggior parte dei mal di testa: non nel concetto, ma nella coerenza da mantenere su decine di pagine.":
+        {"en": "The golden rule is reciprocity: if the Italian page points to the English one, the English must point back to the Italian, and every version must list all the others — itself included. Google, in its official documentation on localised versions, insists on exactly this: the references must be bidirectional and complete, or it ignores them. This is where most of the headaches come from: not in the concept, but in the consistency to maintain across dozens of pages."},
+    "Come funziona l’hreflang in un sito multilingue: le versioni italiana, inglese e tedesca si citano a vicenda in modo reciproco":
+        {"en": "How hreflang works in a multilingual website: the Italian, English and German versions cite each other reciprocally"},
+    "L’hreflang collega le versioni di una pagina: ognuna dichiara sé stessa e tutte le altre, in modo reciproco (se IT punta a EN, EN deve puntare a IT). Così Google serve la lingua giusta e non le tratta come contenuti duplicati. Fonte: Google Search Central, versioni localizzate.":
+        {"en": "Hreflang links the versions of a page: each declares itself and all the others, reciprocally (if IT points to EN, EN must point to IT). This way Google serves the right language and doesn’t treat them as duplicate content. Source: Google Search Central, localised versions."},
+    "Gli errori che rompono un sito multilingue":
+        {"en": "The mistakes that break a multilingual website"},
+    "Quasi tutti i problemi di hreflang nascono da pochi errori ricorrenti. Conoscerli è metà del lavoro, perché sono quasi sempre gli stessi.":
+        {"en": "Almost every hreflang problem comes from a few recurring mistakes. Knowing them is half the job, because they’re almost always the same ones."},
+    "Riferimenti non reciproci: la pagina IT cita la EN, ma la EN non ricambia. Google scarta l’intera coppia e torna a indovinare.":
+        {"en": "Non-reciprocal references: the IT page cites the EN one, but the EN doesn’t reciprocate. Google discards the whole pair and goes back to guessing."},
+    "Codici lingua sbagliati: «en-UK» non esiste (è «en-GB»), e un codice inventato viene ignorato in silenzio.":
+        {"en": "Wrong language codes: “en-UK” doesn’t exist (it’s “en-GB”), and a made-up code is silently ignored."},
+    "URL relativi o pagine che rimandano a versioni in «noindex»: l’hreflang deve puntare a indirizzi assoluti e indicizzabili, o non serve a nulla.":
+        {"en": "Relative URLs or pages pointing to “noindex” versions: hreflang must point to absolute, indexable addresses, or it’s useless."},
+    "Manca l’autoreferenza: ogni versione deve elencare anche sé stessa. Dimenticarlo è l’errore più comune e più silenzioso.":
+        {"en": "The self-reference is missing: every version must also list itself. Forgetting it is the most common and most silent mistake."},
+    "Google — dire a Google le versioni localizzate (hreflang) →":
+        {"en": "Google — tell Google about localised versions (hreflang) →"},
+    "Hreflang non è tutto: la lingua deve suonare vera":
+        {"en": "Hreflang isn’t everything: the language has to ring true"},
+    "C’è un equivoco da smontare: l’hreflang risolve il «quale versione mostrare», non il «la versione è buona». Potete avere l’hreflang perfetto e perdere comunque il cliente, se la traduzione suona finta. Una scheda prodotto tradotta a macchina, con un registro sbagliato, allontana chi la legge nella propria lingua — e nessun attributo tecnico lo compensa. La ricerca di CSA («Can’t Read, Won’t Buy») lo dice da anni: le persone comprano molto più volentieri nella propria lingua, e diffidano dei testi che suonano stranieri.":
+        {"en": "There’s a misconception to dismantle: hreflang solves “which version to show,” not “the version is any good.” You can have perfect hreflang and still lose the customer if the translation sounds fake. A machine-translated product page with the wrong register drives away the person reading it in their own language — and no technical attribute makes up for that. CSA’s research (“Can’t Read, Won’t Buy”) has said it for years: people buy far more willingly in their own language, and distrust text that sounds foreign."},
+    "Per questo, da noi, il multilingue è due mestieri in uno: l’ingegneria che collega le versioni (hreflang, sitemap, struttura degli URL) e i redattori madrelingua che scrivono, non traducono a macchina. Le lingue le curano madrelingua del gruppo Remarka, nel settore dal 2001, selezionati da una piattaforma di test interna che scarta la stragrande maggioranza dei candidati — la stessa che tiene la qualità di ogni nostro progetto multilingue. E se un mercato ha regole proprie — per la Germania, l’Austria — la parte tecnica va oltre l’hreflang: è la gestione dei siti multi-regionali.":
+        {"en": "That’s why, for us, multilingual is two crafts in one: the engineering that links the versions (hreflang, sitemap, URL structure) and the native-speaking editors who write, rather than machine-translate. The languages are handled by native speakers of the Remarka group, in the field since 2001, selected by an internal testing platform that rejects the vast majority of candidates — the same one that holds the quality of every multilingual project of ours. And if a market has its own rules — for Germany, Austria — the technical part goes beyond hreflang: it’s the handling of multi-regional sites."},
+    "Google — gestire i siti multi-regionali e multilingue →":
+        {"en": "Google — managing multi-regional and multilingual sites →"},
+    "La piattaforma che seleziona chi traduce (solo l’8% passa) →":
+        {"en": "The platform that selects who translates (only 8% pass) →"},
+    "Come si tiene in ordine, senza impazzire":
+        {"en": "How to keep it in order, without losing your mind"},
+    "Il segreto per non impazzire con l’hreflang è non gestirlo a mano. Su decine di pagine e tre lingue, mantenere a mano i riferimenti reciproci è una fonte inesauribile di errori. La soluzione è generare l’hreflang da un’unica mappa delle corrispondenze — una fonte di verità sola, da cui ogni pagina eredita i propri collegamenti — così che aggiungere una pagina non significhi aggiornarne trenta. È esattamente l’approccio con cui è costruito questo sito: italiano alla radice, inglese e russo come alberi coerenti, collegati da una mappa che non si tocca a mano.":
+        {"en": "The secret to not losing your mind over hreflang is not managing it by hand. Across dozens of pages and three languages, keeping reciprocal references by hand is an endless source of errors. The solution is to generate hreflang from a single map of correspondences — one source of truth, from which every page inherits its own links — so that adding a page doesn’t mean updating thirty. It’s exactly the approach this site is built on: Italian at the root, English and Russian as coherent trees, linked by a map that’s never touched by hand."},
+    "In pratica, prima di aggiungere lingue conviene verificare come Google legge già il vostro sito: se le versioni esistenti si citano correttamente, se ci sono codici sbagliati, se qualcosa finisce fuori indice. Un’analisi SEO on-page fa emergere questi problemi prima che costino posizioni. E se state pensando non solo a tradurre ma ad aprire un mercato estero per davvero, l’hreflang è solo il primo pezzo di un discorso più grande: quello dell’export digitale.":
+        {"en": "In practice, before adding languages it’s worth checking how Google already reads your site: whether the existing versions cite each other correctly, whether there are wrong codes, whether something ends up out of the index. An on-page SEO analysis surfaces these problems before they cost you positions. And if you’re thinking not just of translating but of opening a foreign market for real, hreflang is only the first piece of a bigger picture: digital export."},
+    "Analizza gratis la SEO on-page della vostra pagina →":
+        {"en": "Analyse your page’s on-page SEO for free →"},
+    "Progettiamo il vostro sito multilingue a prezzo chiuso →":
+        {"en": "We design your multilingual site at a fixed price →"},
+    "Leggi anche: export digitale, il sito che apre mercati esteri →":
+        {"en": "Read also: digital export, the site that opens foreign markets →"},
+    "Siti multilingue con hreflang e madrelingua, a prezzo chiuso →":
+        {"en": "Multilingual sites with hreflang and native speakers, at a fixed price →"},
+    "Google Search Central — versioni localizzate (hreflang)":
+        {"en": "Google Search Central — localised versions (hreflang)"},
+    "La documentazione ufficiale: come dichiarare le versioni per lingua, con riferimenti reciproci e completi.":
+        {"en": "The official documentation: how to declare versions by language, with reciprocal and complete references."},
+    "Google Search Central — siti multi-regionali e multilingue":
+        {"en": "Google Search Central — multi-regional and multilingual sites"},
+    "Come gestire lingua e Paese insieme: struttura degli URL, targeting e insidie da evitare.":
+        {"en": "How to handle language and country together: URL structure, targeting and pitfalls to avoid."},
+    "CSA Research — «Can’t Read, Won’t Buy»":
+        {"en": "CSA Research — “Can’t Read, Won’t Buy”"},
+    "La ricerca sul comportamento d’acquisto: le persone comprano molto più volentieri nella propria lingua.":
+        {"en": "The research on buying behaviour: people buy far more willingly in their own language."},
+
+    # ============= Articolo 19 · Sito per l’export =============
+    "Export digitale: il sito che apre mercati esteri":
+        {"en": "Digital export: the website that opens foreign markets"},
+    "Vendere all’estero non è tradurre la home. Cosa serve davvero a un sito per l’export — lingue native, SEO internazionale, pagamenti e fiducia — e i casi reali che l’hanno fatto.":
+        {"en": "Selling abroad isn’t translating the home page. What a website for export really needs — native languages, international SEO, payments and trust — and the real cases that did it."},
+    "Un’azienda manifatturiera bresciana fa il 40% del fatturato in Germania, ma il suo sito è solo in italiano — e i clienti tedeschi ordinano per telefono, quando va bene. Una guest house sul lago di Como riempie le stanze con ospiti stranieri, ma online si presenta in una lingua sola. È lo spreco silenzioso di tantissime PMI italiane: il prodotto è pronto per l’estero, il sito no. Un sito per l’export non è la home tradotta con un plugin: è uno strumento pensato per farsi trovare, capire e scegliere da chi vive in un altro mercato. Vediamo cosa serve davvero, e i casi reali del gruppo Remarka che l’hanno fatto — con numeri, non promesse.":
+        {"en": "A manufacturer near Brescia makes 40% of its revenue in Germany, but its site is only in Italian — and German customers order by phone, when things go well. A guest house on Lake Como fills its rooms with foreign guests, yet online it shows up in a single language. It’s the silent waste of so many Italian SMBs: the product is ready for abroad, the site isn’t. A website for export isn’t the home page translated with a plugin: it’s a tool built to be found, understood and chosen by people who live in another market. Let’s see what it really needs, and the real Remarka group cases that did it — with numbers, not promises."},
+    "Un sito per l’export che apre mercati esteri: lingue native, SEO internazionale, pagamenti e fiducia oltre confine":
+        {"en": "A website for export that opens foreign markets: native languages, international SEO, payments and trust across borders"},
+    "Perché «tradurre la home» non è export":
+        {"en": "Why “translating the home page” isn’t export"},
+    "L’errore di partenza è pensare all’export come a un problema di traduzione. Tradurre è l’ultimo strato, non il primo. Un sito per l’export deve rispondere a domande che la versione italiana non si pone: la persona in Germania trova il sito quando cerca nella sua lingua? Capisce come comprare, con quali pagamenti, in quale valuta? Si fida di un’azienda straniera che non conosce? Se anche una sola di queste risposte è «no», la traduzione più bella del mondo non porta un ordine.":
+        {"en": "The starting mistake is to think of export as a translation problem. Translation is the last layer, not the first. A website for export has to answer questions the Italian version never asks: does the person in Germany find the site when they search in their own language? Do they understand how to buy, with which payments, in which currency? Do they trust a foreign company they don’t know? If even one of these answers is “no,” the finest translation in the world won’t bring an order."},
+    "La statistica di fondo è impietosa. La ricerca di CSA Research («Can’t Read, Won’t Buy») mostra che la stragrande maggioranza dei consumatori compra molto più volentieri nella propria lingua, e molti evitano del tutto i siti che non la parlano. E l’e-commerce transfrontaliero, dicono i dati Eurostat, è una fetta in crescita ma ancora frenata proprio da lingua, fiducia e logistica. L’export digitale è colmare quel divario, non solo aprire il traduttore automatico.":
+        {"en": "The underlying statistic is unforgiving. CSA Research’s study (“Can’t Read, Won’t Buy”) shows that the vast majority of consumers buy far more willingly in their own language, and many avoid altogether the sites that don’t speak it. And cross-border e-commerce, Eurostat data says, is a growing slice still held back by exactly this: language, trust and logistics. Digital export is about closing that gap, not just firing up the machine translator."},
+    "Cosa serve davvero a un sito per l’export":
+        {"en": "What a website for export really needs"},
+    "Un sito che vende all’estero poggia su quattro pilastri, e la traduzione è solo uno dei quattro. Toglietene uno e il mercato resta chiuso.":
+        {"en": "A site that sells abroad rests on four pillars, and translation is only one of the four. Remove one and the market stays shut."},
+    "Lingue native, non automatiche: testi scritti da chi la lingua la vive, con il registro giusto per quel mercato. È il pilastro della fiducia.":
+        {"en": "Native, not automatic languages: copy written by people who live the language, with the right register for that market. It’s the pillar of trust."},
+    "SEO internazionale: hreflang corretto, struttura per lingua e Paese, contenuti pensati per come si cerca là. Se non vi trovano, non esistete.":
+        {"en": "International SEO: correct hreflang, a structure by language and country, content built for how people search there. If they don’t find you, you don’t exist."},
+    "Pagamenti e valute locali: i metodi che quel mercato usa davvero, non solo la carta. In Germania, per dire, contano mezzi diversi dai nostri.":
+        {"en": "Local payments and currencies: the methods that market actually uses, not just cards. In Germany, for instance, different means matter than ours."},
+    "Fiducia oltre confine: informazioni chiare su spedizioni, resi, tempi e assistenza nella lingua del cliente. La fiducia si costruisce sui dettagli.":
+        {"en": "Trust across borders: clear information on shipping, returns, timings and support in the customer’s language. Trust is built on details."},
+    "I quattro pilastri di un sito per l’export: lingue native, SEO internazionale, pagamenti locali e fiducia oltre confine":
+        {"en": "The four pillars of a website for export: native languages, international SEO, local payments and trust across borders"},
+    "Un sito per l’export poggia su quattro pilastri: lingue native (non automatiche), SEO internazionale (hreflang e struttura per mercato), pagamenti e valute locali, fiducia oltre confine (spedizioni, resi, assistenza nella lingua del cliente). La traduzione è uno dei quattro, non il tutto. Fonti: CSA Research, Eurostat.":
+        {"en": "A website for export rests on four pillars: native languages (not automatic), international SEO (hreflang and a structure by market), local payments and currencies, trust across borders (shipping, returns, support in the customer’s language). Translation is one of the four, not the whole. Sources: CSA Research, Eurostat."},
+    "I casi reali: chi ha aperto un mercato per davvero":
+        {"en": "The real cases: who opened a market for real"},
+    "Non parliamo in teoria. Una guest house sul lago di Como, ukrinitsy.ru, dopo un sito vetrina veloce e in più lingue ha visto le prenotazioni dirette crescere di oltre il 450% in una stagione: gli ospiti stranieri prenotano dal sito, senza passare dai portali. Un’agenzia del gruppo, con пере.рф, è arrivata al primo posto su Yandex per le query di settore con la sola SEO tecnica su un dominio-caso-limite — la prova che il posizionamento in un mercato estero lo fa l’ingegneria, non la fortuna del nome.":
+        {"en": "We’re not talking in theory. A guest house on Lake Como, ukrinitsy.ru, after a fast, multilingual brochure site saw direct bookings grow by over 450% in a season: foreign guests book from the site, without going through portals. A group agency, with пере.рф, reached the top spot on Yandex for its industry queries with technical SEO alone on an edge-case domain — proof that ranking in a foreign market is made by engineering, not by a lucky name."},
+    "E c’è il caso che conosciamo meglio, perché è il nostro biglietto da visita: ATT (traduzione.tech) lavora su oltre 40 combinazioni e direzioni linguistiche, con un sito costruito per parlare la lingua del cliente B2B in ogni mercato. La stessa ingegneria — lingue native, SEO internazionale, struttura pulita — è quella che mettiamo in un sito export-ready per voi. I casi, con il link al progetto vivo, sono tutti aperti e verificabili.":
+        {"en": "And there’s the case we know best, because it’s our calling card: ATT (traduzione.tech) works across more than 40 language pairs and directions, with a site built to speak the B2B customer’s language in every market. The same engineering — native languages, international SEO, a clean structure — is what we put into an export-ready site for you. The cases, each with a link to the live project, are all open and verifiable."},
+    "Sito export-ready: cosa include e per quali mercati →":
+        {"en": "Export-ready website: what it includes and for which markets →"},
+    "I casi reali del gruppo, con link al progetto vivo →":
+        {"en": "The group’s real cases, with a link to the live project →"},
+    "Quanto rende: misurare prima di partire":
+        {"en": "How much it returns: measuring before you start"},
+    "Aprire un mercato costa, ed è giusto chiedersi se rende prima di partire. La domanda non è «quanto costa tradurre», ma «quanto vale un cliente in più in quel mercato, e quanti ne servono per ripagare il lavoro». Un catalogo tradotto da madrelingua e un checkout ridotto all’osso sono le due leve che spostano più vendite dirette all’estero — ma vanno dimensionate sul ritorno atteso, non sull’entusiasmo. Meglio partire da un mercato solo, fatto bene, che da cinque fatti a metà.":
+        {"en": "Opening a market costs money, and it’s right to ask whether it pays before you start. The question isn’t “how much does translation cost,” but “how much is one more customer worth in that market, and how many do we need to pay back the work.” A catalogue translated by native speakers and a checkout stripped to the bone are the two levers that shift the most direct sales abroad — but they must be sized against the expected return, not against enthusiasm. Better to start with one market done well than five done by halves."},
+    "Uno strumento per iniziare a ragionare c’è: un calcolo del ritorno della localizzazione, che mette in fila costo del lavoro linguistico e vendite potenziali per capire da quale lingua conviene partire. E se il primo mercato è dietro l’angolo — la Germania, l’Austria, la Svizzera per chi esporta manifattura — il pezzo tecnico da non sbagliare resta quello dell’hreflang, che abbiamo raccontato a parte.":
+        {"en": "There’s a tool to start reasoning with: a localisation-return calculation that lines up the cost of the language work and the potential sales to work out which language to start from. And if the first market is right next door — Germany, Austria, Switzerland for those exporting manufacturing — the technical piece not to get wrong is still hreflang, which we’ve covered separately."},
+    "Leggi anche: sito multilingue, hreflang senza mal di testa →":
+        {"en": "Read also: multilingual website, hreflang without the headache →"},
+    "Sito export-ready per i vostri mercati esteri, a prezzo chiuso →":
+        {"en": "An export-ready site for your foreign markets, at a fixed price →"},
+    "La ricerca sul comportamento d’acquisto: la maggioranza compra nella propria lingua ed evita i siti che non la parlano.":
+        {"en": "The research on buying behaviour: the majority buy in their own language and avoid sites that don’t speak it."},
+    "Eurostat — statistiche sull’e-commerce":
+        {"en": "Eurostat — e-commerce statistics"},
+    "I dati europei: quanto pesa l’e-commerce transfrontaliero e cosa ancora lo frena.":
+        {"en": "The European data: how much cross-border e-commerce weighs and what still holds it back."},
+    "Google Search Central — siti multi-regionali e multilingue":
+        {"en": "Google Search Central — multi-regional and multilingual sites"},
+    "Come impostare lingua e Paese per farsi trovare correttamente nei mercati esteri.":
+        {"en": "How to set up language and country to get found correctly in foreign markets."},
+
+    # ============= Articolo 20 · Manutenzione WordPress =============
+    "Manutenzione WordPress: cosa succede se non la fate":
+        {"en": "WordPress maintenance: what happens if you skip it"},
+    "Un WordPress non aggiornato non «resta com’è»: invecchia, si buca e un giorno non si apre più. Cosa comporta la manutenzione, cosa rischia chi la salta e perché non è un costo ma un’assicurazione.":
+        {"en": "An un-updated WordPress doesn’t “stay as it is”: it ages, it gets breached and one day it stops opening. What maintenance involves, what those who skip it risk, and why it’s not a cost but insurance."},
+    "«Il sito funziona, perché pagare la manutenzione?» È la domanda con cui si risparmiano cento euro l’anno e se ne perdono mille in una notte. Un sito WordPress non è un quadro appeso al muro: è un software vivo, fatto di un core, di plugin e di un tema che il mondo intorno — browser, PHP, standard di sicurezza — continua a cambiare. Non aggiornarlo non vuol dire «lasciarlo com’è»: vuol dire lasciarlo invecchiare finché un giorno non si apre più, o peggio, finché qualcuno ci entra. Vediamo cosa comporta davvero la manutenzione di un sito WordPress, cosa rischia chi la salta, e perché non è un costo ma un’assicurazione.":
+        {"en": "“The site works, why pay for maintenance?” It’s the question that saves you a hundred euros a year and loses you a thousand in one night. A WordPress site isn’t a painting on the wall: it’s living software, made of a core, of plugins and of a theme that the world around it — browsers, PHP, security standards — keeps changing. Not updating it doesn’t mean “leaving it as it is”: it means letting it age until one day it stops opening, or worse, until someone gets in. Let’s see what maintaining a WordPress site really involves, what those who skip it risk, and why it’s not a cost but insurance."},
+    "Manutenzione WordPress: backup, aggiornamenti, test e monitoraggio che tengono un sito sicuro e in piedi nel tempo":
+        {"en": "WordPress maintenance: backups, updates, testing and monitoring that keep a site secure and standing over time"},
+    "Perché un WordPress non «resta com’è»":
+        {"en": "Why a WordPress doesn’t “stay as it is”"},
+    "WordPress fa girare una fetta enorme del web, e questa diffusione ha un rovescio: è anche il bersaglio preferito di chi cerca falle da sfruttare. Il core è mantenuto bene e riceve aggiornamenti di sicurezza in continuazione — spesso automatici — ma il sito non è solo il core: è il core più i plugin più il tema. Ed è lì che si apre il problema. Secondo il report annuale di Patchstack sulla sicurezza di WordPress, la quasi totalità delle vulnerabilità scoperte non sta nel core, ma nei plugin e nei temi di terze parti.":
+        {"en": "WordPress runs a huge slice of the web, and that reach has a flip side: it’s also the favourite target of those hunting for exploitable holes. The core is well maintained and gets security updates constantly — often automatic — but the site isn’t just the core: it’s the core plus the plugins plus the theme. And that’s where the problem opens up. According to Patchstack’s annual WordPress security report, almost all discovered vulnerabilities are not in the core, but in third-party plugins and themes."},
+    "Il dato è netto: nel 2024 sono state trovate quasi ottomila nuove vulnerabilità nell’ecosistema WordPress, e circa il 96% riguardava i plugin. Ogni plugin non aggiornato è una porta che qualcuno, prima o poi, prova ad aprire. Non aggiornare non congela il sito in uno stato sicuro: lo lascia esposto a falle che diventano pubbliche e sfruttabili col passare dei mesi. Il «resta com’è» è un’illusione — quello che resta è solo il rischio, che cresce.":
+        {"en": "The figure is stark: in 2024 almost eight thousand new vulnerabilities were found in the WordPress ecosystem, and around 96% concerned plugins. Every un-updated plugin is a door someone, sooner or later, tries to open. Not updating doesn’t freeze the site in a secure state: it leaves it exposed to holes that become public and exploitable as the months pass. “Staying as it is” is an illusion — what stays is only the risk, and it grows."},
+    "Cosa comporta la manutenzione (fatta bene)":
+        {"en": "What maintenance involves (done right)"},
+    "Manutenzione non vuol dire «cliccare aggiorna a caso». Vuol dire un ciclo ordinato che tiene il sito sicuro, veloce e recuperabile. Sono poche cose, ma vanno fatte con metodo — la documentazione ufficiale di WordPress.org insiste su ognuna di esse.":
+        {"en": "Maintenance doesn’t mean “clicking update at random.” It means an orderly cycle that keeps the site secure, fast and recoverable. It’s a few things, but they must be done methodically — the official WordPress.org documentation insists on every one of them."},
+    "Backup prima di ogni intervento: database e file, completi e verificati. Senza un backup che funziona, un aggiornamento andato male è un disastro; con quello, è un contrattempo di dieci minuti.":
+        {"en": "Backup before every intervention: database and files, complete and verified. Without a working backup, an update gone wrong is a disaster; with one, it’s a ten-minute setback."},
+    "Aggiornamenti controllati: core, plugin e tema aggiornati con criterio, testati prima su un ambiente di prova quando l’aggiornamento è delicato — non alla cieca sul sito vivo.":
+        {"en": "Controlled updates: core, plugins and theme updated with judgment, tested first on a staging environment when the update is delicate — not blindly on the live site."},
+    "Sicurezza e hardening: password forti, accessi limitati, plugin inutilizzati rimossi (un plugin disattivato ma presente può ancora essere sfruttato).":
+        {"en": "Security and hardening: strong passwords, limited access, unused plugins removed (a deactivated but still-present plugin can still be exploited)."},
+    "Monitoraggio: uptime, velocità e integrità controllati nel tempo, così un problema si vede prima che lo veda un cliente.":
+        {"en": "Monitoring: uptime, speed and integrity checked over time, so a problem is spotted before a customer spots it."},
+    "Il ciclo di manutenzione di un sito WordPress: backup, aggiornamenti controllati, test, hardening e monitoraggio":
+        {"en": "The maintenance cycle of a WordPress site: backup, controlled updates, testing, hardening and monitoring"},
+    "Il ciclo della manutenzione WordPress fatta bene: backup completo, aggiornamenti controllati (core, plugin, tema), test su ambiente di prova, hardening e monitoraggio continuo. Il 96% delle vulnerabilità sta nei plugin: aggiornarli con metodo è la difesa principale. Fonti: WordPress.org, Patchstack.":
+        {"en": "The cycle of WordPress maintenance done right: full backup, controlled updates (core, plugins, theme), testing on a staging environment, hardening and continuous monitoring. 96% of vulnerabilities are in plugins: updating them methodically is the main defence. Sources: WordPress.org, Patchstack."},
+    "Cosa rischia chi la salta":
+        {"en": "What those who skip it risk"},
+    "I rischi non sono ipotesi da manuale, sono le telefonate che riceviamo. Il sito bucato che rimanda a pagine di spam o distribuisce malware — e Google lo segnala come «pericoloso» ai visitatori, bruciando in un giorno anni di reputazione. Il sito che dopo un aggiornamento di PHP del server smette semplicemente di aprirsi, perché un plugin fermo a tre anni fa non è più compatibile. La schermata bianca senza backup, con l’unica copia «da qualche parte» che nessuno trova.":
+        {"en": "The risks aren’t textbook hypotheses, they’re the phone calls we get. The breached site that redirects to spam pages or serves malware — and Google flags it as “dangerous” to visitors, burning years of reputation in a day. The site that, after a server PHP update, simply stops opening, because a plugin frozen three years ago is no longer compatible. The white screen with no backup, the only copy “somewhere” that nobody can find."},
+    "E poi c’è il costo silenzioso, quello che non fa rumore: il modulo contatti che ha smesso di inviare email da mesi e nessuno se n’è accorto, le richieste dei clienti finite nel vuoto. La manutenzione non è la voce di spesa che sembra: è ciò che tiene lontani questi disastri, e quasi sempre costa una frazione di quello che costa rimediare dopo. Un check-up periodico è il modo più economico per sapere in che stato è davvero il vostro sito, prima che ve lo dica un cliente.":
+        {"en": "And then there’s the silent cost, the one that makes no noise: the contact form that stopped sending emails months ago and nobody noticed, customer enquiries fallen into the void. Maintenance isn’t the expense line it seems: it’s what keeps these disasters away, and it almost always costs a fraction of what fixing them afterwards costs. A periodic check-up is the cheapest way to know what state your site is really in, before a customer tells you."},
+    "WordPress.org — aggiornare WordPress →":
+        {"en": "WordPress.org — updating WordPress →"},
+    "Misura gratis la salute tecnica del vostro sito →":
+        {"en": "Measure your site’s technical health for free →"},
+    "Il nostro approccio: inclusa, poi facoltativa":
+        {"en": "Our approach: included, then optional"},
+    "Sappiamo che «manutenzione» suona come un abbonamento imposto, e non ci piace nemmeno a noi. Per questo nei siti che consegniamo i primi 12 mesi di assistenza, aggiornamenti e misurazioni sono inclusi nel prezzo di costruzione, senza sorprese. Dopo, il canone è facoltativo — oppure il sito resta a voi così com’è: codice e dati sono vostri dal primo giorno. Nessun ricatto tecnico, nessuna dipendenza forzata.":
+        {"en": "We know “maintenance” sounds like an imposed subscription, and we don’t like it either. That’s why, on the sites we deliver, the first 12 months of support, updates and measurements are included in the build price, no surprises. After that, the fee is optional — or the site stays with you as it is: code and data are yours from day one. No technical blackmail, no forced dependency."},
+    "E non lo diciamo in astratto: teniamo in manutenzione continua 28 progetti, e mandiamo avanti da due anni un gestionale interno — il TMS del gruppo — che gestisce oltre 2.000 ordini l’anno e non può permettersi di fermarsi un’ora. La manutenzione la facciamo prima di tutto sui nostri sistemi, con i nostri soldi e la nostra reputazione in gioco. È la stessa cura, e la stessa ingegneria, che mettiamo in un sito aziendale per voi.":
+        {"en": "And we don’t say it in the abstract: we keep 28 projects under continuous maintenance, and for two years we’ve been running an internal management system — the group’s TMS — that handles over 2,000 orders a year and can’t afford to be down for an hour. We do maintenance first of all on our own systems, with our own money and reputation on the line. It’s the same care, and the same engineering, we put into a business website for you."},
+    "Un sito aziendale con manutenzione inclusa i primi 12 mesi →":
+        {"en": "A business website with maintenance included for the first 12 months →"},
+    "Fate il check-up del vostro sito attuale, gratis →":
+        {"en": "Run a check-up on your current site, for free →"},
+    "Leggi anche: hosting in Italia o in cloud, velocità e GDPR →":
+        {"en": "Read also: hosting in Italy or the cloud, speed and GDPR →"},
+    "Un sito aziendale con 12 mesi di manutenzione inclusa, a prezzo chiuso →":
+        {"en": "A business website with 12 months of maintenance included, at a fixed price →"},
+    "WordPress.org — aggiornare WordPress":
+        {"en": "WordPress.org — updating WordPress"},
+    "La documentazione ufficiale: perché il backup prima di ogni aggiornamento è il passo che non si salta.":
+        {"en": "The official documentation: why a backup before every update is the step you never skip."},
+    "WordPress.org — hardening (mettere in sicurezza WordPress)":
+        {"en": "WordPress.org — hardening (securing WordPress)"},
+    "Le misure ufficiali per ridurre la superficie d’attacco: accessi, plugin, permessi.":
+        {"en": "The official measures to reduce the attack surface: access, plugins, permissions."},
+    "Patchstack — State of WordPress Security 2024":
+        {"en": "Patchstack — State of WordPress Security 2024"},
+    "Il report annuale: quasi 8.000 vulnerabilità nel 2024, circa il 96% nei plugin, pochissime nel core.":
+        {"en": "The annual report: almost 8,000 vulnerabilities in 2024, around 96% in plugins, very few in the core."},
+}
+CHROME.update(CHROME_BLOG_BATCH4)
+
 # Batch 4 — blocco ufficio + mappa click-to-load, indirizzi pubblici owner
 # 17.07.2026 (piano-geo-citta.md, batch U1). Usato su Milano/Torino/Roma;
 # solo Milano ha una pagina EN (/en/milan/), quindi solo le stringhe che
