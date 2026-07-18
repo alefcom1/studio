@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Бесплатный инструмент /11</p>
 <!-- /wp:paragraph -->
@@ -19,7 +19,7 @@
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 
 <div class="sr-tool-widget sr-card" data-sr-tool="ai-llms" data-sr-locale="ru"
@@ -64,7 +64,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Как это работает</p>
 <!-- /wp:paragraph -->
@@ -76,7 +76,7 @@
 <!-- /wp:group -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Метод</p>
 <!-- /wp:paragraph -->
@@ -91,7 +91,7 @@
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Как читать результат</p>
 <!-- /wp:paragraph -->
@@ -106,7 +106,7 @@
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Три частых вопроса</p>
 <!-- /wp:paragraph -->
@@ -127,7 +127,7 @@
 <!-- /wp:details -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">Хотите, чтобы вас находили и цитировали ИИ-ассистенты<span class="sr-accent-dot">?</span></h2>
 <!-- /wp:heading -->
@@ -148,7 +148,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Другие бесплатные инструменты</p>
 <!-- /wp:paragraph -->

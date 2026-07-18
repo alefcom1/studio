@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Pricing</p>
 <!-- /wp:paragraph -->
@@ -28,13 +28,13 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 {{lancio}}<div class="sr-lancio-badge sr-mono">LAUNCH PRICE — FIRST 5 PROJECTS</div><p class="sr-lancio-line">Launch price on our first 5 projects: same contract, same guarantees. Full price list from 2027.</p><p class="sr-lancio-counter sr-mono">{{lancio_slots}} of 5 slots still open.</p>{{/lancio}}
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 <div class="sr-compare-table"><table><thead><tr><th></th><th>Brochure site<br><span>{{listino}}€ 1,900–2,800{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 1,900–2,800</s> <strong class="sr-lancio-price">€ 950–1,400</strong>{{/lancio}}</span></th><th>Business website<br><span>{{listino}}€ 3,900–5,800{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 3,900–5,800</s> <strong class="sr-lancio-price">€ 1,950–2,900</strong>{{/lancio}}</span></th><th>E-commerce<br><span>{{listino}}€ 7,500–14,000{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 7,500–14,000</s> <strong class="sr-lancio-price">€ 3,750–7,000</strong>{{/lancio}}</span></th></tr></thead><tbody><tr><td>Pages included</td><td>5</td><td>15</td><td>Catalog</td></tr><tr><td>Languages translated by native speakers</td><td>1</td><td>2</td><td>2</td></tr><tr><td>Custom design, no templates</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>CMS to update it yourself</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>PWA: offline and installable</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Catalog, cart and payments</td><td><span class="sr-no">—</span></td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Technical SEO and structured data</td><td>basic</td><td>full</td><td>full</td></tr><tr><td>PageSpeed 90+ by contract</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Support included</td><td>12 months</td><td>12 months</td><td>12 months</td></tr><tr><td>Delivery</td><td>2 wks</td><td>3 wks</td><td>6 wks</td></tr></tbody></table></div>
 <!-- /wp:html -->
@@ -55,7 +55,7 @@
 <!-- /wp:buttons -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:heading -->
 <h2 class="wp-block-heading">Prices and timelines, next to the market’s<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -70,7 +70,7 @@
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">What changes the price</p>
 <!-- /wp:paragraph -->
@@ -82,7 +82,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">A fixed quote in 24 hours<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->

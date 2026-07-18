@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 <p class="sr-mono" style="color:var(--sr-grigio);font-size:13px">18 JUL 2026</p>
 <!-- /wp:html -->
@@ -19,7 +19,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:18px;line-height:1.75;max-width:75ch">You’ve translated the site into English and German, rightly so. But now an Italian customer searches Google and ends up on the English page; a German lands on the Italian version; and your two pages — same content, different languages — compete with each other in the results. The culprit is almost always the same: hreflang is missing or wrong. It’s the attribute that tells Google “this page is the Italian version, that one is English, serve each to the right person.” People talk about hreflang for a multilingual website as something forbidding: it is, if you treat it as a plugin to switch on. Let’s see what it really is, how to set it up without errors and why it’s engineering, not luck.</p>
 <!-- /wp:paragraph -->
@@ -85,7 +85,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">Let’s talk about your website<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -106,7 +106,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:buttons {"style":{"spacing":{"blockGap":"14px"}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/en/blog/">← All articles</a></div>

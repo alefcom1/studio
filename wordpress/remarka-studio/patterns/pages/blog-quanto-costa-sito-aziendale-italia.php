@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 <p class="sr-mono" style="color:var(--sr-grigio);font-size:13px">03 FEB 2026</p>
 <!-- /wp:html -->
@@ -19,7 +19,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:18px;line-height:1.75;max-width:75ch">«Mi hanno chiesto 900 euro e mi hanno chiesto 12.000 per la stessa cosa. Chi mi sta prendendo in giro?» Nessuno dei due, quasi sempre: è che «un sito aziendale» in Italia vuol dire dieci prodotti diversi con lo stesso nome. Il mercato va dagli 800 euro dei costruttori fai-da-te ai 50.000 delle grandi agenzie, e nessuno vi spiega davvero cosa cambia in mezzo. In questo articolo mettiamo una mappa onesta sotto ogni fascia di prezzo — incluso il nostro — e le domande da fare prima di firmare qualunque preventivo.</p>
 <!-- /wp:paragraph -->
@@ -79,7 +79,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">Parliamo del vostro sito<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -100,7 +100,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:buttons {"style":{"spacing":{"blockGap":"14px"}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/blog/">← Tutti gli articoli</a></div>

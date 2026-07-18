@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 <p class="sr-mono" style="color:var(--sr-grigio);font-size:13px">03 ФЕВ 2026</p>
 <!-- /wp:html -->
@@ -19,7 +19,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.7">«С меня попросили 900 евро и попросили 12 000 за одно и то же. Кто из них меня дурит?» Почти всегда — никто: просто «корпоративный сайт» в Италии означает десяток разных продуктов под одним названием. Рынок тянется от 800 евро у конструкторов «сделай сам» до 50 000 у крупных агентств, и никто толком не объясняет, что меняется посередине. В этой статье — честная карта под каждой ценовой ступенью, включая нашу, и вопросы, которые стоит задать до подписания любой сметы.</p>
 <!-- /wp:paragraph -->
@@ -73,7 +73,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">Поговорим о вашем сайте<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -94,7 +94,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:buttons {"style":{"spacing":{"blockGap":"14px"}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/blog/">← Все статьи</a></div>

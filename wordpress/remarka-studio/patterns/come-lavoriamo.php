@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section","anchor":"come-lavoriamo","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","anchor":"come-lavoriamo","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group sr-section" id="come-lavoriamo"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Come lavoriamo</p>
 <!-- /wp:paragraph -->

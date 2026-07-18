@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Политика cookie</p>
 <!-- /wp:paragraph -->
@@ -22,7 +22,7 @@
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:heading -->
 <h2 class="wp-block-heading">Что такое технические cookie<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -31,7 +31,7 @@
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:heading -->
 <h2 class="wp-block-heading">Что мы действительно используем<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -40,7 +40,7 @@
 <!-- /wp:list -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:heading -->
 <h2 class="wp-block-heading">Внешние сервисы — только по вашему действию<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -52,7 +52,7 @@
 <!-- /wp:list -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:heading -->
 <h2 class="wp-block-heading">Как изменить свой выбор<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->

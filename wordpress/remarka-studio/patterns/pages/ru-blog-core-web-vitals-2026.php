@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 <p class="sr-mono" style="color:var(--sr-grigio);font-size:13px">12 ЯНВ 2026</p>
 <!-- /wp:html -->
@@ -19,7 +19,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.7">Владелец мастерской открывает свой сайт с телефона, в обеденный перерыв, на мобильной сети: считает секунды, вздыхает, закрывает. Это был не клиент — это был он сам, но жест тот же, что у человека, который искал вас всерьёз и ушёл. LCP, INP и CLS — три метрики, которыми Google измеряет именно этот момент и решает, кого показать первым в мобильной выдаче. Объясняем их без жаргона, на примерах магазинов и мастерских, а не стартапов, и разбираем, почему десктопная оценка, на которой до сих пор настаивают многие агентства, уже почти ничего не значит.</p>
 <!-- /wp:paragraph -->
@@ -73,7 +73,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">Поговорим о вашем сайте<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -94,7 +94,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:buttons {"style":{"spacing":{"blockGap":"14px"}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/ru/blog/">← Все статьи</a></div>

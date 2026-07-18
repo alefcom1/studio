@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Blog</p>
 <!-- /wp:paragraph -->
@@ -19,7 +19,7 @@
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">In evidenza</p>
 <!-- /wp:paragraph -->
@@ -28,7 +28,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 <div class="sr-case-filter" data-sr-case-filter-bar><button type="button" class="sr-case-filter__btn is-active" data-sr-case-filter="all" aria-pressed="true">Tutti</button><button type="button" class="sr-case-filter__btn" data-sr-case-filter="seo" aria-pressed="false">SEO e visibilità AI</button><button type="button" class="sr-case-filter__btn" data-sr-case-filter="norme" aria-pressed="false">Norme e accessibilità</button><button type="button" class="sr-case-filter__btn" data-sr-case-filter="decisioni" aria-pressed="false">Prezzi e decisioni</button><button type="button" class="sr-case-filter__btn" data-sr-case-filter="prodotti" aria-pressed="false">Tecnologie che vendono</button><button type="button" class="sr-case-filter__btn" data-sr-case-filter="prestazioni" aria-pressed="false">Velocità e sostenibilità</button></div>
 <!-- /wp:html -->

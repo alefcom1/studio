@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group sr-section sr-hero"><!-- wp:html -->
 <div class="sr-watermark" aria-hidden="true"><svg width="620" height="620" viewBox="0 0 32 32"><g stroke="#2440C8" stroke-width="2.6" fill="none"><path d="M16 2.5v27"></path><path d="M27.69 9.25 4.31 22.75"></path><path d="M4.31 9.25 27.69 22.75"></path></g></svg></div>
 <!-- /wp:html -->

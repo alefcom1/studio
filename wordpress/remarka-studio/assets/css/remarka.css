@@ -82,6 +82,17 @@ body.dark-mode .site-description {
   background: var(--sr-carta);
   border-bottom: 1px solid var(--sr-bordo);
   box-shadow: none;
+  /* Prespa non dà un contenitore alla шапка: il contenuto correva quasi
+     bordo a bordo su qualunque schermo, mentre corpo e footer erano
+     limitati. Ora tutto il sito sta sulla stessa griglia da 1440px:
+     questi padding calcolati riproducono i bordi del contenitore delle
+     sezioni (max-width:1440 border-box con 24px di padding ⇒ il
+     contenuto parte a 50% − 1440/2 + 24 = 50% − 696px dal centro) senza
+     toccare i template PHP del genitore. Lo sfondo/bordo restano
+     full-bleed perché limitiamo col padding, non con max-width.
+     max() tiene 24px minimi sugli schermi sotto i 1440px. */
+  padding-left: max(24px, calc(50% - 696px));
+  padding-right: max(24px, calc(50% - 696px));
 }
 
 #masthead .site-title,
@@ -218,16 +229,22 @@ body.dark-mode .site-description {
 }
 
 /* Ogni sezione è full-bleed (sfondo bordo a bordo), ma il contenuto va
-   centrato e limitato a 1240px con un margine minimo — i pattern usano
+   centrato e limitato a 1440px con un margine minimo — i pattern usano
    "layout":"constrained" del block editor, ma quando il contenuto viene
    iniettato via post_content lo stile di centratura generato da WP core
    non è affidabile, quindi lo ricreiamo esplicitamente qui (stesso schema
-   già usato per .sr-footer-*__inner). */
+   già usato per .sr-footer-*__inner).
+   18.07.2026 — 1240px → 1440px: il titolare ha chiesto un'unica griglia
+   per header, corpo e footer ("сейчас немного узковато"). 1440 è il
+   contenitore CONDIVISO: stessa cifra su .sr-footer-*__inner,
+   .sr-cookie-banner__inner, sul padding calcolato di #masthead (più su)
+   e su contentSize in theme.json + blocks.py del generatore — se si
+   ritocca, va cambiata in tutti questi punti insieme. */
 .sr-section > :not(.sr-watermark),
 .sr-section--bianco > :not(.sr-watermark),
 .is-style-sr-section > :not(.sr-watermark) {
   box-sizing: border-box;
-  max-width: 1240px;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 24px;
@@ -263,8 +280,10 @@ body.dark-mode .site-description {
    docs/piano-implementazione-fase-A.md e la sessione di redesign CTA).
    Prima era una banda oltremare full-bleed incollata al contenuto sopra e
    al footer nero sotto (lamentela storica del titolare: "si fondono").
-   Ora è una vera card: larghezza massima 1240px con margini laterali (gap
-   visibile anche a piena larghezza), angoli arrotondati, sfondo blu notte
+   Ora è una vera card: larga quanto il CONTENUTO delle sezioni (1392px =
+   griglia 1440 meno i 2×24 di padding, così i bordi della card cadono
+   esattamente sul filo del testo sopra e delle colonne del footer sotto),
+   con margini laterali sempre visibili, angoli arrotondati, sfondo blu notte
    (gradiente ravvicinato ai pixel del mockup, non oltremare piatto) e
    l'illustrazione (laptop+globo, assets/img/cta-analisi.webp — stesso
    ritaglio del mockup, bordo sinistro che si dissolve nel fondo tinta
@@ -278,7 +297,7 @@ body.dark-mode .site-description {
   background-size: auto 100%, cover;
   color: rgba(247, 246, 242, 0.85);
   border-bottom: none;
-  max-width: 1200px;
+  max-width: 1392px;
   width: calc(100% - 48px);
   margin: 56px auto;
   border-radius: 28px;
@@ -376,12 +395,21 @@ body.dark-mode .site-description {
   font-size: 13px;
 }
 
-/* <640px: illustrazione tolta (spazio di testo troppo stretto perché
-   resti leggibile sopra di lei) — resta solo il gradiente blu notte,
-   card più stretta e angoli meno pronunciati. */
-@media (max-width: 640px) {
+/* <1024px: illustrazione tolta — resta solo il gradiente blu notte.
+   Il limite era 640, ma fra ~640 e ~1000px la card è troppo stretta
+   perché colonna di testo (620px + padding) e illustrazione ancorata a
+   destra convivano: il laptop finiva sotto la riga di fiducia (visto
+   sullo screenshot di verifica a 768px). A 1024px in su lo spazio basta
+   con margine. */
+@media (max-width: 1023px) {
   .sr-cta-band {
     background-image: linear-gradient(160deg, #0A153F 0%, #12225E 55%, #172A63 100%);
+  }
+}
+
+/* <640px: card più stretta e angoli meno pronunciati. */
+@media (max-width: 640px) {
+  .sr-cta-band {
     width: calc(100% - 24px);
     margin: 32px auto;
     border-radius: 18px;
@@ -2836,8 +2864,14 @@ body.page .entry-title {
    cta_* restano in remarka_footer_field_defs() per non perdere le
    impostazioni salvate, semplicemente non più letti in output. */
 
+/* I tre __inner del footer usano la stessa griglia da 1440px delle sezioni
+   del corpo (v. commento su .sr-section > *). box-sizing:border-box è
+   essenziale: senza, max-width limita solo il contenuto e i 24px di
+   padding sporgono oltre — il footer risultava 48px più largo del corpo
+   (era così fino al 18.07.2026, le colonne non si allineavano al testo). */
 .sr-footer-main__inner {
-  max-width: 1240px;
+  box-sizing: border-box;
+  max-width: 1440px;
   margin: 0 auto;
   padding: clamp(40px, 5vw, 64px) 24px;
   display: grid;
@@ -2924,7 +2958,8 @@ body.page .entry-title {
 }
 
 .sr-footer-bottom__inner {
-  max-width: 1240px;
+  box-sizing: border-box;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 20px 24px 28px;
 }
@@ -2940,7 +2975,8 @@ body.page .entry-title {
 }
 
 .sr-footer-cities__inner {
-  max-width: 1240px;
+  box-sizing: border-box;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 22px 24px;
   display: flex;
@@ -3125,7 +3161,8 @@ body.page .entry-title {
 .sr-cookie-banner[hidden] { display: none; }
 
 .sr-cookie-banner__inner {
-  max-width: 1240px;
+  box-sizing: border-box;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 20px 24px;
   display: flex;

@@ -136,8 +136,13 @@ def group(html, classes='', layout_type='constrained', tag=None, style=None, anc
 def section(inner_html, classes='sr-section', anchor=None, data_attrs=None):
     """data_attrs: dict opzionale di attributi extra sul tag <section>
     (es. {'data-cat': 'webapp'} per il filtro a chip del catalogo casi studio)."""
+    # 1440px — griglia unica del sito (18.07.2026): stessa cifra di
+    # .sr-section > * in remarka.css, dei __inner del footer, del padding
+    # di #masthead e di contentSize in theme.json. Cambiarla = cambiarla
+    # ovunque insieme (e rigenerare TUTTE le pagine: il valore finisce
+    # frozen nel markup di ogni sezione).
     attrs = {"tagName": "section", "className": classes,
-             "layout": {"type": "constrained", "contentSize": "1240px"}}
+             "layout": {"type": "constrained", "contentSize": "1440px"}}
     if anchor:
         attrs["anchor"] = anchor
     anchor_attr = f' id="{anchor}"' if anchor else ''

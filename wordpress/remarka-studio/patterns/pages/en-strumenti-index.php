@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Free tools</p>
 <!-- /wp:paragraph -->
@@ -19,19 +19,19 @@
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:html -->
 <div class="sr-card sr-card--carta sr-tools-feat" style="border-color:var(--sr-oltremare)"><div class="sr-tools-feat__text"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">New · free</p><h3 class="wp-block-heading" style="margin-top:10px">Full check-up</h3><p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">Seven free tools in a single analysis.</p><p class="sr-card-link" style="margin-top:18px"><a href="/en/tools/full-site-checkup/">Try it →</a></p></div><div class="sr-tools-feat__img"><img src="/wp-content/themes/remarka-studio/assets/img/tools/tools-hero.webp" alt="Check-up dashboard showing an 87/100 health score and a performance chart" width="328" height="249" loading="lazy" style="display:block;max-width:100%;height:auto"/></div></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
 <p class="has-grigio-color has-text-color has-base-font-size" style="max-width:75ch">Three new AI tools. «Your website, read by AI» shows you what an artificial assistant understands when it comes across your homepage. «Does it sound native?» tells you if your English or Russian texts sound native or feel translated — our trade since 2001. The «llms.txt generator» writes, for you, the file that explains your site to AI assistants, ready to download. Free, no sign-up: it’s artificial intelligence at the service of your site, not the other way round.</p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
@@ -235,7 +235,7 @@
 <!-- /wp:group -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">Let’s talk about your website<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->

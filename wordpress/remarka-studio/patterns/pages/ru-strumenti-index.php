@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Бесплатные инструменты</p>
 <!-- /wp:paragraph -->
@@ -19,19 +19,19 @@
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:html -->
 <div class="sr-card sr-card--carta sr-tools-feat" style="border-color:var(--sr-oltremare)"><div class="sr-tools-feat__text"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">Новинка · бесплатно</p><h3 class="wp-block-heading" style="margin-top:10px">Полная проверка сайта</h3><p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">Семь бесплатных инструментов в одном анализе.</p><p class="sr-card-link" style="margin-top:18px"><a href="/ru/instrumenty/polnaya-proverka-sajta/">Попробовать →</a></p></div><div class="sr-tools-feat__img"><img src="/wp-content/themes/remarka-studio/assets/img/tools/tools-hero.webp" alt="Дашборд проверки сайта с оценкой здоровья 87 из 100 и графиком показателей" width="328" height="249" loading="lazy" style="display:block;max-width:100%;height:auto"/></div></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
 <p class="has-grigio-color has-text-color has-base-font-size" style="max-width:75ch">Три новых ИИ-инструмента. «Ваш сайт, прочитанный ИИ» показывает, что понимает искусственный ассистент, когда встречает вашу главную страницу. «Звучит как у носителя?» говорит, звучат ли ваши тексты на итальянском или английском как у носителя языка или чувствуется перевод — наше ремесло с 2001 года. «Генератор llms.txt» пишет для вас файл, который объясняет сайт ИИ-ассистентам, готовый к скачиванию. Бесплатно, без регистрации: искусственный интеллект на службе у вашего сайта, а не наоборот.</p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
@@ -235,7 +235,7 @@
 <!-- /wp:group -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">Поговорим о вашем сайте<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->

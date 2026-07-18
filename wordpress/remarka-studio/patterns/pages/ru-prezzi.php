@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Цены</p>
 <!-- /wp:paragraph -->
@@ -28,13 +28,13 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 {{lancio}}<div class="sr-lancio-badge sr-mono">ЦЕНА ЗАПУСКА — ПЕРВЫЕ 5 ПРОЕКТОВ</div><p class="sr-lancio-line">Цена запуска на первые 5 проектов: тот же договор, те же гарантии. Полный прайс — с 2027 года.</p><p class="sr-lancio-counter sr-mono">Свободно мест: {{lancio_slots}} из 5.</p>{{/lancio}}
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 <div class="sr-compare-table"><table><thead><tr><th></th><th>Сайт-визитка<br><span>{{listino}}170 000–250 000 ₽<span class="sr-cur-eur">€ 1 900–2 800</span>{{/listino}}{{lancio}}<s class="sr-lancio-listino">170 000–250 000 ₽</s> <strong class="sr-lancio-price">85 000–125 000 ₽<span class="sr-cur-eur">€ 950–1 400</span></strong>{{/lancio}}</span></th><th>Корпоративный сайт<br><span>{{listino}}350 000–510 000 ₽<span class="sr-cur-eur">€ 3 900–5 800</span>{{/listino}}{{lancio}}<s class="sr-lancio-listino">350 000–510 000 ₽</s> <strong class="sr-lancio-price">175 000–255 000 ₽<span class="sr-cur-eur">€ 1 950–2 900</span></strong>{{/lancio}}</span></th><th>Интернет-магазины<br><span>{{listino}}660 000–1 230 000 ₽<span class="sr-cur-eur">€ 7 500–14 000</span>{{/listino}}{{lancio}}<s class="sr-lancio-listino">660 000–1 230 000 ₽</s> <strong class="sr-lancio-price">330 000–615 000 ₽<span class="sr-cur-eur">€ 3 750–7 000</span></strong>{{/lancio}}</span></th></tr></thead><tbody><tr><td>Страниц включено</td><td>5</td><td>15</td><td>Каталог</td></tr><tr><td>Языки в переводе носителей</td><td>1</td><td>2</td><td>2</td></tr><tr><td>Дизайн с нуля, без шаблонов</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>CMS для самостоятельных правок</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>PWA: офлайн и установка на телефон</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Каталог, корзина и оплата</td><td><span class="sr-no">—</span></td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Техническое SEO и структурированные данные</td><td>база</td><td>полное</td><td>полное</td></tr><tr><td>PageSpeed 90+ da contratto</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Поддержка включена</td><td>12 месяцев</td><td>12 месяцев</td><td>12 месяцев</td></tr><tr><td>Срок сдачи</td><td>2 нед.</td><td>3 нед.</td><td>6 нед.</td></tr></tbody></table></div>
 <!-- /wp:html -->
@@ -55,7 +55,7 @@
 <!-- /wp:buttons -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:heading -->
 <h2 class="wp-block-heading">Цены и сроки — рядом с рыночными<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -70,7 +70,7 @@
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Из чего складывается цена</p>
 <!-- /wp:paragraph -->
@@ -82,7 +82,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">Фиксированная смета за 24 часа<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->

@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco sr-rule-top","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco sr-rule-top","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group sr-section sr-section--bianco sr-rule-top"><!-- wp:columns {"verticalAlignment":"center","className":"sr-cascade","style":{"spacing":{"blockGap":{"left":"56px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->

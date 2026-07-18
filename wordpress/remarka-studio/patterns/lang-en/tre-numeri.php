@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group sr-section"><!-- wp:columns {"className":"sr-cascade","style":{"spacing":{"blockGap":{"left":"32px"}}}} -->
 <div class="wp-block-columns sr-cascade"><!-- wp:column {"className":"sr-stat"} -->
 <div class="wp-block-column sr-stat"><!-- wp:paragraph {"className":"sr-stat__num sr-no-margin"} -->

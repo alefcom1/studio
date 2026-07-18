@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-rule-top","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-rule-top","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group sr-section sr-rule-top"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Услуги</p>
 <!-- /wp:paragraph -->

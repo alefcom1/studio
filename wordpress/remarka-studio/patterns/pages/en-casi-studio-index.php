@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Case studies</p>
 <!-- /wp:paragraph -->
@@ -31,7 +31,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card","layout":{"type":"constrained","contentSize":"1240px"},"anchor":"att-traduzione-tech"} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"att-traduzione-tech"} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-case-card" id="att-traduzione-tech" data-cat="siti"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"className":"sr-cascade"} -->
 <div class="wp-block-columns sr-cascade"><!-- wp:column {"width":"52%"} -->
 <div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
@@ -73,7 +73,7 @@
 <!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"},"anchor":"tms-perevod4"} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"tms-perevod4"} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-case-card sr-section--bianco" id="tms-perevod4" data-cat="webapp"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"className":"sr-cascade"} -->
 <div class="wp-block-columns sr-cascade"><!-- wp:column {"width":"52%"} -->
 <div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
@@ -136,7 +136,7 @@
 <!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card","layout":{"type":"constrained","contentSize":"1240px"},"anchor":"mini-app-telegram"} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"mini-app-telegram"} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-case-card" id="mini-app-telegram" data-cat="webapp"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"className":"sr-cascade"} -->
 <div class="wp-block-columns sr-cascade"><!-- wp:column {"width":"52%"} -->
 <div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser sr-browser--mobile","layout":{"type":"constrained"}} -->
@@ -178,7 +178,7 @@
 <!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"},"anchor":"ai-perevod4"} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"ai-perevod4"} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-case-card sr-section--bianco" id="ai-perevod4" data-cat="seo"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"className":"sr-cascade"} -->
 <div class="wp-block-columns sr-cascade"><!-- wp:column {"width":"52%"} -->
 <div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
@@ -220,7 +220,7 @@
 <!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card","layout":{"type":"constrained","contentSize":"1240px"},"anchor":"perevod4-catalogo"} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"perevod4-catalogo"} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-case-card" id="perevod4-catalogo" data-cat="seo"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"className":"sr-cascade"} -->
 <div class="wp-block-columns sr-cascade"><!-- wp:column {"width":"52%"} -->
 <div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
@@ -262,7 +262,7 @@
 <!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"},"anchor":"gioco-impero-traduzioni"} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"gioco-impero-traduzioni"} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-case-card sr-section--bianco" id="gioco-impero-traduzioni" data-cat="restyling"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"className":"sr-cascade"} -->
 <div class="wp-block-columns sr-cascade"><!-- wp:column {"width":"52%"} -->
 <div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
@@ -304,7 +304,7 @@
 <!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card","layout":{"type":"constrained","contentSize":"1240px"},"anchor":"pere-rf"} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"pere-rf"} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-case-card" id="pere-rf" data-cat="seo"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"className":"sr-cascade"} -->
 <div class="wp-block-columns sr-cascade"><!-- wp:column {"width":"52%"} -->
 <div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
@@ -346,7 +346,7 @@
 <!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"},"anchor":"ukrinitsy"} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"ukrinitsy"} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-case-card sr-section--bianco" id="ukrinitsy" data-cat="siti"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"className":"sr-cascade"} -->
 <div class="wp-block-columns sr-cascade"><!-- wp:column {"width":"52%"} -->
 <div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser sr-browser--mobile","layout":{"type":"constrained"}} -->
@@ -388,7 +388,7 @@
 <!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card","layout":{"type":"constrained","contentSize":"1240px"},"anchor":"moscowtrans-techperevod"} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"moscowtrans-techperevod"} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-case-card" id="moscowtrans-techperevod" data-cat="restyling"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"className":"sr-cascade"} -->
 <div class="wp-block-columns sr-cascade"><!-- wp:column {"width":"52%"} -->
 <div class="wp-block-column" style="flex-basis:52%"><!-- wp:html -->
@@ -442,7 +442,7 @@
 <!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"},"anchor":"test-traduttori"} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"test-traduttori"} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-case-card sr-section--bianco" id="test-traduttori" data-cat="webapp"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"className":"sr-cascade"} -->
 <div class="wp-block-columns sr-cascade"><!-- wp:column {"width":"52%"} -->
 <div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
@@ -484,7 +484,7 @@
 <!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card","layout":{"type":"constrained","contentSize":"1240px"},"anchor":"1russian"} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-case-card","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"1russian"} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-case-card" id="1russian" data-cat="seo"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"className":"sr-cascade"} -->
 <div class="wp-block-columns sr-cascade"><!-- wp:column {"width":"52%"} -->
 <div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
@@ -526,7 +526,7 @@
 <!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">The next system, we can build for you<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->

@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Prezzi</p>
 <!-- /wp:paragraph -->
@@ -28,13 +28,13 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 {{lancio}}<div class="sr-lancio-badge sr-mono">PREZZO LANCIO — PRIMI 5 PROGETTI</div><p class="sr-lancio-line">Prezzo lancio sui primi 5 progetti: stesso contratto, stesse garanzie. Listino pieno dal 2027.</p><p class="sr-lancio-counter sr-mono">Ne restano {{lancio_slots}} su 5.</p>{{/lancio}}
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 <div class="sr-compare-table"><table><thead><tr><th></th><th>Sito vetrina<br><span>{{listino}}€ 1.900–2.800{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 1.900–2.800</s> <strong class="sr-lancio-price">€ 950–1.400</strong>{{/lancio}}</span></th><th>Sito aziendale<br><span>{{listino}}€ 3.900–5.800{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 3.900–5.800</s> <strong class="sr-lancio-price">€ 1.950–2.900</strong>{{/lancio}}</span></th><th>E-commerce<br><span>{{listino}}€ 7.500–14.000{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 7.500–14.000</s> <strong class="sr-lancio-price">€ 3.750–7.000</strong>{{/lancio}}</span></th></tr></thead><tbody><tr><td>Pagine incluse</td><td>5</td><td>15</td><td>Catalogo</td></tr><tr><td>Lingue tradotte da madrelingua</td><td>1</td><td>2</td><td>2</td></tr><tr><td>Design su misura, senza template</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>CMS per aggiornarlo da soli</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>PWA: offline e installabile</td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Catalogo, carrello e pagamenti</td><td><span class="sr-no">—</span></td><td><span class="sr-no">—</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>SEO tecnica e dati strutturati</td><td>base</td><td>completa</td><td>completa</td></tr><tr><td>PageSpeed 90+ da contratto</td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td><td><span class="sr-yes">✓</span></td></tr><tr><td>Assistenza inclusa</td><td>12 mesi</td><td>12 mesi</td><td>12 mesi</td></tr><tr><td>Consegna</td><td>2 sett.</td><td>3 sett.</td><td>6 sett.</td></tr></tbody></table></div>
 <!-- /wp:html -->
@@ -55,7 +55,7 @@
 <!-- /wp:buttons -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:heading -->
 <h2 class="wp-block-heading">Prezzi e tempi, accanto a quelli di mercato<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
@@ -70,7 +70,7 @@
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Cosa fa variare il prezzo</p>
 <!-- /wp:paragraph -->
@@ -82,7 +82,7 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">Preventivo chiuso in 24 ore<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->

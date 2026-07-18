@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Strumenti gratuiti</p>
 <!-- /wp:paragraph -->
@@ -19,19 +19,19 @@
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:html -->
 <div class="sr-card sr-card--carta sr-tools-feat" style="border-color:var(--sr-oltremare)"><div class="sr-tools-feat__text"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">Novità · gratuito</p><h3 class="wp-block-heading" style="margin-top:10px">Check-up completo</h3><p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">Sette strumenti gratuiti in una sola analisi.</p><p class="sr-card-link" style="margin-top:18px"><a href="/strumenti/check-up-completo/">Prova →</a></p></div><div class="sr-tools-feat__img"><img src="/wp-content/themes/remarka-studio/assets/img/tools/tools-hero.webp" alt="Dashboard del check-up con punteggio di salute 87 su 100 e grafico delle prestazioni" width="328" height="249" loading="lazy" style="display:block;max-width:100%;height:auto"/></div></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"textColor":"grigio","fontSize":"base"} -->
 <p class="has-grigio-color has-text-color has-base-font-size" style="max-width:75ch">Tre strumenti AI, nuovi. «Il vostro sito, letto dall’AI» vi mostra cosa capisce un assistente artificiale quando incontra la vostra home. «Suona madrelingua?» dice se i vostri testi in inglese o russo suonano nativi o sanno di traduzione — il nostro mestiere dal 2001. Il «Generatore di llms.txt» scrive per voi il file che spiega il sito agli assistenti AI, pronto da scaricare. Gratis, senza registrazione: è l’intelligenza artificiale al servizio del vostro sito, non del contrario.</p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:240px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
@@ -235,7 +235,7 @@
 <!-- /wp:group -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">Parliamo del vostro sito<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->

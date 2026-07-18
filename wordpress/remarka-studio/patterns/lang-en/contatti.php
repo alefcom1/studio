@@ -7,7 +7,7 @@
  * Viewport Width: 1400
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco sr-rule-top","layout":{"type":"constrained","contentSize":"1240px"},"anchor":"contatti"} -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco sr-rule-top","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"contatti"} -->
 <section class="wp-block-group sr-section sr-section--bianco sr-rule-top" id="contatti"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"64px"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
