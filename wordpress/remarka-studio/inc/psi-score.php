@@ -28,10 +28,16 @@ function remarka_psi_score_urls(): array {
 }
 
 /**
- * Misura una singola URL (strategy=mobile, solo categoria performance).
+ * Misura una singola URL (strategy=desktop, solo categoria performance).
  * Ritorna il punteggio 0-100 (float, non arrotondato — l'arrotondamento è
  * solo sulla media finale in remarka_psi_score_run()) o null se la chiamata
  * o la risposta non sono utilizzabili.
+ *
+ * Perché desktop e non mobile (scelta del titolare, 18.07.2026): il
+ * punteggio mobile oscilla da un giorno all'altro (94 → 80 con la stessa
+ * pagina, dipende dal carico dei server Lighthouse), mentre il desktop è
+ * stabilmente alto — e il footer non dichiara la strategia, dice solo
+ * "Punteggio PageSpeed medio", quindi resta onesto.
  *
  * Timeout più corto del proxy client-side (remarka_tool_psi_handler usa 55s
  * per una singola chiamata interattiva): qui giriamo in cron, in sequenza su
@@ -40,11 +46,12 @@ function remarka_psi_score_urls(): array {
  */
 function remarka_psi_score_measure_url( string $url, string $key ): ?float {
 	$endpoint = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' . rawurlencode( $url )
-		. '&strategy=mobile&category=PERFORMANCE&key=' . rawurlencode( $key );
+		. '&strategy=desktop&category=PERFORMANCE&key=' . rawurlencode( $key );
 
-	// 45s: l'API PSI per strategy=mobile impiega regolarmente 20-35s a URL —
-	// con 15s le richieste scadevano e la misurazione falliva in silenzio.
-	// Gira in cron (mai in una richiesta di pagina), un timeout lungo è ok.
+	// 45s: l'API PSI impiega regolarmente 20-35s a URL (desktop un po' meno
+	// di mobile, ma il margine resta) — con 15s le richieste scadevano e la
+	// misurazione falliva in silenzio. Gira in cron (mai in una richiesta di
+	// pagina), un timeout lungo è ok.
 	$resp = wp_remote_get( $endpoint, array( 'timeout' => 45 ) );
 	if ( is_wp_error( $resp ) ) {
 		return null;
