@@ -148,6 +148,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="margin-top:16px;font-size:16px">Sviluppiamo web app per i clienti — e l’area clienti è la nostra: stessa piattaforma, stessi standard, stesso design. Nessun gestionale di terzi: i dati restano su server nell’Unione Europea e ne raccogliamo solo il minimo necessario per lavorare insieme.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/blog/area-clienti-agenzia-web/">Cosa pretendere dall’area clienti di qualunque agenzia: la guida →</a></p>
+<!-- /wp:html -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"50%"} -->

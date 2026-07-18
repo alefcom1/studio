@@ -148,6 +148,9 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="margin-top:16px;font-size:16px">We build web apps for clients — and the client area is ours: same platform, same standards, same design. No third-party tools: data stays on servers in the European Union, and we only collect the minimum needed to work together.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/en/blog/web-agency-client-portal/">What to demand from any agency’s client portal: the guide →</a></p>
+<!-- /wp:html -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"50%"} -->

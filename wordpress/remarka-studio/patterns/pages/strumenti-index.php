@@ -269,7 +269,7 @@
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Il sito osservato in continuo dopo il lancio: controlli periodici e uptime</span></div><div><span class="sr-mono">✓</span><span>Core Web Vitals reali degli utenti, mese dopo mese</span></div><div><span class="sr-mono">✓</span><span>Se un valore peggiora, lo vediamo noi — e interveniamo prima che diventi un problema</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/" target="_blank" rel="noopener">La piattaforma: lab.remarka.biz →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="/#contatti">Incluso nei progetti con assistenza — parliamone →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="/blog/monitoraggio-sito-dopo-lancio/">Cosa misurare ogni mese: la guida al monitoraggio →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="https://lab.remarka.biz/" target="_blank" rel="noopener">La piattaforma: lab.remarka.biz →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="/#contatti">Incluso nei progetti con assistenza — parliamone →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

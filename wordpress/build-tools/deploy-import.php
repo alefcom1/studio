@@ -260,6 +260,8 @@ $page_map = array(
 	'blog-hreflang-sito-multilingue'            => array( 'hreflang-sito-multilingue', 'blog', null ),
 	'blog-sito-per-export'                      => array( 'sito-per-export', 'blog', null ),
 	'blog-manutenzione-wordpress'               => array( 'manutenzione-wordpress', 'blog', null ),
+	'blog-area-clienti-agenzia-web'             => array( 'area-clienti-agenzia-web', 'blog', null ),
+	'blog-monitoraggio-sito-dopo-lancio'        => array( 'monitoraggio-sito-dopo-lancio', 'blog', null ),
 
 	// ---- Albero EN (genitore = percorso completo) ----
 	'en-servizi-index'                             => array( 'services', 'en', 'Services' ),
@@ -315,6 +317,8 @@ $page_map = array(
 	'en-blog-hreflang-sito-multilingue'            => array( 'hreflang-multilingual-website', 'en/blog', null ),
 	'en-blog-sito-per-export'                      => array( 'website-for-export', 'en/blog', null ),
 	'en-blog-manutenzione-wordpress'               => array( 'wordpress-maintenance', 'en/blog', null ),
+	'en-blog-area-clienti-agenzia-web'             => array( 'web-agency-client-portal', 'en/blog', null ),
+	'en-blog-monitoraggio-sito-dopo-lancio'        => array( 'website-monitoring-after-launch', 'en/blog', null ),
 	'en-prezzi'                                    => array( 'pricing', 'en', null ),
 	'en-citta-milano'                              => array( 'milan', 'en', null ),
 	'en-area-clienti'                              => array( 'client-area', 'en', 'Client area' ),

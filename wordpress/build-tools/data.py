@@ -1968,6 +1968,10 @@ _S_WP_UPDATING    = 'https://wordpress.org/documentation/article/updating-wordpr
 _S_WP_HARDENING   = 'https://developer.wordpress.org/advanced-administration/security/hardening/'
 _S_WP_BACKUP      = 'https://developer.wordpress.org/advanced-administration/security/backup/'
 _S_PATCHSTACK_24  = 'https://patchstack.com/whitepaper/state-of-wordpress-security-in-2024/'
+# Fonti — sputnik area clienti + monitoraggio (piano-promo-cabinet-lab.md §3.9)
+_S_NIST_80063B    = 'https://pages.nist.gov/800-63-3/sp800-63b.html'
+_S_SRE_MONITORING = 'https://sre.google/sre-book/monitoring-distributed-systems/'
+_S_PMI_PULSE      = 'https://www.pmi.org/learning/thought-leadership/pulse'
 
 BLOG_POSTS = [
     dict(slug='sito-quattro-lingue-costi-tempi', data='05 MAG 2026', tema='decisioni',
@@ -3155,6 +3159,124 @@ BLOG_POSTS = [
               'Le misure ufficiali per ridurre la superficie d’attacco: accessi, plugin, permessi.'),
              ('Patchstack — State of WordPress Security 2024', _S_PATCHSTACK_24,
               'Il report annuale: quasi 8.000 vulnerabilità nel 2024, circa il 96% nei plugin, pochissime nel core.'),
+         ]),
+
+    # ---- Sputnik area clienti + Lab Monitor (piano-promo-cabinet-lab.md §3.9) — IT + EN ----
+    dict(slug='area-clienti-agenzia-web', data='19 LUG 2026', tema='decisioni',
+         titolo='Area clienti di un’agenzia web: cosa dovete pretendere',
+         estratto='«A che punto siamo con il sito?» non dovrebbe essere una domanda: dovrebbe essere una schermata. I sei segni di un fornitore trasparente, le tre domande di sicurezza e perché non deve costarvi un euro in più.',
+         corpo='«A che punto siamo con il sito?» Se per rispondere dovete scavare tra tre catene di e-mail, uno screenshot su WhatsApp e un PDF chiamato definitivo-v3-BIS, il problema non siete voi: è il fornitore che vi ha lasciato senza strumenti. Nel 2026 un’area clienti — un posto dove il progetto si vede: la fase in corso, chi deve approvare cosa, i file, le fatture — non è un lusso da grande agenzia web, è il minimo sindacale della trasparenza. In questo articolo: i sei segni che distinguono un’area clienti vera da una vetrina, le tre domande di sicurezza da fare prima di firmare, e perché tutto questo non dovrebbe costarvi un euro in più.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/areaclienti-cover.svg',
+                    alt='Area clienti di un’agenzia web: le fasi del progetto, le approvazioni con storico e i sei segni di un fornitore trasparente'),
+         cta=('Com’è fatta la nostra area clienti', '/area-clienti/'),
+         sezioni=[
+             dict(titolo='Il progetto invisibile (e i litigi che produce)',
+                  paragrafi=[
+                      'La maggior parte dei conflitti tra cliente e agenzia non nasce dalla qualità del lavoro: nasce dalla memoria. «Il logo grande l’avevate approvato voi» — «no, avevamo chiesto di ridurlo». Senza un registro, ogni decisione vive nella testa di qualcuno, e la versione più sicura di sé vince sulla versione vera. Non è un difetto di carattere, è un difetto di struttura: e-mail e chat sono canali di conversazione, non archivi di decisioni. Il Project Management Institute lo ripete da anni nei suoi rapporti: la comunicazione inefficace è tra le prime cause di fallimento dei progetti — e un progetto web da tre settimane non fa eccezione.',
+                      'C’è anche un costo più silenzioso: l’attesa. Ogni «a che punto siamo?» è un’interruzione per chi lavora e un’incertezza per chi aspetta; su un progetto di un mese sono decine di messaggi che non producono nulla. La trasparenza non è cortesia — è infrastruttura: se lo stato del progetto è visibile, la domanda scompare da sola.',
+                  ]),
+             dict(titolo='I sei segni di un’area clienti di agenzia web fatta sul serio',
+                  lista=[
+                      'Fasi visibili: il progetto ha stadi espliciti — brief, design, sviluppo, contenuti, revisione, lancio — e vedete in quale si trova oggi, non nell’ultima telefonata.',
+                      'Approvazioni con storico: bozze e testi si approvano o si rimandano con un commento, e resta scritto chi, cosa e quando.',
+                      'File in un posto solo: bozze, consegne e materiali non viaggiano in allegati da 20 MB, ma stanno dove li ritroverete tra un anno.',
+                      'Fatture con stato: numero, importo, scadenza e stato di pagamento — senza dover chiedere «me la rimanda?».',
+                      'Richieste tracciate: ogni domanda apre un filo con la sua risposta, non un thread che muore nella casella di un collega in ferie.',
+                      'La vostra lingua: se il team lavora tra più paesi, l’interfaccia deve seguirvi — non costringervi all’italiano tecnico.',
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/areaclienti-sei-segni.svg',
+                              alt='I sei segni di un’area clienti seria: fasi visibili, approvazioni con storico, file, fatture, richieste tracciate e interfaccia multilingue',
+                              caption='I sei segni, in ordine di importanza: fasi visibili, approvazioni con storico, file in un posto solo, fatture con stato, richieste tracciate, interfaccia nella vostra lingua. Nessuno dei sei è tecnologia esotica: è disciplina resa visibile.'),
+                  paragrafi=[
+                      'Eccoli, in ordine di importanza. Nessuno dei sei è tecnologia esotica: sono pratiche note da vent’anni a chiunque gestisca progetti. La differenza sta in chi porta l’onere: un fornitore serio ve le mette a disposizione di serie, non ve le vende a parte come «modulo premium». E se al primo appuntamento vi mostrano l’area clienti prima ancora che glielo chiediate, è un buon segno: non hanno niente da nascondere sul modo in cui lavorano.',
+                  ]),
+             dict(titolo='Le tre domande di sicurezza, prima di firmare',
+                  paragrafi=[
+                      'Prima domanda: come si entra? La risposta migliore è «senza password»: un link monouso via e-mail, che scade in pochi minuti. Le linee guida NIST sull’identità digitale dicono da anni quello che l’esperienza di tutti conferma — le password si dimenticano, si riusano e si rubano. Un accesso monouso elimina il problema alla radice, invece di scaricarlo su di voi.',
+                      'Seconda: dove vivono i dati? Nomi, e-mail, fatture e bozze del vostro sito sono dati aziendali. Il GDPR chiede minimizzazione — si raccoglie solo il necessario — e voi avete tutto l’interesse che restino su server nell’Unione Europea, dove il regolamento si applica senza acrobazie contrattuali.',
+                      'Terza: chi vede cosa? In un portale con più clienti, la separazione dei dati non è un dettaglio: chiedete esplicitamente se ogni cliente vede solo i propri progetti e se gli accessi vengono registrati. Un fornitore serio risponde in trenta secondi; uno improvvisato cambia discorso.',
+                      'Bonus, prima ancora di parlare con l’agenzia: guardate il suo sito con lo stesso metro che userebbe Google. I segnali di fiducia — chi c’è dietro, contatti veri, politiche pubblicate — si misurano in un minuto.',
+                  ],
+                  links=[('Misura i segnali di fiducia di un sito: lo strumento E-E-A-T gratuito', '/strumenti/segnali-eeat/')]),
+             dict(titolo='Un’area clienti non sostituisce il contratto (lo completa)',
+                  paragrafi=[
+                      'Attenzione all’equivoco opposto: un portale elegante non è una garanzia. La data di consegna sta nel contratto, non nell’interfaccia; il prezzo chiuso pure. L’area clienti è il posto dove vedete che il contratto viene rispettato — fase dopo fase, approvazione dopo approvazione. Le due cose lavorano insieme: nero su bianco negli accordi, tutto alla luce nell’esecuzione. Diffidate di chi vi offre solo una delle due.',
+                      'Se in questi giorni state confrontando preventivi, abbiamo scritto una guida su come leggerli senza sorprese: le voci che devono esserci, quelle che mancano sempre e le domande da fare prima di firmare.',
+                  ],
+                  links=[('Preventivo sito web: come leggerlo senza sorprese', '/blog/preventivo-sito-web-come-leggerlo/')]),
+             dict(titolo='Come lo facciamo noi (e perché non costa un euro in più)',
+                  paragrafi=[
+                      'Dichiarazione di interesse: questa guida non è neutrale, perché un’area clienti l’abbiamo costruita — per noi. Sviluppiamo web app per i clienti e il nostro portale gira sulla stessa piattaforma: 8 fasi del progetto sempre visibili, approvazioni con storico, file, fatture e richieste, interfaccia in italiano, inglese o russo, accesso senza password, dati su server in Germania. È inclusa in ogni progetto, dal sito vetrina all’e-commerce, perché per noi la trasparenza non è un optional a listino: è il modo più economico di lavorare bene.',
+                      'Il criterio resta valido anche se sceglierete un’altra agenzia: pretendete di vedere il vostro progetto. Se la risposta è «vi teniamo aggiornati via e-mail», sapete già come andrà a finire.',
+                  ],
+                  links=[('Com’è fatta la nostra area clienti, schermata per schermata', '/area-clienti/'),
+                         ('Siti aziendali: cosa include un progetto', '/servizi/siti-aziendali/')]),
+         ],
+         fonti=[
+             ('NIST SP 800-63B — Digital Identity Guidelines', _S_NIST_80063B,
+              'Le linee guida del National Institute of Standards and Technology su autenticazione e credenziali: la base tecnica dell’accesso senza password.'),
+             ('Regolamento (UE) 2016/679 — GDPR, testo ufficiale', _S_GDPR,
+              'L’articolo 5 fissa i princìpi di minimizzazione dei dati e di limitazione della conservazione citati nell’articolo.'),
+             ('PMI — Pulse of the Profession', _S_PMI_PULSE,
+              'La serie di rapporti del Project Management Institute che indica da anni la comunicazione inefficace tra le prime cause di fallimento dei progetti.'),
+         ]),
+
+    dict(slug='monitoraggio-sito-dopo-lancio', data='19 LUG 2026', tema='prestazioni',
+         titolo='Monitoraggio del sito dopo il lancio: cosa misurare ogni mese',
+         estratto='Il giorno della consegna il punteggio era 94. Un anno dopo il sito carica in cinque secondi e nessuno se n’è accorto. Le quattro misure che contano, il rituale mensile in venti minuti e quando delegare.',
+         corpo='Il giorno della consegna il vostro sito era una scheda perfetta: PageSpeed 94, tutto verde, strette di mano. Dodici mesi dopo carica in cinque secondi, un modulo non invia più nulla e nessuno se n’è accorto — perché nessuno stava guardando. I siti non si rompono con un boato: si logorano in silenzio, un plugin aggiornato alla volta, una foto da 8 MB alla volta. Il monitoraggio del sito web è il mestiere di accorgersene prima dei vostri clienti. Ecco cosa misurare ogni mese, con quali strumenti, e quando ha senso delegare.',
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/monitoraggio-cover.svg',
+                    alt='Monitoraggio del sito web dopo il lancio: il punteggio che si logora in dodici mesi senza controlli e le soglie dei Core Web Vitals'),
+         cta=('Fate il check-up completo del vostro sito — gratis', '/strumenti/check-up-completo/'),
+         sezioni=[
+             dict(titolo='Perché un sito veloce smette di esserlo',
+                  paragrafi=[
+                      'Un sito è un sistema vivo: il CMS e i plugin si aggiornano, il team carica le immagini come escono dal telefono, il marketing aggiunge uno script di tracciamento «solo per una campagna» che resta lì per sempre, l’hosting condiviso si affolla di vicini. Ogni cambiamento è piccolo; la somma no. È lo stesso motivo per cui l’auto fa il tagliando: non perché si sia rotta, ma perché è stata usata.',
+                      'C’è poi un secondo orologio che gira: quello di Google. Le metriche cambiano — nel 2024 INP ha sostituito FID tra i Core Web Vitals — e un sito fermo agli standard di due anni fa scivola indietro anche senza che nessuno tocchi nulla. Il punteggio del giorno della consegna non è un attestato appeso al muro: è una fotografia, e le fotografie invecchiano.',
+                  ]),
+             dict(titolo='Le quattro misure di un monitoraggio del sito web serio',
+                  lista=[
+                      'Uptime: il sito risponde? Sembra banale, finché non scoprite che era giù proprio la notte della campagna. Serve un controllo automatico ogni pochi minuti, con un avviso immediato.',
+                      'Core Web Vitals sul campo: LCP sotto 2,5 secondi, INP sotto 200 millisecondi, CLS sotto 0,1 — misurati sugli utenti reali (dati CrUX aggregati su 28 giorni), non solo in laboratorio.',
+                      'Funzioni critiche: moduli, carrello, prenotazioni. Il danno vero non è «il sito è lento», è «il modulo non invia da tre settimane».',
+                      'Visibilità: le pagine indicizzate, gli errori segnalati da Search Console, le posizioni sulle ricerche che vi portano clienti.',
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/monitoraggio-quattro-misure.svg',
+                              alt='Le quattro misure del monitoraggio di un sito web: uptime, Core Web Vitals reali, funzioni critiche e visibilità su Google',
+                              caption='Le quattro misure, in ordine: prima «esiste?» (uptime), poi «funziona per gli utenti veri?» (Core Web Vitals sul campo, CrUX su 28 giorni), poi «vende?» (moduli e carrello), infine «si trova?» (indice e posizioni). Fonti: web.dev e documentazione CrUX (Google).'),
+                  paragrafi=[
+                      'Quattro misure, in quest’ordine: prima «esiste?», poi «funziona per le persone vere?», poi «vende?», infine «si trova?». Un monitoraggio che guarda solo il punteggio di velocità è un cruscotto con la sola spia della benzina: utile, ma non vi dice che si è staccata una ruota.',
+                  ]),
+             dict(titolo='Laboratorio e mondo reale: perché i due numeri non coincidono',
+                  paragrafi=[
+                      'Lighthouse — il motore dietro PageSpeed Insights — misura il sito in condizioni controllate: stessa rete simulata, stesso dispositivo. È prezioso per diagnosticare, ma resta un laboratorio. I Core Web Vitals «sul campo» arrivano invece dal Chrome UX Report: utenti veri, reti vere, telefoni veri, aggregati su 28 giorni. I due numeri possono divergere — il laboratorio promosso e il campo bocciato, o viceversa — e quando divergono, ha ragione il campo: è lì che stanno i vostri clienti.',
+                      'La conseguenza pratica: un check una tantum vi dice come sta il sito oggi, in laboratorio. Solo una serie mensile vi dice se sta migliorando o peggiorando per le persone che lo usano davvero. È la differenza tra una foto e un elettrocardiogramma.',
+                  ],
+                  links=[('Core Web Vitals nel 2026: cosa misura davvero Google', '/blog/core-web-vitals-2026/')]),
+             dict(titolo='Il rituale mensile, in venti minuti',
+                  lista=[
+                      'Lanciate un check-up completo e salvate il punteggio accanto a quello del mese scorso: conta la direzione, non il numero del giorno.',
+                      'Aprite Search Console: copertura dell’indice, errori nuovi, ricerche che portano clic.',
+                      'Guardate il report di uptime del mese: quanti minuti di assenza, e in quali orari.',
+                      'Percorrete a mano la strada che vi porta soldi — modulo, richiesta di preventivo, carrello — dal telefono, non dalla scrivania.',
+                      'Verificate che l’ultimo backup esista e si apra: un backup mai testato è una speranza, non un backup.',
+                  ],
+                  links=[('Check-up completo del sito: 7 misure in un minuto, gratis', '/strumenti/check-up-completo/')]),
+             dict(titolo='Quando delegare (e cosa pretendere da chi lo fa per voi)',
+                  paragrafi=[
+                      'Il rituale dei venti minuti funziona — finché qualcuno lo fa davvero. L’esperienza dice che dopo il terzo mese l’appuntamento scivola, e il sito torna a logorarsi non visto. L’ingegneria dell’affidabilità di Google ha formalizzato un principio che vale anche in piccolo: i sistemi si presidiano con controlli automatici e allarmi, non con la buona volontà.',
+                      'È il motivo per cui nei nostri progetti con assistenza il monitoraggio è incluso: la nostra piattaforma tiene d’occhio uptime, controlli periodici e Core Web Vitals reali dei siti che seguiamo, e quando un valore scivola lo vediamo noi — prima che ve ne accorgiate dai clienti. Il report arriva ogni mese, in linguaggio umano. Se invece preferite il fai-da-te, il rituale qui sopra è vostro: l’importante è che qualcuno guardi.',
+                  ],
+                  links=[('Gratis oggi, sotto controllo domani: il monitoraggio per i clienti', '/strumenti/#monitor'),
+                         ('Restyling tecnico: quando i numeri dicono che serve', '/servizi/restyling-migrazione/')]),
+         ],
+         fonti=[
+             ('web.dev — Core Web Vitals (Google)', _S_WEBDEV_VITALS,
+              'Definizioni e soglie ufficiali di LCP, INP e CLS citate nell’articolo, incluso il passaggio da FID a INP nel 2024.'),
+             ('Chrome UX Report (CrUX) — documentazione', _S_CRUX,
+              'La fonte dei dati «sul campo»: utenti reali di Chrome, aggregati su una finestra mobile di 28 giorni.'),
+             ('Google SRE — Monitoring Distributed Systems', _S_SRE_MONITORING,
+              'Il capitolo del libro Site Reliability Engineering sul presidiare i sistemi: controlli automatici e allarmi, non buona volontà.'),
          ]),
 ]
 

@@ -65,4 +65,6 @@ return array(
 	array( 'it' => 'blog/hreflang-sito-multilingue', 'en' => 'en/blog/hreflang-multilingual-website', 'ru' => 'ru/blog' ),
 	array( 'it' => 'blog/sito-per-export', 'en' => 'en/blog/website-for-export', 'ru' => 'ru/blog' ),
 	array( 'it' => 'blog/manutenzione-wordpress', 'en' => 'en/blog/wordpress-maintenance', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/area-clienti-agenzia-web', 'en' => 'en/blog/web-agency-client-portal', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog/monitoraggio-sito-dopo-lancio', 'en' => 'en/blog/website-monitoring-after-launch', 'ru' => 'ru/blog' ),
 );

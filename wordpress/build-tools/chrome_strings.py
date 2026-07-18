@@ -3550,3 +3550,167 @@ CHROME_AREA_CLIENTI = {
         {'en': 'A score can be measured for free, once. Keeping it high over time is work — and it’s ours: for clients with an active maintenance plan the site stays under watch after launch, on the same platform we build these tools with.'},
 }
 CHROME.update(CHROME_AREA_CLIENTI)
+
+# CHROME_BLOG_CABLAB — sputnik area clienti + monitoraggio (2 articoli IT → EN,
+# piano-promo-cabinet-lab.md §3.9). Solo 'en': il blog RU è un batch a sé.
+CHROME_BLOG_CABLAB = {
+    '19 LUG 2026': {'en': '19 JUL 2026'},
+
+    # ---- Articolo 1: area clienti di un'agenzia web ----
+    'Area clienti di un’agenzia web: cosa dovete pretendere':
+        {'en': 'A web agency’s client portal: what you should demand'},
+    '«A che punto siamo con il sito?» non dovrebbe essere una domanda: dovrebbe essere una schermata. I sei segni di un fornitore trasparente, le tre domande di sicurezza e perché non deve costarvi un euro in più.':
+        {'en': '“Where are we with the website?” shouldn’t be a question: it should be a screen. The six signs of a transparent vendor, the three security questions, and why it shouldn’t cost you an extra euro.'},
+    '«A che punto siamo con il sito?» Se per rispondere dovete scavare tra tre catene di e-mail, uno screenshot su WhatsApp e un PDF chiamato definitivo-v3-BIS, il problema non siete voi: è il fornitore che vi ha lasciato senza strumenti. Nel 2026 un’area clienti — un posto dove il progetto si vede: la fase in corso, chi deve approvare cosa, i file, le fatture — non è un lusso da grande agenzia web, è il minimo sindacale della trasparenza. In questo articolo: i sei segni che distinguono un’area clienti vera da una vetrina, le tre domande di sicurezza da fare prima di firmare, e perché tutto questo non dovrebbe costarvi un euro in più.':
+        {'en': '“Where are we with the website?” If answering that means digging through three e-mail threads, a WhatsApp screenshot and a PDF called final-v3-REV, the problem isn’t you: it’s the vendor who left you without tools. In 2026 a client portal — one place where the project is visible: the current stage, who needs to approve what, the files, the invoices — isn’t a big-agency luxury; it’s the bare minimum of transparency a web agency owes you. In this article: the six signs that tell a real client portal from a shop window, the three security questions to ask before signing, and why none of this should cost you an extra euro.'},
+    'Area clienti di un’agenzia web: le fasi del progetto, le approvazioni con storico e i sei segni di un fornitore trasparente':
+        {'en': 'A web agency client portal: project stages, approvals with history and the six signs of a transparent vendor'},
+    'Il progetto invisibile (e i litigi che produce)':
+        {'en': 'The invisible project (and the disputes it breeds)'},
+    'La maggior parte dei conflitti tra cliente e agenzia non nasce dalla qualità del lavoro: nasce dalla memoria. «Il logo grande l’avevate approvato voi» — «no, avevamo chiesto di ridurlo». Senza un registro, ogni decisione vive nella testa di qualcuno, e la versione più sicura di sé vince sulla versione vera. Non è un difetto di carattere, è un difetto di struttura: e-mail e chat sono canali di conversazione, non archivi di decisioni. Il Project Management Institute lo ripete da anni nei suoi rapporti: la comunicazione inefficace è tra le prime cause di fallimento dei progetti — e un progetto web da tre settimane non fa eccezione.':
+        {'en': 'Most conflicts between client and agency aren’t born from the quality of the work: they’re born from memory. “You approved the big logo” — “no, we asked to make it smaller”. Without a record, every decision lives in someone’s head, and the most confident version wins over the true one. It’s not a character flaw, it’s a structural one: e-mail and chat are conversation channels, not archives of decisions. The Project Management Institute has been repeating it for years in its reports: ineffective communication is among the top causes of project failure — and a three-week web project is no exception.'},
+    'C’è anche un costo più silenzioso: l’attesa. Ogni «a che punto siamo?» è un’interruzione per chi lavora e un’incertezza per chi aspetta; su un progetto di un mese sono decine di messaggi che non producono nulla. La trasparenza non è cortesia — è infrastruttura: se lo stato del progetto è visibile, la domanda scompare da sola.':
+        {'en': 'There’s a quieter cost too: waiting. Every “where are we?” is an interruption for the people working and uncertainty for the people waiting; over a one-month project that’s dozens of messages that produce nothing. Transparency isn’t courtesy — it’s infrastructure: when the project’s status is visible, the question disappears on its own.'},
+    'I sei segni di un’area clienti di agenzia web fatta sul serio':
+        {'en': 'The six signs of a web agency client portal built for real'},
+    'Fasi visibili: il progetto ha stadi espliciti — brief, design, sviluppo, contenuti, revisione, lancio — e vedete in quale si trova oggi, non nell’ultima telefonata.':
+        {'en': 'Visible stages: the project has explicit stages — brief, design, development, content, review, launch — and you can see which one it’s in today, not as of the last phone call.'},
+    'Approvazioni con storico: bozze e testi si approvano o si rimandano con un commento, e resta scritto chi, cosa e quando.':
+        {'en': 'Approvals with history: drafts and copy get approved or sent back with a comment, and it stays on record — who, what, when.'},
+    'File in un posto solo: bozze, consegne e materiali non viaggiano in allegati da 20 MB, ma stanno dove li ritroverete tra un anno.':
+        {'en': 'Files in one place: drafts, deliverables and materials don’t travel as 20 MB attachments — they live where you’ll find them a year from now.'},
+    'Fatture con stato: numero, importo, scadenza e stato di pagamento — senza dover chiedere «me la rimanda?».':
+        {'en': 'Invoices with status: number, amount, due date and payment status — without having to ask “could you resend it?”.'},
+    'Richieste tracciate: ogni domanda apre un filo con la sua risposta, non un thread che muore nella casella di un collega in ferie.':
+        {'en': 'Tracked requests: every question opens a thread with its answer, not a chain that dies in the inbox of a colleague on holiday.'},
+    'La vostra lingua: se il team lavora tra più paesi, l’interfaccia deve seguirvi — non costringervi all’italiano tecnico.':
+        {'en': 'Your language: if your team works across countries, the interface should follow you — not force everyone into technical Italian.'},
+    'I sei segni di un’area clienti seria: fasi visibili, approvazioni con storico, file, fatture, richieste tracciate e interfaccia multilingue':
+        {'en': 'The six signs of a serious client portal: visible stages, approvals with history, files, invoices, tracked requests and a multilingual interface'},
+    'I sei segni, in ordine di importanza: fasi visibili, approvazioni con storico, file in un posto solo, fatture con stato, richieste tracciate, interfaccia nella vostra lingua. Nessuno dei sei è tecnologia esotica: è disciplina resa visibile.':
+        {'en': 'The six signs, in order of importance: visible stages, approvals with history, files in one place, invoices with status, tracked requests, an interface in your language. None of the six is exotic technology: it’s discipline made visible.'},
+    'Eccoli, in ordine di importanza. Nessuno dei sei è tecnologia esotica: sono pratiche note da vent’anni a chiunque gestisca progetti. La differenza sta in chi porta l’onere: un fornitore serio ve le mette a disposizione di serie, non ve le vende a parte come «modulo premium». E se al primo appuntamento vi mostrano l’area clienti prima ancora che glielo chiediate, è un buon segno: non hanno niente da nascondere sul modo in cui lavorano.':
+        {'en': 'Here they are, in order of importance. None of the six is exotic technology: they’ve been standard practice for anyone running projects for twenty years. The difference is who carries the burden: a serious vendor gives them to you as standard, not as a paid “premium module”. And if they show you the client portal at the first meeting, before you even ask, that’s a good sign: they have nothing to hide about how they work.'},
+    'Le tre domande di sicurezza, prima di firmare':
+        {'en': 'The three security questions, before you sign'},
+    'Prima domanda: come si entra? La risposta migliore è «senza password»: un link monouso via e-mail, che scade in pochi minuti. Le linee guida NIST sull’identità digitale dicono da anni quello che l’esperienza di tutti conferma — le password si dimenticano, si riusano e si rubano. Un accesso monouso elimina il problema alla radice, invece di scaricarlo su di voi.':
+        {'en': 'First question: how do you get in? The best answer is “without a password”: a single-use link by e-mail that expires in minutes. NIST’s digital identity guidelines have been saying for years what everyone’s experience confirms — passwords get forgotten, reused and stolen. A single-use login removes the problem at the root instead of offloading it onto you.'},
+    'Seconda: dove vivono i dati? Nomi, e-mail, fatture e bozze del vostro sito sono dati aziendali. Il GDPR chiede minimizzazione — si raccoglie solo il necessario — e voi avete tutto l’interesse che restino su server nell’Unione Europea, dove il regolamento si applica senza acrobazie contrattuali.':
+        {'en': 'Second: where does the data live? Names, e-mails, invoices and drafts of your website are business data. The GDPR requires minimisation — collecting only what’s necessary — and it’s squarely in your interest that it stays on servers in the European Union, where the regulation applies without contractual acrobatics.'},
+    'Terza: chi vede cosa? In un portale con più clienti, la separazione dei dati non è un dettaglio: chiedete esplicitamente se ogni cliente vede solo i propri progetti e se gli accessi vengono registrati. Un fornitore serio risponde in trenta secondi; uno improvvisato cambia discorso.':
+        {'en': 'Third: who sees what? In a portal serving several clients, data separation isn’t a detail: ask explicitly whether each client sees only their own projects and whether logins are recorded. A serious vendor answers in thirty seconds; an improvised one changes the subject.'},
+    'Bonus, prima ancora di parlare con l’agenzia: guardate il suo sito con lo stesso metro che userebbe Google. I segnali di fiducia — chi c’è dietro, contatti veri, politiche pubblicate — si misurano in un minuto.':
+        {'en': 'Bonus, before you even talk to the agency: look at their own website with the same yardstick Google would use. Trust signals — who’s behind it, real contact details, published policies — take one minute to measure.'},
+    'Misura i segnali di fiducia di un sito: lo strumento E-E-A-T gratuito →':
+        {'en': 'Measure a website’s trust signals: the free E-E-A-T tool →'},
+    'Un’area clienti non sostituisce il contratto (lo completa)':
+        {'en': 'A client portal doesn’t replace the contract (it completes it)'},
+    'Attenzione all’equivoco opposto: un portale elegante non è una garanzia. La data di consegna sta nel contratto, non nell’interfaccia; il prezzo chiuso pure. L’area clienti è il posto dove vedete che il contratto viene rispettato — fase dopo fase, approvazione dopo approvazione. Le due cose lavorano insieme: nero su bianco negli accordi, tutto alla luce nell’esecuzione. Diffidate di chi vi offre solo una delle due.':
+        {'en': 'Beware of the opposite misunderstanding: an elegant portal is not a guarantee. The delivery date lives in the contract, not in the interface; so does the fixed price. The client portal is where you see the contract being honoured — stage after stage, approval after approval. The two work together: everything in writing in the agreement, everything in the open in the execution. Be wary of anyone offering only one of the two.'},
+    'Se in questi giorni state confrontando preventivi, abbiamo scritto una guida su come leggerli senza sorprese: le voci che devono esserci, quelle che mancano sempre e le domande da fare prima di firmare.':
+        {'en': 'If you’re comparing quotes these days, we’ve written a guide on how to read them without surprises: the line items that must be there, the ones that are always missing, and the questions to ask before signing.'},
+    'Preventivo sito web: come leggerlo senza sorprese →':
+        {'en': 'Website quotes: how to read one without surprises →'},
+    'Come lo facciamo noi (e perché non costa un euro in più)':
+        {'en': 'How we do it (and why it doesn’t cost an extra euro)'},
+    'Dichiarazione di interesse: questa guida non è neutrale, perché un’area clienti l’abbiamo costruita — per noi. Sviluppiamo web app per i clienti e il nostro portale gira sulla stessa piattaforma: 8 fasi del progetto sempre visibili, approvazioni con storico, file, fatture e richieste, interfaccia in italiano, inglese o russo, accesso senza password, dati su server in Germania. È inclusa in ogni progetto, dal sito vetrina all’e-commerce, perché per noi la trasparenza non è un optional a listino: è il modo più economico di lavorare bene.':
+        {'en': 'Declaration of interest: this guide isn’t neutral, because we’ve built a client portal — for ourselves. We build web apps for clients and our portal runs on the same platform: 8 project stages always visible, approvals with history, files, invoices and requests, interface in Italian, English or Russian, passwordless access, data on servers in Germany. It’s included in every project, from a brochure site to an e-commerce store, because for us transparency isn’t a paid extra on a price list: it’s the cheapest way to work well.'},
+    'Il criterio resta valido anche se sceglierete un’altra agenzia: pretendete di vedere il vostro progetto. Se la risposta è «vi teniamo aggiornati via e-mail», sapete già come andrà a finire.':
+        {'en': 'The criterion holds even if you choose another agency: demand to see your project. If the answer is “we’ll keep you posted by e-mail”, you already know how it ends.'},
+    'Com’è fatta la nostra area clienti, schermata per schermata →':
+        {'en': 'Inside our client area, screen by screen →'},
+    'Siti aziendali: cosa include un progetto →':
+        {'en': 'Business websites: what a project includes →'},
+    'Com’è fatta la nostra area clienti →': {'en': 'Inside our client area →'},
+    'NIST SP 800-63B — Digital Identity Guidelines':
+        {'en': 'NIST SP 800-63B — Digital Identity Guidelines'},
+    'Le linee guida del National Institute of Standards and Technology su autenticazione e credenziali: la base tecnica dell’accesso senza password.':
+        {'en': 'The National Institute of Standards and Technology guidelines on authentication and credentials: the technical basis of passwordless access.'},
+    'Regolamento (UE) 2016/679 — GDPR, testo ufficiale':
+        {'en': 'Regulation (EU) 2016/679 — GDPR, official text'},
+    'L’articolo 5 fissa i princìpi di minimizzazione dei dati e di limitazione della conservazione citati nell’articolo.':
+        {'en': 'Article 5 sets out the data-minimisation and storage-limitation principles cited in this article.'},
+    'PMI — Pulse of the Profession': {'en': 'PMI — Pulse of the Profession'},
+    'La serie di rapporti del Project Management Institute che indica da anni la comunicazione inefficace tra le prime cause di fallimento dei progetti.':
+        {'en': 'The Project Management Institute’s report series, which for years has ranked ineffective communication among the top causes of project failure.'},
+
+    # ---- Articolo 2: monitoraggio dopo il lancio ----
+    'Monitoraggio del sito dopo il lancio: cosa misurare ogni mese':
+        {'en': 'Website monitoring after launch: what to measure every month'},
+    'Il giorno della consegna il punteggio era 94. Un anno dopo il sito carica in cinque secondi e nessuno se n’è accorto. Le quattro misure che contano, il rituale mensile in venti minuti e quando delegare.':
+        {'en': 'On delivery day the score was 94. A year later the site takes five seconds to load and nobody noticed. The four measures that matter, the twenty-minute monthly ritual, and when to delegate.'},
+    'Il giorno della consegna il vostro sito era una scheda perfetta: PageSpeed 94, tutto verde, strette di mano. Dodici mesi dopo carica in cinque secondi, un modulo non invia più nulla e nessuno se n’è accorto — perché nessuno stava guardando. I siti non si rompono con un boato: si logorano in silenzio, un plugin aggiornato alla volta, una foto da 8 MB alla volta. Il monitoraggio del sito web è il mestiere di accorgersene prima dei vostri clienti. Ecco cosa misurare ogni mese, con quali strumenti, e quando ha senso delegare.':
+        {'en': 'On delivery day your website was a perfect scorecard: PageSpeed 94, all green, handshakes. Twelve months later it takes five seconds to load, one form no longer sends anything, and nobody noticed — because nobody was watching. Websites don’t break with a bang: they wear out in silence, one plugin update at a time, one 8 MB photo at a time. Website monitoring is the craft of noticing before your customers do. Here’s what to measure every month, with which tools, and when it makes sense to delegate.'},
+    'Monitoraggio del sito web dopo il lancio: il punteggio che si logora in dodici mesi senza controlli e le soglie dei Core Web Vitals':
+        {'en': 'Website monitoring after launch: a score wearing down over twelve unwatched months, and the Core Web Vitals thresholds'},
+    'Perché un sito veloce smette di esserlo':
+        {'en': 'Why a fast website stops being fast'},
+    'Un sito è un sistema vivo: il CMS e i plugin si aggiornano, il team carica le immagini come escono dal telefono, il marketing aggiunge uno script di tracciamento «solo per una campagna» che resta lì per sempre, l’hosting condiviso si affolla di vicini. Ogni cambiamento è piccolo; la somma no. È lo stesso motivo per cui l’auto fa il tagliando: non perché si sia rotta, ma perché è stata usata.':
+        {'en': 'A website is a living system: the CMS and plugins update themselves, the team uploads photos straight off the phone, marketing adds a tracking script “just for one campaign” that stays forever, the shared hosting fills up with neighbours. Each change is small; the sum is not. It’s the same reason a car gets serviced: not because it broke, but because it’s been used.'},
+    'C’è poi un secondo orologio che gira: quello di Google. Le metriche cambiano — nel 2024 INP ha sostituito FID tra i Core Web Vitals — e un sito fermo agli standard di due anni fa scivola indietro anche senza che nessuno tocchi nulla. Il punteggio del giorno della consegna non è un attestato appeso al muro: è una fotografia, e le fotografie invecchiano.':
+        {'en': 'And a second clock is ticking: Google’s. The metrics change — in 2024 INP replaced FID among the Core Web Vitals — and a site frozen at two-year-old standards slides backwards even if nobody touches a thing. The delivery-day score isn’t a diploma on the wall: it’s a photograph, and photographs age.'},
+    'Le quattro misure di un monitoraggio del sito web serio':
+        {'en': 'The four measures of serious website monitoring'},
+    'Uptime: il sito risponde? Sembra banale, finché non scoprite che era giù proprio la notte della campagna. Serve un controllo automatico ogni pochi minuti, con un avviso immediato.':
+        {'en': 'Uptime: does the site respond? Sounds trivial, until you find out it was down on the very night of your campaign. You need an automatic check every few minutes, with an immediate alert.'},
+    'Core Web Vitals sul campo: LCP sotto 2,5 secondi, INP sotto 200 millisecondi, CLS sotto 0,1 — misurati sugli utenti reali (dati CrUX aggregati su 28 giorni), non solo in laboratorio.':
+        {'en': 'Core Web Vitals in the field: LCP under 2.5 seconds, INP under 200 milliseconds, CLS under 0.1 — measured on real users (CrUX data aggregated over 28 days), not just in the lab.'},
+    'Funzioni critiche: moduli, carrello, prenotazioni. Il danno vero non è «il sito è lento», è «il modulo non invia da tre settimane».':
+        {'en': 'Critical functions: forms, cart, bookings. The real damage isn’t “the site is slow” — it’s “the form hasn’t been sending for three weeks”.'},
+    'Visibilità: le pagine indicizzate, gli errori segnalati da Search Console, le posizioni sulle ricerche che vi portano clienti.':
+        {'en': 'Visibility: the pages in the index, the errors flagged by Search Console, your positions on the searches that bring you customers.'},
+    'Le quattro misure del monitoraggio di un sito web: uptime, Core Web Vitals reali, funzioni critiche e visibilità su Google':
+        {'en': 'The four measures of website monitoring: uptime, real-user Core Web Vitals, critical functions and visibility on Google'},
+    'Le quattro misure, in ordine: prima «esiste?» (uptime), poi «funziona per gli utenti veri?» (Core Web Vitals sul campo, CrUX su 28 giorni), poi «vende?» (moduli e carrello), infine «si trova?» (indice e posizioni). Fonti: web.dev e documentazione CrUX (Google).':
+        {'en': 'The four measures, in order: first “does it exist?” (uptime), then “does it work for real users?” (field Core Web Vitals, CrUX over 28 days), then “does it sell?” (forms and cart), finally “can it be found?” (index and rankings). Sources: web.dev and the CrUX documentation (Google).'},
+    'Quattro misure, in quest’ordine: prima «esiste?», poi «funziona per le persone vere?», poi «vende?», infine «si trova?». Un monitoraggio che guarda solo il punteggio di velocità è un cruscotto con la sola spia della benzina: utile, ma non vi dice che si è staccata una ruota.':
+        {'en': 'Four measures, in this order: first “does it exist?”, then “does it work for real people?”, then “does it sell?”, finally “can it be found?”. Monitoring that watches only the speed score is a dashboard with just the fuel light: useful, but it won’t tell you a wheel has come off.'},
+    'Laboratorio e mondo reale: perché i due numeri non coincidono':
+        {'en': 'Lab and real world: why the two numbers don’t match'},
+    'Lighthouse — il motore dietro PageSpeed Insights — misura il sito in condizioni controllate: stessa rete simulata, stesso dispositivo. È prezioso per diagnosticare, ma resta un laboratorio. I Core Web Vitals «sul campo» arrivano invece dal Chrome UX Report: utenti veri, reti vere, telefoni veri, aggregati su 28 giorni. I due numeri possono divergere — il laboratorio promosso e il campo bocciato, o viceversa — e quando divergono, ha ragione il campo: è lì che stanno i vostri clienti.':
+        {'en': 'Lighthouse — the engine behind PageSpeed Insights — measures the site under controlled conditions: same simulated network, same device. It’s invaluable for diagnosing, but it’s still a lab. Field Core Web Vitals come instead from the Chrome UX Report: real users, real networks, real phones, aggregated over 28 days. The two numbers can diverge — the lab passing and the field failing, or the other way round — and when they diverge, the field is right: that’s where your customers are.'},
+    'La conseguenza pratica: un check una tantum vi dice come sta il sito oggi, in laboratorio. Solo una serie mensile vi dice se sta migliorando o peggiorando per le persone che lo usano davvero. È la differenza tra una foto e un elettrocardiogramma.':
+        {'en': 'The practical consequence: a one-off check tells you how the site is doing today, in the lab. Only a monthly series tells you whether it’s getting better or worse for the people who actually use it. It’s the difference between a photo and an electrocardiogram.'},
+    'Il rituale mensile, in venti minuti':
+        {'en': 'The monthly ritual, in twenty minutes'},
+    'Lanciate un check-up completo e salvate il punteggio accanto a quello del mese scorso: conta la direzione, non il numero del giorno.':
+        {'en': 'Run a full check-up and save the score next to last month’s: what counts is the direction, not the number of the day.'},
+    'Aprite Search Console: copertura dell’indice, errori nuovi, ricerche che portano clic.':
+        {'en': 'Open Search Console: index coverage, new errors, the searches that bring clicks.'},
+    'Guardate il report di uptime del mese: quanti minuti di assenza, e in quali orari.':
+        {'en': 'Look at the month’s uptime report: how many minutes of downtime, and at what hours.'},
+    'Percorrete a mano la strada che vi porta soldi — modulo, richiesta di preventivo, carrello — dal telefono, non dalla scrivania.':
+        {'en': 'Walk the path that brings you money by hand — form, quote request, cart — from a phone, not from your desk.'},
+    'Verificate che l’ultimo backup esista e si apra: un backup mai testato è una speranza, non un backup.':
+        {'en': 'Check that the latest backup exists and opens: a backup never tested is a hope, not a backup.'},
+    'Check-up completo del sito: 7 misure in un minuto, gratis →':
+        {'en': 'Full site check-up: 7 measures in one minute, free →'},
+    'Quando delegare (e cosa pretendere da chi lo fa per voi)':
+        {'en': 'When to delegate (and what to demand from whoever does it for you)'},
+    'Il rituale dei venti minuti funziona — finché qualcuno lo fa davvero. L’esperienza dice che dopo il terzo mese l’appuntamento scivola, e il sito torna a logorarsi non visto. L’ingegneria dell’affidabilità di Google ha formalizzato un principio che vale anche in piccolo: i sistemi si presidiano con controlli automatici e allarmi, non con la buona volontà.':
+        {'en': 'The twenty-minute ritual works — as long as someone actually does it. Experience says that after the third month the appointment slips, and the site goes back to wearing out unseen. Google’s reliability engineering formalised a principle that holds at small scale too: systems are kept safe by automatic checks and alerts, not by good intentions.'},
+    'È il motivo per cui nei nostri progetti con assistenza il monitoraggio è incluso: la nostra piattaforma tiene d’occhio uptime, controlli periodici e Core Web Vitals reali dei siti che seguiamo, e quando un valore scivola lo vediamo noi — prima che ve ne accorgiate dai clienti. Il report arriva ogni mese, in linguaggio umano. Se invece preferite il fai-da-te, il rituale qui sopra è vostro: l’importante è che qualcuno guardi.':
+        {'en': 'That’s why monitoring is included in our projects with a maintenance plan: our platform keeps an eye on uptime, periodic checks and the real-user Core Web Vitals of the sites we look after, and when a value slips we see it — before you hear about it from customers. The report arrives every month, in human language. If you prefer DIY, the ritual above is yours: what matters is that someone is watching.'},
+    'Gratis oggi, sotto controllo domani: il monitoraggio per i clienti →':
+        {'en': 'Free today, under watch tomorrow: monitoring for clients →'},
+    'Restyling tecnico: quando i numeri dicono che serve →':
+        {'en': 'Technical redesign: when the numbers say it’s time →'},
+    'Cosa misurare ogni mese: la guida al monitoraggio →':
+        {'en': 'What to measure every month: the monitoring guide →'},
+    'Core Web Vitals nel 2026: cosa misura davvero Google →':
+        {'en': 'Core Web Vitals in 2026: what Google actually measures →'},
+    'Cosa pretendere dall’area clienti di qualunque agenzia: la guida →':
+        {'en': 'What to demand from any agency’s client portal: the guide →'},
+    'Fate il check-up completo del vostro sito — gratis →':
+        {'en': 'Run the full check-up of your website — free →'},
+    'web.dev — Core Web Vitals (Google)': {'en': 'web.dev — Core Web Vitals (Google)'},
+    'Definizioni e soglie ufficiali di LCP, INP e CLS citate nell’articolo, incluso il passaggio da FID a INP nel 2024.':
+        {'en': 'The official definitions and thresholds of LCP, INP and CLS cited in this article, including the switch from FID to INP in 2024.'},
+    'Chrome UX Report (CrUX) — documentazione': {'en': 'Chrome UX Report (CrUX) — documentation'},
+    'La fonte dei dati «sul campo»: utenti reali di Chrome, aggregati su una finestra mobile di 28 giorni.':
+        {'en': 'The source of field data: real Chrome users, aggregated over a rolling 28-day window.'},
+    'Google SRE — Monitoring Distributed Systems': {'en': 'Google SRE — Monitoring Distributed Systems'},
+    'Il capitolo del libro Site Reliability Engineering sul presidiare i sistemi: controlli automatici e allarmi, non buona volontà.':
+        {'en': 'The Site Reliability Engineering book’s chapter on keeping systems safe: automatic checks and alerts, not good intentions.'},
+}
+CHROME.update(CHROME_BLOG_CABLAB)

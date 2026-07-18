@@ -69,5 +69,9 @@ return array(
 		'website-for-export' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/export-cover.svg' ),
 		'manutenzione-wordpress' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/manutenzione-cover.svg' ),
 		'wordpress-maintenance' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/manutenzione-cover.svg' ),
+		'area-clienti-agenzia-web' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/areaclienti-cover.svg' ),
+		'web-agency-client-portal' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/areaclienti-cover.svg' ),
+		'monitoraggio-sito-dopo-lancio' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/monitoraggio-cover.svg' ),
+		'website-monitoring-after-launch' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/monitoraggio-cover.svg' ),
 	),
 );

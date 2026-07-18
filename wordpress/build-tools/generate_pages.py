@@ -636,7 +636,8 @@ def build_strumenti_index():
             'Core Web Vitals reali degli utenti, mese dopo mese',
             'Se un valore peggiora, lo vediamo noi — e interveniamo prima che diventi un problema',
         ]) +
-        raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/" target="_blank" rel="noopener">La piattaforma: lab.remarka.biz →</a></p>'
+        raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="/blog/monitoraggio-sito-dopo-lancio/">Cosa misurare ogni mese: la guida al monitoraggio →</a></p>'
+                 '<p class="sr-card-link" style="margin-top:8px"><a href="https://lab.remarka.biz/" target="_blank" rel="noopener">La piattaforma: lab.remarka.biz →</a></p>'
                  '<p class="sr-card-link" style="margin-top:8px"><a href="/#contatti">Incluso nei progetti con assistenza — parliamone →</a></p>'),
         classes='sr-card sr-card--carta',
     )
@@ -2061,7 +2062,9 @@ def build_area_clienti():
                        'Sviluppiamo web app per i clienti — e l’area clienti è la nostra: stessa piattaforma, '
                        'stessi standard, stesso design. Nessun gestionale di terzi: i dati restano su server '
                        'nell’Unione Europea e ne raccogliamo solo il minimo necessario per lavorare insieme.',
-                       size='base', extra_style='margin-top:16px;font-size:16px'),
+                       size='base', extra_style='margin-top:16px;font-size:16px') +
+                   raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="/blog/area-clienti-agenzia-web/">'
+                            'Cosa pretendere dall’area clienti di qualunque agenzia: la guida →</a></p>'),
                    width='50%'),
             column(eyebrow('Sicurezza e privacy') + checklist([
                 'Accesso senza password: link monouso via e-mail, valido 15 minuti',

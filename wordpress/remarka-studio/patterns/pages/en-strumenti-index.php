@@ -269,7 +269,7 @@
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Your site watched continuously after launch: periodic checks and uptime</span></div><div><span class="sr-mono">✓</span><span>Real-user Core Web Vitals, month after month</span></div><div><span class="sr-mono">✓</span><span>If a metric slips, we see it — and step in before it becomes a problem</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/" target="_blank" rel="noopener">The platform: lab.remarka.biz →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="/en/#contatti">Included in projects with a maintenance plan — let’s talk →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="/en/blog/website-monitoring-after-launch/">What to measure every month: the monitoring guide →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="https://lab.remarka.biz/" target="_blank" rel="noopener">The platform: lab.remarka.biz →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="/en/#contatti">Included in projects with a maintenance plan — let’s talk →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

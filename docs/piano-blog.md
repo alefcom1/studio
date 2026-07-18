@@ -158,3 +158,13 @@
   - EN — конвейером translate_pages.py en (CHROME_BLOG_RETROFIT), RU 8 старых
     статей — руками; попутно починен формат «€ N NNN» в RU-бэклоге.
   - **Батчу 2 ретрофит НЕ нужен** (новые статьи пишутся сразу по правилам 4/4-бис).
+- Спутники area clienti + Lab Monitor (вне очереди 30, основание —
+  docs/piano-promo-cabinet-lab.md §3.9, запрос владельца 18.07): 2 статьи
+  IT+EN, даты 19.07.2026 — «Area clienti di un'agenzia web: cosa dovete
+  pretendere» (area clienti agenzia web) и «Monitoraggio del sito dopo il
+  lancio: cosa misurare ogni mese» (monitoraggio sito web). 4 фирменных SVG
+  (2 обложки + 2 схемы, проверены рендером), по 3 первоисточника (NIST
+  800-63B, GDPR, PMI Pulse; web.dev Vitals, CrUX, Google SRE Book),
+  перелинковка услуга+инструмент+соседняя статья, бэклинки со страницы
+  /area-clienti/ и из секции /strumenti/#monitor. RU-версий нет
+  (BLOG_IT_EN_ONLY); RU-темы кабинета остаются в батче 6 (№27).
