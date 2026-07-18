@@ -110,8 +110,17 @@ remarka.biz {
 	# Prestazioni (17.07.2026, регрессия после миграции): сжатие + кэш статики.
 	# Старый хостинг делал gzip/expires на nginx — Caddy по умолчанию НЕ сжимает.
 	encode zstd gzip
-	@static path *.css *.js *.woff2 *.woff *.svg *.png *.jpg *.jpeg *.webp *.ico
-	header @static Cache-Control "public, max-age=2592000"
+
+	# CSS/JS/шрифты версионируются через ?ver=filemtime (remarka_enqueue_assets
+	# в functions.php) — при правке файла URL меняется сам, поэтому можно
+	# кэшировать агрессивно и без ревалидации (immutable), 1 год (LCP-раунд 2,
+	# 18.07.2026).
+	@static-versioned path *.css *.js *.woff2
+	header @static-versioned Cache-Control "public, max-age=31536000, immutable"
+
+	# Картинки версий в URL не несут — оставляем прежние 30 дней.
+	@static-images path *.svg *.png *.jpg *.jpeg *.webp *.ico
+	header @static-images Cache-Control "public, max-age=2592000"
 
 	reverse_proxy wordpress:80
 

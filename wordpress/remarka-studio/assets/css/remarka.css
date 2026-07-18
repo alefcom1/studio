@@ -2637,27 +2637,33 @@ body.page .entry-title {
   color: var(--sr-grigio);
 }
 
-/* ---------- Reveal-система (порт из прототипа) ---------- */
-
-.sr-reveal {
+/* ---------- Reveal-система (порт из прототипа) ----------
+   LCP (17.07.2026): база — ВИДИМО. .sr-reveal/.sr-cascade больше не
+   прячутся по умолчанию (opacity:0 тут раньше стояла безусловно — первый
+   экран красился только после DOMContentLoaded + IntersectionObserver,
+   отсюда LCP 5с при FCP 1,7с). Теперь скрытие включает ТОЛЬКО класс
+   .sr-reveal-armed, который initReveal() в remarka.js вешает исключительно
+   на элементы вне первого экрана (проверка на старте, без JS — вообще
+   ничего не прячется, см. contract в remarka.js). */
+.sr-reveal.sr-reveal-armed {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.sr-reveal.sr-visible {
+.sr-reveal.sr-reveal-armed.sr-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Каскад: контейнеру задаётся sr-cascade, детям — задержки через JS */
-.sr-cascade > * {
+.sr-cascade.sr-reveal-armed > * {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.sr-cascade.sr-visible > * {
+.sr-cascade.sr-reveal-armed.sr-visible > * {
   opacity: 1;
   transform: translateY(0);
 }

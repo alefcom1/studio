@@ -27,15 +27,23 @@
 		}
 	}
 
-	/* ---------- 1. Reveal ---------- */
-
+	/* ---------- 1. Reveal ----------
+	 * LCP (17.07.2026): il CSS base di .sr-reveal/.sr-cascade è VISIBILE
+	 * (remarka.css) — senza JS non sparisce nulla. L'occultamento è acceso
+	 * solo dalla classe .sr-reveal-armed, che aggiungiamo QUI, prima di
+	 * osservare con IO, e SOLO agli elementi che non sono già nel primo
+	 * schermo al caricamento. Così il first screen (hero compreso) non
+	 * dipende mai dal JS per diventare visibile — niente flash, niente
+	 * attesa di IntersectionObserver per il contenuto che l'utente vede
+	 * subito — mentre sotto il fold l'animazione resta identica a prima.
+	 */
 	function initReveal() {
 		var targets = document.querySelectorAll('.sr-reveal, .sr-cascade');
 		if (!targets.length) {
 			return;
 		}
 		if (reduced || !('IntersectionObserver' in window)) {
-			targets.forEach(function (el) { el.classList.add('sr-visible'); });
+			// Base CSS già visibile: senza IO/animazioni non c'è nulla da armare.
 			return;
 		}
 
@@ -44,6 +52,12 @@
 				child.style.transitionDelay = (i * 80) + 'ms';
 			});
 		});
+
+		// Batch: prima tutte le letture di layout (rect), poi tutte le
+		// scritture di classe — mai alternate, per non forzare reflow multipli.
+		var vh = window.innerHeight || document.documentElement.clientHeight;
+		var rects = [];
+		targets.forEach(function (el) { rects.push(el.getBoundingClientRect()); });
 
 		var io = new IntersectionObserver(function (entries) {
 			entries.forEach(function (entry) {
@@ -54,7 +68,14 @@
 			});
 		}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-		targets.forEach(function (el) { io.observe(el); });
+		targets.forEach(function (el, i) {
+			var r = rects[i];
+			if (r.bottom > 0 && r.top < vh) {
+				return; // già nel primo schermo: resta visibile, mai armato
+			}
+			el.classList.add('sr-reveal-armed');
+			io.observe(el);
+		});
 	}
 
 	/* ---------- 2. Barra ---------- */
@@ -2226,14 +2247,30 @@
 		if (!fab) {
 			return;
 		}
+		// scrollHeight è costoso (può forzare un layout) e non cambia da uno
+		// scroll all'altro: lo leggiamo una volta (+ al resize), non ad ogni
+		// evento scroll. Lo scroll stesso è throttlato a un rAF per frame,
+		// invece di girare la "compoventa forzata" ad ogni tick del gesto.
+		var docHeight = document.documentElement.scrollHeight;
+		var ticking = false;
 		var check = function () {
 			var scrolled = window.scrollY + window.innerHeight;
-			var threshold = document.documentElement.scrollHeight * 0.6;
-			fab.classList.toggle('sr-visible', scrolled > threshold);
+			fab.classList.toggle('sr-visible', scrolled > docHeight * 0.6);
+			ticking = false;
+		};
+		var onScroll = function () {
+			if (ticking) {
+				return;
+			}
+			ticking = true;
+			window.requestAnimationFrame(check);
 		};
 		check();
-		window.addEventListener('scroll', check, { passive: true });
-		window.addEventListener('resize', check);
+		window.addEventListener('scroll', onScroll, { passive: true });
+		window.addEventListener('resize', function () {
+			docHeight = document.documentElement.scrollHeight;
+			check();
+		});
 	}
 
 	/* ---------- 7. Переключатель языка (IT/EN/RU) ----------
