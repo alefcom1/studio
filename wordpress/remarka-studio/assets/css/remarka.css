@@ -1478,10 +1478,36 @@ body.page .entry-title {
 }
 
 /* ---------- Recensioni clienti ---------- */
-/* Mobile-first: griglia a colonna singola a 390px (minimumColumnWidth 320px
-   nel blocco), 2–3 colonne su schermi più larghi. */
+/* Layout 3 + 2 centrato: con 5 card la prima riga ne tiene 3 e l'ultima 2
+   (mai una sola «orfana»). Sotto i 760px una colonna. Il flex-wrap con
+   justify-content:center centra l'ultima riga; align-items:stretch (default)
+   pareggia l'altezza delle card nella stessa riga, e l'autore resta in basso
+   (margin-top:auto). Il selettore a due classi vince sul grid generato dal
+   blocco WordPress. */
+
+.wp-block-group.sr-recensioni {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.sr-recensioni > .sr-recensione {
+  flex: 1 1 100%;
+  max-width: 520px;
+}
+
+@media (min-width: 760px) {
+  .sr-recensioni > .sr-recensione {
+    /* 3 per riga: 3 × base + 2 × gap(20px) = 100% → la 4ª va a capo */
+    flex: 1 1 calc((100% - 40px) / 3);
+    max-width: calc((100% - 40px) / 3);
+  }
+}
 
 .sr-recensione {
+  box-sizing: border-box;
   background: var(--sr-bianco);
   border: 1px solid var(--sr-bordo);
   border-radius: var(--sr-radius);
