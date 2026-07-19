@@ -1439,9 +1439,14 @@ body.page .entry-title {
 
 /* ---------- Checklist a due colonne (cosa include) ---------- */
 
+/* auto-fit + min(…,100%): due colonne dove c'è spazio (sezioni larghe),
+   UNA colonna dentro i contenitori stretti (card Gratis/Monitor, colonne).
+   Il vecchio repeat(2, minmax(240px,1fr)) imponeva 520px minimi e dentro
+   una card da ~500px il testo sbordava sotto la card vicina (bug live
+   19.07.2026, /strumenti/#monitor). */
 .sr-checklist {
   display: grid;
-  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 4px 40px;
   margin-top: 40px;
 }
@@ -3094,6 +3099,19 @@ body.page .entry-title {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--sr-grid-min, 260px), 1fr));
   gap: 20px;
+}
+
+/* ---------- Обёртка Prespa: отпустить колонку контента ----------
+   Родительская тема заворачивает <main> в .site-wrapper с max-width:980px
+   (1180px с сайдбаром) и padding 1rem — ВСЯ колонка контента оказывалась
+   на ~950px, и сетка 1440 секций (см. .sr-section > * выше) физически не
+   могла раскрыться: тело было уже хедера и футера (баг live 19.07.2026,
+   запрос владельца «всё должно быть такой же ширины, как хедер и футер»).
+   Секции полноширинные, ширину 1440 держат их прямые дети. */
+.site-wrapper,
+.has-sidebar .site-wrapper {
+  max-width: none;
+  padding: 0;
 }
 
 /* ---------- Утилиты ---------- */
