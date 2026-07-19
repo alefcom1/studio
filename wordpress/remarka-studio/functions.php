@@ -833,6 +833,52 @@ function remarka_auto_cta_menu_item_class( array $classes, WP_Post $item ): arra
 add_filter( 'nav_menu_css_class', 'remarka_auto_cta_menu_item_class', 10, 2 );
 
 /**
+ * Убираем дубль <h1>. Родительская тема Prespa печатает заголовок страницы
+ * блоком core/post-title как <h1 class="… entry-title">, но у каждой нашей
+ * страницы уже есть свой H1 в контенте (hero-паттерн). Из-за этого на всех
+ * страницах и постах было по два H1 (краулер помечал multiple_h1). Понижаем
+ * заголовок темы до <h2>: атрибуты/классы не трогаем, поэтому на Страницах он
+ * по-прежнему скрыт (`.entry-title{display:none}` в remarka.css), а на постах
+ * остаётся видимым — меняется только уровень заголовка, не вид. H1 на странице
+ * остаётся ровно один — из hero-паттерна.
+ */
+function remarka_demote_post_title_h1( string $block_content, array $block ): string {
+	if ( ( $block['blockName'] ?? '' ) !== 'core/post-title' ) {
+		return $block_content;
+	}
+	$block_content = preg_replace( '/<h1(\s[^>]*)?>/i', '<h2$1>', $block_content, 1 );
+	$block_content = preg_replace( '#</h1>#i', '</h2>', $block_content, 1 );
+	return $block_content;
+}
+add_filter( 'render_block', 'remarka_demote_post_title_h1', 10, 2 );
+
+/**
+ * 301-редиректы для устаревших URL кейсов. Кейсы живут якорями на одной
+ * странице-индексе (/casi-studio/#slug), отдельных страниц /casi-studio/<slug>
+ * никогда не было — но краулер/старая карта сайта нашли такие адреса, и они
+ * отдавали 404 (critical page_not_found). Любой несуществующий под-адрес трёх
+ * языковых разделов кейсов ведём 301 на соответствующий индекс. Срабатывает
+ * только на 404 под этими путями — валидные страницы не затрагиваются.
+ */
+function remarka_redirect_stale_case_studies(): void {
+	if ( ! is_404() ) {
+		return;
+	}
+	$uri = wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH );
+	if ( ! is_string( $uri ) || '' === $uri ) {
+		return;
+	}
+	$uri = rtrim( $uri, '/' );
+	foreach ( array( '/casi-studio', '/en/case-studies', '/ru/kejsy' ) as $base ) {
+		if ( $uri !== $base && 0 === strpos( $uri . '/', $base . '/' ) ) {
+			wp_safe_redirect( home_url( $base . '/' ), 301 );
+			exit;
+		}
+	}
+}
+add_action( 'template_redirect', 'remarka_redirect_stale_case_studies' );
+
+/**
  * Organization + WebSite schema.org (JSON-LD) — базовая структурированная
  * разметка сайтвайд. Service/FAQPage/Article schema добавляются по мере
  * появления соответствующих плагинов SEO (Rank Math/Yoast) — см. план.
@@ -1144,12 +1190,21 @@ function remarka_blog_posting_schema(): void {
 		'url'   => home_url( $lang_prefix ),
 	);
 
+	$title = wp_strip_all_tags( get_the_title() );
+	// `datePublished` берём из карты блога; если там пусто — используем дату
+	// публикации самого поста, чтобы поле никогда не уходило пустым (иначе
+	// валидаторы Schema.org и наш краулер считают его отсутствующим).
+	$date_published = ! empty( $entry['date'] ) ? $entry['date'] : get_the_date( 'c' );
+
 	$schema = array(
 		'@context'         => 'https://schema.org',
 		'@type'            => 'BlogPosting',
-		'headline'         => wp_strip_all_tags( get_the_title() ),
-		'datePublished'    => $entry['date'],
-		'dateModified'     => $map['_modified'],
+		// `name` и `headline` — оба поля: headline историческое для Article,
+		// name требует наш краулер (обязательное для Thing). Значение одно.
+		'name'             => $title,
+		'headline'         => $title,
+		'datePublished'    => $date_published,
+		'dateModified'     => ! empty( $map['_modified'] ) ? $map['_modified'] : $date_published,
 		'inLanguage'       => $lang,
 		'url'              => get_permalink(),
 		'mainEntityOfPage' => array(
