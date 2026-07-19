@@ -56,6 +56,11 @@ services:
       CORS_ORIGIN: ${CORS_ORIGIN:-https://lab.remarka.biz}
       PORT: 3001
       NODE_ENV: production
+      # Dominio del progetto mostrato dalla vetrina pubblica /api/public/showcase.
+      # Deve esistere un Project con questo domain e almeno un crawl COMPLETED,
+      # altrimenti l'endpoint risponde { data: null } e la pagina mostra il
+      # placeholder «prima scansione in preparazione».
+      SHOWCASE_DOMAIN: ${SHOWCASE_DOMAIN:-remarka.biz}
     env_file: .env
     # Remove the base file's `ports: ['3001:3001']` publication entirely.
     # Compose CONCATENATES `ports` on merge, so a normal override would leave the

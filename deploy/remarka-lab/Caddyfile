@@ -33,12 +33,23 @@
 lab.remarka.biz {
 	encode zstd gzip
 
-	# ── Gate the entire site behind Basic Auth ───────────────────────────────
+	# ── Gate the site behind Basic Auth, EXCEPT the public vetrina ───────────
+	# The internal Monitor UI stays behind Basic Auth (the app has no auth of its
+	# own). But the public showcase must be reachable WITHOUT credentials:
+	#   • /showcase (+ RSC subrequests to the same path) — the marketing page;
+	#   • /api/public/* — its read-only endpoint (guard-skipped in server.ts);
+	#   • /_next/* and /favicon.* — Next.js shared assets, so the page can hydrate.
+	# Exempting /_next/* exposes JS bundles, NOT data: every data route stays
+	# behind the API session guard, and every protected page server-redirects to
+	# /login (requireMonSession in (protected)/layout.tsx) regardless of Basic
+	# Auth. So the bundles reveal UI structure only — no client data leaks.
+	#
 	# Generate the hash on the server with:
 	#   docker compose ... exec caddy caddy hash-password --plaintext 'YOURPASS'
 	# then paste it below (bcrypt hash, starts with $2a$). The value below is a
 	# PLACEHOLDER for the password "changeme" — REPLACE IT before going live.
-	basic_auth {
+	@needs_auth not path /showcase /showcase/* /api/public/* /_next/* /favicon.svg /favicon.ico
+	basic_auth @needs_auth {
 		# username    bcrypt-hash
 		remarka $2a$14$bG0kjAVPVwxMXokL4tZLNuqz1Q8turCMt8qxhiaNlEOtVvXyTuVs.
 	}

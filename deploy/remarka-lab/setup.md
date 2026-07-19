@@ -173,6 +173,27 @@ a crawl — the live progress bar uses the WebSocket (`wss://.../ws/...`); if it
 updates in real time, the `/ws` routing and the baked `NEXT_PUBLIC_API_URL` are
 correct.
 
+### Public showcase (vetrina)
+
+`/showcase` and its endpoint `/api/public/*` are exempted from Basic Auth in the
+Caddyfile (they must be reachable by anonymous visitors). Verify:
+
+```bash
+# The read-only endpoint answers WITHOUT credentials (200, JSON envelope).
+curl -s https://lab.remarka.biz/api/public/showcase | head -c 200
+# The page itself loads WITHOUT the Basic Auth prompt (200, not 401).
+curl -i https://lab.remarka.biz/showcase | head -n 1     # HTTP/2 200
+```
+
+For the dashboard to show numbers (instead of the «prima scansione in
+preparazione» placeholder) there must be a **Project whose domain equals
+`SHOWCASE_DOMAIN`** (default `remarka.biz`, set on the `api` service) **with at
+least one COMPLETED crawl**. Create it once from inside the tool: log in behind
+Basic Auth → new project `remarka.biz` → run a crawl. The vetrina then mirrors
+that project's latest score, issue counts and trend. To point the vetrina at a
+different project, set `SHOWCASE_DOMAIN` in `.env` and `docker compose ... up -d`
+the `api` service.
+
 ---
 
 ## Diagnostics
