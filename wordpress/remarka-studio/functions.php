@@ -641,6 +641,7 @@ function remarka_footer_index_url( string $which ): string {
 	$paths = array(
 		'servizi'   => array( 'it' => 'servizi', 'en' => 'en/services', 'ru' => 'ru/uslugi' ),
 		'strumenti' => array( 'it' => 'strumenti', 'en' => 'en/tools', 'ru' => 'ru/instrumenty' ),
+		'blog'      => array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog' ),
 	);
 	$lang = remarka_current_lang();
 	$path = $paths[ $which ][ $lang ] ?? $paths[ $which ]['it'] ?? '';
@@ -747,6 +748,7 @@ function remarka_render_footer(): void {
 				<div class="sr-footer-bottom__row">
 					<span class="sr-footer-legal">
 						&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( $company['name'] ); ?> — <?php echo esc_html( remarka_str( 'footer_diritti' ) ); ?>
+						<a href="<?php echo esc_url( remarka_footer_index_url( 'blog' ) ); ?>">Blog</a>
 						<a href="<?php echo esc_url( remarka_legal_url( 'privacy' ) ); ?>"><?php echo esc_html( remarka_str( 'footer_privacy' ) ); ?></a>
 						<a href="<?php echo esc_url( remarka_legal_url( 'cookie-policy' ) ); ?>"><?php echo esc_html( remarka_str( 'cookie_policy' ) ); ?></a>
 						<a href="<?php echo esc_url( remarka_legal_url( 'cookie-preferenze' ) ); ?>"><?php echo esc_html( remarka_str( 'footer_cookie_pref' ) ); ?></a>
