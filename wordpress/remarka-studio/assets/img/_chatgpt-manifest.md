@@ -12,6 +12,8 @@
 | `wordpress/remarka-studio/assets/img/casi/servizi-techperevod.webp` | 960×640 px | `/servizi/`, новая полоса «Progetti realizzati» после «Quando serve di più», первая карточка — Techperevod. | NEW | Производный оптимизированный кадр из предоставленного PNG Techperevod; весь исходный экран сохранён в светлой рамке, без кадрирования. |
 | `wordpress/remarka-studio/assets/img/casi/servizi-perevod4-catalog.webp` | 960×640 px | `/servizi/`, новая полоса «Progetti realizzati» после «Quando serve di più», вторая карточка — Perevod4. | NEW | Производный оптимизированный кадр из предоставленного PNG Perevod4; весь исходный экран сохранён в светлой рамке, без кадрирования. |
 | `wordpress/remarka-studio/assets/img/casi/servizi-tms.webp` | 960×640 px | `/servizi/`, новая полоса «Progetti realizzati» после «Quando serve di più», третья карточка — TMS. | NEW | Производный оптимизированный кадр из предоставленного PNG TMS; весь исходный экран сохранён в светлой рамке, без кадрирования. |
+| `wordpress/remarka-studio/assets/img/prezzi-contratto.webp` | 1536×1024 px | `/prezzi/`, блок доказательства фиксированной цены «100% dei preventivi…»: визуал справа от трёх гарантий или сразу под ними. | NEW | Светлый фон `#F7F6F2`, папка договора и три синие отметки. Изображение декоративное: формулировки гарантий вывести HTML-текстом, оставить безопасное пустое поле слева. |
+| `wordpress/remarka-studio/assets/img/prezzi-pagamenti.webp` | 1536×1024 px | `/prezzi/`, блок условий оплаты `40 / 40 / 20`: визуальная линия этапов под HTML-подписями платежей. | NEW | Светлый технический фон и три связанных модуля с финальной отметкой приёмки. Проценты и названия этапов не вшиты в изображение — вывести HTML-текстом. |
 
 ## Полные кадры кейсов из предоставленных исходников
 
