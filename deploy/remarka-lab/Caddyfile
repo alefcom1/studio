@@ -1,12 +1,14 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # Remarka Lab · Monitor — Caddy v2 reverse proxy
 #
-#   Browser ──TLS/Basic Auth──▶ Caddy ─┬─ /api/*  /ws*  /health ─▶ api:3001
-#                                       └─ everything else        ─▶ web:3000
+#   Browser ──TLS──▶ Caddy ─┬─ /api/*  /ws*  /health ─▶ api:3001
+#                            └─ everything else        ─▶ web:3000
 #
-# The whole site sits behind HTTP Basic Auth (the app itself has NO auth). Caddy
-# gets a Let's Encrypt cert automatically for lab.remarka.biz (ports 80/443 must
-# be open — they are: ufw allows 80/443).
+# Авторизация теперь на уровне ПРИЛОЖЕНИЯ (email+пароль+сброс, cookie-сессия
+# mon_session; см. apps/api/src/routes/auth.ts + серверный гвард в apps/web).
+# HTTP Basic Auth убран 19.07.2026 после того, как app-вход проверен на боевом.
+# Caddy получает Let's Encrypt-сертификат для lab.remarka.biz автоматически
+# (порты 80/443 открыты — ufw allows 80/443).
 #
 # Routing rationale (verified against the code, read-only):
 #   • API routes are registered with a literal `/api/...` prefix inside each
@@ -33,15 +35,10 @@
 lab.remarka.biz {
 	encode zstd gzip
 
-	# ── Gate the entire site behind Basic Auth ───────────────────────────────
-	# Generate the hash on the server with:
-	#   docker compose ... exec caddy caddy hash-password --plaintext 'YOURPASS'
-	# then paste it below (bcrypt hash, starts with $2a$). The value below is a
-	# PLACEHOLDER for the password "changeme" — REPLACE IT before going live.
-	basic_auth {
-		# username    bcrypt-hash
-		remarka $2a$14$bG0kjAVPVwxMXokL4tZLNuqz1Q8turCMt8qxhiaNlEOtVvXyTuVs.
-	}
+	# Basic Auth убран 19.07.2026: доступ к Monitor теперь закрывает сама
+	# авторизация приложения (незалогиненный запрос к /api/* → 401, страницы
+	# редиректят на /login). Публичны только /api/auth/*, /health и /ws
+	# (ws валидирует cookie внутри хендлера).
 
 	# ── WebSocket: /ws and everything under it → api ─────────────────────────
 	@ws path /ws /ws/*
