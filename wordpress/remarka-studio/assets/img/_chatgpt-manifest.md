@@ -15,6 +15,23 @@
 | `wordpress/remarka-studio/assets/img/prezzi-contratto.webp` | 1536×1024 px | `/prezzi/`, блок доказательства фиксированной цены «100% dei preventivi…»: визуал справа от трёх гарантий или сразу под ними. | REPLACE | Кинематографичный тёмно-синий laptop key visual с ярким контролем проекта, подтверждённым договором и безопасным полем слева. Формулировки гарантий вывести HTML-текстом. |
 | `wordpress/remarka-studio/assets/img/prezzi-pagamenti.webp` | 1536×1024 px | `/prezzi/`, блок условий оплаты `40 / 40 / 20`: визуальная линия этапов под HTML-подписями платежей. | REPLACE | Три объёмных стеклянных этапа проекта, соединённые световой траекторией, с финальным знаком приёмки. Проценты и названия этапов не вшиты в изображение — вывести HTML-текстом. |
 
+## Премиальные символы Remarka Lab — `/strumenti/`
+
+| Файл | Размер | Куда подключить | Замена или новое | Примечания |
+|---|---:|---|---|---|
+| `wordpress/remarka-studio/assets/img/tools/tools-hero.webp` | 985×746 px | `/strumenti/`, feature-карточка «Check-up completo», изображение справа. | REPLACE | Тёмно-синий CGI-экран диагностического аудита: световая линия роста, контур качества, знак проверки и точечный глобус. Без читаемого текста; в карточке показать на тёмном media-фоне. |
+| `wordpress/remarka-studio/assets/img/tools/tool-test-velocita.webp` | 283×104 px | `/strumenti/`, карточка `/01` «Test velocità». | REPLACE | Стеклянный кобальтовый спидометр со световым следом; центрирован, тёмный фон `#071A55`, безопасные поля по краям. |
+| `wordpress/remarka-studio/assets/img/tools/tool-analisi-seo.webp` | 296×114 px | `/strumenti/`, карточка `/02` «Analisi SEO on-page». | REPLACE | Лупа над стеклянными слоями страницы и световая стрелка роста; без букв и метрик. |
+| `wordpress/remarka-studio/assets/img/tools/tool-check-gdpr.webp` | 322×115 px | `/strumenti/`, карточка `/03` «Check GDPR e cookie». | REPLACE | Щит, cookie-диск и знак проверки в едином кобальтово-янтарном CGI; без юридического текста. |
+| `wordpress/remarka-studio/assets/img/tools/tool-roi-localizzazione.webp` | 314×113 px | `/strumenti/`, карточка `/04` «ROI localizzazione». | REPLACE | Точечный глобус, растущие стеклянные столбцы и орбита — символ эффекта локализации. |
+| `wordpress/remarka-studio/assets/img/tools/tool-verifica-accessibilita.webp` | 297×115 px | `/strumenti/`, карточка `/05` «Verifica accessibilità». | REPLACE | Светящийся проход/арка с мягкими направляющими и знаком проверки; предметная метафора доступности. |
+| `wordpress/remarka-studio/assets/img/tools/tool-sito-pronto-ai.webp` | 321×120 px | `/strumenti/`, карточка `/06` «Sito pronto per l’AI». | REPLACE | Кобальтовое ядро и четыре прозрачные панели, соединённые тонкими световыми нитями; без символов и интерфейса. |
+| `wordpress/remarka-studio/assets/img/tools/tool-impatto-co2.webp` | 314×104 px | `/strumenti/`, карточка `/07` «Impatto CO₂». | REPLACE | Светящаяся стеклянная капля с зелёной жилкой-листом и голубой орбитой. |
+| `wordpress/remarka-studio/assets/img/tools/tool-segnali-eeat.webp` | 295×104 px | `/strumenti/`, карточка `/08` «Segnali E-E-A-T». | REPLACE | Четыре стеклянные опоры вокруг центрального щита и световая сеть доверия; без букв E-E-A-T внутри изображения. |
+| `wordpress/remarka-studio/assets/img/tools/tool-sito-letto-dallai.webp` | 321×87 px | `/strumenti/`, карточка `/09` «Il vostro sito, letto dall’AI». | REPLACE | Кобальтовая оптическая линза сканирует прозрачное web-полотно; синий луч и один фиолетовый нейро-акцент. |
+| `wordpress/remarka-studio/assets/img/tools/tool-suona-madrelingua.webp` | 314×68 px | `/strumenti/`, карточка `/10` «Suona madrelingua?». | REPLACE | Стеклянный камертон-призма: фрагментированный синий звук превращается в гладкую мятно-голубую волну. Без слов и букв. |
+| `wordpress/remarka-studio/assets/img/tools/tool-generatore-llms-txt.webp` | 329×65 px | `/strumenti/`, карточка `/11` «Generatore di llms.txt». | REPLACE | Панорамный стеклянный документ без читаемого текста; пять абстрактных строк и компактная нейросеть над ним. Композиция специально рассчитана на очень широкую низкую рамку. |
+
 ## Полные кадры кейсов из предоставленных исходников
 
 | Файл | Размер | Куда подключить | Замена или новое | Примечания |
