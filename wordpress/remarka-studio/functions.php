@@ -834,23 +834,30 @@ add_filter( 'nav_menu_css_class', 'remarka_auto_cta_menu_item_class', 10, 2 );
 
 /**
  * Убираем дубль <h1>. Родительская тема Prespa печатает заголовок страницы
- * блоком core/post-title как <h1 class="… entry-title">, но у каждой нашей
- * страницы уже есть свой H1 в контенте (hero-паттерн). Из-за этого на всех
- * страницах и постах было по два H1 (краулер помечал multiple_h1). Понижаем
- * заголовок темы до <h2>: атрибуты/классы не трогаем, поэтому на Страницах он
- * по-прежнему скрыт (`.entry-title{display:none}` в remarka.css), а на постах
- * остаётся видимым — меняется только уровень заголовка, не вид. H1 на странице
- * остаётся ровно один — из hero-паттерна.
+ * КЛАССИЧЕСКОЙ разметкой <h1 class="entry-title" itemprop="headline"> (не
+ * блоком core/post-title — поэтому render_block его не ловит). У каждой нашей
+ * страницы уже есть свой H1 в контенте (hero-паттерн), из-за чего краулер
+ * видел по два H1 (multiple_h1). Понижаем заголовок темы до <h2> буферизацией
+ * вывода на singular-страницах: правится ровно один тег с классом entry-title,
+ * атрибуты сохраняются. На Страницах он и так скрыт (`.entry-title{display:none}`
+ * в remarka.css), на постах остаётся видимым — меняется только уровень, не вид.
+ * H1 на странице остаётся один — из hero-паттерна.
  */
-function remarka_demote_post_title_h1( string $block_content, array $block ): string {
-	if ( ( $block['blockName'] ?? '' ) !== 'core/post-title' ) {
-		return $block_content;
-	}
-	$block_content = preg_replace( '/<h1(\s[^>]*)?>/i', '<h2$1>', $block_content, 1 );
-	$block_content = preg_replace( '#</h1>#i', '</h2>', $block_content, 1 );
-	return $block_content;
+function remarka_demote_entry_title_cb( string $html ): string {
+	$out = preg_replace(
+		'#<h1(\s[^>]*\bentry-title\b[^>]*)>(.*?)</h1>#is',
+		'<h2$1>$2</h2>',
+		$html,
+		1
+	);
+	return is_string( $out ) ? $out : $html;
 }
-add_filter( 'render_block', 'remarka_demote_post_title_h1', 10, 2 );
+function remarka_demote_entry_title_buffer(): void {
+	if ( is_singular() ) {
+		ob_start( 'remarka_demote_entry_title_cb' );
+	}
+}
+add_action( 'template_redirect', 'remarka_demote_entry_title_buffer', 1 );
 
 /**
  * 301-редиректы для устаревших URL кейсов. Кейсы живут якорями на одной
