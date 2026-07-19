@@ -596,6 +596,12 @@
 		}
 	}
 
+	// Tempo minimo di visibilità dell'indicatore «in corso»: quando il
+	// risultato è quasi istantaneo (PSI in cache per un sito già testato, es.
+	// remarka.biz stesso) la riga di avanzamento lampeggiava per una frazione
+	// di secondo e sembrava non comparire mai (segnalazione titolare 19.07.2026).
+	var MIN_PENDING_MS = 900;
+
 	function onUrlSubmit(shell, handler) {
 		var running = false;
 		shell.form.addEventListener('submit', function (e) {
@@ -605,10 +611,24 @@
 			var url = normalizeUrl(input && input.value);
 			if (!url) { if (input) input.focus(); return; }
 			running = true;
-			if (shell.pending) shell.pending.hidden = false;
+			var startedAt = Date.now();
+			if (shell.pending) {
+				shell.pending.hidden = false;
+				// Se sotto la piega (form a metà schermo), portiamo l'indicatore
+				// in vista: dev'essere impossibile non accorgersene.
+				if (shell.pending.scrollIntoView) {
+					try { shell.pending.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e2) { /* vecchi browser */ }
+				}
+			}
 			if (shell.result) shell.result.hidden = true;
 			Promise.resolve()
 				.then(function () { return handler(url); })
+				.then(function () {
+					// Trattiene l'indicatore per almeno MIN_PENDING_MS prima di
+					// svelare il risultato: l'utente lo vede sempre.
+					var wait = Math.max(0, MIN_PENDING_MS - (Date.now() - startedAt));
+					return new Promise(function (res) { window.setTimeout(res, wait); });
+				})
 				.then(function () { if (shell.result) shell.result.hidden = false; })
 				.catch(function () { showToolError(shell); })
 				.then(function () {

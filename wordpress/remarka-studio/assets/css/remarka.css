@@ -2062,6 +2062,30 @@ body.page .entry-title {
   color: var(--sr-grigio);
 }
 
+/* Barra di avanzamento indeterminata sotto il messaggio «in corso»: una
+   riga di testo grigia si perde, un cursore che scorre no (fix visibilità
+   progresso, 19.07.2026). L'animazione gira solo mentre l'elemento è
+   visibile — con l'attributo [hidden] tutto sparisce. */
+.sr-tool-pending::after {
+  content: "";
+  display: block;
+  margin-top: 12px;
+  height: 3px;
+  max-width: 320px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, var(--sr-oltremare), var(--sr-oltremare)) no-repeat,
+    var(--sr-traccia);
+  background-size: 40% 100%;
+  background-position: -50% 0;
+  animation: sr-progress-slide 1.1s ease-in-out infinite;
+}
+
+@keyframes sr-progress-slide {
+  0%   { background-position: -50% 0; }
+  100% { background-position: 150% 0; }
+}
+
 .sr-tool-result {
   margin-top: 24px;
 }
@@ -3151,6 +3175,13 @@ body.page .entry-title {
 
   .sr-watermark {
     animation: none;
+  }
+
+  /* La barra di avanzamento resta visibile ma ferma (pieno statico). */
+  .sr-tool-pending::after {
+    animation: none;
+    background-size: 100% 100%;
+    background-position: 0 0;
   }
 
   /* Анимации Prespa тоже глушим */
