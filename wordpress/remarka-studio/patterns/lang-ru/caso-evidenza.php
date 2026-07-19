@@ -24,7 +24,7 @@
 <!-- /wp:html -->
 
 <!-- wp:html -->
-[sr_shot file="tms-board-1440.jpg" alt="Панель TMS tms.perevod4.ru с доской заказов на перевод" caption="TMS — доска заказов, главный экран, десктоп" mobile="0"]
+[sr_shot file="tms-board-1440.webp" alt="Панель TMS tms.perevod4.ru с доской заказов на перевод" caption="TMS — доска заказов, главный экран, десктоп" mobile="0"]
 <!-- /wp:html --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->

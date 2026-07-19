@@ -300,7 +300,7 @@ CASES = [
         risultato="Online dal 2022, il sito porta all'agenzia circa 20 ordini al mese, su oltre 40 combinazioni e direzioni linguistiche. È il canale con cui ATT acquisisce clienti oggi.",
         alt='Home page del sito dell’agenzia di traduzioni traduzione.tech, con i servizi in evidenza',
         cta_testo='Un sito aziendale come questo', cta_href='/servizi/siti-aziendali/',
-        shots=[dict(file='att-home-1440.jpg', mobile=False, caption='ATT — home, blocco servizi, desktop')],
+        shots=[dict(file='att-home-1440.webp', mobile=False, caption='ATT — home, blocco servizi, desktop')],
     ),
     dict(
         slug='tms-perevod4', data_cat='webapp', chip='Web app',
@@ -312,9 +312,9 @@ CASES = [
         alt='Pannello del TMS tms.perevod4.ru con la bacheca degli ordini di traduzione',
         cta_testo='Una web app su misura per la vostra azienda', cta_href='/servizi/web-app/',
         shots=[
-            dict(file='tms-board-1440.jpg', mobile=False, caption='TMS — bacheca ordini, schermata principale, desktop'),
-            dict(file='tms-clienti-1440.jpg', mobile=False, caption='TMS — scheda cliente, storico ordini'),
-            dict(file='tms-fatture-1440.jpg', mobile=False, caption='TMS — fatture e contabilità'),
+            dict(file='tms-board-1440.webp', mobile=False, caption='TMS — bacheca ordini, schermata principale, desktop'),
+            dict(file='tms-clienti-1440.webp', mobile=False, caption='TMS — scheda cliente, storico ordini'),
+            dict(file='tms-fatture-1440.webp', mobile=False, caption='TMS — fatture e contabilità'),
         ],
     ),
     dict(
@@ -326,7 +326,7 @@ CASES = [
         risultato="Sviluppata in 2 settimane, oggi la Mini App gestisce oltre 10 utenti e ordini al giorno: il gestionale entra in tasca, senza app da installare.",
         alt='Mini App Telegram del TMS aperta dentro la chat, con la lista degli ordini',
         cta_testo='Una Mini App o PWA per il vostro pubblico', cta_href='/servizi/web-app/',
-        shots=[dict(file='miniapp-orders-390.jpg', mobile=True, caption='Mini App Telegram — lista ordini, mobile')],
+        shots=[dict(file='miniapp-orders-390.webp', mobile=True, caption='Mini App Telegram — lista ordini, mobile')],
     ),
     dict(
         slug='ai-perevod4', data_cat='seo', chip='SEO tecnica · Multilingue',
@@ -337,7 +337,7 @@ CASES = [
         risultato="Oltre 60 lingue di lavoro e più di 10.000 richieste elaborate al mese: un progetto AI che si fa trovare — e si usa — in più mercati.",
         alt='Versione italiana del progetto AI multilingue ai.perevod4.ru',
         cta_testo='SEO tecnica e siti multilingue', cta_href='/servizi/seo-tecnica/',
-        shots=[dict(file='ai-home-it-1440.jpg', mobile=False, caption='ai.perevod4.ru — versione italiana, primo schermo')],
+        shots=[dict(file='ai-home-it-1440.webp', mobile=False, caption='ai.perevod4.ru — versione italiana, primo schermo')],
     ),
     dict(
         slug='perevod4-catalogo', data_cat='seo', chip='SEO · Contenuti',
@@ -348,7 +348,7 @@ CASES = [
         risultato="Oltre 200 agenzie di traduzione schedate a catalogo: un intero settore reso navigabile e indicizzabile, con la SEO tecnica messa alla prova sulla scala, non sulla demo.",
         alt='Portale-catalogo perevod4.ru con l’elenco delle agenzie di traduzione per città',
         cta_testo='SEO tecnica per progetti di contenuto', cta_href='/servizi/seo-tecnica/',
-        shots=[dict(file='perevod4-catalog-1440.jpg', mobile=False, caption='perevod4.ru — catalogo agenzie per città')],
+        shots=[dict(file='perevod4-catalog-1440.webp', mobile=False, caption='perevod4.ru — catalogo agenzie per città')],
     ),
     dict(
         slug='gioco-impero-traduzioni', data_cat='restyling', chip='Marketing · Gamification',
@@ -359,7 +359,7 @@ CASES = [
         risultato="Un contenuto che trattiene le persone sul sito e dà al marchio qualcosa da raccontare: la gamification usata come strumento di marketing, non come gadget.",
         alt='Schermata del gioco browser «L’Impero delle Traduzioni» in italiano su traduzione.tech',
         cta_testo='Restyling e idee di marketing per il vostro sito', cta_href='/servizi/restyling-migrazione/',
-        shots=[dict(file='gioco-play-1440.jpg', mobile=False, caption='Gioco «L’Impero delle Traduzioni» — schermata di gioco')],
+        shots=[dict(file='gioco-play-1440.webp', mobile=False, caption='Gioco «L’Impero delle Traduzioni» — schermata di gioco')],
     ),
     dict(
         slug='pere-rf', data_cat='seo', chip='SEO tecnica',
@@ -370,7 +370,7 @@ CASES = [
         risultato="Posizione n. 1 su Yandex — il principale motore di ricerca russo — per le query di settore «traduzione notarile» e «traduzione di manuali», 9.000–10.000 visitatori al mese, in vetta da oltre 1.000 giorni. Primi posti ottenuti con la tecnica, non con il nome.",
         alt='Sito пере.рф, caso di SEO tecnica su dominio internazionalizzato',
         cta_testo='SEO tecnica che porta risultati', cta_href='/servizi/seo-tecnica/',
-        shots=[dict(file='pererf-home-1440.jpg', mobile=False, caption='пере.рф — home page')],
+        shots=[dict(file='pererf-home-1440.webp', mobile=False, caption='пере.рф — home page')],
     ),
     dict(
         slug='ukrinitsy', data_cat='siti', chip='Sito vetrina',
@@ -381,7 +381,7 @@ CASES = [
         risultato="Dopo il lancio le prenotazioni sono cresciute del 450%: 18 prenotazioni in una stagione arrivate dal sito — per una piccola struttura, la differenza tra stagione piena e stanze vuote.",
         alt='Sito vetrina della guest house ukrinitsy.ru, versione mobile',
         cta_testo='Un sito vetrina per la vostra attività', cta_href='/servizi/siti-aziendali/',
-        shots=[dict(file='ukrinitsy-mobile-390.jpg', mobile=True, caption='ukrinitsy.ru — prima schermata, mobile')],
+        shots=[dict(file='ukrinitsy-mobile-390.webp', mobile=True, caption='ukrinitsy.ru — prima schermata, mobile')],
     ),
     dict(
         slug='moscowtrans-techperevod', data_cat='restyling', chip='Design · Restyling',
@@ -394,8 +394,8 @@ CASES = [
         alt='Home page dei siti d’agenzia moscowtrans.ru e techperevod.com affiancate',
         cta_testo='Restyling e nuovo design per il vostro sito', cta_href='/servizi/restyling-migrazione/',
         shots=[
-            dict(file='moscowtrans-home-1440.jpg', mobile=False, caption='moscowtrans.ru — home page'),
-            dict(file='techperevod-home-1440.jpg', mobile=False, caption='techperevod.com — home page'),
+            dict(file='moscowtrans-home-1440.webp', mobile=False, caption='moscowtrans.ru — home page'),
+            dict(file='techperevod-home-1440.webp', mobile=False, caption='techperevod.com — home page'),
         ],
     ),
     dict(
@@ -408,7 +408,7 @@ CASES = [
         risultato="Oltre 400 traduttori testati — e solo l'8% supera la selezione. Ogni traduttore che lavora sui vostri testi è dentro quell'8%: la qualità decisa da un sistema, non a intuito.",
         alt='Piattaforma di test e valutazione dei traduttori del gruppo Remarka',
         cta_testo='Una web app su misura per il vostro processo', cta_href='/servizi/web-app/',
-        shots=[dict(file='tester-exam-1440.jpg', mobile=False, caption='Piattaforma test traduttori — schermata di valutazione')],
+        shots=[dict(file='tester-exam-1440.webp', mobile=False, caption='Piattaforma test traduttori — schermata di valutazione')],
     ),
     dict(
         slug='1russian', data_cat='seo', chip='SEO · Contenuti',
@@ -419,7 +419,7 @@ CASES = [
         risultato="Oltre 10.000 visitatori al mese da 80 Paesi: un progetto che parla inglese a un pubblico realmente globale.",
         alt='Home page del progetto internazionale in inglese 1russian.com',
         cta_testo='Contenuti nativi in più lingue per il vostro sito', cta_href='/servizi/siti-multilingue/',
-        shots=[dict(file='1russian-home-1440.jpg', mobile=False, caption='1russian.com — home page, primo schermo')],
+        shots=[dict(file='1russian-home-1440.webp', mobile=False, caption='1russian.com — home page, primo schermo')],
     ),
 ]
 

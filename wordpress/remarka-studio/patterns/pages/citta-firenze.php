@@ -99,7 +99,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">ai.perevod4.ru</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="ai-home-it-1440.jpg" alt="Versione italiana del progetto AI multilingue ai.perevod4.ru" caption="ai.perevod4.ru — versione italiana, primo schermo" mobile="0"]
+[sr_shot file="ai-home-it-1440.webp" alt="Versione italiana del progetto AI multilingue ai.perevod4.ru" caption="ai.perevod4.ru — versione italiana, primo schermo" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

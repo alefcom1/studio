@@ -99,7 +99,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">tms.perevod4.ru</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="tms-board-1440.jpg" alt="Pannello del TMS tms.perevod4.ru con la bacheca degli ordini di traduzione" caption="TMS — bacheca ordini, schermata principale, desktop" mobile="0"]
+[sr_shot file="tms-board-1440.webp" alt="Pannello del TMS tms.perevod4.ru con la bacheca degli ordini di traduzione" caption="TMS — bacheca ordini, schermata principale, desktop" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

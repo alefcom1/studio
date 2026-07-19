@@ -3714,3 +3714,20 @@ CHROME_BLOG_CABLAB = {
         {'en': 'The Site Reliability Engineering book’s chapter on keeping systems safe: automatic checks and alerts, not good intentions.'},
 }
 CHROME.update(CHROME_BLOG_CABLAB)
+
+# CHROME_SERVIZI_VISUALS — polosa dei progetti reali + visual di direzione su
+# /servizi/ e schema editoriale su Export Ready (manifest images/chatgpt).
+CHROME_SERVIZI_VISUALS = {
+    'Dai progetti del gruppo': {'en': 'From the group’s projects'},
+    'Interfacce vere, in produzione': {'en': 'Real interfaces, in production'},
+    'Tre schermate dai progetti che il gruppo Remarka usa e mantiene ogni giorno — non mockup. I casi completi, con i link ai siti vivi, sono nel catalogo.':
+        {'en': 'Three screens from projects the Remarka group uses and maintains every day — not mockups. The full write-ups, with links to the live sites, are in the catalog.'},
+    'Tutti i progetti, con i link vivi →': {'en': 'All the projects, with live links →'},
+    'Schermata reale del sito techperevod.com': {'en': 'Actual screenshot of the techperevod.com website'},
+    'Schermata reale del catalogo perevod4.ru': {'en': 'Actual screenshot of the perevod4.ru catalog'},
+    'Schermata reale del TMS interno del gruppo': {'en': 'Actual screenshot of the group’s internal TMS'},
+    'TMS · interno': {'en': 'TMS · internal'},
+    'Schema del percorso editoriale: sorgente, revisione, versioni locali':
+        {'en': 'Editorial workflow diagram: source, review, local versions'},
+}
+CHROME.update(CHROME_SERVIZI_VISUALS)

@@ -1093,24 +1093,27 @@ body.page .entry-title {
   margin: 0;
 }
 
+/* Gli screenshot dei casi (WebP reali, branch images/chatgpt) NON si
+   ritagliano: niente aspect-ratio forzato né object-fit:cover — proporzioni
+   native del file, larghezza piena, altezza automatica. Il fondo carta
+   fa da cornice ai file che portano già i margini chiari. */
 .sr-browser img {
   display: block !important;
   width: 100% !important;
   height: auto;
-  min-height: 220px;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  background: var(--sr-traccia) !important;
+  object-fit: contain;
+  background: var(--sr-carta) !important;
 }
 
 /* Cornice stretta per screenshot mobile (Mini App, ukrinitsy): la stessa
-   .sr-browser, ma centrata e limitata in larghezza dentro la colonna. */
+   .sr-browser, ma centrata e limitata in larghezza dentro la colonna.
+   I sorgenti sono verticali (390×844): nessuno stiramento in card
+   orizzontale, il rapporto resta quello del file. */
 .sr-browser--mobile {
   max-width: 260px;
   margin-inline: auto;
 }
 
-.sr-browser--mobile img,
 .sr-browser--mobile .sr-shot-placeholder {
   aspect-ratio: 9 / 19.5;
   min-height: 0;
@@ -3445,4 +3448,41 @@ textarea.sr-ai-llms-textarea {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--sr-inchiostro);
+}
+
+/* Visual di direzione dentro le card servizi (/servizi/) e polosa dei
+   progetti reali: immagini intere, mai ritagliate, bordo sottile. */
+.sr-card__visual {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--sr-bordo);
+  border-radius: calc(var(--sr-radius) - 2px);
+  margin-bottom: 18px;
+  background: var(--sr-carta);
+}
+
+.sr-proj-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+@media (max-width: 860px) {
+  .sr-proj-strip { grid-template-columns: 1fr; }
+}
+.sr-proj-strip__item { margin: 0; }
+.sr-proj-strip__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  background: var(--sr-carta);
+}
+.sr-proj-strip__item figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--sr-grigio);
 }

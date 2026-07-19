@@ -51,7 +51,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">traduzione.tech</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="att-home-1440.jpg" alt="Главная страница сайта бюро переводов traduzione.tech, с блоком услуг" caption="ATT — главная, блок услуг, десктоп" mobile="0"]
+[sr_shot file="att-home-1440.webp" alt="Главная страница сайта бюро переводов traduzione.tech, с блоком услуг" caption="ATT — главная, блок услуг, десктоп" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

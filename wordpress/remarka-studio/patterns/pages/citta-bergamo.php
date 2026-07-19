@@ -51,7 +51,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">moscowtrans.ru/test-perevodchika</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="tester-exam-1440.jpg" alt="Piattaforma di test e valutazione dei traduttori del gruppo Remarka" caption="Piattaforma test traduttori — schermata di valutazione" mobile="0"]
+[sr_shot file="tester-exam-1440.webp" alt="Piattaforma di test e valutazione dei traduttori del gruppo Remarka" caption="Piattaforma test traduttori — schermata di valutazione" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

@@ -55,6 +55,9 @@
 <div class="wp-block-column" style="flex-basis:62%"><!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px">Экспортёру сегодня приходится выбирать между веб-агентством (которое отдаёт переводы на сторону или плагину) и бюро переводов (которое не строит сайты и не делает международную SEO). Ответственность всегда рвётся посередине — ровно там, где зарубежный клиент решает, покупать или нет. Remarka — единственная конфигурация, в которой инженерия и профессиональная локализация живут в одной компании, под одним договором.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<figure class="sr-hero-visual" style="margin-top:24px"><img src="/wp-content/themes/remarka-studio/assets/img/lingue-processo-madrelingua.webp" alt="Схема редакционного процесса: исходник, вычитка, локальные версии" width="1200" height="800" loading="lazy" decoding="async"/></figure>
+<!-- /wp:html -->
 </div>
 <!-- /wp:column -->
 </div>

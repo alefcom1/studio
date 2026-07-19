@@ -99,7 +99,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">perevod4.ru</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="perevod4-catalog-1440.jpg" alt="Portale-catalogo perevod4.ru con l’elenco delle agenzie di traduzione per città" caption="perevod4.ru — catalogo agenzie per città" mobile="0"]
+[sr_shot file="perevod4-catalog-1440.webp" alt="Portale-catalogo perevod4.ru con l’elenco delle agenzie di traduzione per città" caption="perevod4.ru — catalogo agenzie per città" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

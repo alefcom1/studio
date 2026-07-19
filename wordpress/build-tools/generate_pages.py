@@ -159,9 +159,22 @@ def build_servizi_index():
                                color='grigio', size='medium'),
                     classes='sr-section sr-hero')
 
+    # Visual di direzione sulle card corrispondenti (manifest images/chatgpt):
+    # immagini decorative (alt vuoto: il titolo della card è il testo).
+    CARD_VISUALS = {
+        'siti-aziendali': 'visual-sito-aziendale.webp',
+        'e-commerce':     'visual-ecommerce.webp',
+    }
     cards = []
     for svc in SERVICES:
+        visual = CARD_VISUALS.get(svc['slug'])
+        visual_html = (
+            raw_html(f'<img class="sr-card__visual" src="/wp-content/themes/remarka-studio/assets/img/casi/{visual}" '
+                     f'alt="" width="1200" height="800" loading="lazy" decoding="async"/>')
+            if visual else ''
+        )
         card = (
+            visual_html +
             heading(3, svc['title'], accent_dot=False) +
             paragraph(svc['hero_sub'], color='grigio', size='small') +
             raw_html(f'<p class="sr-card-link" style="margin-top:16px"><a href="/servizi/{svc["slug"]}/">Scopri →</a></p>')
@@ -172,20 +185,48 @@ def build_servizi_index():
 
     # Линии 2 и 3 концепции — отдельный блок «premium» под сеткой базовых услуг.
     premium_cards = ''.join(
-        f'<div class="sr-card sr-card--carta"><p class="sr-eyebrow">{ey}</p>'
+        f'<div class="sr-card sr-card--carta">'
+        + (f'<img class="sr-card__visual" src="/wp-content/themes/remarka-studio/assets/img/casi/{vis}" '
+           f'alt="" width="1200" height="800" loading="lazy" decoding="async"/>' if vis else '')
+        + f'<p class="sr-eyebrow">{ey}</p>'
         f'<h3 class="wp-block-heading" style="font-size:22px">{t}</h3>'
         f'<p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">{d}</p>'
         f'<p class="sr-card-link" style="margin-top:16px"><a href="{u}">Scopri →</a></p></div>'
-        for ey, t, d, u in [
-            ('Flagship', 'Export Ready', 'Il sito e la sua versione estera sotto un unico contratto: localizzazione da madrelingua, SEO internazionale, KPI per mercato.', '/servizi/export-ready/'),
-            ('Prodotti digitali', 'Web app su misura', 'Aree clienti, configuratori, portali B2B e integrazioni: quando un sito non basta.', '/servizi/web-app/'),
-            ('Obbligo di legge', 'Adeguamento EAA', 'Il vostro sito già online, portato allo standard WCAG 2.1 AA: audit, correzioni e dichiarazione di accessibilità. Obbligo di legge dal 2025.', '/servizi/adeguamento-eaa/'),
+        for ey, t, d, u, vis in [
+            ('Flagship', 'Export Ready', 'Il sito e la sua versione estera sotto un unico contratto: localizzazione da madrelingua, SEO internazionale, KPI per mercato.', '/servizi/export-ready/', None),
+            ('Prodotti digitali', 'Web app su misura', 'Aree clienti, configuratori, portali B2B e integrazioni: quando un sito non basta.', '/servizi/web-app/', 'visual-webapp.webp'),
+            ('Obbligo di legge', 'Adeguamento EAA', 'Il vostro sito già online, portato allo standard WCAG 2.1 AA: audit, correzioni e dichiarazione di accessibilità. Obbligo di legge dal 2025.', '/servizi/adeguamento-eaa/', None),
         ]
     )
     premium = section(
         eyebrow('Oltre il sito') + heading(2, 'Quando serve di più') +
         group(premium_cards, classes='', layout_type='grid', style='320px'),
         classes='sr-section sr-section--bianco',
+    )
+
+    # Polosa dei progetti (manifest images/chatgpt): tre schermate REALI dai
+    # progetti del gruppo — techperevod.com, perevod4.ru, TMS interno. I file
+    # servizi-*.webp portano già i margini chiari: si mostrano interi, mai
+    # ritagliati (niente cover). Didascalie = domini/nomi veri, non inventati.
+    proj_items = [
+        ('servizi-techperevod.webp', 'techperevod.com', 'Schermata reale del sito techperevod.com'),
+        ('servizi-perevod4-catalog.webp', 'perevod4.ru', 'Schermata reale del catalogo perevod4.ru'),
+        ('servizi-tms.webp', 'TMS · interno', 'Schermata reale del TMS interno del gruppo'),
+    ]
+    proj_figs = ''.join(
+        f'<figure class="sr-proj-strip__item"><img src="/wp-content/themes/remarka-studio/assets/img/casi/{img}" '
+        f'alt="{alt}" width="960" height="640" loading="lazy" decoding="async"/>'
+        f'<figcaption class="sr-mono">{label}</figcaption></figure>'
+        for img, label, alt in proj_items
+    )
+    progetti = section(
+        eyebrow('Dai progetti del gruppo') + heading(2, 'Interfacce vere, in produzione') +
+        paragraph('Tre schermate dai progetti che il gruppo Remarka usa e mantiene ogni giorno — non mockup. '
+                  'I casi completi, con i link ai siti vivi, sono nel catalogo.',
+                   color='grigio', size='medium', extra_style='max-width:70ch') +
+        raw_html(f'<div class="sr-proj-strip">{proj_figs}</div>') +
+        raw_html('<p class="sr-card-link" style="margin-top:24px"><a href="/casi-studio/">Tutti i progetti, con i link vivi →</a></p>'),
+        classes='sr-section',
     )
 
     # CTA di chiusura (owner 17.07.2026 — unificazione banner: pagina
@@ -202,8 +243,8 @@ def build_servizi_index():
         cta_trust_row(),
         classes='sr-section sr-cta-band',
     )
-    write('servizi-index', 'Pagina — Servizi (elenco)', 'Elenco dei servizi con link alle pagine dettaglio + linee premium.',
-          hero + grid + premium + cta)
+    write('servizi-index', 'Pagina — Servizi (elenco)', 'Elenco dei servizi con link alle pagine dettaglio, linee premium e polosa dei progetti reali.',
+          hero + grid + premium + progetti + cta)
 
 
 def build_servizio(svc):
@@ -1782,7 +1823,12 @@ def build_export_ready():
     problema = section(
         columns([
             column(eyebrow('Il problema') + heading(2, e['problema_heading']), width='38%'),
-            column(paragraph(e['problema_testo'], size='base', extra_style='font-size:17px'), width='62%'),
+            column(paragraph(e['problema_testo'], size='base', extra_style='font-size:17px') +
+                   raw_html('<figure class="sr-hero-visual" style="margin-top:24px">'
+                            '<img src="/wp-content/themes/remarka-studio/assets/img/lingue-processo-madrelingua.webp" '
+                            'alt="Schema del percorso editoriale: sorgente, revisione, versioni locali" '
+                            'width="1200" height="800" loading="lazy" decoding="async"/></figure>'),
+                   width='62%'),
         ]),
         classes='sr-section',
     )
