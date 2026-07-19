@@ -109,8 +109,8 @@ WP_CLI::log( '=================================' );
 
 WP_CLI::log( "\nHome:" );
 $home_sections = array(
-	'hero-home', 'checkup-home', 'trust-strip', 'tre-numeri', 'manifesto', 'lingue-mercati', 'servizi-cards', 'caso-evidenza',
-	'come-lavoriamo', 'garanzie-dark', 'prezzi-teaser', 'strumenti-cards', 'faq', 'contatti',
+	'hero-home', 'checkup-home', 'trust-strip', 'tre-numeri', 'manifesto', 'lingue-mercati', 'servizi-cards', 'prezzi-teaser',
+	'perche-remarka', 'caso-evidenza', 'recensioni', 'come-lavoriamo', 'garanzie-dark', 'strumenti-cards', 'faq', 'contatti',
 );
 
 /*
@@ -120,7 +120,7 @@ $home_sections = array(
  */
 $home_sections_ru = array(
 	'hero-home', 'checkup-home', 'trust-strip', 'vyhod-evropa', 'tre-numeri', 'manifesto', 'seo-lingue', 'servizi-cards',
-	'caso-evidenza', 'come-lavoriamo', 'garanzie-dark', 'prezzi-teaser', 'faq', 'contatti',
+	'prezzi-teaser', 'perche-remarka', 'caso-evidenza', 'recensioni', 'come-lavoriamo', 'garanzie-dark', 'faq', 'contatti',
 );
 $home_content = '';
 foreach ( $home_sections as $slug ) {

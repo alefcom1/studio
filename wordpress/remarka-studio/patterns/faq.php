@@ -3,7 +3,7 @@
  * Title: FAQ — fisarmonica
  * Slug: remarka-studio/faq
  * Categories: remarka
- * Description: Sei domande frequenti con blocchi Details nativi (accessibili, senza JS).
+ * Description: Dieci domande frequenti con blocchi Details nativi (accessibili, senza JS), incluse le obiezioni più comuni.
  * Viewport Width: 1400
  */
 ?>
@@ -57,6 +57,30 @@
 <!-- wp:details -->
 <details class="wp-block-details"><summary>Ho già un sito: devo rifarlo da zero?</summary><!-- wp:paragraph -->
 <p>Non sempre. L’analisi gratuita dice cosa tenere e cosa rifare: spesso un restyling tecnico basta per passare da 30 a 90+.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Un freelance costa meno: perché scegliere voi?</summary><!-- wp:paragraph -->
+<p>A volte un freelance è la scelta giusta, e lo diciamo. Con noi però il prezzo è chiuso e firmato, la consegna ha una data con penale dell’1% al giorno, e restano dodici mesi di assistenza anche se il freelance di turno cambia lavoro. Voci e tempi a confronto nella <a href="/prezzi/">pagina prezzi</a>.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Tre settimane non sono troppo poche? Ci rimette la qualità?</summary><!-- wp:paragraph -->
+<p>No: sono poche perché lavoriamo su un metodo rodato dal 2001, non perché tagliamo. Il PageSpeed 90+ è garantito nel contratto e ogni progetto passa gli stessi test. Come lavoriamo davvero lo vedete nei <a href="/casi-studio/">casi studio</a>.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>E se sforate la data di consegna?</summary><!-- wp:paragraph -->
+<p>La data è nel contratto, non un’ipotesi: ogni giorno lavorativo di ritardo vale l’1% di sconto sul totale, a nostro carico. È l’unica clausola che preferiremmo non dover mai applicare.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Alla consegna, cos’è mio?</summary><!-- wp:paragraph -->
+<p>Tutto: dominio, hosting e accessi intestati a voi, codice e contenuti vostri, nessun blocco tecnico. Se un giorno vorrete andare altrove, portate via l’intero sito senza chiedere permesso.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details --></div>
 <!-- /wp:column --></div>
