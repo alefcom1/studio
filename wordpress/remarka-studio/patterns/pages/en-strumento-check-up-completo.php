@@ -156,6 +156,10 @@
           <p class="sr-mono" data-sr-checkup-success hidden style="margin-top:16px;color:var(--sr-verde)">Done. The report is on its way to your inbox: if it doesn’t arrive within a few minutes, check spam or drop us a line.</p>
           <p class="sr-form-error" data-sr-checkup-error hidden>We couldn’t send the report. Try again shortly, or write to us and we’ll send it by hand.</p>
         </form>
+        <div class="sr-checkup-dl">
+          <span class="sr-mono sr-checkup-dl__or">or</span>
+          <button type="button" class="sr-feedback__btn sr-checkup-dl__btn" data-sr-checkup-download data-dl-pending="Preparing your PDF…">Download the PDF now — no e-mail needed</button>
+        </div>
         <p class="sr-mono" style="margin-top:20px;font-size:11px;color:var(--sr-grigio);opacity:.85">No spam. We use your address only for the report and possible follow-up. Studio Remarka S.r.l., VAT GE 302230994.</p>
       </div>
     </div>

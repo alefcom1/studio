@@ -153,6 +153,10 @@
           <p class="sr-mono" data-sr-checkup-success hidden style="margin-top:16px;color:var(--sr-verde)">Готово. Отчёт уже в пути к вашей почте: если не придёт за пару минут, проверьте спам или напишите нам.</p>
           <p class="sr-form-error" data-sr-checkup-error hidden>Не удалось отправить отчёт. Попробуйте ещё раз или напишите нам — пришлём вручную.</p>
         </form>
+        <div class="sr-checkup-dl">
+          <span class="sr-mono sr-checkup-dl__or">или</span>
+          <button type="button" class="sr-feedback__btn sr-checkup-dl__btn" data-sr-checkup-download data-dl-pending="Готовим PDF…">Скачать PDF сейчас — без e-mail</button>
+        </div>
         <p class="sr-mono" style="margin-top:20px;font-size:11px;color:var(--sr-grigio);opacity:.85">Без спама. Адрес используем только для отправки отчёта и, при необходимости, обратной связи. Студия Ремарка, ИНН 231149349191.</p>
       </div>
     </div>

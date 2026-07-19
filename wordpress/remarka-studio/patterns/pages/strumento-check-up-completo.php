@@ -156,6 +156,10 @@
           <p class="sr-mono" data-sr-checkup-success hidden style="margin-top:16px;color:var(--sr-verde)">Fatto. Il report è in viaggio verso la vostra casella: se non arriva entro qualche minuto, controllate lo spam o scriveteci.</p>
           <p class="sr-form-error" data-sr-checkup-error hidden>Non siamo riusciti a inviare il report. Riprovate tra poco o scriveteci: ve lo mandiamo a mano.</p>
         </form>
+        <div class="sr-checkup-dl">
+          <span class="sr-mono sr-checkup-dl__or">oppure</span>
+          <button type="button" class="sr-feedback__btn sr-checkup-dl__btn" data-sr-checkup-download data-dl-pending="Prepariamo il PDF…">Scaricate il PDF adesso — senza e-mail</button>
+        </div>
         <p class="sr-mono" style="margin-top:20px;font-size:11px;color:var(--sr-grigio);opacity:.85">Niente spam. Usiamo l’indirizzo solo per il report ed eventuale ricontatto. Studio Remarka S.r.l., P.IVA GE 302230994.</p>
       </div>
     </div>

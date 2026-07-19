@@ -3740,5 +3740,9 @@ CHROME_RECENSIONI = {
     'Le prime recensioni dal lancio su Product Hunt — citate in originale, con il permesso degli autori.':
         {'en': 'The first reviews from our Product Hunt launch — quoted verbatim, with the authors’ permission.'},
     'Da dove partire': {'en': 'Where to start'},
+    # Download diretto del PDF (senza e-mail) — bottone nel form report.
+    'oppure': {'en': 'or'},
+    'Scaricate il PDF adesso — senza e-mail': {'en': 'Download the PDF now — no e-mail needed'},
+    'Prepariamo il PDF…': {'en': 'Preparing your PDF…'},
 }
 CHROME.update(CHROME_RECENSIONI)

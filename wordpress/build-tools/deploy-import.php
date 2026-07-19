@@ -411,7 +411,26 @@ foreach ( $ordered as $pattern_slug ) {
 	$full_path = $parent_path ? "$parent_path/$page_slug" : $page_slug;
 	$id        = remarka_deploy_upsert_page( $full_path, $title, $content, $parent_id, $force );
 	$created_ids[ $full_path ] = $id;
+
+	// Commenti nativi WP SOLO sugli articoli del blog (decisione owner
+	// 19.07.2026, raccolta feedback): tutte le altre pagine restano chiuse.
+	$is_blog_article = ( 0 === strpos( $pattern_slug, 'blog-' ) || 0 === strpos( $pattern_slug, 'en-blog-' ) || 0 === strpos( $pattern_slug, 'ru-blog-' ) )
+		&& false === strpos( $pattern_slug, 'blog-index' );
+	if ( $id && $is_blog_article ) {
+		wp_update_post( array( 'ID' => $id, 'comment_status' => 'open' ) );
+	}
 }
+
+/* Impostazioni discussione (idempotenti): OGNI commento passa dalla
+ * moderazione prima di apparire; niente registrazione obbligatoria;
+ * opt-in esplicito per i cookie del form (GDPR). */
+update_option( 'comment_moderation', 1 );
+update_option( 'comment_previously_approved', 0 );
+update_option( 'require_name_email', 1 );
+update_option( 'comment_registration', 0 );
+update_option( 'show_comments_cookies_opt_in', 1 );
+update_option( 'close_comments_for_old_posts', 0 );
+WP_CLI::log( '  commenti: aperti sugli articoli del blog, moderazione totale attiva' );
 
 /* ---------- 2b. Pulizia pagine orfane ----------
  * Se un caso/articolo viene rinominato o rimosso da data.py (successo con

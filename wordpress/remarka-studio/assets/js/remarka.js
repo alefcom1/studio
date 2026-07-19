@@ -1776,6 +1776,157 @@
 		});
 	}
 
+	/** Bottone «Scaricate il PDF adesso» ([data-sr-checkup-download], M-PH1 —
+	 * feedback lancio Product Hunt: «wish there was a quick export option»).
+	 * Stesso payload del report via e-mail, azione `remarka_tool_report_download`:
+	 * il server risponde col binario PDF (errori in JSON). Niente e-mail,
+	 * niente consenso: nessun dato personale raccolto. */
+	function initCheckupDownload(root, getLastResult) {
+		var btn = q(root, '[data-sr-checkup-download]');
+		if (!btn) return;
+		var errorEl = q(root, '[data-sr-checkup-error]');
+		var idleLabel = btn.textContent;
+		var pendingLabel = btn.getAttribute('data-dl-pending') || 'Prepariamo il PDF…';
+
+		btn.addEventListener('click', function () {
+			var result = getLastResult();
+			var cfg = window.remarkaPSI || {};
+			if (!result || !cfg.ajaxUrl || !window.fetch) return;
+			if (errorEl) errorEl.hidden = true;
+			btn.disabled = true;
+			btn.textContent = pendingLabel;
+
+			var payload = {
+				url: result.url,
+				locale: toolLocale(root),
+				composite: result.composite,
+				measured: result.measured,
+				scores: result.scores,
+				findings: result.findings || {},
+				ts: new Date().toISOString()
+			};
+			var data = new FormData();
+			data.set('action', 'remarka_tool_report_download');
+			data.set('nonce', cfg.toolsNonce || '');
+			data.set('payload', JSON.stringify(payload).slice(0, 65536));
+
+			window.fetch(cfg.ajaxUrl, { method: 'POST', body: data, credentials: 'same-origin' })
+				.then(function (r) {
+					var ct = (r.headers.get('content-type') || '');
+					if (!r.ok || ct.indexOf('application/pdf') === -1) { throw new Error('no-pdf'); }
+					return r.blob();
+				})
+				.then(function (blob) {
+					var domain = String(result.url || '').replace(/^https?:\/\//i, '').replace(/\/.*$/, '');
+					var a = document.createElement('a');
+					a.href = URL.createObjectURL(blob);
+					a.download = 'checkup-' + (domain || 'report') + '.pdf';
+					document.body.appendChild(a);
+					a.click();
+					a.remove();
+					window.setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+				})
+				.catch(function () { if (errorEl) errorEl.hidden = false; })
+				.finally(function () { btn.disabled = false; btn.textContent = idleLabel; });
+		});
+	}
+
+	/* ==========================================================================
+	 * Delta «rispetto all'ultima scansione» (M-PH2 — feedback lancio Product
+	 * Hunt: «compare two scans side by side to see what actually changed»).
+	 * Il punteggio precedente vive nel localStorage del visitatore (niente
+	 * server, niente dati personali): alla scansione successiva dello STESSO
+	 * dominio mostriamo la differenza sul composito e su ogni card, più il
+	 * ponte al monitoraggio continuo (Remarka Lab · Monitor).
+	 * ========================================================================== */
+
+	var CHECKUP_DELTA_STRINGS = {
+		it: { vs: 'Rispetto alla vostra ultima scansione ({date}): ', pts: ' punti', same: 'stesso punteggio',
+			bridge: 'La serie ogni mese, senza rifare il test a mano, è il monitoraggio per i clienti →' },
+		en: { vs: 'Compared to your last scan ({date}): ', pts: ' points', same: 'same score',
+			bridge: 'Want the series every month, without re-running the test? That’s monitoring for clients →' },
+		ru: { vs: 'По сравнению с вашей прошлой проверкой ({date}): ', pts: ' балл(ов)', same: 'оценка не изменилась',
+			bridge: 'Серия по месяцам без ручных проверок — это мониторинг для клиентов →' }
+	};
+	var CHECKUP_MONITOR_PATH = { it: '/strumenti/#monitor', en: '/en/tools/#monitor', ru: '/ru/instrumenty/#monitor' };
+	var CHECKUP_HISTORY_KEY = 'srCheckupHistory';
+
+	function checkupHistoryRead() {
+		try {
+			var raw = window.localStorage.getItem(CHECKUP_HISTORY_KEY);
+			return raw ? JSON.parse(raw) : {};
+		} catch (e) { return null; } // storage negato (private mode): delta disattivata.
+	}
+
+	function checkupDomainKey(url) {
+		return String(url || '').replace(/^https?:\/\//i, '').replace(/\/.*$/, '').toLowerCase();
+	}
+
+	function renderCheckupDelta(root, result) {
+		var history = checkupHistoryRead();
+		if (history === null || !result || typeof result.composite !== 'number') return;
+		var locale = toolLocale(root);
+		var s = CHECKUP_DELTA_STRINGS[locale] || CHECKUP_DELTA_STRINGS.it;
+		var domain = checkupDomainKey(result.url);
+		if (!domain) return;
+		var prev = history[domain];
+
+		// Salviamo SEMPRE l'ultima scansione (sovrascrive la precedente).
+		history[domain] = { ts: Date.now(), composite: result.composite, scores: result.scores || {} };
+		try { window.localStorage.setItem(CHECKUP_HISTORY_KEY, JSON.stringify(history)); } catch (e) { /* pieno: pazienza */ }
+
+		var wrap = q(root, '[data-sr-checkup-composite]');
+		if (!wrap) return;
+		var old = wrap.querySelector('.sr-checkup-delta');
+		if (old) old.remove();
+		if (!prev || typeof prev.composite !== 'number') return;
+
+		var diff = result.composite - prev.composite;
+		var dateLabel = '';
+		try {
+			var lmap = { it: 'it-IT', en: 'en-GB', ru: 'ru-RU' };
+			dateLabel = new Date(prev.ts).toLocaleDateString(lmap[locale] || 'it-IT');
+		} catch (e) { dateLabel = ''; }
+
+		var deltaTxt = diff === 0 ? s.same
+			: (diff > 0 ? '+' : '−') + Math.abs(diff) + s.pts;
+		var color = diff > 0 ? 'var(--sr-verde)' : (diff < 0 ? '#C0452C' : 'var(--sr-grigio)');
+		var p = document.createElement('p');
+		p.className = 'sr-mono sr-checkup-delta';
+		p.style.cssText = 'margin-top:10px;font-size:12.5px;color:var(--sr-grigio)';
+		p.appendChild(document.createTextNode(s.vs.replace('{date}', dateLabel)));
+		var b = document.createElement('strong');
+		b.style.color = color;
+		b.textContent = deltaTxt;
+		p.appendChild(b);
+		var br = document.createElement('span');
+		br.style.cssText = 'display:block;margin-top:4px';
+		var a = document.createElement('a');
+		a.href = CHECKUP_MONITOR_PATH[locale] || CHECKUP_MONITOR_PATH.it;
+		a.textContent = s.bridge;
+		br.appendChild(a);
+		p.appendChild(br);
+		wrap.appendChild(p);
+
+		// Mini-delta per dimensione sulle card (solo dove entrambe misurate).
+		CHECKUP_ORDER.forEach(function (dim) {
+			var card = root.querySelector('[data-sr-dim="' + dim + '"]');
+			if (!card) return;
+			var oldTag = card.querySelector('.sr-dim-delta');
+			if (oldTag) oldTag.remove();
+			var now = result.scores ? result.scores[dim] : null;
+			var was = prev.scores ? prev.scores[dim] : null;
+			if (typeof now !== 'number' || typeof was !== 'number' || now === was) return;
+			var d = now - was;
+			var tag = document.createElement('span');
+			tag.className = 'sr-mono sr-dim-delta';
+			tag.style.cssText = 'margin-left:8px;font-size:12px;color:' + (d > 0 ? 'var(--sr-verde)' : '#C0452C');
+			tag.textContent = (d > 0 ? '+' : '−') + Math.abs(d);
+			var scoreEl = card.querySelector('.sr-dim-card__score');
+			if (scoreEl) scoreEl.appendChild(tag);
+		});
+	}
+
 	function initCheckupTool(root) {
 		var shell = toolShell(root);
 		var lastResult = null;
@@ -1784,11 +1935,13 @@
 			return runCheckup(url, toolLocale(root)).then(function (result) {
 				lastResult = result;
 				renderCheckupResults(root, result);
+				renderCheckupDelta(root, result);
 			});
 		}
 
 		onUrlSubmit(shell, run);
 		initCheckupReportForm(root, function () { return lastResult; });
+		initCheckupDownload(root, function () { return lastResult; });
 
 		var retryBtn = q(root, '[data-sr-checkup-retry]');
 		if (retryBtn) {
@@ -2170,6 +2323,111 @@
 	}
 
 	/** Dispatcher: inizializza ogni widget in base a data-sr-tool. */
+	/* ==========================================================================
+	 * «Vi è stato utile?» — micro-feedback su ogni strumento (M-PH3, dalla
+	 * raccolta recensioni Product Hunt 19.07.2026). UI interamente in JS
+	 * (zero markup nelle 36 pagine strumento ×3 lingue), stringhe per locale
+	 * qui sotto — stesso principio dei fallback di CHECKUP_*; il blocco appare
+	 * solo quando il risultato del test è visibile. Endpoint server-side:
+	 * `remarka_tool_feedback` (functions.php) — voto + commento facoltativo,
+	 * nessun dato personale.
+	 * ========================================================================== */
+
+	var FEEDBACK_STRINGS = {
+		it: { ask: 'Vi è stato utile questo strumento?', yes: 'Sì', no: 'No',
+			placeholder: 'Cosa possiamo migliorare? (facoltativo)', send: 'Invia',
+			thanks: 'Grazie: il vostro parere arriva dritto allo studio.' },
+		en: { ask: 'Was this tool useful?', yes: 'Yes', no: 'No',
+			placeholder: 'What could we improve? (optional)', send: 'Send',
+			thanks: 'Thank you — your feedback goes straight to the studio.' },
+		ru: { ask: 'Инструмент оказался полезным?', yes: 'Да', no: 'Нет',
+			placeholder: 'Что нам улучшить? (необязательно)', send: 'Отправить',
+			thanks: 'Спасибо: ваш отзыв уходит прямо в студию.' }
+	};
+
+	function initToolFeedback(root) {
+		var result = q(root, '[data-sr-tool-result]');
+		if (!result || !window.fetch || root.querySelector('.sr-feedback')) return;
+		var s = FEEDBACK_STRINGS[toolLocale(root)] || FEEDBACK_STRINGS.it;
+
+		var box = document.createElement('div');
+		box.className = 'sr-feedback';
+		box.hidden = true;
+		var ask = document.createElement('p');
+		ask.className = 'sr-mono sr-feedback__ask';
+		ask.textContent = s.ask;
+		box.appendChild(ask);
+		var row = document.createElement('div');
+		row.className = 'sr-feedback__row';
+		box.appendChild(row);
+
+		var chosen = null;
+		var form = document.createElement('form');
+		form.className = 'sr-feedback__form';
+		form.hidden = true;
+		var ta = document.createElement('textarea');
+		ta.className = 'sr-text-input sr-feedback__text';
+		ta.rows = 2;
+		ta.maxLength = 1000;
+		ta.placeholder = s.placeholder;
+		var send = document.createElement('button');
+		send.type = 'submit';
+		send.className = 'wp-block-button__link';
+		send.textContent = s.send;
+		form.appendChild(ta);
+		form.appendChild(send);
+		box.appendChild(form);
+
+		['yes', 'no'].forEach(function (vote) {
+			var b = document.createElement('button');
+			b.type = 'button';
+			b.className = 'sr-feedback__btn';
+			b.textContent = vote === 'yes' ? s.yes : s.no;
+			b.addEventListener('click', function () {
+				chosen = vote;
+				row.querySelectorAll('.sr-feedback__btn').forEach(function (x) {
+					x.classList.toggle('is-active', x === b);
+				});
+				form.hidden = false;
+				ta.focus();
+			});
+			row.appendChild(b);
+		});
+
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+			if (!chosen) return;
+			var cfg = window.remarkaPSI || {};
+			if (!cfg.ajaxUrl) return;
+			send.disabled = true;
+			var data = new FormData();
+			data.set('action', 'remarka_tool_feedback');
+			data.set('nonce', cfg.toolsNonce || '');
+			data.set('vote', chosen);
+			data.set('comment', ta.value.slice(0, 1000));
+			data.set('tool', root.getAttribute('data-sr-tool') || '');
+			data.set('page', window.location.href);
+			window.fetch(cfg.ajaxUrl, { method: 'POST', body: data, credentials: 'same-origin' })
+				.catch(function () { /* feedback best-effort: niente errori in faccia */ })
+				.finally(function () {
+					box.textContent = '';
+					var done = document.createElement('p');
+					done.className = 'sr-mono sr-feedback__thanks';
+					done.textContent = s.thanks;
+					box.appendChild(done);
+				});
+		});
+
+		result.parentNode.insertBefore(box, result.nextSibling);
+
+		// Compare quando il risultato diventa visibile (attributo hidden).
+		var reveal = function () { if (!result.hidden) box.hidden = false; };
+		if (window.MutationObserver) {
+			new MutationObserver(reveal).observe(result, { attributes: true, attributeFilter: ['hidden'] });
+		}
+		reveal();
+	}
+
 	function initToolWidgets() {
 		document.querySelectorAll('[data-sr-tool]').forEach(function (root) {
 			switch (root.getAttribute('data-sr-tool')) {
@@ -2186,6 +2444,7 @@
 				case 'ai-suona': initAiSuonaTool(root); break;
 				case 'ai-llms': initAiLlmsTool(root); break;
 			}
+			initToolFeedback(root);
 		});
 		// Retro-compatibilità: form velocità senza wrapper [data-sr-tool].
 		document.querySelectorAll('[data-sr-tool-form]').forEach(function (form) {
