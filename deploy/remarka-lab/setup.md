@@ -271,9 +271,13 @@ docker compose $BASE up -d --build cabinet web api
 docker compose $BASE exec caddy caddy reload --config /etc/caddy/Caddyfile
 
 # 3) Make sure the owner (and any staff) exists as a CabUser with isStaff — the
-#    ONLY way isStaff gets set. Idempotent; re-run per staff e-mail:
-docker compose $BASE run --rm --entrypoint sh cabinet -c \
-  "cd /app && pnpm --filter @sitelens/cabinet seed -- --staff --email owner@remarka.biz --locale it"
+#    ONLY way isStaff gets set. Run it from the `api` container: the standalone
+#    cabinet/web images are trimmed (no pnpm/tsx), but the api image ships the
+#    full toolchain + every workspace on disk. Idempotent; re-run per staff
+#    e-mail. Requires api to be up (step 2). If it was already set on an earlier
+#    cabinet deploy, this is a harmless no-op.
+docker compose $BASE exec api pnpm --filter @sitelens/cabinet seed -- \
+  --staff --email owner@remarka.biz --locale it
 
 # 4) Verify open access + SSO:
 curl -sI https://lab.remarka.biz/ | grep -i '^location'        # → cab.remarka.biz/login
