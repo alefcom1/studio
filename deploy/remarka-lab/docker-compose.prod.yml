@@ -102,6 +102,11 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: production
+      # ОБЯЗАТЕЛЬНО: web использует env_file: .env (базовый compose), а в .env
+      # лежит PORT=3001 (для api). Без явного override Next-сервер web слушал бы
+      # 3001, тогда как Caddy проксирует на web:3000 → 502. Тот же класс бага,
+      # что фикс PORT:3002 у cabinet. Явно фиксируем 3000.
+      PORT: 3000
       # Overrides the base file's leftover runtime `http://localhost:3001`. Note:
       # for NEXT_PUBLIC_* this runtime value is a no-op (the real value is baked
       # in at build via build.args above) — set here only to avoid a misleading
