@@ -1222,6 +1222,44 @@ function remarka_blog_posting_schema(): void {
 add_action( 'wp_head', 'remarka_blog_posting_schema' );
 
 /**
+ * Rank Math печатает на страницах/постах схему типа Article, но без полей
+ * `name` и (на страницах) `datePublished` — наш краулер помечает их как
+ * обязательные (schema_missing_required_field, ~195 страниц). Дополняем
+ * Article-узлы Rank Math недостающими полями прямо в его фильтре json_ld:
+ * `name` берём из headline (или заголовка), `datePublished`/`dateModified` —
+ * из дат записи. Ничего не дублируем: правим уже существующие узлы Rank Math.
+ * Фильтр не срабатывает, если Rank Math отключён.
+ */
+function remarka_rank_math_article_fields( $data, $jsonld ) {
+	if ( ! is_array( $data ) ) {
+		return $data;
+	}
+	foreach ( $data as $key => $piece ) {
+		if ( ! is_array( $piece ) || empty( $piece['@type'] ) ) {
+			continue;
+		}
+		$types = array_map( 'strval', (array) $piece['@type'] );
+		if ( ! array_intersect( $types, array( 'Article', 'BlogPosting', 'NewsArticle' ) ) ) {
+			continue;
+		}
+		if ( empty( $piece['name'] ) ) {
+			$piece['name'] = ! empty( $piece['headline'] )
+				? $piece['headline']
+				: wp_strip_all_tags( get_the_title() );
+		}
+		if ( empty( $piece['datePublished'] ) ) {
+			$piece['datePublished'] = get_the_date( 'c' );
+		}
+		if ( empty( $piece['dateModified'] ) ) {
+			$piece['dateModified'] = get_the_modified_date( 'c' );
+		}
+		$data[ $key ] = $piece;
+	}
+	return $data;
+}
+add_filter( 'rank_math/json_ld', 'remarka_rank_math_article_fields', 99, 2 );
+
+/**
  * ---------- Modulo contatti nativo ----------
  * Shortcode [remarka_form]: nessun plugin, invio via wp_mail.
  * Anti-spam: honeypot + nonce + rate-limit per IP (1 invio/60s, transient).
