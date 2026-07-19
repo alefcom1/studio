@@ -763,6 +763,14 @@
 			var cmp = null;
 			GDPR_CMPS.forEach(function (name) { if (!cmp && lower.indexOf(name) !== -1) cmp = name; });
 
+			// Banner auto-ospitato (non un CMP SaaS della lista sopra): euristica
+			// sui marcatori tipici del contenitore di consenso (classe/id/attr).
+			// «cookie-banner», «cookie-consent», «consent-banner», ecc. Il semplice
+			// LINK alla cookie policy (es. «cookie-policy», «cookie policy») NON
+			// combacia — così non si conta come banner ciò che è solo l'informativa.
+			var selfHostedBanner = /cookie[-_]?(consent|banner|notice|bar|law)|consent[-_]?banner|gdpr[-_]?consent|data-[a-z-]*cookie-banner/i.test(html);
+			var hasBanner = !!cmp || selfHostedBanner;
+
 			var hasPolicy = /href=["'][^"']*(privacy|cookie|informativa)[^"']*["']/i.test(html) ||
 				/(privacy policy|cookie policy|informativa (sulla )?privacy)/i.test(html);
 
@@ -773,14 +781,16 @@
 			var re = /<script[^>]+src=["']https?:\/\/([^\/"']+)/gi, mm;
 			while ((mm = re.exec(html)) !== null) { domains[mm[1].toLowerCase()] = true; }
 
-			return { cmp: cmp, hasPolicy: hasPolicy, trackersFound: trackersFound, externalCount: Object.keys(domains).length, domains: Object.keys(domains) };
+			return { cmp: cmp, hasBanner: hasBanner, hasPolicy: hasPolicy, trackersFound: trackersFound, externalCount: Object.keys(domains).length, domains: Object.keys(domains) };
 		});
 	}
 
 	/** Deriva i 4 flag good|warn|bad dai segnali grezzi (stessa logica per pagina strumento e check-up). */
 	function gdprSignalFlags(sig) {
+		// Un banner c'è se è un CMP noto O un contenitore di consenso auto-ospitato.
+		var hasBanner = sig.hasBanner !== undefined ? sig.hasBanner : !!sig.cmp;
 		var trackFlag;
-		if (sig.trackersFound.length && !sig.cmp) {
+		if (sig.trackersFound.length && !hasBanner) {
 			trackFlag = 'bad';
 		} else if (sig.trackersFound.length) {
 			trackFlag = 'warn';
@@ -788,7 +798,7 @@
 			trackFlag = 'good';
 		}
 		return {
-			cmpFlag: sig.cmp ? 'good' : 'bad',
+			cmpFlag: hasBanner ? 'good' : 'bad',
 			policyFlag: sig.hasPolicy ? 'good' : 'bad',
 			trackFlag: trackFlag,
 			externalFlag: sig.externalCount === 0 ? 'good' : (sig.externalCount <= 5 ? 'warn' : 'bad')
@@ -801,8 +811,8 @@
 			return runGdprCheck(url).then(function (sig) {
 				var flags = gdprSignalFlags(sig);
 
-				setText(root, '[data-sr-tool-cmp]', sig.cmp
-					? txt(root, 'data-label-cmp-yes', 'Cookie banner rilevato') + ' (' + sig.cmp + ')'
+				setText(root, '[data-sr-tool-cmp]', sig.hasBanner
+					? txt(root, 'data-label-cmp-yes', 'Cookie banner rilevato') + (sig.cmp ? ' (' + sig.cmp + ')' : '')
 					: txt(root, 'data-label-cmp-no', 'Nessun cookie banner rilevato'));
 				setFlag(root, '[data-sr-tool-cmp]', flags.cmpFlag);
 
@@ -2211,9 +2221,15 @@
 		}
 		banner.querySelectorAll('[data-sr-cookie-choice]').forEach(function (btn) {
 			btn.addEventListener('click', function () {
+				var choice = btn.getAttribute('data-sr-cookie-choice');
 				try {
-					window.localStorage.setItem(COOKIE_KEY, btn.getAttribute('data-sr-cookie-choice'));
+					window.localStorage.setItem(COOKIE_KEY, choice);
 				} catch (err) { /* privacy mode: la scelta vale solo per la sessione */ }
+				// Consenso dato → carica Yandex.Metrika subito, senza ricaricare
+				// la pagina (prima del consenso il tag non è mai stato inserito).
+				if (choice === 'accepted' && typeof window.remarkaLoadMetrika === 'function') {
+					window.remarkaLoadMetrika();
+				}
 				banner.hidden = true;
 			});
 		});

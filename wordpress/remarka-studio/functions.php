@@ -762,21 +762,51 @@ add_action( 'wp_footer', 'remarka_render_footer', 5 );
 
 /**
  * Yandex.Metrika: счётчик в футере всех страниц сайта.
+ *
+ * GDPR: счётчик грузит внешний скрипт mc.yandex.ru и включает webvisor
+ * (запись сессий) — это трекинг, который по закону нельзя запускать ДО
+ * согласия. Поэтому тег НЕ грузится сам по себе: он подключается только
+ * когда пользователь нажал «Принять» в cookie-баннере (выбор
+ * `sr-cookie-choice === 'accepted'` в localStorage). До согласия/при отказе
+ * во внешний домен не уходит ни одного запроса, и в исходном HTML страницы
+ * внешнего <script src> нет вовсе (свой же тест «Проверка GDPR» это видит).
+ *
+ * Функция `window.remarkaLoadMetrika` вызывается из remarka.js в момент
+ * нажатия «Принять» (без перезагрузки) и здесь же — сразу, если согласие
+ * уже было дано в прошлый визит. Тег грузится максимум один раз.
+ *
+ * <noscript>-пиксель убран сознательно: без JS нет и механизма согласия,
+ * поэтому трекинг для no-JS посетителей не запускаем (иначе он бы шёл без
+ * согласия).
  */
 function remarka_yandex_metrika(): void {
 	?>
-	<!-- Yandex.Metrika counter -->
+	<!-- Yandex.Metrika counter (загружается только после согласия на cookie) -->
 	<script type="text/javascript">
-		(function(m,e,t,r,i,k,a){
-			m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-			m[i].l=1*new Date();
-			for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-			k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-		})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110723466', 'ym');
+		(function () {
+			var COUNTER_ID = 110723466;
+			var CHOICE_KEY = 'sr-cookie-choice';
 
-		ym(110723466, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+			window.remarkaLoadMetrika = function () {
+				if (window.__srMetrikaLoaded) { return; }
+				window.__srMetrikaLoaded = true;
+				(function(m,e,t,r,i,k,a){
+					m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+					m[i].l=1*new Date();
+					for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+					k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+				})(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=' + COUNTER_ID, 'ym');
+
+				ym(COUNTER_ID, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+			};
+
+			try {
+				if (window.localStorage.getItem(CHOICE_KEY) === 'accepted') {
+					window.remarkaLoadMetrika();
+				}
+			} catch (err) { /* приватный режим: без localStorage трекинг не запускаем */ }
+		})();
 	</script>
-	<noscript><div><img src="https://mc.yandex.ru/watch/110723466" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
 	<?php
 }
