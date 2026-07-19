@@ -1267,6 +1267,24 @@ function remarka_rank_math_article_fields( $data, $jsonld ) {
 add_filter( 'rank_math/json_ld', 'remarka_rank_math_article_fields', 99, 2 );
 
 /**
+ * title_too_long (74 страницы в отчёте Monitor): title вида
+ * «<заголовок> - Studio Remarka» перебирает ~60 символов из-за бренд-хвоста.
+ * Когда итоговый title длиннее 60 — срезаем хвост с названием студии (любой
+ * из типичных разделителей Rank Math: - – — | »). На коротких заголовках
+ * бренд остаётся. Если и без хвоста заголовок длиннее 60 — не трогаем (такие
+ * единичные случаи правятся вручную в поле Rank Math). Фильтр не срабатывает
+ * при отключённом Rank Math.
+ */
+function remarka_shorten_long_titles( $title ) {
+	if ( ! is_string( $title ) || mb_strlen( $title ) <= 60 ) {
+		return $title;
+	}
+	$stripped = preg_replace( '/\s*[\-–—|»]\s*Studio\s+Remarka\s*$/u', '', $title );
+	return is_string( $stripped ) ? $stripped : $title;
+}
+add_filter( 'rank_math/frontend/title', 'remarka_shorten_long_titles', 20 );
+
+/**
  * ---------- Modulo contatti nativo ----------
  * Shortcode [remarka_form]: nessun plugin, invio via wp_mail.
  * Anti-spam: honeypot + nonce + rate-limit per IP (1 invio/60s, transient).
