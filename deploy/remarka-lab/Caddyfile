@@ -33,26 +33,17 @@
 lab.remarka.biz {
 	encode zstd gzip
 
-	# ── Gate the site behind Basic Auth, EXCEPT the public vetrina ───────────
-	# The internal Monitor UI stays behind Basic Auth (the app has no auth of its
-	# own). But the public showcase must be reachable WITHOUT credentials:
-	#   • /showcase (+ RSC subrequests to the same path) — the marketing page;
-	#   • /api/public/* — its read-only endpoint (guard-skipped in server.ts);
-	#   • /_next/* and /favicon.* — Next.js shared assets, so the page can hydrate.
-	# Exempting /_next/* exposes JS bundles, NOT data: every data route stays
-	# behind the API session guard, and every protected page server-redirects to
-	# /login (requireMonSession in (protected)/layout.tsx) regardless of Basic
-	# Auth. So the bundles reveal UI structure only — no client data leaks.
-	#
-	# Generate the hash on the server with:
-	#   docker compose ... exec caddy caddy hash-password --plaintext 'YOURPASS'
-	# then paste it below (bcrypt hash, starts with $2a$). The value below is a
-	# PLACEHOLDER for the password "changeme" — REPLACE IT before going live.
-	@needs_auth not path /showcase /showcase/* /api/public/* /_next/* /favicon.svg /favicon.ico
-	basic_auth @needs_auth {
-		# username    bcrypt-hash
-		remarka $2a$14$bG0kjAVPVwxMXokL4tZLNuqz1Q8turCMt8qxhiaNlEOtVvXyTuVs.
-	}
+	# ── No Basic Auth anymore (M2 cutover, unica-utenza) ──────────────────────
+	# Lab is now app-guarded, not gated at the edge: every protected page runs
+	# requireLabSession() (redirects to the cabinet login on cab.remarka.biz) and
+	# every data route is behind the API auth + tenant guard (server.ts). Access
+	# is by the shared `cab_session` cookie (Domain=.remarka.biz — set COOKIE_DOMAIN
+	# on the cabinet service). The public vetrina (/showcase, /api/public/*) is
+	# open by design. Removing Basic Auth is the go-live moment for open access;
+	# PREREQUISITES (see setup.md → "M2 cutover"): prisma db push applied,
+	# cabinet redeployed with COOKIE_DOMAIN=.remarka.biz, web rebuilt with
+	# NEXT_PUBLIC_CABINET_URL. Without those a logged-in user bounces in a redirect
+	# loop. To roll back, re-add a `basic_auth { ... }` block here and reload Caddy.
 
 	# ── WebSocket: /ws and everything under it → api ─────────────────────────
 	@ws path /ws /ws/*
