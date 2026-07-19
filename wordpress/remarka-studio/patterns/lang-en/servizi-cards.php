@@ -114,5 +114,10 @@
 <p class="sr-card-link sr-no-margin"><a href="/en/services/eaa-compliance/">Learn more →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></section>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div class="sr-serv-visuals">
+<a class="sr-serv-visual" href="/en/services/business-websites/"><img src="/wp-content/themes/remarka-studio/assets/img/casi/visual-sito-aziendale.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/><span class="sr-serv-visual__label"><span>Business websites</span><span>→</span></span></a><a class="sr-serv-visual" href="/en/services/e-commerce/"><img src="/wp-content/themes/remarka-studio/assets/img/casi/visual-ecommerce.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/><span class="sr-serv-visual__label"><span>E-commerce</span><span>→</span></span></a><a class="sr-serv-visual" href="/en/services/custom-web-apps/"><img src="/wp-content/themes/remarka-studio/assets/img/casi/visual-webapp.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/><span class="sr-serv-visual__label"><span>Custom web apps</span><span>→</span></span></a>
+</div>
+<!-- /wp:html --></section>
 <!-- /wp:group -->

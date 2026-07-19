@@ -114,5 +114,10 @@
 <p class="sr-card-link sr-no-margin"><a href="/servizi/adeguamento-eaa/">Scopri →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></section>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div class="sr-serv-visuals">
+<a class="sr-serv-visual" href="/servizi/siti-aziendali/"><img src="/wp-content/themes/remarka-studio/assets/img/casi/visual-sito-aziendale.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/><span class="sr-serv-visual__label"><span>Siti aziendali</span><span>→</span></span></a><a class="sr-serv-visual" href="/servizi/e-commerce/"><img src="/wp-content/themes/remarka-studio/assets/img/casi/visual-ecommerce.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/><span class="sr-serv-visual__label"><span>E-commerce</span><span>→</span></span></a><a class="sr-serv-visual" href="/servizi/web-app/"><img src="/wp-content/themes/remarka-studio/assets/img/casi/visual-webapp.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/><span class="sr-serv-visual__label"><span>Web app su misura</span><span>→</span></span></a>
+</div>
+<!-- /wp:html --></section>
 <!-- /wp:group -->

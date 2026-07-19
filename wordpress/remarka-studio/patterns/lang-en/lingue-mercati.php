@@ -8,7 +8,9 @@
  */
 ?>
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
-<section class="wp-block-group sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<section class="wp-block-group sr-section sr-section--bianco"><!-- wp:columns {"className":"sr-cascade","style":{"spacing":{"blockGap":{"left":"48px"}}},"verticalAlignment":"center"} -->
+<div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Languages</p>
 <!-- /wp:paragraph -->
 
@@ -35,7 +37,15 @@
 <ul class="sr-langs__codes"><li class="sr-langs__code">RU</li><li class="sr-langs__code">UK</li><li class="sr-langs__code">KA</li><li class="sr-langs__code">HY</li><li class="sr-langs__code">KK</li></ul>
 </div>
 </div>
-<!-- /wp:html -->
+<!-- /wp:html --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:html -->
+<figure class="sr-hero-visual"><img src="/wp-content/themes/remarka-studio/assets/img/lingue-processo-madrelingua.webp" alt="Editorial workflow diagram: source, review, local versions" width="1200" height="800" loading="lazy" decoding="async"/></figure>
+<!-- /wp:html --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
 
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"40px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:40px"><!-- wp:button {"className":"is-style-outline"} -->

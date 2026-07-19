@@ -285,7 +285,7 @@ body.dark-mode .site-description {
    esattamente sul filo del testo sopra e delle colonne del footer sotto),
    con margini laterali sempre visibili, angoli arrotondati, sfondo blu notte
    (gradiente ravvicinato ai pixel del mockup, non oltremare piatto) e
-   l'illustrazione (laptop+globo, assets/img/cta-analisi.webp — stesso
+   l'illustrazione (diagnostic report, assets/img/cta-analisi.webp — stesso
    ritaglio del mockup, bordo sinistro che si dissolve nel fondo tinta
    unita) agganciata a destra. Testo allineato a sinistra come nel mockup
    (i bottoni restano centrati via layout JSON nel generatore per markup
@@ -3363,4 +3363,86 @@ textarea.sr-ai-llms-textarea {
   .sr-ai-llms-actions {
     flex-direction: row;
   }
+}
+
+/* ---------- Illustrazioni home (branch images/chatgpt, _chatgpt-manifest.md) ----------
+   Tre layout di supporto per le immagini della home: visual del processo
+   nell'hero (sostituisce la card timeline), griglia testo/immagine/lista del
+   blocco area clienti (su mobile l'immagine si inserisce TRA testo e lista),
+   tripletta visuale delle direzioni dopo le card servizi. Stile severo:
+   bordo 1px, raggio di sistema, niente ombre. width/height sugli <img>
+   nel markup → zero CLS. */
+
+.sr-hero-visual {
+  margin: 0;
+}
+.sr-hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  background: var(--sr-carta);
+}
+
+.sr-ac-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 24px 48px;
+  align-items: center;
+}
+.sr-ac-grid__text { grid-column: 1; grid-row: 1; }
+.sr-ac-grid__img  { grid-column: 2; grid-row: 1 / span 2; margin: 0; }
+.sr-ac-grid__list { grid-column: 1; grid-row: 2; }
+.sr-ac-grid__img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  background: var(--sr-carta);
+}
+@media (max-width: 860px) {
+  .sr-ac-grid { grid-template-columns: 1fr; }
+  .sr-ac-grid__text,
+  .sr-ac-grid__img,
+  .sr-ac-grid__list { grid-column: 1; grid-row: auto; }
+}
+
+.sr-serv-visuals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+@media (max-width: 860px) {
+  .sr-serv-visuals { grid-template-columns: 1fr; }
+}
+.sr-serv-visual {
+  display: block;
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  background: var(--sr-bianco);
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+.sr-serv-visual:hover { border-color: var(--sr-oltremare); }
+.sr-serv-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.sr-serv-visual__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--sr-bordo);
+  font-family: var(--sr-font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sr-inchiostro);
 }

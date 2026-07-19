@@ -114,5 +114,10 @@
 <p class="sr-card-link sr-no-margin"><a href="/ru/uslugi/dostupnost-eaa/">Подробнее →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></section>
+<!-- /wp:group -->
+<!-- wp:html -->
+<div class="sr-serv-visuals">
+<a class="sr-serv-visual" href="/ru/uslugi/korporativnye-sajty/"><img src="/wp-content/themes/remarka-studio/assets/img/casi/visual-sito-aziendale.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/><span class="sr-serv-visual__label"><span>Корпоративные сайты</span><span>→</span></span></a><a class="sr-serv-visual" href="/ru/uslugi/internet-magaziny/"><img src="/wp-content/themes/remarka-studio/assets/img/casi/visual-ecommerce.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/><span class="sr-serv-visual__label"><span>Интернет-магазины</span><span>→</span></span></a><a class="sr-serv-visual" href="/ru/uslugi/veb-prilozhenija/"><img src="/wp-content/themes/remarka-studio/assets/img/casi/visual-webapp.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/><span class="sr-serv-visual__label"><span>Веб-приложения на заказ</span><span>→</span></span></a>
+</div>
+<!-- /wp:html --></section>
 <!-- /wp:group -->
