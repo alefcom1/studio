@@ -30,6 +30,12 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
+<figure class="sr-visual-band" style="max-width:900px;margin:0 auto"><img src="/wp-content/themes/remarka-studio/assets/img/prezzi-contratto.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async"/></figure>
+<!-- /wp:html -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 {{lancio}}<div class="sr-lancio-badge sr-mono">ЦЕНА ЗАПУСКА — ПЕРВЫЕ 5 ПРОЕКТОВ</div><p class="sr-lancio-line">Цена запуска на первые 5 проектов: тот же договор, те же гарантии. Полный прайс — с 2027 года.</p><p class="sr-lancio-counter sr-mono">Свободно мест: {{lancio_slots}} из 5.</p>{{/lancio}}
 <!-- /wp:html -->
 </section>
@@ -47,6 +53,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size" style="margin-top:16px">Электронный счёт-фактура через SDI. Оплата: 50% при старте, 50% при сдаче.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<figure class="sr-visual-band" style="max-width:840px;margin:20px auto 0"><img src="/wp-content/themes/remarka-studio/assets/img/prezzi-pagamenti.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async"/></figure>
+<!-- /wp:html -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"20px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:20px"><!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/ru/#contatti">Запросить подробную смету</a></div>

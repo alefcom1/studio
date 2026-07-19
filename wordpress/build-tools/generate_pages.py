@@ -161,15 +161,17 @@ def build_servizi_index():
 
     # Visual di direzione sulle card corrispondenti (manifest images/chatgpt):
     # immagini decorative (alt vuoto: il titolo della card è il testo).
+    # Percorso relativo a assets/img/ (i visual di direzione stanno in casi/,
+    # lo schema editoriale nella radice): includiamo la sottocartella nel valore.
     CARD_VISUALS = {
-        'siti-aziendali': 'visual-sito-aziendale.webp',
-        'e-commerce':     'visual-ecommerce.webp',
+        'siti-aziendali': 'casi/visual-sito-aziendale.webp',
+        'e-commerce':     'casi/visual-ecommerce.webp',
     }
     cards = []
     for svc in SERVICES:
         visual = CARD_VISUALS.get(svc['slug'])
         visual_html = (
-            raw_html(f'<img class="sr-card__visual" src="/wp-content/themes/remarka-studio/assets/img/casi/{visual}" '
+            raw_html(f'<img class="sr-card__visual" src="/wp-content/themes/remarka-studio/assets/img/{visual}" '
                      f'alt="" width="1200" height="800" loading="lazy" decoding="async"/>')
             if visual else ''
         )
@@ -186,15 +188,15 @@ def build_servizi_index():
     # Линии 2 и 3 концепции — отдельный блок «premium» под сеткой базовых услуг.
     premium_cards = ''.join(
         f'<div class="sr-card sr-card--carta">'
-        + (f'<img class="sr-card__visual" src="/wp-content/themes/remarka-studio/assets/img/casi/{vis}" '
+        + (f'<img class="sr-card__visual" src="/wp-content/themes/remarka-studio/assets/img/{vis}" '
            f'alt="" width="1200" height="800" loading="lazy" decoding="async"/>' if vis else '')
         + f'<p class="sr-eyebrow">{ey}</p>'
         f'<h3 class="wp-block-heading" style="font-size:22px">{t}</h3>'
         f'<p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">{d}</p>'
         f'<p class="sr-card-link" style="margin-top:16px"><a href="{u}">Scopri →</a></p></div>'
         for ey, t, d, u, vis in [
-            ('Flagship', 'Export Ready', 'Il sito e la sua versione estera sotto un unico contratto: localizzazione da madrelingua, SEO internazionale, KPI per mercato.', '/servizi/export-ready/', None),
-            ('Prodotti digitali', 'Web app su misura', 'Aree clienti, configuratori, portali B2B e integrazioni: quando un sito non basta.', '/servizi/web-app/', 'visual-webapp.webp'),
+            ('Flagship', 'Export Ready', 'Il sito e la sua versione estera sotto un unico contratto: localizzazione da madrelingua, SEO internazionale, KPI per mercato.', '/servizi/export-ready/', 'lingue-processo-madrelingua.webp'),
+            ('Prodotti digitali', 'Web app su misura', 'Aree clienti, configuratori, portali B2B e integrazioni: quando un sito non basta.', '/servizi/web-app/', 'casi/visual-webapp.webp'),
             ('Obbligo di legge', 'Adeguamento EAA', 'Il vostro sito già online, portato allo standard WCAG 2.1 AA: audit, correzioni e dichiarazione di accessibilità. Obbligo di legge dal 2025.', '/servizi/adeguamento-eaa/', None),
         ]
     )
@@ -450,6 +452,15 @@ def build_prezzi():
         classes='sr-section sr-hero',
     )
 
+    # Key visual «prezzo confermato dal contratto» (images/chatgpt): banda
+    # scura, decorativa (alt vuoto — le garanzie sono testo HTML sopra/sotto).
+    contratto_visual = section(
+        raw_html('<figure class="sr-visual-band" style="max-width:900px;margin:0 auto">'
+                 '<img src="/wp-content/themes/remarka-studio/assets/img/prezzi-contratto.webp" '
+                 'alt="" width="1536" height="1024" loading="lazy" decoding="async"/></figure>'),
+        classes='sr-section',
+    )
+
     lancio_banner = section(raw_html(_lancio_banner_html()), classes='sr-section')
 
     headers = [
@@ -489,6 +500,11 @@ def build_prezzi():
                    color='grigio', size='base', extra_style='margin-top:28px;max-width:70ch') +
         paragraph('Fattura elettronica via SDI. Pagamento in tre tranche: 40 / 40 / 20.', color='grigio', size='small',
                    extra_style='margin-top:16px') +
+        # Linea visiva delle tre fasi del pagamento (images/chatgpt): le
+        # percentuali e i nomi restano testo HTML sopra, l'immagine è decorativa.
+        raw_html('<figure class="sr-visual-band" style="max-width:840px;margin:20px auto 0">'
+                 '<img src="/wp-content/themes/remarka-studio/assets/img/prezzi-pagamenti.webp" '
+                 'alt="" width="1536" height="1024" loading="lazy" decoding="async"/></figure>') +
         buttons([('Richiedi preventivo dettagliato', '/#contatti', None)], margin_top='20px'),
         classes='sr-section',
     )
@@ -549,7 +565,7 @@ def build_prezzi():
     )
     write('prezzi', 'Pagina — Prezzi (completa)',
           'Pagina prezzi con tabella comparativa completa (min-width 840px, scroll orizzontale su mobile).',
-          hero + lancio_banner + table_section + market + variazioni + cta)
+          hero + contratto_visual + lancio_banner + table_section + market + variazioni + cta)
 
 
 # ---------------------------------------------------------------- Strumenti

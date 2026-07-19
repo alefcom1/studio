@@ -43,7 +43,7 @@
 
 <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:html -->
-<figure class="sr-hero-visual"><img src="/wp-content/themes/remarka-studio/assets/img/home-hero-processo.webp" alt="" width="1600" height="1000" decoding="async"/></figure>
+<figure class="sr-hero-visual"><img src="/wp-content/themes/remarka-studio/assets/img/home-hero-processo.webp" alt="" width="1600" height="1000" loading="eager" fetchpriority="high" decoding="async"/></figure>
 <!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

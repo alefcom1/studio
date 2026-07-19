@@ -25,7 +25,7 @@
 
 <!-- wp:group {"className":"sr-ac-grid__img","layout":{"type":"flow"}} -->
 <div class="wp-block-group sr-ac-grid__img"><!-- wp:html -->
-<figure style="margin:0"><img src="/wp-content/themes/remarka-studio/assets/img/home-area-clienti.webp" alt="Illustrative diagram of the client area" width="1600" height="1024" loading="lazy" decoding="async"/></figure>
+<figure style="margin:0"><img src="/wp-content/themes/remarka-studio/assets/img/home-area-clienti.webp" alt="" width="1600" height="1024" loading="lazy" decoding="async"/></figure>
 <!-- /wp:html --></div>
 <!-- /wp:group -->
 

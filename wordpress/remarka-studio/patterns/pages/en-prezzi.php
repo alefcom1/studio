@@ -30,6 +30,12 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
+<figure class="sr-visual-band" style="max-width:900px;margin:0 auto"><img src="/wp-content/themes/remarka-studio/assets/img/prezzi-contratto.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async"/></figure>
+<!-- /wp:html -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 {{lancio}}<div class="sr-lancio-badge sr-mono">LAUNCH PRICE — FIRST 5 PROJECTS</div><p class="sr-lancio-line">Launch price on our first 5 projects: same contract, same guarantees. Full price list from 2027.</p><p class="sr-lancio-counter sr-mono">{{lancio_slots}} of 5 slots still open.</p>{{/lancio}}
 <!-- /wp:html -->
 </section>
@@ -47,6 +53,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size" style="margin-top:16px">E-invoicing via SDI (the Italian exchange system). Payment in three installments: 40 / 40 / 20.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<figure class="sr-visual-band" style="max-width:840px;margin:20px auto 0"><img src="/wp-content/themes/remarka-studio/assets/img/prezzi-pagamenti.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async"/></figure>
+<!-- /wp:html -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"20px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:20px"><!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/en/#contatti">Request a detailed quote</a></div>

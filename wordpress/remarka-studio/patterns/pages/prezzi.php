@@ -30,6 +30,12 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
+<figure class="sr-visual-band" style="max-width:900px;margin:0 auto"><img src="/wp-content/themes/remarka-studio/assets/img/prezzi-contratto.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async"/></figure>
+<!-- /wp:html -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
 {{lancio}}<div class="sr-lancio-badge sr-mono">PREZZO LANCIO — PRIMI 5 PROGETTI</div><p class="sr-lancio-line">Prezzo lancio sui primi 5 progetti: stesso contratto, stesse garanzie. Listino pieno dal 2027.</p><p class="sr-lancio-counter sr-mono">Ne restano {{lancio_slots}} su 5.</p>{{/lancio}}
 <!-- /wp:html -->
 </section>
@@ -47,6 +53,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
 <p class="has-grigio-color has-text-color has-small-font-size" style="margin-top:16px">Fattura elettronica via SDI. Pagamento in tre tranche: 40 / 40 / 20.</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<figure class="sr-visual-band" style="max-width:840px;margin:20px auto 0"><img src="/wp-content/themes/remarka-studio/assets/img/prezzi-pagamenti.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async"/></figure>
+<!-- /wp:html -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"20px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:20px"><!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi preventivo dettagliato</a></div>

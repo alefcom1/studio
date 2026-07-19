@@ -3425,16 +3425,33 @@ textarea.sr-ai-llms-textarea {
    bordo 1px, raggio di sistema, niente ombre. width/height sugli <img>
    nel markup → zero CLS. */
 
+/* I key visual sono CGI su fondo blu notte (branch images/chatgpt): il
+   contenitore scuro #071A55 fa da cornice e i bordi dell'immagine si
+   dissolvono nel telaio invece di stagliarsi su un rettangolo chiaro. */
 .sr-hero-visual {
   margin: 0;
+  background: #071A55;
+  border-radius: 14px;
+  overflow: hidden;
 }
 .sr-hero-visual img {
   display: block;
   width: 100%;
   height: auto;
-  border: 1px solid var(--sr-bordo);
-  border-radius: var(--sr-radius);
-  background: var(--sr-carta);
+}
+
+/* Banda visiva a tutta larghezza (blocco area clienti sulla home, prova del
+   prezzo chiuso e linea pagamenti su /prezzi/): stesso telaio scuro. */
+.sr-visual-band {
+  margin: 32px 0 0;
+  background: #071A55;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.sr-visual-band img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .sr-ac-grid {
@@ -3444,15 +3461,19 @@ textarea.sr-ai-llms-textarea {
   align-items: center;
 }
 .sr-ac-grid__text { grid-column: 1; grid-row: 1; }
-.sr-ac-grid__img  { grid-column: 2; grid-row: 1 / span 2; margin: 0; }
+.sr-ac-grid__img  {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+  background: #071A55;
+  border-radius: 14px;
+  overflow: hidden;
+}
 .sr-ac-grid__list { grid-column: 1; grid-row: 2; }
 .sr-ac-grid__img img {
   display: block;
   width: 100%;
   height: auto;
-  border: 1px solid var(--sr-bordo);
-  border-radius: var(--sr-radius);
-  background: var(--sr-carta);
 }
 @media (max-width: 860px) {
   .sr-ac-grid { grid-template-columns: 1fr; }
@@ -3474,7 +3495,7 @@ textarea.sr-ai-llms-textarea {
   display: block;
   border: 1px solid var(--sr-bordo);
   border-radius: var(--sr-radius);
-  background: var(--sr-bianco);
+  background: #071A55;
   overflow: hidden;
   text-decoration: none;
   transition: border-color 0.2s ease;
@@ -3491,6 +3512,7 @@ textarea.sr-ai-llms-textarea {
   align-items: center;
   gap: 12px;
   padding: 14px 18px;
+  background: var(--sr-bianco);
   border-top: 1px solid var(--sr-bordo);
   font-family: var(--sr-font-mono);
   font-size: 12.5px;
@@ -3508,7 +3530,7 @@ textarea.sr-ai-llms-textarea {
   border: 1px solid var(--sr-bordo);
   border-radius: calc(var(--sr-radius) - 2px);
   margin-bottom: 18px;
-  background: var(--sr-carta);
+  background: #071A55;
 }
 
 .sr-proj-strip {
