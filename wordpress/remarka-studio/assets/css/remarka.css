@@ -3504,3 +3504,22 @@ textarea.sr-ai-llms-textarea {
   letter-spacing: 0.05em;
   color: var(--sr-grigio);
 }
+
+/* Recensioni reali dal lancio (Product Hunt, 19.07.2026): citazioni in
+   originale inglese, firma mono con link alla fonte. Nessuna stella,
+   nessuno schema.org — solo contenuto. */
+.sr-recensione__testo {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+.sr-recensione__firma {
+  margin: 16px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--sr-grigio);
+}
+.sr-recensione__firma a {
+  color: var(--sr-grigio);
+  text-decoration-color: var(--sr-bordo);
+}

@@ -437,6 +437,24 @@ CASES_BY_SLUG = {c['slug']: c for c in CASES}
 # punteggio «Salute del sito». Testi presi alla lettera da
 # docs/copy-checkup.md §2.2/§2.3 (fonte unica per M2/M3). Non ha 'migliorare'
 # (build_tool tratta la chiave come opzionale per questo tipo).
+
+# Recensioni REALI dal lancio su Product Hunt (19.07.2026, permesso degli
+# autori ottenuto dal titolare). Citazioni in originale inglese su tutte le
+# lingue (nessuna traduzione inventata; l'intro della sezione lo dichiara).
+# NIENTE markup schema.org Review/AggregateRating: le recensioni sul proprio
+# sito sono «self-serving» per le linee guida Google — solo contenuto.
+RECENSIONI_URL = 'https://www.producthunt.com/products/studio-remarka'
+RECENSIONI_LAB = [
+    dict(nome='Şengül Akkoca',
+         testo='A solid free checker especially for GDPR and AI readiness, those get overlooked a lot.'),
+    dict(nome='Ercan',
+         testo='Ran the GDPR and speed tests on my blog and the results page broke things down in plain language instead of jargon, which I appreciated more than expected.'),
+    dict(nome='Demet',
+         testo='Ran the GDPR and accessibility checks on my portfolio site and the accessibility report actually pointed out color contrast issues I had missed for years. Solid free tool, will keep using it.'),
+    dict(nome='Mihriban',
+         testo='ran it on my portfolio site and the accessibility check actually flagged stuff i never noticed before, super useful. the speed results matched what i already knew from lighthouse so feels legit.'),
+]
+
 TOOLS = [
     dict(slug='check-up-completo', idx='/00', tipo='checkup', titolo='Check-up completo',
          hero_titolo='Il check-up completo del vostro sito web',

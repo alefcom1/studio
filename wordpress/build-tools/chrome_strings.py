@@ -3731,3 +3731,14 @@ CHROME_SERVIZI_VISUALS = {
         {'en': 'Editorial workflow diagram: source, review, local versions'},
 }
 CHROME.update(CHROME_SERVIZI_VISUALS)
+
+# CHROME_RECENSIONI — sezione recensioni Product Hunt + priorità del check-up
+# (le citazioni restano in originale inglese: nessuna coppia per i testi).
+CHROME_RECENSIONI = {
+    'Dalla community': {'en': 'From the community'},
+    'Cosa dice chi li ha provati': {'en': 'What people who tried them say'},
+    'Le prime recensioni dal lancio su Product Hunt — citate in originale, con il permesso degli autori.':
+        {'en': 'The first reviews from our Product Hunt launch — quoted verbatim, with the authors’ permission.'},
+    'Da dove partire': {'en': 'Where to start'},
+}
+CHROME.update(CHROME_RECENSIONI)

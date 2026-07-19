@@ -3,7 +3,7 @@
  * Title: Pagina — Strumenti (elenco)
  * Slug: remarka-studio/en-strumenti-index
  * Categories: remarka-pagine
- * Description: Elenco degli strumenti gratuiti, con il check-up completo in evidenza e la sezione Gratis/Monitor.
+ * Description: Elenco degli strumenti gratuiti, con il check-up completo in evidenza, recensioni reali e la sezione Gratis/Monitor.
  * Viewport Width: 1400
  */
 ?>
@@ -228,6 +228,45 @@
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/en/tools/llms-txt-generator/">Try it →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">From the community</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">What people who tried them say<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:70ch">The first reviews from our Product Hunt launch — quoted verbatim, with the authors’ permission.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"300px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:300px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«A solid free checker especially for GDPR and AI readiness, those get overlooked a lot.»</p><p class="sr-mono sr-recensione__firma">Şengül Akkoca · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«Ran the GDPR and speed tests on my blog and the results page broke things down in plain language instead of jargon, which I appreciated more than expected.»</p><p class="sr-mono sr-recensione__firma">Ercan · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«Ran the GDPR and accessibility checks on my portfolio site and the accessibility report actually pointed out color contrast issues I had missed for years. Solid free tool, will keep using it.»</p><p class="sr-mono sr-recensione__firma">Demet · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«ran it on my portfolio site and the accessibility check actually flagged stuff i never noticed before, super useful. the speed results matched what i already knew from lighthouse so feels legit.»</p><p class="sr-mono sr-recensione__firma">Mihriban · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

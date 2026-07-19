@@ -25,7 +25,7 @@ from blocks import (  # noqa: E402
     pull_quote, chapter, compare_table_row, pattern_header,
     case_shot, browser_frame_shot,
 )
-from data import SERVICES, CASES, CASES_BY_SLUG, TOOLS, CITY, CITIES, BLOG_POSTS, EXPORT_READY, WEB_APP, ADEGUAMENTO_EAA  # noqa: E402
+from data import SERVICES, CASES, CASES_BY_SLUG, TOOLS, CITY, CITIES, BLOG_POSTS, EXPORT_READY, WEB_APP, ADEGUAMENTO_EAA, RECENSIONI_LAB, RECENSIONI_URL  # noqa: E402
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'remarka-studio', 'patterns', 'pages')
 os.makedirs(OUT_DIR, exist_ok=True)
@@ -596,6 +596,29 @@ def _tool_img_html(img, style=None):
             f'loading="lazy" style="{style}"/>')
 
 
+def _recensioni_section():
+    """Recensioni reali dal lancio su Product Hunt (data.py:RECENSIONI_LAB).
+    Citazioni in originale inglese su tutte le lingue — il conveyor le lascia
+    intatte per costruzione (nessuna coppia nel dizionario). Nessun markup
+    schema.org (self-serving reviews, vietate dalle linee guida Google)."""
+    cards = ''.join(
+        group(
+            raw_html(f'<p class="sr-recensione__testo">«{r["testo"]}»</p>'
+                     f'<p class="sr-mono sr-recensione__firma">{r["nome"]} · '
+                     f'<a href="{RECENSIONI_URL}" target="_blank" rel="noopener">Product Hunt ↗</a></p>'),
+            classes='sr-card sr-card--carta',
+        )
+        for r in RECENSIONI_LAB
+    )
+    return section(
+        eyebrow('Dalla community') + heading(2, 'Cosa dice chi li ha provati') +
+        paragraph('Le prime recensioni dal lancio su Product Hunt — citate in originale, con il permesso degli autori.',
+                   color='grigio', size='medium', extra_style='max-width:70ch') +
+        group(cards, classes='', layout_type='grid', style='300px'),
+        classes='sr-section sr-section--bianco',
+    )
+
+
 def build_strumenti_index():
     hero = section(eyebrow('Remarka Lab · Strumenti gratuiti') + heading(1, 'Prima misurate, poi decidete', style='clamp(38px,4.6vw,64px)') +
                     paragraph('Strumenti professionali, gratuiti, senza registrazione.', color='grigio', size='medium'),
@@ -707,8 +730,8 @@ def build_strumenti_index():
         classes='sr-section sr-cta-band',
     )
     write('strumenti-index', 'Pagina — Strumenti (elenco)',
-          'Elenco degli strumenti gratuiti, con il check-up completo in evidenza e la sezione Gratis/Monitor.',
-          hero + featured + ai_intro + grid + monitor + cta)
+          'Elenco degli strumenti gratuiti, con il check-up completo in evidenza, recensioni reali e la sezione Gratis/Monitor.',
+          hero + featured + ai_intro + grid + _recensioni_section() + monitor + cta)
 
 
 # Markup del widget per tipo di strumento — segue STRETTAMENTE il contratto
@@ -1093,17 +1116,20 @@ def _widget_checkup():
       </div>
     </div>
 
+    <!-- Priorità PRIMA dei sette semafori (feedback lancio Product Hunt,
+         19.07.2026: «a prioritized action list instead of dumping all results»
+         — chi non è tecnico deve vedere subito da dove partire). -->
+    <div data-sr-checkup-priorities-wrap style="margin-top:32px">
+      <p class="sr-eyebrow">Da dove partire</p>
+      <h2 class="wp-block-heading" style="font-size:clamp(24px,2.4vw,32px)">I 3 interventi che pesano di più</h2>
+      <p style="margin:8px 0 20px;color:var(--sr-grigio);font-size:15.5px">Ordinati per impatto sul punteggio: quanto guadagnereste sistemandoli.</p>
+      <div class="sr-priorities" data-sr-checkup-priorities></div>
+    </div>
+
     <div style="margin-top:32px">
       <p class="sr-eyebrow">Le sette misure</p>
       <h2 class="wp-block-heading" style="font-size:clamp(24px,2.4vw,32px)">Sette semafori, un punteggio</h2>
       <div class="sr-dim-grid" style="margin-top:24px">{cards}</div>
-    </div>
-
-    <div data-sr-checkup-priorities-wrap style="margin-top:32px">
-      <p class="sr-eyebrow">Le priorità</p>
-      <h2 class="wp-block-heading" style="font-size:clamp(24px,2.4vw,32px)">I 3 interventi che pesano di più</h2>
-      <p style="margin:8px 0 20px;color:var(--sr-grigio);font-size:15.5px">Ordinati per impatto sul punteggio: quanto guadagnereste sistemandoli.</p>
-      <div class="sr-priorities" data-sr-checkup-priorities></div>
     </div>
 
     <div data-sr-checkup-form-wrap style="margin-top:32px">
@@ -1410,9 +1436,13 @@ def build_tool(tool):
         classes='sr-section sr-section--bianco',
     )
 
+    # Recensioni reali (Product Hunt) — solo sull'orchestratore check-up:
+    # è lo strumento recensito e la pagina più visitata del Lab.
+    recensioni = _recensioni_section() if tool['tipo'] == 'checkup' else ''
+
     write(f'strumento-{tool["slug"]}', f'Pagina — Strumento: {tool["titolo"]}',
           f'Strumento gratuito {tool["titolo"]}: widget interattivo, come funziona, FAQ, CTA.',
-          hero + widget_section + come_funziona + metodologia + lettura + faq + migliorare + cta + altri_section)
+          hero + widget_section + come_funziona + metodologia + lettura + recensioni + faq + migliorare + cta + altri_section)
 
 
 # ---------------------------------------------------------------- Città
