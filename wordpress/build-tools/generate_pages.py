@@ -2610,7 +2610,7 @@ def build_blog_schema_map():
     gestito dall'hook. Gli articoli solo-IT+EN (batch 1) non emettono la
     riga RU: la pagina RU non esiste ancora (piano-blog batch 5–6)."""
     import lang as L  # noqa: E402
-    RETROFIT = '2026-07-18'  # ultima rigenerazione della mappa (dateModified); batch 4 pubblicato oggi
+    RETROFIT = '2026-07-19'  # ultima rigenerazione della mappa (dateModified); batch 5 RU pubblicato oggi
     lines = [
         '<?php',
         '/**',
@@ -2635,6 +2635,13 @@ def build_blog_schema_map():
                 continue
             seen.add(leaf)
             lines.append(f"\t\t'{leaf}' => array( 'date' => '{iso}', 'image' => '{image}' ),")
+    # Blog · Batch 5 — articoli RU-only (lang.BLOG_RU_ONLY): non stanno in
+    # BLOG_POSTS (nessuna versione IT/EN), il loro slug-foglia RU è già finale.
+    for ru_slug, meta in L.BLOG_RU_ONLY.items():
+        if ru_slug in seen:
+            continue
+        seen.add(ru_slug)
+        lines.append(f"\t\t'{ru_slug}' => array( 'date' => '{meta['date']}', 'image' => '{meta['image']}' ),")
     lines.append('\t),')
     lines.append(');')
     out = os.path.join(os.path.dirname(__file__), '..', 'remarka-studio', 'inc', 'blog-schema-map.php')

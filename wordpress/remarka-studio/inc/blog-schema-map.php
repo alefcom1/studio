@@ -5,7 +5,7 @@
  * обложка, для JSON-LD BlogPosting (см. remarka_blog_posting_schema).
  */
 return array(
-	'_modified' => '2026-07-18',
+	'_modified' => '2026-07-19',
 	'posts' => array(
 		'sito-quattro-lingue-costi-tempi' => array( 'date' => '2026-05-05', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg' ),
 		'website-four-languages-costs' => array( 'date' => '2026-05-05', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg' ),
@@ -69,5 +69,10 @@ return array(
 		'website-for-export' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/export-cover.svg' ),
 		'manutenzione-wordpress' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/manutenzione-cover.svg' ),
 		'wordpress-maintenance' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/manutenzione-cover.svg' ),
+		'sajt-dlya-vyhoda-na-rynok-italii' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-mercato-cover.svg' ),
+		'seo-v-italii-po-russki' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-seo-cover.svg' ),
+		'gdpr-dlya-russkoyazychnogo-biznesa-v-es' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-gdpr-cover.svg' ),
+		'perevesti-ili-lokalizovat-sajt' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-loc-cover.svg' ),
+		'cena-sajta-v-italii' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-cena-cover.svg' ),
 	),
 );

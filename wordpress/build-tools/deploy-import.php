@@ -357,6 +357,13 @@ $page_map = array(
 	'ru-blog-core-web-vitals-2026'                 => array( 'core-web-vitals-2026', 'ru/blog', null ),
 	'ru-blog-quanto-costa-ecommerce-italia'        => array( 'skolko-stoit-internet-magazin', 'ru/blog', null ),
 	'ru-blog-sito-lento-cause-costi'               => array( 'medlennyj-sajt-prichiny', 'ru/blog', null ),
+	// Blog · Batch 5 — RU-only (scritti a mano, senza specchio IT/EN). Slug RU
+	// finale = slug-foglia; genitore ru/blog (indice già presente sopra).
+	'ru-blog-sajt-dlya-vyhoda-na-rynok-italii'     => array( 'sajt-dlya-vyhoda-na-rynok-italii', 'ru/blog', null ),
+	'ru-blog-seo-v-italii-po-russki'               => array( 'seo-v-italii-po-russki', 'ru/blog', null ),
+	'ru-blog-gdpr-dlya-russkoyazychnogo-biznesa-v-es' => array( 'gdpr-dlya-russkoyazychnogo-biznesa-v-es', 'ru/blog', null ),
+	'ru-blog-perevesti-ili-lokalizovat-sajt'       => array( 'perevesti-ili-lokalizovat-sajt', 'ru/blog', null ),
+	'ru-blog-cena-sajta-v-italii'                  => array( 'cena-sajta-v-italii', 'ru/blog', null ),
 	'ru-prezzi'                                    => array( 'ceny', 'ru', null ),
 	'ru-citta-milano'                              => array( 'milan', 'ru', null ),
 	'ru-chi-siamo'                                 => array( 'o-studii', 'ru', null ),

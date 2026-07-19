@@ -129,6 +129,22 @@ BLOG_IT_EN_ONLY = {
     'manutenzione-wordpress',
 }
 
+# Blog · Batch 5 — RU-only (scritti a mano in russo, senza specchio IT/EN;
+# translate_pages.py ru è vietato per sempre). Speculare a BLOG_IT_EN_ONLY:
+# la pagina esiste SOLO in RU. Per hreflang/switcher, IT ed EN puntano ai
+# rispettivi indici blog (/blog/, /en/blog/) — pagine reali, nessun 404;
+# RU punta all'articolo. Chiave = slug-foglia RU; valore = data (ISO) e
+# copertina, usati da build_blog_schema_map (JSON-LD BlogPosting). Questi
+# articoli NON stanno in BLOG_POSTS/BLOG_SLUGS: non hanno una versione
+# italiana da cui derivare, il loro contenuto è nei pattern ru-blog-*.php.
+BLOG_RU_ONLY = {
+    'sajt-dlya-vyhoda-na-rynok-italii':       {'date': '2026-07-19', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch5-mercato-cover.svg'},
+    'seo-v-italii-po-russki':                 {'date': '2026-07-19', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch5-seo-cover.svg'},
+    'gdpr-dlya-russkoyazychnogo-biznesa-v-es': {'date': '2026-07-19', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch5-gdpr-cover.svg'},
+    'perevesti-ili-lokalizovat-sajt':         {'date': '2026-07-19', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch5-loc-cover.svg'},
+    'cena-sajta-v-italii':                    {'date': '2026-07-19', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch5-cena-cover.svg'},
+}
+
 
 def slug_for(kind, it_slug, lang):
     """kind: section|single|service|case|tool|blog; lang: it|en|ru."""
@@ -192,6 +208,12 @@ def all_page_paths():
             row(f'blog/{it_slug}', f'{SECTIONS["blog"]["en"]}/{tr["en"]}', SECTIONS["blog"]["ru"])
         else:
             row(f'blog/{it_slug}', f'{SECTIONS["blog"]["en"]}/{tr["en"]}', f'{SECTIONS["blog"]["ru"]}/{tr["ru"]}')
+    # Blog · Batch 5 — RU-only: nessuna versione IT/EN. IT ed EN rimandano ai
+    # loro indici blog (pagine reali, no 404), RU all'articolo. Appese DOPO la
+    # riga indice 'blog' delle SECTIONS, così lo switcher sull'indice italiano
+    # trova prima la riga giusta.
+    for ru_slug in BLOG_RU_ONLY:
+        row('blog', SECTIONS['blog']['en'], f'{SECTIONS["blog"]["ru"]}/{ru_slug}')
     return rows
 
 

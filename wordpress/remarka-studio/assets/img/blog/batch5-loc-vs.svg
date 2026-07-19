@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="Cosa cambia tra tradurre e localizzare una pagina">
+  <defs>
+    <pattern id="gridLocV" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="560" fill="#F7F6F2"/>
+  <rect width="1200" height="560" fill="url(#gridLocV)"/>
+  <line x1="80" y1="86" x2="1120" y2="86" stroke="#14161A" stroke-width="1.5"/>
+  <text x="80" y="72" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">ЧТО ЛОКАЛИЗАЦИЯ ДЕЛАЕТ СВЕРХ ПЕРЕВОДА</text>
+  <g transform="translate(80,120)">
+    <rect x="0" y="0" width="480" height="400" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+    <text x="28" y="54" class="body" font-size="26" font-weight="600" fill="#5A5E66">Только перевод</text>
+    <line x1="28" y1="76" x2="452" y2="76" stroke="#EBEAE4" stroke-width="1"/>
+    <text x="28" y="122" class="body" font-size="20" fill="#5A5E66">$1,000.00 → $1,000.00</text>
+    <text x="28" y="168" class="body" font-size="20" fill="#5A5E66">MM/DD/YYYY остаётся</text>
+    <text x="28" y="214" class="body" font-size="20" fill="#5A5E66">телефон в чужом формате</text>
+    <text x="28" y="260" class="body" font-size="20" fill="#5A5E66">примеры «для США»</text>
+    <text x="28" y="306" class="body" font-size="20" fill="#5A5E66">дословный tone of voice</text>
+    <text x="28" y="352" class="body" font-size="20" fill="#5A5E66">одна форма оплаты</text>
+  </g>
+  <g transform="translate(640,120)">
+    <rect x="0" y="0" width="480" height="400" fill="#2440C8"/>
+    <text x="28" y="54" class="body" font-size="26" font-weight="600" fill="#FFFFFF">Локализация</text>
+    <line x1="28" y1="76" x2="452" y2="76" stroke="#4A62D8" stroke-width="1"/>
+    <text x="28" y="122" class="body" font-size="20" fill="#FFFFFF">€ 1 000,00 — запятая, евро</text>
+    <text x="28" y="168" class="body" font-size="20" fill="#FFFFFF">ДД.ММ.ГГГГ по-местному</text>
+    <text x="28" y="214" class="body" font-size="20" fill="#FFFFFF">+39 и местный формат</text>
+    <text x="28" y="260" class="body" font-size="20" fill="#FFFFFF">примеры под рынок Италии</text>
+    <text x="28" y="306" class="body" font-size="20" fill="#FFFFFF">голос бренда носителя</text>
+    <text x="28" y="352" class="body" font-size="20" fill="#C9D2FF">местные способы оплаты</text>
+  </g>
+</svg>

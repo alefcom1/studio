@@ -64,4 +64,9 @@ return array(
 	array( 'it' => 'blog/hreflang-sito-multilingue', 'en' => 'en/blog/hreflang-multilingual-website', 'ru' => 'ru/blog' ),
 	array( 'it' => 'blog/sito-per-export', 'en' => 'en/blog/website-for-export', 'ru' => 'ru/blog' ),
 	array( 'it' => 'blog/manutenzione-wordpress', 'en' => 'en/blog/wordpress-maintenance', 'ru' => 'ru/blog' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/sajt-dlya-vyhoda-na-rynok-italii' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/seo-v-italii-po-russki' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/gdpr-dlya-russkoyazychnogo-biznesa-v-es' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/perevesti-ili-lokalizovat-sajt' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/cena-sajta-v-italii' ),
 );
