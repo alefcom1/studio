@@ -102,6 +102,12 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: production
+      # web теперь ходит в БД серверным Prisma (гвард сессии getMonSession).
+      # Базовый compose хардкодит DATABASE_URL с паролем sitelens_secret, но
+      # реальный пароль базы задаётся в .env (им пользуется api). Без этого
+      # override web брал бы дефолтный пароль и падал с "Authentication failed".
+      # Берём из .env, как api.
+      DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL in .env}
       # ОБЯЗАТЕЛЬНО: web использует env_file: .env (базовый compose), а в .env
       # лежит PORT=3001 (для api). Без явного override Next-сервер web слушал бы
       # 3001, тогда как Caddy проксирует на web:3000 → 502. Тот же класс бага,
