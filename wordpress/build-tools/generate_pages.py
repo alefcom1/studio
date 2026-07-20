@@ -576,7 +576,9 @@ def build_prezzi():
 # Dimensioni display = 1/3 dei px del ritaglio (i sorgenti v2 sono ad alta
 # risoluzione: divisore 3 tiene l'ingombro visivo vicino alla v1 dando
 # nitidezza retina 3x); file in assets/img/tools/.
-TOOLS_HERO_IMG = dict(file='tools-hero.webp', w=328, h=249,
+# w/h 480×364 (20.07): sulla griglia 1440 la featured era troppo piccola; la
+# sorgente è 985×746, quindi resta nitida. Mantiene il rapporto 985/746≈1,32.
+TOOLS_HERO_IMG = dict(file='tools-hero.webp', w=480, h=364,
                        alt='Dashboard del check-up con punteggio di salute 87 su 100 e grafico delle prestazioni')
 
 TOOLS_CARD_IMG = {
@@ -653,9 +655,9 @@ def build_strumenti_index():
             '<div class="sr-card sr-card--carta sr-tools-feat" style="border-color:var(--sr-oltremare)">'
             '<div class="sr-tools-feat__text">'
             '<p class="sr-eyebrow" style="color:var(--sr-oltremare)">Novità · gratuito</p>'
-            f'<h3 class="wp-block-heading" style="margin-top:10px">{checkup["titolo"]}</h3>'
-            f'<p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">{checkup["descrizione"]}</p>'
-            f'<p class="sr-card-link" style="margin-top:18px"><a href="/strumenti/{checkup["slug"]}/">Prova →</a></p>'
+            f'<h3 class="wp-block-heading" style="margin-top:12px;font-size:clamp(26px,2.6vw,34px)">{checkup["titolo"]}</h3>'
+            f'<p style="margin-top:14px;font-size:17.5px;line-height:1.6;color:var(--sr-grigio);max-width:52ch">{checkup["descrizione"]}</p>'
+            f'<p class="sr-card-link" style="margin-top:20px"><a href="/strumenti/{checkup["slug"]}/">Prova →</a></p>'
             '</div>'
             f'<div class="sr-tools-feat__img">{_tool_img_html(TOOLS_HERO_IMG, style="display:block;max-width:100%;height:auto")}</div>'
             '</div>'
@@ -739,7 +741,12 @@ def build_strumenti_index():
         paragraph('Un punteggio si misura gratis una volta. Tenerlo alto nel tempo è un lavoro. Con Remarka Lab '
                   'tenete un sito sotto controllo gratis — e per i clienti con assistenza attiva ce ne occupiamo noi.',
                    color='grigio', size='medium', extra_style='max-width:75ch') +
-        raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Volete vederlo dal vivo? Lo stato del nostro sito, in diretta →</a></p>') +
+        # Blocco paragrafo core (non wp:html): come figlio diretto della sezione
+        # constrained viene centrato/allineato alla griglia 1440 come heading e
+        # intro. Con raw_html (wp:html) il <p> sfuggiva all'allineamento e finiva
+        # a tutta larghezza sul bordo sinistro (bug live 20.07).
+        paragraph('<a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Volete vederlo dal vivo? Lo stato del nostro sito, in diretta →</a>',
+                  classes='sr-card-link', extra_style='margin-top:16px') +
         group(monitor_free_tools + monitor_lab_free + monitor_pro, classes='', layout_type='grid', style='280px'),
         classes='sr-section', anchor='monitor',
     )

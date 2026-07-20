@@ -21,7 +21,7 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:html -->
-<div class="sr-card sr-card--carta sr-tools-feat" style="border-color:var(--sr-oltremare)"><div class="sr-tools-feat__text"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">New · free</p><h3 class="wp-block-heading" style="margin-top:10px">Full check-up</h3><p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">Seven free tools in a single analysis.</p><p class="sr-card-link" style="margin-top:18px"><a href="/en/tools/full-site-checkup/">Try it →</a></p></div><div class="sr-tools-feat__img"><img src="/wp-content/themes/remarka-studio/assets/img/tools/tools-hero.webp" alt="Check-up dashboard showing an 87/100 health score and a performance chart" width="328" height="249" loading="lazy" style="display:block;max-width:100%;height:auto"/></div></div>
+<div class="sr-card sr-card--carta sr-tools-feat" style="border-color:var(--sr-oltremare)"><div class="sr-tools-feat__text"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">New · free</p><h3 class="wp-block-heading" style="margin-top:12px;font-size:clamp(26px,2.6vw,34px)">Full check-up</h3><p style="margin-top:14px;font-size:17.5px;line-height:1.6;color:var(--sr-grigio);max-width:52ch">Seven free tools in a single analysis.</p><p class="sr-card-link" style="margin-top:20px"><a href="/en/tools/full-site-checkup/">Try it →</a></p></div><div class="sr-tools-feat__img"><img src="/wp-content/themes/remarka-studio/assets/img/tools/tools-hero.webp" alt="Check-up dashboard showing an 87/100 health score and a performance chart" width="480" height="364" loading="lazy" style="display:block;max-width:100%;height:auto"/></div></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -284,9 +284,9 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
 <p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:75ch">A score is measured for free once. Keeping it high over time is work. With Remarka Lab you keep one site under watch for free — and for clients with an active maintenance plan we take care of it.</p>
 <!-- /wp:paragraph -->
-<!-- wp:html -->
+<!-- wp:paragraph {"className":"sr-card-link"} -->
 <p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Want to see it live? Our site’s status, in real time →</a></p>
-<!-- /wp:html -->
+<!-- /wp:paragraph -->
 <!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"280px"}} -->
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:280px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->

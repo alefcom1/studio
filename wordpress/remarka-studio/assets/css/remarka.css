@@ -306,6 +306,21 @@ body.dark-mode .site-description {
   text-align: left;
 }
 
+/* Sulla griglia 1440 la card è larga ~1392px: l'illustrazione a destra è
+   dimensionata su `auto 100%` (altezza banda, larghezza proporzionale), quindi
+   su una banda bassa e larga diventava una striscia stretta a destra (segnalato
+   20.07 «pережало в ширину»). Diamo alla banda un'altezza che cresce con la
+   viewport: l'immagine resta in proporzione (nessuna deformazione) ma più
+   grande. Contenuto centrato in verticale per non lasciare vuoto in basso. */
+@media (min-width: 1024px) {
+  .sr-cta-band {
+    min-height: clamp(340px, 23vw, 440px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 /* .sr-section > :not(.sr-watermark) (sopra in questo file) centra ogni
    figlio diretto con max-width + margin-left/right:auto. Qui azzeriamo il
    margine auto per tenere il testo a sinistra, ma NON limitiamo più la
@@ -434,6 +449,25 @@ body.dark-mode .site-description {
    le nostre Pagine. */
 body.page .entry-title {
   display: none;
+}
+
+/* Breadcrumb di Prespa (.entry-header > .breadcrumbs): con .site-wrapper ora a
+   tutta larghezza (griglia 1440) finiva incollato al bordo sinistro dello
+   schermo. Lo allineiamo alla STESSA griglia del contenuto — così «Home /
+   …» cade esattamente sotto l'eyebrow dell'hero, coerente su tutte le pagine —
+   e rendiamo i link visibilmente cliccabili (erano grigi, sembravano testo). */
+body .entry-header {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.breadcrumbs a {
+  color: var(--sr-oltremare);
+  text-decoration: none;
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
 }
 
 /* Фон-сетка героя */
