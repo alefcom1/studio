@@ -75,7 +75,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">That’s why monitoring is included in our projects with a maintenance plan: our platform keeps an eye on uptime, periodic checks and the real-user Core Web Vitals of the sites we look after, and when a value slips we see it — before you hear about it from customers. The report arrives every month, in human language. If you prefer DIY, the ritual above is yours: what matters is that someone is watching.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/strumenti/#monitor">Free today, under watch tomorrow: monitoring for clients →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/services/redesign-migration/">Technical redesign: when the numbers say it’s time →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Our Monitor live — and try it on a site of yours, free →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/strumenti/#monitor">Free today, under watch tomorrow: monitoring for clients →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/services/redesign-migration/">Technical redesign: when the numbers say it’s time →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Sources<span class="sr-accent-dot">.</span></h2>

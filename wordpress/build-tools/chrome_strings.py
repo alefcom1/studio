@@ -3700,6 +3700,8 @@ CHROME_BLOG_CABLAB = {
         {'en': 'The twenty-minute ritual works — as long as someone actually does it. Experience says that after the third month the appointment slips, and the site goes back to wearing out unseen. Google’s reliability engineering formalised a principle that holds at small scale too: systems are kept safe by automatic checks and alerts, not by good intentions.'},
     'È il motivo per cui nei nostri progetti con assistenza il monitoraggio è incluso: la nostra piattaforma tiene d’occhio uptime, controlli periodici e Core Web Vitals reali dei siti che seguiamo, e quando un valore scivola lo vediamo noi — prima che ve ne accorgiate dai clienti. Il report arriva ogni mese, in linguaggio umano. Se invece preferite il fai-da-te, il rituale qui sopra è vostro: l’importante è che qualcuno guardi.':
         {'en': 'That’s why monitoring is included in our projects with a maintenance plan: our platform keeps an eye on uptime, periodic checks and the real-user Core Web Vitals of the sites we look after, and when a value slips we see it — before you hear about it from customers. The report arrives every month, in human language. If you prefer DIY, the ritual above is yours: what matters is that someone is watching.'},
+    'Il nostro Monitor in diretta — e provatelo su un vostro sito, gratis →':
+        {'en': 'Our Monitor live — and try it on a site of yours, free →'},
     'Gratis oggi, sotto controllo domani: il monitoraggio per i clienti →':
         {'en': 'Free today, under watch tomorrow: monitoring for clients →'},
     'Restyling tecnico: quando i numeri dicono che serve →':

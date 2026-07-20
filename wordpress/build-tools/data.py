@@ -3285,7 +3285,8 @@ BLOG_POSTS = [
                       'Il rituale dei venti minuti funziona — finché qualcuno lo fa davvero. L’esperienza dice che dopo il terzo mese l’appuntamento scivola, e il sito torna a logorarsi non visto. L’ingegneria dell’affidabilità di Google ha formalizzato un principio che vale anche in piccolo: i sistemi si presidiano con controlli automatici e allarmi, non con la buona volontà.',
                       'È il motivo per cui nei nostri progetti con assistenza il monitoraggio è incluso: la nostra piattaforma tiene d’occhio uptime, controlli periodici e Core Web Vitals reali dei siti che seguiamo, e quando un valore scivola lo vediamo noi — prima che ve ne accorgiate dai clienti. Il report arriva ogni mese, in linguaggio umano. Se invece preferite il fai-da-te, il rituale qui sopra è vostro: l’importante è che qualcuno guardi.',
                   ],
-                  links=[('Gratis oggi, sotto controllo domani: il monitoraggio per i clienti', '/strumenti/#monitor'),
+                  links=[('Il nostro Monitor in diretta — e provatelo su un vostro sito, gratis', 'https://lab.remarka.biz/showcase'),
+                         ('Gratis oggi, sotto controllo domani: il monitoraggio per i clienti', '/strumenti/#monitor'),
                          ('Restyling tecnico: quando i numeri dicono che serve', '/servizi/restyling-migrazione/')]),
          ],
          fonti=[

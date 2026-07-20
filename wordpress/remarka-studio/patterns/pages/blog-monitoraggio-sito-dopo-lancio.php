@@ -75,7 +75,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">È il motivo per cui nei nostri progetti con assistenza il monitoraggio è incluso: la nostra piattaforma tiene d’occhio uptime, controlli periodici e Core Web Vitals reali dei siti che seguiamo, e quando un valore scivola lo vediamo noi — prima che ve ne accorgiate dai clienti. Il report arriva ogni mese, in linguaggio umano. Se invece preferite il fai-da-te, il rituale qui sopra è vostro: l’importante è che qualcuno guardi.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/strumenti/#monitor">Gratis oggi, sotto controllo domani: il monitoraggio per i clienti →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/servizi/restyling-migrazione/">Restyling tecnico: quando i numeri dicono che serve →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Il nostro Monitor in diretta — e provatelo su un vostro sito, gratis →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/strumenti/#monitor">Gratis oggi, sotto controllo domani: il monitoraggio per i clienti →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/servizi/restyling-migrazione/">Restyling tecnico: quando i numeri dicono che serve →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Fonti<span class="sr-accent-dot">.</span></h2>
