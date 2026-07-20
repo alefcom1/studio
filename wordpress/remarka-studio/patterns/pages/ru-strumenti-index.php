@@ -277,33 +277,51 @@
 <h2 class="wp-block-heading">Бесплатно — сегодня. Под наблюдением — всегда<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:75ch">Балл можно бесплатно измерить один раз. Держать его высоким месяц за месяцем — это работа, и она наша: у клиентов с активной поддержкой сайт остаётся под наблюдением и после запуска — на той же платформе, на которой построены эти инструменты.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:75ch">Балл можно бесплатно измерить один раз. Держать его высоким месяц за месяцем — это работа. С Remarka Lab вы держите сайт под контролем бесплатно, а у клиентов с активной поддержкой этим занимаемся мы.</p>
 <!-- /wp:paragraph -->
-<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"320px"}} -->
-<div class="wp-block-group is-layout-grid" style="--sr-grid-min:320px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Хотите вживую? Состояние нашего сайта — в реальном времени →</a></p>
+<!-- /wp:html -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"280px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:280px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Бесплатно · для всех</p>
+<p class="sr-eyebrow">Бесплатно · без регистрации</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Разовые проверки</h3>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>12 бесплатных проверок: скорость, SEO, доступность, GDPR, ИИ, E-E-A-T, CO₂, ROI</span></div><div><span class="sr-mono">✓</span><span>Результат примерно за минуту, без регистрации</span></div><div><span class="sr-mono">✓</span><span>Каждый инструмент показывает, что чинить, — и нужную услугу, если нужна помощь</span></div></div>
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>12 бесплатных проверок: скорость, SEO, доступность, GDPR, ИИ, E-E-A-T, CO₂, ROI</span></div><div><span class="sr-mono">✓</span><span>Результат примерно за минуту, без регистрации</span></div><div><span class="sr-mono">✓</span><span>Каждый инструмент показывает, что чинить</span></div></div>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
 <!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Для клиентов · с поддержкой</p>
+<p class="sr-eyebrow">Бесплатно · с входом</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Remarka Lab · Monitor</h3>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Сайт под постоянным наблюдением после запуска: регулярные проверки и аптайм</span></div><div><span class="sr-mono">✓</span><span>Реальные Core Web Vitals ваших посетителей, месяц за месяцем</span></div><div><span class="sr-mono">✓</span><span>Если показатель проседает, мы видим это первыми — и вмешиваемся до того, как это станет проблемой</span></div></div>
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Один сайт под контролем, бесплатно</span></div><div><span class="sr-mono">✓</span><span>Вход по ссылке из письма, без пароля</span></div><div><span class="sr-mono">✓</span><span>Балл здоровья, ошибки и проблемы, динамика во времени</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/" target="_blank" rel="noopener">Платформа: lab.remarka.biz →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="/ru/#contatti">Входит в проекты с поддержкой — обсудим →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Попробуйте Remarka Lab, бесплатно →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Pro · с поддержкой</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Рядом с вами</h3>
+<!-- /wp:heading -->
+<!-- wp:html -->
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Сайт под постоянным наблюдением после запуска</span></div><div><span class="sr-mono">✓</span><span>Если показатель проседает, мы видим это и вмешиваемся</span></div><div><span class="sr-mono">✓</span><span>Входит в проекты с активной поддержкой</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/ru/#contatti">Обсудим →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
