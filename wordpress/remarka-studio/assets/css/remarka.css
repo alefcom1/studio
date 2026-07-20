@@ -1451,6 +1451,15 @@ body.page .entry-title {
   margin-top: 40px;
 }
 
+/* Dentro una card (es. i livelli #monitor su /strumenti/) lo spazio è stretto:
+   l'auto-fit a 240px genererebbe due colonne che sforano il bordo della card.
+   Forziamo una sola colonna — una voce per riga. Le checklist a tutta larghezza
+   (area clienti ecc.) restano multi-colonna. */
+.sr-card .sr-checklist {
+  grid-template-columns: 1fr;
+  margin-top: 24px;
+}
+
 .sr-checklist > div,
 .sr-checklist > p {
   display: flex;
