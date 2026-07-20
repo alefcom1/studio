@@ -3727,23 +3727,22 @@ textarea.sr-ai-llms-textarea {
   cursor: pointer;
 }
 
+
 /* ============================================================================
    Mega-menu della barra principale (#masthead) — inc/megamenu.php.
-   «Servizi» e «Strumenti» aprono un pannello a tendina che raggruppa le
-   sottopagine. Il pannello è figlio della <li> ma, con la <li> non posizionata,
-   si ancora al primo antenato posizionato (nav/#masthead): left/right:0 lo
-   fanno riempire quell'area senza mai sforare la viewport. Solo desktop
-   (≥1080px); sotto vale la voce-link che porta all'indice.
+   Tutte le regole sono prefissate con #masthead: il tema padre Prespa applica
+   stili di sottomenu/link con specificità di ID (#masthead li ul, #masthead a),
+   che altrimenti nasconderebbero le liste .sr-mega__list e forzerebbero i link
+   in linea. Con #masthead + classe vinciamo il cascade. Solo desktop (≥1080px).
    ========================================================================== */
 #masthead {
   position: relative;
-  overflow: visible; /* il pannello a tendina deve poter uscire dall'header */
+  overflow: visible; /* il pannello deve poter uscire dall'header */
 }
 #masthead .sr-has-mega {
   position: static;
 }
 
-/* Chevron sulle due voci con tendina. */
 #masthead .sr-has-mega > a::after {
   content: "";
   display: inline-block;
@@ -3762,27 +3761,27 @@ textarea.sr-ai-llms-textarea {
   opacity: 0.8;
 }
 
-.sr-mega {
+#masthead .sr-mega {
   position: absolute;
   left: 0;
   right: 0;
   top: 100%;
   z-index: 200;
-  padding-top: 12px; /* fa da ponte hover tra voce e pannello */
+  padding-top: 12px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
   transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
 }
-.sr-has-mega:hover > .sr-mega,
-.sr-has-mega:focus-within > .sr-mega {
+#masthead .sr-has-mega:hover > .sr-mega,
+#masthead .sr-has-mega:focus-within > .sr-mega {
   opacity: 1;
   visibility: visible;
   transform: none;
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
-.sr-mega__box {
+#masthead .sr-mega__box {
   max-width: 1200px;
   margin: 0 auto;
   background: var(--sr-bianco);
@@ -3791,19 +3790,22 @@ textarea.sr-ai-llms-textarea {
   box-shadow: 0 20px 54px -20px rgba(20, 22, 26, 0.24);
   overflow: hidden;
 }
-.sr-mega__inner {
+#masthead .sr-mega__inner {
   padding: 34px 38px;
   display: grid;
   gap: 34px;
 }
-.sr-mega--servizi .sr-mega__inner {
+#masthead .sr-mega--servizi .sr-mega__inner {
   grid-template-columns: repeat(3, 1fr) 1.15fr;
 }
-.sr-mega--lab .sr-mega__inner {
+#masthead .sr-mega--lab .sr-mega__inner {
   grid-template-columns: 1.9fr 1fr;
 }
 
-.sr-mega__eyebrow {
+#masthead .sr-mega__col {
+  min-width: 0;
+}
+#masthead .sr-mega__eyebrow {
   font-family: var(--sr-font-mono);
   font-size: 11.5px;
   letter-spacing: 0.12em;
@@ -3811,39 +3813,55 @@ textarea.sr-ai-llms-textarea {
   color: var(--sr-grigio);
   margin: 0 0 14px;
 }
-.sr-mega__eyebrow--accent {
+#masthead .sr-mega__eyebrow--accent {
   color: var(--sr-oltremare);
 }
-.sr-mega__eyebrow--light {
+#masthead .sr-mega__eyebrow--light {
   color: rgba(247, 246, 242, 0.55);
 }
 
-.sr-mega__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Le liste sono <ul> dentro una <li> del menu → Prespa le tratta da sottomenu.
+   Le riportiamo a flusso normale con la specificità #masthead. */
+#masthead .sr-mega__box .sr-mega__list {
+  position: static;
   display: flex;
   flex-direction: column;
   gap: 1px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  min-width: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
 }
-.sr-mega__list a {
+#masthead .sr-mega__box .sr-mega__list li {
+  margin: 0;
+  padding: 0;
+}
+#masthead .sr-mega__box .sr-mega__list a {
   display: block;
   padding: 7px 10px;
   margin: 0 -10px;
   border-radius: 8px;
   color: var(--sr-inchiostro);
   font-size: 15px;
+  font-weight: 400;
   line-height: 1.3;
   text-decoration: none;
+  text-transform: none;
   transition: background 0.12s ease, color 0.12s ease;
 }
-.sr-mega__list a:hover {
+#masthead .sr-mega__box .sr-mega__list a:hover {
   background: var(--sr-carta);
   color: var(--sr-oltremare);
 }
 
-/* Cella «featured» dei Servizi (invito al preventivo). */
-.sr-mega__feat {
+#masthead .sr-mega__box .sr-mega__feat {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3854,34 +3872,33 @@ textarea.sr-ai-llms-textarea {
   text-decoration: none;
   color: var(--sr-inchiostro);
 }
-.sr-mega__feat-k {
+#masthead .sr-mega__box .sr-mega__feat-k {
   font-family: var(--sr-font-mono);
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--sr-oltremare);
 }
-.sr-mega__feat-t {
+#masthead .sr-mega__box .sr-mega__feat-t {
   font-size: 17px;
   font-weight: 600;
   line-height: 1.3;
 }
-.sr-mega__feat-cta {
+#masthead .sr-mega__box .sr-mega__feat-cta {
   color: var(--sr-oltremare);
   font-size: 14.5px;
   margin-top: 4px;
 }
-.sr-mega__feat:hover .sr-mega__feat-cta {
+#masthead .sr-mega__box .sr-mega__feat:hover .sr-mega__feat-cta {
   text-decoration: underline;
 }
 
-/* Lab: check-up in evidenza + griglia strumenti + tessera Monitor. */
-.sr-mega__labtools {
+#masthead .sr-mega__labtools {
   display: flex;
   flex-direction: column;
   gap: 22px;
 }
-.sr-mega__checkup {
+#masthead .sr-mega__checkup {
   display: block;
   background: var(--sr-carta);
   border-radius: 14px;
@@ -3889,77 +3906,78 @@ textarea.sr-ai-llms-textarea {
   text-decoration: none;
   color: var(--sr-inchiostro);
 }
-.sr-mega__checkup-t {
+#masthead .sr-mega__checkup-t {
   display: block;
   font-size: 18px;
   font-weight: 600;
   margin-top: 4px;
 }
-.sr-mega__checkup-d {
+#masthead .sr-mega__checkup-d {
   display: block;
   font-size: 13.5px;
   color: var(--sr-grigio);
   margin-top: 4px;
 }
-.sr-mega__toolgrid {
+#masthead .sr-mega__toolgrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px 30px;
 }
 
-.sr-mega__monitor {
+#masthead .sr-mega__monitor {
+  display: flex;
+  flex-direction: column;
   background: #071a55;
   border-radius: 14px;
   padding: 24px;
-  display: flex;
-  flex-direction: column;
 }
-.sr-mega__monitor-t {
+#masthead .sr-mega__monitor-t {
   font-size: 17px;
   font-weight: 600;
   color: var(--sr-carta);
   line-height: 1.3;
   margin: 0 0 auto;
 }
-.sr-mega__monitor-live {
+#masthead .sr-mega__monitor-live {
+  display: block;
   color: #9db4ff;
   font-size: 14px;
   text-decoration: none;
   margin-top: 18px;
 }
-.sr-mega__monitor-cta {
+#masthead .sr-mega__monitor-cta {
+  display: block;
   color: var(--sr-carta);
   font-weight: 600;
   font-size: 15px;
   text-decoration: none;
   margin-top: 6px;
 }
-.sr-mega__monitor-live:hover,
-.sr-mega__monitor-cta:hover {
+#masthead .sr-mega__monitor-live:hover,
+#masthead .sr-mega__monitor-cta:hover {
   text-decoration: underline;
 }
 
-.sr-mega__foot {
-  border-top: 1px solid var(--sr-bordo);
-  padding: 15px 38px;
+#masthead .sr-mega__foot {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
+  border-top: 1px solid var(--sr-bordo);
+  padding: 15px 38px;
 }
-.sr-mega__foot a {
+#masthead .sr-mega__foot a {
   color: var(--sr-grigio);
   font-size: 14px;
+  font-weight: 400;
   text-decoration: none;
   transition: color 0.12s ease;
 }
-.sr-mega__foot a:hover {
+#masthead .sr-mega__foot a:hover {
   color: var(--sr-oltremare);
 }
 
-/* Solo desktop: sotto i 1080px la tendina è nascosta e la voce porta
-   all'indice (Servizi → /servizi/, Strumenti → /strumenti/). */
 @media (max-width: 1079px) {
-  .sr-mega {
+  #masthead .sr-mega {
     display: none;
   }
   #masthead .sr-has-mega > a::after {
