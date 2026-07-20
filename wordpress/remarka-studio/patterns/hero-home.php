@@ -67,7 +67,11 @@
 <!-- wp:paragraph {"className":"sr-timeline__foot"} -->
 <p class="sr-timeline__foot">La data è nel contratto: <strong>ogni giorno lavorativo di ritardo vale l'1% di sconto.</strong></p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:shortcode -->
+[remarka_hero_form]
+<!-- /wp:shortcode --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>
 <!-- /wp:group -->
