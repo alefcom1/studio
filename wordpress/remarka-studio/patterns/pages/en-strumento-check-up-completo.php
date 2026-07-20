@@ -63,6 +63,16 @@
       </div>
     </div>
 
+    <!-- Priorità PRIMA dei sette semafori (feedback lancio Product Hunt,
+         19.07.2026: «a prioritized action list instead of dumping all results»
+         — chi non è tecnico deve vedere subito da dove partire). -->
+    <div data-sr-checkup-priorities-wrap style="margin-top:32px">
+      <p class="sr-eyebrow">Where to start</p>
+      <h2 class="wp-block-heading" style="font-size:clamp(24px,2.4vw,32px)">The 3 fixes that matter most</h2>
+      <p style="margin:8px 0 20px;color:var(--sr-grigio);font-size:15.5px">Ranked by impact on your score: how much you’d gain by fixing them.</p>
+      <div class="sr-priorities" data-sr-checkup-priorities></div>
+    </div>
+
     <div style="margin-top:32px">
       <p class="sr-eyebrow">The seven measures</p>
       <h2 class="wp-block-heading" style="font-size:clamp(24px,2.4vw,32px)">Seven traffic lights, one score</h2>
@@ -124,13 +134,6 @@
 </div></div>
     </div>
 
-    <div data-sr-checkup-priorities-wrap style="margin-top:32px">
-      <p class="sr-eyebrow">Priorities</p>
-      <h2 class="wp-block-heading" style="font-size:clamp(24px,2.4vw,32px)">The 3 fixes that matter most</h2>
-      <p style="margin:8px 0 20px;color:var(--sr-grigio);font-size:15.5px">Ranked by impact on your score: how much you’d gain by fixing them.</p>
-      <div class="sr-priorities" data-sr-checkup-priorities></div>
-    </div>
-
     <div data-sr-checkup-form-wrap style="margin-top:32px">
       <div class="sr-card sr-checkup-lead">
         <p class="sr-eyebrow">Full report</p>
@@ -153,6 +156,10 @@
           <p class="sr-mono" data-sr-checkup-success hidden style="margin-top:16px;color:var(--sr-verde)">Done. The report is on its way to your inbox: if it doesn’t arrive within a few minutes, check spam or drop us a line.</p>
           <p class="sr-form-error" data-sr-checkup-error hidden>We couldn’t send the report. Try again shortly, or write to us and we’ll send it by hand.</p>
         </form>
+        <div class="sr-checkup-dl">
+          <span class="sr-mono sr-checkup-dl__or">or</span>
+          <button type="button" class="sr-feedback__btn sr-checkup-dl__btn" data-sr-checkup-download data-dl-pending="Preparing your PDF…">Download the PDF now — no e-mail needed</button>
+        </div>
         <p class="sr-mono" style="margin-top:20px;font-size:11px;color:var(--sr-grigio);opacity:.85">No spam. We use your address only for the report and possible follow-up. Studio Remarka S.r.l., VAT GE 302230994.</p>
       </div>
     </div>
@@ -202,6 +209,45 @@
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Two readings to avoid. A high score doesn’t mean «number one on Google»: it means the technical foundations are sound. And if a measure shows «N/A» it’s not your site failing: sometimes Google is overloaded, sometimes a site refuses automated reading. In that case we compute health on the successful measures and tell you so clearly.</p>
 <!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">From the community</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">What people who tried them say<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:70ch">The first reviews from our Product Hunt launch — quoted verbatim, with the authors’ permission.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"300px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:300px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«A solid free checker especially for GDPR and AI readiness, those get overlooked a lot.»</p><p class="sr-mono sr-recensione__firma">Şengül Akkoca · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«Ran the GDPR and speed tests on my blog and the results page broke things down in plain language instead of jargon, which I appreciated more than expected.»</p><p class="sr-mono sr-recensione__firma">Ercan · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«Ran the GDPR and accessibility checks on my portfolio site and the accessibility report actually pointed out color contrast issues I had missed for years. Solid free tool, will keep using it.»</p><p class="sr-mono sr-recensione__firma">Demet · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«ran it on my portfolio site and the accessibility check actually flagged stuff i never noticed before, super useful. the speed results matched what i already knew from lighthouse so feels legit.»</p><p class="sr-mono sr-recensione__firma">Mihriban · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

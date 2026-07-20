@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Локализация только носителями: имена и квалификация переводчиков — в договоре</span></div><div><span class="sr-mono">✓</span><span>Глоссарий терминологии вашей отрасли: это отдельный результат работ, он остаётся вам</span></div><div><span class="sr-mono">✓</span><span>Подписанный чек-лист международной SEO: hreflang, метаданные и URL по каждому рынку — приложение к акту сдачи</span></div><div><span class="sr-mono">✓</span><span>Ежемесячные KPI по каждому рынку, 12 месяцев: трафик, позиции, заявки</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/ru/kabinet-klienta/">В каждый проект входит кабинет клиента: стадии, согласования и файлы в одном месте →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

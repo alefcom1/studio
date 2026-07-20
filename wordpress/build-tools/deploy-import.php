@@ -110,7 +110,7 @@ WP_CLI::log( '=================================' );
 WP_CLI::log( "\nHome:" );
 $home_sections = array(
 	'hero-home', 'checkup-home', 'trust-strip', 'tre-numeri', 'manifesto', 'lingue-mercati', 'servizi-cards', 'prezzi-teaser',
-	'perche-remarka', 'caso-evidenza', 'recensioni', 'come-lavoriamo', 'garanzie-dark', 'strumenti-cards', 'faq', 'contatti',
+	'perche-remarka', 'caso-evidenza', 'recensioni', 'come-lavoriamo', 'area-clienti-blocco', 'garanzie-dark', 'strumenti-cards', 'faq', 'contatti',
 );
 
 /*
@@ -120,7 +120,7 @@ $home_sections = array(
  */
 $home_sections_ru = array(
 	'hero-home', 'checkup-home', 'trust-strip', 'vyhod-evropa', 'tre-numeri', 'manifesto', 'seo-lingue', 'servizi-cards',
-	'prezzi-teaser', 'perche-remarka', 'caso-evidenza', 'recensioni', 'come-lavoriamo', 'garanzie-dark', 'faq', 'contatti',
+	'prezzi-teaser', 'perche-remarka', 'caso-evidenza', 'recensioni', 'come-lavoriamo', 'area-clienti-blocco', 'garanzie-dark', 'faq', 'contatti',
 );
 $home_content = '';
 foreach ( $home_sections as $slug ) {
@@ -227,6 +227,7 @@ $page_map = array(
 	'citta-catania'                        => array( 'catania', null, null ),
 
 	'dove-lavoriamo'                       => array( 'dove-lavoriamo', null, 'Dove lavoriamo' ),
+	'area-clienti'                         => array( 'area-clienti', null, 'Area clienti' ),
 	'chi-siamo'                            => array( 'chi-siamo', null, null ),
 	'privacy'                              => array( 'privacy', null, null ),
 	'cookie-policy'                        => array( 'cookie-policy', null, null ),
@@ -261,6 +262,8 @@ $page_map = array(
 	'blog-hreflang-sito-multilingue'            => array( 'hreflang-sito-multilingue', 'blog', null ),
 	'blog-sito-per-export'                      => array( 'sito-per-export', 'blog', null ),
 	'blog-manutenzione-wordpress'               => array( 'manutenzione-wordpress', 'blog', null ),
+	'blog-area-clienti-agenzia-web'             => array( 'area-clienti-agenzia-web', 'blog', null ),
+	'blog-monitoraggio-sito-dopo-lancio'        => array( 'monitoraggio-sito-dopo-lancio', 'blog', null ),
 
 	// ---- Albero EN (genitore = percorso completo) ----
 	'en-servizi-index'                             => array( 'services', 'en', 'Services' ),
@@ -316,9 +319,12 @@ $page_map = array(
 	'en-blog-hreflang-sito-multilingue'            => array( 'hreflang-multilingual-website', 'en/blog', null ),
 	'en-blog-sito-per-export'                      => array( 'website-for-export', 'en/blog', null ),
 	'en-blog-manutenzione-wordpress'               => array( 'wordpress-maintenance', 'en/blog', null ),
+	'en-blog-area-clienti-agenzia-web'             => array( 'web-agency-client-portal', 'en/blog', null ),
+	'en-blog-monitoraggio-sito-dopo-lancio'        => array( 'website-monitoring-after-launch', 'en/blog', null ),
 	'en-prezzi'                                    => array( 'pricing', 'en', null ),
 	'en-brief'                                     => array( 'brief', 'en', 'Brief' ),
 	'en-citta-milano'                              => array( 'milan', 'en', null ),
+	'en-area-clienti'                              => array( 'client-area', 'en', 'Client area' ),
 	'en-chi-siamo'                                 => array( 'about', 'en', null ),
 	'en-privacy'                                   => array( 'privacy', 'en', null ),
 	'en-cookie-policy'                             => array( 'cookie-policy', 'en', null ),
@@ -376,6 +382,7 @@ $page_map = array(
 	'ru-prezzi'                                    => array( 'ceny', 'ru', null ),
 	'ru-brief'                                     => array( 'brif', 'ru', 'Бриф' ),
 	'ru-citta-milano'                              => array( 'milan', 'ru', null ),
+	'ru-area-clienti'                              => array( 'kabinet-klienta', 'ru', 'Кабинет клиента' ),
 	'ru-chi-siamo'                                 => array( 'o-studii', 'ru', null ),
 	'ru-privacy'                                   => array( 'privacy', 'ru', null ),
 	'ru-cookie-policy'                             => array( 'cookie-policy', 'ru', null ),
@@ -421,7 +428,26 @@ foreach ( $ordered as $pattern_slug ) {
 	$full_path = $parent_path ? "$parent_path/$page_slug" : $page_slug;
 	$id        = remarka_deploy_upsert_page( $full_path, $title, $content, $parent_id, $force );
 	$created_ids[ $full_path ] = $id;
+
+	// Commenti nativi WP SOLO sugli articoli del blog (decisione owner
+	// 19.07.2026, raccolta feedback): tutte le altre pagine restano chiuse.
+	$is_blog_article = ( 0 === strpos( $pattern_slug, 'blog-' ) || 0 === strpos( $pattern_slug, 'en-blog-' ) || 0 === strpos( $pattern_slug, 'ru-blog-' ) )
+		&& false === strpos( $pattern_slug, 'blog-index' );
+	if ( $id && $is_blog_article ) {
+		wp_update_post( array( 'ID' => $id, 'comment_status' => 'open' ) );
+	}
 }
+
+/* Impostazioni discussione (idempotenti): OGNI commento passa dalla
+ * moderazione prima di apparire; niente registrazione obbligatoria;
+ * opt-in esplicito per i cookie del form (GDPR). */
+update_option( 'comment_moderation', 1 );
+update_option( 'comment_previously_approved', 0 );
+update_option( 'require_name_email', 1 );
+update_option( 'comment_registration', 0 );
+update_option( 'show_comments_cookies_opt_in', 1 );
+update_option( 'close_comments_for_old_posts', 0 );
+WP_CLI::log( '  commenti: aperti sugli articoli del blog, moderazione totale attiva' );
 
 /* ---------- 2b. Pulizia pagine orfane ----------
  * Se un caso/articolo viene rinominato o rimosso da data.py (successo con
@@ -608,6 +634,7 @@ remarka_deploy_sync_footer_menu(
 		array( 'title' => 'Casi studio', 'slug' => 'casi-studio' ),
 		array( 'title' => 'Prezzi', 'slug' => 'prezzi' ),
 		array( 'title' => 'Blog', 'slug' => 'blog' ),
+		array( 'title' => 'Area clienti', 'slug' => 'area-clienti' ),
 		array( 'title' => 'Contatti', 'url' => home_url( '/#contatti' ) ),
 	),
 	$force
@@ -658,6 +685,7 @@ remarka_deploy_sync_footer_menu( 'Footer EN — Pages', '', array(
 	array( 'title' => 'Case studies', 'slug' => 'en/case-studies' ),
 	array( 'title' => 'Pricing', 'slug' => 'en/pricing' ),
 	array( 'title' => 'Blog', 'slug' => 'en/blog' ),
+	array( 'title' => 'Client area', 'slug' => 'en/client-area' ),
 	array( 'title' => 'Contact us', 'url' => home_url( '/en/#contatti' ) ),
 	// Unica landing città tradotta in EN: la conserviamo qui (in fondo) per non
 	// perdere l'unico link cittadino di questa lingua (ex colonna Studio).
@@ -696,6 +724,7 @@ remarka_deploy_sync_footer_menu( 'Footer RU — Страницы', '', array(
 	array( 'title' => 'Кейсы', 'slug' => 'ru/kejsy' ),
 	array( 'title' => 'Цены', 'slug' => 'ru/ceny' ),
 	array( 'title' => 'Блог', 'slug' => 'ru/blog' ),
+	array( 'title' => 'Кабинет клиента', 'slug' => 'ru/kabinet-klienta' ),
 	array( 'title' => 'Контакты', 'url' => home_url( '/ru/#contatti' ) ),
 	array( 'title' => 'Сайты в Милане', 'slug' => 'ru/milan' ),
 ), $force );

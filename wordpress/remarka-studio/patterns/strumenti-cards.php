@@ -9,7 +9,7 @@
 ?>
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco sr-rule-top","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group sr-section sr-section--bianco sr-rule-top"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Strumenti gratuiti</p>
+<p class="sr-eyebrow">Remarka Lab · Strumenti gratuiti</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
@@ -160,5 +160,13 @@
 <p class="sr-card-link sr-no-margin"><a href="/strumenti/segnali-eeat/">Prova →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"className":"sr-card-link","style":{"spacing":{"margin":{"top":"36px"}}}} -->
+<p class="sr-card-link" style="margin-top:36px"><a href="/strumenti/">Tutti i 12 strumenti gratuiti →</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link","style":{"spacing":{"margin":{"top":"8px"}}}} -->
+<p class="sr-card-link" style="margin-top:8px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Monitora un sito gratis, in continuo — e guarda il nostro dal vivo →</a></p>
+<!-- /wp:paragraph --></section>
 <!-- /wp:group -->

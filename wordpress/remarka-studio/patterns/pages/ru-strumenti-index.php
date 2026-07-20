@@ -9,7 +9,7 @@
 ?>
 <!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Бесплатные инструменты</p>
+<p class="sr-eyebrow">Remarka Lab · Бесплатные инструменты</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(38px,4.6vw,64px)"}}} -->
 <h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Сначала измерьте, потом решайте<span class="sr-accent-dot">.</span></h1>
@@ -21,7 +21,7 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:html -->
-<div class="sr-card sr-card--carta sr-tools-feat" style="border-color:var(--sr-oltremare)"><div class="sr-tools-feat__text"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">Новинка · бесплатно</p><h3 class="wp-block-heading" style="margin-top:10px">Полная проверка сайта</h3><p style="margin-top:10px;font-size:15.5px;color:var(--sr-grigio);max-width:60ch">Семь бесплатных инструментов в одном анализе.</p><p class="sr-card-link" style="margin-top:18px"><a href="/ru/instrumenty/polnaya-proverka-sajta/">Попробовать →</a></p></div><div class="sr-tools-feat__img"><img src="/wp-content/themes/remarka-studio/assets/img/tools/tools-hero.webp" alt="Дашборд проверки сайта с оценкой здоровья 87 из 100 и графиком показателей" width="328" height="249" loading="lazy" style="display:block;max-width:100%;height:auto"/></div></div>
+<div class="sr-card sr-card--carta sr-tools-feat" style="border-color:var(--sr-oltremare)"><div class="sr-tools-feat__text"><p class="sr-eyebrow" style="color:var(--sr-oltremare)">Новинка · бесплатно</p><h3 class="wp-block-heading" style="margin-top:12px;font-size:clamp(26px,2.6vw,34px)">Полная проверка сайта</h3><p style="margin-top:14px;font-size:17.5px;line-height:1.6;color:var(--sr-grigio);max-width:52ch">Семь бесплатных инструментов в одном анализе.</p><p class="sr-card-link" style="margin-top:20px"><a href="/ru/instrumenty/polnaya-proverka-sajta/">Попробовать →</a></p></div><div class="sr-tools-feat__img"><img src="/wp-content/themes/remarka-studio/assets/img/tools/tools-hero.webp" alt="Дашборд проверки сайта с оценкой здоровья 87 из 100 и графиком показателей" width="480" height="364" loading="lazy" style="display:block;max-width:100%;height:auto"/></div></div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -228,6 +228,100 @@
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/instrumenty/generator-llms-txt/">Попробовать →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Из сообщества</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Что говорят те, кто уже попробовал<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:70ch">Первые отзывы с запуска на Product Hunt — приводим в оригинале, с разрешения авторов.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"300px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:300px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«A solid free checker especially for GDPR and AI readiness, those get overlooked a lot.»</p><p class="sr-mono sr-recensione__firma">Şengül Akkoca · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html --></div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«Ran the GDPR and speed tests on my blog and the results page broke things down in plain language instead of jargon, which I appreciated more than expected.»</p><p class="sr-mono sr-recensione__firma">Ercan · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html --></div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«Ran the GDPR and accessibility checks on my portfolio site and the accessibility report actually pointed out color contrast issues I had missed for years. Solid free tool, will keep using it.»</p><p class="sr-mono sr-recensione__firma">Demet · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html --></div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«ran it on my portfolio site and the accessibility check actually flagged stuff i never noticed before, super useful. the speed results matched what i already knew from lighthouse so feels legit.»</p><p class="sr-mono sr-recensione__firma">Mihriban · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html --></div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"monitor"} -->
+<section class="wp-block-group is-layout-constrained sr-section" id="monitor"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Remarka Lab</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Бесплатно — сегодня. Под наблюдением — всегда<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:75ch">Балл можно бесплатно измерить один раз. Держать его высоким месяц за месяцем — это работа. С Remarka Lab вы держите сайт под контролем бесплатно, а у клиентов с активной поддержкой этим занимаемся мы.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"sr-card-link"} -->
+<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Хотите вживую? Состояние нашего сайта — в реальном времени →</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"280px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:280px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Бесплатно · без регистрации</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Разовые проверки</h3>
+<!-- /wp:heading -->
+<!-- wp:html -->
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>12 бесплатных проверок: скорость, SEO, доступность, GDPR, ИИ, E-E-A-T, CO₂, ROI</span></div><div><span class="sr-mono">✓</span><span>Результат примерно за минуту, без регистрации</span></div><div><span class="sr-mono">✓</span><span>Каждый инструмент показывает, что чинить</span></div></div>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Бесплатно · с входом</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Remarka Lab · Monitor</h3>
+<!-- /wp:heading -->
+<!-- wp:html -->
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Один сайт под контролем, бесплатно</span></div><div><span class="sr-mono">✓</span><span>Вход по ссылке из письма, без пароля</span></div><div><span class="sr-mono">✓</span><span>Балл здоровья, ошибки и проблемы, динамика во времени</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Попробуйте Remarka Lab, бесплатно →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Pro · с поддержкой</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Рядом с вами</h3>
+<!-- /wp:heading -->
+<!-- wp:html -->
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Сайт под постоянным наблюдением после запуска</span></div><div><span class="sr-mono">✓</span><span>Если показатель проседает, мы видим это и вмешиваемся</span></div><div><span class="sr-mono">✓</span><span>Входит в проекты с активной поддержкой</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/ru/#contatti">Обсудим →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

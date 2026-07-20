@@ -115,6 +115,9 @@
 <!-- wp:html -->
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span><strong>Аудит и семантика:</strong> техническая база и ядро запросов под рынок и язык.</span></div><div><span class="sr-mono">b</span><span><strong>Контент и структура:</strong> страницы, которые отвечают на реальные запросы покупателя.</span></div><div><span class="sr-mono">c</span><span><strong>Отчёт без словаря:</strong> позиции, трафик и заявки простым языком, каждый месяц.</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:20px"><a href="/ru/kabinet-klienta/">Отчёты и вопросы живут в кабинете клиента — стадии, файлы и история в одном месте →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

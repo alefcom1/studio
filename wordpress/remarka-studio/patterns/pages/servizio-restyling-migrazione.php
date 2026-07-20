@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Audit tecnico del sito attuale</span></div><div><span class="sr-mono">✓</span><span>Migrazione dei contenuti esistenti</span></div><div><span class="sr-mono">✓</span><span>Redirect 301 per mantenere il posizionamento SEO</span></div><div><span class="sr-mono">✓</span><span>Nuova base tecnica performante</span></div><div><span class="sr-mono">✓</span><span>Ottimizzazione immagini e font</span></div><div><span class="sr-mono">✓</span><span>Test comparativo prima/dopo su PageSpeed</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ garantito da contratto</span></div><div><span class="sr-mono">✓</span><span>12 mesi di assistenza e misurazioni mensili</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/area-clienti/">Ogni progetto include l’area clienti: fasi, approvazioni e file in un unico posto →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

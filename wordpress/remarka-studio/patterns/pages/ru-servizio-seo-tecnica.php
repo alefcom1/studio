@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Полный технический SEO-аудит</span></div><div><span class="sr-mono">✓</span><span>Структурированные данные (schema.org) для каждого типа страниц</span></div><div><span class="sr-mono">✓</span><span>Оптимизация Core Web Vitals</span></div><div><span class="sr-mono">✓</span><span>Оптимизированные sitemap XML и файл robots</span></div><div><span class="sr-mono">✓</span><span>Структура URL и иерархия контента</span></div><div><span class="sr-mono">✓</span><span>Оптимизация meta title и description</span></div><div><span class="sr-mono">✓</span><span>Ежемесячный отчёт по позициям</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ — гарантия в договоре</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/ru/kabinet-klienta/">В каждый проект входит кабинет клиента: стадии, согласования и файлы в одном месте →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

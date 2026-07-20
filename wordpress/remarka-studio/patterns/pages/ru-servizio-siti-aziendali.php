@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>До 15 страниц, структура выстроена под воронку</span></div><div><span class="sr-mono">✓</span><span>Два языка включены, перевод — носители</span></div><div><span class="sr-mono">✓</span><span>CMS: тексты и фото обновляете сами</span></div><div><span class="sr-mono">✓</span><span>Полная техническая SEO и структурированные данные</span></div><div><span class="sr-mono">✓</span><span>GDPR: баннер, уведомления и согласия по требованиям</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ — гарантия в договоре</span></div><div><span class="sr-mono">✓</span><span>Форма обратной связи с мгновенными уведомлениями</span></div><div><span class="sr-mono">✓</span><span>12 месяцев поддержки и ежемесячные замеры</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/ru/kabinet-klienta/">В каждый проект входит кабинет клиента: стадии, согласования и файлы в одном месте →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

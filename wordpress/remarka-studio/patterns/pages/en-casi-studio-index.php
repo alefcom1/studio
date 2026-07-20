@@ -39,7 +39,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">traduzione.tech</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="att-home-1440.jpg" alt="Home page of the translation agency site traduzione.tech, services in focus" caption="ATT — home, services block, desktop" mobile="0"]
+[sr_shot file="att-home-1440.webp" alt="Home page of the translation agency site traduzione.tech, services in focus" caption="ATT — home, services block, desktop" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -81,7 +81,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">tms.perevod4.ru</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="tms-board-1440.jpg" alt="Dashboard of the TMS at tms.perevod4.ru showing the translation order board" caption="TMS — order board, main screen, desktop" mobile="0"]
+[sr_shot file="tms-board-1440.webp" alt="Dashboard of the TMS at tms.perevod4.ru showing the translation order board" caption="TMS — order board, main screen, desktop" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -91,7 +91,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">tms.perevod4.ru</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="tms-clienti-1440.jpg" alt="Dashboard of the TMS at tms.perevod4.ru showing the translation order board" caption="TMS — client record, order history" mobile="0"]
+[sr_shot file="tms-clienti-1440.webp" alt="Dashboard of the TMS at tms.perevod4.ru showing the translation order board" caption="TMS — client record, order history" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -100,7 +100,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">tms.perevod4.ru</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="tms-fatture-1440.jpg" alt="Dashboard of the TMS at tms.perevod4.ru showing the translation order board" caption="TMS — invoicing and accounting" mobile="0"]
+[sr_shot file="tms-fatture-1440.webp" alt="Dashboard of the TMS at tms.perevod4.ru showing the translation order board" caption="TMS — invoicing and accounting" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -144,7 +144,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">@massimoalefBot</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="miniapp-orders-390.jpg" alt="Telegram Mini App of the TMS open inside the chat, showing the order list" caption="Telegram Mini App — order list, mobile" mobile="1"]
+[sr_shot file="miniapp-orders-390.webp" alt="Telegram Mini App of the TMS open inside the chat, showing the order list" caption="Telegram Mini App — order list, mobile" mobile="1"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -186,7 +186,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">ai.perevod4.ru</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="ai-home-it-1440.jpg" alt="Italian version of the multilingual AI project ai.perevod4.ru" caption="ai.perevod4.ru — Italian version, first screen" mobile="0"]
+[sr_shot file="ai-home-it-1440.webp" alt="Italian version of the multilingual AI project ai.perevod4.ru" caption="ai.perevod4.ru — Italian version, first screen" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -228,7 +228,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">perevod4.ru</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="perevod4-catalog-1440.jpg" alt="perevod4.ru catalogue portal listing translation agencies by city" caption="perevod4.ru — agency catalogue by city" mobile="0"]
+[sr_shot file="perevod4-catalog-1440.webp" alt="perevod4.ru catalogue portal listing translation agencies by city" caption="perevod4.ru — agency catalogue by city" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -270,7 +270,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">traduzione.tech/gioco</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="gioco-play-1440.jpg" alt="Screen of the browser game “Translation Empire” in Italian on traduzione.tech" caption=""Translation Empire" game — gameplay screen" mobile="0"]
+[sr_shot file="gioco-play-1440.webp" alt="Screen of the browser game “Translation Empire” in Italian on traduzione.tech" caption=""Translation Empire" game — gameplay screen" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -312,7 +312,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">пере.рф</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="pererf-home-1440.jpg" alt="The пере.рф site, a technical SEO case on an internationalised domain" caption="пере.рф — home page" mobile="0"]
+[sr_shot file="pererf-home-1440.webp" alt="The пере.рф site, a technical SEO case on an internationalised domain" caption="пере.рф — home page" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -354,7 +354,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">ukrinitsy.ru</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="ukrinitsy-mobile-390.jpg" alt="Brochure site of the ukrinitsy.ru guest house, mobile version" caption="ukrinitsy.ru — first screen, mobile" mobile="1"]
+[sr_shot file="ukrinitsy-mobile-390.webp" alt="Brochure site of the ukrinitsy.ru guest house, mobile version" caption="ukrinitsy.ru — first screen, mobile" mobile="1"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -397,7 +397,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">moscowtrans.ru · techperevod.com</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="moscowtrans-home-1440.jpg" alt="Home pages of the agency sites moscowtrans.ru and techperevod.com side by side" caption="moscowtrans.ru — home page" mobile="0"]
+[sr_shot file="moscowtrans-home-1440.webp" alt="Home pages of the agency sites moscowtrans.ru and techperevod.com side by side" caption="moscowtrans.ru — home page" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -406,7 +406,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">moscowtrans.ru · techperevod.com</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="techperevod-home-1440.jpg" alt="Home pages of the agency sites moscowtrans.ru and techperevod.com side by side" caption="techperevod.com — home page" mobile="0"]
+[sr_shot file="techperevod-home-1440.webp" alt="Home pages of the agency sites moscowtrans.ru and techperevod.com side by side" caption="techperevod.com — home page" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -450,7 +450,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">moscowtrans.ru/test-perevodchika</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="tester-exam-1440.jpg" alt="Remarka group’s translator testing and evaluation platform" caption="Translator testing platform — evaluation screen" mobile="0"]
+[sr_shot file="tester-exam-1440.webp" alt="Remarka group’s translator testing and evaluation platform" caption="Translator testing platform — evaluation screen" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -492,7 +492,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">1russian.com</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="1russian-home-1440.jpg" alt="Home page of the international English-language project 1russian.com" caption="1russian.com — home page, first screen" mobile="0"]
+[sr_shot file="1russian-home-1440.webp" alt="Home page of the international English-language project 1russian.com" caption="1russian.com — home page, first screen" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

@@ -88,6 +88,9 @@
 <div class="wp-block-column" style="flex-basis:62%"><!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px">Не только для клиентов: группа Remarka разрабатывает и использует в продакшене собственные цифровые продукты — платформу AI-перевода, TMS для языковых проектов и сервис типовых документов. Мы публикуем их как кейсы с реальными техническими метриками, под маркой «Product Lab».</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="/ru/kabinet-klienta/">В каждый проект входит кабинет клиента: стадии, согласования и файлы в одном месте →</a></p>
+<!-- /wp:html -->
 </div>
 <!-- /wp:column -->
 </div>

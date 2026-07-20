@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">How much your site weighs on the environment (and on your wallet)</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/impatto-cover.svg" alt="Website environmental impact: from page weight in bytes to energy consumed and grams of CO₂ per visit" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/impatto-cover.svg" alt="Website environmental impact: from page weight in bytes to energy consumed and grams of CO₂ per visit" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -42,7 +42,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Some honesty about the limits is in order, because it’s easy to sell smoke here. It’s an estimate with global average coefficients: it doesn’t know your hosting’s real energy or every visitor’s behavior. It isn’t a certified footprint, it’s a reliable, comparable order of magnitude — and its merit is precisely that it hangs on a technical fact you can actually act on: weight.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/impatto-peso.svg" alt="From page weight to grams of CO₂: transferred bytes, energy consumed, emissions per visit and yearly estimate with the Sustainable Web Design model" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">From weight to grams: the transferred bytes become energy and then CO₂ per visit, which multiplied by traffic gives the yearly estimate. Reference: web average ≈ 0.8 g per visit. Model: Sustainable Web Design (co2.js, Green Web Foundation).</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/impatto-peso.svg" alt="From page weight to grams of CO₂: transferred bytes, energy consumed, emissions per visit and yearly estimate with the Sustainable Web Design model" width="1200" height="480" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">From weight to grams: the transferred bytes become energy and then CO₂ per visit, which multiplied by traffic gives the yearly estimate. Reference: web average ≈ 0.8 g per visit. Model: Sustainable Web Design (co2.js, Green Web Foundation).</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Why light means fast and cheaper<span class="sr-accent-dot">.</span></h2>

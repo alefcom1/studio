@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Каталог товаров без ограничений, с вариантами</span></div><div><span class="sr-mono">✓</span><span>Оформление заказа в один шаг</span></div><div><span class="sr-mono">✓</span><span>Оплата картой, PayPal и банковским переводом</span></div><div><span class="sr-mono">✓</span><span>Встроенный электронный счёт-фактура через SDI</span></div><div><span class="sr-mono">✓</span><span>Управление складом и доставкой</span></div><div><span class="sr-mono">✓</span><span>Техническая SEO для страниц товаров</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ — гарантия в договоре</span></div><div><span class="sr-mono">✓</span><span>12 месяцев поддержки и ежемесячные замеры</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/ru/kabinet-klienta/">В каждый проект входит кабинет клиента: стадии, согласования и файлы в одном месте →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

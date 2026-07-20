@@ -63,25 +63,23 @@ chmod 600 .env
 
 ---
 
-## 2. Generate the Basic Auth hash and put it in the Caddyfile
+## 2. Basic Auth — REMOVED at the M2 cutover (rollback only)
 
-Pick a username + password for the whole site, then hash the password:
+Lab is no longer gated behind Caddy Basic Auth: it is app-guarded (cabinet
+sign-in + API tenant guard, see "M2 cutover" below). Fresh installs skip this
+step entirely — the Caddyfile has no `basic_auth` block.
+
+Roll back to the old internal-tool posture ONLY if you need to slam the door
+shut fast: add a `basic_auth` block back to the `lab.remarka.biz { … }` site in
+`Caddyfile`, hashing the password with
 
 ```bash
 docker run --rm caddy:2-alpine caddy hash-password --plaintext 'YOUR-STRONG-PASSWORD'
 ```
 
-Copy the printed `$2a$...` bcrypt hash. Edit `Caddyfile` and replace the
-placeholder line under `basic_auth` with your username + hash:
-
-```
-	basic_auth {
-		youruser $2a$14$....your-real-hash....
-	}
-```
-
-> The placeholder in the file is the hash for the password `changeme` — it will
-> NOT protect anything real. Replace it.
+then reload Caddy (`docker compose … exec caddy caddy reload --config /etc/caddy/Caddyfile`).
+Leave `/showcase` and `/api/public/*` exempted if you still want the public
+vetrina reachable while gated.
 
 ---
 
@@ -104,28 +102,22 @@ If it does not yet resolve, wait for the A-record to propagate before step 5.
 `apps/web/Dockerfile` does not yet declare the ARG, so the build-arg from the
 override would be ignored and the bundle would fall back to `localhost:3001`
 (the app would be broken in the browser). Add two lines to the **build** stage,
-right **before** the `RUN pnpm --filter @sitelens/web build` line:
+right **before** the `RUN pnpm --filter @sitelens/web build` line.
+
+> **M2 update:** `apps/web/Dockerfile` now declares these ARGs upstream (both
+> `NEXT_PUBLIC_API_URL` and `NEXT_PUBLIC_CABINET_URL`), so after pulling the M2
+> branch **no patch is needed** — just build. Verify with:
+> ```bash
+> grep -n 'NEXT_PUBLIC_' apps/web/Dockerfile
+> ```
+> Expect an ARG+ENV pair for each. The `sed` below is kept only for older
+> checkouts that predate the upstream ARG.
 
 ```bash
 cd ~/remarka-lab/sitelens
-# Insert ARG + ENV just before the web build step:
-sed -i 's#^RUN pnpm --filter @sitelens/web build#ARG NEXT_PUBLIC_API_URL\nENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL\nRUN pnpm --filter @sitelens/web build#' apps/web/Dockerfile
-
-# Verify it now looks like this:
-grep -n -A0 'NEXT_PUBLIC_API_URL\|pnpm --filter @sitelens/web build' apps/web/Dockerfile
+# LEGACY (pre-M2 checkout only): insert the ARG/ENV pair(s) before the build step.
+sed -i 's#^RUN pnpm --filter @sitelens/web build#ARG NEXT_PUBLIC_API_URL\nENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL\nARG NEXT_PUBLIC_CABINET_URL\nENV NEXT_PUBLIC_CABINET_URL=$NEXT_PUBLIC_CABINET_URL\nRUN pnpm --filter @sitelens/web build#' apps/web/Dockerfile
 ```
-
-Expected result (the three lines, in order):
-
-```
-ARG NEXT_PUBLIC_API_URL
-ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
-RUN pnpm --filter @sitelens/web build
-```
-
-> This edits the on-server clone only (it's a git checkout — `git diff` shows the
-> change; it survives until you `git checkout`/`git pull`). See "Updating" for
-> re-applying after a pull.
 
 ---
 
@@ -160,18 +152,41 @@ after DNS is live.
 ## 6. Verify
 
 ```bash
-# Health check through Caddy (Basic Auth required). Expect: {"status":"ok",...}
-curl -u youruser:YOUR-STRONG-PASSWORD https://lab.remarka.biz/health
+# Health check through Caddy (open — no Basic Auth). Expect: {"status":"ok",...}
+curl https://lab.remarka.biz/health
 
-# Without credentials you should get 401:
-curl -i https://lab.remarka.biz/health | head -n 1     # HTTP/2 401
+# A protected page with no session redirects to the cabinet login (3xx to
+# cab.remarka.biz), NOT a 401 and NOT the dashboard:
+curl -sI https://lab.remarka.biz/ | grep -i '^location'   # → https://cab.remarka.biz/login
 ```
 
-Then open `https://lab.remarka.biz` in a browser, enter the Basic Auth
-user/password, and confirm the dashboard loads. Create a test project and start
-a crawl — the live progress bar uses the WebSocket (`wss://.../ws/...`); if it
-updates in real time, the `/ws` routing and the baked `NEXT_PUBLIC_API_URL` are
-correct.
+Then sign in at `https://cab.remarka.biz`, open `https://lab.remarka.biz`, and
+confirm the dashboard loads on the shared session (no second login). Add a site
+and start a crawl — the live progress bar uses the WebSocket (`wss://.../ws/...`);
+if it updates in real time, the `/ws` routing and the baked `NEXT_PUBLIC_API_URL`
+are correct. A brand-new e-mail signing in via the cabinet magic-link should land
+on Lab with an empty free-tier workspace (self-serve provisioning).
+
+### Public showcase (vetrina)
+
+`/showcase` and its endpoint `/api/public/*` are exempted from Basic Auth in the
+Caddyfile (they must be reachable by anonymous visitors). Verify:
+
+```bash
+# The read-only endpoint answers WITHOUT credentials (200, JSON envelope).
+curl -s https://lab.remarka.biz/api/public/showcase | head -c 200
+# The page itself loads WITHOUT the Basic Auth prompt (200, not 401).
+curl -i https://lab.remarka.biz/showcase | head -n 1     # HTTP/2 200
+```
+
+For the dashboard to show numbers (instead of the «prima scansione in
+preparazione» placeholder) there must be a **Project whose domain equals
+`SHOWCASE_DOMAIN`** (default `remarka.biz`, set on the `api` service) **with at
+least one COMPLETED crawl**. Create it once from inside the tool: log in behind
+Basic Auth → new project `remarka.biz` → run a crawl. The vetrina then mirrors
+that project's latest score, issue counts and trend. To point the vetrina at a
+different project, set `SHOWCASE_DOMAIN` in `.env` and `docker compose ... up -d`
+the `api` service.
 
 ---
 
@@ -222,6 +237,59 @@ crawl kills other services:
    spawned when JS-rendering is enabled).
 3. The box has 2 GB swap as a cushion, but swap-thrashing is slow — prefer
    lowering concurrency.
+
+---
+
+## M2 cutover — unica-utenza / open access (ordered, one-time)
+
+Turns Lab from an internal Basic-Auth tool into open access on the shared
+cabinet account. **Order matters:** the schema and the shared cookie must be
+live BEFORE Basic Auth is gone, or a logged-in user hits a redirect loop.
+
+Prerequisites: the code is already on the deploy branch (this runbook assumes
+`git pull` brought in the M2 commits, incl. the new Caddyfile without
+`basic_auth` and the compose env below).
+
+```bash
+cd ~/remarka-lab && git pull && cd sitelens
+BASE="-f docker-compose.yml -f docker-compose.prod.yml"
+
+# 1) Add the M2 variables to the EXISTING .env (append — do not overwrite):
+cat >> .env <<'ENV'
+# ── M2 unica-utenza ──
+COOKIE_DOMAIN=.remarka.biz          # cab_session valido su cab + lab; anche il
+                                    # cookie lingua i18n `remarka_lang` del web
+CAB_OPEN_SIGNUP=1                   # signup self-serve free (0 = invito-solo)
+SHOWCASE_DOMAIN=remarka.biz         # progetto mostrato dalla vetrina /showcase
+ENV
+
+# 2) Rebuild cabinet + web + api with the new env. The api entrypoint runs
+#    `prisma db push` on start, so the additive schema (Project.ownerClientId,
+#    CabClient.labTier) is applied automatically here. Caddy then picks up the
+#    basic-auth-free Caddyfile.
+docker compose $BASE config --quiet && echo "COMPOSE OK"
+docker compose $BASE up -d --build cabinet web api
+docker compose $BASE exec caddy caddy reload --config /etc/caddy/Caddyfile
+
+# 3) Make sure the owner (and any staff) exists as a CabUser with isStaff — the
+#    ONLY way isStaff gets set. Run it from the `api` container: the standalone
+#    cabinet/web images are trimmed (no pnpm/tsx), but the api image ships the
+#    full toolchain + every workspace on disk. Idempotent; re-run per staff
+#    e-mail. Requires api to be up (step 2). If it was already set on an earlier
+#    cabinet deploy, this is a harmless no-op.
+docker compose $BASE exec api pnpm --filter @sitelens/cabinet seed -- \
+  --staff --email owner@remarka.biz --locale it
+
+# 4) Verify open access + SSO:
+curl -sI https://lab.remarka.biz/ | grep -i '^location'        # → cab.remarka.biz/login
+curl -s https://lab.remarka.biz/api/public/showcase | head -c 120
+```
+
+Notes:
+- The showcase shows numbers only once a `Project` with `domain=remarka.biz` has
+  a COMPLETED crawl (create it from the tool once — see "Public showcase" above).
+- Rollback: re-add a `basic_auth` block to the Caddyfile and reload Caddy
+  (§2). The app-level guard keeps working with or without it.
 
 ---
 

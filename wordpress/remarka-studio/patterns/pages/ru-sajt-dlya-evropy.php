@@ -150,6 +150,9 @@
 </table>
 <!-- /wp:html --></div>
 <!-- /wp:group -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:20px"><a href="/ru/kabinet-klienta/">В каждый проект входит кабинет клиента: стадии, согласования и файлы в одном месте →</a></p>
+<!-- /wp:html -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small","style":{"spacing":{"margin":{"top":"20px"}}}} -->
 <p class="has-grigio-color has-text-color has-small-font-size" style="margin-top:20px;max-width:70ch">Дата запуска — в договоре, каждый рабочий день просрочки — минус 1% от суммы. Цена фиксируется при подписании.</p>
 <!-- /wp:paragraph -->

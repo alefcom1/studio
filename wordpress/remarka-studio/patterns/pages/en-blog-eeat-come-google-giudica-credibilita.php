@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">E-E-A-T: how Google judges your credibility</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/eeat-cover.svg" alt="What E-E-A-T is: experience, expertise, authoritativeness and trust — the four pillars of Google’s Search Quality Rater Guidelines" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/eeat-cover.svg" alt="What E-E-A-T is: experience, expertise, authoritativeness and trust — the four pillars of Google’s Search Quality Rater Guidelines" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -42,7 +42,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The four words don’t all carry equal weight. In Google’s guidelines the central pillar is Trust: experience, expertise and authoritativeness mostly serve to support it. It makes sense: content can be written by a genuine expert, but if the site isn’t secure or it’s unclear who’s behind it, trust collapses anyway.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/eeat-pilastri.svg" alt="The four E-E-A-T pillars — experience, expertise, authoritativeness, trust — with the eight trust signals readable in the page code" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The four E-E-A-T pillars and some concrete signals that fall under them: portfolio and case studies, an “about” page, structured data and external profiles, HTTPS, contacts, VAT number, privacy. Trust is the central pillar.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/eeat-pilastri.svg" alt="The four E-E-A-T pillars — experience, expertise, authoritativeness, trust — with the eight trust signals readable in the page code" width="1200" height="520" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The four E-E-A-T pillars and some concrete signals that fall under them: portfolio and case studies, an “about” page, structured data and external profiles, HTTPS, contacts, VAT number, privacy. Trust is the central pillar.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">The signals you can actually control<span class="sr-accent-dot">.</span></h2>

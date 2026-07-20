@@ -79,5 +79,9 @@ return array(
 		'zakon-o-dostupnosti-sajtov' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-eaa-cover.svg' ),
 		'sajt-v-chatgpt' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-chatgpt-cover.svg' ),
 		'russkoyazychnaya-auditoriya-v-evrope' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-rus-cover.svg' ),
+		'area-clienti-agenzia-web' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/areaclienti-cover.svg' ),
+		'web-agency-client-portal' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/areaclienti-cover.svg' ),
+		'monitoraggio-sito-dopo-lancio' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/monitoraggio-cover.svg' ),
+		'website-monitoring-after-launch' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/monitoraggio-cover.svg' ),
 	),
 );

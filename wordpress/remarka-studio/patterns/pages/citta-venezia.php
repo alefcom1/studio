@@ -99,7 +99,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">ukrinitsy.ru</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="ukrinitsy-mobile-390.jpg" alt="Sito vetrina della guest house ukrinitsy.ru, versione mobile" caption="ukrinitsy.ru — prima schermata, mobile" mobile="1"]
+[sr_shot file="ukrinitsy-mobile-390.webp" alt="Sito vetrina della guest house ukrinitsy.ru, versione mobile" caption="ukrinitsy.ru — prima schermata, mobile" mobile="1"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Audit completo: test automatico (Lighthouse) più verifica manuale — tastiera, screen reader, contenuti.</span></div><div><span class="sr-mono">✓</span><span>Correzione di tema, contrasti, etichette dei moduli e struttura dei titoli.</span></div><div><span class="sr-mono">✓</span><span>Navigazione da tastiera e focus sempre visibile su ogni elemento interattivo.</span></div><div><span class="sr-mono">✓</span><span>Dichiarazione di accessibilità pubblicata, il documento che la norma richiede.</span></div><div><span class="sr-mono">✓</span><span>Audit di verifica finale secondo lo standard WCAG 2.1 AA, a correzioni fatte.</span></div><div><span class="sr-mono">✓</span><span>Prezzo chiuso dopo l’audit, consegna in 3 settimane con penale in contratto.</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/area-clienti/">Ogni progetto include l’area clienti: fasi, approvazioni e file in un unico posto →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->

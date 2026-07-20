@@ -88,6 +88,9 @@
 <div class="wp-block-column" style="flex-basis:62%"><!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px">Non solo per i clienti: il gruppo Remarka sviluppa e usa in produzione i propri prodotti digitali — una piattaforma di traduzione AI, un TMS per i progetti linguistici e un servizio di documenti standard. Li pubblichiamo come casi studio con metriche tecniche reali, marchiati «Product Lab».</p>
 <!-- /wp:paragraph -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:14px"><a href="/area-clienti/">Ogni progetto include l’area clienti: fasi, approvazioni e file in un unico posto →</a></p>
+<!-- /wp:html -->
 </div>
 <!-- /wp:column -->
 </div>

@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Core Web Vitals in 2026: what Google actually measures</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cwv-cover.svg" alt="Core Web Vitals in 2026: LCP, INP and CLS, the three metrics Google measures on mobile" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cwv-cover.svg" alt="Core Web Vitals in 2026: LCP, INP and CLS, the three metrics Google measures on mobile" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -33,7 +33,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">INP (Interaction to Next Paint) measures responsiveness: I tap a button, how long does the site take to respond? Since 2024 it has replaced the old FID as the official metric, and it’s the most underrated one. CLS (Cumulative Layout Shift) instead measures stability: how many times, while the page loads, the elements “jump” and make you click the wrong thing. Anyone who has tried to press “Add to cart” and bought a different product because the page shifted knows exactly what we mean.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cwv-soglie.svg" alt="The “good”, “needs improvement” and “poor” thresholds of LCP, INP and CLS" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The thresholds of the three Core Web Vitals. LCP under 2.5 seconds and CLS under 0.1 are the values cited in the article; INP under 200 ms is the official “good” threshold. Source: web.dev (Google), Web Vitals.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/cwv-soglie.svg" alt="The “good”, “needs improvement” and “poor” thresholds of LCP, INP and CLS" width="1200" height="500" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The thresholds of the three Core Web Vitals. LCP under 2.5 seconds and CLS under 0.1 are the values cited in the article; INP under 200 ms is the official “good” threshold. Source: web.dev (Google), Web Vitals.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Why the mobile score is the only one that counts<span class="sr-accent-dot">.</span></h2>

@@ -3,7 +3,7 @@
  * Title: Pagina — Servizi (elenco)
  * Slug: remarka-studio/servizi-index
  * Categories: remarka-pagine
- * Description: Elenco dei servizi con link alle pagine dettaglio + linee premium.
+ * Description: Elenco dei servizi con link alle pagine dettaglio, linee premium e polosa dei progetti reali.
  * Viewport Width: 1400
  */
 ?>
@@ -26,7 +26,7 @@
 <h3 class="wp-block-heading">Siti aziendali</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Quindici pagine, due lingue, CMS per aggiornarlo da soli. Progettato per trasformare visite in richieste di preventivo.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Un sito web aziendale di quindici pagine, due lingue e un CMS per aggiornarlo da soli. Progettato per trasformare le visite in richieste di preventivo.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/servizi/siti-aziendali/">Scopri →</a></p>
@@ -38,7 +38,7 @@
 <h3 class="wp-block-heading">E-commerce</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Catalogo veloce, checkout in un passaggio, fatturazione elettronica integrata: pensato per chi vende, non solo per chi naviga.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Realizzazione siti e-commerce con catalogo veloce, checkout in un passaggio e fatturazione elettronica integrata: pensata per chi vende, non solo per chi naviga.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/servizi/e-commerce/">Scopri →</a></p>
@@ -50,7 +50,7 @@
 <h3 class="wp-block-heading">Siti progressivi PWA</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Installabile, funziona offline, si apre all’istante anche alla decima visita: senza i costi e i tempi di App Store e Play Store.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Una progressive web app installabile, che funziona offline e si apre all’istante anche alla decima visita: senza i costi e i tempi di App Store e Play Store.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/servizi/siti-pwa/">Scopri →</a></p>
@@ -62,7 +62,7 @@
 <h3 class="wp-block-heading">Restyling e migrazione</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Nessun posizionamento perso, nessun contenuto da riscrivere: solo la base tecnica cambia, e cambia in meglio.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Rifacimento sito web senza perdere posizionamento e senza riscrivere i contenuti: cambia solo la base tecnica, e cambia in meglio.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/servizi/restyling-migrazione/">Scopri →</a></p>
@@ -74,7 +74,7 @@
 <h3 class="wp-block-heading">SEO tecnica</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Core Web Vitals, dati strutturati e sitemap corretti: la parte tecnica della SEO, quella che il copywriting da sola non risolve.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Core Web Vitals, dati strutturati e sitemap corretti: è la SEO tecnica, quella che il copywriting da solo non risolve.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/servizi/seo-tecnica/">Scopri →</a></p>
@@ -86,7 +86,7 @@
 <h3 class="wp-block-heading">Siti multilingue</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
-<p class="has-grigio-color has-text-color has-small-font-size">Dal 2001 è il mestiere del gruppo Remarka: traduzione professionale, non automatica, con SEO multilingue corretta fin dal primo giorno.</p>
+<p class="has-grigio-color has-text-color has-small-font-size">Un sito web multilingua è il mestiere del gruppo Remarka dal 2001: traduzione professionale, non automatica, con SEO multilingue corretta fin dal primo giorno.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/servizi/siti-multilingue/">Scopri →</a></p>
@@ -107,6 +107,24 @@
 <!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"320px"}} -->
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:320px"><div class="sr-card sr-card--carta"><p class="sr-eyebrow">Flagship</p><h3 class="wp-block-heading" style="font-size:22px">Export Ready</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Il sito e la sua versione estera sotto un unico contratto: localizzazione da madrelingua, SEO internazionale, KPI per mercato.</p><p class="sr-card-link" style="margin-top:16px"><a href="/servizi/export-ready/">Scopri →</a></p></div><div class="sr-card sr-card--carta"><p class="sr-eyebrow">Prodotti digitali</p><h3 class="wp-block-heading" style="font-size:22px">Web app su misura</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Aree clienti, configuratori, portali B2B e integrazioni: quando un sito non basta.</p><p class="sr-card-link" style="margin-top:16px"><a href="/servizi/web-app/">Scopri →</a></p></div><div class="sr-card sr-card--carta"><p class="sr-eyebrow">Obbligo di legge</p><h3 class="wp-block-heading" style="font-size:22px">Adeguamento EAA</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Il vostro sito già online, portato allo standard WCAG 2.1 AA: audit, correzioni e dichiarazione di accessibilità. Obbligo di legge dal 2025.</p><p class="sr-card-link" style="margin-top:16px"><a href="/servizi/adeguamento-eaa/">Scopri →</a></p></div></div>
 <!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Dai progetti del gruppo</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Interfacce vere, in produzione<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:70ch">Tre schermate dai progetti che il gruppo Remarka usa e mantiene ogni giorno — non mockup. I casi completi, con i link ai siti vivi, sono nel catalogo.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<div class="sr-proj-strip"><figure class="sr-proj-strip__item"><img src="/wp-content/themes/remarka-studio/assets/img/casi/servizi-techperevod.webp" alt="Schermata reale del sito techperevod.com" width="960" height="640" loading="lazy" decoding="async"/><figcaption class="sr-mono">techperevod.com</figcaption></figure><figure class="sr-proj-strip__item"><img src="/wp-content/themes/remarka-studio/assets/img/casi/servizi-perevod4-catalog.webp" alt="Schermata reale del catalogo perevod4.ru" width="960" height="640" loading="lazy" decoding="async"/><figcaption class="sr-mono">perevod4.ru</figcaption></figure><figure class="sr-proj-strip__item"><img src="/wp-content/themes/remarka-studio/assets/img/casi/servizi-tms.webp" alt="Schermata reale del TMS interno del gruppo" width="960" height="640" loading="lazy" decoding="async"/><figcaption class="sr-mono">TMS · interno</figcaption></figure></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:24px"><a href="/casi-studio/">Tutti i progetti, con i link vivi →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->

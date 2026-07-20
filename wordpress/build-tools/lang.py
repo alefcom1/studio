@@ -23,6 +23,7 @@ SINGLES = {
     'brief':             {'en': 'brief',              'ru': 'brif'},
     'milano':            {'en': 'milan',              'ru': 'milan'},
     'chi-siamo':         {'en': 'about',              'ru': 'o-studii'},
+    'area-clienti':      {'en': 'client-area',        'ru': 'kabinet-klienta'},
     'privacy':           {'en': 'privacy',            'ru': 'privacy'},
     'cookie-policy':     {'en': 'cookie-policy',      'ru': 'cookie-policy'},
     'cookie-preferenze': {'en': 'cookie-preferences', 'ru': 'cookie-preferences'},
@@ -98,6 +99,9 @@ BLOG_SLUGS = {
     'hreflang-sito-multilingue':            {'en': 'hreflang-multilingual-website',        'ru': 'hreflang-mnogojazychnyj-sajt'},
     'sito-per-export':                      {'en': 'website-for-export',                   'ru': 'sajt-dlja-eksporta'},
     'manutenzione-wordpress':               {'en': 'wordpress-maintenance',                'ru': 'obsluzhivanie-wordpress'},
+    # Sputnik area clienti + Lab Monitor — IT + EN (RU è un batch a sé).
+    'area-clienti-agenzia-web':             {'en': 'web-agency-client-portal',             'ru': 'kabinet-klienta-veb-studii'},
+    'monitoraggio-sito-dopo-lancio':        {'en': 'website-monitoring-after-launch',      'ru': 'monitoring-sajta-posle-zapuska'},
 }
 
 # Articoli del blog pubblicati solo in IT + EN in questa fase (la loro versione
@@ -128,6 +132,9 @@ BLOG_IT_EN_ONLY = {
     'hreflang-sito-multilingue',
     'sito-per-export',
     'manutenzione-wordpress',
+    # Sputnik area clienti + Lab Monitor
+    'area-clienti-agenzia-web',
+    'monitoraggio-sito-dopo-lancio',
 }
 
 # Blog · Batch 5 — RU-only (scritti a mano in russo, senza specchio IT/EN;

@@ -63,6 +63,13 @@
       </div>
     </div>
 
+    <div data-sr-checkup-priorities-wrap style="margin-top:32px">
+      <p class="sr-eyebrow">С чего начать</p>
+      <h2 class="wp-block-heading" style="font-size:clamp(24px,2.4vw,32px)">3 задачи, которые весят больше всего</h2>
+      <p style="margin:8px 0 20px;color:var(--sr-grigio);font-size:15.5px">По степени влияния на оценку: сколько вы выиграете, решив их.</p>
+      <div class="sr-priorities" data-sr-checkup-priorities></div>
+    </div>
+
     <div style="margin-top:32px">
       <p class="sr-eyebrow">Семь измерений</p>
       <h2 class="wp-block-heading" style="font-size:clamp(24px,2.4vw,32px)">Семь светофоров, одна оценка</h2>
@@ -124,13 +131,6 @@
 </div></div>
     </div>
 
-    <div data-sr-checkup-priorities-wrap style="margin-top:32px">
-      <p class="sr-eyebrow">Приоритеты</p>
-      <h2 class="wp-block-heading" style="font-size:clamp(24px,2.4vw,32px)">3 задачи, которые весят больше всего</h2>
-      <p style="margin:8px 0 20px;color:var(--sr-grigio);font-size:15.5px">По степени влияния на оценку: сколько вы выиграете, решив их.</p>
-      <div class="sr-priorities" data-sr-checkup-priorities></div>
-    </div>
-
     <div data-sr-checkup-form-wrap style="margin-top:32px">
       <div class="sr-card sr-checkup-lead">
         <p class="sr-eyebrow">Полный отчёт</p>
@@ -153,6 +153,10 @@
           <p class="sr-mono" data-sr-checkup-success hidden style="margin-top:16px;color:var(--sr-verde)">Готово. Отчёт уже в пути к вашей почте: если не придёт за пару минут, проверьте спам или напишите нам.</p>
           <p class="sr-form-error" data-sr-checkup-error hidden>Не удалось отправить отчёт. Попробуйте ещё раз или напишите нам — пришлём вручную.</p>
         </form>
+        <div class="sr-checkup-dl">
+          <span class="sr-mono sr-checkup-dl__or">или</span>
+          <button type="button" class="sr-feedback__btn sr-checkup-dl__btn" data-sr-checkup-download data-dl-pending="Готовим PDF…">Скачать PDF сейчас — без e-mail</button>
+        </div>
         <p class="sr-mono" style="margin-top:20px;font-size:11px;color:var(--sr-grigio);opacity:.85">Без спама. Адрес используем только для отправки отчёта и, при необходимости, обратной связи. Студия Ремарка, ИНН 231149349191.</p>
       </div>
     </div>
@@ -203,6 +207,40 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Два неверных прочтения. Высокая оценка не значит «первые в Google»: она значит, что технический фундамент здоров. А если измерение показывает «Н/Д», это не поломка вашего сайта: иногда Google перегружен, иногда сайт отказывает в автоматическом чтении. В этом случае мы считаем здоровье по удавшимся измерениям и честно об этом сообщаем.</p>
 <!-- /wp:paragraph -->
 </section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Из сообщества</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Что говорят те, кто уже попробовал<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:70ch">Первые отзывы с запуска на Product Hunt — приводим в оригинале, с разрешения авторов.</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"300px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:300px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«A solid free checker especially for GDPR and AI readiness, those get overlooked a lot.»</p><p class="sr-mono sr-recensione__firma">Şengül Akkoca · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html --></div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«Ran the GDPR and speed tests on my blog and the results page broke things down in plain language instead of jargon, which I appreciated more than expected.»</p><p class="sr-mono sr-recensione__firma">Ercan · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html --></div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«Ran the GDPR and accessibility checks on my portfolio site and the accessibility report actually pointed out color contrast issues I had missed for years. Solid free tool, will keep using it.»</p><p class="sr-mono sr-recensione__firma">Demet · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html --></div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:html -->
+<p class="sr-recensione__testo">«ran it on my portfolio site and the accessibility check actually flagged stuff i never noticed before, super useful. the speed results matched what i already knew from lighthouse so feels legit.»</p><p class="sr-mono sr-recensione__firma">Mihriban · <a href="https://www.producthunt.com/products/studio-remarka" target="_blank" rel="noopener">Product Hunt ↗</a></p>
+<!-- /wp:html --></div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group --></section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->

@@ -99,7 +99,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">traduzione.tech</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="att-home-1440.jpg" alt="Home page del sito dell’agenzia di traduzioni traduzione.tech, con i servizi in evidenza" caption="ATT — home, blocco servizi, desktop" mobile="0"]
+[sr_shot file="att-home-1440.webp" alt="Home page del sito dell’agenzia di traduzioni traduzione.tech, con i servizi in evidenza" caption="ATT — home, blocco servizi, desktop" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

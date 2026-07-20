@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Traduzione professionale da madrelingua (non plugin)</span></div><div><span class="sr-mono">✓</span><span>Fino a 4 lingue: italiano, inglese, tedesco, francese</span></div><div><span class="sr-mono">✓</span><span>Selettore lingua persistente</span></div><div><span class="sr-mono">✓</span><span>SEO multilingue con hreflang corretti</span></div><div><span class="sr-mono">✓</span><span>Contenuti localizzati, non solo tradotti</span></div><div><span class="sr-mono">✓</span><span>Revisione linguistica da parte del gruppo Remarka</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ garantito da contratto</span></div><div><span class="sr-mono">✓</span><span>12 mesi di assistenza e misurazioni mensili</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/area-clienti/">Ogni progetto include l’area clienti: fasi, approvazioni e file in un unico posto →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

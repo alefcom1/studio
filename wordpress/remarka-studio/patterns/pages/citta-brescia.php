@@ -51,7 +51,7 @@
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">пере.рф</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="pererf-home-1440.jpg" alt="Sito пере.рф, caso di SEO tecnica su dominio internazionalizzato" caption="пере.рф — home page" mobile="0"]
+[sr_shot file="pererf-home-1440.webp" alt="Sito пере.рф, caso di SEO tecnica su dominio internazionalizzato" caption="пере.рф — home page" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

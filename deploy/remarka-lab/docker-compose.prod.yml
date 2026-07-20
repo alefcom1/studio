@@ -56,6 +56,14 @@ services:
       CORS_ORIGIN: ${CORS_ORIGIN:-https://lab.remarka.biz}
       PORT: 3001
       NODE_ENV: production
+      # Dominio del progetto mostrato dalla vetrina pubblica /api/public/showcase.
+      # Deve esistere un Project con questo domain e almeno un crawl COMPLETED,
+      # altrimenti l'endpoint risponde { data: null } e la pagina mostra il
+      # placeholder «prima scansione in preparazione».
+      SHOWCASE_DOMAIN: ${SHOWCASE_DOMAIN:-remarka.biz}
+      # TTL sessione: l'API rinnova cab_session con questa durata (parità col
+      # cabinet, che usa la stessa var). Default 7 giorni.
+      SESSION_TTL_DAYS: ${SESSION_TTL_DAYS:-7}
     env_file: .env
     # Remove the base file's `ports: ['3001:3001']` publication entirely.
     # Compose CONCATENATES `ports` on merge, so a normal override would leave the
@@ -99,6 +107,11 @@ services:
         # (https://lab.remarka.biz/api, wss://lab.remarka.biz/ws). Requires the
         # one-line ARG/ENV patch to apps/web/Dockerfile — see setup.md step 4.
         NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://lab.remarka.biz}
+        # Baked at BUILD (NEXT_PUBLIC_*): where Monitor sends users to sign in /
+        # out under the unified account (M2). The (protected) guard redirects an
+        # unauthenticated visitor here, and the logout button lands on its
+        # /logout. Keep equal to CABINET_URL.
+        NEXT_PUBLIC_CABINET_URL: ${CABINET_URL:-https://cab.remarka.biz}
     restart: unless-stopped
     environment:
       NODE_ENV: production
@@ -118,6 +131,13 @@ services:
       # in at build via build.args above) — set here only to avoid a misleading
       # localhost showing up on `docker inspect`.
       NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://lab.remarka.biz}
+      NEXT_PUBLIC_CABINET_URL: ${CABINET_URL:-https://cab.remarka.biz}
+      # i18n Monitor (IT/EN/RU): il middleware scrive il cookie di lingua
+      # `remarka_lang` su questo dominio padre, così la scelta fatta sul sito
+      # WP (remarka.biz, link ?lang=…) o nel cabinet vale anche qui su
+      # lab.remarka.biz — stessa domain condivisa di cab_session (M2). Runtime
+      # env (NON NEXT_PUBLIC): il middleware gira lato server, la legge a runtime.
+      COOKIE_DOMAIN: ${COOKIE_DOMAIN:-.remarka.biz}
     # Same as api: drop the inherited `ports: ['3000:3000']` publication.
     # Caddy reaches web as `web:3000` over the internal Docker network.
     ports: !reset []
@@ -163,6 +183,14 @@ services:
       CABINET_URL: ${CABINET_URL:-https://cab.remarka.biz}
       SESSION_TTL_DAYS: ${SESSION_TTL_DAYS:-7}
       MAGIC_TTL_MINUTES: ${MAGIC_TTL_MINUTES:-15}
+      # Unica-utenza (M2): il cookie di sessione vale per cab + lab. DEVE essere
+      # il dominio padre condiviso — senza questo un utente loggato nel cabinet
+      # non è riconosciuto su lab.remarka.biz (redirect loop dopo aver tolto il
+      # Basic Auth). set/clear usano la stessa domain (lib/session.ts).
+      COOKIE_DOMAIN: ${COOKIE_DOMAIN:-.remarka.biz}
+      # Signup self-serve free: e-mail sconosciuta → nuovo CabUser via magic-link.
+      # Metti CAB_OPEN_SIGNUP=0 per tornare a invito-solo (clienti seed dallo staff).
+      CAB_OPEN_SIGNUP: ${CAB_OPEN_SIGNUP:-1}
       # Brevo transactional email (owner decision 16.07.2026, EU/GDPR). Empty
       # key = dev mode: the app logs the magic link to stdout instead of
       # sending — it does NOT fail startup or crash on a missing key, but a

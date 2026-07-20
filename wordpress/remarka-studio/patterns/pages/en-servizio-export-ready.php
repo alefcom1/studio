@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Localization by native speakers only: translators’ names and credentials in the contract</span></div><div><span class="sr-mono">✓</span><span>A glossary of your industry’s terminology: it’s a deliverable, and it stays with you</span></div><div><span class="sr-mono">✓</span><span>Signed international SEO checklist: hreflang, metadata, and URLs for every market, attached to the acceptance report</span></div><div><span class="sr-mono">✓</span><span>Monthly KPIs for every market, for 12 months: traffic, rankings, inquiries</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/client-area/">Every project includes the client area: stages, approvals and files in one place →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

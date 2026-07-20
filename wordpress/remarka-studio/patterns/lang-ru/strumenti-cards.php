@@ -160,5 +160,13 @@
 <p class="sr-card-link sr-no-margin"><a href="/ru/instrumenty/signaly-eeat/">Попробовать →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"className":"sr-card-link","style":{"spacing":{"margin":{"top":"36px"}}}} -->
+<p class="sr-card-link" style="margin-top:36px"><a href="/ru/instrumenty/">Все 12 бесплатных инструментов →</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sr-card-link","style":{"spacing":{"margin":{"top":"8px"}}}} -->
+<p class="sr-card-link" style="margin-top:8px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Бесплатный мониторинг одного сайта — и наш сайт вживую →</a></p>
+<!-- /wp:paragraph --></section>
 <!-- /wp:group -->

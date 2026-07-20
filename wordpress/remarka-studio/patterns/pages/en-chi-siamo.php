@@ -17,6 +17,15 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
 <p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:100%">Studio Remarka was born inside the Remarka group, a translation company in business since 2001. We apply the same contractual precision to the speed of the websites we build: measured numbers, not sales promises.</p>
 <!-- /wp:paragraph -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:100%;margin-top:18px">We also build our own tools: Remarka Lab, with 12 free checks and continuous monitoring of the websites we look after, and the client area where every project is visible stage by stage. The same technology we sell, used by us every day.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"sr-card-link"} -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/en/tools/">The Lab’s free tools →</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"sr-card-link"} -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/en/client-area/">Inside the client area →</a></p>
+<!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

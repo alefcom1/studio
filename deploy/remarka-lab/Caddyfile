@@ -35,10 +35,17 @@
 lab.remarka.biz {
 	encode zstd gzip
 
-	# Basic Auth убран 19.07.2026: доступ к Monitor теперь закрывает сама
-	# авторизация приложения (незалогиненный запрос к /api/* → 401, страницы
-	# редиректят на /login). Публичны только /api/auth/*, /health и /ws
-	# (ws валидирует cookie внутри хендлера).
+	# ── No Basic Auth anymore (M2 cutover, unica-utenza; 19.07.2026) ──────────
+	# Lab is now app-guarded, not gated at the edge: every protected page runs
+	# requireLabSession() (redirects to the cabinet login on cab.remarka.biz) and
+	# every data route is behind the API auth + tenant guard (server.ts). Access
+	# is by the shared `cab_session` cookie (Domain=.remarka.biz — set COOKIE_DOMAIN
+	# on the cabinet service). The public vetrina (/showcase, /api/public/*) is
+	# open by design. Removing Basic Auth is the go-live moment for open access;
+	# PREREQUISITES (see setup.md → "M2 cutover"): prisma db push applied,
+	# cabinet redeployed with COOKIE_DOMAIN=.remarka.biz, web rebuilt with
+	# NEXT_PUBLIC_CABINET_URL. Without those a logged-in user bounces in a redirect
+	# loop. To roll back, re-add a `basic_auth { ... }` block here and reload Caddy.
 
 	# ── WebSocket: /ws and everything under it → api ─────────────────────────
 	@ws path /ws /ws/*

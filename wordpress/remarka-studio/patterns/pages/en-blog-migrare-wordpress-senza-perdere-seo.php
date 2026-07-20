@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Migrating off WordPress without losing your Google rankings</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/migrare-cover.svg" alt="Migrating from WordPress without losing SEO: 301 redirects, a URL map, and six weeks of monitoring" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/migrare-cover.svg" alt="Migrating from WordPress without losing SEO: 301 redirects, a URL map, and six weeks of monitoring" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -42,7 +42,7 @@
 <div class="sr-list-rows"><div><span class="sr-mono">a</span><span>Audit of the current site: which pages bring traffic and rankings, which links point to the site.</span></div><div><span class="sr-mono">b</span><span>URL map: every old address matched to its new one, without leaving orphan pages.</span></div><div><span class="sr-mono">c</span><span>One-to-one 301 redirects: every old page points to its new equivalent, not all to the homepage.</span></div><div><span class="sr-mono">d</span><span>Check of the sitemap, canonicals, and structured data on the new site, before publishing.</span></div><div><span class="sr-mono">e</span><span>Rollback plan: if something goes wrong, you roll back in minutes, not days.</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/migrare-301.svg" alt="A one-to-one 301 redirect that transfers SEO value versus the “all to home” redirect that loses it" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Every old page must point to its new equivalent (1→1): the “all to home” redirect scatters your rankings. Source: Google Search Central, site moves and redirects.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/migrare-301.svg" alt="A one-to-one 301 redirect that transfers SEO value versus the “all to home” redirect that loses it" width="1200" height="500" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Every old page must point to its new equivalent (1→1): the “all to home” redirect scatters your rankings. Source: Google Search Central, site moves and redirects.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">The first six weeks after<span class="sr-accent-dot">.</span></h2>

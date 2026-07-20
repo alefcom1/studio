@@ -30,6 +30,10 @@ require_once get_stylesheet_directory() . '/inc/case-shots.php';
 // (docs/piano-implementazione-fase-A.md, decisione titolare 17.07.2026).
 require_once get_stylesheet_directory() . '/inc/psi-score.php';
 
+// Mega-menu della barra principale: «Servizi» e «Strumenti» aprono un pannello
+// a tendina che raggruppa le sottopagine (il sito è cresciuto — 20.07.2026).
+require_once get_stylesheet_directory() . '/inc/megamenu.php';
+
 /**
  * Есть ли локальные шрифты? Маркер — главный woff2 Clash Display.
  * Пока владелец не положил файлы в assets/fonts, тема грузит CDN
@@ -120,7 +124,18 @@ function remarka_enqueue_assets(): void {
 			'next'    => remarka_str( 'form_continua' ),
 			'sending' => remarka_str( 'form_invio_corso' ),
 			'choose'  => remarka_str( 'form_err_scelta' ),
-		) ) . ';',
+		) ) . ';'
+		// Ponte lingua → Remarka Lab (Monitor) e cabinet. Sincronizza la lingua
+		// del sito (it/en/ru) nel cookie condiviso `remarka_lang` sul dominio
+		// padre .remarka.biz: chi arriva dalla versione IT/EN/RU del sito trova
+		// lab.remarka.biz e cab.remarka.biz già nella stessa lingua, senza
+		// dipendere solo dall'Accept-Language del browser (richiesta owner
+		// 20.07: "dalla versione italiana del sito → Monitor in italiano"). Il
+		// Lab ha comunque il suo switch IT/EN/RU che sovrascrive questo cookie.
+		// Lato client → cache-safe; best-effort (try/catch).
+		. '(function(){try{var l=' . wp_json_encode( remarka_current_lang() ) . ';'
+		. 'if(/(^|\\.)remarka\\.biz$/.test(location.hostname)){'
+		. 'document.cookie="remarka_lang="+l+";path=/;max-age=31536000;samesite=lax;domain=.remarka.biz";}}catch(e){}})();',
 		'before'
 	);
 }
@@ -2775,6 +2790,104 @@ function remarka_tool_report_handler(): void {
 	wp_send_json_success( array( 'ok' => true ) );
 }
 add_action( 'wp_ajax_remarka_tool_report', 'remarka_tool_report_handler' );
+
+/**
+ * Handler AJAX `remarka_tool_report_download`: lo stesso PDF del check-up,
+ * ma scaricato subito nel browser, senza e-mail né consenso (nessun dato
+ * personale raccolto — feedback lancio Product Hunt 19.07.2026, «wish there
+ * was a quick export option»). Errori in JSON; successo = binario PDF.
+ */
+function remarka_tool_report_download_handler(): void {
+	if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'remarka_tools' ) ) {
+		wp_send_json_error( array( 'message' => 'sessione scaduta', 'code' => 'nonce' ), 403 );
+	}
+
+	$ip    = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
+	$key   = 'remarka_rptdl_' . md5( $ip );
+	$count = (int) get_transient( $key );
+	if ( $count >= 3 ) {
+		wp_send_json_error( array( 'message' => 'troppe richieste, riprovate tra un\'ora', 'code' => 'rate_limit' ), 429 );
+	}
+	set_transient( $key, $count + 1, HOUR_IN_SECONDS );
+
+	$raw  = wp_unslash( $_POST['payload'] ?? '' );
+	$data = is_string( $raw ) && '' !== $raw ? remarka_tool_report_sanitize_payload( $raw ) : null;
+	if ( null === $data ) {
+		wp_send_json_error( array( 'message' => 'payload non valido', 'code' => 'invalid_payload' ), 400 );
+	}
+
+	if ( ! empty( remarka_checkup_pdf_missing_extensions() ) ) {
+		wp_send_json_error( array( 'message' => 'servizio PDF non disponibile', 'code' => 'pdf_unavailable' ), 500 );
+	}
+
+	$data['consent_monthly'] = false;
+	$data['date_display']    = date_i18n( 'd.m.Y' );
+	// Stesso AI-insight del report via e-mail (cache per dominio: il secondo
+	// render dello stesso sito non consuma un'altra chiamata).
+	$data['ai_insight'] = remarka_tool_ai_insight_checkup( $data['scores'], $data['url'], $data['locale'] );
+
+	$pdf = remarka_checkup_render_pdf( $data, $data['locale'] );
+	if ( null === $pdf || '' === $pdf ) {
+		wp_send_json_error( array( 'message' => 'generazione PDF fallita', 'code' => 'pdf_failed' ), 500 );
+	}
+
+	$domain = preg_replace( '#^https?://#i', '', $data['url'] );
+	$domain = sanitize_file_name( rtrim( (string) $domain, '/' ) );
+
+	nocache_headers();
+	header( 'Content-Type: application/pdf' );
+	header( 'Content-Disposition: attachment; filename="checkup-' . $domain . '.pdf"' );
+	header( 'Content-Length: ' . strlen( $pdf ) );
+	echo $pdf; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- binario PDF.
+	exit;
+}
+add_action( 'wp_ajax_remarka_tool_report_download', 'remarka_tool_report_download_handler' );
+add_action( 'wp_ajax_nopriv_remarka_tool_report_download', 'remarka_tool_report_download_handler' );
+
+/**
+ * Handler AJAX `remarka_tool_feedback`: «Vi è stato utile?» sugli strumenti
+ * del Lab. Nessun dato personale (niente e-mail): voto sì/no + commento
+ * facoltativo → wp_mail alla studio. Nonce riusato `remarka_tools`,
+ * rate-limit 10/ora per IP.
+ */
+function remarka_tool_feedback_handler(): void {
+	if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'remarka_tools' ) ) {
+		wp_send_json_error( array( 'message' => 'sessione scaduta', 'code' => 'nonce' ), 403 );
+	}
+
+	$ip    = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
+	$key   = 'remarka_fbk_' . md5( $ip );
+	$count = (int) get_transient( $key );
+	if ( $count >= 10 ) {
+		wp_send_json_error( array( 'message' => 'troppe richieste', 'code' => 'rate_limit' ), 429 );
+	}
+	set_transient( $key, $count + 1, HOUR_IN_SECONDS );
+
+	$vote = sanitize_key( wp_unslash( $_POST['vote'] ?? '' ) );
+	if ( ! in_array( $vote, array( 'yes', 'no' ), true ) ) {
+		wp_send_json_error( array( 'message' => 'voto non valido', 'code' => 'invalid_vote' ), 400 );
+	}
+	$tool    = substr( sanitize_key( wp_unslash( $_POST['tool'] ?? '' ) ), 0, 40 );
+	$comment = sanitize_textarea_field( wp_unslash( $_POST['comment'] ?? '' ) );
+	$comment = mb_substr( $comment, 0, 1000 );
+	$page    = esc_url_raw( wp_unslash( $_POST['page'] ?? '' ) );
+	// Solo pagine di questo sito nell'oggetto della mail (niente URL arbitrari).
+	if ( '' !== $page && 0 !== strpos( $page, home_url() ) ) {
+		$page = '';
+	}
+
+	$subject = sprintf( 'Feedback strumento [%s]: %s', $tool ?: 'n/d', 'yes' === $vote ? 'utile' : 'non utile' );
+	$body    = "Voto: " . ( 'yes' === $vote ? 'utile ✓' : 'non utile ✗' ) . "\n"
+		. "Strumento: " . ( $tool ?: 'n/d' ) . "\n"
+		. ( $page ? "Pagina: {$page}\n" : '' )
+		. ( $comment ? "\nCommento:\n{$comment}\n" : "\n(nessun commento)\n" );
+
+	wp_mail( remarka_form_recipient(), $subject, $body );
+
+	wp_send_json_success( array( 'ok' => true ) );
+}
+add_action( 'wp_ajax_remarka_tool_feedback', 'remarka_tool_feedback_handler' );
+add_action( 'wp_ajax_nopriv_remarka_tool_feedback', 'remarka_tool_feedback_handler' );
 add_action( 'wp_ajax_nopriv_remarka_tool_report', 'remarka_tool_report_handler' );
 
 /* ---------- llms.txt: indice testuale per i crawler AI ----------

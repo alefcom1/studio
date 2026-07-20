@@ -77,6 +77,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Полный аудит: автоматический тест (Lighthouse) плюс ручная проверка — клавиатура, скринридер, контент.</span></div><div><span class="sr-mono">✓</span><span>Исправление темы, контрастов, подписей к полям форм и структуры заголовков.</span></div><div><span class="sr-mono">✓</span><span>Навигация с клавиатуры и всегда видимый фокус на интерактивных элементах.</span></div><div><span class="sr-mono">✓</span><span>Опубликованная декларация о доступности — документ, которого требует закон.</span></div><div><span class="sr-mono">✓</span><span>Финальный аудит-подтверждение по стандарту WCAG 2.1 AA — после исправлений.</span></div><div><span class="sr-mono">✓</span><span>Фиксированная цена после аудита, сдача за 3 недели с неустойкой в договоре.</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/ru/kabinet-klienta/">В каждый проект входит кабинет клиента: стадии, согласования и файлы в одном месте →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->

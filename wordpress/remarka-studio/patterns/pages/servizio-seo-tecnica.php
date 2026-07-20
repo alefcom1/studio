@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Audit tecnico SEO completo</span></div><div><span class="sr-mono">✓</span><span>Dati strutturati (schema.org) per ogni tipo di pagina</span></div><div><span class="sr-mono">✓</span><span>Ottimizzazione Core Web Vitals</span></div><div><span class="sr-mono">✓</span><span>Sitemap XML e file robots ottimizzati</span></div><div><span class="sr-mono">✓</span><span>Struttura URL e gerarchia dei contenuti</span></div><div><span class="sr-mono">✓</span><span>Ottimizzazione meta title e description</span></div><div><span class="sr-mono">✓</span><span>Report mensile di posizionamento</span></div><div><span class="sr-mono">✓</span><span>PageSpeed 90+ garantito da contratto</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/area-clienti/">Ogni progetto include l’area clienti: fasi, approvazioni e file in un unico posto →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

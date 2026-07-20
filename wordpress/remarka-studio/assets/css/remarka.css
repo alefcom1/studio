@@ -285,7 +285,7 @@ body.dark-mode .site-description {
    esattamente sul filo del testo sopra e delle colonne del footer sotto),
    con margini laterali sempre visibili, angoli arrotondati, sfondo blu notte
    (gradiente ravvicinato ai pixel del mockup, non oltremare piatto) e
-   l'illustrazione (laptop+globo, assets/img/cta-analisi.webp — stesso
+   l'illustrazione (diagnostic report, assets/img/cta-analisi.webp — stesso
    ritaglio del mockup, bordo sinistro che si dissolve nel fondo tinta
    unita) agganciata a destra. Testo allineato a sinistra come nel mockup
    (i bottoni restano centrati via layout JSON nel generatore per markup
@@ -304,6 +304,21 @@ body.dark-mode .site-description {
   padding-top: clamp(48px, 6vw, 80px);
   padding-bottom: clamp(48px, 6vw, 80px);
   text-align: left;
+}
+
+/* Sulla griglia 1440 la card è larga ~1392px: l'illustrazione a destra è
+   dimensionata su `auto 100%` (altezza banda, larghezza proporzionale), quindi
+   su una banda bassa e larga diventava una striscia stretta a destra (segnalato
+   20.07 «pережало в ширину»). Diamo alla banda un'altezza che cresce con la
+   viewport: l'immagine resta in proporzione (nessuna deformazione) ma più
+   grande. Contenuto centrato in verticale per non lasciare vuoto in basso. */
+@media (min-width: 1024px) {
+  .sr-cta-band {
+    min-height: clamp(340px, 23vw, 440px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 /* .sr-section > :not(.sr-watermark) (sopra in questo file) centra ogni
@@ -434,6 +449,25 @@ body.dark-mode .site-description {
    le nostre Pagine. */
 body.page .entry-title {
   display: none;
+}
+
+/* Breadcrumb di Prespa (.entry-header > .breadcrumbs): con .site-wrapper ora a
+   tutta larghezza (griglia 1440) finiva incollato al bordo sinistro dello
+   schermo. Lo allineiamo alla STESSA griglia del contenuto — così «Home /
+   …» cade esattamente sotto l'eyebrow dell'hero, coerente su tutte le pagine —
+   e rendiamo i link visibilmente cliccabili (erano grigi, sembravano testo). */
+body .entry-header {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.breadcrumbs a {
+  color: var(--sr-oltremare);
+  text-decoration: none;
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
 }
 
 /* Фон-сетка героя */
@@ -1093,24 +1127,27 @@ body.page .entry-title {
   margin: 0;
 }
 
+/* Gli screenshot dei casi (WebP reali, branch images/chatgpt) NON si
+   ritagliano: niente aspect-ratio forzato né object-fit:cover — proporzioni
+   native del file, larghezza piena, altezza automatica. Il fondo carta
+   fa da cornice ai file che portano già i margini chiari. */
 .sr-browser img {
   display: block !important;
   width: 100% !important;
   height: auto;
-  min-height: 220px;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  background: var(--sr-traccia) !important;
+  object-fit: contain;
+  background: var(--sr-carta) !important;
 }
 
 /* Cornice stretta per screenshot mobile (Mini App, ukrinitsy): la stessa
-   .sr-browser, ma centrata e limitata in larghezza dentro la colonna. */
+   .sr-browser, ma centrata e limitata in larghezza dentro la colonna.
+   I sorgenti sono verticali (390×844): nessuno stiramento in card
+   orizzontale, il rapporto resta quello del file. */
 .sr-browser--mobile {
   max-width: 260px;
   margin-inline: auto;
 }
 
-.sr-browser--mobile img,
 .sr-browser--mobile .sr-shot-placeholder {
   aspect-ratio: 9 / 19.5;
   min-height: 0;
@@ -1635,11 +1672,25 @@ body.page .entry-title {
 
 /* ---------- Checklist a due colonne (cosa include) ---------- */
 
+/* auto-fit + min(…,100%): due colonne dove c'è spazio (sezioni larghe),
+   UNA colonna dentro i contenitori stretti (card Gratis/Monitor, colonne).
+   Il vecchio repeat(2, minmax(240px,1fr)) imponeva 520px minimi e dentro
+   una card da ~500px il testo sbordava sotto la card vicina (bug live
+   19.07.2026, /strumenti/#monitor). */
 .sr-checklist {
   display: grid;
-  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 4px 40px;
   margin-top: 40px;
+}
+
+/* Dentro una card (es. i livelli #monitor su /strumenti/) lo spazio è stretto:
+   l'auto-fit a 240px genererebbe due colonne che sforano il bordo della card.
+   Forziamo una sola colonna — una voce per riga. Le checklist a tutta larghezza
+   (area clienti ecc.) restano multi-colonna. */
+.sr-card .sr-checklist {
+  grid-template-columns: 1fr;
+  margin-top: 24px;
 }
 
 .sr-checklist > div,
@@ -3419,6 +3470,29 @@ body.page .entry-title {
   gap: 20px;
 }
 
+/* ---------- Единая сетка 1440: тело = хедер = футер ----------
+   Родительская тема Prespa заворачивает контент в .site-wrapper (max-width
+   980px), а хедер/футер — в .header-content-wrapper / .footer-content
+   (по 1180px). ВАЖНО: эти правила Prespa грузятся ПОЗЖЕ remarka.css и при
+   равной специфичности (один класс) побеждают по порядку каскада — поэтому
+   прежний `.site-wrapper{max-width:none}` в вебе не срабатывал (тело так и
+   оставалось 980px, уже хедера/футера). Диагноз по live-MHTML 20.07.2026:
+   наши правила ~стр.6885, правила Prespa ~стр.10471 → Prespa выигрывал.
+   Решение: поднимаем специфичность префиксом `body ` (специфичность бьёт
+   порядок источника детерминированно, без !important) и приводим ВСЕ ТРИ
+   контейнера к общей сетке 1440 (запрос владельца 18.07 «одна ширина для
+   хедера, тела и футера»): тело — полноширинное (1440 держат прямые дети
+   секций), хедер и футер — max-width:1440. */
+body .site-wrapper,
+body .has-sidebar .site-wrapper {
+  max-width: none;
+  padding: 0;
+}
+body .header-content-wrapper,
+body .footer-content {
+  max-width: 1440px;
+}
+
 /* ---------- Утилиты ---------- */
 
 .sr-rule-top { border-top: 1px solid var(--sr-bordo); }
@@ -3688,5 +3762,519 @@ textarea.sr-ai-llms-textarea {
 @media (min-width: 480px) {
   .sr-ai-llms-actions {
     flex-direction: row;
+  }
+}
+
+/* ---------- Illustrazioni home (branch images/chatgpt, _chatgpt-manifest.md) ----------
+   Tre layout di supporto per le immagini della home: visual del processo
+   nell'hero (sostituisce la card timeline), griglia testo/immagine/lista del
+   blocco area clienti (su mobile l'immagine si inserisce TRA testo e lista),
+   tripletta visuale delle direzioni dopo le card servizi. Stile severo:
+   bordo 1px, raggio di sistema, niente ombre. width/height sugli <img>
+   nel markup → zero CLS. */
+
+/* I key visual sono CGI su fondo blu notte (branch images/chatgpt): il
+   contenitore scuro #071A55 fa da cornice e i bordi dell'immagine si
+   dissolvono nel telaio invece di stagliarsi su un rettangolo chiaro. */
+.sr-hero-visual {
+  margin: 0;
+  background: #071A55;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.sr-hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Banda visiva a tutta larghezza (blocco area clienti sulla home, prova del
+   prezzo chiuso e linea pagamenti su /prezzi/): stesso telaio scuro. */
+.sr-visual-band {
+  margin: 32px 0 0;
+  background: #071A55;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.sr-visual-band img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sr-ac-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 24px 48px;
+  align-items: center;
+}
+.sr-ac-grid__text { grid-column: 1; grid-row: 1; }
+.sr-ac-grid__list { grid-column: 2; grid-row: 1; }
+@media (max-width: 860px) {
+  .sr-ac-grid { grid-template-columns: 1fr; }
+  .sr-ac-grid__text,
+  .sr-ac-grid__list { grid-column: 1; grid-row: auto; }
+}
+
+.sr-serv-visuals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+@media (max-width: 860px) {
+  .sr-serv-visuals { grid-template-columns: 1fr; }
+}
+.sr-serv-visual {
+  display: block;
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  background: #071A55;
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+.sr-serv-visual:hover { border-color: var(--sr-oltremare); }
+.sr-serv-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.sr-serv-visual__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--sr-bianco);
+  border-top: 1px solid var(--sr-bordo);
+  font-family: var(--sr-font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sr-inchiostro);
+}
+
+/* Visual di direzione dentro le card servizi (/servizi/) e polosa dei
+   progetti reali: immagini intere, mai ritagliate, bordo sottile. */
+.sr-card__visual {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--sr-bordo);
+  border-radius: calc(var(--sr-radius) - 2px);
+  margin-bottom: 18px;
+  background: #071A55;
+}
+
+.sr-proj-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+@media (max-width: 860px) {
+  .sr-proj-strip { grid-template-columns: 1fr; }
+}
+.sr-proj-strip__item { margin: 0; }
+.sr-proj-strip__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  background: var(--sr-carta);
+}
+.sr-proj-strip__item figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--sr-grigio);
+}
+
+/* Recensioni reali dal lancio (Product Hunt, 19.07.2026): citazioni in
+   originale inglese, firma mono con link alla fonte. Nessuna stella,
+   nessuno schema.org — solo contenuto. */
+.sr-recensione__testo {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+.sr-recensione__firma {
+  margin: 16px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--sr-grigio);
+}
+.sr-recensione__firma a {
+  color: var(--sr-grigio);
+  text-decoration-color: var(--sr-bordo);
+}
+
+/* Micro-feedback «Vi è stato utile?» sugli strumenti (UI generata da
+   remarka.js:initToolFeedback) + bottone «Scaricate il PDF adesso» del
+   check-up. Stile severo: bordi 1px, niente ombre. */
+.sr-feedback {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--sr-bordo);
+}
+.sr-feedback__ask {
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  color: var(--sr-grigio);
+}
+.sr-feedback__row {
+  display: flex;
+  gap: 10px;
+}
+.sr-feedback__btn {
+  font: inherit;
+  font-size: 14.5px;
+  padding: 9px 22px;
+  background: transparent;
+  color: var(--sr-inchiostro);
+  border: 1.5px solid var(--sr-inchiostro);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.sr-feedback__btn:hover,
+.sr-feedback__btn.is-active {
+  border-color: var(--sr-oltremare);
+  color: var(--sr-oltremare);
+}
+.sr-feedback__form {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.sr-feedback__text {
+  flex: 1 1 280px;
+  resize: vertical;
+}
+.sr-feedback__thanks {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--sr-verde);
+}
+.sr-checkup-dl {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.sr-checkup-dl__or {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sr-grigio);
+}
+
+/* Commenti del blog (nativi WP, aperti da deploy-import solo sugli
+   articoli): allineamento alla griglia tipografica del tema. */
+.comments-area {
+  max-width: 75ch;
+  margin-top: 48px;
+}
+.comments-area .comments-title,
+.comments-area .comment-reply-title {
+  font-size: clamp(22px, 2.4vw, 28px);
+}
+.comment-list {
+  list-style: none;
+  padding: 0;
+}
+.comment-list .comment {
+  padding: 18px 0;
+  border-top: 1px solid var(--sr-bordo);
+}
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  padding: 12px 14px;
+  font: inherit;
+  background: var(--sr-bianco);
+}
+.comment-form .submit {
+  cursor: pointer;
+}
+
+
+/* ============================================================================
+   Mega-menu della barra principale (#masthead) — inc/megamenu.php.
+   Tutte le regole sono prefissate con #masthead: il tema padre Prespa applica
+   stili di sottomenu/link con specificità di ID (#masthead li ul, #masthead a),
+   che altrimenti nasconderebbero le liste .sr-mega__list e forzerebbero i link
+   in linea. Con #masthead + classe vinciamo il cascade. Solo desktop (≥1080px).
+   ========================================================================== */
+#masthead {
+  position: relative;
+  overflow: visible; /* il pannello deve poter uscire dall'header */
+}
+#masthead .sr-has-mega {
+  position: static;
+}
+
+#masthead .sr-has-mega > a::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 8px;
+  border-right: 1.6px solid currentColor;
+  border-bottom: 1.6px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  opacity: 0.5;
+  transition: transform 0.2s ease;
+}
+#masthead .sr-has-mega:hover > a::after,
+#masthead .sr-has-mega:focus-within > a::after {
+  transform: translateY(1px) rotate(-135deg);
+  opacity: 0.8;
+}
+
+#masthead .sr-mega {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 200;
+  padding-top: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
+}
+#masthead .sr-has-mega:hover > .sr-mega,
+#masthead .sr-has-mega:focus-within > .sr-mega {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+#masthead .sr-mega__box {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--sr-bianco);
+  border: 1px solid var(--sr-bordo);
+  border-radius: 18px;
+  box-shadow: 0 20px 54px -20px rgba(20, 22, 26, 0.24);
+  overflow: hidden;
+}
+#masthead .sr-mega__inner {
+  padding: 34px 38px;
+  display: grid;
+  gap: 34px;
+}
+#masthead .sr-mega--servizi .sr-mega__inner {
+  grid-template-columns: repeat(3, 1fr) 1.15fr;
+}
+#masthead .sr-mega--lab .sr-mega__inner {
+  grid-template-columns: 1.9fr 1fr;
+}
+
+#masthead .sr-mega__col {
+  min-width: 0;
+}
+#masthead .sr-mega__eyebrow {
+  font-family: var(--sr-font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sr-grigio);
+  margin: 0 0 14px;
+}
+#masthead .sr-mega__eyebrow--accent {
+  color: var(--sr-oltremare);
+}
+#masthead .sr-mega__eyebrow--light {
+  color: rgba(247, 246, 242, 0.55);
+}
+
+/* Le liste sono <ul> dentro una <li> del menu → Prespa le tratta da sottomenu.
+   Le riportiamo a flusso normale con la specificità #masthead. */
+#masthead .sr-mega__box .sr-mega__list {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  min-width: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+#masthead .sr-mega__box .sr-mega__list li {
+  margin: 0;
+  padding: 0;
+}
+#masthead .sr-mega__box .sr-mega__list a {
+  display: block;
+  padding: 7px 10px;
+  margin: 0 -10px;
+  border-radius: 8px;
+  color: var(--sr-inchiostro);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3;
+  text-decoration: none;
+  text-transform: none;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+#masthead .sr-mega__box .sr-mega__list a:hover {
+  background: var(--sr-carta);
+  color: var(--sr-oltremare);
+}
+
+#masthead .sr-mega__box .sr-mega__feat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  background: var(--sr-carta);
+  border-radius: 14px;
+  padding: 24px;
+  text-decoration: none;
+  color: var(--sr-inchiostro);
+}
+#masthead .sr-mega__box .sr-mega__feat-k {
+  font-family: var(--sr-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sr-oltremare);
+}
+#masthead .sr-mega__box .sr-mega__feat-t {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+#masthead .sr-mega__box .sr-mega__feat-cta {
+  color: var(--sr-oltremare);
+  font-size: 14.5px;
+  margin-top: 4px;
+}
+#masthead .sr-mega__box .sr-mega__feat:hover .sr-mega__feat-cta {
+  text-decoration: underline;
+}
+
+#masthead .sr-mega__labtools {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+#masthead .sr-mega__checkup {
+  display: block;
+  background: var(--sr-carta);
+  border-radius: 14px;
+  padding: 18px 20px;
+  text-decoration: none;
+  color: var(--sr-inchiostro);
+}
+#masthead .sr-mega__checkup-t {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+#masthead .sr-mega__checkup-d {
+  display: block;
+  font-size: 13.5px;
+  color: var(--sr-grigio);
+  margin-top: 4px;
+}
+#masthead .sr-mega__toolgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 30px;
+}
+
+#masthead .sr-mega__monitor {
+  display: flex;
+  flex-direction: column;
+  background: #071a55;
+  border-radius: 14px;
+  padding: 24px;
+}
+#masthead .sr-mega__monitor-t {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--sr-carta);
+  line-height: 1.3;
+  margin: 0;
+}
+#masthead .sr-mega__monitor-viz {
+  margin: 18px 0 auto; /* auto in basso: spinge i link a fondo tessera */
+}
+#masthead .sr-mega__monitor-viz svg {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+/* Antenato .sr-mega__monitor in più per battere le regole link di Prespa
+   (#masthead a:hover), che altrimenti sul :hover scuriscono il colore e i
+   link spariscono sul navy. In hover: bianco pieno. */
+#masthead .sr-mega__monitor .sr-mega__monitor-live {
+  display: block;
+  color: #9db4ff;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 18px;
+}
+#masthead .sr-mega__monitor .sr-mega__monitor-cta {
+  display: block;
+  color: var(--sr-carta);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  margin-top: 6px;
+}
+#masthead .sr-mega__monitor .sr-mega__monitor-live:hover,
+#masthead .sr-mega__monitor .sr-mega__monitor-cta:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+#masthead .sr-mega__foot {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--sr-bordo);
+  padding: 15px 38px;
+}
+#masthead .sr-mega__foot a {
+  color: var(--sr-grigio);
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.12s ease;
+}
+#masthead .sr-mega__foot a:hover {
+  color: var(--sr-oltremare);
+}
+
+@media (max-width: 1079px) {
+  #masthead .sr-mega {
+    display: none;
+  }
+  #masthead .sr-has-mega > a::after {
+    display: none;
   }
 }

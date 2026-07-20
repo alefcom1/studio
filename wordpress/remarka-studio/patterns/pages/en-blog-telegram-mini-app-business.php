@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Telegram Mini Apps for business: the channel Italy is ignoring</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/tgminiapp-cover.svg" alt="Telegram Mini App for business: an app that opens inside the chat, with nothing to install" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/tgminiapp-cover.svg" alt="Telegram Mini App for business: an app that opens inside the chat, with nothing to install" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -33,7 +33,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">It helps to tell it apart from two things it resembles. A Telegram bot replies to commands and text messages: useful, but it stays a question-and-answer conversation. A native app, the kind from the store, is powerful but expensive, has to be downloaded and maintained twice for iOS and Android. The Mini App sits in the middle and takes the best of both: the rich interface of an app, but inside Telegram and with nothing to install. It’s the right place when the interaction has to be more than a message, yet doesn’t deserve an app to download.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/tgminiapp-canali.svg" alt="Telegram Mini App for business compared with bot, website and native app: where it lives and what it takes to use it" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Four ways to be online: the website in the browser, the native app in the store, the bot as a text chat, and the Mini App — a real app inside Telegram, with nothing to install. Source: Telegram official documentation, Mini Apps.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/tgminiapp-canali.svg" alt="Telegram Mini App for business compared with bot, website and native app: where it lives and what it takes to use it" width="1200" height="460" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Four ways to be online: the website in the browser, the native app in the store, the bot as a text chat, and the Mini App — a real app inside Telegram, with nothing to install. Source: Telegram official documentation, Mini Apps.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Why inside Telegram, of all places<span class="sr-accent-dot">.</span></h2>

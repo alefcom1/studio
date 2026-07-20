@@ -22,7 +22,9 @@
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"300px"}} -->
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:300px"><!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:heading {"level":3} -->
+<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:html -->
+
+<!-- /wp:html --><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Корпоративные сайты</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
@@ -34,7 +36,9 @@
 </div>
 <!-- /wp:group -->
 <!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:heading {"level":3} -->
+<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:html -->
+
+<!-- /wp:html --><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Интернет-магазины</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
@@ -108,6 +112,23 @@
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:320px"><div class="sr-card sr-card--carta"><p class="sr-eyebrow">Флагман</p><h3 class="wp-block-heading" style="font-size:22px">Export Ready</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Сайт и его зарубежная версия по одному договору: локализация носителями, международное SEO, KPI по каждому рынку.</p><p class="sr-card-link" style="margin-top:16px"><a href="/ru/uslugi/export-ready/">Подробнее →</a></p></div><div class="sr-card sr-card--carta"><p class="sr-eyebrow">Цифровые продукты</p><h3 class="wp-block-heading" style="font-size:22px">Веб-приложения на заказ</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Личные кабинеты, конфигураторы, B2B-порталы и интеграции: когда сайта уже недостаточно.</p><p class="sr-card-link" style="margin-top:16px"><a href="/ru/uslugi/veb-prilozhenija/">Подробнее →</a></p></div></div>
 <!-- /wp:group -->
 </section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
+<section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Из проектов группы</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Настоящие интерфейсы, в продакшене<span class="sr-accent-dot">.</span></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:70ch">Три экрана из проектов, которыми группа Remarka пользуется и которые сопровождает каждый день, — не мокапы. Полные разборы со ссылками на живые сайты — в каталоге.</p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<div class="sr-proj-strip"><figure class="sr-proj-strip__item"><img src="/wp-content/themes/remarka-studio/assets/img/casi/servizi-techperevod.webp" alt="Реальный скриншот сайта techperevod.com" width="960" height="640" loading="lazy" decoding="async"/><figcaption class="sr-mono">techperevod.com</figcaption></figure><figure class="sr-proj-strip__item"><img src="/wp-content/themes/remarka-studio/assets/img/casi/servizi-perevod4-catalog.webp" alt="Реальный скриншот каталога perevod4.ru" width="960" height="640" loading="lazy" decoding="async"/><figcaption class="sr-mono">perevod4.ru</figcaption></figure><figure class="sr-proj-strip__item"><img src="/wp-content/themes/remarka-studio/assets/img/casi/servizi-tms.webp" alt="Реальный скриншот внутренней TMS группы" width="960" height="640" loading="lazy" decoding="async"/><figcaption class="sr-mono">TMS · внутренний</figcaption></figure></div>
+<!-- /wp:html -->
+<!-- wp:paragraph {"className":"sr-card-link"} -->
+<p class="sr-card-link" style="margin-top:24px"><a href="/ru/kejsy/">Все проекты, с живыми ссылками →</a></p>
+<!-- /wp:paragraph --></section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->

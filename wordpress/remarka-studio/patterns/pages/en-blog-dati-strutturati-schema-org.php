@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Schema.org for SMEs: the structured data Google rewards</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/schema-cover.svg" alt="Schema.org structured data: an invisible JSON-LD block that becomes a rich result on Google" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/schema-cover.svg" alt="Schema.org structured data: an invisible JSON-LD block that becomes a rich result on Google" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -33,7 +33,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The vocabulary these labels are written in is called schema.org: a shared dictionary, born of an agreement between Google, Microsoft and other engines, that defines how to describe a business, a product, an event, an article. Google recommends writing it in a specific format, JSON-LD: a small block placed in the page’s code without touching its appearance. The visitor doesn’t see it; the engine reads it and understands.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/schema-jsonld.svg" alt="Anatomy of schema.org structured data in JSON-LD: type, name, hours and price that become a rich result on Google" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">A JSON-LD block labels the information — type, name, address, hours, price, reviews — and Google turns it into a rich result: stars, hours and map. Source: Google, intro to structured data; schema.org vocabulary.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/schema-jsonld.svg" alt="Anatomy of schema.org structured data in JSON-LD: type, name, hours and price that become a rich result on Google" width="1200" height="470" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">A JSON-LD block labels the information — type, name, address, hours, price, reviews — and Google turns it into a rich result: stars, hours and map. Source: Google, intro to structured data; schema.org vocabulary.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">What Google does with it: rich results<span class="sr-accent-dot">.</span></h2>

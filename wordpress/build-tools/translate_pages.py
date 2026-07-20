@@ -46,7 +46,19 @@ PAGES = os.path.join(BASE, '..', 'remarka-studio', 'patterns', 'pages')
 SCRATCH = os.path.join(BASE, 'i18n')
 
 # Городские лендинги кроме Milano не переводим (piano-contenuti-seo §2).
-SKIP = {'citta-monza', 'citta-bergamo', 'citta-brescia', 'citta-como'}
+# Флагманские города (G1a/G1b) и dove-lavoriamo — IT-only: конвейер после их
+# появления не перезапускался, без SKIP он плодит en-файлы-сироты вне page_map.
+# cookie-policy/cookie-preferenze/privacy: EN-версии дописаны руками поверх
+# конвейера (строк нет в корпусе) — повторный прогон откатил бы их к
+# итальянскому (обнаружено 18.07.2026, промо area clienti).
+SKIP = {
+    'citta-monza', 'citta-bergamo', 'citta-brescia', 'citta-como',
+    'citta-roma', 'citta-torino', 'citta-bologna', 'citta-verona',
+    'citta-padova', 'citta-venezia', 'citta-genova', 'citta-firenze',
+    'citta-napoli', 'citta-bari', 'citta-palermo', 'citta-catania',
+    'dove-lavoriamo',
+    'cookie-policy', 'cookie-preferenze', 'privacy',
+}
 
 
 def collect_pairs(it_node, tr_node, out):
@@ -116,7 +128,7 @@ TEXT_NODE = re.compile(r'>([^<>]+)<')
 ATTRS = re.compile(
     r'\b(alt|aria-label|placeholder|data-verdict-[a-z0-9]+|data-label-[a-z-]+|'
     r'data-word-[a-z0-9]+|data-composite-[a-z0-9]+|data-calc-note|data-na-text|'
-    r'data-ai-suffix|data-notice|data-more-label|data-ai-[a-z-]+|'
+    r'data-ai-suffix|data-notice|data-more-label|data-ai-[a-z-]+|data-dl-[a-z-]+|'
     r'data-err|data-audits-empty|data-caption[a-z-]*)="([^"]+)"'
 )
 SR_LOCALE = re.compile(r'data-sr-locale="it"')

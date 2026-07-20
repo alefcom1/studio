@@ -17,6 +17,15 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
 <p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:100%">Studio Remarka nasce all’interno del gruppo Remarka, agenzia di traduzioni attiva dal 2001. Applichiamo la stessa precisione contrattuale alla velocità dei siti che progettiamo: numeri misurati, non promesse commerciali.</p>
 <!-- /wp:paragraph -->
+<!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:100%;margin-top:18px">Costruiamo anche i nostri strumenti: Remarka Lab, con 12 check gratuiti e il monitoraggio continuo dei siti che seguiamo, e l’area clienti dove ogni progetto è visibile fase per fase. La stessa tecnologia che vendiamo, usata ogni giorno da noi.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"sr-card-link"} -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/strumenti/">Gli strumenti gratuiti del Lab →</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"sr-card-link"} -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/area-clienti/">Com’è fatta l’area clienti →</a></p>
+<!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->

@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Website quote: how to read it without surprises</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/preventivo-cover.svg" alt="Website quote: how to read it line by line, the items that move the price, and the surprises to avoid on the invoice" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/preventivo-cover.svg" alt="Website quote: how to read it line by line, the items that move the price, and the surprises to avoid on the invoice" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -33,7 +33,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">A site’s price isn’t made by the pages, it’s made by three things that often stay implicit: how bespoke the design is, how much work goes into the content, and what is guaranteed in writing. An honest quote makes all three explicit. A crafty quote leaves them vague, so it can be the lowest of the pile — and make it up later, when you find that the photos, the texts and the second language “weren’t included.”</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/preventivo-voci.svg" alt="The items of a website quote: design, development, content, technical SEO, accessibility and support, and which ones swing the price the most" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The six items that make up a website quote. Design and content are the ones that move the price the most; support and accessibility are the ones that often “vanish” from the cheapest offers. Source: public price lists of Italian web agencies, 2026.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/preventivo-voci.svg" alt="The items of a website quote: design, development, content, technical SEO, accessibility and support, and which ones swing the price the most" width="1200" height="500" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The six items that make up a website quote. Design and content are the ones that move the price the most; support and accessibility are the ones that often “vanish” from the cheapest offers. Source: public price lists of Italian web agencies, 2026.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">The items a website quote must include<span class="sr-accent-dot">.</span></h2>

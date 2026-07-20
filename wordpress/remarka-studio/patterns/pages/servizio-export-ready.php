@@ -71,6 +71,9 @@
 <!-- wp:html -->
 <div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Localizzazione solo da madrelingua: nomi e qualifiche dei traduttori nel contratto</span></div><div><span class="sr-mono">✓</span><span>Glossario di terminologia del vostro settore: è un deliverable, resta a voi</span></div><div><span class="sr-mono">✓</span><span>Checklist SEO internazionale firmata: hreflang, metadati e URL per ogni mercato, allegata al collaudo</span></div><div><span class="sr-mono">✓</span><span>KPI mensili per ogni mercato, per 12 mesi: traffico, posizioni, richieste</span></div></div>
 <!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:18px"><a href="/area-clienti/">Ogni progetto include l’area clienti: fasi, approvazioni e file in un unico posto →</a></p>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
