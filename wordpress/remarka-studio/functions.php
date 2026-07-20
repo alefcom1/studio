@@ -1445,6 +1445,46 @@ add_shortcode( 'remarka_form', 'remarka_form_shortcode' );
  * Общая для AJAX и admin-post путей.
  */
 /**
+ * Контентный антиспам-фильтр. Honeypot + nonce + rate-limit пропускают ботов,
+ * которые берут валидный nonce со страницы и шлют по одной заявке с IP —
+ * поэтому дополнительно смотрим на СОДЕРЖИМОЕ. Возвращает true, если заявка
+ * выглядит спамом. Реальные заявки в веб-студию таких признаков не содержат:
+ *  • BBCode-ссылки [url=…][/url] / [link] — 100% бот, живые люди так не пишут;
+ *  • две и более ссылки (http/https/www) в тексте — типичная рассылка;
+ *  • кураторский список спам-триггеров (крипта/трейдинг/казино/…), с крайне
+ *    низким риском ложных срабатываний для итальянской студии.
+ * При срабатывании обработчик тихо возвращает «успех» и ничего не отправляет
+ * (как honeypot) — бот думает, что прошло, и не подбирает обход.
+ */
+function remarka_looks_like_spam( array $texts ): bool {
+	$blob = function_exists( 'mb_strtolower' )
+		? mb_strtolower( implode( "\n", $texts ) )
+		: strtolower( implode( "\n", $texts ) );
+
+	// BBCode-ссылки — сильнейший сигнал, нулевой FP.
+	if ( preg_match( '/\[\s*(url|link)\s*[=\]]/i', $blob ) ) {
+		return true;
+	}
+	// Две и более ссылки в тексте заявки.
+	if ( preg_match_all( '#https?://|www\.#i', $blob ) >= 2 ) {
+		return true;
+	}
+	// Кураторские триггеры (подстроки; список консервативный).
+	$needles = array(
+		'crypto', 'bitcoin', 'forex', 'trading signal', 'signal trading',
+		'casino', 'viagra', 'cialis', 'escort', 'binary option',
+		'earn money', 'make money', 'get rich', 'investment opportunity',
+		'weight loss', 'buy followers',
+	);
+	foreach ( $needles as $n ) {
+		if ( false !== strpos( $blob, $n ) ) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/**
  * Отправка текста заявки в Telegram. Токен и chat_id читаются из опций WP
  * (remarka_tg_token / remarka_tg_chat_id) — в коде/репозитории их НЕТ,
  * владелец задаёт их на сервере (wp option update). Если не настроено —
@@ -1506,6 +1546,13 @@ function remarka_form_process(): ?string {
 		|| ! isset( $canon['budget'][ $budget_v ] )
 		|| ! isset( $canon['tempi'][ $tempi_v ] ) ) {
 		return remarka_str( 'form_err_campi' );
+	}
+
+	// Контентный антиспам: при срабатывании отвечаем «успехом», но ничего не
+	// шлём (как honeypot) — бот не понимает, что отфильтрован.
+	if ( remarka_looks_like_spam( array( $nome, $contatto, $messaggio ) ) ) {
+		set_transient( $key, 1, MINUTE_IN_SECONDS );
+		return null;
 	}
 
 	// Allegato facoltativo: validato e passato a wp_mail come file temporaneo,
