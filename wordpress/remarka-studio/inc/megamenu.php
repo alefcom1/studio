@@ -179,9 +179,23 @@ function remarka_mega_panel_lab(): string {
 		$cols .= remarka_mega_col( $col );
 	}
 
+	// Mini-dashboard SVG (decorativo): gauge del punteggio + trend + stato —
+	// stessa idea della vetrina reale /showcase (health gauge + andamento).
+	$viz = '<div class="sr-mega__monitor-viz" aria-hidden="true">'
+		. '<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">'
+		. '<circle cx="66" cy="68" r="46" fill="none" stroke="rgba(247,246,242,0.14)" stroke-width="10"/>'
+		. '<circle cx="66" cy="68" r="46" fill="none" stroke="#5fe3a1" stroke-width="10" stroke-linecap="round" stroke-dasharray="260 289" transform="rotate(-90 66 68)"/>'
+		. '<text x="66" y="66" text-anchor="middle" dominant-baseline="central" fill="#F7F6F2" font-family="General Sans, system-ui, sans-serif" font-size="30" font-weight="700">92</text>'
+		. '<text x="66" y="92" text-anchor="middle" fill="rgba(247,246,242,0.5)" font-family="General Sans, system-ui, sans-serif" font-size="10.5" letter-spacing="0.5">/ 100</text>'
+		. '<polyline points="150,104 176,90 200,97 224,70 248,78 276,48" fill="none" stroke="#9db4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'
+		. '<circle cx="276" cy="48" r="3.6" fill="#9db4ff"/>'
+		. '<circle cx="160" cy="132" r="3" fill="#5fe3a1"/><circle cx="182" cy="132" r="3" fill="#f0b53f"/><circle cx="204" cy="132" r="3" fill="rgba(247,246,242,0.4)"/>'
+		. '</svg></div>';
+
 	$monitor = '<div class="sr-mega__monitor">'
 		. '<p class="sr-mega__eyebrow sr-mega__eyebrow--light">' . esc_html( $s['mon_k'] ) . '</p>'
 		. '<p class="sr-mega__monitor-t">' . esc_html( $s['mon_t'] ) . '</p>'
+		. $viz
 		. '<a class="sr-mega__monitor-live" href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">' . esc_html( $s['mon_live'] ) . ' &rarr;</a>'
 		. '<a class="sr-mega__monitor-cta" href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">' . esc_html( $s['mon_cta'] ) . ' &rarr;</a></div>';
 

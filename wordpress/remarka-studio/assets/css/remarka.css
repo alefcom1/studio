@@ -3936,7 +3936,16 @@ textarea.sr-ai-llms-textarea {
   font-weight: 600;
   color: var(--sr-carta);
   line-height: 1.3;
-  margin: 0 0 auto;
+  margin: 0;
+}
+#masthead .sr-mega__monitor-viz {
+  margin: 18px 0 auto; /* auto in basso: spinge i link a fondo tessera */
+}
+#masthead .sr-mega__monitor-viz svg {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
 }
 #masthead .sr-mega__monitor-live {
   display: block;
