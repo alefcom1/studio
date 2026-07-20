@@ -124,7 +124,18 @@ function remarka_enqueue_assets(): void {
 			'next'    => remarka_str( 'form_continua' ),
 			'sending' => remarka_str( 'form_invio_corso' ),
 			'choose'  => remarka_str( 'form_err_scelta' ),
-		) ) . ';',
+		) ) . ';'
+		// Ponte lingua → Remarka Lab (Monitor) e cabinet. Sincronizza la lingua
+		// del sito (it/en/ru) nel cookie condiviso `remarka_lang` sul dominio
+		// padre .remarka.biz: chi arriva dalla versione IT/EN/RU del sito trova
+		// lab.remarka.biz e cab.remarka.biz già nella stessa lingua, senza
+		// dipendere solo dall'Accept-Language del browser (richiesta owner
+		// 20.07: "dalla versione italiana del sito → Monitor in italiano"). Il
+		// Lab ha comunque il suo switch IT/EN/RU che sovrascrive questo cookie.
+		// Lato client → cache-safe; best-effort (try/catch).
+		. '(function(){try{var l=' . wp_json_encode( remarka_current_lang() ) . ';'
+		. 'if(/(^|\\.)remarka\\.biz$/.test(location.hostname)){'
+		. 'document.cookie="remarka_lang="+l+";path=/;max-age=31536000;samesite=lax;domain=.remarka.biz";}}catch(e){}})();',
 		'before'
 	);
 }

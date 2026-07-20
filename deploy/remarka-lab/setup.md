@@ -257,7 +257,8 @@ BASE="-f docker-compose.yml -f docker-compose.prod.yml"
 # 1) Add the M2 variables to the EXISTING .env (append — do not overwrite):
 cat >> .env <<'ENV'
 # ── M2 unica-utenza ──
-COOKIE_DOMAIN=.remarka.biz          # cab_session valido su cab + lab
+COOKIE_DOMAIN=.remarka.biz          # cab_session valido su cab + lab; anche il
+                                    # cookie lingua i18n `remarka_lang` del web
 CAB_OPEN_SIGNUP=1                   # signup self-serve free (0 = invito-solo)
 SHOWCASE_DOMAIN=remarka.biz         # progetto mostrato dalla vetrina /showcase
 ENV

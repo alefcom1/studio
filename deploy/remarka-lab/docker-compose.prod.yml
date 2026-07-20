@@ -121,6 +121,12 @@ services:
       # localhost showing up on `docker inspect`.
       NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://lab.remarka.biz}
       NEXT_PUBLIC_CABINET_URL: ${CABINET_URL:-https://cab.remarka.biz}
+      # i18n Monitor (IT/EN/RU): il middleware scrive il cookie di lingua
+      # `remarka_lang` su questo dominio padre, così la scelta fatta sul sito
+      # WP (remarka.biz, link ?lang=…) o nel cabinet vale anche qui su
+      # lab.remarka.biz — stessa domain condivisa di cab_session (M2). Runtime
+      # env (NON NEXT_PUBLIC): il middleware gira lato server, la legge a runtime.
+      COOKIE_DOMAIN: ${COOKIE_DOMAIN:-.remarka.biz}
     # Same as api: drop the inherited `ports: ['3000:3000']` publication.
     # Caddy reaches web as `web:3000` over the internal Docker network.
     ports: !reset []
