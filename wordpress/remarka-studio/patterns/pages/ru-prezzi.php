@@ -36,7 +36,7 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
-{{lancio}}<div class="sr-lancio-badge sr-mono">ЦЕНА ЗАПУСКА — ПЕРВЫЕ 5 ПРОЕКТОВ</div><p class="sr-lancio-line">Цена запуска на первые 5 проектов: тот же договор, те же гарантии. Полный прайс — с 2027 года.</p><p class="sr-lancio-counter sr-mono">Свободно мест: {{lancio_slots}} из 5.</p>{{/lancio}}
+{{lancio}}<div class="sr-lancio"><div class="sr-lancio-badge sr-mono">ЦЕНА ЗАПУСКА — ПЕРВЫЕ 5 ПРОЕКТОВ</div><p class="sr-lancio-line">Цена запуска на первые 5 проектов: тот же договор, те же гарантии. Полный прайс — с 2027 года.</p><p class="sr-lancio-counter sr-mono">Свободно мест: {{lancio_slots}} из 5.</p></div>{{/lancio}}
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->

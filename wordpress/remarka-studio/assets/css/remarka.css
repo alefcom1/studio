@@ -934,6 +934,19 @@ body .entry-header {
   }
 }
 
+/* ---------- «Tre numeri» (home): numeri-titolo con didascalia inline ----------
+   Le cifre di questo blocco portano una parola accanto («3 settimane»,
+   «±0 giorni»). A 72–84px in una colonna da ~440px (griglia 1440 / 3) la
+   parola andava a capo e — con il mono a corpo grande — si spezzava per
+   lettere («settiman/e», bug live 20.07.2026 dopo il merge del mega-menu).
+   Riduciamo il corpo e forziamo l'intera etichetta su una riga (nowrap):
+   così «3 settimane / ±0 giorni / 3 недели / 3 weeks» stanno su una riga
+   sola a 1440 e restano leggibili anche a 390 (colonna a piena larghezza). */
+.sr-tre-numeri .sr-stat__num {
+  font-size: clamp(40px, 3.6vw, 54px);
+  white-space: nowrap;
+}
+
 /* ---------- La barra dei cento ---------- */
 
 .sr-barra {
@@ -1528,6 +1541,20 @@ body .entry-header {
   justify-content: center;
   align-items: stretch;
   gap: 20px;
+}
+
+/* Il gruppo recensioni porta anche .is-layout-grid (layout griglia del blocco).
+   La regola generica .wp-block-group.is-layout-grid (più sotto nel file) ha la
+   STESSA specificità (0,2,0) e, venendo DOPO, vinceva sul cascade: il 3+2
+   diventava una griglia auto-fit. Finché il corpo era limitato (~980px) la
+   griglia cadeva per caso su ~3 colonne e sembrava giusta; da quando il corpo
+   è a piena larghezza 1440 (fix `body .site-wrapper` del merge 20.07.2026)
+   esplodeva in 5 colonne strette (bug live). Alziamo la specificità con
+   .is-layout-grid (0,3,0) così il flex 3+2 vince in modo deterministico e
+   annulliamo l'eventuale grid-template ereditato. */
+.wp-block-group.sr-recensioni.is-layout-grid {
+  display: flex;
+  grid-template-columns: none;
 }
 
 .sr-recensioni > .sr-recensione {
@@ -4020,6 +4047,26 @@ textarea.sr-ai-llms-textarea {
   position: relative;
   overflow: visible; /* il pannello deve poter uscire dall'header */
 }
+
+/* BLINDATURA DEL CONTENITORE (regressione live 20.07.2026, dopo il merge del
+   mega-menu). Il pannello .sr-mega è position:absolute con top:100% e si àncora
+   al contenitore posizionato più vicino: la barra #masthead, resa sticky da
+   `#masthead.site-header{position:sticky}` (specificità 1,1,0). MA il tema
+   padre Prespa carica DOPO remarka.css e, a parità di specificità, vince per
+   ordine sorgente (stesso meccanismo documentato per .site-wrapper nel merge):
+   se Prespa/uno stato azzera la posizione della barra, questa perde il contesto
+   di posizionamento e il pannello — con top:100% — precipita a ~100vh, cioè a
+   metà/fondo pagina, sopra la sezione «Contatti» (esattamente lo screen del
+   titolare). Rendiamo la posizione della barra deterministica con specificità
+   superiore (prefisso `body` → 1,1,1, batte qualunque #masthead.site-header di
+   Prespa senza !important) e ribadiamo overflow:visible. Così #masthead resta
+   SEMPRE il contenitore del pannello e il mega-menu si apre solo sotto la barra. */
+body #masthead.site-header {
+  position: sticky;
+  top: 0;
+  overflow: visible;
+}
+
 #masthead .sr-has-mega {
   position: static;
 }
