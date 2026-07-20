@@ -282,33 +282,51 @@
 <h2 class="wp-block-heading">Free today. Under watch tomorrow<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:75ch">A score can be measured for free, once. Keeping it high over time is work — and it’s ours: for clients with an active maintenance plan the site stays under watch after launch, on the same platform we build these tools with.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:75ch">A score is measured for free once. Keeping it high over time is work. With Remarka Lab you keep one site under watch for free — and for clients with an active maintenance plan we take care of it.</p>
 <!-- /wp:paragraph -->
-<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"320px"}} -->
-<div class="wp-block-group is-layout-grid" style="--sr-grid-min:320px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Want to see it live? Our site’s status, in real time →</a></p>
+<!-- /wp:html -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"280px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:280px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Free · for everyone</p>
+<p class="sr-eyebrow">Free · no sign-up</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">One-off checks</h3>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>12 free checks: speed, SEO, accessibility, GDPR, AI, E-E-A-T, CO₂, ROI</span></div><div><span class="sr-mono">✓</span><span>Result in about a minute, no sign-up</span></div><div><span class="sr-mono">✓</span><span>Every tool shows what to fix — and the right service if you need a hand</span></div></div>
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>12 free checks: speed, SEO, accessibility, GDPR, AI, E-E-A-T, CO₂, ROI</span></div><div><span class="sr-mono">✓</span><span>Result in about a minute, no sign-up</span></div><div><span class="sr-mono">✓</span><span>Every tool shows what to fix</span></div></div>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
 <!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">For clients · with a maintenance plan</p>
+<p class="sr-eyebrow">Free · with an account</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Remarka Lab · Monitor</h3>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Your site watched continuously after launch: periodic checks and uptime</span></div><div><span class="sr-mono">✓</span><span>Real-user Core Web Vitals, month after month</span></div><div><span class="sr-mono">✓</span><span>If a metric slips, we see it — and step in before it becomes a problem</span></div></div>
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>One site under watch, for free</span></div><div><span class="sr-mono">✓</span><span>Sign in with an email link, no password</span></div><div><span class="sr-mono">✓</span><span>Health score, errors and issues, trend over time</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="/en/blog/website-monitoring-after-launch/">What to measure every month: the monitoring guide →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="https://lab.remarka.biz/" target="_blank" rel="noopener">The platform: lab.remarka.biz →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="/en/#contatti">Included in projects with a maintenance plan — let’s talk →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Try Remarka Lab, free →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Pro · with a maintenance plan</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">With us alongside</h3>
+<!-- /wp:heading -->
+<!-- wp:html -->
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Your site watched continuously after launch</span></div><div><span class="sr-mono">✓</span><span>If a metric slips, we see it and step in</span></div><div><span class="sr-mono">✓</span><span>Included in projects with an active maintenance plan</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/en/blog/website-monitoring-after-launch/">What to measure each month: the guide →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="/en/#contatti">Let’s talk →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

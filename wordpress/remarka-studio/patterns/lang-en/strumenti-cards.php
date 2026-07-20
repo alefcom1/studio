@@ -167,6 +167,6 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"sr-card-link","style":{"spacing":{"margin":{"top":"8px"}}}} -->
-<p class="sr-card-link" style="margin-top:8px"><a href="/en/tools/#monitor">And for clients: your site monitored continuously, even after launch →</a></p>
+<p class="sr-card-link" style="margin-top:8px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Monitor a site for free, continuously — and watch ours live →</a></p>
 <!-- /wp:paragraph --></section>
 <!-- /wp:group -->

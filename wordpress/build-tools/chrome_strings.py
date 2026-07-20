@@ -3528,26 +3528,35 @@ CHROME_AREA_CLIENTI = {
 
     # Indice strumenti: brand Lab + sezione Gratis/Monitor (#monitor)
     'Remarka Lab · Strumenti gratuiti': {'en': 'Remarka Lab · Free tools'},
-    'Gratis · per tutti': {'en': 'Free · for everyone'},
+    # Tre livelli (aggiornato 20.07 — lab aperto: vetrina /showcase + free self-serve)
+    'Gratis · senza registrazione': {'en': 'Free · no sign-up'},
     'Strumenti una tantum': {'en': 'One-off checks'},
     '12 check gratuiti: velocità, SEO, accessibilità, GDPR, AI, E-E-A-T, CO₂, ROI':
         {'en': '12 free checks: speed, SEO, accessibility, GDPR, AI, E-E-A-T, CO₂, ROI'},
     'Risultato in circa un minuto, senza registrazione': {'en': 'Result in about a minute, no sign-up'},
-    'Ogni strumento indica cosa correggere — e il servizio giusto se serve una mano':
-        {'en': 'Every tool shows what to fix — and the right service if you need a hand'},
-    'Per i clienti · con l’assistenza': {'en': 'For clients · with a maintenance plan'},
-    'Il sito osservato in continuo dopo il lancio: controlli periodici e uptime':
-        {'en': 'Your site watched continuously after launch: periodic checks and uptime'},
-    'Core Web Vitals reali degli utenti, mese dopo mese':
-        {'en': 'Real-user Core Web Vitals, month after month'},
-    'Se un valore peggiora, lo vediamo noi — e interveniamo prima che diventi un problema':
-        {'en': 'If a metric slips, we see it — and step in before it becomes a problem'},
-    'La piattaforma: lab.remarka.biz →': {'en': 'The platform: lab.remarka.biz →'},
-    'Incluso nei progetti con assistenza — parliamone →':
-        {'en': 'Included in projects with a maintenance plan — let’s talk →'},
+    'Ogni strumento indica cosa correggere': {'en': 'Every tool shows what to fix'},
+    'Gratis · con accesso': {'en': 'Free · with an account'},
+    'Remarka Lab · Monitor': {'en': 'Remarka Lab · Monitor'},
+    'Un sito sotto controllo, gratis': {'en': 'One site under watch, for free'},
+    'Accesso con link via e-mail, senza password': {'en': 'Sign in with an email link, no password'},
+    'Punteggio di salute, errori e problemi, andamento nel tempo':
+        {'en': 'Health score, errors and issues, trend over time'},
+    'Provate Remarka Lab, gratis →': {'en': 'Try Remarka Lab, free →'},
+    'Pro · con l’assistenza': {'en': 'Pro · with a maintenance plan'},
+    'Con noi accanto': {'en': 'With us alongside'},
+    'Il sito osservato in continuo dopo il lancio':
+        {'en': 'Your site watched continuously after launch'},
+    'Se un valore peggiora, lo vediamo noi e interveniamo':
+        {'en': 'If a metric slips, we see it and step in'},
+    'Incluso nei progetti con assistenza attiva':
+        {'en': 'Included in projects with an active maintenance plan'},
+    'Cosa misurare ogni mese: la guida →': {'en': 'What to measure each month: the guide →'},
+    'Parliamone →': {'en': 'Let’s talk →'},
     'Gratis oggi. Sotto controllo domani': {'en': 'Free today. Under watch tomorrow'},
-    'Un punteggio si può misurare gratis, una volta. Tenerlo alto nel tempo è un lavoro — ed è il nostro: per i clienti con assistenza attiva il sito resta osservato anche dopo il lancio, sulla stessa piattaforma con cui costruiamo questi strumenti.':
-        {'en': 'A score can be measured for free, once. Keeping it high over time is work — and it’s ours: for clients with an active maintenance plan the site stays under watch after launch, on the same platform we build these tools with.'},
+    'Un punteggio si misura gratis una volta. Tenerlo alto nel tempo è un lavoro. Con Remarka Lab tenete un sito sotto controllo gratis — e per i clienti con assistenza attiva ce ne occupiamo noi.':
+        {'en': 'A score is measured for free once. Keeping it high over time is work. With Remarka Lab you keep one site under watch for free — and for clients with an active maintenance plan we take care of it.'},
+    'Volete vederlo dal vivo? Lo stato del nostro sito, in diretta →':
+        {'en': 'Want to see it live? Our site’s status, in real time →'},
 }
 CHROME.update(CHROME_AREA_CLIENTI)
 

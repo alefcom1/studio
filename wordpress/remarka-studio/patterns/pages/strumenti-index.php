@@ -282,33 +282,51 @@
 <h2 class="wp-block-heading">Gratis oggi. Sotto controllo domani<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:75ch">Un punteggio si può misurare gratis, una volta. Tenerlo alto nel tempo è un lavoro — ed è il nostro: per i clienti con assistenza attiva il sito resta osservato anche dopo il lancio, sulla stessa piattaforma con cui costruiamo questi strumenti.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:75ch">Un punteggio si misura gratis una volta. Tenerlo alto nel tempo è un lavoro. Con Remarka Lab tenete un sito sotto controllo gratis — e per i clienti con assistenza attiva ce ne occupiamo noi.</p>
 <!-- /wp:paragraph -->
-<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"320px"}} -->
-<div class="wp-block-group is-layout-grid" style="--sr-grid-min:320px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Volete vederlo dal vivo? Lo stato del nostro sito, in diretta →</a></p>
+<!-- /wp:html -->
+<!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"280px"}} -->
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:280px"><!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Gratis · per tutti</p>
+<p class="sr-eyebrow">Gratis · senza registrazione</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Strumenti una tantum</h3>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>12 check gratuiti: velocità, SEO, accessibilità, GDPR, AI, E-E-A-T, CO₂, ROI</span></div><div><span class="sr-mono">✓</span><span>Risultato in circa un minuto, senza registrazione</span></div><div><span class="sr-mono">✓</span><span>Ogni strumento indica cosa correggere — e il servizio giusto se serve una mano</span></div></div>
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>12 check gratuiti: velocità, SEO, accessibilità, GDPR, AI, E-E-A-T, CO₂, ROI</span></div><div><span class="sr-mono">✓</span><span>Risultato in circa un minuto, senza registrazione</span></div><div><span class="sr-mono">✓</span><span>Ogni strumento indica cosa correggere</span></div></div>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
 <!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Per i clienti · con l’assistenza</p>
+<p class="sr-eyebrow">Gratis · con accesso</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Remarka Lab · Monitor</h3>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Il sito osservato in continuo dopo il lancio: controlli periodici e uptime</span></div><div><span class="sr-mono">✓</span><span>Core Web Vitals reali degli utenti, mese dopo mese</span></div><div><span class="sr-mono">✓</span><span>Se un valore peggiora, lo vediamo noi — e interveniamo prima che diventi un problema</span></div></div>
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Un sito sotto controllo, gratis</span></div><div><span class="sr-mono">✓</span><span>Accesso con link via e-mail, senza password</span></div><div><span class="sr-mono">✓</span><span>Punteggio di salute, errori e problemi, andamento nel tempo</span></div></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:16px"><a href="/blog/monitoraggio-sito-dopo-lancio/">Cosa misurare ogni mese: la guida al monitoraggio →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="https://lab.remarka.biz/" target="_blank" rel="noopener">La piattaforma: lab.remarka.biz →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="/#contatti">Incluso nei progetti con assistenza — parliamone →</a></p>
+<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Provate Remarka Lab, gratis →</a></p>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"sr-card sr-card--carta","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-card sr-card--carta"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Pro · con l’assistenza</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Con noi accanto</h3>
+<!-- /wp:heading -->
+<!-- wp:html -->
+<div class="sr-checklist"><div><span class="sr-mono">✓</span><span>Il sito osservato in continuo dopo il lancio</span></div><div><span class="sr-mono">✓</span><span>Se un valore peggiora, lo vediamo noi e interveniamo</span></div><div><span class="sr-mono">✓</span><span>Incluso nei progetti con assistenza attiva</span></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:16px"><a href="/blog/monitoraggio-sito-dopo-lancio/">Cosa misurare ogni mese: la guida →</a></p><p class="sr-card-link" style="margin-top:8px"><a href="/#contatti">Parliamone →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

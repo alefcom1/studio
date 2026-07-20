@@ -167,6 +167,6 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"sr-card-link","style":{"spacing":{"margin":{"top":"8px"}}}} -->
-<p class="sr-card-link" style="margin-top:8px"><a href="/strumenti/#monitor">E per i clienti: il sito osservato in continuo, anche dopo il lancio →</a></p>
+<p class="sr-card-link" style="margin-top:8px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Monitora un sito gratis, in continuo — e guarda il nostro dal vivo →</a></p>
 <!-- /wp:paragraph --></section>
 <!-- /wp:group -->

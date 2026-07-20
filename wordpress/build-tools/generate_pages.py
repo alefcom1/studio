@@ -694,40 +694,53 @@ def build_strumenti_index():
     grid = section(group(''.join(cards), classes='', layout_type='grid', style='240px'),
                     classes='sr-section sr-section--bianco')
 
-    # Gratis vs Monitor (docs/piano-promo-cabinet-lab.md §4.4): àncora #monitor
-    # linkata dalla home (strumenti-cards). lab.remarka.biz per ora chiede le
-    # credenziali (piattaforma interna): il link c'è — decisione owner 18.07 —
-    # ma il percorso commerciale resta /#contatti finché non apre la vetrina.
-    monitor_free = group(
-        eyebrow('Gratis · per tutti') +
+    # Tre livelli Remarka Lab (àncora #monitor, linkata dalla home). Dal 20.07
+    # lab.remarka.biz è aperto: vetrina pubblica /showcase + accesso self-serve
+    # (magic-link, account unico col cabinet), livello free permanente. Il
+    # copywriting resta onesto (E-E-A-T): il free descrive SOLO ciò che funziona
+    # già oggi (account, un sito, punteggio/problemi/andamento, demo dal vivo) —
+    # niente snapshot settimanali/report mensili/uptime automatici finché i
+    # relativi cron non sono in produzione.
+    monitor_free_tools = group(
+        eyebrow('Gratis · senza registrazione') +
         heading(3, 'Strumenti una tantum', accent_dot=False) +
         checklist([
             '12 check gratuiti: velocità, SEO, accessibilità, GDPR, AI, E-E-A-T, CO₂, ROI',
             'Risultato in circa un minuto, senza registrazione',
-            'Ogni strumento indica cosa correggere — e il servizio giusto se serve una mano',
+            'Ogni strumento indica cosa correggere',
         ]),
         classes='sr-card sr-card--carta',
     )
-    monitor_pro = group(
-        eyebrow('Per i clienti · con l’assistenza') +
+    monitor_lab_free = group(
+        eyebrow('Gratis · con accesso') +
         heading(3, 'Remarka Lab · Monitor', accent_dot=False) +
         checklist([
-            'Il sito osservato in continuo dopo il lancio: controlli periodici e uptime',
-            'Core Web Vitals reali degli utenti, mese dopo mese',
-            'Se un valore peggiora, lo vediamo noi — e interveniamo prima che diventi un problema',
+            'Un sito sotto controllo, gratis',
+            'Accesso con link via e-mail, senza password',
+            'Punteggio di salute, errori e problemi, andamento nel tempo',
         ]) +
-        raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="/blog/monitoraggio-sito-dopo-lancio/">Cosa misurare ogni mese: la guida al monitoraggio →</a></p>'
-                 '<p class="sr-card-link" style="margin-top:8px"><a href="https://lab.remarka.biz/" target="_blank" rel="noopener">La piattaforma: lab.remarka.biz →</a></p>'
-                 '<p class="sr-card-link" style="margin-top:8px"><a href="/#contatti">Incluso nei progetti con assistenza — parliamone →</a></p>'),
+        raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Provate Remarka Lab, gratis →</a></p>'),
+        classes='sr-card sr-card--carta',
+    )
+    monitor_pro = group(
+        eyebrow('Pro · con l’assistenza') +
+        heading(3, 'Con noi accanto', accent_dot=False) +
+        checklist([
+            'Il sito osservato in continuo dopo il lancio',
+            'Se un valore peggiora, lo vediamo noi e interveniamo',
+            'Incluso nei progetti con assistenza attiva',
+        ]) +
+        raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="/blog/monitoraggio-sito-dopo-lancio/">Cosa misurare ogni mese: la guida →</a></p>'
+                 '<p class="sr-card-link" style="margin-top:8px"><a href="/#contatti">Parliamone →</a></p>'),
         classes='sr-card sr-card--carta',
     )
     monitor = section(
         eyebrow('Remarka Lab') + heading(2, 'Gratis oggi. Sotto controllo domani') +
-        paragraph('Un punteggio si può misurare gratis, una volta. Tenerlo alto nel tempo è un lavoro — ed è il nostro: '
-                  'per i clienti con assistenza attiva il sito resta osservato anche dopo il lancio, sulla stessa '
-                  'piattaforma con cui costruiamo questi strumenti.',
+        paragraph('Un punteggio si misura gratis una volta. Tenerlo alto nel tempo è un lavoro. Con Remarka Lab '
+                  'tenete un sito sotto controllo gratis — e per i clienti con assistenza attiva ce ne occupiamo noi.',
                    color='grigio', size='medium', extra_style='max-width:75ch') +
-        group(monitor_free + monitor_pro, classes='', layout_type='grid', style='320px'),
+        raw_html('<p class="sr-card-link" style="margin-top:16px"><a href="https://lab.remarka.biz/showcase" target="_blank" rel="noopener">Volete vederlo dal vivo? Lo stato del nostro sito, in diretta →</a></p>') +
+        group(monitor_free_tools + monitor_lab_free + monitor_pro, classes='', layout_type='grid', style='280px'),
         classes='sr-section', anchor='monitor',
     )
 
