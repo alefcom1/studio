@@ -2326,6 +2326,49 @@ body.page .entry-title {
   color: var(--sr-grigio);
 }
 
+/* ---------- Бегущая строка прогресса (все тесты) ----------
+   Индикативная «идёт проверка» в фирменном стиле: тесты ходят во внешние
+   API (PageSpeed до 30 сек), реальный процент недоступен — поэтому лента
+   бесконечно бежит, показывая, что тест не завис. Вставляется JS-ом один
+   раз в каждый контейнер [data-sr-tool-pending]/[data-sr-hero-pending];
+   контейнер скрыт через [hidden], значит анимация идёт только во время
+   проверки. Высота и цвета — как у .sr-barra. */
+.sr-progress {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 6px;
+  margin-top: 12px;
+  background: var(--sr-traccia);
+  border-radius: 999px;
+}
+
+.sr-progress__bar {
+  position: absolute;
+  top: 0;
+  left: -40%;
+  height: 100%;
+  width: 40%;
+  border-radius: inherit;
+  background: var(--sr-oltremare);
+  animation: sr-progress-slide 1.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes sr-progress-slide {
+  0%   { left: -40%; width: 40%; }
+  50%  { width: 55%; }
+  100% { left: 100%; width: 40%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sr-progress__bar {
+    animation: none;
+    left: 0;
+    width: 100%;
+    opacity: 0.5;
+  }
+}
+
 .sr-tool-result {
   margin-top: 24px;
 }
@@ -3118,6 +3161,17 @@ body.page .entry-title {
 .sr-cascade.sr-reveal-armed.sr-visible > * {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* LCP: hero всегда над сгибом — он НЕ должен стартовать с opacity:0.
+   Иначе заголовок (LCP-элемент) невидим до срабатывания reveal-JS, и LCP
+   уезжает на секунды. Hero виден сразу; каскадная анимация остаётся для
+   секций ниже сгиба. Специфичность (0,2,0) перекрывает .sr-cascade > *. */
+.sr-hero.sr-cascade > *,
+.sr-hero .sr-cascade > * {
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 /* Счётчик — просто маркер для JS */

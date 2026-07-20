@@ -143,6 +143,94 @@ function remarka_preload_fonts(): void {
 }
 add_action( 'wp_head', 'remarka_preload_fonts', 5 );
 
+/**
+ * Preconnect ai CDN dei font quando NON siamo in self-hosting: i due CSS dei
+ * font (Fontshare + Google) sono su origin esterni, e finché il browser non
+ * apre DNS+TLS verso di essi il render resta bloccato. Il preconnect anticipa
+ * l'handshake, togliendolo dal percorso critico (riduce FCP/LCP). Quando i
+ * font sono self-hosted questa funzione non emette nulla: sono same-origin e
+ * già in preload (remarka_preload_fonts).
+ */
+function remarka_font_preconnect(): void {
+	if ( remarka_has_local_fonts() ) {
+		return;
+	}
+	$origins = array(
+		'https://api.fontshare.com',  // CSS @font-face Clash Display / General Sans
+		'https://cdn.fontshare.com',  // file .woff2 Fontshare
+		'https://fonts.googleapis.com', // CSS @font-face Fragment Mono
+		'https://fonts.gstatic.com',  // file .woff2 Google
+	);
+	foreach ( $origins as $origin ) {
+		printf( '<link rel="preconnect" href="%s" crossorigin>' . "\n", esc_url( $origin ) );
+	}
+}
+add_action( 'wp_head', 'remarka_font_preconnect', 2 );
+
+/**
+ * Rende non-bloccanti i due CSS dei font CDN (Fontshare + Google): li carica
+ * con media="print" e li riattiva a onload (this.media='all'), così il primo
+ * render non aspetta la richiesta del CSS dei font. Il <noscript> conserva il
+ * caricamento classico senza JavaScript. I @font-face usano già display=swap,
+ * quindi il testo compare subito nel fallback e passa al font web quando è
+ * pronto — nessun cambiamento di comportamento oltre al render più rapido.
+ * Attivo solo sui due handle dei font CDN, non sugli altri stili.
+ */
+function remarka_async_font_css( string $tag, string $handle ): string {
+	if ( ! in_array( $handle, array( 'remarka-fonts-cdn', 'remarka-fonts-mono-cdn' ), true ) ) {
+		return $tag;
+	}
+	$async = str_replace(
+		array( " media='all'", ' media="all"' ),
+		" media='print' onload=\"this.media='all'\"",
+		$tag
+	);
+	if ( $async === $tag ) { // WP non ha emesso media='all': iniettiamo gli attributi.
+		$async = preg_replace( '/<link /', '<link media="print" onload="this.media=\'all\'" ', $tag, 1 );
+	}
+	return $async . '<noscript>' . $tag . '</noscript>' . "\n";
+}
+add_filter( 'style_loader_tag', 'remarka_async_font_css', 10, 2 );
+
+/**
+ * Il plugin nasio-blocks carica su OGNI pagina front-end Chart.js (~200 KB) +
+ * Swiper (JS+CSS) + il proprio CSS, ma non usiamo nessun blocco nasio nei
+ * nostri contenuti (verificato: nessuna occorrenza nei pattern). È peso morto
+ * che blocca il render e gonfia il «JavaScript inutilizzato» di PageSpeed. Lo
+ * togliamo dal front-end lasciando il plugin attivo (i blocchi restano
+ * disponibili nell'editor). Priorità 100: dopo l'enqueue del plugin. Se un
+ * domani una pagina userà davvero un blocco nasio, togliere il suo handle da
+ * questa lista.
+ */
+function remarka_dequeue_unused_assets(): void {
+	if ( is_admin() ) {
+		return;
+	}
+	foreach ( array( 'nasio-chart-js', 'nasio-swiper-js' ) as $handle ) {
+		wp_dequeue_script( $handle );
+	}
+	foreach ( array( 'nasio-blocks-style', 'nasio-swiper-css' ) as $handle ) {
+		wp_dequeue_style( $handle );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'remarka_dequeue_unused_assets', 100 );
+
+/**
+ * Prespa carica app.js e core-add.js senza defer → bloccano il render. Sono
+ * bundle compilati che agiscono su DOMContentLoaded, quindi il defer è sicuro
+ * e li toglie dal percorso critico (il nostro remarka.js è già defer; Chart e
+ * Swiper sono rimossi sopra). Se dopo il deploy il menu o altre interazioni di
+ * Prespa si rompessero, togliere l'handle corrispondente da questa lista.
+ */
+function remarka_defer_parent_scripts( string $tag, string $handle ): string {
+	$defer = array( 'prespa-script', 'prespa-block-scripts' );
+	if ( in_array( $handle, $defer, true ) && false === strpos( $tag, ' defer' ) && false !== strpos( $tag, ' src=' ) ) {
+		$tag = str_replace( ' src=', ' defer src=', $tag );
+	}
+	return $tag;
+}
+add_filter( 'script_loader_tag', 'remarka_defer_parent_scripts', 10, 2 );
+
 /** Стили редактора: паттерны в Gutenberg выглядят как на фронте. */
 function remarka_editor_setup(): void {
 	add_theme_support( 'editor-styles' );
