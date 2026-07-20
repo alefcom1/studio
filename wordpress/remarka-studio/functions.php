@@ -30,6 +30,10 @@ require_once get_stylesheet_directory() . '/inc/case-shots.php';
 // (docs/piano-implementazione-fase-A.md, decisione titolare 17.07.2026).
 require_once get_stylesheet_directory() . '/inc/psi-score.php';
 
+// Mega-menu della barra principale: «Servizi» e «Strumenti» aprono un pannello
+// a tendina che raggruppa le sottopagine (il sito è cresciuto — 20.07.2026).
+require_once get_stylesheet_directory() . '/inc/megamenu.php';
+
 /**
  * Есть ли локальные шрифты? Маркер — главный woff2 Clash Display.
  * Пока владелец не положил файлы в assets/fonts, тема грузит CDN
