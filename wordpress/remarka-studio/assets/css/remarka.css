@@ -3947,14 +3947,17 @@ textarea.sr-ai-llms-textarea {
   max-width: 300px;
   height: auto;
 }
-#masthead .sr-mega__monitor-live {
+/* Antenato .sr-mega__monitor in più per battere le regole link di Prespa
+   (#masthead a:hover), che altrimenti sul :hover scuriscono il colore e i
+   link spariscono sul navy. In hover: bianco pieno. */
+#masthead .sr-mega__monitor .sr-mega__monitor-live {
   display: block;
   color: #9db4ff;
   font-size: 14px;
   text-decoration: none;
   margin-top: 18px;
 }
-#masthead .sr-mega__monitor-cta {
+#masthead .sr-mega__monitor .sr-mega__monitor-cta {
   display: block;
   color: var(--sr-carta);
   font-weight: 600;
@@ -3962,8 +3965,9 @@ textarea.sr-ai-llms-textarea {
   text-decoration: none;
   margin-top: 6px;
 }
-#masthead .sr-mega__monitor-live:hover,
-#masthead .sr-mega__monitor-cta:hover {
+#masthead .sr-mega__monitor .sr-mega__monitor-live:hover,
+#masthead .sr-mega__monitor .sr-mega__monitor-cta:hover {
+  color: #ffffff;
   text-decoration: underline;
 }
 
