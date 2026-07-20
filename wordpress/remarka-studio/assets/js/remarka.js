@@ -2351,12 +2351,24 @@
 		function hideErr() { if (errorEl) errorEl.hidden = true; }
 
 		function validStep(step) {
-			var groups = {};
+			// Gruppi radio: obbligatori solo se almeno un radio del gruppo ha
+			// `required` (così il budget del brief, reso opzionale, non blocca).
+			var radios = {};
 			step.querySelectorAll('input[type="radio"]').forEach(function (r) {
-				if (!(r.name in groups)) groups[r.name] = false;
-				if (r.checked) groups[r.name] = true;
+				if (!(r.name in radios)) radios[r.name] = { req: false, ok: false };
+				if (r.required) radios[r.name].req = true;
+				if (r.checked) radios[r.name].ok = true;
 			});
-			for (var g in groups) { if (!groups[g]) { showErr(i18n.choose || 'Seleziona un’opzione.'); return false; } }
+			for (var g in radios) {
+				if (radios[g].req && !radios[g].ok) { showErr(i18n.choose || 'Seleziona un’opzione.'); return false; }
+			}
+			// Gruppi checkbox "almeno uno" (chip lingue del brief).
+			var checks = {};
+			step.querySelectorAll('input[type="checkbox"][data-sr-require-one]').forEach(function (c) {
+				if (!(c.name in checks)) checks[c.name] = false;
+				if (c.checked) checks[c.name] = true;
+			});
+			for (var k in checks) { if (!checks[k]) { showErr(i18n.choose || 'Seleziona un’opzione.'); return false; } }
 			var invalid = null;
 			step.querySelectorAll('input:not([type="radio"]), textarea, select').forEach(function (f) {
 				if (!invalid && !f.checkValidity()) invalid = f;
@@ -2423,8 +2435,14 @@
 				}
 
 				var data = new FormData(form);
-				data.set('action', 'remarka_contact');
-				if (cfg.formNonce) data.set('remarka_nonce', cfg.formNonce);
+				// L'action arriva dal campo nascosto del form (remarka_contact
+				// per contatti/mini-hero, remarka_brief per la pagina brief).
+				var actionField = form.querySelector('input[name="action"]');
+				var action = (actionField && actionField.value) || 'remarka_contact';
+				data.set('action', action);
+				// Il nonce fresco localizzato vale solo per il canale contatti;
+				// il brief porta il proprio nonce nel campo del form (FormData).
+				if (action === 'remarka_contact' && cfg.formNonce) data.set('remarka_nonce', cfg.formNonce);
 
 				window.fetch(cfg.ajaxUrl, { method: 'POST', body: data, credentials: 'same-origin' })
 					.then(function (resp) { return resp.json(); })

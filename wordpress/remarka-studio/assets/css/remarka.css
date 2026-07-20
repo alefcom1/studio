@@ -2243,8 +2243,81 @@ body.page .entry-title {
   .sr-choice-grid { grid-template-columns: 1fr; }
 }
 
+/* Brief passo 1: 5 card in 3 colonne → righe 3+2 (niente card orfana).
+   Sotto i 640px passa a una colonna, saltando l'intermedio a 2 colonne che
+   lascerebbe una card sola in ultima riga (2+2+1). */
+.sr-choice-grid--tre {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 640px) {
+  .sr-choice-grid--tre { grid-template-columns: 1fr; }
+}
+
+/* Consenso privacy del brief: checkbox + testo su una riga. */
+.sr-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 22px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--sr-grigio);
+  cursor: pointer;
+}
+
+.sr-consent input[type="checkbox"] {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  accent-color: var(--sr-oltremare);
+}
+
+.sr-consent a {
+  color: var(--sr-oltremare);
+}
+
+.sr-brief-success {
+  padding: 8px 0;
+}
+
 .sr-form-success p {
   margin: 0 0 10px;
+}
+
+/* Mini-modulo hero (home): forma compatta sotto la card timeline. */
+.sr-hero-form {
+  margin-top: 20px;
+  padding: 22px;
+  border: 1px solid var(--sr-bordo);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.sr-hero-form__title {
+  font-family: var(--sr-font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--sr-inchiostro);
+  margin: 0 0 14px;
+}
+
+.sr-hero-form p {
+  margin: 0 0 12px;
+}
+
+.sr-hero-form .sr-field-label {
+  margin: 0 0 6px;
+}
+
+.sr-hero-form__brief {
+  margin: 14px 0 0;
+  font-size: 13px;
+}
+
+.sr-hero-form__brief a {
+  color: var(--sr-oltremare);
 }
 
 .sr-tool-pending {

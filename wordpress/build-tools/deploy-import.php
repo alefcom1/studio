@@ -192,6 +192,8 @@ $page_map = array(
 
 	'prezzi'                               => array( 'prezzi', null, null ),
 
+	'brief'                                => array( 'brief', null, 'Brief progetto' ),
+
 	'strumenti-index'                      => array( 'strumenti', null, 'Strumenti' ),
 	'strumento-check-up-completo'          => array( 'check-up-completo', 'strumenti', null ),
 	'strumento-test-velocita'              => array( 'test-velocita', 'strumenti', null ),
