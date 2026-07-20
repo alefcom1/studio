@@ -1444,6 +1444,38 @@ add_shortcode( 'remarka_form', 'remarka_form_shortcode' );
  * Валидация + отправка. Возвращает null при успехе или текст ошибки.
  * Общая для AJAX и admin-post путей.
  */
+/**
+ * Отправка текста заявки в Telegram. Токен и chat_id читаются из опций WP
+ * (remarka_tg_token / remarka_tg_chat_id) — в коде/репозитории их НЕТ,
+ * владелец задаёт их на сервере (wp option update). Если не настроено —
+ * тихо выходим. Fire-and-forget (blocking=false): не тормозим ответ
+ * пользователю; durable-канал — письмо и база лидов, Telegram — быстрый
+ * дубль «взглянуть сразу».
+ */
+function remarka_notify_telegram( string $text ): void {
+	$token   = trim( (string) get_option( 'remarka_tg_token', '' ) );
+	$chat_id = trim( (string) get_option( 'remarka_tg_chat_id', '' ) );
+	if ( '' === $token || '' === $chat_id ) {
+		return;
+	}
+	// Telegram ограничивает сообщение 4096 символами — режем с запасом.
+	if ( function_exists( 'mb_substr' ) ) {
+		$text = mb_substr( $text, 0, 3900 );
+	}
+	wp_remote_post(
+		'https://api.telegram.org/bot' . $token . '/sendMessage',
+		array(
+			'timeout'  => 5,
+			'blocking' => false,
+			'body'     => array(
+				'chat_id'                  => $chat_id,
+				'text'                     => $text,
+				'disable_web_page_preview' => 'true',
+			),
+		)
+	);
+}
+
 function remarka_form_process(): ?string {
 	if ( ! isset( $_POST['remarka_nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['remarka_nonce'] ), 'remarka_contact' ) ) {
 		return remarka_str( 'form_err_sessione' );
@@ -1512,6 +1544,11 @@ function remarka_form_process(): ?string {
 	$body .= 'Lingua: ' . remarka_current_lang() . "\n";
 	$body .= "IP: $ip\n";
 	$body .= 'Data: ' . current_time( 'mysql' ) . "\n";
+
+	// Дублируем заявку в Telegram (в ДОПОЛНЕНИЕ к письму, не вместо). Если
+	// Telegram недоступен или не настроен — молча пропускаем: письмо и лид
+	// остаются durable-каналом, заявка не теряется.
+	remarka_notify_telegram( "\xF0\x9F\x94\x94 Nuova richiesta preventivo — remarka.biz\n\n" . $body );
 
 	$headers = array();
 	if ( is_email( $contatto ) ) {
