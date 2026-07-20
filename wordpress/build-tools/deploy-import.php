@@ -468,12 +468,11 @@ if ( ! $menu ) {
 } else {
 	$menu_id = $menu->term_id;
 	WP_CLI::log( "  = menu già esistente: $menu_name (ID $menu_id)" );
-	// Ripulisce le voci esistenti per evitare duplicati se rilanciato con --force.
-	if ( $force ) {
-		foreach ( wp_get_nav_menu_items( $menu_id ) as $item ) {
-			wp_delete_post( $item->ID, true );
-		}
-	}
+	// НЕ стираем существующие пункты даже с --force: владелец добавляет в
+	// главное меню подпункты (выпадающие) руками в админке, и wipe при каждом
+	// «Полном цикле» их уничтожал (инцидент 20.07.2026 — «пропало выпадающее
+	// меню»). Дубликаты и так исключены проверкой по title ниже; канонические
+	// пункты только ДОБАВЛЯЮТСЯ, если их нет.
 }
 
 $menu_items = array(
@@ -534,7 +533,7 @@ if ( empty( $locations ) ) {
 
 WP_CLI::log( "\nMenu footer:" );
 
-function remarka_deploy_sync_footer_menu( string $menu_name, string $location, array $items, bool $force ): void {
+function remarka_deploy_sync_footer_menu( string $menu_name, string $location, array $items, bool $force, bool $wipe_on_force = true ): void {
 	$menu = wp_get_nav_menu_object( $menu_name );
 	if ( ! $menu ) {
 		$menu_id = wp_create_nav_menu( $menu_name );
@@ -542,7 +541,10 @@ function remarka_deploy_sync_footer_menu( string $menu_name, string $location, a
 	} else {
 		$menu_id = $menu->term_id;
 		WP_CLI::log( "  = menu già esistente: $menu_name (ID $menu_id)" );
-		if ( $force ) {
+		// $wipe_on_force=false — для ГЛАВНЫХ меню EN/RU: владелец добавляет
+		// туда выпадающие подпункты руками, wipe их уничтожал (инцидент
+		// 20.07.2026). Футерные меню полностью канонические — им wipe нужен.
+		if ( $force && $wipe_on_force ) {
 			foreach ( wp_get_nav_menu_items( $menu_id ) as $item ) {
 				wp_delete_post( $item->ID, true );
 			}
@@ -646,7 +648,7 @@ remarka_deploy_sync_footer_menu( 'Menu EN — Remarka', '', array(
 	array( 'title' => 'Tools', 'slug' => 'en/tools' ),
 	array( 'title' => 'Blog', 'slug' => 'en/blog' ),
 	array( 'title' => 'Get a quote in 24 hours', 'url' => home_url( '/en/#contatti' ) ),
-), $force );
+), $force, false );
 
 remarka_deploy_sync_footer_menu( 'Footer EN — Pages', '', array(
 	array( 'title' => 'Business websites', 'slug' => 'en/services/business-websites' ),
@@ -684,7 +686,7 @@ remarka_deploy_sync_footer_menu( 'Menu RU — Remarka', '', array(
 	array( 'title' => 'Инструменты', 'slug' => 'ru/instrumenty' ),
 	array( 'title' => 'Блог', 'slug' => 'ru/blog' ),
 	array( 'title' => 'Смета за 24 часа', 'url' => home_url( '/ru/#contatti' ) ),
-), $force );
+), $force, false );
 
 // Colonna «Услуги» RU — elenco esatto dettato dal titolare (18.07.2026).
 // «Сайты в Милане» chiude la colonna (unica landing città RU, ex colonna Студия).
