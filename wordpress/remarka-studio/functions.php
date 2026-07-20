@@ -1653,6 +1653,23 @@ add_action( 'admin_post_remarka_contact', 'remarka_form_handle_post' );
  * / valutando), così la validazione canonica passa senza modifiche. Chi vuole
  * dettagliare tutto ha il link alla pagina brief.
  * -------------------------------------------------------------------------- */
+/**
+ * Percorso della pagina brief nella lingua corrente (IT default). La pagina
+ * vive in radice per l'IT e sotto /en/ e /ru/ per le altre lingue (slug RU
+ * translitterato «brif», come da lang.py). Ritorna il path con slash iniziale
+ * e finale, pronto per home_url().
+ */
+function remarka_brief_page_url(): string {
+	$paths = array( 'it' => '/brief/', 'en' => '/en/brief/', 'ru' => '/ru/brif/' );
+	return home_url( $paths[ remarka_current_lang() ] ?? $paths['it'] );
+}
+
+/** Percorso dell'informativa privacy nella lingua corrente (IT default). */
+function remarka_privacy_page_url(): string {
+	$paths = array( 'it' => '/privacy/', 'en' => '/en/privacy/', 'ru' => '/ru/privacy/' );
+	return home_url( $paths[ remarka_current_lang() ] ?? $paths['it'] );
+}
+
 function remarka_hero_form_shortcode(): string {
 	$sent = isset( $_GET['remarka_inviato'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	ob_start();
@@ -1666,21 +1683,21 @@ function remarka_hero_form_shortcode(): string {
 		<input type="hidden" name="sr_budget" value="da-definire">
 		<input type="hidden" name="sr_tempi" value="valutando">
 
-		<p class="sr-hero-form__title">Richiesta rapida</p>
-		<p><label class="sr-field-label" for="sr-hero-nome">Nome</label>
+		<p class="sr-hero-form__title"><?php echo esc_html( remarka_str( 'hero_form_title' ) ); ?></p>
+		<p><label class="sr-field-label" for="sr-hero-nome"><?php echo esc_html( remarka_str( 'hero_form_nome' ) ); ?></label>
 		<input class="sr-text-input" id="sr-hero-nome" name="sr_nome" type="text" required maxlength="120"></p>
-		<p><label class="sr-field-label" for="sr-hero-contatto">Email o telefono</label>
+		<p><label class="sr-field-label" for="sr-hero-contatto"><?php echo esc_html( remarka_str( 'form_contatto' ) ); ?></label>
 		<input class="sr-text-input" id="sr-hero-contatto" name="sr_contatto" type="text" required maxlength="160"></p>
-		<p><label class="sr-field-label" for="sr-hero-msg">Di cosa vi occupate?</label>
-		<input class="sr-text-input" id="sr-hero-msg" name="sr_messaggio" type="text" maxlength="200" placeholder="Es. studio dentistico a Milano"></p>
+		<p><label class="sr-field-label" for="sr-hero-msg"><?php echo esc_html( remarka_str( 'hero_form_msg' ) ); ?></label>
+		<input class="sr-text-input" id="sr-hero-msg" name="sr_messaggio" type="text" maxlength="200" placeholder="<?php echo esc_attr( remarka_str( 'hero_form_msg_ph' ) ); ?>"></p>
 
 		<p class="sr-form-error" data-sr-form-error hidden></p>
-		<button type="submit" class="wp-block-button__link wp-element-button" style="width:100%" data-sr-submit>Richiedi il preventivo</button>
-		<p class="sr-hero-form__brief"><a href="<?php echo esc_url( home_url( '/brief/' ) ); ?>">Preferite raccontare tutto con calma? Compilate il brief →</a></p>
+		<button type="submit" class="wp-block-button__link wp-element-button" style="width:100%" data-sr-submit><?php echo esc_html( remarka_str( 'hero_form_invia' ) ); ?></button>
+		<p class="sr-hero-form__brief"><a href="<?php echo esc_url( remarka_brief_page_url() ); ?>"><?php echo esc_html( remarka_str( 'hero_form_brief' ) ); ?></a></p>
 	</form>
 	<div class="sr-form-success" data-sr-form-success <?php echo $sent ? '' : 'hidden'; ?>>
-		<p class="sr-mono" style="color:var(--sr-verde)">RICHIESTA INVIATA ✓</p>
-		<p>Grazie. Rispondiamo entro un giorno lavorativo.</p>
+		<p class="sr-mono" style="color:var(--sr-verde)"><?php echo esc_html( remarka_str( 'form_inviata' ) ); ?></p>
+		<p><?php echo esc_html( remarka_str( 'hero_form_grazie' ) ); ?></p>
 	</div>
 	<?php
 	return (string) ob_get_clean();
@@ -1696,9 +1713,11 @@ add_shortcode( 'remarka_hero_form', 'remarka_hero_form_shortcode' );
  * ma stesse difese di remarka_contact: nonce + honeypot + rate-limit +
  * remarka_looks_like_spam + wp_mail + Telegram + lead nel CPT sr_lead.
  *
- * NOTA LINGUA: per ora SOLO italiano (il titolare rilegge il testo IT; EN/RU
- * verranno rispecchiati in un passaggio separato). Le etichette visibili sono
- * quindi hardcoded in italiano, non passano da remarka_str().
+ * LINGUA: le etichette dell'interfaccia passano da remarka_str() (IT/EN/RU),
+ * le opzioni da remarka_brief_options() (mappe en/ru, IT di default). I VALORI
+ * canonici in italiano — remarka_brief_canonical() — restano per la whitelist
+ * di validazione e per l'email allo studio, che è sempre in italiano
+ * indipendentemente dalla lingua del visitatore.
  * ========================================================================== */
 
 /**
@@ -1742,9 +1761,54 @@ function remarka_brief_canonical(): array {
 	);
 }
 
+/**
+ * Etichette LOCALIZZATE delle opzioni del brief per il rendering, nella lingua
+ * corrente. Stesse chiavi (value) di remarka_brief_canonical(); su IT
+ * coincidono. Analogo a remarka_form_options() del modulo preventivo.
+ *  - «tempi» è identico al modulo preventivo → riuso remarka_form_options()
+ *    per non duplicare le traduzioni.
+ *  - «budget» riusa le stesse fasce del modulo preventivo; cambia solo
+ *    l'ultima voce, che nel brief è «Preferisco non indicarlo» (il modulo
+ *    preventivo usa «Da definire»): la sovrascrivo, tradotta.
+ *  - «canale» sono nomi propri (Email/WhatsApp/Telegram): nessuna mappa,
+ *    ricade sul canonico in tutte le lingue.
+ */
+function remarka_brief_options( string $group ): array {
+	$lang = remarka_current_lang();
+
+	if ( 'tempi' === $group ) {
+		return remarka_form_options( 'tempi' );
+	}
+	if ( 'budget' === $group ) {
+		$budget = remarka_form_options( 'budget' );
+		$da_def = array(
+			'it' => 'Preferisco non indicarlo',
+			'en' => 'I’d rather not say',
+			'ru' => 'Предпочитаю не указывать',
+		);
+		$budget['da-definire'] = $da_def[ $lang ] ?? $da_def['it'];
+		return $budget;
+	}
+
+	$maps = array(
+		'tipo' => array(
+			'en' => array( 'vetrina' => 'Showcase website', 'sito-aziendale' => 'Business website', 'e-commerce' => 'E-commerce', 'web-app' => 'Custom web app', 'restyling' => 'Redesign' ),
+			'ru' => array( 'vetrina' => 'Сайт-визитка', 'sito-aziendale' => 'Корпоративный сайт', 'e-commerce' => 'Интернет-магазин', 'web-app' => 'Веб-приложение на заказ', 'restyling' => 'Редизайн' ),
+		),
+		'lingue' => array(
+			'en' => array( 'it' => 'Italian', 'en' => 'English', 'ru' => 'Russian', 'altre' => 'Other languages' ),
+			'ru' => array( 'it' => 'Итальянский', 'en' => 'Английский', 'ru' => 'Русский', 'altre' => 'Другие языки' ),
+		),
+	);
+	if ( 'it' !== $lang && isset( $maps[ $group ][ $lang ] ) ) {
+		return $maps[ $group ][ $lang ];
+	}
+	return remarka_brief_canonical()[ $group ];
+}
+
 function remarka_brief_shortcode(): string {
-	$sent  = isset( $_GET['remarka_brief_inviato'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-	$canon = remarka_brief_canonical();
+	$sent   = isset( $_GET['remarka_brief_inviato'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	$facolt = ' <span class="sr-optional">' . esc_html( remarka_str( 'form_msg_opt' ) ) . '</span>';
 	ob_start();
 	?>
 	<form class="sr-contact-form sr-stepform" data-sr-contact-form method="post"
@@ -1760,10 +1824,10 @@ function remarka_brief_shortcode(): string {
 
 		<!-- Passo 1 — tipo di progetto (5 card → 3+2, niente orfana) -->
 		<fieldset class="sr-step" data-sr-step>
-			<legend class="sr-step__q">Che progetto avete in mente?</legend>
-			<p class="sr-step__hint">Scegliete il tipo più vicino: ci serve per inquadrare la proposta.</p>
+			<legend class="sr-step__q"><?php echo esc_html( remarka_str( 'brief_q_tipo' ) ); ?></legend>
+			<p class="sr-step__hint"><?php echo esc_html( remarka_str( 'brief_q_tipo_hint' ) ); ?></p>
 			<div class="sr-choice-grid sr-choice-grid--tre">
-				<?php foreach ( $canon['tipo'] as $value => $label ) : ?>
+				<?php foreach ( remarka_brief_options( 'tipo' ) as $value => $label ) : ?>
 					<label class="sr-choice"><input type="radio" class="sr-choice__input" name="sr_tipo" value="<?php echo esc_attr( $value ); ?>" required><span class="sr-choice__tick"></span><span><?php echo esc_html( $label ); ?></span></label>
 				<?php endforeach; ?>
 			</div>
@@ -1771,31 +1835,31 @@ function remarka_brief_shortcode(): string {
 
 		<!-- Passo 2 — lingue e mercati (chip multi-scelta) -->
 		<fieldset class="sr-step" data-sr-step>
-			<legend class="sr-step__q">Lingue e mercati</legend>
-			<p class="sr-step__hint">In quante lingue vi serve il sito? Potete sceglierne più di una.</p>
-			<span class="sr-field-label">Lingue del sito</span>
+			<legend class="sr-step__q"><?php echo esc_html( remarka_str( 'brief_q_lingue' ) ); ?></legend>
+			<p class="sr-step__hint"><?php echo esc_html( remarka_str( 'brief_q_lingue_hint' ) ); ?></p>
+			<span class="sr-field-label"><?php echo esc_html( remarka_str( 'brief_lbl_lingue' ) ); ?></span>
 			<div class="sr-pill-group">
-				<?php foreach ( $canon['lingue'] as $value => $label ) : ?>
+				<?php foreach ( remarka_brief_options( 'lingue' ) as $value => $label ) : ?>
 					<label class="sr-pill"><input type="checkbox" class="sr-pill__input" name="sr_lingue[]" value="<?php echo esc_attr( $value ); ?>" data-sr-require-one><span><?php echo esc_html( $label ); ?></span></label>
 				<?php endforeach; ?>
 			</div>
-			<p><label class="sr-field-label" for="sr-brief-mercati">Mercati o Paesi <span class="sr-optional">— facoltativo</span></label>
-			<input class="sr-text-input" id="sr-brief-mercati" name="sr_mercati" type="text" maxlength="200" placeholder="Es. Italia, Germania, Svizzera"></p>
+			<p><label class="sr-field-label" for="sr-brief-mercati"><?php echo esc_html( remarka_str( 'brief_lbl_mercati' ) ) . $facolt; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+			<input class="sr-text-input" id="sr-brief-mercati" name="sr_mercati" type="text" maxlength="200" placeholder="<?php echo esc_attr( remarka_str( 'brief_ph_mercati' ) ); ?>"></p>
 		</fieldset>
 
 		<!-- Passo 3 — tempi e budget (budget opzionale: mai una barriera) -->
 		<fieldset class="sr-step" data-sr-step>
-			<legend class="sr-step__q">Tempi e budget</legend>
-			<p class="sr-step__hint">Un’indicazione di massima ci basta per proporvi la soluzione giusta.</p>
-			<span class="sr-field-label">Quando vorreste partire?</span>
+			<legend class="sr-step__q"><?php echo esc_html( remarka_str( 'brief_q_tempi' ) ); ?></legend>
+			<p class="sr-step__hint"><?php echo esc_html( remarka_str( 'brief_q_tempi_hint' ) ); ?></p>
+			<span class="sr-field-label"><?php echo esc_html( remarka_str( 'brief_lbl_partenza' ) ); ?></span>
 			<div class="sr-pill-group">
-				<?php foreach ( $canon['tempi'] as $value => $label ) : ?>
+				<?php foreach ( remarka_brief_options( 'tempi' ) as $value => $label ) : ?>
 					<label class="sr-pill"><input type="radio" class="sr-pill__input" name="sr_tempi" value="<?php echo esc_attr( $value ); ?>" required><span><?php echo esc_html( $label ); ?></span></label>
 				<?php endforeach; ?>
 			</div>
-			<span class="sr-field-label">Budget indicativo <span class="sr-optional">— facoltativo</span></span>
+			<span class="sr-field-label"><?php echo esc_html( remarka_str( 'brief_lbl_budget' ) ) . $facolt; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 			<div class="sr-pill-group">
-				<?php foreach ( $canon['budget'] as $value => $label ) : ?>
+				<?php foreach ( remarka_brief_options( 'budget' ) as $value => $label ) : ?>
 					<label class="sr-pill"><input type="radio" class="sr-pill__input" name="sr_budget" value="<?php echo esc_attr( $value ); ?>"><span><?php echo esc_html( $label ); ?></span></label>
 				<?php endforeach; ?>
 			</div>
@@ -1803,40 +1867,40 @@ function remarka_brief_shortcode(): string {
 
 		<!-- Passo 4 — descrizione del progetto -->
 		<fieldset class="sr-step" data-sr-step>
-			<legend class="sr-step__q">Raccontateci il progetto</legend>
-			<p class="sr-step__hint">Chi siete, l’obiettivo del sito, eventuali riferimenti che vi piacciono.</p>
-			<p><label class="sr-field-label" for="sr-brief-progetto">Il vostro progetto <span class="sr-optional">— facoltativo</span></label>
-			<textarea class="sr-text-input" id="sr-brief-progetto" name="sr_progetto" rows="6" maxlength="4000" placeholder="Attività, obiettivo del sito, link a siti che vi piacciono…"></textarea></p>
+			<legend class="sr-step__q"><?php echo esc_html( remarka_str( 'brief_q_progetto' ) ); ?></legend>
+			<p class="sr-step__hint"><?php echo esc_html( remarka_str( 'brief_q_progetto_hint' ) ); ?></p>
+			<p><label class="sr-field-label" for="sr-brief-progetto"><?php echo esc_html( remarka_str( 'brief_lbl_progetto' ) ) . $facolt; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+			<textarea class="sr-text-input" id="sr-brief-progetto" name="sr_progetto" rows="6" maxlength="4000" placeholder="<?php echo esc_attr( remarka_str( 'brief_ph_progetto' ) ); ?>"></textarea></p>
 		</fieldset>
 
 		<!-- Passo 5 — contatti (in fondo: prima ci si mette in gioco) -->
 		<fieldset class="sr-step" data-sr-step>
-			<legend class="sr-step__q">Come vi ricontattiamo?</legend>
-			<p class="sr-step__hint">Rispondiamo entro un giorno lavorativo.</p>
-			<p><label class="sr-field-label" for="sr-brief-nome">Nome e cognome</label>
+			<legend class="sr-step__q"><?php echo esc_html( remarka_str( 'brief_q_contatti' ) ); ?></legend>
+			<p class="sr-step__hint"><?php echo esc_html( remarka_str( 'brief_q_contatti_hint' ) ); ?></p>
+			<p><label class="sr-field-label" for="sr-brief-nome"><?php echo esc_html( remarka_str( 'form_nome' ) ); ?></label>
 			<input class="sr-text-input" id="sr-brief-nome" name="sr_nome" type="text" required maxlength="120"></p>
-			<p><label class="sr-field-label" for="sr-brief-email">Email</label>
+			<p><label class="sr-field-label" for="sr-brief-email"><?php echo esc_html( remarka_str( 'brief_lbl_email' ) ); ?></label>
 			<input class="sr-text-input" id="sr-brief-email" name="sr_email" type="email" required maxlength="160"></p>
-			<p><label class="sr-field-label" for="sr-brief-tel">Telefono <span class="sr-optional">— facoltativo</span></label>
+			<p><label class="sr-field-label" for="sr-brief-tel"><?php echo esc_html( remarka_str( 'brief_lbl_tel' ) ) . $facolt; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
 			<input class="sr-text-input" id="sr-brief-tel" name="sr_telefono" type="tel" maxlength="60"></p>
-			<span class="sr-field-label">Canale preferito</span>
+			<span class="sr-field-label"><?php echo esc_html( remarka_str( 'brief_lbl_canale' ) ); ?></span>
 			<div class="sr-pill-group">
-				<?php foreach ( $canon['canale'] as $value => $label ) : ?>
+				<?php foreach ( remarka_brief_options( 'canale' ) as $value => $label ) : ?>
 					<label class="sr-pill"><input type="radio" class="sr-pill__input" name="sr_canale" value="<?php echo esc_attr( $value ); ?>"<?php echo 'email' === $value ? ' checked' : ''; ?>><span><?php echo esc_html( $label ); ?></span></label>
 				<?php endforeach; ?>
 			</div>
 			<label class="sr-consent">
 				<input type="checkbox" name="sr_consenso" value="1" required>
-				<span>Ho letto l’<a href="<?php echo esc_url( home_url( '/privacy/' ) ); ?>">informativa privacy</a> e acconsento al trattamento dei dati per essere ricontattato.</span>
+				<span><?php echo wp_kses( sprintf( remarka_str( 'brief_consenso' ), esc_url( remarka_privacy_page_url() ) ), array( 'a' => array( 'href' => array() ) ) ); ?></span>
 			</label>
 		</fieldset>
 
 		<p class="sr-form-error" data-sr-form-error hidden></p>
-		<button type="submit" class="wp-block-button__link wp-element-button" style="width:100%" data-sr-submit>Invia il brief →</button>
+		<button type="submit" class="wp-block-button__link wp-element-button" style="width:100%" data-sr-submit><?php echo esc_html( remarka_str( 'brief_invia' ) ); ?></button>
 	</form>
 	<div class="sr-form-success sr-brief-success" data-sr-form-success <?php echo $sent ? '' : 'hidden'; ?>>
-		<p class="sr-mono" style="color:var(--sr-verde)">BRIEF INVIATO ✓</p>
-		<p>Grazie. <strong>Rispondiamo entro un giorno lavorativo</strong> con una proposta su misura. Se intanto volete anticiparci qualcosa, scriveteci su WhatsApp.</p>
+		<p class="sr-mono" style="color:var(--sr-verde)"><?php echo esc_html( remarka_str( 'brief_inviato' ) ); ?></p>
+		<p><?php echo wp_kses( remarka_str( 'brief_grazie' ), array( 'strong' => array() ) ); ?></p>
 	</div>
 	<?php
 	return (string) ob_get_clean();

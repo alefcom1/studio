@@ -67,7 +67,11 @@
 <!-- wp:paragraph {"className":"sr-timeline__foot"} -->
 <p class="sr-timeline__foot">The date is in the contract: <strong>every working day of delay is 1% off.</strong></p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:shortcode -->
+[remarka_hero_form]
+<!-- /wp:shortcode --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>
 <!-- /wp:group -->

@@ -10,6 +10,7 @@ return array(
 	array( 'it' => 'strumenti', 'en' => 'en/tools', 'ru' => 'ru/instrumenty' ),
 	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog' ),
 	array( 'it' => 'prezzi', 'en' => 'en/pricing', 'ru' => 'ru/ceny' ),
+	array( 'it' => 'brief', 'en' => 'en/brief', 'ru' => 'ru/brif' ),
 	array( 'it' => 'milano', 'en' => 'en/milan', 'ru' => 'ru/milan' ),
 	array( 'it' => 'chi-siamo', 'en' => 'en/about', 'ru' => 'ru/o-studii' ),
 	array( 'it' => 'privacy', 'en' => 'en/privacy', 'ru' => 'ru/privacy' ),

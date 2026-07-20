@@ -67,7 +67,11 @@
 <!-- wp:paragraph {"className":"sr-timeline__foot"} -->
 <p class="sr-timeline__foot">Дата запуска — в договоре: <strong>каждый рабочий день просрочки — минус 1% от суммы.</strong></p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:shortcode -->
+[remarka_hero_form]
+<!-- /wp:shortcode --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>
 <!-- /wp:group -->

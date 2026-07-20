@@ -20,6 +20,7 @@ SECTIONS = {
 # Одиночные страницы верхнего уровня.
 SINGLES = {
     'prezzi':            {'en': 'pricing',            'ru': 'ceny'},
+    'brief':             {'en': 'brief',              'ru': 'brif'},
     'milano':            {'en': 'milan',              'ru': 'milan'},
     'chi-siamo':         {'en': 'about',              'ru': 'o-studii'},
     'privacy':           {'en': 'privacy',            'ru': 'privacy'},
