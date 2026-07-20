@@ -160,7 +160,29 @@
   вычитка (390px) владельцем после деплоя; (2) объём 617–763 слова — ниже
   номинала 1000–1500, но плотно и длиннее уже одобренного RU-корпуса
   (577–652); при желании владельца агент допишет секции.
-- Батч 6 (RU руками) — очередь, следующее срабатывание триггера 05:00 UTC.
+- Батч 6 (RU руками) — ✅ выполнен и вычитан оркестратором (20.07, коммит `c65cd1e`):
+  5 RU-only статей «продукты и доверие» (telegram-prilozhenie-dlya-biznesa-v-evrope ·
+  kak-proverit-veb-studiyu · zakon-o-dostupnosti-sajtov · sajt-v-chatgpt ·
+  russkoyazychnaya-auditoriya-v-evrope), 735–902 слова, по 4 внешних
+  первоисточника (core.telegram.org Mini Apps/Payments/Bot API, Eurostat,
+  Google Search Central helpful-content/hreflang/multi-regional, web.dev Web
+  Vitals, EUR-Lex GDPR 2016/679 + EAA 2019/882, AccessibleEU, W3C WAI/WCAG,
+  OpenAI GPTBot docs, llmstxt.org, CSA Research), 10 фирменных SVG, JSON-LD
+  BlogPosting, перелинковка RU-услуга + RU-инструмент + соседняя статья.
+  Механика как батч 5: BLOG_RU_ONLY +5, deploy-import page_map +5,
+  ru-blog-index +5 карточек, blog-schema-map/lang-map регенерированы точечно,
+  seo-meta.md раздел «Batch 6» (Title 48–57, Desc 142–151). Вычитка
+  оркестратора: тексты честны и живы (EAA «уже вступил в силу», 28.06.2025 в
+  прошлом; исключения для микро с оговоркой «граница — нац. закон»; число
+  русскоязычных НЕ выдумано — «точную цифру никто не назовёт», Eurostat как
+  контекст; Mini App/гарантии — реальные факты студии; раздел «не магия и не
+  гарантия» у ChatGPT-статьи). Оговорки: (1) Playwright-скрины невозможны
+  (egress) — SVG проверены cairosvg, мобильная вычитка 390px за владельцем;
+  (2) полировка: у SVG `aria-label` на итальянском на RU-страницах —
+  косметическая a11y-мелочь, в бэклог.
+
+**План блога закрыт: все 6 батчей (30 статей) выполнены и вычитаны.**
+Ежедневный триггер отключён оркестратором 20.07 (update_trigger enabled=false).
 - **Ретрофит выполнен отдельным проходом 15.07** (коммит «Blog retrofit:
   external sources, BlogPosting schema, content enrichment»). Охват — ВСЕ 13
   готовых статей (8 старых + 5 батча 1):
