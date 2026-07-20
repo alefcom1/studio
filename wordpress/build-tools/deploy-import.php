@@ -364,6 +364,12 @@ $page_map = array(
 	'ru-blog-gdpr-dlya-russkoyazychnogo-biznesa-v-es' => array( 'gdpr-dlya-russkoyazychnogo-biznesa-v-es', 'ru/blog', null ),
 	'ru-blog-perevesti-ili-lokalizovat-sajt'       => array( 'perevesti-ili-lokalizovat-sajt', 'ru/blog', null ),
 	'ru-blog-cena-sajta-v-italii'                  => array( 'cena-sajta-v-italii', 'ru/blog', null ),
+	// Blog · Batch 6 — RU-only (scritti a mano, senza specchio IT/EN).
+	'ru-blog-telegram-prilozhenie-dlya-biznesa-v-evrope' => array( 'telegram-prilozhenie-dlya-biznesa-v-evrope', 'ru/blog', null ),
+	'ru-blog-kak-proverit-veb-studiyu'             => array( 'kak-proverit-veb-studiyu', 'ru/blog', null ),
+	'ru-blog-zakon-o-dostupnosti-sajtov'           => array( 'zakon-o-dostupnosti-sajtov', 'ru/blog', null ),
+	'ru-blog-sajt-v-chatgpt'                       => array( 'sajt-v-chatgpt', 'ru/blog', null ),
+	'ru-blog-russkoyazychnaya-auditoriya-v-evrope' => array( 'russkoyazychnaya-auditoriya-v-evrope', 'ru/blog', null ),
 	'ru-prezzi'                                    => array( 'ceny', 'ru', null ),
 	'ru-citta-milano'                              => array( 'milan', 'ru', null ),
 	'ru-chi-siamo'                                 => array( 'o-studii', 'ru', null ),

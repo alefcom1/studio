@@ -69,4 +69,9 @@ return array(
 	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/gdpr-dlya-russkoyazychnogo-biznesa-v-es' ),
 	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/perevesti-ili-lokalizovat-sajt' ),
 	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/cena-sajta-v-italii' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/telegram-prilozhenie-dlya-biznesa-v-evrope' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/kak-proverit-veb-studiyu' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/zakon-o-dostupnosti-sajtov' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/sajt-v-chatgpt' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/russkoyazychnaya-auditoriya-v-evrope' ),
 );

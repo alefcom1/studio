@@ -5,7 +5,7 @@
  * обложка, для JSON-LD BlogPosting (см. remarka_blog_posting_schema).
  */
 return array(
-	'_modified' => '2026-07-19',
+	'_modified' => '2026-07-20',
 	'posts' => array(
 		'sito-quattro-lingue-costi-tempi' => array( 'date' => '2026-05-05', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg' ),
 		'website-four-languages-costs' => array( 'date' => '2026-05-05', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg' ),
@@ -74,5 +74,10 @@ return array(
 		'gdpr-dlya-russkoyazychnogo-biznesa-v-es' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-gdpr-cover.svg' ),
 		'perevesti-ili-lokalizovat-sajt' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-loc-cover.svg' ),
 		'cena-sajta-v-italii' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-cena-cover.svg' ),
+		'telegram-prilozhenie-dlya-biznesa-v-evrope' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-tg-cover.svg' ),
+		'kak-proverit-veb-studiyu' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-fiducia-cover.svg' ),
+		'zakon-o-dostupnosti-sajtov' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-eaa-cover.svg' ),
+		'sajt-v-chatgpt' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-chatgpt-cover.svg' ),
+		'russkoyazychnaya-auditoriya-v-evrope' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-rus-cover.svg' ),
 	),
 );

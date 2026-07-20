@@ -143,6 +143,12 @@ BLOG_RU_ONLY = {
     'gdpr-dlya-russkoyazychnogo-biznesa-v-es': {'date': '2026-07-19', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch5-gdpr-cover.svg'},
     'perevesti-ili-lokalizovat-sajt':         {'date': '2026-07-19', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch5-loc-cover.svg'},
     'cena-sajta-v-italii':                    {'date': '2026-07-19', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch5-cena-cover.svg'},
+    # Batch 6 — RU-only (prodotti e fiducia, scritti a mano in russo).
+    'telegram-prilozhenie-dlya-biznesa-v-evrope': {'date': '2026-07-20', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch6-tg-cover.svg'},
+    'kak-proverit-veb-studiyu':               {'date': '2026-07-20', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch6-fiducia-cover.svg'},
+    'zakon-o-dostupnosti-sajtov':             {'date': '2026-07-20', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch6-eaa-cover.svg'},
+    'sajt-v-chatgpt':                         {'date': '2026-07-20', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch6-chatgpt-cover.svg'},
+    'russkoyazychnaya-auditoriya-v-evrope':   {'date': '2026-07-20', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch6-rus-cover.svg'},
 }
 
 

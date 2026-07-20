@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="Chi è soggetto alla legge sull'accessibilità">
+  <defs>
+    <pattern id="gridEaaC" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="560" fill="#F7F6F2"/>
+  <rect width="1200" height="560" fill="url(#gridEaaC)"/>
+  <line x1="80" y1="86" x2="1120" y2="86" stroke="#14161A" stroke-width="1.5"/>
+  <text x="80" y="72" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">КОГО ЗАКОН КАСАЕТСЯ — И ГДЕ ЕСТЬ ИСКЛЮЧЕНИЯ</text>
+  <g transform="translate(80,120)">
+    <rect x="0" y="0" width="500" height="330" fill="#FFFFFF" stroke="#2440C8" stroke-width="2"/>
+    <text x="28" y="54" class="mono" font-size="15" letter-spacing="2" fill="#2440C8">КАСАЕТСЯ НАПРЯМУЮ</text>
+    <text x="28" y="108" class="body" font-size="22" fill="#14161A">· интернет-магазины и продажа людям</text>
+    <text x="28" y="152" class="body" font-size="22" fill="#14161A">· банки, платежи, финансы</text>
+    <text x="28" y="196" class="body" font-size="22" fill="#14161A">· транспорт и электронные билеты</text>
+    <text x="28" y="240" class="body" font-size="22" fill="#14161A">· бронирование и услуги онлайн</text>
+    <text x="28" y="284" class="body" font-size="22" fill="#14161A">· сайты, где заключают договор</text>
+  </g>
+  <g transform="translate(620,120)">
+    <rect x="0" y="0" width="500" height="330" fill="none" stroke="#14161A" stroke-width="1.5"/>
+    <text x="28" y="54" class="mono" font-size="15" letter-spacing="2" fill="#5A5E66">ГДЕ ЕСТЬ ПОСЛАБЛЕНИЯ</text>
+    <text x="28" y="108" class="body" font-size="22" fill="#14161A">· микропредприятия — услуги</text>
+    <text x="28" y="148" class="body" font-size="17" fill="#5A5E66">  (ориентир: &lt; 10 сотрудников)</text>
+    <text x="28" y="196" class="body" font-size="22" fill="#14161A">· отдельные виды контента</text>
+    <text x="28" y="252" class="body" font-size="19" fill="#14161A">но: продажа товаров подпадает</text>
+    <text x="28" y="286" class="body" font-size="19" fill="#2440C8">границу задаёт нац. закон</text>
+  </g>
+  <text x="80" y="500" class="mono" font-size="15" fill="#5A5E66">Источник: Директива (ЕС) 2019/882 · AccessibleEU (Еврокомиссия) · W3C WAI (WCAG).</text>
+</svg>
