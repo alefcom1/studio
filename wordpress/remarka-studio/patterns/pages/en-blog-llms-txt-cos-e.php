@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">llms.txt: what it is, and does your site actually need it?</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/llmstxt-cover.svg" alt="llms.txt: what it is — the Markdown file in the site root that summarizes your content for AI models" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/llmstxt-cover.svg" alt="llms.txt: what it is — the Markdown file in the site root that summarizes your content for AI models" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -42,7 +42,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The nice part is that you can read and write it without being a programmer. The structure is that of a tidy Markdown document: a title with the company name, a one-line summary, then sections with links to the pages you want read first — services, about, contacts, documentation.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/llmstxt-anatomia.svg" alt="Anatomy of an llms.txt file: a required H1 title, a one-line summary, sections with links, and an optional block" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The anatomy of an llms.txt file: a title (1, required), a one-line summary (2), sections with links to the key pages (3), and an optional block for the rest (4). Nothing more — its strength is in the restraint.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/llmstxt-anatomia.svg" alt="Anatomy of an llms.txt file: a required H1 title, a one-line summary, sections with links, and an optional block" width="1200" height="560" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The anatomy of an llms.txt file: a title (1, required), a one-line summary (2), sections with links to the key pages (3), and an optional block for the rest (4). Nothing more — its strength is in the restraint.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Does it actually help? The honest answer<span class="sr-accent-dot">.</span></h2>

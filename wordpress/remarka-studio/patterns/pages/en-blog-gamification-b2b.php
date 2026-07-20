@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Gamification in B2B: when a game sells serious services</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/gamification-cover.svg" alt="Gamification in B2B marketing: game mechanics that keep people on the site and tell a serious service’s story" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/gamification-cover.svg" alt="Gamification in B2B marketing: game mechanics that keep people on the site and tell a serious service’s story" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -42,7 +42,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">There’s also a technical return that’s often ignored. The time people spend on the site and the way they interact are signals of content quality — Google rewards pages that genuinely answer and hold attention, not those abandoned in two seconds. Content that entertains while it explains who you are therefore works on two fronts at once: the memory of those who experience it and the site’s health in the eyes of the engines.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/gamification-loop.svg" alt="The gamification loop in B2B marketing: goal, action, progress and reward, on the needs of autonomy, competence and relatedness" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The loop that makes an experience engaging: a clear goal, an action, visible progress, a reward — resting on the three needs of autonomy, competence and relatedness. Source: Nielsen Norman Group.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/gamification-loop.svg" alt="The gamification loop in B2B marketing: goal, action, progress and reward, on the needs of autonomy, competence and relatedness" width="1200" height="480" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The loop that makes an experience engaging: a clear goal, an action, visible progress, a reward — resting on the three needs of autonomy, competence and relatedness. Source: Nielsen Norman Group.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">A real case: a game to tell the story of translation<span class="sr-accent-dot">.</span></h2>

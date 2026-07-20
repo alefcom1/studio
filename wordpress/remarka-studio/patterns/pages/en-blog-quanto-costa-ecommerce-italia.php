@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">What an e-commerce site costs in Italy in 2026: the real numbers</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/costo-ecom-cover.svg" alt="How much an e-commerce site costs in Italy in 2026: the price bands from € 6,000 to € 25,000 and up" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/costo-ecom-cover.svg" alt="How much an e-commerce site costs in Italy in 2026: the price bands from € 6,000 to € 25,000 and up" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -33,7 +33,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Our price list sits in the middle tier — € 7,500–14,000, fixed in the quote — with one contractual difference: PageSpeed 90+ guaranteed in writing and a delivery date backed by a penalty clause. Those are the two items you will almost never find in competing offers in black and white.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/costo-ecom-fasce.svg" alt="The three price bands of an e-commerce site in Italy and the recurring costs often left out of the quote" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The Italian market bands, 2026: template (under € 3,000), professional custom-built (€ 6,000–15,000, where our list price € 7,500–14,000 sits) and complex (over € 15,000). On top of the build cost come maintenance (€ 500–2,000 a year) and payment fees (1.5–3%). Source: public price lists of Italian web agencies, 2026.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/costo-ecom-fasce.svg" alt="The three price bands of an e-commerce site in Italy and the recurring costs often left out of the quote" width="1200" height="530" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The Italian market bands, 2026: template (under € 3,000), professional custom-built (€ 6,000–15,000, where our list price € 7,500–14,000 sits) and complex (over € 15,000). On top of the build cost come maintenance (€ 500–2,000 a year) and payment fees (1.5–3%). Source: public price lists of Italian web agencies, 2026.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:14px"><a href="https://almanac.httparchive.org/en/2024/" target="_blank" rel="noopener">Real market data: HTTP Archive’s Web Almanac 2024 →</a></p>

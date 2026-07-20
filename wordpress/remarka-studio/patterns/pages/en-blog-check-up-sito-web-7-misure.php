@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Website check-up: the 7 metrics that matter</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/checkup-cover.svg" alt="Website check-up: seven metrics in a single health score from 0 to 100" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/checkup-cover.svg" alt="Website check-up: seven metrics in a single health score from 0 to 100" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -30,7 +30,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">A single score reassures, but it misleads. “PageSpeed 92” says something about speed and nothing about privacy, accessibility or AI readiness. That’s why a serious check-up doesn’t look at one thing: it lines up seven dimensions and weights them, so you see at a glance where the site is solid and where it loses points — and which problems are worth fixing first.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/checkup-sette.svg" alt="The seven check-up metrics — performance, SEO, accessibility, best practices, privacy, AI readiness, CO₂ — and the health-score bands" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The seven metrics and the health-score bands (0–49 critical, 50–74 room to improve, 75–89 good, 90+ excellent). Four dimensions come from the Google PageSpeed API; three — privacy, AI readiness and CO₂ — are our own checks. Performance weighs the most (25), CO₂ the least (5).</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/checkup-sette.svg" alt="The seven check-up metrics — performance, SEO, accessibility, best practices, privacy, AI readiness, CO₂ — and the health-score bands" width="1200" height="620" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The seven metrics and the health-score bands (0–49 critical, 50–74 room to improve, 75–89 good, 90+ excellent). Four dimensions come from the Google PageSpeed API; three — privacy, AI readiness and CO₂ — are our own checks. Performance weighs the most (25), CO₂ the least (5).</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">The four metrics that come from Google<span class="sr-accent-dot">.</span></h2>

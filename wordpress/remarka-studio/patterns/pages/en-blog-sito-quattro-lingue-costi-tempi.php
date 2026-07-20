@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">A website in four languages: costs, timelines, and the mistakes to avoid</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg" alt="A four-language website: costs, timelines, and the difference between translating and localizing" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg" alt="A four-language website: costs, timelines, and the difference between translating and localizing" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -48,7 +48,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Translating is changing the words; localizing is changing whatever it takes for the message to work in that market. A price in the right currency, a date in the local format, an example that’s understood in Germany but not in Italy, a more direct or more formal tone depending on the country. A classic CSA Research study has said it for years with a title that’s already a thesis: “Can’t Read, Won’t Buy” — if I can’t read it in my language, I won’t buy it. It still holds, and it holds above all where there’s a cart.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/quattro-tradurre-localizzare.svg" alt="Translating versus localizing: changing the words compared with adapting currency, date format, tone and examples to the market" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Translating changes the words; localizing adapts the message to the market — currency, date format, tone, hreflang. Source: CSA Research, “Can’t Read, Won’t Buy”.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/quattro-tradurre-localizzare.svg" alt="Translating versus localizing: changing the words compared with adapting currency, date format, tone and examples to the market" width="1200" height="470" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">Translating changes the words; localizing adapts the message to the market — currency, date format, tone, hreflang. Source: CSA Research, “Can’t Read, Won’t Buy”.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">A real case: localisation that generates orders<span class="sr-accent-dot">.</span></h2>

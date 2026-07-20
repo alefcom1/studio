@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">A website in 3 weeks: how it’s (really) possible</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/tresett-cover.svg" alt="A website in 3 weeks: the three weeks from signing to online, analysis, development and go-live with the date in the contract" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/tresett-cover.svg" alt="A website in 3 weeks: the three weeks from signing to online, analysis, development and go-live with the date in the contract" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -39,7 +39,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The first week decides the other two. We do the analysis — who you are, who you want to reach, what the site has to do — and out of it comes a fixed quote, with locked price and date. Then the design: not twenty drafts, but one shared, approved direction, so the following week develops with no second thoughts. It’s the week that asks the most of you, and it’s time well spent: every decision taken now is a delay avoided later.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/tresett-timeline.svg" alt="The three weeks from signing to online: week 1 analysis and design, week 2 development, week 3 content, testing and go-live" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">From signing to online in 21 days: analysis and design (week 1), development (week 2), content, testing and publishing (week 3). The date is in the contract: every working day of delay is 1% off. Business-website timing; a brochure site is 2 weeks, e-commerce 6.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/tresett-timeline.svg" alt="The three weeks from signing to online: week 1 analysis and design, week 2 development, week 3 content, testing and go-live" width="1200" height="470" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">From signing to online in 21 days: analysis and design (week 1), development (week 2), content, testing and publishing (week 3). The date is in the contract: every working day of delay is 1% off. Business-website timing; a brochure site is 2 weeks, e-commerce 6.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Week 2: development, with speed already built in<span class="sr-accent-dot">.</span></h2>

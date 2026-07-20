@@ -15,7 +15,7 @@
 <h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">How to get found (and cited) by ChatGPT: a GEO guide</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/geo-cover.svg" alt="A site visible on ChatGPT: GEO (Generative Engine Optimization) and an AI answer that cites your page as a source" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/geo-cover.svg" alt="A site visible on ChatGPT: GEO (Generative Engine Optimization) and an AI answer that cites your page as a source" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -42,7 +42,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The path is simpler than it looks, and understanding it helps you work on it. Your site is read by specialized crawlers — OpenAI’s GPTBot, ClaudeBot, PerplexityBot; that content feeds the model; and when someone asks a relevant question, the model builds the answer and, if your text is clear and trustworthy, cites you as a source.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/geo-flusso.svg" alt="The GEO flow: from your site to the AI crawlers (GPTBot, ClaudeBot, PerplexityBot), to the model, to the answer with the citation" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The path, in four steps: your site (1) is read by AI crawlers (2), feeds the model (3) and, if the content is clear, ends up cited in the answer (4). Every step has a way to go wrong — or to work.</figcaption></figure>
+<figure class="wp-block-image size-large" style="margin:36px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/geo-flusso.svg" alt="The GEO flow: from your site to the AI crawlers (GPTBot, ClaudeBot, PerplexityBot), to the model, to the answer with the citation" width="1200" height="440" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/><figcaption class="sr-mono" style="margin-top:12px;font-size:12.5px;letter-spacing:0.04em;color:var(--sr-grigio);max-width:75ch">The path, in four steps: your site (1) is read by AI crawlers (2), feeds the model (3) and, if the content is clear, ends up cited in the answer (4). Every step has a way to go wrong — or to work.</figcaption></figure>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">GEO and SEO: what changes (and what doesn’t)<span class="sr-accent-dot">.</span></h2>
