@@ -239,20 +239,23 @@
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"48px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
 <div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"64%"} -->
-<div class="wp-block-column" style="flex-basis:64%"><!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
-<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Vi serve una web app su misura come il nostro TMS?<span class="sr-accent-dot">.</span></h2>
+<div class="wp-block-column" style="flex-basis:64%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<p class="sr-eyebrow">Interessati a questo progetto?</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
+<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Vi serve un'app o un sito su misura? Parliamone<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:12px;font-size:16px">Portali B2B, aree clienti, gestionali, configuratori, integrazioni. La stessa ingegneria di questo caso, applicata al vostro processo.</p>
+<p class="has-base-font-size" style="margin-top:12px;font-size:16px">Progettiamo e sviluppiamo siti e web app su misura per aziende e professionisti. Raccontateci la vostra idea: preventivo in 24 ore, prezzo chiuso.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"36%"} -->
 <div class="wp-block-column" style="flex-basis:36%"><!-- wp:buttons {"layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"14px"}}} -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/servizi/web-app/">Scopri il servizio Web app</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi un preventivo</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/casi-studio/">Tutti i casi studio</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/servizi/web-app/">Scopri il servizio Web app</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
