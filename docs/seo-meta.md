@@ -199,6 +199,19 @@ Torino — 155 — ≤160.
 - **Title:** `Portfolio & case studies — projects we built | Remarka`
 - **Description:** `The projects the Remarka group built for itself: websites, web apps, technical SEO and native localisation. Every case links to the live project, since 2001.`
 
+### Pagine-caso singole dei progetti reali (dal 21.07.2026)
+
+> Approfondimenti tecnici SOLO su progetti reali del gruppo (repo verificabili).
+> Forte potenziale SEO come «esempio di sviluppo». Autore SEMPRE il team/gruppo
+> Remarka — mai strumenti di sviluppo. Schema.org: `SoftwareApplication` +
+> `BreadcrumbList` da `remarka_case_study_schema()` (functions.php).
+
+#### `/casi-studio/tms-perevod4/` — TMS (flagship, template)
+
+- **Focus Keyword:** `sviluppo web app su misura`
+- **Title (48):** `TMS: sviluppo web app su misura | Studio Remarka`
+- **Description (156):** `Caso studio del nostro TMS: una web app su misura completa — ordini, clienti, preventivi, fatture e AI. Architettura, funzioni, stack e fasi del progetto.`
+
 ## Сервисные страницы (по мере обновления сроков)
 
 - `/servizi/siti-aziendali/` Title: `Sito aziendale in 3 settimane, prezzo chiuso | Studio Remarka`

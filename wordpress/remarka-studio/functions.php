@@ -1264,6 +1264,84 @@ function remarka_checkup_tool_schema(): void {
 add_action( 'wp_head', 'remarka_checkup_tool_schema' );
 
 /**
+ * SoftwareApplication + BreadcrumbList (JSON-LD) sulle pagine-caso studio dei
+ * PROGETTI REALI del gruppo (21.07.2026). Ogni caso descrive un software che
+ * abbiamo costruito noi: @type SoftwareApplication è la descrizione più
+ * accurata (la pagina che ne parla resta gestita da Rank Math). Niente
+ * aggregateRating (il titolare ha escluso valutazioni fittizie), niente
+ * offers (non è un prodotto in vendita: è un caso di portfolio). L'autore è
+ * SEMPRE l'organizzazione/il team, mai strumenti di sviluppo. Mappa statica
+ * per-slug, estendibile ai casi successivi. Gli screenshot puntano ai file
+ * reali del tema (assets/img/casi), gli stessi mostrati in pagina.
+ */
+function remarka_case_study_schema(): void {
+	$cases = array(
+		'tms-perevod4' => array(
+			'name'        => 'TMS — Translation Management System (Perevod4)',
+			'live_url'    => 'https://tms.perevod4.ru',
+			'category'    => 'BusinessApplication',
+			'description' => 'Translation Management System sviluppato su misura dal gruppo Remarka per un bureau di traduzioni: gestione ordini, clienti, traduttori, preventivi, pagamenti, fatture, glossari e traduzione assistita AI in un\'unica web app.',
+			'shots'       => array( 'tms-board-1440.webp', 'tms-clienti-1440.webp', 'tms-fatture-1440.webp' ),
+			'crumb'       => 'TMS Perevod4',
+		),
+	);
+
+	// Attiva solo sulle pagine-caso conosciute (slug foglia sotto /casi-studio/).
+	$slug = get_post_field( 'post_name', get_queried_object_id() );
+	if ( ! is_page() || ! isset( $cases[ $slug ] ) ) {
+		return;
+	}
+	$c       = $cases[ $slug ];
+	$img_base = get_stylesheet_directory_uri() . '/assets/img/casi/';
+
+	$app = array(
+		'@context'            => 'https://schema.org',
+		'@type'               => 'SoftwareApplication',
+		'name'                => $c['name'],
+		'url'                 => $c['live_url'],
+		'applicationCategory' => $c['category'],
+		'operatingSystem'     => 'Web',
+		'description'         => $c['description'],
+		'screenshot'          => array_map(
+			static function ( $f ) use ( $img_base ) {
+				return $img_base . $f;
+			},
+			$c['shots']
+		),
+		'author'              => array(
+			'@type' => 'Organization',
+			'name'  => 'Studio Remarka',
+			'url'   => home_url( '/' ),
+		),
+		'isBasedOn'           => get_permalink(),
+	);
+
+	$crumbs = array(
+		array( 'name' => 'Home', 'url' => home_url( '/' ) ),
+		array( 'name' => 'Casi studio', 'url' => home_url( '/casi-studio/' ) ),
+		array( 'name' => $c['crumb'], 'url' => get_permalink() ),
+	);
+	$items = array();
+	foreach ( $crumbs as $i => $cr ) {
+		$items[] = array(
+			'@type'    => 'ListItem',
+			'position' => $i + 1,
+			'name'     => $cr['name'],
+			'item'     => $cr['url'],
+		);
+	}
+	$breadcrumb = array(
+		'@context'        => 'https://schema.org',
+		'@type'           => 'BreadcrumbList',
+		'itemListElement' => $items,
+	);
+
+	echo '<script type="application/ld+json">' . wp_json_encode( $app, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>' . "\n";
+	echo '<script type="application/ld+json">' . wp_json_encode( $breadcrumb, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>' . "\n";
+}
+add_action( 'wp_head', 'remarka_case_study_schema' );
+
+/**
  * BlogPosting (JSON-LD) su ogni pagina-articolo del blog, nelle tre lingue
  * (piano-blog.md, requisito del titolare 15.07). Segue lo stesso schema di
  * remarka_checkup_tool_schema(): niente duplicazione dell'Organization della

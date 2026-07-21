@@ -183,12 +183,13 @@ $page_map = array(
 	'servizio-web-app'                     => array( 'web-app', 'servizi', 'Web app su misura' ),
 	'servizio-adeguamento-eaa'             => array( 'adeguamento-eaa', 'servizi', 'Adeguamento EAA' ),
 
-	// I casi studio non hanno più pagine singole (docs/copy-casi-studio.md
-	// §8.3): un solo catalogo con schede-àncora in casi-studio-index. Le
-	// quattro voci caso-<slug> (clienti inventati) sono state rimosse di
-	// proposito: la pulizia orfane qui sotto le sposta nel cestino al
-	// prossimo REMARKA_FORCE=1, non compaiono più in $current_slugs.
+	// Catalogo unico con schede-àncora (docs/copy-casi-studio.md §8.3). Le
+	// vecchie voci caso-<slug> con clienti INVENTATI restano rimosse. Da
+	// 21.07.2026 riapriamo pagine singole SOLO per i progetti REALI del
+	// gruppo (repo verificabili, niente clienti finti): approfondimenti
+	// tecnici con forte potenziale SEO. Prima: TMS (flagship, template).
 	'casi-studio-index'                    => array( 'casi-studio', null, 'Casi studio' ),
+	'caso-tms-perevod4'                    => array( 'tms-perevod4', 'casi-studio', 'TMS Perevod4' ),
 
 	'prezzi'                               => array( 'prezzi', null, null ),
 

@@ -128,7 +128,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">In produzione da 2 anni: il sistema gestisce 180 ordini al mese, oltre 2.000 l'anno. Dentro ci lavorano 2 amministratori, 8 project manager e 4 agenzie partner con la propria base — e gli ordini non si perdono più tra le email.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/servizi/web-app/">Una web app su misura per la vostra azienda →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/tms-perevod4/">Leggi il caso completo: architettura, funzioni e fasi →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/servizi/web-app/">Una web app su misura per la vostra azienda →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
