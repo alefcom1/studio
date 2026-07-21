@@ -4083,7 +4083,7 @@ body #masthead.site-header {
   opacity: 0.5;
   transition: transform 0.2s ease;
 }
-#masthead .sr-has-mega:hover > a::after,
+#masthead .sr-has-mega.sr-mega-open > a::after,
 #masthead .sr-has-mega:focus-within > a::after {
   transform: translateY(1px) rotate(-135deg);
   opacity: 0.8;
@@ -4099,13 +4099,26 @@ body #masthead.site-header {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
+  /* Da CHIUSO il pannello NON deve intercettare il mouse. È un box alto quanto
+     il viewport (le sue liste sono visibility:visible per battere Prespa), che
+     ancorato sotto la barra copre metà pagina: senza questo, passare il cursore
+     a metà pagina riattivava li:hover e apriva il menu da solo (bug live
+     luglio 2026). Con pointer-events:none il box chiuso è trasparente al mouse
+     e l'apertura può partire solo dalla voce nella barra (JS) o da focus. */
+  pointer-events: none;
   transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
 }
-#masthead .sr-has-mega:hover > .sr-mega,
+/* Apertura a controllo JS (classe .sr-mega-open, messa da initMegaMenu solo al
+   mouseenter della voce NELLA BARRA) + :focus-within per la tastiera. Il puro
+   :hover è stato rimosso di proposito: apriva il pannello ovunque il suo box
+   invisibile toccasse il cursore. Senza JS le voci restano link agli indici
+   /servizi/ e /strumenti/ (degradazione accettabile). */
+#masthead .sr-has-mega.sr-mega-open > .sr-mega,
 #masthead .sr-has-mega:focus-within > .sr-mega {
   opacity: 1;
   visibility: visible;
   transform: none;
+  pointer-events: auto;
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 

@@ -2876,6 +2876,90 @@
 		});
 	}
 
+	/* ---------- Mega-menu della barra (#masthead) — apertura a controllo JS ----------
+	 * Bug live (luglio 2026, due segnalazioni con screen del titolare): il mega-
+	 * menu si apriva da solo col cursore a METÀ pagina, lontano dalla barra. Causa
+	 * confermata con Chromium: il pannello .sr-mega è un DISCENDENTE della <li> ed
+	 * è un box alto ~quanto il viewport, ancorato sotto la barra; le sue liste
+	 * hanno visibility:visible (per battere gli stili di sottomenu di Prespa),
+	 * quindi anche da CHIUSO il box restava bersagliabile dal mouse. Passando il
+	 * cursore nella sua area, li.sr-has-mega:hover si riattivava e la vecchia
+	 * regola CSS `:hover` apriva il pannello. Il fix sticky precedente sistemava
+	 * solo DOVE cadeva il pannello, non questo auto-hover.
+	 *
+	 * Ora l'apertura è a controllo esplicito: classe .sr-mega-open messa SOLO al
+	 * mouseenter della VOCE nella barra (non della zona pannello). Il CSS apre su
+	 * .sr-mega-open o :focus-within (tastiera conservata) e da chiuso il pannello
+	 * è pointer-events:none, così non può più auto-attivarsi. Chiusura: mouseleave
+	 * della <li> con ritardo (rientro tollerato), scroll, click fuori, Esc. */
+	function initMegaMenu() {
+		var items = document.querySelectorAll('#masthead .sr-has-mega');
+		if (!items.length) return;
+		var OPEN = 'sr-mega-open';
+		var CLOSE_DELAY = 150;
+
+		// Chiude TUTTO: toglie la classe .sr-mega-open E, se il focus è dentro una
+		// voce mega, lo sposta fuori — altrimenti :focus-within (apertura da
+		// tastiera) terrebbe il pannello aperto nonostante la classe rimossa.
+		function closeAll() {
+			items.forEach(function (li) { li.classList.remove(OPEN); });
+			var ae = document.activeElement;
+			if (ae && ae.closest && ae.closest('#masthead .sr-has-mega') && ae.blur) {
+				ae.blur();
+			}
+		}
+		function anyOpen() {
+			for (var i = 0; i < items.length; i++) {
+				if (items[i].classList.contains(OPEN)) return true;
+				// aperto anche se il focus da tastiera è dentro la voce.
+				if (items[i].contains(document.activeElement)) return true;
+			}
+			return false;
+		}
+
+		items.forEach(function (li) {
+			var link = li.querySelector('a');
+			var timer = null;
+			function clearTimer() { if (timer) { window.clearTimeout(timer); timer = null; } }
+			function open() { clearTimer(); li.classList.add(OPEN); }
+			function scheduleClose() {
+				clearTimer();
+				timer = window.setTimeout(function () { li.classList.remove(OPEN); }, CLOSE_DELAY);
+			}
+
+			// Apertura SOLO dalla voce nella barra (il link nell'header), MAI
+			// dalla zona del pannello: è il cuore del fix.
+			if (link) { link.addEventListener('mouseenter', open); }
+
+			// Rientrando nella <li> (voce o pannello aperto) annulliamo una
+			// chiusura programmata, così il pannello resta usabile; NON apriamo
+			// qui, per non riaprire passando sul box.
+			li.addEventListener('mouseenter', clearTimer);
+			// Uscendo dall'intera <li> (voce + pannello) chiudiamo con ritardo.
+			li.addEventListener('mouseleave', scheduleClose);
+		});
+
+		// Scroll → chiudi (solo se qualcosa è aperto: niente lavoro inutile).
+		window.addEventListener('scroll', function () {
+			if (anyOpen()) closeAll();
+		}, { passive: true });
+
+		// Click fuori da una voce mega → chiudi.
+		document.addEventListener('click', function (e) {
+			if (!e.target.closest || !e.target.closest('#masthead .sr-has-mega')) {
+				closeAll();
+			}
+		});
+
+		// Esc → chiudi (closeAll toglie anche il focus da dentro il pannello,
+		// altrimenti :focus-within lo terrebbe aperto).
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape' || e.keyCode === 27) {
+				if (anyOpen()) closeAll();
+			}
+		});
+	}
+
 	onReady(function () {
 		initReveal();
 		initBarre();
@@ -2892,5 +2976,6 @@
 		initContactForm();
 		initCaseFilter();
 		initOfficeMap();
+		initMegaMenu();
 	});
 })();
