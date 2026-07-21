@@ -263,7 +263,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Over 200 translation agencies listed in the catalogue: an entire industry made navigable and indexable, with technical SEO tested at scale, not on a demo.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/en/services/technical-seo/">Technical SEO for content projects →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/perevod4-catalogo/">Read the full case study →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/en/services/technical-seo/">Technical SEO for content projects →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -305,7 +308,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Content that keeps people on the site and gives the brand something to talk about: gamification used as a marketing tool, not a gadget.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/en/services/redesign-migration/">Redesign and marketing ideas for your site →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/gioco/">Read the full case study →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/en/services/redesign-migration/">Redesign and marketing ideas for your site →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -347,7 +353,7 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Position no. 1 on Yandex — Russia's leading search engine — for the industry queries "notarised translation" and "manual translation", 9,000–10,000 visitors a month, at the top for over 1,000 days. Top positions won with technique, not with the name.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/pere-rf/">Read the full case study →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/pere-rf/">Read the full case study →</a></p>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:8px"><a href="/en/services/technical-seo/">Technical SEO that delivers →</a></p>
@@ -392,7 +398,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Bookings grew 450% after launch: 18 bookings in a season straight from the site — for a small guest house, the difference between a full season and empty rooms.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/en/services/business-websites/">A brochure site for your business →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/ukrinitsy/">Read the full case study →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/en/services/business-websites/">A brochure site for your business →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -446,7 +455,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">After the 2026 redesign of both look and functionality, conversions grew by over 300% in recent months: two sites that stand out in a sector where everyone looks alike.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/en/services/redesign-migration/">Redesign and new design for your site →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/moscowtrans-techperevod/">Read the full case study →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/en/services/redesign-migration/">Redesign and new design for your site →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -488,7 +500,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Over 400 translators tested — and only 8% pass the selection. Every translator who works on your copy is inside that 8%: quality decided by a system, not a hunch.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/en/services/custom-web-apps/">A custom web app for your process →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/test-traduttori/">Read the full case study →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/en/services/custom-web-apps/">A custom web app for your process →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->

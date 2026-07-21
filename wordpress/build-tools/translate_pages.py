@@ -67,6 +67,7 @@ SKIP = {
     # exit 1 su stringhe non tradotte).
     'caso-tms-perevod4', 'caso-1russian', 'caso-att', 'caso-remarka-ai',
     'caso-mini-app-telegram',
+    'caso-pere-rf', 'caso-perevod4-catalogo', 'caso-moscowtrans-techperevod', 'caso-ukrinitsy', 'caso-gioco', 'caso-test-traduttori',
 }
 
 

@@ -50,6 +50,7 @@ function remarka_mega_data(): array {
 			'mon_k' => 'Remarka Lab · Monitor', 'mon_t' => 'Un sito sotto controllo, gratis',
 			'mon_live' => 'Guarda il nostro sito in diretta', 'mon_cta' => 'Prova gratis',
 			'casi_eyebrow' => 'Progetti del gruppo', 'all_casi' => 'Tutti i casi studio',
+			'casi_col1' => 'App e piattaforme', 'casi_col2' => 'Siti, SEO e progetti',
 			'casi_feat_k' => 'Non un portfolio di clienti',
 			'casi_feat_t' => 'I sistemi che abbiamo costruito per noi, verificabili dal vivo',
 			'casi_feat_cta' => 'Vedi tutti i casi',
@@ -68,6 +69,7 @@ function remarka_mega_data(): array {
 			'mon_k' => 'Remarka Lab · Monitor', 'mon_t' => 'One site under watch, free',
 			'mon_live' => 'See our site live', 'mon_cta' => 'Try it free',
 			'casi_eyebrow' => 'Group projects', 'all_casi' => 'All case studies',
+			'casi_col1' => 'Apps & platforms', 'casi_col2' => 'Sites, SEO & projects',
 			'casi_feat_k' => 'Not a client portfolio',
 			'casi_feat_t' => 'The systems we built for ourselves, verifiable live',
 			'casi_feat_cta' => 'See all case studies',
@@ -86,6 +88,7 @@ function remarka_mega_data(): array {
 			'mon_k' => 'Remarka Lab · Monitor', 'mon_t' => 'Один сайт под контролем, бесплатно',
 			'mon_live' => 'Наш сайт вживую', 'mon_cta' => 'Попробовать',
 			'casi_eyebrow' => 'Проекты группы', 'all_casi' => 'Все кейсы',
+			'casi_col1' => 'Приложения и платформы', 'casi_col2' => 'Сайты, SEO и проекты',
 			'casi_feat_k' => 'Не портфолио клиентов',
 			'casi_feat_t' => 'Системы, которые мы построили для себя — проверяемые вживую',
 			'casi_feat_cta' => 'Смотреть все кейсы',
@@ -127,16 +130,20 @@ function remarka_mega_data(): array {
 	$casi_base = array( 'it' => '/casi-studio/', 'en' => '/en/case-studies/', 'ru' => '/ru/kejsy/' );
 	$cb        = $casi_base[ $lang ];
 	$casi_url  = array(
-		'tms'      => $cb . 'tms-perevod4/',
-		'1russian' => $cb . '1russian/',
+		'tms'        => $cb . 'tms-perevod4/',
+		'1russian'   => $cb . '1russian/',
 		'remarka-ai' => $cb . 'remarka-ai/',
-		'att'      => $cb . 'att/',
-		'index'    => $cb,
+		'mini-app'   => $cb . 'mini-app-telegram/',
+		'att'        => $cb . 'att/',
+		'ukrinitsy'  => $cb . 'ukrinitsy/',
+		'pere-rf'    => $cb . 'pere-rf/',
+		'gioco'      => $cb . 'gioco/',
+		'index'      => $cb,
 	);
 	$casi_label = array(
-		'it' => array( 'tms' => 'TMS — web app gestionale', '1russian' => '1russian.com — piattaforma', 'remarka-ai' => 'Remarka AI — traduzione documenti', 'att' => 'ATT — sito d’agenzia' ),
-		'en' => array( 'tms' => 'TMS — management web app', '1russian' => '1russian.com — platform', 'remarka-ai' => 'Remarka AI — document translation', 'att' => 'ATT — agency website' ),
-		'ru' => array( 'tms' => 'TMS — веб-приложение', '1russian' => '1russian.com — платформа', 'remarka-ai' => 'Remarka AI — перевод документов', 'att' => 'ATT — сайт агентства' ),
+		'it' => array( 'tms' => 'TMS — web app gestionale', '1russian' => '1russian.com — piattaforma', 'remarka-ai' => 'Remarka AI — traduzione documenti', 'mini-app' => 'Mini App Telegram — ordini in chat', 'att' => 'ATT — sito d’agenzia', 'ukrinitsy' => 'Ukrinitsy — casa vacanze + prenotazioni', 'pere-rf' => 'пере.рф — caso SEO', 'gioco' => 'Il gioco — simulatore d’agenzia' ),
+		'en' => array( 'tms' => 'TMS — management web app', '1russian' => '1russian.com — platform', 'remarka-ai' => 'Remarka AI — document translation', 'mini-app' => 'Telegram Mini App — orders in chat', 'att' => 'ATT — agency website', 'ukrinitsy' => 'Ukrinitsy — guest house + booking', 'pere-rf' => 'пере.рф — SEO case', 'gioco' => 'The game — agency simulator' ),
+		'ru' => array( 'tms' => 'TMS — веб-приложение', '1russian' => '1russian.com — платформа', 'remarka-ai' => 'Remarka AI — перевод документов', 'mini-app' => 'Mini App Telegram — заказы в чате', 'att' => 'ATT — сайт агентства', 'ukrinitsy' => 'Укриницы — гостевой дом + бронирование', 'pere-rf' => 'пере.рф — SEO-кейс', 'gioco' => 'Игра — симулятор бюро переводов' ),
 	);
 	$cl = $casi_label[ $lang ];
 
@@ -156,7 +163,8 @@ function remarka_mega_data(): array {
 		'tool_url' => $tu,
 		'casi_url' => $casi_url,
 		'casi'     => array(
-			array( 'eyebrow' => $s['casi_eyebrow'], 'items' => array( $casi_item( 'tms' ), $casi_item( '1russian' ), $casi_item( 'remarka-ai' ), $casi_item( 'att' ) ) ),
+			array( 'eyebrow' => $s['casi_col1'], 'items' => array( $casi_item( 'tms' ), $casi_item( '1russian' ), $casi_item( 'remarka-ai' ), $casi_item( 'mini-app' ) ) ),
+			array( 'eyebrow' => $s['casi_col2'], 'items' => array( $casi_item( 'att' ), $casi_item( 'ukrinitsy' ), $casi_item( 'pere-rf' ), $casi_item( 'gioco' ) ) ),
 		),
 		'servizi'  => array(
 			array( 'eyebrow' => $s['creare'], 'items' => array( $serv_item( 'siti-aziendali' ), $serv_item( 'e-commerce' ), $serv_item( 'web-app' ), $serv_item( 'siti-pwa' ) ) ),

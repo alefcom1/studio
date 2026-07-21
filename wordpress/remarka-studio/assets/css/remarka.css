@@ -4159,13 +4159,13 @@ body #masthead.site-header {
 #masthead .sr-mega--lab .sr-mega__inner {
   grid-template-columns: 1.9fr 1fr;
 }
-/* Pannello «Casi»: meno contenuto delle altre due voci → box più stretto
-   (lista dei progetti + card «tutti i casi»), niente colonna vuota. */
+/* Pannello «Casi»: due colonne di progetti reali (app/piattaforme + siti/SEO)
+   più la card «tutti i casi». */
 #masthead .sr-mega--casi .sr-mega__box {
-  max-width: 760px;
+  max-width: 980px;
 }
 #masthead .sr-mega--casi .sr-mega__inner {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr) 1.15fr;
 }
 
 #masthead .sr-mega__col {

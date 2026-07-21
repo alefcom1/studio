@@ -263,7 +263,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Oltre 200 agenzie di traduzione schedate a catalogo: un intero settore reso navigabile e indicizzabile, con la SEO tecnica messa alla prova sulla scala, non sulla demo.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/servizi/seo-tecnica/">SEO tecnica per progetti di contenuto →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/perevod4-catalogo/">Leggi il caso completo →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/servizi/seo-tecnica/">SEO tecnica per progetti di contenuto →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -305,7 +308,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Un contenuto che trattiene le persone sul sito e dà al marchio qualcosa da raccontare: la gamification usata come strumento di marketing, non come gadget.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/servizi/restyling-migrazione/">Restyling e idee di marketing per il vostro sito →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/gioco/">Leggi il caso completo →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/servizi/restyling-migrazione/">Restyling e idee di marketing per il vostro sito →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -392,7 +398,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Dopo il lancio le prenotazioni sono cresciute del 450%: 18 prenotazioni in una stagione arrivate dal sito — per una piccola struttura, la differenza tra stagione piena e stanze vuote.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/servizi/siti-aziendali/">Un sito vetrina per la vostra attività →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/ukrinitsy/">Leggi il caso completo →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/servizi/siti-aziendali/">Un sito vetrina per la vostra attività →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -446,7 +455,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Dopo il rinnovo di design e funzionalità del 2026, le conversioni sono cresciute di oltre il 300% negli ultimi mesi: due siti che si distinguono in un settore dove tutti si somigliano.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/servizi/restyling-migrazione/">Restyling e nuovo design per il vostro sito →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/moscowtrans-techperevod/">Leggi il caso completo →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/servizi/restyling-migrazione/">Restyling e nuovo design per il vostro sito →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -488,7 +500,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Oltre 400 traduttori testati — e solo l'8% supera la selezione. Ogni traduttore che lavora sui vostri testi è dentro quell'8%: la qualità decisa da un sistema, non a intuito.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/servizi/web-app/">Una web app su misura per il vostro processo →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/test-traduttori/">Leggi il caso completo →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/servizi/web-app/">Una web app su misura per il vostro processo →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->

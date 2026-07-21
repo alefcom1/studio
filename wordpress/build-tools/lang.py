@@ -53,6 +53,12 @@ CASES_SLUGS = {
     'att':          {'en': 'att',          'ru': 'att'},
     'remarka-ai':   {'en': 'remarka-ai',    'ru': 'remarka-ai'},
     'mini-app-telegram': {'en': 'mini-app-telegram', 'ru': 'mini-app-telegram'},
+    'pere-rf': {'en': 'pere-rf', 'ru': 'pere-rf'},
+    'perevod4-catalogo': {'en': 'perevod4-catalogo', 'ru': 'perevod4-catalogo'},
+    'moscowtrans-techperevod': {'en': 'moscowtrans-techperevod', 'ru': 'moscowtrans-techperevod'},
+    'ukrinitsy': {'en': 'ukrinitsy', 'ru': 'ukrinitsy'},
+    'gioco': {'en': 'gioco', 'ru': 'gioco'},
+    'test-traduttori': {'en': 'test-traduttori', 'ru': 'test-traduttori'},
 }
 
 TOOLS_SLUGS = {
