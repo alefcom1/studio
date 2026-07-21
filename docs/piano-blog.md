@@ -142,7 +142,47 @@
   copy-casi-studio, «96% уязвимостей в плагинах 2024» — Patchstack.
   Бэклог-заметка: en-blog-* батчей 1–3 ждут width/height-синхронизации
   (IT уже имеет, EN подтянется ближайшим полным EN-прогоном).
-- Батчи 5–6 (RU руками) — очередь, по одному в день (триггер 05:00 UTC).
+- Батч 5 — ✅ выполнен и вычитан оркестратором (19.07, коммит `c107043`):
+  5 RU-only статей «свой путь, руками по-русски» (sajt-dlya-vyhoda-na-rynok-italii ·
+  seo-v-italii-po-russki · gdpr-dlya-russkoyazychnogo-biznesa-v-es ·
+  perevesti-ili-lokalizovat-sajt · cena-sajta-v-italii), по 4 внешних
+  первоисточника на статью (Eurostat, Google Search Central, EUR-Lex GDPR
+  2016/679, EDPB, Garante, CSA Research, W3C i18n, HTTP Archive, web.dev),
+  10 фирменных SVG (обложка + схема), JSON-LD BlogPosting, перелинковка
+  RU-услуга + RU-инструмент + соседняя статья. Механика: новый `BLOG_RU_ONLY`
+  в lang.py (зеркало BLOG_IT_EN_ONLY — статьи RU-only, без IT/EN, translate
+  ru запрещён), питает blog-schema-map и hreflang; статьи — рукописные
+  ru-blog-*.php (не BLOG_POSTS, т.к. тот IT-центричный). Вычитка: тексты
+  честны (юр. утверждения GDPR точны, цены со ссылкой на рынок, дедлайн EAA
+  28.06.2025 верный, наши гарантии совпадают, выдуманного нет), SVG на бренде.
+  Оговорки: (1) Playwright-скрины в песочнице невозможны (egress блокирует
+  Chromium) — SVG проверены cairosvg-рендером, нужна мобильная визуальная
+  вычитка (390px) владельцем после деплоя; (2) объём 617–763 слова — ниже
+  номинала 1000–1500, но плотно и длиннее уже одобренного RU-корпуса
+  (577–652); при желании владельца агент допишет секции.
+- Батч 6 (RU руками) — ✅ выполнен и вычитан оркестратором (20.07, коммит `c65cd1e`):
+  5 RU-only статей «продукты и доверие» (telegram-prilozhenie-dlya-biznesa-v-evrope ·
+  kak-proverit-veb-studiyu · zakon-o-dostupnosti-sajtov · sajt-v-chatgpt ·
+  russkoyazychnaya-auditoriya-v-evrope), 735–902 слова, по 4 внешних
+  первоисточника (core.telegram.org Mini Apps/Payments/Bot API, Eurostat,
+  Google Search Central helpful-content/hreflang/multi-regional, web.dev Web
+  Vitals, EUR-Lex GDPR 2016/679 + EAA 2019/882, AccessibleEU, W3C WAI/WCAG,
+  OpenAI GPTBot docs, llmstxt.org, CSA Research), 10 фирменных SVG, JSON-LD
+  BlogPosting, перелинковка RU-услуга + RU-инструмент + соседняя статья.
+  Механика как батч 5: BLOG_RU_ONLY +5, deploy-import page_map +5,
+  ru-blog-index +5 карточек, blog-schema-map/lang-map регенерированы точечно,
+  seo-meta.md раздел «Batch 6» (Title 48–57, Desc 142–151). Вычитка
+  оркестратора: тексты честны и живы (EAA «уже вступил в силу», 28.06.2025 в
+  прошлом; исключения для микро с оговоркой «граница — нац. закон»; число
+  русскоязычных НЕ выдумано — «точную цифру никто не назовёт», Eurostat как
+  контекст; Mini App/гарантии — реальные факты студии; раздел «не магия и не
+  гарантия» у ChatGPT-статьи). Оговорки: (1) Playwright-скрины невозможны
+  (egress) — SVG проверены cairosvg, мобильная вычитка 390px за владельцем;
+  (2) полировка: у SVG `aria-label` на итальянском на RU-страницах —
+  косметическая a11y-мелочь, в бэклог.
+
+**План блога закрыт: все 6 батчей (30 статей) выполнены и вычитаны.**
+Ежедневный триггер отключён оркестратором 20.07 (update_trigger enabled=false).
 - **Ретрофит выполнен отдельным проходом 15.07** (коммит «Blog retrofit:
   external sources, BlogPosting schema, content enrichment»). Охват — ВСЕ 13
   готовых статей (8 старых + 5 батча 1):

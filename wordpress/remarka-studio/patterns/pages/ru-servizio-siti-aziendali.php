@@ -78,8 +78,20 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
-<div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
-<div class="wp-block-column" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"52%"} -->
+<div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">traduzione.tech</span></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+[sr_shot file="att-home-1440.webp" alt="Главная страница сайта итальянского бюро переводов traduzione.tech с блоком услуг" caption="ATT — главная, блок услуг, десктоп" mobile="0"]
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"width":"48%"} -->
+<div class="wp-block-column" style="flex-basis:48%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Из нашего каталога</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(26px,3vw,34px)"}}} -->
@@ -92,21 +104,13 @@
 <p class="has-base-font-size" style="margin-top:16px;font-size:16px">Корпоративный сайт для бюро переводов с более чем двадцатилетней историей: быстрые расчёты, понятные услуги для итальянского B2B-клиента. Работает с 2022 года и приносит бюро около 20 заказов в месяц.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<div class="sr-teaser-stats" style="display:flex;flex-wrap:wrap;gap:16px 28px;margin-top:20px"><div><span class="sr-stat__num" style="font-size:clamp(22px,2.4vw,28px);color:var(--sr-oltremare)">20/мес.</span><p style="margin-top:4px;font-size:13px;color:var(--sr-grigio)">заказов приходит с сайта</p></div><div><span class="sr-stat__num" style="font-size:clamp(22px,2.4vw,28px);color:var(--sr-oltremare)">40+</span><p style="margin-top:4px;font-size:13px;color:var(--sr-grigio)">языковых комбинаций</p></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:16px">ПРОЕКТ ГРУППЫ REMARKA — МОЖНО ПРОВЕРИТЬ НА TRADUZIONE.TECH</p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/kejsy/#att-traduzione-tech">Читать полный кейс →</a></p>
-<!-- /wp:html -->
-</div>
-<!-- /wp:column -->
-<!-- wp:column {"width":"45%"} -->
-<div class="wp-block-column" style="flex-basis:45%"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">20/мес.</span>
-<p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">заказов приходит с сайта</p></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-stat" style="margin-top:24px"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">40+</span>
-<p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">языковых комбинаций</p></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:20px">ПРОЕКТ ГРУППЫ REMARKA — МОЖНО ПРОВЕРИТЬ НА TRADUZIONE.TECH</p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -119,7 +123,7 @@
 <p class="sr-eyebrow">Цена</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-{{lancio}}<div class="sr-lancio-badge sr-mono">ЦЕНА ЗАПУСКА — ПЕРВЫЕ 5 ПРОЕКТОВ</div><p class="sr-lancio-line">Цена запуска на первые 5 проектов: тот же договор, те же гарантии. Полный прайс — с 2027 года.</p><p class="sr-lancio-counter sr-mono">Свободно мест: {{lancio_slots}} из 5.</p>{{/lancio}}
+{{lancio}}<div class="sr-lancio"><div class="sr-lancio-badge sr-mono">ЦЕНА ЗАПУСКА — ПЕРВЫЕ 5 ПРОЕКТОВ</div><p class="sr-lancio-line">Цена запуска на первые 5 проектов: тот же договор, те же гарантии. Полный прайс — с 2027 года.</p><p class="sr-lancio-counter sr-mono">Свободно мест: {{lancio_slots}} из 5.</p></div>{{/lancio}}
 <!-- /wp:html -->
 <!-- wp:html -->
 <div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">{{listino}}350 000–510 000 ₽ · € 3 900–5 800{{/listino}}{{lancio}}<s class="sr-lancio-listino">350 000–510 000 ₽</s> <span class="sr-lancio-price">175 000–255 000 ₽ · € 1 950–2 900</span>{{/lancio}}</div>

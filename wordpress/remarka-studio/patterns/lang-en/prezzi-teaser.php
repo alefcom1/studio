@@ -17,7 +17,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:html -->
-{{lancio}}<div class="sr-lancio-badge sr-mono" style="margin-top:20px">LAUNCH PRICE — FIRST 5 PROJECTS</div><p class="sr-lancio-line">Launch price on our first 5 projects: same contract, same guarantees. Full price list from 2027.</p><p class="sr-lancio-counter sr-mono">{{lancio_slots}} of 5 slots still open.</p>{{/lancio}}
+{{lancio}}<div class="sr-lancio"><div class="sr-lancio-badge sr-mono" style="margin-top:20px">LAUNCH PRICE — FIRST 5 PROJECTS</div><p class="sr-lancio-line">Launch price on our first 5 projects: same contract, same guarantees. Full price list from 2027.</p><p class="sr-lancio-counter sr-mono">{{lancio_slots}} of 5 slots still open.</p></div>{{/lancio}}
 <!-- /wp:html -->
 
 <!-- wp:group {"className":"sr-market-table sr-market-table--compact","style":{"spacing":{"margin":{"top":"28px"}}},"layout":{"type":"constrained"}} -->

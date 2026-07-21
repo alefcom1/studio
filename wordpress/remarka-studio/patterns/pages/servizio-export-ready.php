@@ -55,9 +55,6 @@
 <div class="wp-block-column" style="flex-basis:62%"><!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="font-size:17px">Chi esporta oggi sceglie tra una web agency (che gira le traduzioni a terzi o a un plugin) e un’agenzia di traduzioni (che non costruisce siti né fa SEO internazionale). La responsabilità si spezza sempre a metà — esattamente dove il cliente estero decide se comprare. Remarka è l’unica configurazione in cui ingegneria e localizzazione professionale vivono nella stessa azienda, sotto lo stesso contratto.</p>
 <!-- /wp:paragraph -->
-<!-- wp:html -->
-<figure class="sr-hero-visual" style="margin-top:24px"><img src="/wp-content/themes/remarka-studio/assets/img/lingue-processo-madrelingua.webp" alt="Schema del percorso editoriale: sorgente, revisione, versioni locali" width="1200" height="800" loading="lazy" decoding="async"/></figure>
-<!-- /wp:html -->
 </div>
 <!-- /wp:column -->
 </div>

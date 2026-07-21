@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-label="Riprova sociale onesta contro recensioni false: cosa convince e cosa avvelena la fiducia">
+  <defs>
+    <pattern id="gridRon" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}
+    </style>
+  </defs>
+  <rect width="1200" height="540" fill="#F7F6F2"/>
+  <rect width="1200" height="540" fill="url(#gridRon)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">RIPROVA SOCIALE ONESTA  ·VS·  RECENSIONI FALSE</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <!-- left: honest -->
+  <g transform="translate(80,104)">
+    <rect x="0" y="0" width="500" height="380" fill="#FFFFFF" stroke="#2440C8" stroke-width="1.5"/>
+    <text x="26" y="46" class="mono" font-size="15" letter-spacing="2" fill="#2440C8">CONVINCE</text>
+    <g class="body" font-size="17" fill="#14161A">
+      <text x="26" y="96">✓ Recensioni con dettagli concreti</text>
+      <text x="26" y="140">✓ Nome, volto e data verificabili</text>
+      <text x="26" y="184">✓ Voti diversi, anche qualche 4 stelle</text>
+      <text x="26" y="228">✓ Risposte curate, critiche comprese</text>
+      <text x="26" y="272">✓ Casi reali con numeri controllabili</text>
+      <text x="26" y="316">✓ Chieste con metodo a chi è stato bene</text>
+    </g>
+    <rect x="26" y="336" width="180" height="8" fill="#2440C8"/>
+  </g>
+  <!-- right: fake -->
+  <g transform="translate(620,104)">
+    <rect x="0" y="0" width="500" height="380" fill="#14161A"/>
+    <text x="26" y="46" class="mono" font-size="15" letter-spacing="2" fill="#9AA0AA">AVVELENA</text>
+    <g class="body" font-size="17" fill="#FFFFFF">
+      <text x="26" y="96">✗ Tutte cinque stelle, sempre</text>
+      <text x="26" y="140">✗ Comparse tutte la stessa settimana</text>
+      <text x="26" y="184">✗ Nessun dettaglio, tono identico</text>
+      <text x="26" y="228">✗ Scritte da dipendenti o comprate</text>
+      <text x="26" y="272">✗ Marcate come «verificate» senza esserlo</text>
+      <text x="26" y="316">✗ Vietate dalla direttiva UE 2019/2161</text>
+    </g>
+    <rect x="26" y="336" width="180" height="8" fill="#5A5E66"/>
+  </g>
+</svg>

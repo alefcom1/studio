@@ -20,6 +20,7 @@ SECTIONS = {
 # Одиночные страницы верхнего уровня.
 SINGLES = {
     'prezzi':            {'en': 'pricing',            'ru': 'ceny'},
+    'brief':             {'en': 'brief',              'ru': 'brif'},
     'milano':            {'en': 'milan',              'ru': 'milan'},
     'chi-siamo':         {'en': 'about',              'ru': 'o-studii'},
     'area-clienti':      {'en': 'client-area',        'ru': 'kabinet-klienta'},
@@ -40,11 +41,18 @@ SERVICES_SLUGS = {
     'adeguamento-eaa':      {'en': 'eaa-compliance',        'ru': 'dostupnost-eaa'},
 }
 
-# I casi studio (docs/copy-casi-studio.md, deck §8.3) non hanno più pagine
-# dedicate /casi-studio/<slug>/: vivono come schede con àncora nel catalogo
-# unico (IT: casi-studio-index.php, EN: en-casi-studio-index.php, RU:
-# ru-casi-studio-index.php — narrativa a sé). Niente slug da tradurre.
-CASES_SLUGS = {}
+# Casi studio: oltre al catalogo unico con schede-àncora, dal 21.07.2026
+# esistono di nuovo pagine dedicate /casi-studio/<slug>/ per i progetti REALI
+# del gruppo (approfondimenti tecnici, forte SEO). La foglia dello slug è
+# uguale nelle tre lingue; cambia solo il genitore localizzato (casi-studio /
+# case-studies / kejsy), gestito da paths_for(). Le pagine EN/RU sono tradotte
+# a mano (translate_pages SKIP), ma lo slug qui serve a href-map e hreflang.
+CASES_SLUGS = {
+    'tms-perevod4': {'en': 'tms-perevod4', 'ru': 'tms-perevod4'},
+    '1russian':     {'en': '1russian',     'ru': '1russian'},
+    'att':          {'en': 'att',          'ru': 'att'},
+    'pere-rf':      {'en': 'pere-rf',       'ru': 'pere-rf'},
+}
 
 TOOLS_SLUGS = {
     'test-velocita':          {'en': 'speed-test',           'ru': 'test-skorosti'},
@@ -101,6 +109,12 @@ BLOG_SLUGS = {
     # Sputnik area clienti + Lab Monitor — IT + EN (RU è un batch a sé).
     'area-clienti-agenzia-web':             {'en': 'web-agency-client-portal',             'ru': 'kabinet-klienta-veb-studii'},
     'monitoraggio-sito-dopo-lancio':        {'en': 'website-monitoring-after-launch',      'ru': 'monitoring-sajta-posle-zapuska'},
+    # Blog · Batch 7 (seconda ondata) — IT + EN (RU è un batch a sé: slug RU pianificati, IT+EN-only).
+    'perche-il-sito-non-converte':          {'en': 'why-your-website-doesnt-convert',      'ru': 'pochemu-sajt-ne-konvertiruet'},
+    'landing-page-che-converte':            {'en': 'landing-page-that-converts',           'ru': 'landing-pejdzh-konversija'},
+    'recensioni-riprova-sociale-onesta':    {'en': 'reviews-social-proof-done-right',      'ru': 'otzyvy-socialnoe-dokazatelstvo'},
+    'whatsapp-business-pmi':                {'en': 'whatsapp-business-for-smes',           'ru': 'whatsapp-business-dlja-biznesa'},
+    'copywriting-sito-web-prima-del-design': {'en': 'website-copywriting-before-design',    'ru': 'kopirajting-sajta-tekst-pered-dizajnom'},
 }
 
 # Articoli del blog pubblicati solo in IT + EN in questa fase (la loro versione
@@ -134,6 +148,34 @@ BLOG_IT_EN_ONLY = {
     # Sputnik area clienti + Lab Monitor
     'area-clienti-agenzia-web',
     'monitoraggio-sito-dopo-lancio',
+    # Batch 7 (seconda ondata)
+    'perche-il-sito-non-converte',
+    'landing-page-che-converte',
+    'recensioni-riprova-sociale-onesta',
+    'whatsapp-business-pmi',
+    'copywriting-sito-web-prima-del-design',
+}
+
+# Blog · Batch 5 — RU-only (scritti a mano in russo, senza specchio IT/EN;
+# translate_pages.py ru è vietato per sempre). Speculare a BLOG_IT_EN_ONLY:
+# la pagina esiste SOLO in RU. Per hreflang/switcher, IT ed EN puntano ai
+# rispettivi indici blog (/blog/, /en/blog/) — pagine reali, nessun 404;
+# RU punta all'articolo. Chiave = slug-foglia RU; valore = data (ISO) e
+# copertina, usati da build_blog_schema_map (JSON-LD BlogPosting). Questi
+# articoli NON stanno in BLOG_POSTS/BLOG_SLUGS: non hanno una versione
+# italiana da cui derivare, il loro contenuto è nei pattern ru-blog-*.php.
+BLOG_RU_ONLY = {
+    'sajt-dlya-vyhoda-na-rynok-italii':       {'date': '2026-07-19', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch5-mercato-cover.svg'},
+    'seo-v-italii-po-russki':                 {'date': '2026-07-19', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch5-seo-cover.svg'},
+    'gdpr-dlya-russkoyazychnogo-biznesa-v-es': {'date': '2026-07-19', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch5-gdpr-cover.svg'},
+    'perevesti-ili-lokalizovat-sajt':         {'date': '2026-07-19', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch5-loc-cover.svg'},
+    'cena-sajta-v-italii':                    {'date': '2026-07-19', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch5-cena-cover.svg'},
+    # Batch 6 — RU-only (prodotti e fiducia, scritti a mano in russo).
+    'telegram-prilozhenie-dlya-biznesa-v-evrope': {'date': '2026-07-20', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch6-tg-cover.svg'},
+    'kak-proverit-veb-studiyu':               {'date': '2026-07-20', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch6-fiducia-cover.svg'},
+    'zakon-o-dostupnosti-sajtov':             {'date': '2026-07-20', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch6-eaa-cover.svg'},
+    'sajt-v-chatgpt':                         {'date': '2026-07-20', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch6-chatgpt-cover.svg'},
+    'russkoyazychnaya-auditoriya-v-evrope':   {'date': '2026-07-20', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch6-rus-cover.svg'},
 }
 
 
@@ -199,6 +241,12 @@ def all_page_paths():
             row(f'blog/{it_slug}', f'{SECTIONS["blog"]["en"]}/{tr["en"]}', SECTIONS["blog"]["ru"])
         else:
             row(f'blog/{it_slug}', f'{SECTIONS["blog"]["en"]}/{tr["en"]}', f'{SECTIONS["blog"]["ru"]}/{tr["ru"]}')
+    # Blog · Batch 5 — RU-only: nessuna versione IT/EN. IT ed EN rimandano ai
+    # loro indici blog (pagine reali, no 404), RU all'articolo. Appese DOPO la
+    # riga indice 'blog' delle SECTIONS, così lo switcher sull'indice italiano
+    # trova prima la riga giusta.
+    for ru_slug in BLOG_RU_ONLY:
+        row('blog', SECTIONS['blog']['en'], f'{SECTIONS["blog"]["ru"]}/{ru_slug}')
     return rows
 
 

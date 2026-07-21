@@ -78,8 +78,20 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
-<div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
-<div class="wp-block-column" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"52%"} -->
+<div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">moscowtrans.ru</span></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+[sr_shot file="moscowtrans-home-1440.webp" alt="Главная страница сайта бюро переводов moscowtrans.ru" caption="moscowtrans.ru — главная страница" mobile="0"]
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"width":"48%"} -->
+<div class="wp-block-column" style="flex-basis:48%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Из нашего каталога</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(26px,3vw,34px)"}}} -->
@@ -87,26 +99,18 @@
 <!-- /wp:heading -->
 <!-- wp:html -->
 <p class="sr-mono" style="font-size:12.5px;color:var(--sr-grigio);margin-top:6px">moscowtrans.ru</p>
-<!-- /wp:heading -->
+<!-- /wp:html -->
 <!-- wp:paragraph {"fontSize":"base"} -->
 <p class="has-base-font-size" style="margin-top:16px;font-size:16px">Два сайта бюро переводов, обновлённые в 2026 году: продуманный дизайн и оптимизированная производительность. Конверсии выросли больше чем на 300% за последние месяцы.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<div class="sr-teaser-stats" style="display:flex;flex-wrap:wrap;gap:16px 28px;margin-top:20px"><div><span class="sr-stat__num" style="font-size:clamp(22px,2.4vw,28px);color:var(--sr-oltremare)">+300%</span><p style="margin-top:4px;font-size:13px;color:var(--sr-grigio)">конверсий после обновления 2026</p></div><div><span class="sr-stat__num" style="font-size:clamp(22px,2.4vw,28px);color:var(--sr-oltremare)">2</span><p style="margin-top:4px;font-size:13px;color:var(--sr-grigio)">сайта, обновлённых по одному методу</p></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:16px">ПРОЕКТ ГРУППЫ REMARKA — МОЖНО ПРОВЕРИТЬ НА ОБОИХ САЙТАХ</p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/ru/kejsy/#moscowtrans-techperevod">Читать полный кейс →</a></p>
-<!-- /wp:html -->
-</div>
-<!-- /wp:column -->
-<!-- wp:column {"width":"45%"} -->
-<div class="wp-block-column" style="flex-basis:45%"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">+300%</span>
-<p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">конверсий после обновления 2026</p></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-stat" style="margin-top:24px"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">2</span>
-<p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">сайта, обновлённых по одному методу</p></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:20px">ПРОЕКТ ГРУППЫ REMARKA — МОЖНО ПРОВЕРИТЬ НА ОБОИХ САЙТАХ</p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->

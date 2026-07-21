@@ -3,7 +3,7 @@
  * Title: Кабинет клиента — промо-блок (RU)
  * Slug: remarka-studio/ru-area-clienti-blocco
  * Categories: remarka
- * Description: Промо кабинета клиента (cab.remarka.biz) на RU-главной: слоган, концептуальная иллюстрация, четыре пункта, ссылки на страницу кабинета и на вход.
+ * Description: Промо кабинета клиента (cab.remarka.biz) на RU-главной: слоган, четыре пункта, ссылки на страницу кабинета и на вход.
  * Viewport Width: 1400
  */
 ?>
@@ -21,12 +21,6 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
 <p class="has-grigio-color has-text-color has-medium-font-size">В каждый проект входит доступ в кабинет клиента: стадия работы видна каждый день, согласования — с историей, файлы и счета — в одном месте. Без паролей, на серверах ЕС, на трёх языках. Особенно удобно, когда студия — в Италии, а вы — где угодно.</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"className":"sr-ac-grid__img","layout":{"type":"flow"}} -->
-<div class="wp-block-group sr-ac-grid__img"><!-- wp:html -->
-<figure style="margin:0"><img src="/wp-content/themes/remarka-studio/assets/img/home-area-clienti.webp" alt="" width="1600" height="1024" loading="lazy" decoding="async"/></figure>
-<!-- /wp:html --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"sr-ac-grid__list","layout":{"type":"flow"}} -->

@@ -49,6 +49,10 @@ function remarka_mega_data(): array {
 			'checkup_d' => 'Sette misure del sito in un minuto.',
 			'mon_k' => 'Remarka Lab · Monitor', 'mon_t' => 'Un sito sotto controllo, gratis',
 			'mon_live' => 'Guarda il nostro sito in diretta', 'mon_cta' => 'Prova gratis',
+			'casi_eyebrow' => 'Progetti del gruppo', 'all_casi' => 'Tutti i casi studio',
+			'casi_feat_k' => 'Non un portfolio di clienti',
+			'casi_feat_t' => 'I sistemi che abbiamo costruito per noi, verificabili dal vivo',
+			'casi_feat_cta' => 'Vedi tutti i casi',
 		),
 		'en' => array(
 			'creare' => 'Build', 'crescere' => 'Grow', 'sistemare' => 'Fix',
@@ -63,6 +67,10 @@ function remarka_mega_data(): array {
 			'checkup_d' => 'Seven site measures in one minute.',
 			'mon_k' => 'Remarka Lab · Monitor', 'mon_t' => 'One site under watch, free',
 			'mon_live' => 'See our site live', 'mon_cta' => 'Try it free',
+			'casi_eyebrow' => 'Group projects', 'all_casi' => 'All case studies',
+			'casi_feat_k' => 'Not a client portfolio',
+			'casi_feat_t' => 'The systems we built for ourselves, verifiable live',
+			'casi_feat_cta' => 'See all case studies',
 		),
 		'ru' => array(
 			'creare' => 'Создать', 'crescere' => 'Расти', 'sistemare' => 'Исправить',
@@ -77,6 +85,10 @@ function remarka_mega_data(): array {
 			'checkup_d' => 'Семь замеров сайта за минуту.',
 			'mon_k' => 'Remarka Lab · Monitor', 'mon_t' => 'Один сайт под контролем, бесплатно',
 			'mon_live' => 'Наш сайт вживую', 'mon_cta' => 'Попробовать',
+			'casi_eyebrow' => 'Проекты группы', 'all_casi' => 'Все кейсы',
+			'casi_feat_k' => 'Не портфолио клиентов',
+			'casi_feat_t' => 'Системы, которые мы построили для себя — проверяемые вживую',
+			'casi_feat_cta' => 'Смотреть все кейсы',
 		),
 	);
 	$s = $t[ $lang ];
@@ -109,17 +121,43 @@ function remarka_mega_data(): array {
 	$sl = $serv_label[ $lang ];
 	$tl = $tool_label[ $lang ];
 
+	// Casi studio dei progetti reali del gruppo. La foglia dello slug è uguale
+	// nelle tre lingue (tms-perevod4, 1russian, pere-rf, att); cambia solo il
+	// genitore localizzato (casi-studio / case-studies / kejsy).
+	$casi_base = array( 'it' => '/casi-studio/', 'en' => '/en/case-studies/', 'ru' => '/ru/kejsy/' );
+	$cb        = $casi_base[ $lang ];
+	$casi_url  = array(
+		'tms'      => $cb . 'tms-perevod4/',
+		'1russian' => $cb . '1russian/',
+		'pere-rf'  => $cb . 'pere-rf/',
+		'att'      => $cb . 'att/',
+		'index'    => $cb,
+	);
+	$casi_label = array(
+		'it' => array( 'tms' => 'TMS — web app gestionale', '1russian' => '1russian.com — piattaforma', 'pere-rf' => 'пере.рф — traduzione AI', 'att' => 'ATT — sito d’agenzia' ),
+		'en' => array( 'tms' => 'TMS — management web app', '1russian' => '1russian.com — platform', 'pere-rf' => 'пере.рф — AI translation', 'att' => 'ATT — agency website' ),
+		'ru' => array( 'tms' => 'TMS — веб-приложение', '1russian' => '1russian.com — платформа', 'pere-rf' => 'пере.рф — AI-перевод', 'att' => 'ATT — сайт агентства' ),
+	);
+	$cl = $casi_label[ $lang ];
+
 	$serv_item = function ( $slug ) use ( $su, $sl ) {
 		return array( 'label' => $sl[ $slug ], 'url' => $su[ $slug ] );
 	};
 	$tool_item = function ( $slug ) use ( $tu, $tl ) {
 		return array( 'label' => $tl[ $slug ], 'url' => $tu[ $slug ] );
 	};
+	$casi_item = function ( $k ) use ( $casi_url, $cl ) {
+		return array( 'label' => $cl[ $k ], 'url' => $casi_url[ $k ] );
+	};
 
 	return array(
 		'strings'  => $s,
 		'serv_url' => $su,
 		'tool_url' => $tu,
+		'casi_url' => $casi_url,
+		'casi'     => array(
+			array( 'eyebrow' => $s['casi_eyebrow'], 'items' => array( $casi_item( 'tms' ), $casi_item( '1russian' ), $casi_item( 'pere-rf' ), $casi_item( 'att' ) ) ),
+		),
 		'servizi'  => array(
 			array( 'eyebrow' => $s['creare'], 'items' => array( $serv_item( 'siti-aziendali' ), $serv_item( 'e-commerce' ), $serv_item( 'web-app' ), $serv_item( 'siti-pwa' ) ) ),
 			array( 'eyebrow' => $s['crescere'], 'items' => array( $serv_item( 'seo-tecnica' ), $serv_item( 'siti-multilingue' ), $serv_item( 'export-ready' ) ) ),
@@ -161,6 +199,24 @@ function remarka_mega_panel_servizi(): string {
 		. '<a href="' . esc_url( home_url( $su['prezzi'] ) ) . '">' . esc_html( $s['prezzi'] ) . ' &rarr;</a>'
 		. '<a href="' . esc_url( home_url( $su['casi'] ) ) . '">' . esc_html( $s['casi'] ) . ' &rarr;</a></div>';
 	return '<div class="sr-mega sr-mega--servizi"><div class="sr-mega__box"><div class="sr-mega__inner">' . $cols . $feat . '</div>' . $foot . '</div></div>';
+}
+
+/** Pannello «Casi studio» → progetti reali del gruppo. */
+function remarka_mega_panel_casi(): string {
+	$d  = remarka_mega_data();
+	$s  = $d['strings'];
+	$cu = $d['casi_url'];
+	$cols = '';
+	foreach ( $d['casi'] as $col ) {
+		$cols .= remarka_mega_col( $col );
+	}
+	$feat = '<a class="sr-mega__feat" href="' . esc_url( home_url( $cu['index'] ) ) . '">'
+		. '<span class="sr-mega__feat-k">' . esc_html( $s['casi_feat_k'] ) . '</span>'
+		. '<span class="sr-mega__feat-t">' . esc_html( $s['casi_feat_t'] ) . '</span>'
+		. '<span class="sr-mega__feat-cta">' . esc_html( $s['casi_feat_cta'] ) . ' &rarr;</span></a>';
+	$foot = '<div class="sr-mega__foot">'
+		. '<a href="' . esc_url( home_url( $cu['index'] ) ) . '">' . esc_html( $s['all_casi'] ) . ' &rarr;</a></div>';
+	return '<div class="sr-mega sr-mega--casi"><div class="sr-mega__box"><div class="sr-mega__inner">' . $cols . $feat . '</div>' . $foot . '</div></div>';
 }
 
 /** Pannello «Strumenti» → hub Remarka Lab (strumenti gratuiti + Monitor). */
@@ -216,6 +272,9 @@ function remarka_mega_which( string $url ): ?string {
 	if ( in_array( $last, array( 'strumenti', 'tools', 'instrumenty' ), true ) ) {
 		return 'lab';
 	}
+	if ( in_array( $last, array( 'casi-studio', 'case-studies', 'kejsy' ), true ) ) {
+		return 'casi';
+	}
 	return null;
 }
 
@@ -243,6 +302,8 @@ function remarka_mega_menu_start_el( string $item_output, $item, $depth, $args )
 		$item_output .= remarka_mega_panel_servizi();
 	} elseif ( 'lab' === $which ) {
 		$item_output .= remarka_mega_panel_lab();
+	} elseif ( 'casi' === $which ) {
+		$item_output .= remarka_mega_panel_casi();
 	}
 	return $item_output;
 }

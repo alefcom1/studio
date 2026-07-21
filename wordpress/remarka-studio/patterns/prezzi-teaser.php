@@ -17,7 +17,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:html -->
-{{lancio}}<div class="sr-lancio-badge sr-mono" style="margin-top:20px">PREZZO LANCIO — PRIMI 5 PROGETTI</div><p class="sr-lancio-line">Prezzo lancio sui primi 5 progetti: stesso contratto, stesse garanzie. Listino pieno dal 2027.</p><p class="sr-lancio-counter sr-mono">Ne restano {{lancio_slots}} su 5.</p>{{/lancio}}
+{{lancio}}<div class="sr-lancio"><div class="sr-lancio-badge sr-mono" style="margin-top:20px">PREZZO LANCIO — PRIMI 5 PROGETTI</div><p class="sr-lancio-line">Prezzo lancio sui primi 5 progetti: stesso contratto, stesse garanzie. Listino pieno dal 2027.</p><p class="sr-lancio-counter sr-mono">Ne restano {{lancio_slots}} su 5.</p></div>{{/lancio}}
 <!-- /wp:html -->
 
 <!-- wp:group {"className":"sr-market-table sr-market-table--compact","style":{"spacing":{"margin":{"top":"28px"}}},"layout":{"type":"constrained"}} -->

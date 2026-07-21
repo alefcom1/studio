@@ -78,8 +78,20 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
-<div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
-<div class="wp-block-column" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"52%"} -->
+<div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">moscowtrans.ru/test-perevodchika</span></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+[sr_shot file="tester-exam-1440.webp" alt="Piattaforma di test e valutazione dei traduttori del gruppo Remarka" caption="Piattaforma test traduttori — schermata di valutazione" mobile="0"]
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"width":"48%"} -->
+<div class="wp-block-column" style="flex-basis:48%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Dal nostro catalogo</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(26px,3vw,34px)"}}} -->
@@ -92,19 +104,13 @@
 <p class="has-base-font-size" style="margin-top:16px;font-size:16px">La piattaforma di test dei traduttori che sta dietro alla garanzia «redattori madrelingua per profilo» su ogni sito multilingue che consegniamo.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<div class="sr-teaser-stats" style="display:flex;flex-wrap:wrap;gap:16px 28px;margin-top:20px"><div><span class="sr-stat__num" style="font-size:clamp(22px,2.4vw,28px);color:var(--sr-oltremare)">400+</span><p style="margin-top:4px;font-size:13px;color:var(--sr-grigio)">traduttori testati</p></div><div><span class="sr-stat__num" style="font-size:clamp(22px,2.4vw,28px);color:var(--sr-oltremare)">8%</span><p style="margin-top:4px;font-size:13px;color:var(--sr-grigio)">supera la selezione</p></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:16px">PROGETTO DEL GRUPPO REMARKA — IN USO SU TUTTI I PROGETTI</p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/casi-studio/#test-traduttori">Leggi il caso completo →</a></p>
-<!-- /wp:html -->
-</div>
-<!-- /wp:column -->
-<!-- wp:column {"width":"45%"} -->
-<div class="wp-block-column" style="flex-basis:45%"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">400+</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">traduttori testati</p></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-stat" style="margin-top:24px"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">8%</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">supera la selezione</p></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:20px">PROGETTO DEL GRUPPO REMARKA — IN USO SU TUTTI I PROGETTI</p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->

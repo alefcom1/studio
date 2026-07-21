@@ -3,7 +3,7 @@
  * Title: FAQ — accordion
  * Slug: remarka-studio/en-faq
  * Categories: remarka
- * Description: Six frequently asked questions with native Details blocks (accessible, no JS).
+ * Description: Ten frequently asked questions with native Details blocks (accessible, no JS), including the most common objections.
  * Viewport Width: 1400
  */
 ?>
@@ -57,6 +57,30 @@
 <!-- wp:details -->
 <details class="wp-block-details"><summary>I already have a site: do I have to rebuild it from scratch?</summary><!-- wp:paragraph -->
 <p>Not always. The free analysis tells you what to keep and what to redo: often a technical restyling is enough to go from 30 to 90+.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>A freelancer is cheaper: why choose you?</summary><!-- wp:paragraph -->
+<p>Sometimes a freelancer is the right call, and we’ll say so. With us, though, the price is fixed and signed, delivery has a date with a 1%-a-day penalty, and twelve months of support stay in place even if that one freelancer moves on. Compare line items and timelines on the <a href="/en/pricing/">pricing page</a>.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Three weeks — isn’t that too fast? Does quality suffer?</summary><!-- wp:paragraph -->
+<p>No: it’s fast because we run a method refined since 2001, not because we cut corners. PageSpeed 90+ is guaranteed in the contract and every project goes through the same tests. See how we actually work in the <a href="/en/case-studies/">case studies</a>.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>What if you miss the delivery date?</summary><!-- wp:paragraph -->
+<p>The date is in the contract, not a guess: every business day of delay is worth 1% off the total, on us. It’s the one clause we’d rather never have to apply.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>On delivery, what’s mine?</summary><!-- wp:paragraph -->
+<p>Everything: domain, hosting and logins in your name, code and content yours, no technical lock-in. If one day you want to move elsewhere, you take the whole site with you — no permission needed.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details --></div>
 <!-- /wp:column --></div>

@@ -78,8 +78,20 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
-<div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
-<div class="wp-block-column" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"52%"} -->
+<div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">пере.рф</span></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+[sr_shot file="pererf-home-1440.webp" alt="Sito пере.рф, caso di SEO tecnica su dominio internazionalizzato" caption="пере.рф — home page" mobile="0"]
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"width":"48%"} -->
+<div class="wp-block-column" style="flex-basis:48%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Dal nostro catalogo</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(26px,3vw,34px)"}}} -->
@@ -92,19 +104,13 @@
 <p class="has-base-font-size" style="margin-top:16px;font-size:16px">Dominio di due lettere su alfabeto cirillico, portato ai primi posti su Yandex con SEO puramente tecnica: nessuna scorciatoia dal nome.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<div class="sr-teaser-stats" style="display:flex;flex-wrap:wrap;gap:16px 28px;margin-top:20px"><div><span class="sr-stat__num" style="font-size:clamp(22px,2.4vw,28px);color:var(--sr-oltremare)">№ 1</span><p style="margin-top:4px;font-size:13px;color:var(--sr-grigio)">su Yandex per «traduzione notarile»</p></div><div><span class="sr-stat__num" style="font-size:clamp(22px,2.4vw,28px);color:var(--sr-oltremare)">9–10 mila/mese</span><p style="margin-top:4px;font-size:13px;color:var(--sr-grigio)">visitatori, in vetta da oltre 1.000 giorni</p></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:16px">PROGETTO DEL GRUPPO REMARKA — VERIFICABILE SU ПЕРЕ.РФ</p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/casi-studio/#pere-rf">Leggi il caso completo →</a></p>
-<!-- /wp:html -->
-</div>
-<!-- /wp:column -->
-<!-- wp:column {"width":"45%"} -->
-<div class="wp-block-column" style="flex-basis:45%"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">№ 1</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">su Yandex per «traduzione notarile»</p></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-stat" style="margin-top:24px"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">9–10 mila/mese</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">visitatori, in vetta da oltre 1.000 giorni</p></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:20px">PROGETTO DEL GRUPPO REMARKA — VERIFICABILE SU ПЕРЕ.РФ</p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->

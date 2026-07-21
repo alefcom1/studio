@@ -3,7 +3,7 @@
  * Title: Area clienti — blocco promo
  * Slug: remarka-studio/area-clienti-blocco
  * Categories: remarka
- * Description: Promo dell'area clienti (cab.remarka.biz) sulla home: slogan, illustrazione concettuale, quattro punti, link alla pagina dedicata e all'accesso.
+ * Description: Promo dell'area clienti (cab.remarka.biz) sulla home: slogan, quattro punti, link alla pagina dedicata e all'accesso.
  * Viewport Width: 1400
  */
 ?>
@@ -21,12 +21,6 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
 <p class="has-grigio-color has-text-color has-medium-font-size">Ogni progetto include l’accesso all’area clienti: la fase del lavoro visibile ogni giorno, approvazioni con storico, file e fatture in un unico posto. Senza password, su server UE, in tre lingue.</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"className":"sr-ac-grid__img","layout":{"type":"flow"}} -->
-<div class="wp-block-group sr-ac-grid__img"><!-- wp:html -->
-<figure style="margin:0"><img src="/wp-content/themes/remarka-studio/assets/img/home-area-clienti.webp" alt="" width="1600" height="1024" loading="lazy" decoding="async"/></figure>
-<!-- /wp:html --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"sr-ac-grid__list","layout":{"type":"flow"}} -->

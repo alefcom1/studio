@@ -22,10 +22,7 @@
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"300px"}} -->
 <div class="wp-block-group is-layout-grid" style="--sr-grid-min:300px"><!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:html -->
-<img class="sr-card__visual" src="/wp-content/themes/remarka-studio/assets/img/casi/visual-sito-aziendale.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/>
-<!-- /wp:html -->
-<!-- wp:heading {"level":3} -->
+<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Business websites</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
@@ -37,10 +34,7 @@
 </div>
 <!-- /wp:group -->
 <!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:html -->
-<img class="sr-card__visual" src="/wp-content/themes/remarka-studio/assets/img/casi/visual-ecommerce.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/>
-<!-- /wp:html -->
-<!-- wp:heading {"level":3} -->
+<div class="wp-block-group is-layout-constrained sr-card"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">E-commerce</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"small"} -->
@@ -111,7 +105,7 @@
 <h2 class="wp-block-heading">When you need more<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:group {"className":"","layout":{"type":"grid","minimumColumnWidth":"320px"}} -->
-<div class="wp-block-group is-layout-grid" style="--sr-grid-min:320px"><div class="sr-card sr-card--carta"><img class="sr-card__visual" src="/wp-content/themes/remarka-studio/assets/img/lingue-processo-madrelingua.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/><p class="sr-eyebrow">Flagship</p><h3 class="wp-block-heading" style="font-size:22px">Export Ready</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Your website and its foreign version under one contract: native-speaker localization, international SEO, per-market KPIs.</p><p class="sr-card-link" style="margin-top:16px"><a href="/en/services/export-ready/">Learn more →</a></p></div><div class="sr-card sr-card--carta"><img class="sr-card__visual" src="/wp-content/themes/remarka-studio/assets/img/casi/visual-webapp.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/><p class="sr-eyebrow">Digital products</p><h3 class="wp-block-heading" style="font-size:22px">Custom web apps</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Client areas, product configurators, B2B portals and integrations: for when a website isn’t enough.</p><p class="sr-card-link" style="margin-top:16px"><a href="/en/services/custom-web-apps/">Learn more →</a></p></div><div class="sr-card sr-card--carta"><p class="sr-eyebrow">Legal duty</p><h3 class="wp-block-heading" style="font-size:22px">EAA compliance</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Your website, already online, brought up to the WCAG 2.1 AA standard: audit, fixes and accessibility statement. A legal duty since 2025.</p><p class="sr-card-link" style="margin-top:16px"><a href="/en/services/eaa-compliance/">Learn more →</a></p></div></div>
+<div class="wp-block-group is-layout-grid" style="--sr-grid-min:320px"><div class="sr-card sr-card--carta"><p class="sr-eyebrow">Flagship</p><h3 class="wp-block-heading" style="font-size:22px">Export Ready</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Your website and its foreign version under one contract: native-speaker localization, international SEO, per-market KPIs.</p><p class="sr-card-link" style="margin-top:16px"><a href="/en/services/export-ready/">Learn more →</a></p></div><div class="sr-card sr-card--carta"><p class="sr-eyebrow">Digital products</p><h3 class="wp-block-heading" style="font-size:22px">Custom web apps</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Client areas, product configurators, B2B portals and integrations: for when a website isn’t enough.</p><p class="sr-card-link" style="margin-top:16px"><a href="/en/services/custom-web-apps/">Learn more →</a></p></div><div class="sr-card sr-card--carta"><p class="sr-eyebrow">Legal duty</p><h3 class="wp-block-heading" style="font-size:22px">EAA compliance</h3><p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">Your website, already online, brought up to the WCAG 2.1 AA standard: audit, fixes and accessibility statement. A legal duty since 2025.</p><p class="sr-card-link" style="margin-top:16px"><a href="/en/services/eaa-compliance/">Learn more →</a></p></div></div>
 <!-- /wp:group -->
 </section>
 <!-- /wp:group -->

@@ -3,7 +3,7 @@
  * Title: Languages and markets
  * Slug: remarka-studio/en-lingue-mercati
  * Categories: remarka
- * Description: Light section: intro text, editorial-workflow key visual, groups of native languages by market (EU, North America, CIS & Caucasus) and a CTA.
+ * Description: Light section: groups of native languages by market (EU, North America, CIS & Caucasus) and a CTA.
  * Viewport Width: 1400
  */
 ?>
@@ -19,10 +19,6 @@
 <!-- wp:paragraph {"fontSize":"medium","textColor":"grigio"} -->
 <p class="has-grigio-color has-text-color has-medium-font-size">Since 2001 the Remarka group has worked in professional translation: the foreign version of your site isn’t a plugin, it’s a deliverable with a name attached.</p>
 <!-- /wp:paragraph -->
-
-<!-- wp:html -->
-<figure class="sr-visual-band" style="max-width:760px;margin:32px auto 0"><img src="/wp-content/themes/remarka-studio/assets/img/lingue-processo-madrelingua.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/></figure>
-<!-- /wp:html -->
 
 <!-- wp:html -->
 <div class="sr-langs" style="margin-top:44px">

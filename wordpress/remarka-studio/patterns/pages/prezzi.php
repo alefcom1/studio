@@ -36,7 +36,7 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:html -->
-{{lancio}}<div class="sr-lancio-badge sr-mono">PREZZO LANCIO — PRIMI 5 PROGETTI</div><p class="sr-lancio-line">Prezzo lancio sui primi 5 progetti: stesso contratto, stesse garanzie. Listino pieno dal 2027.</p><p class="sr-lancio-counter sr-mono">Ne restano {{lancio_slots}} su 5.</p>{{/lancio}}
+{{lancio}}<div class="sr-lancio"><div class="sr-lancio-badge sr-mono">PREZZO LANCIO — PRIMI 5 PROGETTI</div><p class="sr-lancio-line">Prezzo lancio sui primi 5 progetti: stesso contratto, stesse garanzie. Listino pieno dal 2027.</p><p class="sr-lancio-counter sr-mono">Ne restano {{lancio_slots}} su 5.</p></div>{{/lancio}}
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->

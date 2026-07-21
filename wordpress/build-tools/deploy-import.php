@@ -109,8 +109,8 @@ WP_CLI::log( '=================================' );
 
 WP_CLI::log( "\nHome:" );
 $home_sections = array(
-	'hero-home', 'checkup-home', 'trust-strip', 'tre-numeri', 'manifesto', 'lingue-mercati', 'servizi-cards', 'caso-evidenza',
-	'come-lavoriamo', 'area-clienti-blocco', 'garanzie-dark', 'prezzi-teaser', 'strumenti-cards', 'faq', 'contatti',
+	'hero-home', 'checkup-home', 'trust-strip', 'tre-numeri', 'manifesto', 'lingue-mercati', 'servizi-cards', 'prezzi-teaser',
+	'perche-remarka', 'caso-evidenza', 'recensioni', 'come-lavoriamo', 'area-clienti-blocco', 'garanzie-dark', 'strumenti-cards', 'faq', 'contatti',
 );
 
 /*
@@ -120,7 +120,7 @@ $home_sections = array(
  */
 $home_sections_ru = array(
 	'hero-home', 'checkup-home', 'trust-strip', 'vyhod-evropa', 'tre-numeri', 'manifesto', 'seo-lingue', 'servizi-cards',
-	'caso-evidenza', 'come-lavoriamo', 'area-clienti-blocco', 'garanzie-dark', 'prezzi-teaser', 'faq', 'contatti',
+	'prezzi-teaser', 'perche-remarka', 'caso-evidenza', 'recensioni', 'come-lavoriamo', 'area-clienti-blocco', 'garanzie-dark', 'faq', 'contatti',
 );
 $home_content = '';
 foreach ( $home_sections as $slug ) {
@@ -183,14 +183,20 @@ $page_map = array(
 	'servizio-web-app'                     => array( 'web-app', 'servizi', 'Web app su misura' ),
 	'servizio-adeguamento-eaa'             => array( 'adeguamento-eaa', 'servizi', 'Adeguamento EAA' ),
 
-	// I casi studio non hanno più pagine singole (docs/copy-casi-studio.md
-	// §8.3): un solo catalogo con schede-àncora in casi-studio-index. Le
-	// quattro voci caso-<slug> (clienti inventati) sono state rimosse di
-	// proposito: la pulizia orfane qui sotto le sposta nel cestino al
-	// prossimo REMARKA_FORCE=1, non compaiono più in $current_slugs.
+	// Catalogo unico con schede-àncora (docs/copy-casi-studio.md §8.3). Le
+	// vecchie voci caso-<slug> con clienti INVENTATI restano rimosse. Da
+	// 21.07.2026 riapriamo pagine singole SOLO per i progetti REALI del
+	// gruppo (repo verificabili, niente clienti finti): approfondimenti
+	// tecnici con forte potenziale SEO. Prima: TMS (flagship, template).
 	'casi-studio-index'                    => array( 'casi-studio', null, 'Casi studio' ),
+	'caso-tms-perevod4'                    => array( 'tms-perevod4', 'casi-studio', 'TMS Perevod4' ),
+	'caso-1russian'                        => array( '1russian', 'casi-studio', '1russian.com' ),
+	'caso-att'                             => array( 'att', 'casi-studio', 'ATT · traduzione.tech' ),
+	'caso-pere-rf'                         => array( 'pere-rf', 'casi-studio', 'пере.рф' ),
 
 	'prezzi'                               => array( 'prezzi', null, null ),
+
+	'brief'                                => array( 'brief', null, 'Brief progetto' ),
 
 	'strumenti-index'                      => array( 'strumenti', null, 'Strumenti' ),
 	'strumento-check-up-completo'          => array( 'check-up-completo', 'strumenti', null ),
@@ -262,10 +268,19 @@ $page_map = array(
 	'blog-manutenzione-wordpress'               => array( 'manutenzione-wordpress', 'blog', null ),
 	'blog-area-clienti-agenzia-web'             => array( 'area-clienti-agenzia-web', 'blog', null ),
 	'blog-monitoraggio-sito-dopo-lancio'        => array( 'monitoraggio-sito-dopo-lancio', 'blog', null ),
+	'blog-perche-il-sito-non-converte'          => array( 'perche-il-sito-non-converte', 'blog', null ),
+	'blog-landing-page-che-converte'            => array( 'landing-page-che-converte', 'blog', null ),
+	'blog-recensioni-riprova-sociale-onesta'    => array( 'recensioni-riprova-sociale-onesta', 'blog', null ),
+	'blog-whatsapp-business-pmi'                => array( 'whatsapp-business-pmi', 'blog', null ),
+	'blog-copywriting-sito-web-prima-del-design' => array( 'copywriting-sito-web-prima-del-design', 'blog', null ),
 
 	// ---- Albero EN (genitore = percorso completo) ----
 	'en-servizi-index'                             => array( 'services', 'en', 'Services' ),
 	'en-casi-studio-index'                         => array( 'case-studies', 'en', 'Case studies' ),
+	'en-caso-tms-perevod4'                         => array( 'tms-perevod4', 'en/case-studies', 'TMS Perevod4' ),
+	'en-caso-1russian'                             => array( '1russian', 'en/case-studies', '1russian.com' ),
+	'en-caso-att'                                  => array( 'att', 'en/case-studies', 'ATT · traduzione.tech' ),
+	'en-caso-pere-rf'                              => array( 'pere-rf', 'en/case-studies', 'пере.рф' ),
 	'en-strumenti-index'                           => array( 'tools', 'en', 'Tools' ),
 	'en-blog-index'                                => array( 'blog', 'en', 'Blog' ),
 	'en-servizio-siti-aziendali'                   => array( 'business-websites', 'en/services', null ),
@@ -319,7 +334,13 @@ $page_map = array(
 	'en-blog-manutenzione-wordpress'               => array( 'wordpress-maintenance', 'en/blog', null ),
 	'en-blog-area-clienti-agenzia-web'             => array( 'web-agency-client-portal', 'en/blog', null ),
 	'en-blog-monitoraggio-sito-dopo-lancio'        => array( 'website-monitoring-after-launch', 'en/blog', null ),
+	'en-blog-perche-il-sito-non-converte'          => array( 'why-your-website-doesnt-convert', 'en/blog', null ),
+	'en-blog-landing-page-che-converte'            => array( 'landing-page-that-converts', 'en/blog', null ),
+	'en-blog-recensioni-riprova-sociale-onesta'    => array( 'reviews-social-proof-done-right', 'en/blog', null ),
+	'en-blog-whatsapp-business-pmi'                => array( 'whatsapp-business-for-smes', 'en/blog', null ),
+	'en-blog-copywriting-sito-web-prima-del-design' => array( 'website-copywriting-before-design', 'en/blog', null ),
 	'en-prezzi'                                    => array( 'pricing', 'en', null ),
+	'en-brief'                                     => array( 'brief', 'en', 'Brief' ),
 	'en-citta-milano'                              => array( 'milan', 'en', null ),
 	'en-area-clienti'                              => array( 'client-area', 'en', 'Client area' ),
 	'en-chi-siamo'                                 => array( 'about', 'en', null ),
@@ -330,6 +351,10 @@ $page_map = array(
 	// ---- Albero RU (genitore = percorso completo) ----
 	'ru-servizi-index'                             => array( 'uslugi', 'ru', 'Услуги' ),
 	'ru-casi-studio-index'                         => array( 'kejsy', 'ru', 'Кейсы' ),
+	'ru-caso-tms-perevod4'                         => array( 'tms-perevod4', 'ru/kejsy', 'TMS Perevod4' ),
+	'ru-caso-1russian'                             => array( '1russian', 'ru/kejsy', '1russian.com' ),
+	'ru-caso-att'                                  => array( 'att', 'ru/kejsy', 'ATT · traduzione.tech' ),
+	'ru-caso-pere-rf'                              => array( 'pere-rf', 'ru/kejsy', 'пере.рф' ),
 	'ru-strumenti-index'                           => array( 'instrumenty', 'ru', 'Инструменты' ),
 	'ru-blog-index'                                => array( 'blog', 'ru', 'Блог' ),
 	'ru-servizio-siti-aziendali'                   => array( 'korporativnye-sajty', 'ru/uslugi', null ),
@@ -363,7 +388,21 @@ $page_map = array(
 	'ru-blog-core-web-vitals-2026'                 => array( 'core-web-vitals-2026', 'ru/blog', null ),
 	'ru-blog-quanto-costa-ecommerce-italia'        => array( 'skolko-stoit-internet-magazin', 'ru/blog', null ),
 	'ru-blog-sito-lento-cause-costi'               => array( 'medlennyj-sajt-prichiny', 'ru/blog', null ),
+	// Blog · Batch 5 — RU-only (scritti a mano, senza specchio IT/EN). Slug RU
+	// finale = slug-foglia; genitore ru/blog (indice già presente sopra).
+	'ru-blog-sajt-dlya-vyhoda-na-rynok-italii'     => array( 'sajt-dlya-vyhoda-na-rynok-italii', 'ru/blog', null ),
+	'ru-blog-seo-v-italii-po-russki'               => array( 'seo-v-italii-po-russki', 'ru/blog', null ),
+	'ru-blog-gdpr-dlya-russkoyazychnogo-biznesa-v-es' => array( 'gdpr-dlya-russkoyazychnogo-biznesa-v-es', 'ru/blog', null ),
+	'ru-blog-perevesti-ili-lokalizovat-sajt'       => array( 'perevesti-ili-lokalizovat-sajt', 'ru/blog', null ),
+	'ru-blog-cena-sajta-v-italii'                  => array( 'cena-sajta-v-italii', 'ru/blog', null ),
+	// Blog · Batch 6 — RU-only (scritti a mano, senza specchio IT/EN).
+	'ru-blog-telegram-prilozhenie-dlya-biznesa-v-evrope' => array( 'telegram-prilozhenie-dlya-biznesa-v-evrope', 'ru/blog', null ),
+	'ru-blog-kak-proverit-veb-studiyu'             => array( 'kak-proverit-veb-studiyu', 'ru/blog', null ),
+	'ru-blog-zakon-o-dostupnosti-sajtov'           => array( 'zakon-o-dostupnosti-sajtov', 'ru/blog', null ),
+	'ru-blog-sajt-v-chatgpt'                       => array( 'sajt-v-chatgpt', 'ru/blog', null ),
+	'ru-blog-russkoyazychnaya-auditoriya-v-evrope' => array( 'russkoyazychnaya-auditoriya-v-evrope', 'ru/blog', null ),
 	'ru-prezzi'                                    => array( 'ceny', 'ru', null ),
+	'ru-brief'                                     => array( 'brif', 'ru', 'Бриф' ),
 	'ru-citta-milano'                              => array( 'milan', 'ru', null ),
 	'ru-area-clienti'                              => array( 'kabinet-klienta', 'ru', 'Кабинет клиента' ),
 	'ru-chi-siamo'                                 => array( 'o-studii', 'ru', null ),
@@ -477,12 +516,11 @@ if ( ! $menu ) {
 } else {
 	$menu_id = $menu->term_id;
 	WP_CLI::log( "  = menu già esistente: $menu_name (ID $menu_id)" );
-	// Ripulisce le voci esistenti per evitare duplicati se rilanciato con --force.
-	if ( $force ) {
-		foreach ( wp_get_nav_menu_items( $menu_id ) as $item ) {
-			wp_delete_post( $item->ID, true );
-		}
-	}
+	// НЕ стираем существующие пункты даже с --force: владелец добавляет в
+	// главное меню подпункты (выпадающие) руками в админке, и wipe при каждом
+	// «Полном цикле» их уничтожал (инцидент 20.07.2026 — «пропало выпадающее
+	// меню»). Дубликаты и так исключены проверкой по title ниже; канонические
+	// пункты только ДОБАВЛЯЮТСЯ, если их нет.
 }
 
 $menu_items = array(
@@ -543,7 +581,7 @@ if ( empty( $locations ) ) {
 
 WP_CLI::log( "\nMenu footer:" );
 
-function remarka_deploy_sync_footer_menu( string $menu_name, string $location, array $items, bool $force ): void {
+function remarka_deploy_sync_footer_menu( string $menu_name, string $location, array $items, bool $force, bool $wipe_on_force = true ): void {
 	$menu = wp_get_nav_menu_object( $menu_name );
 	if ( ! $menu ) {
 		$menu_id = wp_create_nav_menu( $menu_name );
@@ -551,7 +589,10 @@ function remarka_deploy_sync_footer_menu( string $menu_name, string $location, a
 	} else {
 		$menu_id = $menu->term_id;
 		WP_CLI::log( "  = menu già esistente: $menu_name (ID $menu_id)" );
-		if ( $force ) {
+		// $wipe_on_force=false — для ГЛАВНЫХ меню EN/RU: владелец добавляет
+		// туда выпадающие подпункты руками, wipe их уничтожал (инцидент
+		// 20.07.2026). Футерные меню полностью канонические — им wipe нужен.
+		if ( $force && $wipe_on_force ) {
 			foreach ( wp_get_nav_menu_items( $menu_id ) as $item ) {
 				wp_delete_post( $item->ID, true );
 			}
@@ -656,7 +697,7 @@ remarka_deploy_sync_footer_menu( 'Menu EN — Remarka', '', array(
 	array( 'title' => 'Tools', 'slug' => 'en/tools' ),
 	array( 'title' => 'Blog', 'slug' => 'en/blog' ),
 	array( 'title' => 'Get a quote in 24 hours', 'url' => home_url( '/en/#contatti' ) ),
-), $force );
+), $force, false );
 
 remarka_deploy_sync_footer_menu( 'Footer EN — Pages', '', array(
 	array( 'title' => 'Business websites', 'slug' => 'en/services/business-websites' ),
@@ -695,7 +736,7 @@ remarka_deploy_sync_footer_menu( 'Menu RU — Remarka', '', array(
 	array( 'title' => 'Инструменты', 'slug' => 'ru/instrumenty' ),
 	array( 'title' => 'Блог', 'slug' => 'ru/blog' ),
 	array( 'title' => 'Смета за 24 часа', 'url' => home_url( '/ru/#contatti' ) ),
-), $force );
+), $force, false );
 
 // Colonna «Услуги» RU — elenco esatto dettato dal titolare (18.07.2026).
 // «Сайты в Милане» chiude la colonna (unica landing città RU, ex colonna Студия).

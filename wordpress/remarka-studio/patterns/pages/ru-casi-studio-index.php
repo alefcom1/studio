@@ -40,6 +40,22 @@
 <!-- wp:html -->
 <p class="sr-mono" style="margin-top:20px;font-size:13px;color:var(--sr-grigio)">perevod4.ru · пере.рф · moscowtrans.ru · techperevod.com</p>
 <!-- /wp:html -->
+<!-- wp:html -->
+<div style="display:flex;flex-wrap:wrap;gap:20px;margin-top:24px">
+<div class="sr-browser" style="flex:1 1 calc(50% - 10px);min-width:280px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">perevod4.ru</span></div>
+[sr_shot file="perevod4-catalog-1440.jpg" alt="Портал-каталог perevod4.ru со списком бюро переводов по городам" caption="perevod4.ru — каталог бюро по городам" mobile="0"]
+</div>
+<div class="sr-browser" style="flex:1 1 calc(50% - 10px);min-width:280px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">пере.рф</span></div>
+[sr_shot file="pererf-home-1440.jpg" alt="Сайт пере.рф — кейс технической SEO на кириллическом домене" caption="пере.рф — главная страница" mobile="0"]
+</div>
+<div class="sr-browser" style="flex:1 1 calc(50% - 10px);min-width:280px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">moscowtrans.ru</span></div>
+[sr_shot file="moscowtrans-home-1440.jpg" alt="Главная страница сайта бюро переводов moscowtrans.ru" caption="moscowtrans.ru — главная страница" mobile="0"]
+</div>
+<div class="sr-browser" style="flex:1 1 calc(50% - 10px);min-width:280px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">techperevod.com</span></div>
+[sr_shot file="techperevod-home-1440.jpg" alt="Главная страница сайта бюро переводов techperevod.com" caption="techperevod.com — главная страница" mobile="0"]
+</div>
+</div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 
@@ -63,6 +79,19 @@
 <!-- wp:html -->
 <p class="sr-mono" style="margin-top:20px;font-size:13px;color:var(--sr-grigio)">traduzione.tech · 1russian.com · ai.perevod4.ru</p>
 <!-- /wp:html -->
+<!-- wp:html -->
+<div style="display:flex;flex-wrap:wrap;gap:20px;margin-top:24px">
+<div class="sr-browser" style="flex:1 1 calc(33.333% - 14px);min-width:280px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">traduzione.tech</span></div>
+[sr_shot file="att-home-1440.jpg" alt="Главная страница сайта итальянского бюро переводов traduzione.tech с блоком услуг" caption="ATT — главная, блок услуг, десктоп" mobile="0"]
+</div>
+<div class="sr-browser" style="flex:1 1 calc(33.333% - 14px);min-width:280px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">1russian.com</span></div>
+[sr_shot file="1russian-home-1440.jpg" alt="Главная страница международного англоязычного проекта 1russian.com" caption="1russian.com — главная, первый экран" mobile="0"]
+</div>
+<div class="sr-browser" style="flex:1 1 calc(33.333% - 14px);min-width:280px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">ai.perevod4.ru</span></div>
+[sr_shot file="ai-home-it-1440.jpg" alt="Итальянская версия многоязычного AI-проекта ai.perevod4.ru" caption="ai.perevod4.ru — итальянская версия, первый экран" mobile="0"]
+</div>
+</div>
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 
@@ -85,6 +114,27 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-mono" style="margin-top:20px;font-size:13px;color:var(--sr-grigio)">tms.perevod4.ru · @massimoalefBot · moscowtrans.ru/test-perevodchika</p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<div style="display:flex;flex-wrap:wrap;gap:20px;margin-top:24px">
+<div class="sr-browser" style="flex:1 1 calc(33.333% - 14px);min-width:280px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">tms.perevod4.ru</span></div>
+[sr_shot file="tms-board-1440.jpg" alt="Панель TMS tms.perevod4.ru с доской заказов на перевод" caption="TMS — доска заказов, главный экран" mobile="0"]
+</div>
+<div class="sr-browser" style="flex:1 1 calc(33.333% - 14px);min-width:280px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">tms.perevod4.ru</span></div>
+[sr_shot file="tms-clienti-1440.jpg" alt="Карточка клиента в TMS с историей заказов" caption="TMS — карточка клиента, история заказов" mobile="0"]
+</div>
+<div class="sr-browser" style="flex:1 1 calc(33.333% - 14px);min-width:280px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">tms.perevod4.ru</span></div>
+[sr_shot file="tms-fatture-1440.jpg" alt="Раздел счетов и бухгалтерии в TMS" caption="TMS — счета и бухгалтерия" mobile="0"]
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:20px;margin-top:20px;align-items:flex-start;justify-content:center">
+<div class="sr-browser" style="flex:0 1 300px;min-width:240px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">@massimoalefBot</span></div>
+[sr_shot file="miniapp-orders-390.jpg" alt="Мини-приложение Telegram с TMS, открытое прямо в чате: список заказов" caption="Telegram Mini App — список заказов, мобильный" mobile="1"]
+</div>
+<div class="sr-browser" style="flex:1 1 calc(60% - 10px);min-width:280px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">moscowtrans.ru/test-perevodchika</span></div>
+[sr_shot file="tester-exam-1440.jpg" alt="Платформа тестирования и оценки переводчиков группы Remarka" caption="Платформа теста переводчиков — экран оценки" mobile="0"]
+</div>
+</div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
@@ -116,6 +166,16 @@
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <p class="sr-mono" style="margin-top:20px;font-size:13px;color:var(--sr-grigio)">traduzione.tech/gioco · ukrinitsy.ru</p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<div style="display:flex;flex-wrap:wrap;gap:20px;margin-top:24px;align-items:flex-start;justify-content:center">
+<div class="sr-browser" style="flex:1 1 calc(60% - 10px);min-width:280px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">traduzione.tech</span></div>
+[sr_shot file="gioco-play-1440.jpg" alt="Экран браузерной игры «Империя переводов» на итальянском на сайте traduzione.tech" caption="Игра «Империя переводов» — игровой экран" mobile="0"]
+</div>
+<div class="sr-browser" style="flex:0 1 300px;min-width:240px"><div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">ukrinitsy.ru</span></div>
+[sr_shot file="ukrinitsy-mobile-390.jpg" alt="Сайт-визитка гостевого дома ukrinitsy.ru, мобильная версия" caption="ukrinitsy.ru — первый экран, мобильный" mobile="1"]
+</div>
+</div>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->

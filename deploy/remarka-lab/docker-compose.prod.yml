@@ -122,13 +122,17 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: production
-      # CRITICAL: il compose BASE hardcoda qui un DATABASE_URL con la password
-      # di default (sitelens_secret) e `environment:` VINCE su `env_file: .env`
-      # — quindi senza questo override il web parla al DB con credenziali
-      # sbagliate e OGNI pagina protetta (validateCabSessionToken via Prisma)
-      # crasha con "Application error" per gli utenti loggati (bug live
-      # 20.07.2026, digest 1014786255). Stesso pattern di api/cabinet.
+      # web теперь ходит в БД серверным Prisma (гвард сессии getMonSession).
+      # Базовый compose хардкодит DATABASE_URL с паролем sitelens_secret, но
+      # реальный пароль базы задаётся в .env (им пользуется api). Без этого
+      # override web брал бы дефолтный пароль и падал с "Authentication failed".
+      # Берём из .env, как api.
       DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL in .env}
+      # ОБЯЗАТЕЛЬНО: web использует env_file: .env (базовый compose), а в .env
+      # лежит PORT=3001 (для api). Без явного override Next-сервер web слушал бы
+      # 3001, тогда как Caddy проксирует на web:3000 → 502. Тот же класс бага,
+      # что фикс PORT:3002 у cabinet. Явно фиксируем 3000.
+      PORT: 3000
       # Overrides the base file's leftover runtime `http://localhost:3001`. Note:
       # for NEXT_PUBLIC_* this runtime value is a no-op (the real value is baked
       # in at build via build.args above) — set here only to avoid a misleading

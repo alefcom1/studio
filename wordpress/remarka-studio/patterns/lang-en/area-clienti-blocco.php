@@ -3,7 +3,7 @@
  * Title: Client area — promo block (EN)
  * Slug: remarka-studio/en-area-clienti-blocco
  * Categories: remarka
- * Description: Client area promo (cab.remarka.biz) on the EN home: slogan, conceptual illustration, four points, links to the dedicated page and to the login.
+ * Description: Client area promo (cab.remarka.biz) on the EN home: slogan, four points, links to the dedicated page and to the login.
  * Viewport Width: 1400
  */
 ?>
@@ -21,12 +21,6 @@
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
 <p class="has-grigio-color has-text-color has-medium-font-size">Every project includes access to the client area: the current stage visible every day, approvals with a full history, files and invoices in one place. Passwordless, on EU servers, in three languages.</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"className":"sr-ac-grid__img","layout":{"type":"flow"}} -->
-<div class="wp-block-group sr-ac-grid__img"><!-- wp:html -->
-<figure style="margin:0"><img src="/wp-content/themes/remarka-studio/assets/img/home-area-clienti.webp" alt="" width="1600" height="1024" loading="lazy" decoding="async"/></figure>
-<!-- /wp:html --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"sr-ac-grid__list","layout":{"type":"flow"}} -->

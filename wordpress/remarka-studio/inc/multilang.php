@@ -309,6 +309,80 @@ function remarka_str( string $key ): string {
 		'form_err_file_dim' => array( 'it' => 'Il file supera 8 MB. Caricane uno più leggero.', 'en' => 'The file exceeds 8 MB. Upload a smaller one.', 'ru' => 'Файл больше 8 МБ. Загрузите меньше.' ),
 		'footer_citta'     => array( 'it' => 'Dove operiamo', 'en' => 'Where we work', 'ru' => 'Где мы работаем' ),
 		'breadcrumb_home'  => array( 'it' => 'Home', 'en' => 'Home', 'ru' => 'Главная' ),
+		// --- Mini-modulo hero (home) ---
+		'hero_form_title'  => array( 'it' => 'Richiesta rapida', 'en' => 'Quick request', 'ru' => 'Быстрая заявка' ),
+		'hero_form_nome'   => array( 'it' => 'Nome', 'en' => 'Name', 'ru' => 'Имя' ),
+		'hero_form_msg'    => array( 'it' => 'Di cosa vi occupate?', 'en' => 'What do you do?', 'ru' => 'Чем вы занимаетесь?' ),
+		'hero_form_msg_ph' => array( 'it' => 'Es. studio dentistico a Milano', 'en' => 'E.g. a dental practice in Milan', 'ru' => 'Напр. стоматология в Милане' ),
+		'hero_form_invia'  => array( 'it' => 'Richiedi il preventivo', 'en' => 'Request a quote', 'ru' => 'Запросить смету' ),
+		'hero_form_brief'  => array(
+			'it' => 'Preferite raccontare tutto con calma? Compilate il brief →',
+			'en' => 'Prefer to tell us everything at your own pace? Fill in the brief →',
+			'ru' => 'Хотите рассказать всё подробно, без спешки? Заполните бриф →',
+		),
+		'hero_form_grazie' => array(
+			'it' => 'Grazie. Rispondiamo entro un giorno lavorativo.',
+			'en' => 'Thank you. We reply within one business day.',
+			'ru' => 'Спасибо. Отвечаем в течение рабочего дня.',
+		),
+		// --- Brief progetto (pagina /brief/) ---
+		'brief_q_tipo'      => array( 'it' => 'Che progetto avete in mente?', 'en' => 'What project do you have in mind?', 'ru' => 'Какой проект вы задумали?' ),
+		'brief_q_tipo_hint' => array(
+			'it' => 'Scegliete il tipo più vicino: ci serve per inquadrare la proposta.',
+			'en' => 'Pick the closest type — it helps us frame the proposal.',
+			'ru' => 'Выберите ближайший тип — это поможет нам сформировать предложение.',
+		),
+		'brief_lbl_tipo'    => array( 'it' => 'Tipo di progetto', 'en' => 'Project type', 'ru' => 'Тип проекта' ),
+		'brief_q_lingue'    => array( 'it' => 'Lingue e mercati', 'en' => 'Languages and markets', 'ru' => 'Языки и рынки' ),
+		'brief_q_lingue_hint' => array(
+			'it' => 'In quante lingue vi serve il sito? Potete sceglierne più di una.',
+			'en' => 'How many languages do you need the site in? You can pick more than one.',
+			'ru' => 'На скольких языках нужен сайт? Можно выбрать несколько.',
+		),
+		'brief_lbl_lingue'  => array( 'it' => 'Lingue del sito', 'en' => 'Website languages', 'ru' => 'Языки сайта' ),
+		'brief_lbl_mercati' => array( 'it' => 'Mercati o Paesi', 'en' => 'Markets or countries', 'ru' => 'Рынки или страны' ),
+		'brief_ph_mercati'  => array( 'it' => 'Es. Italia, Germania, Svizzera', 'en' => 'E.g. Italy, Germany, Switzerland', 'ru' => 'Напр. Италия, Германия, Швейцария' ),
+		'brief_q_tempi'     => array( 'it' => 'Tempi e budget', 'en' => 'Timing and budget', 'ru' => 'Сроки и бюджет' ),
+		'brief_q_tempi_hint' => array(
+			'it' => 'Un’indicazione di massima ci basta per proporvi la soluzione giusta.',
+			'en' => 'A rough idea is enough for us to propose the right solution.',
+			'ru' => 'Достаточно примерной оценки, чтобы предложить подходящее решение.',
+		),
+		'brief_lbl_partenza' => array( 'it' => 'Quando vorreste partire?', 'en' => 'When would you like to start?', 'ru' => 'Когда хотите начать?' ),
+		'brief_lbl_budget'  => array( 'it' => 'Budget indicativo', 'en' => 'Approximate budget', 'ru' => 'Примерный бюджет' ),
+		'brief_q_progetto'  => array( 'it' => 'Raccontateci il progetto', 'en' => 'Tell us about the project', 'ru' => 'Расскажите о проекте' ),
+		'brief_q_progetto_hint' => array(
+			'it' => 'Chi siete, l’obiettivo del sito, eventuali riferimenti che vi piacciono.',
+			'en' => 'Who you are, the goal of the site, any references you like.',
+			'ru' => 'Кто вы, цель сайта, примеры сайтов, которые вам нравятся.',
+		),
+		'brief_lbl_progetto' => array( 'it' => 'Il vostro progetto', 'en' => 'Your project', 'ru' => 'Ваш проект' ),
+		'brief_ph_progetto' => array(
+			'it' => 'Attività, obiettivo del sito, link a siti che vi piacciono…',
+			'en' => 'Your business, the site’s goal, links to sites you like…',
+			'ru' => 'Ваша деятельность, цель сайта, ссылки на понравившиеся сайты…',
+		),
+		'brief_q_contatti'  => array( 'it' => 'Come vi ricontattiamo?', 'en' => 'How should we reach you?', 'ru' => 'Как с вами связаться?' ),
+		'brief_q_contatti_hint' => array(
+			'it' => 'Rispondiamo entro un giorno lavorativo.',
+			'en' => 'We reply within one business day.',
+			'ru' => 'Отвечаем в течение рабочего дня.',
+		),
+		'brief_lbl_email'   => array( 'it' => 'Email', 'en' => 'Email', 'ru' => 'Email' ),
+		'brief_lbl_tel'     => array( 'it' => 'Telefono', 'en' => 'Phone', 'ru' => 'Телефон' ),
+		'brief_lbl_canale'  => array( 'it' => 'Canale preferito', 'en' => 'Preferred channel', 'ru' => 'Предпочтительный канал' ),
+		'brief_consenso'    => array(
+			'it' => 'Ho letto l’<a href="%s">informativa privacy</a> e acconsento al trattamento dei dati per essere ricontattato.',
+			'en' => 'I have read the <a href="%s">privacy policy</a> and consent to my data being processed so you can contact me back.',
+			'ru' => 'Я принимаю <a href="%s">политику конфиденциальности</a> и даю согласие на обработку данных для обратной связи.',
+		),
+		'brief_invia'       => array( 'it' => 'Invia il brief →', 'en' => 'Send the brief →', 'ru' => 'Отправить бриф →' ),
+		'brief_inviato'     => array( 'it' => 'BRIEF INVIATO ✓', 'en' => 'BRIEF SENT ✓', 'ru' => 'БРИФ ОТПРАВЛЕН ✓' ),
+		'brief_grazie'      => array(
+			'it' => 'Grazie. <strong>Rispondiamo entro un giorno lavorativo</strong> con una proposta su misura. Se intanto volete anticiparci qualcosa, scriveteci su WhatsApp.',
+			'en' => 'Thank you. <strong>We reply within one business day</strong> with a tailored proposal. Meanwhile, if you’d like to add anything, message us on WhatsApp.',
+			'ru' => 'Спасибо. <strong>Отвечаем в течение рабочего дня</strong> с индивидуальным предложением. А если хотите добавить что-то уже сейчас — напишите нам в WhatsApp.',
+		),
 	);
 	$lang = remarka_current_lang();
 	return $table[ $key ][ $lang ] ?? $table[ $key ]['it'] ?? $key;

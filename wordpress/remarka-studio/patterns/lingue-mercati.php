@@ -3,7 +3,7 @@
  * Title: Lingue e mercati
  * Slug: remarka-studio/lingue-mercati
  * Categories: remarka
- * Description: Sezione chiara: testo introduttivo, key visual del percorso editoriale, gruppi di lingue native per mercato (UE, Nord America, CSI e Caucaso) e CTA.
+ * Description: Sezione chiara: gruppi di lingue native per mercato (UE, Nord America, CSI e Caucaso) e CTA.
  * Viewport Width: 1400
  */
 ?>
@@ -19,10 +19,6 @@
 <!-- wp:paragraph {"fontSize":"medium","textColor":"grigio"} -->
 <p class="has-grigio-color has-text-color has-medium-font-size">Dal 2001 il gruppo Remarka lavora con la traduzione professionale: la versione estera del vostro sito non è un plugin, è un deliverable con nome e cognome.</p>
 <!-- /wp:paragraph -->
-
-<!-- wp:html -->
-<figure class="sr-visual-band" style="max-width:760px;margin:32px auto 0"><img src="/wp-content/themes/remarka-studio/assets/img/lingue-processo-madrelingua.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"/></figure>
-<!-- /wp:html -->
 
 <!-- wp:html -->
 <div class="sr-langs" style="margin-top:44px">

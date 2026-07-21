@@ -42,9 +42,36 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:html -->
-<figure class="sr-hero-visual"><img src="/wp-content/themes/remarka-studio/assets/img/home-hero-processo.webp" alt="" width="1600" height="1000" loading="eager" fetchpriority="high" decoding="async"/></figure>
-<!-- /wp:html --></div>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:group {"className":"sr-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sr-card"><!-- wp:paragraph {"className":"sr-timeline__title sr-no-margin"} -->
+<p class="sr-timeline__title sr-no-margin">Dalla firma all'online — 21 giorni</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div class="sr-timeline">
+<div class="sr-timeline__row">
+<div class="sr-timeline__head"><span class="sr-timeline__label">Analisi e design</span><span class="sr-timeline__wk">Settimana 1</span></div>
+<div class="sr-barra sr-barra--h6" data-sr-target="33%"><div class="sr-barra__fill"></div></div>
+</div>
+<div class="sr-timeline__row">
+<div class="sr-timeline__head"><span class="sr-timeline__label">Sviluppo</span><span class="sr-timeline__wk">Settimana 2</span></div>
+<div class="sr-barra sr-barra--h6" data-sr-target="66%"><div class="sr-barra__fill"></div></div>
+</div>
+<div class="sr-timeline__row">
+<div class="sr-timeline__head"><span class="sr-timeline__label">Contenuti, test, online</span><span class="sr-timeline__wk">Settimana 3</span></div>
+<div class="sr-barra sr-barra--h6" data-sr-target="100%"><div class="sr-barra__fill"></div></div>
+</div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:paragraph {"className":"sr-timeline__foot"} -->
+<p class="sr-timeline__foot">La data è nel contratto: <strong>ogni giorno lavorativo di ritardo vale l'1% di sconto.</strong></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:shortcode -->
+[remarka_hero_form]
+<!-- /wp:shortcode --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>
 <!-- /wp:group -->

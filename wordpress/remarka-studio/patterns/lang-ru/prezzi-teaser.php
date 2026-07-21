@@ -17,7 +17,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:html -->
-{{lancio}}<div class="sr-lancio-badge sr-mono" style="margin-top:20px">ЦЕНА ЗАПУСКА — ПЕРВЫЕ 5 ПРОЕКТОВ</div><p class="sr-lancio-line">Цена запуска на первые 5 проектов: тот же договор, те же гарантии. Полный прайс — с 2027 года.</p><p class="sr-lancio-counter sr-mono">Свободно мест: {{lancio_slots}} из 5.</p>{{/lancio}}
+{{lancio}}<div class="sr-lancio"><div class="sr-lancio-badge sr-mono" style="margin-top:20px">ЦЕНА ЗАПУСКА — ПЕРВЫЕ 5 ПРОЕКТОВ</div><p class="sr-lancio-line">Цена запуска на первые 5 проектов: тот же договор, те же гарантии. Полный прайс — с 2027 года.</p><p class="sr-lancio-counter sr-mono">Свободно мест: {{lancio_slots}} из 5.</p></div>{{/lancio}}
 <!-- /wp:html -->
 
 <!-- wp:group {"className":"sr-market-table sr-market-table--compact","style":{"spacing":{"margin":{"top":"28px"}}},"layout":{"type":"constrained"}} -->

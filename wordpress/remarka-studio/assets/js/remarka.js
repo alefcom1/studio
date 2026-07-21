@@ -783,6 +783,14 @@
 			var cmp = null;
 			GDPR_CMPS.forEach(function (name) { if (!cmp && lower.indexOf(name) !== -1) cmp = name; });
 
+			// Banner auto-ospitato (non un CMP SaaS della lista sopra): euristica
+			// sui marcatori tipici del contenitore di consenso (classe/id/attr).
+			// «cookie-banner», «cookie-consent», «consent-banner», ecc. Il semplice
+			// LINK alla cookie policy (es. «cookie-policy», «cookie policy») NON
+			// combacia — così non si conta come banner ciò che è solo l'informativa.
+			var selfHostedBanner = /cookie[-_]?(consent|banner|notice|bar|law)|consent[-_]?banner|gdpr[-_]?consent|data-[a-z-]*cookie-banner/i.test(html);
+			var hasBanner = !!cmp || selfHostedBanner;
+
 			var hasPolicy = /href=["'][^"']*(privacy|cookie|informativa)[^"']*["']/i.test(html) ||
 				/(privacy policy|cookie policy|informativa (sulla )?privacy)/i.test(html);
 
@@ -793,14 +801,16 @@
 			var re = /<script[^>]+src=["']https?:\/\/([^\/"']+)/gi, mm;
 			while ((mm = re.exec(html)) !== null) { domains[mm[1].toLowerCase()] = true; }
 
-			return { cmp: cmp, hasPolicy: hasPolicy, trackersFound: trackersFound, externalCount: Object.keys(domains).length, domains: Object.keys(domains) };
+			return { cmp: cmp, hasBanner: hasBanner, hasPolicy: hasPolicy, trackersFound: trackersFound, externalCount: Object.keys(domains).length, domains: Object.keys(domains) };
 		});
 	}
 
 	/** Deriva i 4 flag good|warn|bad dai segnali grezzi (stessa logica per pagina strumento e check-up). */
 	function gdprSignalFlags(sig) {
+		// Un banner c'è se è un CMP noto O un contenitore di consenso auto-ospitato.
+		var hasBanner = sig.hasBanner !== undefined ? sig.hasBanner : !!sig.cmp;
 		var trackFlag;
-		if (sig.trackersFound.length && !sig.cmp) {
+		if (sig.trackersFound.length && !hasBanner) {
 			trackFlag = 'bad';
 		} else if (sig.trackersFound.length) {
 			trackFlag = 'warn';
@@ -808,7 +818,7 @@
 			trackFlag = 'good';
 		}
 		return {
-			cmpFlag: sig.cmp ? 'good' : 'bad',
+			cmpFlag: hasBanner ? 'good' : 'bad',
 			policyFlag: sig.hasPolicy ? 'good' : 'bad',
 			trackFlag: trackFlag,
 			externalFlag: sig.externalCount === 0 ? 'good' : (sig.externalCount <= 5 ? 'warn' : 'bad')
@@ -821,8 +831,8 @@
 			return runGdprCheck(url).then(function (sig) {
 				var flags = gdprSignalFlags(sig);
 
-				setText(root, '[data-sr-tool-cmp]', sig.cmp
-					? txt(root, 'data-label-cmp-yes', 'Cookie banner rilevato') + ' (' + sig.cmp + ')'
+				setText(root, '[data-sr-tool-cmp]', sig.hasBanner
+					? txt(root, 'data-label-cmp-yes', 'Cookie banner rilevato') + (sig.cmp ? ' (' + sig.cmp + ')' : '')
 					: txt(root, 'data-label-cmp-no', 'Nessun cookie banner rilevato'));
 				setFlag(root, '[data-sr-tool-cmp]', flags.cmpFlag);
 
@@ -2342,6 +2352,28 @@
 		});
 	}
 
+	/* ---------- Бегущая строка прогресса для всех тестов ----------
+	   Все виджеты (speed/seo/a11y/co2/gdpr/ai/eeat/checkup + 3 AI-инструмента
+	   + hero) показывают проверку одинаково: контейнер [data-sr-tool-pending]
+	   (или [data-sr-hero-pending]) переключается через hidden. Вставляем в
+	   каждый такой контейнер один раз ленту прогресса в фирменном стиле:
+	   контейнер скрыт по умолчанию, поэтому CSS-анимация идёт только пока
+	   тест выполняется. Так пользователю видно, что тест не завис. */
+	function initPendingBars() {
+		document.querySelectorAll('[data-sr-tool-pending], [data-sr-hero-pending]').forEach(function (el) {
+			if (el.querySelector('.sr-progress')) {
+				return;
+			}
+			var track = document.createElement('span');
+			track.className = 'sr-progress';
+			track.setAttribute('aria-hidden', 'true');
+			var bar = document.createElement('span');
+			bar.className = 'sr-progress__bar';
+			track.appendChild(bar);
+			el.appendChild(track);
+		});
+	}
+
 	/** Dispatcher: inizializza ogni widget in base a data-sr-tool. */
 	/* ==========================================================================
 	 * «Vi è stato utile?» — micro-feedback su ogni strumento (M-PH3, dalla
@@ -2490,9 +2522,15 @@
 		}
 		banner.querySelectorAll('[data-sr-cookie-choice]').forEach(function (btn) {
 			btn.addEventListener('click', function () {
+				var choice = btn.getAttribute('data-sr-cookie-choice');
 				try {
-					window.localStorage.setItem(COOKIE_KEY, btn.getAttribute('data-sr-cookie-choice'));
+					window.localStorage.setItem(COOKIE_KEY, choice);
 				} catch (err) { /* privacy mode: la scelta vale solo per la sessione */ }
+				// Consenso dato → carica Yandex.Metrika subito, senza ricaricare
+				// la pagina (prima del consenso il tag non è mai stato inserito).
+				if (choice === 'accepted' && typeof window.remarkaLoadMetrika === 'function') {
+					window.remarkaLoadMetrika();
+				}
 				banner.hidden = true;
 			});
 		});
@@ -2614,12 +2652,24 @@
 		function hideErr() { if (errorEl) errorEl.hidden = true; }
 
 		function validStep(step) {
-			var groups = {};
+			// Gruppi radio: obbligatori solo se almeno un radio del gruppo ha
+			// `required` (così il budget del brief, reso opzionale, non blocca).
+			var radios = {};
 			step.querySelectorAll('input[type="radio"]').forEach(function (r) {
-				if (!(r.name in groups)) groups[r.name] = false;
-				if (r.checked) groups[r.name] = true;
+				if (!(r.name in radios)) radios[r.name] = { req: false, ok: false };
+				if (r.required) radios[r.name].req = true;
+				if (r.checked) radios[r.name].ok = true;
 			});
-			for (var g in groups) { if (!groups[g]) { showErr(i18n.choose || 'Seleziona un’opzione.'); return false; } }
+			for (var g in radios) {
+				if (radios[g].req && !radios[g].ok) { showErr(i18n.choose || 'Seleziona un’opzione.'); return false; }
+			}
+			// Gruppi checkbox "almeno uno" (chip lingue del brief).
+			var checks = {};
+			step.querySelectorAll('input[type="checkbox"][data-sr-require-one]').forEach(function (c) {
+				if (!(c.name in checks)) checks[c.name] = false;
+				if (c.checked) checks[c.name] = true;
+			});
+			for (var k in checks) { if (!checks[k]) { showErr(i18n.choose || 'Seleziona un’opzione.'); return false; } }
 			var invalid = null;
 			step.querySelectorAll('input:not([type="radio"]), textarea, select').forEach(function (f) {
 				if (!invalid && !f.checkValidity()) invalid = f;
@@ -2686,8 +2736,14 @@
 				}
 
 				var data = new FormData(form);
-				data.set('action', 'remarka_contact');
-				if (cfg.formNonce) data.set('remarka_nonce', cfg.formNonce);
+				// L'action arriva dal campo nascosto del form (remarka_contact
+				// per contatti/mini-hero, remarka_brief per la pagina brief).
+				var actionField = form.querySelector('input[name="action"]');
+				var action = (actionField && actionField.value) || 'remarka_contact';
+				data.set('action', action);
+				// Il nonce fresco localizzato vale solo per il canale contatti;
+				// il brief porta il proprio nonce nel campo del form (FormData).
+				if (action === 'remarka_contact' && cfg.formNonce) data.set('remarka_nonce', cfg.formNonce);
 
 				window.fetch(cfg.ajaxUrl, { method: 'POST', body: data, credentials: 'same-origin' })
 					.then(function (resp) { return resp.json(); })
@@ -2820,12 +2876,97 @@
 		});
 	}
 
+	/* ---------- Mega-menu della barra (#masthead) — apertura a controllo JS ----------
+	 * Bug live (luglio 2026, due segnalazioni con screen del titolare): il mega-
+	 * menu si apriva da solo col cursore a METÀ pagina, lontano dalla barra. Causa
+	 * confermata con Chromium: il pannello .sr-mega è un DISCENDENTE della <li> ed
+	 * è un box alto ~quanto il viewport, ancorato sotto la barra; le sue liste
+	 * hanno visibility:visible (per battere gli stili di sottomenu di Prespa),
+	 * quindi anche da CHIUSO il box restava bersagliabile dal mouse. Passando il
+	 * cursore nella sua area, li.sr-has-mega:hover si riattivava e la vecchia
+	 * regola CSS `:hover` apriva il pannello. Il fix sticky precedente sistemava
+	 * solo DOVE cadeva il pannello, non questo auto-hover.
+	 *
+	 * Ora l'apertura è a controllo esplicito: classe .sr-mega-open messa SOLO al
+	 * mouseenter della VOCE nella barra (non della zona pannello). Il CSS apre su
+	 * .sr-mega-open o :focus-within (tastiera conservata) e da chiuso il pannello
+	 * è pointer-events:none, così non può più auto-attivarsi. Chiusura: mouseleave
+	 * della <li> con ritardo (rientro tollerato), scroll, click fuori, Esc. */
+	function initMegaMenu() {
+		var items = document.querySelectorAll('#masthead .sr-has-mega');
+		if (!items.length) return;
+		var OPEN = 'sr-mega-open';
+		var CLOSE_DELAY = 150;
+
+		// Chiude TUTTO: toglie la classe .sr-mega-open E, se il focus è dentro una
+		// voce mega, lo sposta fuori — altrimenti :focus-within (apertura da
+		// tastiera) terrebbe il pannello aperto nonostante la classe rimossa.
+		function closeAll() {
+			items.forEach(function (li) { li.classList.remove(OPEN); });
+			var ae = document.activeElement;
+			if (ae && ae.closest && ae.closest('#masthead .sr-has-mega') && ae.blur) {
+				ae.blur();
+			}
+		}
+		function anyOpen() {
+			for (var i = 0; i < items.length; i++) {
+				if (items[i].classList.contains(OPEN)) return true;
+				// aperto anche se il focus da tastiera è dentro la voce.
+				if (items[i].contains(document.activeElement)) return true;
+			}
+			return false;
+		}
+
+		items.forEach(function (li) {
+			var link = li.querySelector('a');
+			var timer = null;
+			function clearTimer() { if (timer) { window.clearTimeout(timer); timer = null; } }
+			function open() { clearTimer(); li.classList.add(OPEN); }
+			function scheduleClose() {
+				clearTimer();
+				timer = window.setTimeout(function () { li.classList.remove(OPEN); }, CLOSE_DELAY);
+			}
+
+			// Apertura SOLO dalla voce nella barra (il link nell'header), MAI
+			// dalla zona del pannello: è il cuore del fix.
+			if (link) { link.addEventListener('mouseenter', open); }
+
+			// Rientrando nella <li> (voce o pannello aperto) annulliamo una
+			// chiusura programmata, così il pannello resta usabile; NON apriamo
+			// qui, per non riaprire passando sul box.
+			li.addEventListener('mouseenter', clearTimer);
+			// Uscendo dall'intera <li> (voce + pannello) chiudiamo con ritardo.
+			li.addEventListener('mouseleave', scheduleClose);
+		});
+
+		// Scroll → chiudi (solo se qualcosa è aperto: niente lavoro inutile).
+		window.addEventListener('scroll', function () {
+			if (anyOpen()) closeAll();
+		}, { passive: true });
+
+		// Click fuori da una voce mega → chiudi.
+		document.addEventListener('click', function (e) {
+			if (!e.target.closest || !e.target.closest('#masthead .sr-has-mega')) {
+				closeAll();
+			}
+		});
+
+		// Esc → chiudi (closeAll toglie anche il focus da dentro il pannello,
+		// altrimenti :focus-within lo terrebbe aperto).
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape' || e.keyCode === 27) {
+				if (anyOpen()) closeAll();
+			}
+		});
+	}
+
 	onReady(function () {
 		initReveal();
 		initBarre();
 		initCounters();
 		initPrespaFallback();
 		initHeroWidgets();
+		initPendingBars();
 		initToolWidgets();
 		initCheckupHomeForm();
 		initCookieBanner();
@@ -2835,5 +2976,6 @@
 		initContactForm();
 		initCaseFilter();
 		initOfficeMap();
+		initMegaMenu();
 	});
 })();

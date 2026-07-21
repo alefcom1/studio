@@ -251,6 +251,23 @@ body.dark-mode .site-description {
   padding-right: 24px;
 }
 
+/* Figli DIRETTI di sezione che sono inline-flow (inline-block / inline-flex):
+   sui box shrink-to-fit la regola sopra è inerte (max-width e margin:auto non
+   fanno nulla) e il padding:24px cade DENTRO l'elemento, incollandolo al filo
+   dello schermo. Ri-blocandoli occupano la traccia centrata da 1440 e il loro
+   testo parte dal gutter come tutti gli altri blocchi. Vale solo per elementi
+   di testo (nessuno sfondo/bordo che si stiri): link-freccia ed eyebrow.
+   Le pillole con bordo (.sr-lancio-badge) vanno invece avvolte in .sr-lancio
+   nei pattern, così il wrapper prende il gutter e la pillola resta compatta. */
+.sr-section > .sr-card-link,
+.sr-section--bianco > .sr-card-link,
+.is-style-sr-section > .sr-card-link,
+.sr-section > .sr-eyebrow,
+.sr-section--bianco > .sr-eyebrow,
+.is-style-sr-section > .sr-eyebrow {
+  display: block;
+}
+
 .sr-section--bianco,
 .is-style-sr-section--bianco {
   background: var(--sr-bianco);
@@ -934,6 +951,19 @@ body .entry-header {
   }
 }
 
+/* ---------- «Tre numeri» (home): numeri-titolo con didascalia inline ----------
+   Le cifre di questo blocco portano una parola accanto («3 settimane»,
+   «±0 giorni»). A 72–84px in una colonna da ~440px (griglia 1440 / 3) la
+   parola andava a capo e — con il mono a corpo grande — si spezzava per
+   lettere («settiman/e», bug live 20.07.2026 dopo il merge del mega-menu).
+   Riduciamo il corpo e forziamo l'intera etichetta su una riga (nowrap):
+   così «3 settimane / ±0 giorni / 3 недели / 3 weeks» stanno su una riga
+   sola a 1440 e restano leggibili anche a 390 (colonna a piena larghezza). */
+.sr-tre-numeri .sr-stat__num {
+  font-size: clamp(40px, 3.6vw, 54px);
+  white-space: nowrap;
+}
+
 /* ---------- La barra dei cento ---------- */
 
 .sr-barra {
@@ -1391,6 +1421,219 @@ body .entry-header {
 
 .sr-market-table--compact td.sr-market-table__us .sr-market-table__sub {
   color: var(--sr-oltremare);
+}
+
+/* ---------- Perché Remarka: confronto tra modelli ---------- */
+/* Mobile-first: la tabella scorre dentro il proprio contenitore, così a
+   390px non rompe mai la griglia; su desktop diventa a piena larghezza. */
+
+.sr-confronto {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sr-confronto table {
+  min-width: 680px;
+  width: 100%;
+  background: var(--sr-bianco);
+  border: 1px solid var(--sr-bordo);
+  border-collapse: collapse;
+}
+
+.sr-confronto th {
+  font-family: var(--sr-font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sr-grigio);
+  text-align: left;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--sr-bordo);
+  vertical-align: bottom;
+}
+
+.sr-confronto th.sr-confronto__uscol {
+  color: var(--sr-inchiostro);
+  background: rgba(36, 64, 200, 0.06);
+  border-bottom: 2px solid var(--sr-oltremare);
+}
+
+.sr-confronto td {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--sr-bordo);
+  vertical-align: top;
+  font-family: var(--sr-font-body);
+  font-size: 15px;
+  color: var(--sr-grigio);
+}
+
+.sr-confronto tr:last-child td { border-bottom: none; }
+
+.sr-confronto td.sr-confronto__axis,
+.sr-confronto th.sr-confronto__axis {
+  font-family: var(--sr-font-display);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.3;
+  color: var(--sr-inchiostro);
+  text-transform: none;
+  letter-spacing: 0;
+  min-width: 220px;
+}
+
+.sr-confronto th.sr-confronto__axis {
+  font-family: var(--sr-font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sr-grigio);
+}
+
+.sr-confronto td.sr-confronto__us {
+  background: rgba(36, 64, 200, 0.06);
+  color: var(--sr-inchiostro);
+  border-left: 1px solid rgba(36, 64, 200, 0.16);
+  border-right: 1px solid rgba(36, 64, 200, 0.16);
+}
+
+.sr-confronto__yes,
+.sr-confronto__no,
+.sr-confronto__dep,
+.sr-confronto__na {
+  display: block;
+  font-family: var(--sr-font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+.sr-confronto__yes {
+  color: var(--sr-verde);
+  font-weight: 500;
+}
+
+.sr-confronto__us .sr-confronto__yes {
+  color: var(--sr-oltremare);
+}
+
+.sr-confronto__no {
+  color: var(--sr-grigio);
+}
+
+.sr-confronto__dep {
+  color: var(--sr-grigio);
+  font-style: italic;
+}
+
+.sr-confronto__na {
+  color: var(--sr-bordo);
+}
+
+.sr-confronto__sub {
+  display: block;
+  font-family: var(--sr-font-body);
+  font-size: 12.5px;
+  font-style: normal;
+  line-height: 1.35;
+  color: var(--sr-grigio);
+  margin-top: 5px;
+}
+
+.sr-confronto__us .sr-confronto__sub {
+  color: var(--sr-inchiostro);
+}
+
+/* ---------- Recensioni clienti ---------- */
+/* Layout 3 + 2 centrato: con 5 card la prima riga ne tiene 3 e l'ultima 2
+   (mai una sola «orfana»). Sotto i 760px una colonna. Il flex-wrap con
+   justify-content:center centra l'ultima riga; align-items:stretch (default)
+   pareggia l'altezza delle card nella stessa riga, e l'autore resta in basso
+   (margin-top:auto). Il selettore a due classi vince sul grid generato dal
+   blocco WordPress. */
+
+.wp-block-group.sr-recensioni {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+}
+
+/* Il gruppo recensioni porta anche .is-layout-grid (layout griglia del blocco).
+   La regola generica .wp-block-group.is-layout-grid (più sotto nel file) ha la
+   STESSA specificità (0,2,0) e, venendo DOPO, vinceva sul cascade: il 3+2
+   diventava una griglia auto-fit. Finché il corpo era limitato (~980px) la
+   griglia cadeva per caso su ~3 colonne e sembrava giusta; da quando il corpo
+   è a piena larghezza 1440 (fix `body .site-wrapper` del merge 20.07.2026)
+   esplodeva in 5 colonne strette (bug live). Alziamo la specificità con
+   .is-layout-grid (0,3,0) così il flex 3+2 vince in modo deterministico e
+   annulliamo l'eventuale grid-template ereditato. */
+.wp-block-group.sr-recensioni.is-layout-grid {
+  display: flex;
+  grid-template-columns: none;
+}
+
+.sr-recensioni > .sr-recensione {
+  flex: 1 1 100%;
+  max-width: 520px;
+}
+
+@media (min-width: 760px) {
+  .sr-recensioni > .sr-recensione {
+    /* 3 per riga: 3 × base + 2 × gap(20px) = 100% → la 4ª va a capo */
+    flex: 1 1 calc((100% - 40px) / 3);
+    max-width: calc((100% - 40px) / 3);
+  }
+}
+
+.sr-recensione {
+  box-sizing: border-box;
+  background: var(--sr-bianco);
+  border: 1px solid var(--sr-bordo);
+  border-radius: var(--sr-radius);
+  padding: 30px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sr-recensione__stelle {
+  margin: 0 0 16px;
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  color: var(--sr-oltremare);
+}
+
+.sr-recensione__tema {
+  font-family: var(--sr-font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sr-grigio);
+  margin: 0 0 16px;
+}
+
+.sr-recensione__testo {
+  font-size: 15.5px;
+  line-height: 1.62;
+  color: var(--sr-inchiostro);
+  margin: 0 0 22px;
+}
+
+.sr-recensione__autore {
+  font-family: var(--sr-font-display);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--sr-inchiostro);
+  margin: auto 0 0;
+}
+
+.sr-recensione__autore::before {
+  content: "— ";
+  color: var(--sr-grigio);
 }
 
 /* ---------- Lingue e mercati ---------- */
@@ -2095,8 +2338,81 @@ body .entry-header {
   .sr-choice-grid { grid-template-columns: 1fr; }
 }
 
+/* Brief passo 1: 5 card in 3 colonne → righe 3+2 (niente card orfana).
+   Sotto i 640px passa a una colonna, saltando l'intermedio a 2 colonne che
+   lascerebbe una card sola in ultima riga (2+2+1). */
+.sr-choice-grid--tre {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 640px) {
+  .sr-choice-grid--tre { grid-template-columns: 1fr; }
+}
+
+/* Consenso privacy del brief: checkbox + testo su una riga. */
+.sr-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 22px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--sr-grigio);
+  cursor: pointer;
+}
+
+.sr-consent input[type="checkbox"] {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  accent-color: var(--sr-oltremare);
+}
+
+.sr-consent a {
+  color: var(--sr-oltremare);
+}
+
+.sr-brief-success {
+  padding: 8px 0;
+}
+
 .sr-form-success p {
   margin: 0 0 10px;
+}
+
+/* Mini-modulo hero (home): forma compatta sotto la card timeline. */
+.sr-hero-form {
+  margin-top: 20px;
+  padding: 22px;
+  border: 1px solid var(--sr-bordo);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.sr-hero-form__title {
+  font-family: var(--sr-font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--sr-inchiostro);
+  margin: 0 0 14px;
+}
+
+.sr-hero-form p {
+  margin: 0 0 12px;
+}
+
+.sr-hero-form .sr-field-label {
+  margin: 0 0 6px;
+}
+
+.sr-hero-form__brief {
+  margin: 14px 0 0;
+  font-size: 13px;
+}
+
+.sr-hero-form__brief a {
+  color: var(--sr-oltremare);
 }
 
 .sr-tool-pending {
@@ -2105,28 +2421,47 @@ body .entry-header {
   color: var(--sr-grigio);
 }
 
-/* Barra di avanzamento indeterminata sotto il messaggio «in corso»: una
-   riga di testo grigia si perde, un cursore che scorre no (fix visibilità
-   progresso, 19.07.2026). L'animazione gira solo mentre l'elemento è
-   visibile — con l'attributo [hidden] tutto sparisce. */
-.sr-tool-pending::after {
-  content: "";
+/* ---------- Бегущая строка прогресса (все тесты) ----------
+   Индикативная «идёт проверка» в фирменном стиле: тесты ходят во внешние
+   API (PageSpeed до 30 сек), реальный процент недоступен — поэтому лента
+   бесконечно бежит, показывая, что тест не завис. Вставляется JS-ом один
+   раз в каждый контейнер [data-sr-tool-pending]/[data-sr-hero-pending];
+   контейнер скрыт через [hidden], значит анимация идёт только во время
+   проверки. Высота и цвета — как у .sr-barra. */
+.sr-progress {
   display: block;
+  position: relative;
+  overflow: hidden;
+  height: 6px;
   margin-top: 12px;
-  height: 3px;
-  max-width: 320px;
+  background: var(--sr-traccia);
   border-radius: 999px;
-  background:
-    linear-gradient(90deg, var(--sr-oltremare), var(--sr-oltremare)) no-repeat,
-    var(--sr-traccia);
-  background-size: 40% 100%;
-  background-position: -50% 0;
-  animation: sr-progress-slide 1.1s ease-in-out infinite;
+}
+
+.sr-progress__bar {
+  position: absolute;
+  top: 0;
+  left: -40%;
+  height: 100%;
+  width: 40%;
+  border-radius: inherit;
+  background: var(--sr-oltremare);
+  animation: sr-progress-slide 1.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
 @keyframes sr-progress-slide {
-  0%   { background-position: -50% 0; }
-  100% { background-position: 150% 0; }
+  0%   { left: -40%; width: 40%; }
+  50%  { width: 55%; }
+  100% { left: 100%; width: 40%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sr-progress__bar {
+    animation: none;
+    left: 0;
+    width: 100%;
+    opacity: 0.5;
+  }
 }
 
 .sr-tool-result {
@@ -2923,6 +3258,17 @@ body .entry-header {
   transform: translateY(0);
 }
 
+/* LCP: hero всегда над сгибом — он НЕ должен стартовать с opacity:0.
+   Иначе заголовок (LCP-элемент) невидим до срабатывания reveal-JS, и LCP
+   уезжает на секунды. Hero виден сразу; каскадная анимация остаётся для
+   секций ниже сгиба. Специфичность (0,2,0) перекрывает .sr-cascade > *. */
+.sr-hero.sr-cascade > *,
+.sr-hero .sr-cascade > * {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 /* Счётчик — просто маркер для JS */
 .sr-counter { font-variant-numeric: tabular-nums; }
 
@@ -3230,13 +3576,6 @@ body .footer-content {
     animation: none;
   }
 
-  /* La barra di avanzamento resta visibile ma ferma (pieno statico). */
-  .sr-tool-pending::after {
-    animation: none;
-    background-size: 100% 100%;
-    background-position: 0 0;
-  }
-
   /* Анимации Prespa тоже глушим */
   [class*='p-animation-'] {
     animation: none !important;
@@ -3514,24 +3853,10 @@ textarea.sr-ai-llms-textarea {
   align-items: center;
 }
 .sr-ac-grid__text { grid-column: 1; grid-row: 1; }
-.sr-ac-grid__img  {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  margin: 0;
-  background: #071A55;
-  border-radius: 14px;
-  overflow: hidden;
-}
-.sr-ac-grid__list { grid-column: 1; grid-row: 2; }
-.sr-ac-grid__img img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+.sr-ac-grid__list { grid-column: 2; grid-row: 1; }
 @media (max-width: 860px) {
   .sr-ac-grid { grid-template-columns: 1fr; }
   .sr-ac-grid__text,
-  .sr-ac-grid__img,
   .sr-ac-grid__list { grid-column: 1; grid-row: auto; }
 }
 
@@ -3739,6 +4064,26 @@ textarea.sr-ai-llms-textarea {
   position: relative;
   overflow: visible; /* il pannello deve poter uscire dall'header */
 }
+
+/* BLINDATURA DEL CONTENITORE (regressione live 20.07.2026, dopo il merge del
+   mega-menu). Il pannello .sr-mega è position:absolute con top:100% e si àncora
+   al contenitore posizionato più vicino: la barra #masthead, resa sticky da
+   `#masthead.site-header{position:sticky}` (specificità 1,1,0). MA il tema
+   padre Prespa carica DOPO remarka.css e, a parità di specificità, vince per
+   ordine sorgente (stesso meccanismo documentato per .site-wrapper nel merge):
+   se Prespa/uno stato azzera la posizione della barra, questa perde il contesto
+   di posizionamento e il pannello — con top:100% — precipita a ~100vh, cioè a
+   metà/fondo pagina, sopra la sezione «Contatti» (esattamente lo screen del
+   titolare). Rendiamo la posizione della barra deterministica con specificità
+   superiore (prefisso `body` → 1,1,1, batte qualunque #masthead.site-header di
+   Prespa senza !important) e ribadiamo overflow:visible. Così #masthead resta
+   SEMPRE il contenitore del pannello e il mega-menu si apre solo sotto la barra. */
+body #masthead.site-header {
+  position: sticky;
+  top: 0;
+  overflow: visible;
+}
+
 #masthead .sr-has-mega {
   position: static;
 }
@@ -3755,7 +4100,7 @@ textarea.sr-ai-llms-textarea {
   opacity: 0.5;
   transition: transform 0.2s ease;
 }
-#masthead .sr-has-mega:hover > a::after,
+#masthead .sr-has-mega.sr-mega-open > a::after,
 #masthead .sr-has-mega:focus-within > a::after {
   transform: translateY(1px) rotate(-135deg);
   opacity: 0.8;
@@ -3771,13 +4116,26 @@ textarea.sr-ai-llms-textarea {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
+  /* Da CHIUSO il pannello NON deve intercettare il mouse. È un box alto quanto
+     il viewport (le sue liste sono visibility:visible per battere Prespa), che
+     ancorato sotto la barra copre metà pagina: senza questo, passare il cursore
+     a metà pagina riattivava li:hover e apriva il menu da solo (bug live
+     luglio 2026). Con pointer-events:none il box chiuso è trasparente al mouse
+     e l'apertura può partire solo dalla voce nella barra (JS) o da focus. */
+  pointer-events: none;
   transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
 }
-#masthead .sr-has-mega:hover > .sr-mega,
+/* Apertura a controllo JS (classe .sr-mega-open, messa da initMegaMenu solo al
+   mouseenter della voce NELLA BARRA) + :focus-within per la tastiera. Il puro
+   :hover è stato rimosso di proposito: apriva il pannello ovunque il suo box
+   invisibile toccasse il cursore. Senza JS le voci restano link agli indici
+   /servizi/ e /strumenti/ (degradazione accettabile). */
+#masthead .sr-has-mega.sr-mega-open > .sr-mega,
 #masthead .sr-has-mega:focus-within > .sr-mega {
   opacity: 1;
   visibility: visible;
   transform: none;
+  pointer-events: auto;
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
@@ -3800,6 +4158,14 @@ textarea.sr-ai-llms-textarea {
 }
 #masthead .sr-mega--lab .sr-mega__inner {
   grid-template-columns: 1.9fr 1fr;
+}
+/* Pannello «Casi»: meno contenuto delle altre due voci → box più stretto
+   (lista dei progetti + card «tutti i casi»), niente colonna vuota. */
+#masthead .sr-mega--casi .sr-mega__box {
+  max-width: 760px;
+}
+#masthead .sr-mega--casi .sr-mega__inner {
+  grid-template-columns: 1fr 1fr;
 }
 
 #masthead .sr-mega__col {

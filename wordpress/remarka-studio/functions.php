@@ -158,6 +158,94 @@ function remarka_preload_fonts(): void {
 }
 add_action( 'wp_head', 'remarka_preload_fonts', 5 );
 
+/**
+ * Preconnect ai CDN dei font quando NON siamo in self-hosting: i due CSS dei
+ * font (Fontshare + Google) sono su origin esterni, e finché il browser non
+ * apre DNS+TLS verso di essi il render resta bloccato. Il preconnect anticipa
+ * l'handshake, togliendolo dal percorso critico (riduce FCP/LCP). Quando i
+ * font sono self-hosted questa funzione non emette nulla: sono same-origin e
+ * già in preload (remarka_preload_fonts).
+ */
+function remarka_font_preconnect(): void {
+	if ( remarka_has_local_fonts() ) {
+		return;
+	}
+	$origins = array(
+		'https://api.fontshare.com',  // CSS @font-face Clash Display / General Sans
+		'https://cdn.fontshare.com',  // file .woff2 Fontshare
+		'https://fonts.googleapis.com', // CSS @font-face Fragment Mono
+		'https://fonts.gstatic.com',  // file .woff2 Google
+	);
+	foreach ( $origins as $origin ) {
+		printf( '<link rel="preconnect" href="%s" crossorigin>' . "\n", esc_url( $origin ) );
+	}
+}
+add_action( 'wp_head', 'remarka_font_preconnect', 2 );
+
+/**
+ * Rende non-bloccanti i due CSS dei font CDN (Fontshare + Google): li carica
+ * con media="print" e li riattiva a onload (this.media='all'), così il primo
+ * render non aspetta la richiesta del CSS dei font. Il <noscript> conserva il
+ * caricamento classico senza JavaScript. I @font-face usano già display=swap,
+ * quindi il testo compare subito nel fallback e passa al font web quando è
+ * pronto — nessun cambiamento di comportamento oltre al render più rapido.
+ * Attivo solo sui due handle dei font CDN, non sugli altri stili.
+ */
+function remarka_async_font_css( string $tag, string $handle ): string {
+	if ( ! in_array( $handle, array( 'remarka-fonts-cdn', 'remarka-fonts-mono-cdn' ), true ) ) {
+		return $tag;
+	}
+	$async = str_replace(
+		array( " media='all'", ' media="all"' ),
+		" media='print' onload=\"this.media='all'\"",
+		$tag
+	);
+	if ( $async === $tag ) { // WP non ha emesso media='all': iniettiamo gli attributi.
+		$async = preg_replace( '/<link /', '<link media="print" onload="this.media=\'all\'" ', $tag, 1 );
+	}
+	return $async . '<noscript>' . $tag . '</noscript>' . "\n";
+}
+add_filter( 'style_loader_tag', 'remarka_async_font_css', 10, 2 );
+
+/**
+ * Il plugin nasio-blocks carica su OGNI pagina front-end Chart.js (~200 KB) +
+ * Swiper (JS+CSS) + il proprio CSS, ma non usiamo nessun blocco nasio nei
+ * nostri contenuti (verificato: nessuna occorrenza nei pattern). È peso morto
+ * che blocca il render e gonfia il «JavaScript inutilizzato» di PageSpeed. Lo
+ * togliamo dal front-end lasciando il plugin attivo (i blocchi restano
+ * disponibili nell'editor). Priorità 100: dopo l'enqueue del plugin. Se un
+ * domani una pagina userà davvero un blocco nasio, togliere il suo handle da
+ * questa lista.
+ */
+function remarka_dequeue_unused_assets(): void {
+	if ( is_admin() ) {
+		return;
+	}
+	foreach ( array( 'nasio-chart-js', 'nasio-swiper-js' ) as $handle ) {
+		wp_dequeue_script( $handle );
+	}
+	foreach ( array( 'nasio-blocks-style', 'nasio-swiper-css' ) as $handle ) {
+		wp_dequeue_style( $handle );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'remarka_dequeue_unused_assets', 100 );
+
+/**
+ * Prespa carica app.js e core-add.js senza defer → bloccano il render. Sono
+ * bundle compilati che agiscono su DOMContentLoaded, quindi il defer è sicuro
+ * e li toglie dal percorso critico (il nostro remarka.js è già defer; Chart e
+ * Swiper sono rimossi sopra). Se dopo il deploy il menu o altre interazioni di
+ * Prespa si rompessero, togliere l'handle corrispondente da questa lista.
+ */
+function remarka_defer_parent_scripts( string $tag, string $handle ): string {
+	$defer = array( 'prespa-script', 'prespa-block-scripts' );
+	if ( in_array( $handle, $defer, true ) && false === strpos( $tag, ' defer' ) && false !== strpos( $tag, ' src=' ) ) {
+		$tag = str_replace( ' src=', ' defer src=', $tag );
+	}
+	return $tag;
+}
+add_filter( 'script_loader_tag', 'remarka_defer_parent_scripts', 10, 2 );
+
 /** Стили редактора: паттерны в Gutenberg выглядят как на фронте. */
 function remarka_editor_setup(): void {
 	add_theme_support( 'editor-styles' );
@@ -656,6 +744,7 @@ function remarka_footer_index_url( string $which ): string {
 	$paths = array(
 		'servizi'   => array( 'it' => 'servizi', 'en' => 'en/services', 'ru' => 'ru/uslugi' ),
 		'strumenti' => array( 'it' => 'strumenti', 'en' => 'en/tools', 'ru' => 'ru/instrumenty' ),
+		'blog'      => array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog' ),
 	);
 	$lang = remarka_current_lang();
 	$path = $paths[ $which ][ $lang ] ?? $paths[ $which ]['it'] ?? '';
@@ -762,6 +851,7 @@ function remarka_render_footer(): void {
 				<div class="sr-footer-bottom__row">
 					<span class="sr-footer-legal">
 						&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( $company['name'] ); ?> — <?php echo esc_html( remarka_str( 'footer_diritti' ) ); ?>
+						<a href="<?php echo esc_url( remarka_footer_index_url( 'blog' ) ); ?>">Blog</a>
 						<a href="<?php echo esc_url( remarka_legal_url( 'privacy' ) ); ?>"><?php echo esc_html( remarka_str( 'footer_privacy' ) ); ?></a>
 						<a href="<?php echo esc_url( remarka_legal_url( 'cookie-policy' ) ); ?>"><?php echo esc_html( remarka_str( 'cookie_policy' ) ); ?></a>
 						<a href="<?php echo esc_url( remarka_legal_url( 'cookie-preferenze' ) ); ?>"><?php echo esc_html( remarka_str( 'footer_cookie_pref' ) ); ?></a>
@@ -777,21 +867,51 @@ add_action( 'wp_footer', 'remarka_render_footer', 5 );
 
 /**
  * Yandex.Metrika: счётчик в футере всех страниц сайта.
+ *
+ * GDPR: счётчик грузит внешний скрипт mc.yandex.ru и включает webvisor
+ * (запись сессий) — это трекинг, который по закону нельзя запускать ДО
+ * согласия. Поэтому тег НЕ грузится сам по себе: он подключается только
+ * когда пользователь нажал «Принять» в cookie-баннере (выбор
+ * `sr-cookie-choice === 'accepted'` в localStorage). До согласия/при отказе
+ * во внешний домен не уходит ни одного запроса, и в исходном HTML страницы
+ * внешнего <script src> нет вовсе (свой же тест «Проверка GDPR» это видит).
+ *
+ * Функция `window.remarkaLoadMetrika` вызывается из remarka.js в момент
+ * нажатия «Принять» (без перезагрузки) и здесь же — сразу, если согласие
+ * уже было дано в прошлый визит. Тег грузится максимум один раз.
+ *
+ * <noscript>-пиксель убран сознательно: без JS нет и механизма согласия,
+ * поэтому трекинг для no-JS посетителей не запускаем (иначе он бы шёл без
+ * согласия).
  */
 function remarka_yandex_metrika(): void {
 	?>
-	<!-- Yandex.Metrika counter -->
+	<!-- Yandex.Metrika counter (загружается только после согласия на cookie) -->
 	<script type="text/javascript">
-		(function(m,e,t,r,i,k,a){
-			m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-			m[i].l=1*new Date();
-			for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-			k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-		})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110723466', 'ym');
+		(function () {
+			var COUNTER_ID = 110723466;
+			var CHOICE_KEY = 'sr-cookie-choice';
 
-		ym(110723466, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+			window.remarkaLoadMetrika = function () {
+				if (window.__srMetrikaLoaded) { return; }
+				window.__srMetrikaLoaded = true;
+				(function(m,e,t,r,i,k,a){
+					m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+					m[i].l=1*new Date();
+					for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+					k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+				})(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=' + COUNTER_ID, 'ym');
+
+				ym(COUNTER_ID, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+			};
+
+			try {
+				if (window.localStorage.getItem(CHOICE_KEY) === 'accepted') {
+					window.remarkaLoadMetrika();
+				}
+			} catch (err) { /* приватный режим: без localStorage трекинг не запускаем */ }
+		})();
 	</script>
-	<noscript><div><img src="https://mc.yandex.ru/watch/110723466" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
 	<?php
 }
@@ -816,6 +936,59 @@ function remarka_auto_cta_menu_item_class( array $classes, WP_Post $item ): arra
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'remarka_auto_cta_menu_item_class', 10, 2 );
+
+/**
+ * Убираем дубль <h1>. Родительская тема Prespa печатает заголовок страницы
+ * КЛАССИЧЕСКОЙ разметкой <h1 class="entry-title" itemprop="headline"> (не
+ * блоком core/post-title — поэтому render_block его не ловит). У каждой нашей
+ * страницы уже есть свой H1 в контенте (hero-паттерн), из-за чего краулер
+ * видел по два H1 (multiple_h1). Понижаем заголовок темы до <h2> буферизацией
+ * вывода на singular-страницах: правится ровно один тег с классом entry-title,
+ * атрибуты сохраняются. На Страницах он и так скрыт (`.entry-title{display:none}`
+ * в remarka.css), на постах остаётся видимым — меняется только уровень, не вид.
+ * H1 на странице остаётся один — из hero-паттерна.
+ */
+function remarka_demote_entry_title_cb( string $html ): string {
+	$out = preg_replace(
+		'#<h1(\s[^>]*\bentry-title\b[^>]*)>(.*?)</h1>#is',
+		'<h2$1>$2</h2>',
+		$html,
+		1
+	);
+	return is_string( $out ) ? $out : $html;
+}
+function remarka_demote_entry_title_buffer(): void {
+	if ( is_singular() ) {
+		ob_start( 'remarka_demote_entry_title_cb' );
+	}
+}
+add_action( 'template_redirect', 'remarka_demote_entry_title_buffer', 1 );
+
+/**
+ * 301-редиректы для устаревших URL кейсов. Кейсы живут якорями на одной
+ * странице-индексе (/casi-studio/#slug), отдельных страниц /casi-studio/<slug>
+ * никогда не было — но краулер/старая карта сайта нашли такие адреса, и они
+ * отдавали 404 (critical page_not_found). Любой несуществующий под-адрес трёх
+ * языковых разделов кейсов ведём 301 на соответствующий индекс. Срабатывает
+ * только на 404 под этими путями — валидные страницы не затрагиваются.
+ */
+function remarka_redirect_stale_case_studies(): void {
+	if ( ! is_404() ) {
+		return;
+	}
+	$uri = wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH );
+	if ( ! is_string( $uri ) || '' === $uri ) {
+		return;
+	}
+	$uri = rtrim( $uri, '/' );
+	foreach ( array( '/casi-studio', '/en/case-studies', '/ru/kejsy' ) as $base ) {
+		if ( $uri !== $base && 0 === strpos( $uri . '/', $base . '/' ) ) {
+			wp_safe_redirect( home_url( $base . '/' ), 301 );
+			exit;
+		}
+	}
+}
+add_action( 'template_redirect', 'remarka_redirect_stale_case_studies' );
 
 /**
  * Organization + WebSite schema.org (JSON-LD) — базовая структурированная
@@ -1091,6 +1264,112 @@ function remarka_checkup_tool_schema(): void {
 add_action( 'wp_head', 'remarka_checkup_tool_schema' );
 
 /**
+ * SoftwareApplication + BreadcrumbList (JSON-LD) sulle pagine-caso studio dei
+ * PROGETTI REALI del gruppo (21.07.2026). Ogni caso descrive un software che
+ * abbiamo costruito noi: @type SoftwareApplication è la descrizione più
+ * accurata (la pagina che ne parla resta gestita da Rank Math). Niente
+ * aggregateRating (il titolare ha escluso valutazioni fittizie), niente
+ * offers (non è un prodotto in vendita: è un caso di portfolio). L'autore è
+ * SEMPRE l'organizzazione/il team, mai strumenti di sviluppo. Mappa statica
+ * per-slug, estendibile ai casi successivi. Gli screenshot puntano ai file
+ * reali del tema (assets/img/casi), gli stessi mostrati in pagina.
+ */
+function remarka_case_study_schema(): void {
+	$cases = array(
+		'tms-perevod4' => array(
+			'name'        => 'TMS — Translation Management System (Perevod4)',
+			'live_url'    => 'https://tms.perevod4.ru',
+			'category'    => 'BusinessApplication',
+			'description' => 'Translation Management System sviluppato su misura dal gruppo Remarka per un bureau di traduzioni: gestione ordini, clienti, traduttori, preventivi, pagamenti, fatture, glossari e traduzione assistita AI in un\'unica web app.',
+			'shots'       => array( 'tms-board-1440.webp', 'tms-clienti-1440.webp', 'tms-fatture-1440.webp' ),
+			'crumb'       => 'TMS Perevod4',
+		),
+		'1russian' => array(
+			'name'        => '1russian.com — piattaforma di audit SEO',
+			'live_url'    => 'https://1russian.com',
+			'category'    => 'BusinessApplication',
+			'description' => 'Piattaforma di audit SEO self-hosted sviluppata dal gruppo Remarka: crawler, 11 gruppi di regole di analisi, integrazioni con Google Search Console, PageSpeed, Yandex e OpenPageRank, cruscotto Monitor e area clienti Cabinet.',
+			'shots'       => array( '1russian-home-1440.webp' ),
+			'crumb'       => '1russian.com',
+		),
+		'att' => array(
+			'type'        => 'WebSite',
+			'name'        => 'ATT — traduzione.tech, sito dell\'agenzia di traduzioni',
+			'live_url'    => 'https://www.traduzione.tech',
+			'description' => 'Sito aziendale dell\'agenzia di traduzioni ATT (traduzione.tech), realizzato dal gruppo Remarka: architettura dei servizi per lingua e settore, richiesta di preventivo in pochi passaggi, SEO tecnica e dati strutturati. Online dal 2022.',
+			'shots'       => array( 'att-home-1440.webp' ),
+			'crumb'       => 'ATT',
+		),
+		'pere-rf' => array(
+			'name'        => 'пере.рф — piattaforma di traduzione AI di documenti',
+			'live_url'    => 'https://пере.рф',
+			'category'    => 'BusinessApplication',
+			'description' => 'Piattaforma SaaS di traduzione AI di documenti (DOCX, XLSX, PDF) sviluppata dal gruppo Remarka: pipeline OCR, glossario automatico, memoria di traduzione, motore di QA ed export multiformato, su un dominio di due lettere.',
+			'shots'       => array( 'pererf-home-1440.webp' ),
+			'crumb'       => 'пере.рф',
+		),
+	);
+
+	// Attiva solo sulle pagine-caso conosciute (slug foglia sotto /casi-studio/).
+	$slug = get_post_field( 'post_name', get_queried_object_id() );
+	if ( ! is_page() || ! isset( $cases[ $slug ] ) ) {
+		return;
+	}
+	$c       = $cases[ $slug ];
+	$img_base = get_stylesheet_directory_uri() . '/assets/img/casi/';
+
+	$type = $c['type'] ?? 'SoftwareApplication';
+	$app  = array(
+		'@context'   => 'https://schema.org',
+		'@type'      => $type,
+		'name'       => $c['name'],
+		'url'        => $c['live_url'],
+		'description' => $c['description'],
+		'screenshot' => array_map(
+			static function ( $f ) use ( $img_base ) {
+				return $img_base . $f;
+			},
+			$c['shots']
+		),
+		'author'     => array(
+			'@type' => 'Organization',
+			'name'  => 'Studio Remarka',
+			'url'   => home_url( '/' ),
+		),
+		'isBasedOn'  => get_permalink(),
+	);
+	// Campi specifici delle applicazioni (non validi su un WebSite).
+	if ( in_array( $type, array( 'SoftwareApplication', 'WebApplication' ), true ) ) {
+		$app['applicationCategory'] = $c['category'] ?? 'BusinessApplication';
+		$app['operatingSystem']     = 'Web';
+	}
+
+	$crumbs = array(
+		array( 'name' => 'Home', 'url' => home_url( '/' ) ),
+		array( 'name' => 'Casi studio', 'url' => home_url( '/casi-studio/' ) ),
+		array( 'name' => $c['crumb'], 'url' => get_permalink() ),
+	);
+	$items = array();
+	foreach ( $crumbs as $i => $cr ) {
+		$items[] = array(
+			'@type'    => 'ListItem',
+			'position' => $i + 1,
+			'name'     => $cr['name'],
+			'item'     => $cr['url'],
+		);
+	}
+	$breadcrumb = array(
+		'@context'        => 'https://schema.org',
+		'@type'           => 'BreadcrumbList',
+		'itemListElement' => $items,
+	);
+
+	echo '<script type="application/ld+json">' . wp_json_encode( $app, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>' . "\n";
+	echo '<script type="application/ld+json">' . wp_json_encode( $breadcrumb, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>' . "\n";
+}
+add_action( 'wp_head', 'remarka_case_study_schema' );
+
+/**
  * BlogPosting (JSON-LD) su ogni pagina-articolo del blog, nelle tre lingue
  * (piano-blog.md, requisito del titolare 15.07). Segue lo stesso schema di
  * remarka_checkup_tool_schema(): niente duplicazione dell'Organization della
@@ -1129,12 +1408,21 @@ function remarka_blog_posting_schema(): void {
 		'url'   => home_url( $lang_prefix ),
 	);
 
+	$title = wp_strip_all_tags( get_the_title() );
+	// `datePublished` берём из карты блога; если там пусто — используем дату
+	// публикации самого поста, чтобы поле никогда не уходило пустым (иначе
+	// валидаторы Schema.org и наш краулер считают его отсутствующим).
+	$date_published = ! empty( $entry['date'] ) ? $entry['date'] : get_the_date( 'c' );
+
 	$schema = array(
 		'@context'         => 'https://schema.org',
 		'@type'            => 'BlogPosting',
-		'headline'         => wp_strip_all_tags( get_the_title() ),
-		'datePublished'    => $entry['date'],
-		'dateModified'     => $map['_modified'],
+		// `name` и `headline` — оба поля: headline историческое для Article,
+		// name требует наш краулер (обязательное для Thing). Значение одно.
+		'name'             => $title,
+		'headline'         => $title,
+		'datePublished'    => $date_published,
+		'dateModified'     => ! empty( $map['_modified'] ) ? $map['_modified'] : $date_published,
 		'inLanguage'       => $lang,
 		'url'              => get_permalink(),
 		'mainEntityOfPage' => array(
@@ -1150,6 +1438,62 @@ function remarka_blog_posting_schema(): void {
 	echo '<script type="application/ld+json">' . wp_json_encode( $schema ) . '</script>' . "\n";
 }
 add_action( 'wp_head', 'remarka_blog_posting_schema' );
+
+/**
+ * Rank Math печатает на страницах/постах схему типа Article, но без полей
+ * `name` и (на страницах) `datePublished` — наш краулер помечает их как
+ * обязательные (schema_missing_required_field, ~195 страниц). Дополняем
+ * Article-узлы Rank Math недостающими полями прямо в его фильтре json_ld:
+ * `name` берём из headline (или заголовка), `datePublished`/`dateModified` —
+ * из дат записи. Ничего не дублируем: правим уже существующие узлы Rank Math.
+ * Фильтр не срабатывает, если Rank Math отключён.
+ */
+function remarka_rank_math_article_fields( $data, $jsonld ) {
+	if ( ! is_array( $data ) ) {
+		return $data;
+	}
+	foreach ( $data as $key => $piece ) {
+		if ( ! is_array( $piece ) || empty( $piece['@type'] ) ) {
+			continue;
+		}
+		$types = array_map( 'strval', (array) $piece['@type'] );
+		if ( ! array_intersect( $types, array( 'Article', 'BlogPosting', 'NewsArticle' ) ) ) {
+			continue;
+		}
+		if ( empty( $piece['name'] ) ) {
+			$piece['name'] = ! empty( $piece['headline'] )
+				? $piece['headline']
+				: wp_strip_all_tags( get_the_title() );
+		}
+		if ( empty( $piece['datePublished'] ) ) {
+			$piece['datePublished'] = get_the_date( 'c' );
+		}
+		if ( empty( $piece['dateModified'] ) ) {
+			$piece['dateModified'] = get_the_modified_date( 'c' );
+		}
+		$data[ $key ] = $piece;
+	}
+	return $data;
+}
+add_filter( 'rank_math/json_ld', 'remarka_rank_math_article_fields', 99, 2 );
+
+/**
+ * title_too_long (74 страницы в отчёте Monitor): title вида
+ * «<заголовок> - Studio Remarka» перебирает ~60 символов из-за бренд-хвоста.
+ * Когда итоговый title длиннее 60 — срезаем хвост с названием студии (любой
+ * из типичных разделителей Rank Math: - – — | »). На коротких заголовках
+ * бренд остаётся. Если и без хвоста заголовок длиннее 60 — не трогаем (такие
+ * единичные случаи правятся вручную в поле Rank Math). Фильтр не срабатывает
+ * при отключённом Rank Math.
+ */
+function remarka_shorten_long_titles( $title ) {
+	if ( ! is_string( $title ) || mb_strlen( $title ) <= 60 ) {
+		return $title;
+	}
+	$stripped = preg_replace( '/\s*[\-–—|»]\s*Studio\s+Remarka\s*$/u', '', $title );
+	return is_string( $stripped ) ? $stripped : $title;
+}
+add_filter( 'rank_math/frontend/title', 'remarka_shorten_long_titles', 20 );
 
 /**
  * ---------- Modulo contatti nativo ----------
@@ -1309,6 +1653,78 @@ add_shortcode( 'remarka_form', 'remarka_form_shortcode' );
  * Валидация + отправка. Возвращает null при успехе или текст ошибки.
  * Общая для AJAX и admin-post путей.
  */
+/**
+ * Контентный антиспам-фильтр. Honeypot + nonce + rate-limit пропускают ботов,
+ * которые берут валидный nonce со страницы и шлют по одной заявке с IP —
+ * поэтому дополнительно смотрим на СОДЕРЖИМОЕ. Возвращает true, если заявка
+ * выглядит спамом. Реальные заявки в веб-студию таких признаков не содержат:
+ *  • BBCode-ссылки [url=…][/url] / [link] — 100% бот, живые люди так не пишут;
+ *  • две и более ссылки (http/https/www) в тексте — типичная рассылка;
+ *  • кураторский список спам-триггеров (крипта/трейдинг/казино/…), с крайне
+ *    низким риском ложных срабатываний для итальянской студии.
+ * При срабатывании обработчик тихо возвращает «успех» и ничего не отправляет
+ * (как honeypot) — бот думает, что прошло, и не подбирает обход.
+ */
+function remarka_looks_like_spam( array $texts ): bool {
+	$blob = function_exists( 'mb_strtolower' )
+		? mb_strtolower( implode( "\n", $texts ) )
+		: strtolower( implode( "\n", $texts ) );
+
+	// BBCode-ссылки — сильнейший сигнал, нулевой FP.
+	if ( preg_match( '/\[\s*(url|link)\s*[=\]]/i', $blob ) ) {
+		return true;
+	}
+	// Две и более ссылки в тексте заявки.
+	if ( preg_match_all( '#https?://|www\.#i', $blob ) >= 2 ) {
+		return true;
+	}
+	// Кураторские триггеры (подстроки; список консервативный).
+	$needles = array(
+		'crypto', 'bitcoin', 'forex', 'trading signal', 'signal trading',
+		'casino', 'viagra', 'cialis', 'escort', 'binary option',
+		'earn money', 'make money', 'get rich', 'investment opportunity',
+		'weight loss', 'buy followers',
+	);
+	foreach ( $needles as $n ) {
+		if ( false !== strpos( $blob, $n ) ) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/**
+ * Отправка текста заявки в Telegram. Токен и chat_id читаются из опций WP
+ * (remarka_tg_token / remarka_tg_chat_id) — в коде/репозитории их НЕТ,
+ * владелец задаёт их на сервере (wp option update). Если не настроено —
+ * тихо выходим. Fire-and-forget (blocking=false): не тормозим ответ
+ * пользователю; durable-канал — письмо и база лидов, Telegram — быстрый
+ * дубль «взглянуть сразу».
+ */
+function remarka_notify_telegram( string $text ): void {
+	$token   = trim( (string) get_option( 'remarka_tg_token', '' ) );
+	$chat_id = trim( (string) get_option( 'remarka_tg_chat_id', '' ) );
+	if ( '' === $token || '' === $chat_id ) {
+		return;
+	}
+	// Telegram ограничивает сообщение 4096 символами — режем с запасом.
+	if ( function_exists( 'mb_substr' ) ) {
+		$text = mb_substr( $text, 0, 3900 );
+	}
+	wp_remote_post(
+		'https://api.telegram.org/bot' . $token . '/sendMessage',
+		array(
+			'timeout'  => 5,
+			'blocking' => false,
+			'body'     => array(
+				'chat_id'                  => $chat_id,
+				'text'                     => $text,
+				'disable_web_page_preview' => 'true',
+			),
+		)
+	);
+}
+
 function remarka_form_process(): ?string {
 	if ( ! isset( $_POST['remarka_nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['remarka_nonce'] ), 'remarka_contact' ) ) {
 		return remarka_str( 'form_err_sessione' );
@@ -1339,6 +1755,13 @@ function remarka_form_process(): ?string {
 		|| ! isset( $canon['budget'][ $budget_v ] )
 		|| ! isset( $canon['tempi'][ $tempi_v ] ) ) {
 		return remarka_str( 'form_err_campi' );
+	}
+
+	// Контентный антиспам: при срабатывании отвечаем «успехом», но ничего не
+	// шлём (как honeypot) — бот не понимает, что отфильтрован.
+	if ( remarka_looks_like_spam( array( $nome, $contatto, $messaggio ) ) ) {
+		set_transient( $key, 1, MINUTE_IN_SECONDS );
+		return null;
 	}
 
 	// Allegato facoltativo: validato e passato a wp_mail come file temporaneo,
@@ -1377,6 +1800,11 @@ function remarka_form_process(): ?string {
 	$body .= 'Lingua: ' . remarka_current_lang() . "\n";
 	$body .= "IP: $ip\n";
 	$body .= 'Data: ' . current_time( 'mysql' ) . "\n";
+
+	// Дублируем заявку в Telegram (в ДОПОЛНЕНИЕ к письму, не вместо). Если
+	// Telegram недоступен или не настроен — молча пропускаем: письмо и лид
+	// остаются durable-каналом, заявка не теряется.
+	remarka_notify_telegram( "\xF0\x9F\x94\x94 Nuova richiesta preventivo — remarka.biz\n\n" . $body );
 
 	$headers = array();
 	if ( is_email( $contatto ) ) {
@@ -1425,6 +1853,417 @@ function remarka_form_handle_post(): void {
 	exit;
 }
 add_action( 'admin_post_remarka_contact', 'remarka_form_handle_post' );
+
+/* ----------------------------------------------------------------------------
+ * Mini-modulo hero (home): forma compatta nella colonna destra, sotto la card
+ * timeline. NON è un secondo backend: invia sullo STESSO canale remarka_contact
+ * riusando remarka_form_process(). I campi non chiesti qui (tipo/budget/tempi)
+ * vengono passati con valori di default già in whitelist (non-so / da-definire
+ * / valutando), così la validazione canonica passa senza modifiche. Chi vuole
+ * dettagliare tutto ha il link alla pagina brief.
+ * -------------------------------------------------------------------------- */
+/**
+ * Percorso della pagina brief nella lingua corrente (IT default). La pagina
+ * vive in radice per l'IT e sotto /en/ e /ru/ per le altre lingue (slug RU
+ * translitterato «brif», come da lang.py). Ritorna il path con slash iniziale
+ * e finale, pronto per home_url().
+ */
+function remarka_brief_page_url(): string {
+	$paths = array( 'it' => '/brief/', 'en' => '/en/brief/', 'ru' => '/ru/brif/' );
+	return home_url( $paths[ remarka_current_lang() ] ?? $paths['it'] );
+}
+
+/** Percorso dell'informativa privacy nella lingua corrente (IT default). */
+function remarka_privacy_page_url(): string {
+	$paths = array( 'it' => '/privacy/', 'en' => '/en/privacy/', 'ru' => '/ru/privacy/' );
+	return home_url( $paths[ remarka_current_lang() ] ?? $paths['it'] );
+}
+
+function remarka_hero_form_shortcode(): string {
+	$sent = isset( $_GET['remarka_inviato'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	ob_start();
+	?>
+	<form class="sr-contact-form sr-hero-form" data-sr-contact-form method="post"
+	      action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" <?php echo $sent ? 'hidden' : ''; ?>>
+		<input type="hidden" name="action" value="remarka_contact">
+		<?php wp_nonce_field( 'remarka_contact', 'remarka_nonce' ); ?>
+		<p class="sr-hp-field" aria-hidden="true"><label>Sito web<input type="text" name="sr_sito" tabindex="-1" autocomplete="off"></label></p>
+		<input type="hidden" name="sr_tipo" value="non-so">
+		<input type="hidden" name="sr_budget" value="da-definire">
+		<input type="hidden" name="sr_tempi" value="valutando">
+
+		<p class="sr-hero-form__title"><?php echo esc_html( remarka_str( 'hero_form_title' ) ); ?></p>
+		<p><label class="sr-field-label" for="sr-hero-nome"><?php echo esc_html( remarka_str( 'hero_form_nome' ) ); ?></label>
+		<input class="sr-text-input" id="sr-hero-nome" name="sr_nome" type="text" required maxlength="120"></p>
+		<p><label class="sr-field-label" for="sr-hero-contatto"><?php echo esc_html( remarka_str( 'form_contatto' ) ); ?></label>
+		<input class="sr-text-input" id="sr-hero-contatto" name="sr_contatto" type="text" required maxlength="160"></p>
+		<p><label class="sr-field-label" for="sr-hero-msg"><?php echo esc_html( remarka_str( 'hero_form_msg' ) ); ?></label>
+		<input class="sr-text-input" id="sr-hero-msg" name="sr_messaggio" type="text" maxlength="200" placeholder="<?php echo esc_attr( remarka_str( 'hero_form_msg_ph' ) ); ?>"></p>
+
+		<p class="sr-form-error" data-sr-form-error hidden></p>
+		<button type="submit" class="wp-block-button__link wp-element-button" style="width:100%" data-sr-submit><?php echo esc_html( remarka_str( 'hero_form_invia' ) ); ?></button>
+		<p class="sr-hero-form__brief"><a href="<?php echo esc_url( remarka_brief_page_url() ); ?>"><?php echo esc_html( remarka_str( 'hero_form_brief' ) ); ?></a></p>
+	</form>
+	<div class="sr-form-success" data-sr-form-success <?php echo $sent ? '' : 'hidden'; ?>>
+		<p class="sr-mono" style="color:var(--sr-verde)"><?php echo esc_html( remarka_str( 'form_inviata' ) ); ?></p>
+		<p><?php echo esc_html( remarka_str( 'hero_form_grazie' ) ); ?></p>
+	</div>
+	<?php
+	return (string) ob_get_clean();
+}
+add_shortcode( 'remarka_hero_form', 'remarka_hero_form_shortcode' );
+
+/* ============================================================================
+ * Brief progetto — modulo guidato a 6 passi (pagina /brief/).
+ *
+ * Riusa la meccanica a step di remarka.js (fieldset[data-sr-step], barra di
+ * avanzamento, [data-sr-contact-form]) e le classi CSS del modulo contatti
+ * (.sr-choice, .sr-pill, .sr-stepform). Backend proprio (action remarka_brief)
+ * ma stesse difese di remarka_contact: nonce + honeypot + rate-limit +
+ * remarka_looks_like_spam + wp_mail + Telegram + lead nel CPT sr_lead.
+ *
+ * LINGUA: le etichette dell'interfaccia passano da remarka_str() (IT/EN/RU),
+ * le opzioni da remarka_brief_options() (mappe en/ru, IT di default). I VALORI
+ * canonici in italiano — remarka_brief_canonical() — restano per la whitelist
+ * di validazione e per l'email allo studio, che è sempre in italiano
+ * indipendentemente dalla lingua del visitatore.
+ * ========================================================================== */
+
+/**
+ * Etichette CANONICHE (italiano) delle opzioni del brief: whitelist di
+ * validazione + testo dell'email verso lo studio. Chiave = value inviato.
+ */
+function remarka_brief_canonical(): array {
+	return array(
+		'tipo' => array(
+			'vetrina'        => 'Vetrina',
+			'sito-aziendale' => 'Sito aziendale',
+			'e-commerce'     => 'E-commerce',
+			'web-app'        => 'Web app su misura',
+			'restyling'      => 'Restyling',
+		),
+		'lingue' => array(
+			'it'    => 'Italiano',
+			'en'    => 'Inglese',
+			'ru'    => 'Russo',
+			'altre' => 'Altre lingue',
+		),
+		'budget' => array(
+			'lt-3k'       => 'Meno di € 3.000',
+			'3-8k'        => '€ 3.000 – 8.000',
+			'8-15k'       => '€ 8.000 – 15.000',
+			'15-35k'      => '€ 15.000 – 35.000',
+			'gt-35k'      => 'Oltre € 35.000',
+			'da-definire' => 'Preferisco non indicarlo',
+		),
+		'tempi' => array(
+			'subito'    => 'Il prima possibile',
+			'1-2-mesi'  => 'Entro 1–2 mesi',
+			'3-6-mesi'  => 'Fra 3–6 mesi',
+			'valutando' => 'Sto solo valutando',
+		),
+		'canale' => array(
+			'email'    => 'Email',
+			'whatsapp' => 'WhatsApp',
+			'telegram' => 'Telegram',
+		),
+	);
+}
+
+/**
+ * Etichette LOCALIZZATE delle opzioni del brief per il rendering, nella lingua
+ * corrente. Stesse chiavi (value) di remarka_brief_canonical(); su IT
+ * coincidono. Analogo a remarka_form_options() del modulo preventivo.
+ *  - «tempi» è identico al modulo preventivo → riuso remarka_form_options()
+ *    per non duplicare le traduzioni.
+ *  - «budget» riusa le stesse fasce del modulo preventivo; cambia solo
+ *    l'ultima voce, che nel brief è «Preferisco non indicarlo» (il modulo
+ *    preventivo usa «Da definire»): la sovrascrivo, tradotta.
+ *  - «canale» sono nomi propri (Email/WhatsApp/Telegram): nessuna mappa,
+ *    ricade sul canonico in tutte le lingue.
+ */
+function remarka_brief_options( string $group ): array {
+	$lang = remarka_current_lang();
+
+	if ( 'tempi' === $group ) {
+		return remarka_form_options( 'tempi' );
+	}
+	if ( 'budget' === $group ) {
+		$budget = remarka_form_options( 'budget' );
+		$da_def = array(
+			'it' => 'Preferisco non indicarlo',
+			'en' => 'I’d rather not say',
+			'ru' => 'Предпочитаю не указывать',
+		);
+		$budget['da-definire'] = $da_def[ $lang ] ?? $da_def['it'];
+		return $budget;
+	}
+
+	$maps = array(
+		'tipo' => array(
+			'en' => array( 'vetrina' => 'Showcase website', 'sito-aziendale' => 'Business website', 'e-commerce' => 'E-commerce', 'web-app' => 'Custom web app', 'restyling' => 'Redesign' ),
+			'ru' => array( 'vetrina' => 'Сайт-визитка', 'sito-aziendale' => 'Корпоративный сайт', 'e-commerce' => 'Интернет-магазин', 'web-app' => 'Веб-приложение на заказ', 'restyling' => 'Редизайн' ),
+		),
+		'lingue' => array(
+			'en' => array( 'it' => 'Italian', 'en' => 'English', 'ru' => 'Russian', 'altre' => 'Other languages' ),
+			'ru' => array( 'it' => 'Итальянский', 'en' => 'Английский', 'ru' => 'Русский', 'altre' => 'Другие языки' ),
+		),
+	);
+	if ( 'it' !== $lang && isset( $maps[ $group ][ $lang ] ) ) {
+		return $maps[ $group ][ $lang ];
+	}
+	return remarka_brief_canonical()[ $group ];
+}
+
+function remarka_brief_shortcode(): string {
+	$sent   = isset( $_GET['remarka_brief_inviato'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	$facolt = ' <span class="sr-optional">' . esc_html( remarka_str( 'form_msg_opt' ) ) . '</span>';
+	ob_start();
+	?>
+	<form class="sr-contact-form sr-stepform" data-sr-contact-form method="post"
+	      action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" <?php echo $sent ? 'hidden' : ''; ?>>
+		<input type="hidden" name="action" value="remarka_brief">
+		<?php wp_nonce_field( 'remarka_brief', 'remarka_nonce' ); ?>
+		<p class="sr-hp-field" aria-hidden="true"><label>Sito web<input type="text" name="sr_sito" tabindex="-1" autocomplete="off"></label></p>
+
+		<div class="sr-form-progress" data-sr-progress hidden>
+			<span class="sr-form-progress__label" data-sr-progress-label></span>
+			<div class="sr-form-progress__bar"><div class="sr-form-progress__fill" data-sr-progress-fill></div></div>
+		</div>
+
+		<!-- Passo 1 — tipo di progetto (5 card → 3+2, niente orfana) -->
+		<fieldset class="sr-step" data-sr-step>
+			<legend class="sr-step__q"><?php echo esc_html( remarka_str( 'brief_q_tipo' ) ); ?></legend>
+			<p class="sr-step__hint"><?php echo esc_html( remarka_str( 'brief_q_tipo_hint' ) ); ?></p>
+			<div class="sr-choice-grid sr-choice-grid--tre">
+				<?php foreach ( remarka_brief_options( 'tipo' ) as $value => $label ) : ?>
+					<label class="sr-choice"><input type="radio" class="sr-choice__input" name="sr_tipo" value="<?php echo esc_attr( $value ); ?>" required><span class="sr-choice__tick"></span><span><?php echo esc_html( $label ); ?></span></label>
+				<?php endforeach; ?>
+			</div>
+		</fieldset>
+
+		<!-- Passo 2 — lingue e mercati (chip multi-scelta) -->
+		<fieldset class="sr-step" data-sr-step>
+			<legend class="sr-step__q"><?php echo esc_html( remarka_str( 'brief_q_lingue' ) ); ?></legend>
+			<p class="sr-step__hint"><?php echo esc_html( remarka_str( 'brief_q_lingue_hint' ) ); ?></p>
+			<span class="sr-field-label"><?php echo esc_html( remarka_str( 'brief_lbl_lingue' ) ); ?></span>
+			<div class="sr-pill-group">
+				<?php foreach ( remarka_brief_options( 'lingue' ) as $value => $label ) : ?>
+					<label class="sr-pill"><input type="checkbox" class="sr-pill__input" name="sr_lingue[]" value="<?php echo esc_attr( $value ); ?>" data-sr-require-one><span><?php echo esc_html( $label ); ?></span></label>
+				<?php endforeach; ?>
+			</div>
+			<p><label class="sr-field-label" for="sr-brief-mercati"><?php echo esc_html( remarka_str( 'brief_lbl_mercati' ) ) . $facolt; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+			<input class="sr-text-input" id="sr-brief-mercati" name="sr_mercati" type="text" maxlength="200" placeholder="<?php echo esc_attr( remarka_str( 'brief_ph_mercati' ) ); ?>"></p>
+		</fieldset>
+
+		<!-- Passo 3 — tempi e budget (budget opzionale: mai una barriera) -->
+		<fieldset class="sr-step" data-sr-step>
+			<legend class="sr-step__q"><?php echo esc_html( remarka_str( 'brief_q_tempi' ) ); ?></legend>
+			<p class="sr-step__hint"><?php echo esc_html( remarka_str( 'brief_q_tempi_hint' ) ); ?></p>
+			<span class="sr-field-label"><?php echo esc_html( remarka_str( 'brief_lbl_partenza' ) ); ?></span>
+			<div class="sr-pill-group">
+				<?php foreach ( remarka_brief_options( 'tempi' ) as $value => $label ) : ?>
+					<label class="sr-pill"><input type="radio" class="sr-pill__input" name="sr_tempi" value="<?php echo esc_attr( $value ); ?>" required><span><?php echo esc_html( $label ); ?></span></label>
+				<?php endforeach; ?>
+			</div>
+			<span class="sr-field-label"><?php echo esc_html( remarka_str( 'brief_lbl_budget' ) ) . $facolt; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+			<div class="sr-pill-group">
+				<?php foreach ( remarka_brief_options( 'budget' ) as $value => $label ) : ?>
+					<label class="sr-pill"><input type="radio" class="sr-pill__input" name="sr_budget" value="<?php echo esc_attr( $value ); ?>"><span><?php echo esc_html( $label ); ?></span></label>
+				<?php endforeach; ?>
+			</div>
+		</fieldset>
+
+		<!-- Passo 4 — descrizione del progetto -->
+		<fieldset class="sr-step" data-sr-step>
+			<legend class="sr-step__q"><?php echo esc_html( remarka_str( 'brief_q_progetto' ) ); ?></legend>
+			<p class="sr-step__hint"><?php echo esc_html( remarka_str( 'brief_q_progetto_hint' ) ); ?></p>
+			<p><label class="sr-field-label" for="sr-brief-progetto"><?php echo esc_html( remarka_str( 'brief_lbl_progetto' ) ) . $facolt; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+			<textarea class="sr-text-input" id="sr-brief-progetto" name="sr_progetto" rows="6" maxlength="4000" placeholder="<?php echo esc_attr( remarka_str( 'brief_ph_progetto' ) ); ?>"></textarea></p>
+		</fieldset>
+
+		<!-- Passo 5 — contatti (in fondo: prima ci si mette in gioco) -->
+		<fieldset class="sr-step" data-sr-step>
+			<legend class="sr-step__q"><?php echo esc_html( remarka_str( 'brief_q_contatti' ) ); ?></legend>
+			<p class="sr-step__hint"><?php echo esc_html( remarka_str( 'brief_q_contatti_hint' ) ); ?></p>
+			<p><label class="sr-field-label" for="sr-brief-nome"><?php echo esc_html( remarka_str( 'form_nome' ) ); ?></label>
+			<input class="sr-text-input" id="sr-brief-nome" name="sr_nome" type="text" required maxlength="120"></p>
+			<p><label class="sr-field-label" for="sr-brief-email"><?php echo esc_html( remarka_str( 'brief_lbl_email' ) ); ?></label>
+			<input class="sr-text-input" id="sr-brief-email" name="sr_email" type="email" required maxlength="160"></p>
+			<p><label class="sr-field-label" for="sr-brief-tel"><?php echo esc_html( remarka_str( 'brief_lbl_tel' ) ) . $facolt; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+			<input class="sr-text-input" id="sr-brief-tel" name="sr_telefono" type="tel" maxlength="60"></p>
+			<span class="sr-field-label"><?php echo esc_html( remarka_str( 'brief_lbl_canale' ) ); ?></span>
+			<div class="sr-pill-group">
+				<?php foreach ( remarka_brief_options( 'canale' ) as $value => $label ) : ?>
+					<label class="sr-pill"><input type="radio" class="sr-pill__input" name="sr_canale" value="<?php echo esc_attr( $value ); ?>"<?php echo 'email' === $value ? ' checked' : ''; ?>><span><?php echo esc_html( $label ); ?></span></label>
+				<?php endforeach; ?>
+			</div>
+			<label class="sr-consent">
+				<input type="checkbox" name="sr_consenso" value="1" required>
+				<span><?php echo wp_kses( sprintf( remarka_str( 'brief_consenso' ), esc_url( remarka_privacy_page_url() ) ), array( 'a' => array( 'href' => array() ) ) ); ?></span>
+			</label>
+		</fieldset>
+
+		<p class="sr-form-error" data-sr-form-error hidden></p>
+		<button type="submit" class="wp-block-button__link wp-element-button" style="width:100%" data-sr-submit><?php echo esc_html( remarka_str( 'brief_invia' ) ); ?></button>
+	</form>
+	<div class="sr-form-success sr-brief-success" data-sr-form-success <?php echo $sent ? '' : 'hidden'; ?>>
+		<p class="sr-mono" style="color:var(--sr-verde)"><?php echo esc_html( remarka_str( 'brief_inviato' ) ); ?></p>
+		<p><?php echo wp_kses( remarka_str( 'brief_grazie' ), array( 'strong' => array() ) ); ?></p>
+	</div>
+	<?php
+	return (string) ob_get_clean();
+}
+add_shortcode( 'remarka_brief', 'remarka_brief_shortcode' );
+
+/**
+ * Validazione + invio del brief. Ritorna null in caso di successo o il testo
+ * dell'errore. Condivisa tra il percorso AJAX e admin-post, come remarka_form.
+ */
+function remarka_brief_process(): ?string {
+	if ( ! isset( $_POST['remarka_nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['remarka_nonce'] ), 'remarka_brief' ) ) {
+		return remarka_str( 'form_err_sessione' );
+	}
+	if ( ! empty( $_POST['sr_sito'] ) ) { // honeypot.
+		return null;
+	}
+
+	$ip  = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
+	$key = 'remarka_rl_' . md5( $ip );
+	if ( get_transient( $key ) ) {
+		return remarka_str( 'form_err_ratelimit' );
+	}
+
+	$nome     = sanitize_text_field( wp_unslash( $_POST['sr_nome'] ?? '' ) );
+	$email    = sanitize_email( wp_unslash( $_POST['sr_email'] ?? '' ) );
+	$telefono = sanitize_text_field( wp_unslash( $_POST['sr_telefono'] ?? '' ) );
+	$mercati  = sanitize_text_field( wp_unslash( $_POST['sr_mercati'] ?? '' ) );
+	$progetto = sanitize_textarea_field( wp_unslash( $_POST['sr_progetto'] ?? '' ) );
+
+	$canon    = remarka_brief_canonical();
+	$tipo_v   = sanitize_key( $_POST['sr_tipo'] ?? '' );
+	$tempi_v  = sanitize_key( $_POST['sr_tempi'] ?? '' );
+	$budget_v = sanitize_key( $_POST['sr_budget'] ?? '' );
+	$canale_v = sanitize_key( $_POST['sr_canale'] ?? '' );
+
+	// Lingue: array di value, ognuno validato contro la whitelist.
+	$lingue_in = isset( $_POST['sr_lingue'] ) && is_array( $_POST['sr_lingue'] )
+		? array_map( 'sanitize_key', wp_unslash( $_POST['sr_lingue'] ) )
+		: array();
+	$lingue = array();
+	foreach ( $lingue_in as $lv ) {
+		if ( isset( $canon['lingue'][ $lv ] ) ) {
+			$lingue[ $lv ] = $canon['lingue'][ $lv ];
+		}
+	}
+
+	// Budget e canale sono opzionali; se presenti devono essere in whitelist.
+	if ( '' !== $budget_v && ! isset( $canon['budget'][ $budget_v ] ) ) {
+		$budget_v = '';
+	}
+	if ( ! isset( $canon['canale'][ $canale_v ] ) ) {
+		$canale_v = 'email';
+	}
+
+	if ( '' === $nome || ! is_email( $email ) || empty( $_POST['sr_consenso'] )
+		|| ! isset( $canon['tipo'][ $tipo_v ] )
+		|| ! isset( $canon['tempi'][ $tempi_v ] )
+		|| empty( $lingue ) ) {
+		return remarka_str( 'form_err_campi' );
+	}
+
+	if ( remarka_looks_like_spam( array( $nome, $email, $telefono, $mercati, $progetto ) ) ) {
+		set_transient( $key, 1, MINUTE_IN_SECONDS );
+		return null;
+	}
+
+	$tipo_label   = $canon['tipo'][ $tipo_v ];
+	$tempi_label  = $canon['tempi'][ $tempi_v ];
+	$budget_label = '' !== $budget_v ? $canon['budget'][ $budget_v ] : 'Non indicato';
+	$canale_label = $canon['canale'][ $canale_v ];
+	$lingue_label = implode( ', ', $lingue );
+
+	$body  = 'Tipo di progetto: ' . $tipo_label . "\n";
+	$body .= 'Lingue: ' . $lingue_label . "\n";
+	$body .= 'Mercati/Paesi: ' . ( '' !== $mercati ? $mercati : '(non indicati)' ) . "\n";
+	$body .= 'Tempi: ' . $tempi_label . "\n";
+	$body .= 'Budget: ' . $budget_label . "\n\n";
+	$body .= "Nome: $nome\n";
+	$body .= "Email: $email\n";
+	$body .= 'Telefono: ' . ( '' !== $telefono ? $telefono : '(non indicato)' ) . "\n";
+	$body .= 'Canale preferito: ' . $canale_label . "\n\n";
+	$body .= 'Progetto:' . "\n" . ( '' !== $progetto ? $progetto : '(nessuna descrizione)' ) . "\n---\n";
+	$body .= 'Pagina: ' . esc_url_raw( wp_get_referer() ?: home_url( '/brief/' ) ) . "\n";
+	$body .= 'Lingua interfaccia: ' . remarka_current_lang() . "\n";
+	$body .= "IP: $ip\n";
+	$body .= 'Data: ' . current_time( 'mysql' ) . "\n";
+
+	remarka_notify_telegram( "\xF0\x9F\x93\x9D Nuovo brief progetto — remarka.biz\n\n" . $body );
+
+	$headers = array( 'Reply-To: ' . $email );
+	$ok = wp_mail(
+		remarka_form_recipient(),
+		sprintf( '[remarka.biz] Brief progetto — %s (%s)', $nome, $tipo_label ),
+		$body,
+		$headers
+	);
+
+	// Lead nel CPT sr_lead (stessa base della voce check-up): durevole in admin.
+	$post_id = wp_insert_post(
+		array(
+			'post_type'   => 'sr_lead',
+			'post_title'  => $email . ' · Brief · ' . date_i18n( 'd.m.Y H:i' ),
+			'post_status' => 'publish',
+		),
+		true
+	);
+	if ( ! is_wp_error( $post_id ) && $post_id ) {
+		update_post_meta( $post_id, 'sr_tool', 'brief' );
+		update_post_meta( $post_id, 'sr_email', $email );
+		update_post_meta( $post_id, 'sr_nome', $nome );
+		update_post_meta( $post_id, 'sr_telefono', $telefono );
+		update_post_meta( $post_id, 'sr_tipo', $tipo_label );
+		update_post_meta( $post_id, 'sr_lingue', $lingue_label );
+		update_post_meta( $post_id, 'sr_mercati', $mercati );
+		update_post_meta( $post_id, 'sr_tempi', $tempi_label );
+		update_post_meta( $post_id, 'sr_budget', $budget_label );
+		update_post_meta( $post_id, 'sr_canale', $canale_label );
+		update_post_meta( $post_id, 'sr_progetto', $progetto );
+		update_post_meta( $post_id, 'sr_locale', remarka_current_lang() );
+		update_post_meta( $post_id, 'sr_ip', $ip );
+	}
+
+	if ( ! $ok ) {
+		return remarka_str( 'form_err_tecnico' );
+	}
+
+	set_transient( $key, 1, MINUTE_IN_SECONDS );
+	return null;
+}
+
+function remarka_brief_handle_ajax(): void {
+	$error = remarka_brief_process();
+	if ( null === $error ) {
+		wp_send_json_success();
+	}
+	wp_send_json_error( array( 'message' => $error ) );
+}
+add_action( 'wp_ajax_remarka_brief', 'remarka_brief_handle_ajax' );
+add_action( 'wp_ajax_nopriv_remarka_brief', 'remarka_brief_handle_ajax' );
+
+function remarka_brief_handle_post(): void {
+	$error    = remarka_brief_process();
+	$back     = wp_get_referer() ?: home_url( '/brief/' );
+	$fragment = '#brief';
+	if ( null === $error ) {
+		wp_safe_redirect( add_query_arg( 'remarka_brief_inviato', '1', strtok( $back, '#' ) ) . $fragment );
+	} else {
+		wp_safe_redirect( add_query_arg( 'remarka_errore', rawurlencode( $error ), strtok( $back, '#' ) ) . $fragment );
+	}
+	exit;
+}
+add_action( 'admin_post_remarka_brief', 'remarka_brief_handle_post' );
+add_action( 'admin_post_nopriv_remarka_brief', 'remarka_brief_handle_post' );
 
 /* ============================================================================
  * Remarka Lab — endpoint di fetch server-side per gli strumenti (GDPR/AI).

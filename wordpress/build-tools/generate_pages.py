@@ -159,24 +159,13 @@ def build_servizi_index():
                                color='grigio', size='medium'),
                     classes='sr-section sr-hero')
 
-    # Visual di direzione sulle card corrispondenti (manifest images/chatgpt):
-    # immagini decorative (alt vuoto: il titolo della card è il testo).
-    # Percorso relativo a assets/img/ (i visual di direzione stanno in casi/,
-    # lo schema editoriale nella radice): includiamo la sottocartella nel valore.
-    CARD_VISUALS = {
-        'siti-aziendali': 'casi/visual-sito-aziendale.webp',
-        'e-commerce':     'casi/visual-ecommerce.webp',
-    }
+    # I key visual CGI su queste card sono stati rimossi (owner 20.07.2026:
+    # il rendering neon su navy non è in linea con lo stile editoriale del
+    # sito). Restano titolo, testo e link; le immagini reali dei progetti
+    # vivono nella «polosa» qui sotto.
     cards = []
     for svc in SERVICES:
-        visual = CARD_VISUALS.get(svc['slug'])
-        visual_html = (
-            raw_html(f'<img class="sr-card__visual" src="/wp-content/themes/remarka-studio/assets/img/{visual}" '
-                     f'alt="" width="1200" height="800" loading="lazy" decoding="async"/>')
-            if visual else ''
-        )
         card = (
-            visual_html +
             heading(3, svc['title'], accent_dot=False) +
             paragraph(svc['hero_sub'], color='grigio', size='small') +
             raw_html(f'<p class="sr-card-link" style="margin-top:16px"><a href="/servizi/{svc["slug"]}/">Scopri →</a></p>')
@@ -188,16 +177,14 @@ def build_servizi_index():
     # Линии 2 и 3 концепции — отдельный блок «premium» под сеткой базовых услуг.
     premium_cards = ''.join(
         f'<div class="sr-card sr-card--carta">'
-        + (f'<img class="sr-card__visual" src="/wp-content/themes/remarka-studio/assets/img/{vis}" '
-           f'alt="" width="1200" height="800" loading="lazy" decoding="async"/>' if vis else '')
         + f'<p class="sr-eyebrow">{ey}</p>'
         f'<h3 class="wp-block-heading" style="font-size:22px">{t}</h3>'
         f'<p style="margin-top:12px;font-size:15.5px;color:var(--sr-grigio);line-height:1.6">{d}</p>'
         f'<p class="sr-card-link" style="margin-top:16px"><a href="{u}">Scopri →</a></p></div>'
-        for ey, t, d, u, vis in [
-            ('Flagship', 'Export Ready', 'Il sito e la sua versione estera sotto un unico contratto: localizzazione da madrelingua, SEO internazionale, KPI per mercato.', '/servizi/export-ready/', 'lingue-processo-madrelingua.webp'),
-            ('Prodotti digitali', 'Web app su misura', 'Aree clienti, configuratori, portali B2B e integrazioni: quando un sito non basta.', '/servizi/web-app/', 'casi/visual-webapp.webp'),
-            ('Obbligo di legge', 'Adeguamento EAA', 'Il vostro sito già online, portato allo standard WCAG 2.1 AA: audit, correzioni e dichiarazione di accessibilità. Obbligo di legge dal 2025.', '/servizi/adeguamento-eaa/', None),
+        for ey, t, d, u in [
+            ('Flagship', 'Export Ready', 'Il sito e la sua versione estera sotto un unico contratto: localizzazione da madrelingua, SEO internazionale, KPI per mercato.', '/servizi/export-ready/'),
+            ('Prodotti digitali', 'Web app su misura', 'Aree clienti, configuratori, portali B2B e integrazioni: quando un sito non basta.', '/servizi/web-app/'),
+            ('Obbligo di legge', 'Adeguamento EAA', 'Il vostro sito già online, portato allo standard WCAG 2.1 AA: audit, correzioni e dichiarazione di accessibilità. Obbligo di legge dal 2025.', '/servizi/adeguamento-eaa/'),
         ]
     )
     premium = section(
@@ -1893,11 +1880,7 @@ def build_export_ready():
     problema = section(
         columns([
             column(eyebrow('Il problema') + heading(2, e['problema_heading']), width='38%'),
-            column(paragraph(e['problema_testo'], size='base', extra_style='font-size:17px') +
-                   raw_html('<figure class="sr-hero-visual" style="margin-top:24px">'
-                            '<img src="/wp-content/themes/remarka-studio/assets/img/lingue-processo-madrelingua.webp" '
-                            'alt="Schema del percorso editoriale: sorgente, revisione, versioni locali" '
-                            'width="1200" height="800" loading="lazy" decoding="async"/></figure>'),
+            column(paragraph(e['problema_testo'], size='base', extra_style='font-size:17px'),
                    width='62%'),
         ]),
         classes='sr-section',
@@ -2902,7 +2885,7 @@ def build_blog_schema_map():
     gestito dall'hook. Gli articoli solo-IT+EN (batch 1) non emettono la
     riga RU: la pagina RU non esiste ancora (piano-blog batch 5–6)."""
     import lang as L  # noqa: E402
-    RETROFIT = '2026-07-18'  # ultima rigenerazione della mappa (dateModified); batch 4 pubblicato oggi
+    RETROFIT = '2026-07-21'  # ultima rigenerazione della mappa (dateModified); batch 7 IT/EN pubblicato oggi
     lines = [
         '<?php',
         '/**',
@@ -2927,6 +2910,13 @@ def build_blog_schema_map():
                 continue
             seen.add(leaf)
             lines.append(f"\t\t'{leaf}' => array( 'date' => '{iso}', 'image' => '{image}' ),")
+    # Blog · Batch 5 — articoli RU-only (lang.BLOG_RU_ONLY): non stanno in
+    # BLOG_POSTS (nessuna versione IT/EN), il loro slug-foglia RU è già finale.
+    for ru_slug, meta in L.BLOG_RU_ONLY.items():
+        if ru_slug in seen:
+            continue
+        seen.add(ru_slug)
+        lines.append(f"\t\t'{ru_slug}' => array( 'date' => '{meta['date']}', 'image' => '{meta['image']}' ),")
     lines.append('\t),')
     lines.append(');')
     out = os.path.join(os.path.dirname(__file__), '..', 'remarka-studio', 'inc', 'blog-schema-map.php')

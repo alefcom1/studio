@@ -1,12 +1,14 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # Remarka Lab · Monitor — Caddy v2 reverse proxy
 #
-#   Browser ──TLS/Basic Auth──▶ Caddy ─┬─ /api/*  /ws*  /health ─▶ api:3001
-#                                       └─ everything else        ─▶ web:3000
+#   Browser ──TLS──▶ Caddy ─┬─ /api/*  /ws*  /health ─▶ api:3001
+#                            └─ everything else        ─▶ web:3000
 #
-# The whole site sits behind HTTP Basic Auth (the app itself has NO auth). Caddy
-# gets a Let's Encrypt cert automatically for lab.remarka.biz (ports 80/443 must
-# be open — they are: ufw allows 80/443).
+# Авторизация теперь на уровне ПРИЛОЖЕНИЯ (email+пароль+сброс, cookie-сессия
+# mon_session; см. apps/api/src/routes/auth.ts + серверный гвард в apps/web).
+# HTTP Basic Auth убран 19.07.2026 после того, как app-вход проверен на боевом.
+# Caddy получает Let's Encrypt-сертификат для lab.remarka.biz автоматически
+# (порты 80/443 открыты — ufw allows 80/443).
 #
 # Routing rationale (verified against the code, read-only):
 #   • API routes are registered with a literal `/api/...` prefix inside each
@@ -33,7 +35,7 @@
 lab.remarka.biz {
 	encode zstd gzip
 
-	# ── No Basic Auth anymore (M2 cutover, unica-utenza) ──────────────────────
+	# ── No Basic Auth anymore (M2 cutover, unica-utenza; 19.07.2026) ──────────
 	# Lab is now app-guarded, not gated at the edge: every protected page runs
 	# requireLabSession() (redirects to the cabinet login on cab.remarka.biz) and
 	# every data route is behind the API auth + tenant guard (server.ts). Access
@@ -150,12 +152,12 @@ remarka.biz {
 	# CSS/JS/шрифты версионируются через ?ver=filemtime (remarka_enqueue_assets
 	# в functions.php) — при правке файла URL меняется сам, поэтому можно
 	# кэшировать агрессивно и без ревалидации (immutable), 1 год (LCP-раунд 2,
-	# 18.07.2026).
-	@static-versioned path *.css *.js *.woff2
+	# 18.07.2026). Расширения расширены до всех кодо/шрифто-форматов.
+	@static-versioned path *.css *.js *.mjs *.woff2 *.woff *.ttf *.otf
 	header @static-versioned Cache-Control "public, max-age=31536000, immutable"
 
 	# Картинки версий в URL не несут — оставляем прежние 30 дней.
-	@static-images path *.svg *.png *.jpg *.jpeg *.webp *.ico
+	@static-images path *.svg *.png *.jpg *.jpeg *.webp *.avif *.gif *.ico
 	header @static-images Cache-Control "public, max-age=2592000"
 
 	reverse_proxy wordpress:80
