@@ -117,7 +117,7 @@
 <p class="sr-eyebrow">Prezzo</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-{{lancio}}<div class="sr-lancio-badge sr-mono">PREZZO LANCIO — PRIMI 5 PROGETTI</div><p class="sr-lancio-line">Prezzo lancio sui primi 5 progetti: stesso contratto, stesse garanzie. Listino pieno dal 2027.</p><p class="sr-lancio-counter sr-mono">Ne restano {{lancio_slots}} su 5.</p>{{/lancio}}
+{{lancio}}<div class="sr-lancio"><div class="sr-lancio-badge sr-mono">PREZZO LANCIO — PRIMI 5 PROGETTI</div><p class="sr-lancio-line">Prezzo lancio sui primi 5 progetti: stesso contratto, stesse garanzie. Listino pieno dal 2027.</p><p class="sr-lancio-counter sr-mono">Ne restano {{lancio_slots}} su 5.</p></div>{{/lancio}}
 <!-- /wp:html -->
 <!-- wp:html -->
 <div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">{{listino}}€ 7.500–14.000{{/listino}}{{lancio}}<s class="sr-lancio-listino">€ 7.500–14.000</s> <span class="sr-lancio-price">€ 3.750–7.000</span>{{/lancio}}</div>

@@ -251,6 +251,23 @@ body.dark-mode .site-description {
   padding-right: 24px;
 }
 
+/* Figli DIRETTI di sezione che sono inline-flow (inline-block / inline-flex):
+   sui box shrink-to-fit la regola sopra è inerte (max-width e margin:auto non
+   fanno nulla) e il padding:24px cade DENTRO l'elemento, incollandolo al filo
+   dello schermo. Ri-blocandoli occupano la traccia centrata da 1440 e il loro
+   testo parte dal gutter come tutti gli altri blocchi. Vale solo per elementi
+   di testo (nessuno sfondo/bordo che si stiri): link-freccia ed eyebrow.
+   Le pillole con bordo (.sr-lancio-badge) vanno invece avvolte in .sr-lancio
+   nei pattern, così il wrapper prende il gutter e la pillola resta compatta. */
+.sr-section > .sr-card-link,
+.sr-section--bianco > .sr-card-link,
+.is-style-sr-section > .sr-card-link,
+.sr-section > .sr-eyebrow,
+.sr-section--bianco > .sr-eyebrow,
+.is-style-sr-section > .sr-eyebrow {
+  display: block;
+}
+
 .sr-section--bianco,
 .is-style-sr-section--bianco {
   background: var(--sr-bianco);

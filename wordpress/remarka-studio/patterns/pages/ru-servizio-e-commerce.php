@@ -119,7 +119,7 @@
 <p class="sr-eyebrow">Цена</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-{{lancio}}<div class="sr-lancio-badge sr-mono">ЦЕНА ЗАПУСКА — ПЕРВЫЕ 5 ПРОЕКТОВ</div><p class="sr-lancio-line">Цена запуска на первые 5 проектов: тот же договор, те же гарантии. Полный прайс — с 2027 года.</p><p class="sr-lancio-counter sr-mono">Свободно мест: {{lancio_slots}} из 5.</p>{{/lancio}}
+{{lancio}}<div class="sr-lancio"><div class="sr-lancio-badge sr-mono">ЦЕНА ЗАПУСКА — ПЕРВЫЕ 5 ПРОЕКТОВ</div><p class="sr-lancio-line">Цена запуска на первые 5 проектов: тот же договор, те же гарантии. Полный прайс — с 2027 года.</p><p class="sr-lancio-counter sr-mono">Свободно мест: {{lancio_slots}} из 5.</p></div>{{/lancio}}
 <!-- /wp:html -->
 <!-- wp:html -->
 <div class="sr-stat__num" style="font-size:clamp(36px,4vw,52px)">{{listino}}660 000–1 230 000 ₽ · € 7 500–14 000{{/listino}}{{lancio}}<s class="sr-lancio-listino">660 000–1 230 000 ₽</s> <span class="sr-lancio-price">330 000–615 000 ₽ · € 3 750–7 000</span>{{/lancio}}</div>
