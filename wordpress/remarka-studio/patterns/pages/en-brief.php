@@ -1,21 +1,21 @@
 <?php
 /**
- * Title: Pagina — Brief progetto EN (completa)
+ * Title: Pagina — Brief progetto (completa)
  * Slug: remarka-studio/en-brief
  * Categories: remarka-pagine
- * Description: Pagina brief guidato a 6 passi (modulo [remarka_brief]) — versione EN.
+ * Description: Pagina brief guidato a 6 passi (modulo [remarka_brief]) con intestazione e rassicurazioni.
  * Viewport Width: 1400
  */
 ?>
 <!-- wp:group {"tagName":"section","className":"sr-section sr-hero","layout":{"type":"constrained","contentSize":"1440px"},"anchor":"brief"} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-hero" id="brief"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Project brief</p>
+<p class="sr-eyebrow">Brief progetto</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(38px,4.6vw,64px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Tell us about your project, take your time<span class="sr-accent-dot">.</span></h1>
+<h1 class="wp-block-heading" style="font-size:clamp(38px,4.6vw,64px)">Raccontateci il progetto, con calma<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size">Six steps, a few minutes. The more you tell us, the more precise the quote — but no field is a barrier: the budget, for instance, you can leave blank. We reply within one business day.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size">Sei passi, qualche minuto. Più cose ci dite, più il preventivo sarà preciso — ma nessun campo è una barriera: il budget, per esempio, potete non indicarlo. Rispondiamo entro un giorno lavorativo.</p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
@@ -24,23 +24,23 @@
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco sr-rule-top"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"64px"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"width":"42%"} -->
 <div class="wp-block-column" style="flex-basis:42%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Why a brief</p>
+<p class="sr-eyebrow">Perché un brief</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">A tailored quote, not a rough guess<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Un preventivo su misura, non a occhio<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium","style":{"spacing":{"margin":{"top":"18px"}}}} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:18px">The brief lets us come prepared to the first call: type of project, languages, timeline. So the proposal you receive is already calibrated to your needs.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="margin-top:18px">Il brief ci fa arrivare preparati alla prima chiamata: tipo di progetto, lingue, tempi. Così la proposta che ricevete è già calibrata sulle vostre esigenze.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->
-<div class="sr-list-rows"><div><span class="sr-mono">a</span><span><strong>No commitment:</strong> the brief is there to get to know each other, not a contract.</span></div><div><span class="sr-mono">b</span><span><strong>Data kept safe:</strong> it stays in the EU, as set out in our privacy policy.</span></div><div><span class="sr-mono">c</span><span><strong>We really do reply:</strong> within one business day, with a real person.</span></div></div>
+<div class="sr-list-rows"><div><span class="sr-mono">a</span><span><strong>Nessun impegno:</strong> il brief serve a capirci, non è un contratto.</span></div><div><span class="sr-mono">b</span><span><strong>Dati al sicuro:</strong> restano nell’UE, come da informativa privacy.</span></div><div><span class="sr-mono">c</span><span><strong>Rispondiamo davvero:</strong> entro un giorno lavorativo, con una persona.</span></div></div>
 <!-- /wp:html -->
 
 <!-- wp:paragraph {"className":"sr-eyebrow","style":{"spacing":{"margin":{"top":"20px"}}}} -->
-<p class="sr-eyebrow" style="margin-top:20px">Prefer to talk right away? WhatsApp +39 347 83 11141</p>
+<p class="sr-eyebrow" style="margin-top:20px">Preferite parlarne subito? WhatsApp +39 347 83 11141</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 

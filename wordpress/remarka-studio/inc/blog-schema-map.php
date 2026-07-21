@@ -5,8 +5,18 @@
  * обложка, для JSON-LD BlogPosting (см. remarka_blog_posting_schema).
  */
 return array(
-	'_modified' => '2026-07-20',
+	'_modified' => '2026-07-21',
 	'posts' => array(
+		'perche-il-sito-non-converte' => array( 'date' => '2026-07-21', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/nonconverte-cover.svg' ),
+		'why-your-website-doesnt-convert' => array( 'date' => '2026-07-21', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/nonconverte-cover.svg' ),
+		'landing-page-che-converte' => array( 'date' => '2026-07-21', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/landing-cover.svg' ),
+		'landing-page-that-converts' => array( 'date' => '2026-07-21', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/landing-cover.svg' ),
+		'recensioni-riprova-sociale-onesta' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/recensioni-cover.svg' ),
+		'reviews-social-proof-done-right' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/recensioni-cover.svg' ),
+		'whatsapp-business-pmi' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/whatsapp-cover.svg' ),
+		'whatsapp-business-for-smes' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/whatsapp-cover.svg' ),
+		'copywriting-sito-web-prima-del-design' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/copy-cover.svg' ),
+		'website-copywriting-before-design' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/copy-cover.svg' ),
 		'sito-quattro-lingue-costi-tempi' => array( 'date' => '2026-05-05', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg' ),
 		'website-four-languages-costs' => array( 'date' => '2026-05-05', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg' ),
 		'sajt-na-4-jazykah' => array( 'date' => '2026-05-05', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/quattro-cover.svg' ),
@@ -69,6 +79,10 @@ return array(
 		'website-for-export' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/export-cover.svg' ),
 		'manutenzione-wordpress' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/manutenzione-cover.svg' ),
 		'wordpress-maintenance' => array( 'date' => '2026-07-18', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/manutenzione-cover.svg' ),
+		'area-clienti-agenzia-web' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/areaclienti-cover.svg' ),
+		'web-agency-client-portal' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/areaclienti-cover.svg' ),
+		'monitoraggio-sito-dopo-lancio' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/monitoraggio-cover.svg' ),
+		'website-monitoring-after-launch' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/monitoraggio-cover.svg' ),
 		'sajt-dlya-vyhoda-na-rynok-italii' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-mercato-cover.svg' ),
 		'seo-v-italii-po-russki' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-seo-cover.svg' ),
 		'gdpr-dlya-russkoyazychnogo-biznesa-v-es' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-gdpr-cover.svg' ),
@@ -79,9 +93,5 @@ return array(
 		'zakon-o-dostupnosti-sajtov' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-eaa-cover.svg' ),
 		'sajt-v-chatgpt' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-chatgpt-cover.svg' ),
 		'russkoyazychnaya-auditoriya-v-evrope' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-rus-cover.svg' ),
-		'area-clienti-agenzia-web' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/areaclienti-cover.svg' ),
-		'web-agency-client-portal' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/areaclienti-cover.svg' ),
-		'monitoraggio-sito-dopo-lancio' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/monitoraggio-cover.svg' ),
-		'website-monitoring-after-launch' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/monitoraggio-cover.svg' ),
 	),
 );

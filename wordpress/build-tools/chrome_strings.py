@@ -3757,3 +3757,390 @@ CHROME_RECENSIONI = {
     'Prepariamo il PDF…': {'en': 'Preparing your PDF…'},
 }
 CHROME.update(CHROME_RECENSIONI)
+
+# CHROME_BLOG_BATCH7 — Blog · Batch 7 (seconda ondata, 5 articoli IT → EN):
+# perché il sito non converte, landing page che converte, recensioni oneste,
+# WhatsApp Business per le PMI, il testo prima del design. Copre ogni nodo di
+# testo generato da build_blog_post (titolo, estratto, corpo, sezioni, figure,
+# link, fonti). Solo EN (il blog RU è un batch a sé). Numeri in formato US
+# (li normalizza il conveyor).
+CHROME_BLOG_BATCH7 = {
+    "21 LUG 2026": {"en": "21 JUL 2026"},
+    "20 LUG 2026": {"en": "20 JUL 2026"},
+
+    # ============= Articolo 31 · Perché il sito non converte =============
+    "Perché il vostro sito non converte: 7 fughe silenziose":
+        {"en": "Why your website doesn’t convert: 7 silent leaks"},
+    "Ricevete visite ma non richieste? Il problema raramente è il traffico. Le 7 fughe che svuotano un sito in silenzio — e come tapparle una a una.":
+        {"en": "Getting visits but no enquiries? The problem is rarely traffic. The 7 leaks that drain a site in silence — and how to seal them one by one."},
+    "Le campagne girano, le visite ci sono, ma il telefono non squilla e la casella dei contatti resta vuota. È la frustrazione più comune che ci raccontano al primo incontro, e quasi sempre la diagnosi frettolosa è sbagliata: «serve più traffico». Nella maggior parte dei casi il traffico c’è già — se ne va da un secchio bucato. Ecco perché il vostro sito non converte: sette fughe silenziose che svuotano le visite prima che diventino richieste, in ordine di quanto le vediamo negli audit, e come si tappano una a una.":
+        {"en": "The campaigns are running, the visits are there, but the phone doesn’t ring and the contact inbox stays empty. It’s the most common frustration people bring to a first meeting, and the hasty diagnosis is almost always wrong: “we need more traffic.” In most cases the traffic is already there — it drains out of a leaky bucket. Here’s why your website doesn’t convert: seven silent leaks that empty out your visits before they turn into enquiries, in the order we see them in audits, and how to seal them one by one."},
+    "Perché il sito non converte: sette fughe silenziose tra una visita e una richiesta":
+        {"en": "Why the site doesn’t convert: seven silent leaks between a visit and an enquiry"},
+    "La conversione non è il traffico: è quello che succede dopo":
+        {"en": "Conversion isn’t traffic: it’s what happens next"},
+    "Convertire, per un sito di servizi o un negozio, vuol dire una cosa concreta: una visita che diventa un contatto, una chiamata, un ordine. Il tasso di conversione è la percentuale di visitatori che compie quel gesto. E qui sta il primo malinteso da smontare: raddoppiare le visite con un sito che ne trasforma l’1% costa molto più che portare quello stesso 1% al 2% lavorando sul sito. Il traffico si compra; la conversione si costruisce.":
+        {"en": "Converting, for a services site or a shop, means something concrete: a visit that becomes a contact, a call, an order. The conversion rate is the percentage of visitors who take that step. And here’s the first misunderstanding to clear up: doubling your visits on a site that converts 1% of them costs far more than taking that same 1% to 2% by working on the site. Traffic you buy; conversion you build."},
+    "Il dato che dovrebbe far riflettere arriva dall’e-commerce, dove tutto è misurabile: secondo le sintesi di Baymard Institute su decine di studi, in media quasi sette carrelli su dieci vengono abbandonati prima del pagamento. Sette persone su dieci che avevano già scelto il prodotto se ne vanno all’ultimo metro. Non è un problema di traffico: è una fuga. E le stesse fughe, meno visibili, agiscono su ogni sito di servizi.":
+        {"en": "The figure that should give you pause comes from e-commerce, where everything is measurable: according to Baymard Institute’s summaries of dozens of studies, on average nearly seven carts out of ten are abandoned before payment. Seven people out of ten who had already chosen the product walk away at the last metre. It isn’t a traffic problem: it’s a leak. And the same leaks, less visible, act on every services site."},
+    "Le sette fughe silenziose che impediscono a un sito di convertire, dalla più frequente":
+        {"en": "The seven silent leaks that stop a site from converting, from the most frequent"},
+    "Le sette fughe più frequenti tra una visita e una richiesta, in ordine di quanto le troviamo negli audit: lentezza, mobile trascurato, invito all’azione debole, modulo troppo lungo, mancanza di fiducia, testo che non parla al cliente, barriere di accessibilità. Fonte: audit su siti di PMI italiane (Studio Remarka).":
+        {"en": "The seven most frequent leaks between a visit and an enquiry, in the order we find them in audits: slowness, neglected mobile, weak call to action, over-long form, lack of trust, copy that doesn’t speak to the customer, accessibility barriers. Source: audits of Italian SME sites (Studio Remarka)."},
+    "Fuga 1 e 2: la lentezza e il mobile trascurato":
+        {"en": "Leaks 1 and 2: slowness and neglected mobile"},
+    "La prima fuga è la più banale e la più costosa: il sito è lento. Ogni secondo di attesa in più sul caricamento fa scendere le conversioni, perché chi cerca da telefono non aspetta — torna indietro e apre il concorrente. Google lo misura con i Core Web Vitals proprio perché la velocità percepita è ormai parte dell’esperienza, non un dettaglio tecnico. Se la pagina compare dopo quattro secondi, metà del lavoro di marketing è già perso.":
+        {"en": "The first leak is the most obvious and the most expensive: the site is slow. Every extra second of load time drives conversions down, because someone searching on a phone doesn’t wait — they go back and open the competitor. Google measures this with Core Web Vitals precisely because perceived speed is now part of the experience, not a technical detail. If the page shows up after four seconds, half the marketing work is already lost."},
+    "La seconda fuga le sta accanto: un sito pensato per il desktop e solo «adattato» al telefono. Oggi la maggior parte delle visite arriva da mobile, e un pulsante troppo piccolo, un numero di telefono che non si tocca per chiamare, un modulo che esce dallo schermo bastano a far scappare la persona. Non è mobile-first: è mobile-only nella testa di chi vi cerca.":
+        {"en": "The second leak sits right beside it: a site designed for desktop and merely “adapted” to the phone. Today most visits come from mobile, and a button that’s too small, a phone number you can’t tap to call, a form that runs off the screen are enough to send the person away. It isn’t mobile-first: in the mind of whoever is searching for you, it’s mobile-only."},
+    "Fuga 3 e 4: l’invito all’azione debole e il modulo infinito":
+        {"en": "Leaks 3 and 4: the weak call to action and the endless form"},
+    "La terza fuga è il silenzio: la pagina non dice cosa fare. Nessun invito chiaro, nessun pulsante che spicca, il numero di telefono nascosto nel piè di pagina. Il visitatore convinto non trova la porta e se ne va. Un buon invito all’azione è visibile, uno solo per schermata, e dice un’azione precisa — «Richiedi un preventivo in 24 ore», non «Scopri di più».":
+        {"en": "The third leak is silence: the page doesn’t say what to do. No clear call to action, no button that stands out, the phone number hidden in the footer. The convinced visitor can’t find the door and leaves. A good call to action is visible, one per screen, and names a precise action — “Request a quote in 24 hours,” not “Find out more.”"},
+    "La quarta fuga è il modulo di contatto troppo lungo. Ogni campo in più è un motivo in più per rinunciare: gli studi di usabilità sui moduli sono concordi, si chiede solo ciò che serve davvero per rispondere. Nome, contatto, due righe di messaggio. La partita IVA, l’indirizzo completo e «come ci hai conosciuto» si chiedono dopo, quando la persona è già cliente, non sulla soglia.":
+        {"en": "The fourth leak is the over-long contact form. Every extra field is one more reason to give up: usability studies on forms agree — ask only for what you truly need in order to reply. Name, contact, two lines of message. The VAT number, the full address and “how did you hear about us” you ask for later, when the person is already a customer, not on the doorstep."},
+    "Misura la salute del vostro sito: il check-up completo, gratuito":
+        {"en": "Measure your site’s health: the complete check-up, free"},
+    "Fuga 5 e 6: manca la fiducia, e il testo non parla al cliente":
+        {"en": "Leaks 5 and 6: trust is missing, and the copy doesn’t speak to the customer"},
+    "La quinta fuga è invisibile e decisiva: manca la fiducia. Un sito senza volti, senza indirizzo, senza casi reali né un segnale che dietro ci sono persone vere chiede al visitatore di fidarsi al buio. E nessuno lascia il proprio numero a uno sconosciuto. Chi siamo, dove siamo, cosa abbiamo fatto: sono le domande a cui la pagina deve rispondere prima che vengano poste.":
+        {"en": "The fifth leak is invisible and decisive: trust is missing. A site with no faces, no address, no real cases and no sign that real people stand behind it asks the visitor to trust blindly. And nobody hands their number to a stranger. Who we are, where we are, what we’ve done: these are the questions the page must answer before they’re even asked."},
+    "La sesta fuga è il testo che parla di voi invece che al cliente. «Soluzioni innovative e su misura per il vostro business» non significa niente per chi cerca un idraulico o un commercialista. Il visitatore vuole sapere se risolvete il suo problema, in quanto tempo, a che condizioni. Il testo che converte è concreto, dice numeri e scadenze, e usa le parole del cliente — non quelle della brochure. Al peso del testo abbiamo dedicato un articolo a parte, perché è la leva più sottovalutata di tutte.":
+        {"en": "The sixth leak is copy that talks about you instead of to the customer. “Innovative, tailor-made solutions for your business” means nothing to someone looking for a plumber or an accountant. The visitor wants to know whether you solve their problem, how long it takes, on what terms. Copy that converts is concrete, states numbers and deadlines, and uses the customer’s words — not the brochure’s. We’ve devoted a separate article to the weight of copy, because it’s the most underrated lever of all."},
+    "Cosa include un sito aziendale che converte, a prezzo chiuso":
+        {"en": "What a business website that converts includes, at a fixed price"},
+    "Leggi anche: il testo prima del design, perché il copy decide la conversione":
+        {"en": "Read also: copy before design, why copy decides conversion"},
+    "Fuga 7: le barriere di accessibilità (che nei report non vedete)":
+        {"en": "Leak 7: accessibility barriers (the ones your reports don’t show)"},
+    "La settima fuga è quella che nei vostri report non comparirà mai col suo nome. Contrasti troppo tenui, testo minuscolo, moduli che non si compilano da tastiera, immagini senza descrizione: ogni barriera di accessibilità è una persona che non riesce a completare l’ordine e se ne va. Le linee guida WCAG del W3C esistono proprio per questo, e dal 2025 in Europa l’accessibilità è anche un obbligo di legge. Ma prima ancora dell’obbligo, è conversione persa: un sito usabile da tutti vende a tutti.":
+        {"en": "The seventh leak is the one that will never show up in your reports by its real name. Contrasts too faint, tiny text, forms you can’t fill in from the keyboard, images with no description: every accessibility barrier is a person who can’t complete the order and leaves. The W3C’s WCAG guidelines exist precisely for this, and since 2025 accessibility is also a legal obligation in Europe. But even before the obligation, it’s lost conversion: a site usable by everyone sells to everyone."},
+    "Il filo che tiene insieme le sette fughe è uno solo: si tappano misurando, non a sensazione. Il primo passo concreto è una diagnosi onesta — quali di queste sette perdite avete davvero, e quali no. Da lì si lavora in ordine di ritorno: prima le fughe che costano poco da chiudere e rendono molto, come velocità e inviti all’azione, poi il resto. Non serve rifare tutto: serve smettere di versare acqua in un secchio bucato.":
+        {"en": "The thread that ties the seven leaks together is a single one: you seal them by measuring, not by gut feeling. The first concrete step is an honest diagnosis — which of these seven losses you actually have, and which you don’t. From there you work in order of return: first the leaks that are cheap to close and pay off handsomely, like speed and calls to action, then the rest. You don’t need to redo everything: you need to stop pouring water into a leaky bucket."},
+    "Prima di rifare, scoprite dove perdete: analisi gratuita del sito":
+        {"en": "Before rebuilding, find out where you’re losing: free site analysis"},
+    "Baymard Institute — tasso di abbandono del carrello":
+        {"en": "Baymard Institute — cart abandonment rate"},
+    "La media di quasi 7 carrelli su 10 abbandonati: la prova che la conversione si perde nel sito, non nel traffico.":
+        {"en": "The average of nearly 7 carts out of 10 abandoned: proof that conversion is lost in the site, not in the traffic."},
+    "Perché la velocità è parte dell’esperienza: ogni secondo di attesa in più è conversione che se ne va.":
+        {"en": "Why speed is part of the experience: every extra second of waiting is conversion walking out the door."},
+    "Nielsen Norman Group — lo schema di lettura a F":
+        {"en": "Nielsen Norman Group — the F-shaped reading pattern"},
+    "Come le persone leggono davvero una pagina: guardano poco e in fretta, il testo va costruito per quello sguardo.":
+        {"en": "How people actually read a page: they look little and fast, so the copy must be built for that glance."},
+    "W3C — Web Content Accessibility Guidelines (WCAG)":
+        {"en": "W3C — Web Content Accessibility Guidelines (WCAG)"},
+    "Le barriere di accessibilità sono conversione persa prima che obbligo di legge: un sito usabile da tutti vende a tutti.":
+        {"en": "Accessibility barriers are lost conversion before they’re a legal obligation: a site usable by everyone sells to everyone."},
+
+    # ============= Articolo 32 · Landing page che converte =============
+    "Landing page che converte: anatomia di una pagina che porta contatti":
+        {"en": "A landing page that converts: anatomy of a page that brings enquiries"},
+    "Una landing page non è una home più corta: è una pagina con un solo scopo. Anatomia, sezione per sezione, di una pagina che trasforma le visite in richieste.":
+        {"en": "A landing page isn’t a shorter home page: it’s a page with a single purpose. The anatomy, section by section, of a page that turns visits into enquiries."},
+    "Lanciate una campagna, mandate le persone sulla home del sito e i contatti non arrivano. Non è colpa della campagna: è che la home ha dieci scopi e quindi non ne ha nessuno. Una landing page che converte fa l’opposto — ha un obiettivo solo, e tutto, dalla prima riga al pulsante, serve quell’obiettivo. In questo articolo la smontiamo pezzo per pezzo: com’è fatta una pagina che trasforma una visita in una richiesta, sezione per sezione, con i motivi dietro ogni scelta.":
+        {"en": "You launch a campaign, send people to the site’s home page, and the enquiries don’t come. It isn’t the campaign’s fault: it’s that the home page has ten purposes and therefore none. A landing page that converts does the opposite — it has one goal, and everything, from the first line to the button, serves that goal. In this article we take it apart piece by piece: how a page that turns a visit into an enquiry is built, section by section, with the reasons behind each choice."},
+    "Landing page che converte: una pagina con un solo scopo che trasforma le visite in richieste":
+        {"en": "A landing page that converts: a single-purpose page that turns visits into enquiries"},
+    "Cos’è una landing page (e perché non è la home)":
+        {"en": "What a landing page is (and why it isn’t the home page)"},
+    "Una landing page è la pagina su cui «atterra» chi arriva da una campagna, da un annuncio o da un link mirato. La differenza con la home non è la lunghezza: è lo scopo. La home è un centralino — smista verso servizi, chi siamo, blog, contatti. Una landing ha una sola porta d’uscita: l’azione che volete, che sia una richiesta di preventivo, una prenotazione o un download. Tutto ciò che non porta a quella porta è rumore, e va tolto.":
+        {"en": "A landing page is the page where someone arriving from a campaign, an ad or a targeted link “lands.” The difference from the home page isn’t length: it’s purpose. The home page is a switchboard — it routes towards services, about us, blog, contacts. A landing has a single exit door: the action you want, whether that’s a quote request, a booking or a download. Anything that doesn’t lead to that door is noise, and it has to go."},
+    "Da qui una regola che spiazza: su una landing page che converte si tolgono elementi, non se ne aggiungono. Via il menù di navigazione con dieci voci, via i link che portano altrove, via le distrazioni. Ogni scelta in più offerta al visitatore è un’occasione in più per non decidere. La pagina deve rendere l’azione desiderata la cosa più facile e ovvia da fare.":
+        {"en": "From this comes a rule that catches people off guard: on a landing page that converts you remove elements, you don’t add them. Out goes the navigation menu with ten items, out go the links that lead elsewhere, out go the distractions. Every extra choice offered to the visitor is one more chance not to decide. The page has to make the desired action the easiest and most obvious thing to do."},
+    "L’anatomia, dall’alto in basso":
+        {"en": "The anatomy, top to bottom"},
+    "Una landing efficace segue una struttura collaudata, e ogni blocco ha un compito. In cima, ciò che si vede senza scorrere deve rispondere in tre secondi a «di cosa si tratta e perché mi riguarda»: un titolo che promette un beneficio concreto, una riga di sottotitolo che lo spiega, un primo invito all’azione. Le persone decidono in fretta se restare, e lo fanno da quello che vedono subito.":
+        {"en": "An effective landing follows a proven structure, and every block has a job. At the top, what’s visible without scrolling must answer, in three seconds, “what is this and why does it concern me”: a headline that promises a concrete benefit, a line of subhead that explains it, a first call to action. People decide quickly whether to stay, and they do it from what they see right away."},
+    "Scendendo, la pagina argomenta: i benefici prima delle caratteristiche («consegna in tre settimane con data in contratto», non «metodologia agile»), le obiezioni affrontate a viso aperto, le prove che dimostrano ciò che promettete. Ogni sezione toglie un dubbio. Alla fine — e ripetuto lungo il percorso — un unico invito all’azione, sempre lo stesso, sempre chiaro.":
+        {"en": "Going down, the page makes its case: benefits before features (“delivery in three weeks with a date in the contract,” not “agile methodology”), objections faced head-on, the proof that backs up what you promise. Each section removes a doubt. At the end — and repeated along the way — a single call to action, always the same, always clear."},
+    "Anatomia di una landing page che converte: titolo, benefici, riprova sociale e un solo invito all’azione":
+        {"en": "Anatomy of a landing page that converts: headline, benefits, social proof and a single call to action"},
+    "L’anatomia di una landing page che converte, dall’alto in basso: promessa chiara sopra la piega (1), beneficio per il cliente (2), riprova sociale reale (3), un unico invito all’azione ripetuto (4). Nessun menù, nessuna via di fuga. Il visitatore decide in pochi secondi da ciò che vede senza scorrere.":
+        {"en": "The anatomy of a landing page that converts, top to bottom: a clear promise above the fold (1), the benefit to the customer (2), real social proof (3), a single repeated call to action (4). No menu, no escape route. The visitor decides in a few seconds from what they see without scrolling."},
+    "La prova conta più delle promesse":
+        {"en": "Proof counts more than promises"},
+    "Il centro di gravità di una landing è la riprova sociale: la dimostrazione che altri, prima del visitatore, si sono fidati e hanno fatto bene. Recensioni vere, casi reali con numeri, loghi di clienti, un contatore onesto. Ma vale solo se è autentica: una testimonianza inventata si sente a naso e distrugge in un colpo la fiducia che volevate costruire. Meglio poche prove vere che molte gonfiate — e alla riprova sociale onesta abbiamo dedicato una guida a parte.":
+        {"en": "The centre of gravity of a landing is social proof: the demonstration that others, before this visitor, trusted you and did well. Real reviews, real cases with numbers, client logos, an honest counter. But it only works if it’s authentic: a made-up testimonial can be smelled a mile off and destroys, in one stroke, the very trust you wanted to build. Better a few real proofs than many inflated ones — and we’ve devoted a separate guide to honest social proof."},
+    "Accanto alla prova sta il modulo, il punto in cui la promessa diventa contatto. Qui la regola è chiara e confermata da ogni studio di usabilità: meno campi, più invii. Chiedete solo ciò che serve per fare il primo passo. Un modulo con dodici campi comunica «ci vorrà tempo e fatica»; uno con tre comunica «è a un clic».":
+        {"en": "Next to the proof sits the form, the point where the promise becomes a contact. Here the rule is clear and confirmed by every usability study: fewer fields, more submissions. Ask only for what’s needed to take the first step. A form with twelve fields says “this will take time and effort”; one with three says “it’s a click away.”"},
+    "Come raccogliere recensioni senza inventarle":
+        {"en": "How to collect reviews without inventing them"},
+    "Veloce, mobile e leggibile: altrimenti non converte niente":
+        {"en": "Fast, mobile and readable: otherwise nothing converts"},
+    "La landing più persuasiva del mondo non converte se carica in cinque secondi o se da telefono è illeggibile. La velocità è parte del messaggio: una pagina che scatta comunica serietà prima ancora delle parole, e Google la premia con i Core Web Vitals. Su una landing, dove ogni visita è spesso pagata, la lentezza è denaro bruciato due volte — nell’annuncio e nella mancata conversione.":
+        {"en": "The most persuasive landing in the world won’t convert if it loads in five seconds or is unreadable on a phone. Speed is part of the message: a page that snaps into view signals seriousness before the words do, and Google rewards it with Core Web Vitals. On a landing, where every visit is often paid for, slowness is money burned twice — in the ad and in the lost conversion."},
+    "Il mobile viene prima, non dopo. La maggior parte del traffico da campagna arriva da telefono, quindi la pagina va progettata da quello schermo: titolo che entra intero, pulsante grande e a portata di pollice, modulo che si compila con una mano. E il testo va scritto per essere scremato — titoli, grassetti, elenchi brevi — perché sul web nessuno legge riga per riga: si scorre. È la base della SEO tecnica e dei contenuti che consegniamo, non un ritocco finale.":
+        {"en": "Mobile comes first, not last. Most campaign traffic arrives from a phone, so the page must be designed from that screen: a headline that fits whole, a big button within thumb’s reach, a form you fill in with one hand. And the copy has to be written to be skimmed — headings, bold text, short lists — because on the web nobody reads line by line: they scroll. It’s the foundation of the technical SEO and content we deliver, not a final touch-up."},
+    "SEO tecnica e velocità di serie in ogni pagina":
+        {"en": "Technical SEO and speed as standard on every page"},
+    "Prima di lanciare: misura velocità e salute della pagina":
+        {"en": "Before you launch: measure the page’s speed and health"},
+    "Una pagina, uno scopo, misurato":
+        {"en": "One page, one purpose, measured"},
+    "Il segreto di una landing page che converte non è un colore magico del pulsante: è la disciplina di un solo obiettivo, difeso togliendo tutto il resto. Promessa chiara in alto, argomenti che tolgono dubbi, prove vere, un modulo corto, un invito ripetuto, velocità e mobile impeccabili. Nessuno di questi elementi è un trucco: sono il modo in cui si rispetta il tempo e la decisione di chi è arrivato.":
+        {"en": "The secret of a landing page that converts isn’t a magic button colour: it’s the discipline of a single goal, defended by removing everything else. A clear promise up top, arguments that remove doubts, real proof, a short form, a repeated call to action, flawless speed and mobile. None of these elements is a trick: they’re how you respect the time and the decision of whoever has arrived."},
+    "E come ogni cosa che conta, si misura. Una landing si giudica su un numero — quante visite diventano richieste — e si migliora un’ipotesi alla volta, provando e confrontando. Costruire la pagina è metà del lavoro; l’altra metà è guardare i dati e correggere. È così che una pagina passa dall’1% al 3% senza spendere un euro in più di pubblicità.":
+        {"en": "And like everything that matters, it’s measured. A landing is judged on a number — how many visits become enquiries — and improved one hypothesis at a time, testing and comparing. Building the page is half the work; the other half is looking at the data and correcting. That’s how a page goes from 1% to 3% without spending a euro more on advertising."},
+    "Nielsen Norman Group — come si legge sul web":
+        {"en": "Nielsen Norman Group — how people read on the web"},
+    "Le persone scremano, non leggono: la pagina va costruita per uno sguardo veloce, non per una lettura lineare.":
+        {"en": "People skim, they don’t read: the page must be built for a fast glance, not for linear reading."},
+    "Baymard Institute — usabilità del checkout e dei moduli":
+        {"en": "Baymard Institute — checkout and form usability"},
+    "Anni di test su moduli e pagamenti: ogni campo in più è una richiesta persa. Meno campi, più invii.":
+        {"en": "Years of testing forms and payments: every extra field is a lost enquiry. Fewer fields, more submissions."},
+    "La velocità è parte della conversione: su una landing a traffico pagato, ogni secondo perso è denaro bruciato due volte.":
+        {"en": "Speed is part of conversion: on a paid-traffic landing, every second lost is money burned twice."},
+    "Google — creare contenuti utili e affidabili":
+        {"en": "Google — creating helpful, reliable content"},
+    "Cosa Google considera qualità: la stessa chiarezza che convince le persone convince anche il motore.":
+        {"en": "What Google considers quality: the same clarity that convinces people convinces the engine too."},
+
+    # ============= Articolo 33 · Recensioni e riprova sociale =============
+    "Recensioni e riprova sociale: usarle senza inventarle":
+        {"en": "Reviews and social proof: using them without inventing them"},
+    "Le recensioni vendono, ma solo se sono vere: inventarle è illegale in UE e si sente a naso. Come raccogliere riprova sociale onesta e metterla dove conta.":
+        {"en": "Reviews sell, but only if they’re real: inventing them is illegal in the EU and easy to spot. How to collect honest social proof and put it where it counts."},
+    "Prima di scegliere un idraulico, un albergo o un commercialista, quasi tutti fanno la stessa cosa: leggono cosa dicono gli altri. La riprova sociale — recensioni, testimonianze, casi reali — è tra le leve più potenti su un sito, perché la fiducia degli sconosciuti pesa più di qualsiasi cosa diciate di voi. Proprio per questo è forte la tentazione di gonfiarla, o addirittura di inventarla. È un errore, e non solo morale: dal 2022 in Europa le recensioni false sono vietate per legge, e il pubblico le fiuta meglio di quanto pensiate. Vediamo come usare le recensioni sul sito web in modo onesto — e più efficace del falso.":
+        {"en": "Before choosing a plumber, a hotel or an accountant, almost everyone does the same thing: they read what others say. Social proof — reviews, testimonials, real cases — is among the most powerful levers on a site, because the trust of strangers weighs more than anything you say about yourself. Precisely for that reason the temptation to inflate it, or even invent it, is strong. It’s a mistake, and not only a moral one: since 2022 fake reviews are banned by law in Europe, and the public sniffs them out better than you’d think. Let’s look at how to use reviews on your website honestly — and more effectively than the fake kind."},
+    "Recensioni sito web e riprova sociale: usarle in modo onesto, senza inventarle":
+        {"en": "Website reviews and social proof: using them honestly, without inventing them"},
+    "Perché la riprova sociale funziona":
+        {"en": "Why social proof works"},
+    "Funziona per un motivo antico: davanti a una decisione incerta, guardiamo cosa hanno fatto gli altri e ci fidiamo. Su un sito questo si traduce in numeri concreti: secondo l’indagine annuale di BrightLocal, la quasi totalità dei consumatori legge le recensioni prima di scegliere un’attività locale, e molti si fidano di una recensione online quanto del consiglio di un amico. Una scheda con venti recensioni vere e risposte curate convince più di mille parole di autoelogio.":
+        {"en": "It works for an ancient reason: faced with an uncertain decision, we look at what others did and trust them. On a site this translates into concrete numbers: according to BrightLocal’s annual survey, almost all consumers read reviews before choosing a local business, and many trust an online review as much as a friend’s advice. A profile with twenty real reviews and thoughtful replies convinces more than a thousand words of self-praise."},
+    "La riprova sociale non sono solo le stelline. È tutto ciò che dimostra che qualcuno, prima del visitatore, si è fidato e ha fatto bene: casi reali con numeri, testimonianze con nome e volto, loghi di clienti che potete citare, un contatore onesto. Più è concreta e verificabile, più pesa. Un numero tondo e generico convince meno di un dettaglio specifico e controllabile.":
+        {"en": "Social proof isn’t just the little stars. It’s everything that shows someone, before this visitor, trusted you and did well: real cases with numbers, testimonials with a name and a face, client logos you’re allowed to cite, an honest counter. The more concrete and verifiable it is, the more it weighs. A round, generic number convinces less than a specific, checkable detail."},
+    "Inventarle è illegale (e si vede)":
+        {"en": "Inventing them is illegal (and it shows)"},
+    "Qui serve essere netti, perché il confine lo traccia la legge. La direttiva europea 2019/2161, detta «Omnibus», recepita anche in Italia, vieta esplicitamente di pubblicare recensioni false o di dichiarare che provengono da clienti reali quando non è vero. Non è una zona grigia: comprare stelline, farsele scrivere dai dipendenti, spacciare per verificate recensioni che non lo sono espone a sanzioni. L’Autorità garante può intervenire, e lo fa.":
+        {"en": "Here we need to be blunt, because the law draws the line. European Directive 2019/2161, known as “Omnibus,” transposed in Italy too, explicitly forbids publishing fake reviews or claiming that reviews come from real customers when they don’t. It isn’t a grey area: buying stars, having employees write them, passing off as verified reviews that aren’t exposes you to penalties. The regulator can step in, and it does."},
+    "Ma anche se non ci fosse la legge, resterebbe un problema pratico: le recensioni false si sentono. Tutte a cinque stelle, tutte nella stessa settimana, tutte con lo stesso tono entusiasta e nessun dettaglio concreto. Il lettore esperto — cioè quasi chiunque, ormai — le riconosce, e nel dubbio scarta tutto il resto. Una sola testimonianza inventata avvelena anche quelle vere. Il falso non è solo rischioso: è controproducente.":
+        {"en": "But even if there were no law, a practical problem would remain: fake reviews can be smelled. All five stars, all in the same week, all in the same enthusiastic tone with no concrete detail. The experienced reader — that is, almost anyone, by now — recognises them, and when in doubt discards all the rest. A single made-up testimonial poisons even the genuine ones. Faking isn’t just risky: it’s counterproductive."},
+    "Riprova sociale onesta contro recensioni false: cosa convince e cosa avvelena la fiducia":
+        {"en": "Honest social proof versus fake reviews: what convinces and what poisons trust"},
+    "A sinistra la riprova sociale che funziona: recensioni vere con dettagli, risposte, nome e data. A destra i segnali del falso: tutte cinque stelle, stessa settimana, nessun dettaglio, tono identico. Le recensioni false sono vietate dalla direttiva UE 2019/2161 — e il pubblico le riconosce comunque.":
+        {"en": "On the left, social proof that works: real reviews with details, replies, a name and a date. On the right, the signals of fakery: all five stars, same week, no detail, identical tone. Fake reviews are banned by EU Directive 2019/2161 — and the public recognises them anyway."},
+    "Come raccogliere recensioni vere, con metodo":
+        {"en": "How to collect real reviews, with method"},
+    "La buona notizia è che raccogliere recensioni oneste è più facile di quanto sembri: quasi sempre manca solo il metodo. La regola è chiederle al momento giusto — subito dopo un lavoro andato bene, quando la soddisfazione è fresca — e renderlo semplice: un link diretto alla scheda Google, non «cercateci e lasciate un commento». Chi è stato bene di solito è felice di dirlo, se glielo chiedete senza farlo faticare.":
+        {"en": "The good news is that collecting honest reviews is easier than it seems: almost always the only thing missing is method. The rule is to ask at the right moment — right after a job that went well, when the satisfaction is fresh — and to make it simple: a direct link to your Google profile, not “look us up and leave a comment.” People who had a good experience are usually happy to say so, if you ask without making them work for it."},
+    "Poi si risponde, a tutte, comprese le critiche. Una risposta educata a una recensione negativa convince i futuri clienti più di dieci elogi: dimostra che dietro c’è qualcuno che ascolta. E mai, mai offrire soldi o sconti in cambio di una recensione positiva: oltre a essere vietato, falsa il segnale. Chiedere una recensione è lecito; comprarla no.":
+        {"en": "Then you reply, to all of them, criticism included. A polite reply to a negative review convinces future customers more than ten words of praise: it shows there’s someone listening behind it. And never, ever offer money or discounts in exchange for a positive review: besides being forbidden, it falsifies the signal. Asking for a review is legitimate; buying one is not."},
+    "Misura i vostri segnali di fiducia E-E-A-T, gratis":
+        {"en": "Measure your E-E-A-T trust signals, free"},
+    "Dove metterle, e come farle contare per Google":
+        {"en": "Where to put them, and how to make them count for Google"},
+    "Una recensione vera lasciata dov’è nasce e muore. Per farla lavorare va messa dove il visitatore decide: accanto all’invito all’azione, sulla pagina del servizio, vicino al modulo di contatto. La riprova sociale è più efficace nel punto esatto in cui chiede fiducia, non relegata in una pagina «Testimonianze» che nessuno apre. Sono gli stessi segnali di autorevolezza ed esperienza — la E e la T di E-E-A-T — con cui Google valuta la vostra credibilità.":
+        {"en": "A real review left where it is is born and dies there. To make it work it has to be placed where the visitor decides: next to the call to action, on the service page, beside the contact form. Social proof is most effective at the exact point where it asks for trust, not banished to a “Testimonials” page nobody opens. These are the same signals of authority and experience — the E and the T in E-E-A-T — with which Google judges your credibility."},
+    "C’è anche un aspetto tecnico che pochi curano: i dati strutturati. Marcare le recensioni con lo schema Review di schema.org permette, entro le regole di Google, di mostrare le stelline direttamente nei risultati di ricerca. Attenzione però alle policy: Google vieta di marcare recensioni auto-attribuite o inventate, e le penalizza. Anche qui, la scorciatoia disonesta si ritorce contro. Onestà e tecnica, insieme, sono ciò che consegniamo di serie in ogni sito.":
+        {"en": "There’s also a technical aspect few tend to: structured data. Marking up reviews with schema.org’s Review type lets you, within Google’s rules, show the stars directly in search results. Mind the policies, though: Google forbids marking up self-attributed or invented reviews, and penalises them. Here too, the dishonest shortcut backfires. Honesty and technique together are what we deliver as standard on every site."},
+    "Cosa include un sito aziendale che ispira fiducia":
+        {"en": "What a business website that inspires trust includes"},
+    "Leggi anche: Google Business Profile, la vetrina che nessuno cura":
+        {"en": "Read also: Google Business Profile, the storefront nobody tends"},
+    "La fiducia non si finge, si costruisce":
+        {"en": "Trust isn’t faked, it’s built"},
+    "Il filo di tutto è uno: la fiducia è un capitale che si costruisce lentamente e si brucia in un attimo. Recensioni vere raccolte con metodo, risposte curate, prove verificabili messe dove contano valgono più di qualsiasi numero gonfiato — e non vi espongono a una sanzione né a una brutta figura. È la stessa linea che teniamo su di noi: nei nostri casi mostriamo progetti reali del gruppo, con link ai siti vivi e numeri controllabili, non testimonianze scritte a tavolino.":
+        {"en": "The thread of it all is one: trust is capital that builds slowly and burns in an instant. Real reviews collected with method, thoughtful replies, verifiable proof placed where it counts are worth more than any inflated number — and they don’t expose you to a penalty or an embarrassment. It’s the same line we hold on ourselves: in our cases we show real group projects, with links to the live sites and checkable numbers, not testimonials written at a desk."},
+    "Se dovete scegliere tra apparire perfetti e apparire credibili, scegliete credibili. Un sito con qualche recensione vera, anche non tutte a cinque stelle, converte più di uno tappezzato di lodi che sanno di finto. Il pubblico non cerca la perfezione: cerca qualcuno di cui fidarsi.":
+        {"en": "If you have to choose between looking perfect and looking credible, choose credible. A site with a few real reviews, not all of them five stars, converts more than one plastered with praise that smells fake. The public isn’t looking for perfection: it’s looking for someone to trust."},
+    "BrightLocal — Local Consumer Review Survey":
+        {"en": "BrightLocal — Local Consumer Review Survey"},
+    "L’indagine annuale: quasi tutti leggono le recensioni prima di scegliere, e molti si fidano quanto del consiglio di un amico.":
+        {"en": "The annual survey: almost everyone reads reviews before choosing, and many trust them as much as a friend’s advice."},
+    "Direttiva UE 2019/2161 (Omnibus) — EUR-Lex":
+        {"en": "EU Directive 2019/2161 (Omnibus) — EUR-Lex"},
+    "La norma europea che vieta le recensioni false e l’attribuzione ingannevole a clienti reali: non è una zona grigia.":
+        {"en": "The European rule that bans fake reviews and the deceptive attribution to real customers: it isn’t a grey area."},
+    "Google — dati strutturati per le recensioni (review snippet)":
+        {"en": "Google — structured data for reviews (review snippet)"},
+    "Come mostrare le stelline nei risultati — e le regole da rispettare: niente recensioni auto-attribuite o inventate.":
+        {"en": "How to show the stars in results — and the rules to respect: no self-attributed or invented reviews."},
+    "schema.org — il tipo Review":
+        {"en": "schema.org — the Review type"},
+    "Il vocabolario dei dati strutturati con cui si marca una recensione perché i motori la capiscano.":
+        {"en": "The structured-data vocabulary you use to mark up a review so search engines understand it."},
+
+    # ============= Articolo 34 · WhatsApp Business per le PMI =============
+    "WhatsApp Business per le PMI: quando il contatto batte il modulo":
+        {"en": "WhatsApp Business for SMEs: when the chat beats the form"},
+    "A volte la persona non vuole compilare un modulo: vuole scrivere. WhatsApp Business per le PMI, cosa fa davvero, quando conviene e come restare a norma GDPR.":
+        {"en": "Sometimes people don’t want to fill in a form: they want to message. WhatsApp Business for SMEs — what it really does, when it’s worth it and how to stay GDPR-compliant."},
+    "C’è un momento, sul vostro sito, in cui la persona è pronta a farsi viva ma il modulo di contatto la ferma: troppi campi, troppa attesa per una risposta, troppo formale per una domanda veloce. Quella stessa persona, però, scrive su WhatsApp dieci volte al giorno senza pensarci. Per molte PMI italiane un contatto via chat converte dove un modulo perde — perché incontra il cliente dove è già a suo agio. Vediamo cos’è WhatsApp Business, quando conviene davvero rispetto al modulo, e come usarlo senza problemi di privacy.":
+        {"en": "There’s a moment, on your site, when the person is ready to get in touch but the contact form stops them: too many fields, too long a wait for a reply, too formal for a quick question. That same person, though, messages on WhatsApp ten times a day without thinking. For many Italian SMEs a chat contact converts where a form loses — because it meets the customer where they’re already comfortable. Let’s look at what WhatsApp Business is, when it’s really worth it versus a form, and how to use it without privacy problems."},
+    "WhatsApp Business per le PMI: quando un contatto via chat batte il modulo":
+        {"en": "WhatsApp Business for SMEs: when a chat contact beats the form"},
+    "Perché la chat batte il modulo (a volte)":
+        {"en": "Why chat beats the form (sometimes)"},
+    "Il modulo di contatto ha un difetto strutturale: chiede fiducia e pazienza in anticipo. Compili, invii, e aspetti — un’ora, un giorno — senza sapere se qualcuno leggerà. La chat ribalta tutto: è immediata, informale, e soprattutto è il canale che le persone già usano ogni giorno. WhatsApp conta oltre due miliardi di utenti nel mondo, ed è di fatto l’app di messaggistica standard in Italia. Chiedere a un cliente di scrivere su WhatsApp è chiedergli di fare qualcosa che sa già fare a occhi chiusi.":
+        {"en": "The contact form has a structural flaw: it asks for trust and patience up front. You fill it in, send it, and wait — an hour, a day — with no idea whether anyone will read it. Chat flips all of this: it’s immediate, informal, and above all it’s the channel people already use every day. WhatsApp has over two billion users worldwide, and it’s effectively the default messaging app in Italy. Asking a customer to message on WhatsApp is asking them to do something they can already do with their eyes closed."},
+    "Non significa che il modulo vada buttato: significa affiancargli un canale per chi preferisce parlare. Una domanda veloce prima di prenotare, un dubbio su un prodotto, la richiesta di un preventivo al volo: sono conversazioni che nascono meglio in chat che in un form. E una conversazione avviata è già mezzo contatto acquisito, perché apre un dialogo invece di spedire un messaggio nel vuoto.":
+        {"en": "It doesn’t mean throwing the form away: it means putting a channel beside it for those who prefer to talk. A quick question before booking, a doubt about a product, a request for a quote on the fly: these are conversations that start better in a chat than in a form. And a conversation started is already half a contact won, because it opens a dialogue instead of firing a message into the void."},
+    "Cos’è WhatsApp Business (e cosa non è)":
+        {"en": "What WhatsApp Business is (and what it isn’t)"},
+    "WhatsApp Business è la versione gratuita pensata per le attività, distinta da WhatsApp normale. Aggiunge strumenti utili a un’azienda: un profilo con indirizzo, orari, sito e catalogo; messaggi di benvenuto e di assenza automatici; risposte rapide preimpostate; etichette per organizzare le conversazioni. Per un artigiano, un negozio o uno studio è spesso tutto ciò che serve, e si installa in dieci minuti.":
+        {"en": "WhatsApp Business is the free version made for businesses, distinct from regular WhatsApp. It adds tools a company finds useful: a profile with address, hours, website and catalogue; automatic greeting and away messages; preset quick replies; labels to organise conversations. For a tradesperson, a shop or a practice it’s often all that’s needed, and it installs in ten minutes."},
+    "Diverso è WhatsApp Business Platform (le cosiddette API): la versione per volumi alti, con automazioni, integrazioni nel gestionale e più operatori sulla stessa utenza. Serve a chi gestisce centinaia di conversazioni al giorno e vuole collegarle ai propri sistemi. È qui che entra il lavoro su misura: integrare la chat nel flusso dell’azienda, non lasciarla un’isola. La stessa logica delle web app che costruiamo — mettere lo strumento dove il lavoro già scorre.":
+        {"en": "Different is the WhatsApp Business Platform (the so-called API): the version for high volumes, with automations, integrations into your management software and several operators on the same account. It’s for those handling hundreds of conversations a day who want to connect them to their systems. This is where custom work comes in: integrating the chat into the company’s workflow, not leaving it an island. The same logic as the web apps we build — putting the tool where the work already flows."},
+    "Modulo di contatto contro WhatsApp: due percorsi dalla visita alla richiesta, a confronto":
+        {"en": "Contact form versus WhatsApp: two paths from visit to enquiry, side by side"},
+    "Due percorsi a confronto: il modulo (compila, invia, aspetti, forse ricevi risposta) e la chat (scrivi, dialoghi, ricevi subito). Non è l’uno contro l’altro: affiancare un contatto WhatsApp al modulo intercetta chi preferisce scrivere. WhatsApp supera i 2 miliardi di utenti nel mondo.":
+        {"en": "Two paths side by side: the form (fill in, send, wait, maybe get a reply) and the chat (message, talk, get an answer at once). It isn’t one against the other: placing a WhatsApp contact beside the form catches those who prefer to message. WhatsApp passes 2 billion users worldwide."},
+    "Quando conviene davvero (e quando no)":
+        {"en": "When it’s really worth it (and when it isn’t)"},
+    "WhatsApp non è la risposta a tutto, ed è onesto dirlo. Conviene quando il vostro business vive di contatto diretto e domande veloci: ristorazione, servizi alla persona, artigiani, negozi, prenotazioni. In questi casi la chat abbatte l’attrito e accorcia la distanza tra curiosità e cliente. Conviene meno dove serve una traccia formale e strutturata — pratiche complesse, preventivi articolati che richiedono documenti — dove un modulo o una email restano più ordinati.":
+        {"en": "WhatsApp isn’t the answer to everything, and it’s honest to say so. It’s worth it when your business lives on direct contact and quick questions: hospitality, personal services, tradespeople, shops, bookings. In these cases chat cuts the friction and shortens the distance between curiosity and customer. It’s worth less where you need a formal, structured trail — complex procedures, detailed quotes requiring documents — where a form or an email stay tidier."},
+    "La regola pratica è semplice: aggiungete WhatsApp se avete qualcuno che risponde davvero, e in fretta. Un pulsante di chat che resta muto per due giorni è peggio di nessun pulsante: promette immediatezza e tradisce l’aspettativa. La chat è una promessa di presenza; mantenetela solo se potete.":
+        {"en": "The practical rule is simple: add WhatsApp if you have someone who really replies, and quickly. A chat button that stays silent for two days is worse than no button: it promises immediacy and betrays the expectation. Chat is a promise of presence; make it only if you can keep it."},
+    "GDPR: la chat non è terra di nessuno":
+        {"en": "GDPR: the chat isn’t a no man’s land"},
+    "Un canale comodo resta un canale che tratta dati personali, e qui in Europa non si scherza. Quando un cliente vi scrive su WhatsApp, il numero e il contenuto della conversazione sono dati che state trattando: valgono le regole del GDPR. In pratica significa citare WhatsApp nella vostra informativa privacy, non usare i numeri raccolti in chat per mandare promozioni non richieste, e sapere che i dati passano da un fornitore extra-UE (Meta) — un punto da gestire, non da ignorare.":
+        {"en": "A convenient channel is still a channel that processes personal data, and in Europe that’s no joke. When a customer messages you on WhatsApp, the number and the content of the conversation are data you’re processing: the GDPR rules apply. In practice that means naming WhatsApp in your privacy notice, not using the numbers gathered in chat to send unsolicited promotions, and knowing that the data passes through a non-EU provider (Meta) — a point to manage, not to ignore."},
+    "Nulla di proibitivo, ma nulla da improvvisare: la chat va inserita nel sito con le stesse cautele di un modulo, informativa compresa. Se avete dubbi sul vostro sito attuale, conviene misurarli prima che lo faccia un controllo. È lo stesso approccio che teniamo su ogni progetto: la comodità per il cliente non deve mai diventare un rischio per voi.":
+        {"en": "Nothing prohibitive, but nothing to improvise either: the chat goes into the site with the same care as a form, privacy notice included. If you have doubts about your current site, it’s better to measure them before an inspection does. It’s the same approach we hold on every project: convenience for the customer must never become a risk for you."},
+    "Verifica gratis la conformità GDPR e cookie del vostro sito":
+        {"en": "Check your site’s GDPR and cookie compliance for free"},
+    "Cosa include un sito aziendale, contatti a norma compresi":
+        {"en": "What a business website includes, compliant contact channels and all"},
+    "Mettere il contatto dove il cliente è già":
+        {"en": "Put the contact where the customer already is"},
+    "Il senso di tutto è uno: incontrare il cliente dove è già a suo agio, invece di costringerlo dove è comodo a voi. Per molte PMI questo vuol dire affiancare al modulo un contatto WhatsApp curato — profilo completo, risposte rapide, qualcuno che risponde sul serio — e, quando i volumi crescono, integrarlo nei propri sistemi con una web app su misura. Non è inseguire una moda: è togliere attrito nel punto esatto in cui una visita decide se diventare cliente.":
+        {"en": "The point of it all is one: meet the customer where they’re already comfortable, instead of forcing them where it suits you. For many SMEs that means putting a well-tended WhatsApp contact beside the form — complete profile, quick replies, someone who genuinely answers — and, when volumes grow, integrating it into your systems with a custom web app. It isn’t chasing a trend: it’s removing friction at the exact point where a visit decides whether to become a customer."},
+    "Il modulo e la chat non sono rivali: sono due porte per due tipi di persone. Chi ama la traccia scritta compila; chi vuole parlare scrive. Aprire entrambe, e presidiarle davvero, è il modo più semplice per non perdere nessuno dei due sulla soglia.":
+        {"en": "The form and the chat aren’t rivals: they’re two doors for two kinds of people. Those who like a written trail fill in the form; those who want to talk send a message. Opening both, and truly staffing them, is the simplest way not to lose either one on the doorstep."},
+    "Leggi anche: perché il sito non converte, le 7 fughe silenziose":
+        {"en": "Read also: why the site doesn’t convert, the 7 silent leaks"},
+    "WhatsApp Business — sito ufficiale":
+        {"en": "WhatsApp Business — official site"},
+    "Cosa offre la versione per le attività: profilo, cataloghi, messaggi automatici e risposte rapide.":
+        {"en": "What the business version offers: profile, catalogues, automatic messages and quick replies."},
+    "WhatsApp — due miliardi di utenti (blog ufficiale)":
+        {"en": "WhatsApp — two billion users (official blog)"},
+    "Il dato sulla diffusione: WhatsApp è l’app di messaggistica che i clienti già usano ogni giorno.":
+        {"en": "The reach figure: WhatsApp is the messaging app customers already use every day."},
+    "Meta — WhatsApp Business Platform (documentazione)":
+        {"en": "Meta — WhatsApp Business Platform (documentation)"},
+    "La versione API per volumi alti e integrazioni: quando la chat va collegata ai vostri sistemi.":
+        {"en": "The API version for high volumes and integrations: when the chat has to connect to your systems."},
+    "Regolamento GDPR 2016/679 — EUR-Lex":
+        {"en": "GDPR Regulation 2016/679 — EUR-Lex"},
+    "Anche una conversazione in chat tratta dati personali: informativa e basi giuridiche valgono come per un modulo.":
+        {"en": "A chat conversation processes personal data too: the privacy notice and legal bases apply just as for a form."},
+
+    # ============= Articolo 35 · Il testo prima del design =============
+    "Il testo prima del design: perché il copy decide la conversione":
+        {"en": "Copy before design: why the words decide conversion"},
+    "Si parte quasi sempre dalla grafica e i testi si «mettono dopo». È l’errore che affossa la conversione: sul web il copy viene prima del design, ecco perché.":
+        {"en": "Almost everyone starts from the graphics and the copy gets “added later.” It’s the mistake that sinks conversion: on the web the copy comes before the design — here’s why."},
+    "Il copione è sempre lo stesso: si sceglie il template, si decidono i colori, si sistema la grafica, e poi «ci mettiamo i testi». Quei testi arrivano di corsa, scritti per riempire spazi già decisi, e il risultato è un sito bellissimo che non dice niente e non converte. È un errore di ordine, prima che di scrittura: sul web il copy — il testo — non è un riempitivo, è l’ossatura. Design e testo vanno pensati insieme, ma se proprio uno dei due deve venire prima, è il testo. Vediamo perché il copywriting di un sito web decide la conversione più della grafica.":
+        {"en": "The script is always the same: you pick the template, decide the colours, sort out the graphics, and then “we’ll add the copy.” That copy arrives in a rush, written to fill spaces already decided, and the result is a gorgeous site that says nothing and doesn’t convert. It’s a mistake of order before it’s a mistake of writing: on the web the copy — the words — isn’t filler, it’s the skeleton. Design and copy should be thought through together, but if one of the two really has to come first, it’s the copy. Let’s see why a website’s copywriting decides conversion more than the graphics do."},
+    "Copywriting sito web: perché il testo viene prima del design e decide la conversione":
+        {"en": "Website copywriting: why the words come before the design and decide conversion"},
+    "Nessuno legge, tutti scremano":
+        {"en": "Nobody reads, everybody skims"},
+    "Partiamo da come le persone usano davvero una pagina, perché lì crolla il primo mito. Sul web nessuno legge riga per riga: si screma. Gli studi storici di Nielsen Norman Group lo documentano da vent’anni — l’occhio salta, cerca appigli, si ferma su titoli e grassetti, e nel dubbio se ne va. Lo sguardo segue spesso uno schema a «F»: molta attenzione alle prime righe e alla colonna sinistra, sempre meno via via che si scende.":
+        {"en": "Let’s start from how people actually use a page, because that’s where the first myth collapses. On the web nobody reads line by line: they skim. Nielsen Norman Group’s long-standing studies have documented it for twenty years — the eye jumps, looks for handholds, stops on headings and bold text, and when in doubt leaves. The gaze often follows an “F” shape: lots of attention on the first lines and the left column, less and less as it goes down."},
+    "Questo cambia tutto per chi scrive. Un muro di testo elegante, giustificato, senza appigli, per un lettore che screma è invisibile. Il testo che funziona è fatto per essere saltato e capito lo stesso: titoli che dicono il senso da soli, primo paragrafo che risponde subito, grassetti sulle parole che contano, elenchi al posto dei periodi lunghi. Non è scrivere «meno»: è scrivere per come si legge sullo schermo.":
+        {"en": "This changes everything for the writer. An elegant wall of justified text with no handholds is invisible to a reader who skims. Copy that works is built to be skipped and understood anyway: headings that carry the meaning on their own, a first paragraph that answers straight away, bold on the words that matter, lists instead of long sentences. It isn’t writing “less”: it’s writing for the way people read on a screen."},
+    "Il testo prima del design: dal messaggio alla pagina, l’ordine giusto di un progetto web":
+        {"en": "Copy before design: from message to page, the right order of a web project"},
+    "L’ordine che converte: prima si decide cosa dire e a chi (messaggio, benefici, invito all’azione), poi il design dà forma a quel messaggio. Invertire l’ordine — grafica prima, testi «dopo» — produce siti belli che non dicono niente. Fonte: Nielsen Norman Group, come si legge sul web.":
+        {"en": "The order that converts: first you decide what to say and to whom (message, benefits, call to action), then the design gives that message its form. Reverse the order — graphics first, copy “later” — and you get pretty sites that say nothing. Source: Nielsen Norman Group, how people read on the web."},
+    "Il design serve il messaggio, non il contrario":
+        {"en": "The design serves the message, not the other way around"},
+    "Quando il testo viene prima, il design ha un lavoro chiaro: mettere in risalto le parole giuste. Sa cosa deve gridare e cosa può sussurrare, dove serve un titolo grande e dove un elenco, quanto spazio dare all’invito all’azione. Il layout diventa uno strumento al servizio di un messaggio deciso. Quando invece il testo arriva dopo, succede il contrario: le parole vengono compresse o allungate per stare in caselle già disegnate, e il messaggio si piega alla grafica. Il risultato si vede — pagine che sembrano dire qualcosa senza dirlo.":
+        {"en": "When the copy comes first, the design has a clear job: to highlight the right words. It knows what should shout and what can whisper, where a big headline is needed and where a list, how much room to give the call to action. The layout becomes a tool in service of a settled message. When the copy comes later, the opposite happens: the words get squeezed or stretched to fit boxes already drawn, and the message bends to the graphics. The result shows — pages that seem to say something without saying it."},
+    "Non è una questione di gusto, è di funzione. Un bottone su cui c’è scritto «Invia» converte meno di uno che dice «Richiedi il preventivo gratuito»: stessa grafica, testo diverso, risultato diverso. Le microcopie — le due parole su un pulsante, la riga sotto un modulo, il messaggio d’errore — spostano conversioni quanto e più di un restyling grafico. E sono testo, non design.":
+        {"en": "It isn’t a matter of taste, it’s a matter of function. A button that reads “Send” converts less than one that says “Request the free quote”: same graphics, different words, different result. Microcopy — the two words on a button, the line under a form, the error message — shifts conversions as much as, and more than, a graphic restyle. And it’s copy, not design."},
+    "Scrivere per il cliente, non per sé":
+        {"en": "Write for the customer, not for yourself"},
+    "Il secondo errore, dopo l’ordine, è il punto di vista. La maggior parte dei siti parla di sé: «siamo leader», «offriamo soluzioni innovative», «la nostra mission». Al visitatore non interessa: vuole sapere se risolvete il suo problema, come, in quanto tempo, a quali condizioni. Il testo che converte gira la telecamera — dal «noi siamo» al «voi ottenete» — e usa le parole del cliente, non il gergo del settore. Le guide di scrittura per il web più serie, come quella del governo britannico per i suoi servizi digitali, ripetono la stessa cosa: linguaggio semplice, concreto, orientato a chi legge.":
+        {"en": "The second mistake, after order, is point of view. Most sites talk about themselves: “we’re leaders,” “we offer innovative solutions,” “our mission.” The visitor doesn’t care: they want to know whether you solve their problem, how, in how long, on what terms. Copy that converts turns the camera around — from “we are” to “you get” — and uses the customer’s words, not the industry’s jargon. The most serious guides to writing for the web, like the British government’s for its digital services, repeat the same thing: plain, concrete language, oriented to the reader."},
+    "Concretezza vuol dire numeri e scadenze al posto degli aggettivi. «Consegniamo in tre settimane, con la data in contratto» dice più di «tempi rapidi». «Prezzo chiuso, nessuna sorpresa in fattura» dice più di «soluzioni su misura». Un testo pieno di superlativi non dà informazioni: chiede fiducia senza offrire prove. Un testo pieno di fatti fa il lavoro opposto — e Google, non a caso, premia esattamente questa qualità nei suoi criteri sui contenuti utili.":
+        {"en": "Concreteness means numbers and deadlines in place of adjectives. “We deliver in three weeks, with the date in the contract” says more than “fast turnaround.” “Fixed price, no surprises on the invoice” says more than “tailor-made solutions.” Copy full of superlatives gives no information: it asks for trust without offering proof. Copy full of facts does the opposite — and Google, not by chance, rewards exactly this quality in its criteria for helpful content."},
+    "Misura i segnali che il vostro sito già manda a Google":
+        {"en": "Measure the signals your site already sends Google"},
+    "Cosa include un sito aziendale, testi che convertono compresi":
+        {"en": "What a business website includes, copy that converts and all"},
+    "Il testo prima anche in un restyling":
+        {"en": "Copy first in a restyle too"},
+    "Vale per un sito nuovo, ma anche — forse soprattutto — per un restyling. La tentazione, quando si rifà un sito, è concentrarsi sull’aspetto: nuovo look, stessi testi vecchi. È un’occasione sprecata. Un restyling è il momento migliore per rimettere in ordine il messaggio prima della grafica: cosa volete che il visitatore capisca in tre secondi, quale azione deve compiere, quali dubbi vanno tolti. Il nuovo design, poi, darà forma a quel messaggio ripulito, invece di rivestire di nuovo quello vecchio.":
+        {"en": "It holds for a new site, but also — perhaps above all — for a restyle. The temptation, when redoing a site, is to focus on looks: new look, same old copy. It’s a wasted chance. A restyle is the best moment to put the message back in order before the graphics: what you want the visitor to grasp in three seconds, which action they should take, which doubts need clearing. The new design then gives shape to that cleaned-up message, instead of re-dressing the old one."},
+    "È l’approccio che teniamo quando rifacciamo o miglioriamo un sito: prima si decide cosa dire e a chi, poi come mostrarlo. Un sito che carica veloce e si vede bene da telefono ma non dice niente resta un sito che non converte. La grafica trattiene lo sguardo; il testo trasforma lo sguardo in una decisione.":
+        {"en": "It’s the approach we hold when we rebuild or improve a site: first you decide what to say and to whom, then how to show it. A site that loads fast and looks good on a phone but says nothing stays a site that doesn’t convert. Graphics hold the gaze; copy turns the gaze into a decision."},
+    "Restyling e migrazione: nuovo look, messaggio rimesso a fuoco":
+        {"en": "Restyle and migration: new look, message brought back into focus"},
+    "Leggi anche: anatomia di una landing page che converte":
+        {"en": "Read also: the anatomy of a landing page that converts"},
+    "L’ordine giusto: messaggio, poi forma":
+        {"en": "The right order: message, then form"},
+    "Riassumiamo, perché è semplice e quasi nessuno lo fa: prima si decide il messaggio — cosa dire, a chi, con quale invito all’azione — poi il design gli dà forma. Il testo si scrive per chi screma, dal punto di vista del cliente, con fatti al posto degli aggettivi. La grafica, a quel punto, ha una guida e non deve indovinare. È l’ordine che trasforma un sito «bello» in un sito che porta contatti.":
+        {"en": "Let’s sum up, because it’s simple and almost nobody does it: first you decide the message — what to say, to whom, with which call to action — then the design gives it form. The copy is written for the skimmer, from the customer’s point of view, with facts in place of adjectives. The graphics, at that point, have a guide and don’t have to guess. It’s the order that turns a “pretty” site into a site that brings enquiries."},
+    "Non serve essere scrittori. Serve rispettare l’ordine e la persona che leggerà: dire una cosa vera, dirla chiara, dirla per prima. Il design bellissimo su un messaggio confuso è un vestito elegante su chi non ha niente da dire. Il messaggio giusto, anche in una veste sobria, vende. Se dovete scegliere da dove partire, partite dalle parole.":
+        {"en": "You don’t need to be a writer. You need to respect the order and the person who’ll read: say something true, say it clearly, say it first. Beautiful design on a muddled message is an elegant suit on someone with nothing to say. The right message, even in a plain outfit, sells. If you have to choose where to start, start from the words."},
+    "Vent’anni di ricerca: sul web si screma, non si legge. Il testo va scritto per uno sguardo che salta.":
+        {"en": "Twenty years of research: on the web people skim, they don’t read. Copy must be written for a jumping gaze."},
+    "L’occhio segue una «F»: prime righe e colonna sinistra. Titoli e primo paragrafo portano quasi tutto il peso.":
+        {"en": "The eye follows an “F”: first lines and left column. Headings and the first paragraph carry almost all the weight."},
+    "GOV.UK — scrivere per il web (content design)":
+        {"en": "GOV.UK — writing for the web (content design)"},
+    "La guida del governo britannico ai suoi servizi digitali: linguaggio semplice, concreto, dalla parte di chi legge.":
+        {"en": "The British government’s guide for its digital services: plain, concrete language, on the reader’s side."},
+    "I criteri di qualità di Google premiano la stessa concretezza che convince le persone: fatti, non aggettivi.":
+        {"en": "Google’s quality criteria reward the same concreteness that convinces people: facts, not adjectives."},
+}
+CHROME.update(CHROME_BLOG_BATCH7)
+
+# CHROME_BLOG_BATCH7_LINKS — le CTA e i link contestuali del batch 7: il
+# generatore appende « →» all'etichetta (build_blog_post / _blog_section_links),
+# quindi il nodo di testo è «Etichetta →». Coppie con la freccia inclusa.
+CHROME_BLOG_BATCH7_LINKS = {
+    "Misura dove perde il vostro sito — check-up gratuito →":
+        {"en": "See where your site is losing — free check-up →"},
+    "Un sito e una landing che portano contatti, a prezzo chiuso →":
+        {"en": "A site and a landing that bring enquiries, at a fixed price →"},
+    "Costruiamo la fiducia del vostro sito, senza trucchi →":
+        {"en": "We build your site’s trust, no tricks →"},
+    "Integriamo WhatsApp nel vostro sito e nei vostri sistemi →":
+        {"en": "We integrate WhatsApp into your site and your systems →"},
+    "Un sito che dice la cosa giusta, prima ancora che bella →":
+        {"en": "A site that says the right thing before it looks pretty →"},
+    "Misura la salute del vostro sito: il check-up completo, gratuito →":
+        {"en": "Measure your site’s health: the complete check-up, free →"},
+    "Cosa include un sito aziendale che converte, a prezzo chiuso →":
+        {"en": "What a business website that converts includes, at a fixed price →"},
+    "Leggi anche: il testo prima del design, perché il copy decide la conversione →":
+        {"en": "Read also: copy before design, why copy decides conversion →"},
+    "Prima di rifare, scoprite dove perdete: analisi gratuita del sito →":
+        {"en": "Before rebuilding, find out where you’re losing: free site analysis →"},
+    "Come raccogliere recensioni senza inventarle →":
+        {"en": "How to collect reviews without inventing them →"},
+    "SEO tecnica e velocità di serie in ogni pagina →":
+        {"en": "Technical SEO and speed as standard on every page →"},
+    "Prima di lanciare: misura velocità e salute della pagina →":
+        {"en": "Before you launch: measure the page’s speed and health →"},
+    "Misura i vostri segnali di fiducia E-E-A-T, gratis →":
+        {"en": "Measure your E-E-A-T trust signals, free →"},
+    "Cosa include un sito aziendale che ispira fiducia →":
+        {"en": "What a business website that inspires trust includes →"},
+    "Leggi anche: Google Business Profile, la vetrina che nessuno cura →":
+        {"en": "Read also: Google Business Profile, the storefront nobody tends →"},
+    "Verifica gratis la conformità GDPR e cookie del vostro sito →":
+        {"en": "Check your site’s GDPR and cookie compliance for free →"},
+    "Cosa include un sito aziendale, contatti a norma compresi →":
+        {"en": "What a business website includes, compliant contact channels and all →"},
+    "Leggi anche: perché il sito non converte, le 7 fughe silenziose →":
+        {"en": "Read also: why the site doesn’t convert, the 7 silent leaks →"},
+    "Misura i segnali che il vostro sito già manda a Google →":
+        {"en": "Measure the signals your site already sends Google →"},
+    "Cosa include un sito aziendale, testi che convertono compresi →":
+        {"en": "What a business website includes, copy that converts and all →"},
+    "Restyling e migrazione: nuovo look, messaggio rimesso a fuoco →":
+        {"en": "Restyle and migration: new look, message brought back into focus →"},
+    "Leggi anche: anatomia di una landing page che converte →":
+        {"en": "Read also: the anatomy of a landing page that converts →"},
+}
+CHROME.update(CHROME_BLOG_BATCH7_LINKS)

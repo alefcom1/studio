@@ -102,6 +102,12 @@ BLOG_SLUGS = {
     # Sputnik area clienti + Lab Monitor — IT + EN (RU è un batch a sé).
     'area-clienti-agenzia-web':             {'en': 'web-agency-client-portal',             'ru': 'kabinet-klienta-veb-studii'},
     'monitoraggio-sito-dopo-lancio':        {'en': 'website-monitoring-after-launch',      'ru': 'monitoring-sajta-posle-zapuska'},
+    # Blog · Batch 7 (seconda ondata) — IT + EN (RU è un batch a sé: slug RU pianificati, IT+EN-only).
+    'perche-il-sito-non-converte':          {'en': 'why-your-website-doesnt-convert',      'ru': 'pochemu-sajt-ne-konvertiruet'},
+    'landing-page-che-converte':            {'en': 'landing-page-that-converts',           'ru': 'landing-pejdzh-konversija'},
+    'recensioni-riprova-sociale-onesta':    {'en': 'reviews-social-proof-done-right',      'ru': 'otzyvy-socialnoe-dokazatelstvo'},
+    'whatsapp-business-pmi':                {'en': 'whatsapp-business-for-smes',           'ru': 'whatsapp-business-dlja-biznesa'},
+    'copywriting-sito-web-prima-del-design': {'en': 'website-copywriting-before-design',    'ru': 'kopirajting-sajta-tekst-pered-dizajnom'},
 }
 
 # Articoli del blog pubblicati solo in IT + EN in questa fase (la loro versione
@@ -135,6 +141,12 @@ BLOG_IT_EN_ONLY = {
     # Sputnik area clienti + Lab Monitor
     'area-clienti-agenzia-web',
     'monitoraggio-sito-dopo-lancio',
+    # Batch 7 (seconda ondata)
+    'perche-il-sito-non-converte',
+    'landing-page-che-converte',
+    'recensioni-riprova-sociale-onesta',
+    'whatsapp-business-pmi',
+    'copywriting-sito-web-prima-del-design',
 }
 
 # Blog · Batch 5 — RU-only (scritti a mano in russo, senza specchio IT/EN;

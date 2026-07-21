@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="Anatomia di una landing page che converte, dall'alto in basso">
+  <defs>
+    <pattern id="gridLan" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}
+    </style>
+  </defs>
+  <rect width="1200" height="560" fill="#F7F6F2"/>
+  <rect width="1200" height="560" fill="url(#gridLan)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">ANATOMIA DI UNA LANDING — DALL’ALTO IN BASSO</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <!-- left: the page -->
+  <g transform="translate(80,108)">
+    <rect x="0" y="0" width="420" height="420" fill="#FFFFFF" stroke="#DDDBD4" stroke-width="1.5"/>
+    <!-- fold line -->
+    <line x1="0" y1="150" x2="420" y2="150" stroke="#2440C8" stroke-width="1" stroke-dasharray="6 6"/>
+    <text x="426" y="146" class="mono" font-size="12" fill="#2440C8">↑ sopra la piega</text>
+    <rect x="30" y="30" width="230" height="28" fill="#14161A"/>
+    <rect x="30" y="72" width="330" height="12" fill="#DDDBD4"/>
+    <rect x="30" y="104" width="150" height="34" fill="#2440C8"/>
+    <text x="44" y="127" class="mono" font-size="13" fill="#FFFFFF">CTA →</text>
+    <rect x="30" y="180" width="360" height="12" fill="#DDDBD4"/>
+    <rect x="30" y="202" width="300" height="12" fill="#DDDBD4"/>
+    <rect x="30" y="244" width="165" height="70" fill="#EEF1FE" stroke="#2440C8" stroke-width="1"/>
+    <rect x="215" y="244" width="165" height="70" fill="#EEF1FE" stroke="#2440C8" stroke-width="1"/>
+    <text x="44" y="284" class="mono" font-size="12" fill="#2440C8">★★★★★ vero</text>
+    <text x="229" y="284" class="mono" font-size="12" fill="#2440C8">caso reale</text>
+    <rect x="30" y="344" width="360" height="46" fill="#2440C8"/>
+    <text x="46" y="373" class="mono" font-size="14" fill="#FFFFFF">Richiedi il preventivo →</text>
+  </g>
+  <!-- right: legend -->
+  <g class="body" font-size="18" transform="translate(600,120)">
+    <g transform="translate(0,0)"><circle cx="16" cy="16" r="16" fill="#2440C8"/><text x="11" y="22" class="mono" font-size="15" fill="#FFFFFF">1</text><text x="48" y="15" fill="#14161A">Promessa chiara sopra la piega</text><text x="48" y="40" class="mono" font-size="13" fill="#5A5E66">un beneficio concreto in tre secondi</text></g>
+    <g transform="translate(0,86)"><circle cx="16" cy="16" r="16" fill="#2440C8"/><text x="11" y="22" class="mono" font-size="15" fill="#FFFFFF">2</text><text x="48" y="15" fill="#14161A">Benefici prima delle caratteristiche</text><text x="48" y="40" class="mono" font-size="13" fill="#5A5E66">cosa ottiene il cliente, non cosa fate voi</text></g>
+    <g transform="translate(0,172)"><circle cx="16" cy="16" r="16" fill="#5B73E8"/><text x="11" y="22" class="mono" font-size="15" fill="#FFFFFF">3</text><text x="48" y="15" fill="#14161A">Riprova sociale reale</text><text x="48" y="40" class="mono" font-size="13" fill="#5A5E66">recensioni e casi veri, non inventati</text></g>
+    <g transform="translate(0,258)"><circle cx="16" cy="16" r="16" fill="#14161A"/><text x="11" y="22" class="mono" font-size="15" fill="#FFFFFF">4</text><text x="48" y="15" fill="#14161A">Un solo invito all’azione, ripetuto</text><text x="48" y="40" class="mono" font-size="13" fill="#5A5E66">modulo corto: meno campi, più invii</text></g>
+  </g>
+</svg>

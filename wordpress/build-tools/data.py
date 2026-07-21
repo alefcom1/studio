@@ -1990,8 +1990,285 @@ _S_PATCHSTACK_24  = 'https://patchstack.com/whitepaper/state-of-wordpress-securi
 _S_NIST_80063B    = 'https://pages.nist.gov/800-63-3/sp800-63b.html'
 _S_SRE_MONITORING = 'https://sre.google/sre-book/monitoring-distributed-systems/'
 _S_PMI_PULSE      = 'https://www.pmi.org/learning/thought-leadership/pulse'
+# --- Batch 7 (conversione e fiducia): Baymard (abbandono carrello/checkout
+#     usability), Nielsen Norman Group (come si legge sul web, F-pattern),
+#     WhatsApp/Meta Business, direttiva UE Omnibus 2019/2161 (recensioni
+#     false), Google review snippet, GOV.UK content design. ---
+_S_BAYMARD_ABANDON     = 'https://baymard.com/lists/cart-abandonment-rate'
+_S_BAYMARD_CHECKOUT    = 'https://baymard.com/checkout-usability'
+_S_NNG_HOWREAD         = 'https://www.nngroup.com/articles/how-users-read-on-the-web/'
+_S_NNG_FPATTERN        = 'https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/'
+_S_WA_BUSINESS         = 'https://business.whatsapp.com/'
+_S_WA_2B               = 'https://blog.whatsapp.com/two-billion-users-connecting-the-world-privately'
+_S_META_WA_PLATFORM    = 'https://developers.facebook.com/docs/whatsapp'
+_S_EU_OMNIBUS          = 'https://eur-lex.europa.eu/eli/dir/2019/2161/oj'
+_S_GOOGLE_REVIEW_SNIP  = 'https://developers.google.com/search/docs/appearance/structured-data/review-snippet'
+_S_GOVUK_WRITING       = 'https://www.gov.uk/guidance/content-design/writing-for-gov-uk'
 
 BLOG_POSTS = [
+    # ---- Blog · Batch 7 (seconda ondata) — Conversione e fiducia — IT + EN ----
+    # 5 articoli (31–35): perché il sito non converte, landing page, recensioni
+    # oneste, WhatsApp Business, il testo prima del design. Fonti reali (Baymard,
+    # Nielsen Norman Group, WhatsApp/Meta, direttiva UE 2019/2161, GOV.UK,
+    # Google/W3C). SVG di marca in assets/img/blog/. IT+EN via conveyor
+    # (CHROME_BLOG_BATCH7); RU è un batch a sé (BLOG_IT_EN_ONLY).
+    dict(slug='perche-il-sito-non-converte', data='21 LUG 2026', tema='decisioni',
+         titolo='Perché il vostro sito non converte: 7 fughe silenziose',
+         estratto='Ricevete visite ma non richieste? Il problema raramente è il traffico. Le 7 fughe che svuotano un sito in silenzio — e come tapparle una a una.',
+         corpo="Le campagne girano, le visite ci sono, ma il telefono non squilla e la casella dei contatti resta vuota. È la frustrazione più comune che ci raccontano al primo incontro, e quasi sempre la diagnosi frettolosa è sbagliata: «serve più traffico». Nella maggior parte dei casi il traffico c’è già — se ne va da un secchio bucato. Ecco perché il vostro sito non converte: sette fughe silenziose che svuotano le visite prima che diventino richieste, in ordine di quanto le vediamo negli audit, e come si tappano una a una.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/nonconverte-cover.svg',
+                    alt='Perché il sito non converte: sette fughe silenziose tra una visita e una richiesta'),
+         cta=('Misura dove perde il vostro sito — check-up gratuito', '/strumenti/check-up-completo/'),
+         sezioni=[
+             dict(titolo='La conversione non è il traffico: è quello che succede dopo',
+                  paragrafi=[
+                      "Convertire, per un sito di servizi o un negozio, vuol dire una cosa concreta: una visita che diventa un contatto, una chiamata, un ordine. Il tasso di conversione è la percentuale di visitatori che compie quel gesto. E qui sta il primo malinteso da smontare: raddoppiare le visite con un sito che ne trasforma l’1% costa molto più che portare quello stesso 1% al 2% lavorando sul sito. Il traffico si compra; la conversione si costruisce.",
+                      "Il dato che dovrebbe far riflettere arriva dall’e-commerce, dove tutto è misurabile: secondo le sintesi di Baymard Institute su decine di studi, in media quasi sette carrelli su dieci vengono abbandonati prima del pagamento. Sette persone su dieci che avevano già scelto il prodotto se ne vanno all’ultimo metro. Non è un problema di traffico: è una fuga. E le stesse fughe, meno visibili, agiscono su ogni sito di servizi.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/nonconverte-7fughe.svg',
+                              alt='Le sette fughe silenziose che impediscono a un sito di convertire, dalla più frequente',
+                              caption='Le sette fughe più frequenti tra una visita e una richiesta, in ordine di quanto le troviamo negli audit: lentezza, mobile trascurato, invito all’azione debole, modulo troppo lungo, mancanza di fiducia, testo che non parla al cliente, barriere di accessibilità. Fonte: audit su siti di PMI italiane (Studio Remarka).')),
+             dict(titolo='Fuga 1 e 2: la lentezza e il mobile trascurato',
+                  paragrafi=[
+                      "La prima fuga è la più banale e la più costosa: il sito è lento. Ogni secondo di attesa in più sul caricamento fa scendere le conversioni, perché chi cerca da telefono non aspetta — torna indietro e apre il concorrente. Google lo misura con i Core Web Vitals proprio perché la velocità percepita è ormai parte dell’esperienza, non un dettaglio tecnico. Se la pagina compare dopo quattro secondi, metà del lavoro di marketing è già perso.",
+                      "La seconda fuga le sta accanto: un sito pensato per il desktop e solo «adattato» al telefono. Oggi la maggior parte delle visite arriva da mobile, e un pulsante troppo piccolo, un numero di telefono che non si tocca per chiamare, un modulo che esce dallo schermo bastano a far scappare la persona. Non è mobile-first: è mobile-only nella testa di chi vi cerca.",
+                  ]),
+             dict(titolo='Fuga 3 e 4: l’invito all’azione debole e il modulo infinito',
+                  paragrafi=[
+                      "La terza fuga è il silenzio: la pagina non dice cosa fare. Nessun invito chiaro, nessun pulsante che spicca, il numero di telefono nascosto nel piè di pagina. Il visitatore convinto non trova la porta e se ne va. Un buon invito all’azione è visibile, uno solo per schermata, e dice un’azione precisa — «Richiedi un preventivo in 24 ore», non «Scopri di più».",
+                      "La quarta fuga è il modulo di contatto troppo lungo. Ogni campo in più è un motivo in più per rinunciare: gli studi di usabilità sui moduli sono concordi, si chiede solo ciò che serve davvero per rispondere. Nome, contatto, due righe di messaggio. La partita IVA, l’indirizzo completo e «come ci hai conosciuto» si chiedono dopo, quando la persona è già cliente, non sulla soglia.",
+                  ],
+                  links=[('Misura la salute del vostro sito: il check-up completo, gratuito', '/strumenti/check-up-completo/')]),
+             dict(titolo='Fuga 5 e 6: manca la fiducia, e il testo non parla al cliente',
+                  paragrafi=[
+                      "La quinta fuga è invisibile e decisiva: manca la fiducia. Un sito senza volti, senza indirizzo, senza casi reali né un segnale che dietro ci sono persone vere chiede al visitatore di fidarsi al buio. E nessuno lascia il proprio numero a uno sconosciuto. Chi siamo, dove siamo, cosa abbiamo fatto: sono le domande a cui la pagina deve rispondere prima che vengano poste.",
+                      "La sesta fuga è il testo che parla di voi invece che al cliente. «Soluzioni innovative e su misura per il vostro business» non significa niente per chi cerca un idraulico o un commercialista. Il visitatore vuole sapere se risolvete il suo problema, in quanto tempo, a che condizioni. Il testo che converte è concreto, dice numeri e scadenze, e usa le parole del cliente — non quelle della brochure. Al peso del testo abbiamo dedicato un articolo a parte, perché è la leva più sottovalutata di tutte.",
+                  ],
+                  links=[('Cosa include un sito aziendale che converte, a prezzo chiuso', '/servizi/siti-aziendali/'),
+                         ('Leggi anche: il testo prima del design, perché il copy decide la conversione', '/blog/copywriting-sito-web-prima-del-design/')]),
+             dict(titolo='Fuga 7: le barriere di accessibilità (che nei report non vedete)',
+                  paragrafi=[
+                      "La settima fuga è quella che nei vostri report non comparirà mai col suo nome. Contrasti troppo tenui, testo minuscolo, moduli che non si compilano da tastiera, immagini senza descrizione: ogni barriera di accessibilità è una persona che non riesce a completare l’ordine e se ne va. Le linee guida WCAG del W3C esistono proprio per questo, e dal 2025 in Europa l’accessibilità è anche un obbligo di legge. Ma prima ancora dell’obbligo, è conversione persa: un sito usabile da tutti vende a tutti.",
+                      "Il filo che tiene insieme le sette fughe è uno solo: si tappano misurando, non a sensazione. Il primo passo concreto è una diagnosi onesta — quali di queste sette perdite avete davvero, e quali no. Da lì si lavora in ordine di ritorno: prima le fughe che costano poco da chiudere e rendono molto, come velocità e inviti all’azione, poi il resto. Non serve rifare tutto: serve smettere di versare acqua in un secchio bucato.",
+                  ],
+                  links=[('Prima di rifare, scoprite dove perdete: analisi gratuita del sito', '/strumenti/check-up-completo/')]),
+         ],
+         fonti=[
+             ('Baymard Institute — tasso di abbandono del carrello', _S_BAYMARD_ABANDON,
+              'La media di quasi 7 carrelli su 10 abbandonati: la prova che la conversione si perde nel sito, non nel traffico.'),
+             ('web.dev — Web Vitals', _S_WEBDEV_VITALS,
+              'Perché la velocità è parte dell’esperienza: ogni secondo di attesa in più è conversione che se ne va.'),
+             ('Nielsen Norman Group — lo schema di lettura a F', _S_NNG_FPATTERN,
+              'Come le persone leggono davvero una pagina: guardano poco e in fretta, il testo va costruito per quello sguardo.'),
+             ('W3C — Web Content Accessibility Guidelines (WCAG)', _S_WAI_WCAG,
+              'Le barriere di accessibilità sono conversione persa prima che obbligo di legge: un sito usabile da tutti vende a tutti.'),
+         ]),
+
+    dict(slug='landing-page-che-converte', data='21 LUG 2026', tema='decisioni',
+         titolo='Landing page che converte: anatomia di una pagina che porta contatti',
+         estratto='Una landing page non è una home più corta: è una pagina con un solo scopo. Anatomia, sezione per sezione, di una pagina che trasforma le visite in richieste.',
+         corpo="Lanciate una campagna, mandate le persone sulla home del sito e i contatti non arrivano. Non è colpa della campagna: è che la home ha dieci scopi e quindi non ne ha nessuno. Una landing page che converte fa l’opposto — ha un obiettivo solo, e tutto, dalla prima riga al pulsante, serve quell’obiettivo. In questo articolo la smontiamo pezzo per pezzo: com’è fatta una pagina che trasforma una visita in una richiesta, sezione per sezione, con i motivi dietro ogni scelta.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/landing-cover.svg',
+                    alt='Landing page che converte: una pagina con un solo scopo che trasforma le visite in richieste'),
+         cta=('Un sito e una landing che portano contatti, a prezzo chiuso', '/servizi/siti-aziendali/'),
+         sezioni=[
+             dict(titolo='Cos’è una landing page (e perché non è la home)',
+                  paragrafi=[
+                      "Una landing page è la pagina su cui «atterra» chi arriva da una campagna, da un annuncio o da un link mirato. La differenza con la home non è la lunghezza: è lo scopo. La home è un centralino — smista verso servizi, chi siamo, blog, contatti. Una landing ha una sola porta d’uscita: l’azione che volete, che sia una richiesta di preventivo, una prenotazione o un download. Tutto ciò che non porta a quella porta è rumore, e va tolto.",
+                      "Da qui una regola che spiazza: su una landing page che converte si tolgono elementi, non se ne aggiungono. Via il menù di navigazione con dieci voci, via i link che portano altrove, via le distrazioni. Ogni scelta in più offerta al visitatore è un’occasione in più per non decidere. La pagina deve rendere l’azione desiderata la cosa più facile e ovvia da fare.",
+                  ]),
+             dict(titolo='L’anatomia, dall’alto in basso',
+                  paragrafi=[
+                      "Una landing efficace segue una struttura collaudata, e ogni blocco ha un compito. In cima, ciò che si vede senza scorrere deve rispondere in tre secondi a «di cosa si tratta e perché mi riguarda»: un titolo che promette un beneficio concreto, una riga di sottotitolo che lo spiega, un primo invito all’azione. Le persone decidono in fretta se restare, e lo fanno da quello che vedono subito.",
+                      "Scendendo, la pagina argomenta: i benefici prima delle caratteristiche («consegna in tre settimane con data in contratto», non «metodologia agile»), le obiezioni affrontate a viso aperto, le prove che dimostrano ciò che promettete. Ogni sezione toglie un dubbio. Alla fine — e ripetuto lungo il percorso — un unico invito all’azione, sempre lo stesso, sempre chiaro.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/landing-anatomia.svg',
+                              alt='Anatomia di una landing page che converte: titolo, benefici, riprova sociale e un solo invito all’azione',
+                              caption='L’anatomia di una landing page che converte, dall’alto in basso: promessa chiara sopra la piega (1), beneficio per il cliente (2), riprova sociale reale (3), un unico invito all’azione ripetuto (4). Nessun menù, nessuna via di fuga. Il visitatore decide in pochi secondi da ciò che vede senza scorrere.')),
+             dict(titolo='La prova conta più delle promesse',
+                  paragrafi=[
+                      "Il centro di gravità di una landing è la riprova sociale: la dimostrazione che altri, prima del visitatore, si sono fidati e hanno fatto bene. Recensioni vere, casi reali con numeri, loghi di clienti, un contatore onesto. Ma vale solo se è autentica: una testimonianza inventata si sente a naso e distrugge in un colpo la fiducia che volevate costruire. Meglio poche prove vere che molte gonfiate — e alla riprova sociale onesta abbiamo dedicato una guida a parte.",
+                      "Accanto alla prova sta il modulo, il punto in cui la promessa diventa contatto. Qui la regola è chiara e confermata da ogni studio di usabilità: meno campi, più invii. Chiedete solo ciò che serve per fare il primo passo. Un modulo con dodici campi comunica «ci vorrà tempo e fatica»; uno con tre comunica «è a un clic».",
+                  ],
+                  links=[('Come raccogliere recensioni senza inventarle', '/blog/recensioni-riprova-sociale-onesta/')]),
+             dict(titolo='Veloce, mobile e leggibile: altrimenti non converte niente',
+                  paragrafi=[
+                      "La landing più persuasiva del mondo non converte se carica in cinque secondi o se da telefono è illeggibile. La velocità è parte del messaggio: una pagina che scatta comunica serietà prima ancora delle parole, e Google la premia con i Core Web Vitals. Su una landing, dove ogni visita è spesso pagata, la lentezza è denaro bruciato due volte — nell’annuncio e nella mancata conversione.",
+                      "Il mobile viene prima, non dopo. La maggior parte del traffico da campagna arriva da telefono, quindi la pagina va progettata da quello schermo: titolo che entra intero, pulsante grande e a portata di pollice, modulo che si compila con una mano. E il testo va scritto per essere scremato — titoli, grassetti, elenchi brevi — perché sul web nessuno legge riga per riga: si scorre. È la base della SEO tecnica e dei contenuti che consegniamo, non un ritocco finale.",
+                  ],
+                  links=[('SEO tecnica e velocità di serie in ogni pagina', '/servizi/seo-tecnica/'),
+                         ('Prima di lanciare: misura velocità e salute della pagina', '/strumenti/check-up-completo/')]),
+             dict(titolo='Una pagina, uno scopo, misurato',
+                  paragrafi=[
+                      "Il segreto di una landing page che converte non è un colore magico del pulsante: è la disciplina di un solo obiettivo, difeso togliendo tutto il resto. Promessa chiara in alto, argomenti che tolgono dubbi, prove vere, un modulo corto, un invito ripetuto, velocità e mobile impeccabili. Nessuno di questi elementi è un trucco: sono il modo in cui si rispetta il tempo e la decisione di chi è arrivato.",
+                      "E come ogni cosa che conta, si misura. Una landing si giudica su un numero — quante visite diventano richieste — e si migliora un’ipotesi alla volta, provando e confrontando. Costruire la pagina è metà del lavoro; l’altra metà è guardare i dati e correggere. È così che una pagina passa dall’1% al 3% senza spendere un euro in più di pubblicità.",
+                  ]),
+         ],
+         fonti=[
+             ('Nielsen Norman Group — come si legge sul web', _S_NNG_HOWREAD,
+              'Le persone scremano, non leggono: la pagina va costruita per uno sguardo veloce, non per una lettura lineare.'),
+             ('Baymard Institute — usabilità del checkout e dei moduli', _S_BAYMARD_CHECKOUT,
+              'Anni di test su moduli e pagamenti: ogni campo in più è una richiesta persa. Meno campi, più invii.'),
+             ('web.dev — Web Vitals', _S_WEBDEV_VITALS,
+              'La velocità è parte della conversione: su una landing a traffico pagato, ogni secondo perso è denaro bruciato due volte.'),
+             ('Google — creare contenuti utili e affidabili', _S_GOOGLE_HELPFUL,
+              'Cosa Google considera qualità: la stessa chiarezza che convince le persone convince anche il motore.'),
+         ]),
+
+    dict(slug='recensioni-riprova-sociale-onesta', data='20 LUG 2026', tema='seo',
+         titolo='Recensioni e riprova sociale: usarle senza inventarle',
+         estratto='Le recensioni vendono, ma solo se sono vere: inventarle è illegale in UE e si sente a naso. Come raccogliere riprova sociale onesta e metterla dove conta.',
+         corpo="Prima di scegliere un idraulico, un albergo o un commercialista, quasi tutti fanno la stessa cosa: leggono cosa dicono gli altri. La riprova sociale — recensioni, testimonianze, casi reali — è tra le leve più potenti su un sito, perché la fiducia degli sconosciuti pesa più di qualsiasi cosa diciate di voi. Proprio per questo è forte la tentazione di gonfiarla, o addirittura di inventarla. È un errore, e non solo morale: dal 2022 in Europa le recensioni false sono vietate per legge, e il pubblico le fiuta meglio di quanto pensiate. Vediamo come usare le recensioni sul sito web in modo onesto — e più efficace del falso.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/recensioni-cover.svg',
+                    alt='Recensioni sito web e riprova sociale: usarle in modo onesto, senza inventarle'),
+         cta=('Costruiamo la fiducia del vostro sito, senza trucchi', '/servizi/siti-aziendali/'),
+         sezioni=[
+             dict(titolo='Perché la riprova sociale funziona',
+                  paragrafi=[
+                      "Funziona per un motivo antico: davanti a una decisione incerta, guardiamo cosa hanno fatto gli altri e ci fidiamo. Su un sito questo si traduce in numeri concreti: secondo l’indagine annuale di BrightLocal, la quasi totalità dei consumatori legge le recensioni prima di scegliere un’attività locale, e molti si fidano di una recensione online quanto del consiglio di un amico. Una scheda con venti recensioni vere e risposte curate convince più di mille parole di autoelogio.",
+                      "La riprova sociale non sono solo le stelline. È tutto ciò che dimostra che qualcuno, prima del visitatore, si è fidato e ha fatto bene: casi reali con numeri, testimonianze con nome e volto, loghi di clienti che potete citare, un contatore onesto. Più è concreta e verificabile, più pesa. Un numero tondo e generico convince meno di un dettaglio specifico e controllabile.",
+                  ]),
+             dict(titolo='Inventarle è illegale (e si vede)',
+                  paragrafi=[
+                      "Qui serve essere netti, perché il confine lo traccia la legge. La direttiva europea 2019/2161, detta «Omnibus», recepita anche in Italia, vieta esplicitamente di pubblicare recensioni false o di dichiarare che provengono da clienti reali quando non è vero. Non è una zona grigia: comprare stelline, farsele scrivere dai dipendenti, spacciare per verificate recensioni che non lo sono espone a sanzioni. L’Autorità garante può intervenire, e lo fa.",
+                      "Ma anche se non ci fosse la legge, resterebbe un problema pratico: le recensioni false si sentono. Tutte a cinque stelle, tutte nella stessa settimana, tutte con lo stesso tono entusiasta e nessun dettaglio concreto. Il lettore esperto — cioè quasi chiunque, ormai — le riconosce, e nel dubbio scarta tutto il resto. Una sola testimonianza inventata avvelena anche quelle vere. Il falso non è solo rischioso: è controproducente.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/recensioni-onesto.svg',
+                              alt='Riprova sociale onesta contro recensioni false: cosa convince e cosa avvelena la fiducia',
+                              caption='A sinistra la riprova sociale che funziona: recensioni vere con dettagli, risposte, nome e data. A destra i segnali del falso: tutte cinque stelle, stessa settimana, nessun dettaglio, tono identico. Le recensioni false sono vietate dalla direttiva UE 2019/2161 — e il pubblico le riconosce comunque.')),
+             dict(titolo='Come raccogliere recensioni vere, con metodo',
+                  paragrafi=[
+                      "La buona notizia è che raccogliere recensioni oneste è più facile di quanto sembri: quasi sempre manca solo il metodo. La regola è chiederle al momento giusto — subito dopo un lavoro andato bene, quando la soddisfazione è fresca — e renderlo semplice: un link diretto alla scheda Google, non «cercateci e lasciate un commento». Chi è stato bene di solito è felice di dirlo, se glielo chiedete senza farlo faticare.",
+                      "Poi si risponde, a tutte, comprese le critiche. Una risposta educata a una recensione negativa convince i futuri clienti più di dieci elogi: dimostra che dietro c’è qualcuno che ascolta. E mai, mai offrire soldi o sconti in cambio di una recensione positiva: oltre a essere vietato, falsa il segnale. Chiedere una recensione è lecito; comprarla no.",
+                  ],
+                  links=[('Misura i vostri segnali di fiducia E-E-A-T, gratis', '/strumenti/segnali-eeat/')]),
+             dict(titolo='Dove metterle, e come farle contare per Google',
+                  paragrafi=[
+                      "Una recensione vera lasciata dov’è nasce e muore. Per farla lavorare va messa dove il visitatore decide: accanto all’invito all’azione, sulla pagina del servizio, vicino al modulo di contatto. La riprova sociale è più efficace nel punto esatto in cui chiede fiducia, non relegata in una pagina «Testimonianze» che nessuno apre. Sono gli stessi segnali di autorevolezza ed esperienza — la E e la T di E-E-A-T — con cui Google valuta la vostra credibilità.",
+                      "C’è anche un aspetto tecnico che pochi curano: i dati strutturati. Marcare le recensioni con lo schema Review di schema.org permette, entro le regole di Google, di mostrare le stelline direttamente nei risultati di ricerca. Attenzione però alle policy: Google vieta di marcare recensioni auto-attribuite o inventate, e le penalizza. Anche qui, la scorciatoia disonesta si ritorce contro. Onestà e tecnica, insieme, sono ciò che consegniamo di serie in ogni sito.",
+                  ],
+                  links=[('Cosa include un sito aziendale che ispira fiducia', '/servizi/siti-aziendali/'),
+                         ('Leggi anche: Google Business Profile, la vetrina che nessuno cura', '/blog/google-business-profile-guida/')]),
+             dict(titolo='La fiducia non si finge, si costruisce',
+                  paragrafi=[
+                      "Il filo di tutto è uno: la fiducia è un capitale che si costruisce lentamente e si brucia in un attimo. Recensioni vere raccolte con metodo, risposte curate, prove verificabili messe dove contano valgono più di qualsiasi numero gonfiato — e non vi espongono a una sanzione né a una brutta figura. È la stessa linea che teniamo su di noi: nei nostri casi mostriamo progetti reali del gruppo, con link ai siti vivi e numeri controllabili, non testimonianze scritte a tavolino.",
+                      "Se dovete scegliere tra apparire perfetti e apparire credibili, scegliete credibili. Un sito con qualche recensione vera, anche non tutte a cinque stelle, converte più di uno tappezzato di lodi che sanno di finto. Il pubblico non cerca la perfezione: cerca qualcuno di cui fidarsi.",
+                  ]),
+         ],
+         fonti=[
+             ('BrightLocal — Local Consumer Review Survey', _S_BRIGHTLOCAL,
+              'L’indagine annuale: quasi tutti leggono le recensioni prima di scegliere, e molti si fidano quanto del consiglio di un amico.'),
+             ('Direttiva UE 2019/2161 (Omnibus) — EUR-Lex', _S_EU_OMNIBUS,
+              'La norma europea che vieta le recensioni false e l’attribuzione ingannevole a clienti reali: non è una zona grigia.'),
+             ('Google — dati strutturati per le recensioni (review snippet)', _S_GOOGLE_REVIEW_SNIP,
+              'Come mostrare le stelline nei risultati — e le regole da rispettare: niente recensioni auto-attribuite o inventate.'),
+             ('schema.org — il tipo Review', _S_SCHEMAORG,
+              'Il vocabolario dei dati strutturati con cui si marca una recensione perché i motori la capiscano.'),
+         ]),
+
+    dict(slug='whatsapp-business-pmi', data='20 LUG 2026', tema='prodotti',
+         titolo='WhatsApp Business per le PMI: quando il contatto batte il modulo',
+         estratto='A volte la persona non vuole compilare un modulo: vuole scrivere. WhatsApp Business per le PMI, cosa fa davvero, quando conviene e come restare a norma GDPR.',
+         corpo="C’è un momento, sul vostro sito, in cui la persona è pronta a farsi viva ma il modulo di contatto la ferma: troppi campi, troppa attesa per una risposta, troppo formale per una domanda veloce. Quella stessa persona, però, scrive su WhatsApp dieci volte al giorno senza pensarci. Per molte PMI italiane un contatto via chat converte dove un modulo perde — perché incontra il cliente dove è già a suo agio. Vediamo cos’è WhatsApp Business, quando conviene davvero rispetto al modulo, e come usarlo senza problemi di privacy.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/whatsapp-cover.svg',
+                    alt='WhatsApp Business per le PMI: quando un contatto via chat batte il modulo'),
+         cta=('Integriamo WhatsApp nel vostro sito e nei vostri sistemi', '/servizi/web-app/'),
+         sezioni=[
+             dict(titolo='Perché la chat batte il modulo (a volte)',
+                  paragrafi=[
+                      "Il modulo di contatto ha un difetto strutturale: chiede fiducia e pazienza in anticipo. Compili, invii, e aspetti — un’ora, un giorno — senza sapere se qualcuno leggerà. La chat ribalta tutto: è immediata, informale, e soprattutto è il canale che le persone già usano ogni giorno. WhatsApp conta oltre due miliardi di utenti nel mondo, ed è di fatto l’app di messaggistica standard in Italia. Chiedere a un cliente di scrivere su WhatsApp è chiedergli di fare qualcosa che sa già fare a occhi chiusi.",
+                      "Non significa che il modulo vada buttato: significa affiancargli un canale per chi preferisce parlare. Una domanda veloce prima di prenotare, un dubbio su un prodotto, la richiesta di un preventivo al volo: sono conversazioni che nascono meglio in chat che in un form. E una conversazione avviata è già mezzo contatto acquisito, perché apre un dialogo invece di spedire un messaggio nel vuoto.",
+                  ]),
+             dict(titolo='Cos’è WhatsApp Business (e cosa non è)',
+                  paragrafi=[
+                      "WhatsApp Business è la versione gratuita pensata per le attività, distinta da WhatsApp normale. Aggiunge strumenti utili a un’azienda: un profilo con indirizzo, orari, sito e catalogo; messaggi di benvenuto e di assenza automatici; risposte rapide preimpostate; etichette per organizzare le conversazioni. Per un artigiano, un negozio o uno studio è spesso tutto ciò che serve, e si installa in dieci minuti.",
+                      "Diverso è WhatsApp Business Platform (le cosiddette API): la versione per volumi alti, con automazioni, integrazioni nel gestionale e più operatori sulla stessa utenza. Serve a chi gestisce centinaia di conversazioni al giorno e vuole collegarle ai propri sistemi. È qui che entra il lavoro su misura: integrare la chat nel flusso dell’azienda, non lasciarla un’isola. La stessa logica delle web app che costruiamo — mettere lo strumento dove il lavoro già scorre.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/whatsapp-flusso.svg',
+                              alt='Modulo di contatto contro WhatsApp: due percorsi dalla visita alla richiesta, a confronto',
+                              caption='Due percorsi a confronto: il modulo (compila, invia, aspetti, forse ricevi risposta) e la chat (scrivi, dialoghi, ricevi subito). Non è l’uno contro l’altro: affiancare un contatto WhatsApp al modulo intercetta chi preferisce scrivere. WhatsApp supera i 2 miliardi di utenti nel mondo.')),
+             dict(titolo='Quando conviene davvero (e quando no)',
+                  paragrafi=[
+                      "WhatsApp non è la risposta a tutto, ed è onesto dirlo. Conviene quando il vostro business vive di contatto diretto e domande veloci: ristorazione, servizi alla persona, artigiani, negozi, prenotazioni. In questi casi la chat abbatte l’attrito e accorcia la distanza tra curiosità e cliente. Conviene meno dove serve una traccia formale e strutturata — pratiche complesse, preventivi articolati che richiedono documenti — dove un modulo o una email restano più ordinati.",
+                      "La regola pratica è semplice: aggiungete WhatsApp se avete qualcuno che risponde davvero, e in fretta. Un pulsante di chat che resta muto per due giorni è peggio di nessun pulsante: promette immediatezza e tradisce l’aspettativa. La chat è una promessa di presenza; mantenetela solo se potete.",
+                  ]),
+             dict(titolo='GDPR: la chat non è terra di nessuno',
+                  paragrafi=[
+                      "Un canale comodo resta un canale che tratta dati personali, e qui in Europa non si scherza. Quando un cliente vi scrive su WhatsApp, il numero e il contenuto della conversazione sono dati che state trattando: valgono le regole del GDPR. In pratica significa citare WhatsApp nella vostra informativa privacy, non usare i numeri raccolti in chat per mandare promozioni non richieste, e sapere che i dati passano da un fornitore extra-UE (Meta) — un punto da gestire, non da ignorare.",
+                      "Nulla di proibitivo, ma nulla da improvvisare: la chat va inserita nel sito con le stesse cautele di un modulo, informativa compresa. Se avete dubbi sul vostro sito attuale, conviene misurarli prima che lo faccia un controllo. È lo stesso approccio che teniamo su ogni progetto: la comodità per il cliente non deve mai diventare un rischio per voi.",
+                  ],
+                  links=[('Verifica gratis la conformità GDPR e cookie del vostro sito', '/strumenti/check-gdpr/'),
+                         ('Cosa include un sito aziendale, contatti a norma compresi', '/servizi/siti-aziendali/')]),
+             dict(titolo='Mettere il contatto dove il cliente è già',
+                  paragrafi=[
+                      "Il senso di tutto è uno: incontrare il cliente dove è già a suo agio, invece di costringerlo dove è comodo a voi. Per molte PMI questo vuol dire affiancare al modulo un contatto WhatsApp curato — profilo completo, risposte rapide, qualcuno che risponde sul serio — e, quando i volumi crescono, integrarlo nei propri sistemi con una web app su misura. Non è inseguire una moda: è togliere attrito nel punto esatto in cui una visita decide se diventare cliente.",
+                      "Il modulo e la chat non sono rivali: sono due porte per due tipi di persone. Chi ama la traccia scritta compila; chi vuole parlare scrive. Aprire entrambe, e presidiarle davvero, è il modo più semplice per non perdere nessuno dei due sulla soglia.",
+                  ],
+                  links=[('Leggi anche: perché il sito non converte, le 7 fughe silenziose', '/blog/perche-il-sito-non-converte/')]),
+         ],
+         fonti=[
+             ('WhatsApp Business — sito ufficiale', _S_WA_BUSINESS,
+              'Cosa offre la versione per le attività: profilo, cataloghi, messaggi automatici e risposte rapide.'),
+             ('WhatsApp — due miliardi di utenti (blog ufficiale)', _S_WA_2B,
+              'Il dato sulla diffusione: WhatsApp è l’app di messaggistica che i clienti già usano ogni giorno.'),
+             ('Meta — WhatsApp Business Platform (documentazione)', _S_META_WA_PLATFORM,
+              'La versione API per volumi alti e integrazioni: quando la chat va collegata ai vostri sistemi.'),
+             ('Regolamento GDPR 2016/679 — EUR-Lex', _S_GDPR,
+              'Anche una conversazione in chat tratta dati personali: informativa e basi giuridiche valgono come per un modulo.'),
+         ]),
+
+    dict(slug='copywriting-sito-web-prima-del-design', data='20 LUG 2026', tema='seo',
+         titolo='Il testo prima del design: perché il copy decide la conversione',
+         estratto='Si parte quasi sempre dalla grafica e i testi si «mettono dopo». È l’errore che affossa la conversione: sul web il copy viene prima del design, ecco perché.',
+         corpo="Il copione è sempre lo stesso: si sceglie il template, si decidono i colori, si sistema la grafica, e poi «ci mettiamo i testi». Quei testi arrivano di corsa, scritti per riempire spazi già decisi, e il risultato è un sito bellissimo che non dice niente e non converte. È un errore di ordine, prima che di scrittura: sul web il copy — il testo — non è un riempitivo, è l’ossatura. Design e testo vanno pensati insieme, ma se proprio uno dei due deve venire prima, è il testo. Vediamo perché il copywriting di un sito web decide la conversione più della grafica.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/copy-cover.svg',
+                    alt='Copywriting sito web: perché il testo viene prima del design e decide la conversione'),
+         cta=('Un sito che dice la cosa giusta, prima ancora che bella', '/servizi/siti-aziendali/'),
+         sezioni=[
+             dict(titolo='Nessuno legge, tutti scremano',
+                  paragrafi=[
+                      "Partiamo da come le persone usano davvero una pagina, perché lì crolla il primo mito. Sul web nessuno legge riga per riga: si screma. Gli studi storici di Nielsen Norman Group lo documentano da vent’anni — l’occhio salta, cerca appigli, si ferma su titoli e grassetti, e nel dubbio se ne va. Lo sguardo segue spesso uno schema a «F»: molta attenzione alle prime righe e alla colonna sinistra, sempre meno via via che si scende.",
+                      "Questo cambia tutto per chi scrive. Un muro di testo elegante, giustificato, senza appigli, per un lettore che screma è invisibile. Il testo che funziona è fatto per essere saltato e capito lo stesso: titoli che dicono il senso da soli, primo paragrafo che risponde subito, grassetti sulle parole che contano, elenchi al posto dei periodi lunghi. Non è scrivere «meno»: è scrivere per come si legge sullo schermo.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/copy-ordine.svg',
+                              alt='Il testo prima del design: dal messaggio alla pagina, l’ordine giusto di un progetto web',
+                              caption='L’ordine che converte: prima si decide cosa dire e a chi (messaggio, benefici, invito all’azione), poi il design dà forma a quel messaggio. Invertire l’ordine — grafica prima, testi «dopo» — produce siti belli che non dicono niente. Fonte: Nielsen Norman Group, come si legge sul web.')),
+             dict(titolo='Il design serve il messaggio, non il contrario',
+                  paragrafi=[
+                      "Quando il testo viene prima, il design ha un lavoro chiaro: mettere in risalto le parole giuste. Sa cosa deve gridare e cosa può sussurrare, dove serve un titolo grande e dove un elenco, quanto spazio dare all’invito all’azione. Il layout diventa uno strumento al servizio di un messaggio deciso. Quando invece il testo arriva dopo, succede il contrario: le parole vengono compresse o allungate per stare in caselle già disegnate, e il messaggio si piega alla grafica. Il risultato si vede — pagine che sembrano dire qualcosa senza dirlo.",
+                      "Non è una questione di gusto, è di funzione. Un bottone su cui c’è scritto «Invia» converte meno di uno che dice «Richiedi il preventivo gratuito»: stessa grafica, testo diverso, risultato diverso. Le microcopie — le due parole su un pulsante, la riga sotto un modulo, il messaggio d’errore — spostano conversioni quanto e più di un restyling grafico. E sono testo, non design.",
+                  ]),
+             dict(titolo='Scrivere per il cliente, non per sé',
+                  paragrafi=[
+                      "Il secondo errore, dopo l’ordine, è il punto di vista. La maggior parte dei siti parla di sé: «siamo leader», «offriamo soluzioni innovative», «la nostra mission». Al visitatore non interessa: vuole sapere se risolvete il suo problema, come, in quanto tempo, a quali condizioni. Il testo che converte gira la telecamera — dal «noi siamo» al «voi ottenete» — e usa le parole del cliente, non il gergo del settore. Le guide di scrittura per il web più serie, come quella del governo britannico per i suoi servizi digitali, ripetono la stessa cosa: linguaggio semplice, concreto, orientato a chi legge.",
+                      "Concretezza vuol dire numeri e scadenze al posto degli aggettivi. «Consegniamo in tre settimane, con la data in contratto» dice più di «tempi rapidi». «Prezzo chiuso, nessuna sorpresa in fattura» dice più di «soluzioni su misura». Un testo pieno di superlativi non dà informazioni: chiede fiducia senza offrire prove. Un testo pieno di fatti fa il lavoro opposto — e Google, non a caso, premia esattamente questa qualità nei suoi criteri sui contenuti utili.",
+                  ],
+                  links=[('Misura i segnali che il vostro sito già manda a Google', '/strumenti/analisi-seo/'),
+                         ('Cosa include un sito aziendale, testi che convertono compresi', '/servizi/siti-aziendali/')]),
+             dict(titolo='Il testo prima anche in un restyling',
+                  paragrafi=[
+                      "Vale per un sito nuovo, ma anche — forse soprattutto — per un restyling. La tentazione, quando si rifà un sito, è concentrarsi sull’aspetto: nuovo look, stessi testi vecchi. È un’occasione sprecata. Un restyling è il momento migliore per rimettere in ordine il messaggio prima della grafica: cosa volete che il visitatore capisca in tre secondi, quale azione deve compiere, quali dubbi vanno tolti. Il nuovo design, poi, darà forma a quel messaggio ripulito, invece di rivestire di nuovo quello vecchio.",
+                      "È l’approccio che teniamo quando rifacciamo o miglioriamo un sito: prima si decide cosa dire e a chi, poi come mostrarlo. Un sito che carica veloce e si vede bene da telefono ma non dice niente resta un sito che non converte. La grafica trattiene lo sguardo; il testo trasforma lo sguardo in una decisione.",
+                  ],
+                  links=[('Restyling e migrazione: nuovo look, messaggio rimesso a fuoco', '/servizi/restyling-migrazione/'),
+                         ('Leggi anche: anatomia di una landing page che converte', '/blog/landing-page-che-converte/')]),
+             dict(titolo='L’ordine giusto: messaggio, poi forma',
+                  paragrafi=[
+                      "Riassumiamo, perché è semplice e quasi nessuno lo fa: prima si decide il messaggio — cosa dire, a chi, con quale invito all’azione — poi il design gli dà forma. Il testo si scrive per chi screma, dal punto di vista del cliente, con fatti al posto degli aggettivi. La grafica, a quel punto, ha una guida e non deve indovinare. È l’ordine che trasforma un sito «bello» in un sito che porta contatti.",
+                      "Non serve essere scrittori. Serve rispettare l’ordine e la persona che leggerà: dire una cosa vera, dirla chiara, dirla per prima. Il design bellissimo su un messaggio confuso è un vestito elegante su chi non ha niente da dire. Il messaggio giusto, anche in una veste sobria, vende. Se dovete scegliere da dove partire, partite dalle parole.",
+                  ]),
+         ],
+         fonti=[
+             ('Nielsen Norman Group — come si legge sul web', _S_NNG_HOWREAD,
+              'Vent’anni di ricerca: sul web si screma, non si legge. Il testo va scritto per uno sguardo che salta.'),
+             ('Nielsen Norman Group — lo schema di lettura a F', _S_NNG_FPATTERN,
+              'L’occhio segue una «F»: prime righe e colonna sinistra. Titoli e primo paragrafo portano quasi tutto il peso.'),
+             ('GOV.UK — scrivere per il web (content design)', _S_GOVUK_WRITING,
+              'La guida del governo britannico ai suoi servizi digitali: linguaggio semplice, concreto, dalla parte di chi legge.'),
+             ('Google — creare contenuti utili e affidabili', _S_GOOGLE_HELPFUL,
+              'I criteri di qualità di Google premiano la stessa concretezza che convince le persone: fatti, non aggettivi.'),
+         ]),
+
     dict(slug='sito-quattro-lingue-costi-tempi', data='05 MAG 2026', tema='decisioni',
          titolo='Un sito in quattro lingue: costi, tempi e gli errori da evitare',
          estratto='Quando la traduzione automatica basta e quando vi costa clienti. Con i prezzi reali per lingua e un caso reale del gruppo Remarka.',

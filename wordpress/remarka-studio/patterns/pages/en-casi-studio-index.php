@@ -128,7 +128,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">In production for 2 years: the system handles 180 orders a month, over 2,000 a year. Inside it work 2 administrators, 8 project managers and 4 partner agencies with their own client base — and orders no longer get lost in email.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/en/services/custom-web-apps/">A custom web app for your company →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/tms-perevod4/">Leggi il caso completo: architettura, funzioni e fasi →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/en/services/custom-web-apps/">A custom web app for your company →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
