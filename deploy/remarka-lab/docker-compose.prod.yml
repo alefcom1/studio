@@ -115,6 +115,13 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: production
+      # CRITICAL: il compose BASE hardcoda qui un DATABASE_URL con la password
+      # di default (sitelens_secret) e `environment:` VINCE su `env_file: .env`
+      # — quindi senza questo override il web parla al DB con credenziali
+      # sbagliate e OGNI pagina protetta (validateCabSessionToken via Prisma)
+      # crasha con "Application error" per gli utenti loggati (bug live
+      # 20.07.2026, digest 1014786255). Stesso pattern di api/cabinet.
+      DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL in .env}
       # Overrides the base file's leftover runtime `http://localhost:3001`. Note:
       # for NEXT_PUBLIC_* this runtime value is a no-op (the real value is baked
       # in at build via build.args above) — set here only to avoid a misleading
