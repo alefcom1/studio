@@ -64,7 +64,11 @@ services:
       # TTL sessione: l'API rinnova cab_session con questa durata (parità col
       # cabinet, che usa la stessa var). Default 7 giorni.
       SESSION_TTL_DAYS: ${SESSION_TTL_DAYS:-7}
+      # Market: каталог загруженных файлов (общий с worker через named volume).
+      MARKET_FILES_DIR: /data/market-files
     env_file: .env
+    volumes:
+      - market-files:/data/market-files
     # Remove the base file's `ports: ['3001:3001']` publication entirely.
     # Compose CONCATENATES `ports` on merge, so a normal override would leave the
     # public 0.0.0.0:3001 in place (and Docker's own iptables rules bypass ufw,
@@ -85,7 +89,10 @@ services:
       DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL in .env}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
       NODE_ENV: production
+      MARKET_FILES_DIR: /data/market-files
     env_file: .env
+    volumes:
+      - market-files:/data/market-files
     deploy:
       resources:
         limits:
@@ -350,3 +357,6 @@ volumes:
   # pgdata / redisdata are declared in the base compose; re-declaring caddy vols:
   caddy_data:
   caddy_config:
+  # Market: приватные загрузки пользователей (PDF/DOCX/TXT для оценки перевода).
+  # Named volume, вне WP и вне public; retention-джоб чистит по mkt_file.
+  market-files:
