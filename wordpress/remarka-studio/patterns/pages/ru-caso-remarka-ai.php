@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Pagina — Caso: пере.рф — платформа AI-перевода на домене из двух букв
- * Slug: remarka-studio/ru-caso-pere-rf
+ * Title: Pagina — Caso: Remarka AI — платформа AI-перевода документов
+ * Slug: remarka-studio/ru-caso-remarka-ai
  * Categories: remarka-pagine
- * Description: Кейс пере.рф — платформа AI-перевода документов, разработанная группой Remarka: конвейер, функции, стек и этапы, на двухбуквенном кириллическом домене.
+ * Description: Кейс Remarka AI — платформа AI-перевода документов, разработанная группой Remarka: конвейер, функции, стек и этапы, проекта.
  * Viewport Width: 1400
  */
 ?>
@@ -14,13 +14,13 @@
 <p class="sr-eyebrow"><a href="/ru/kejsy/" style="color:inherit;text-decoration:none">Кейсы</a> / Веб-приложение · AI-платформа</p>
 <!-- /wp:html -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(34px, 4.2vw, 58px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(34px, 4.2vw, 58px)">Платформа AI-перевода на домене из двух букв<span class="sr-accent-dot">.</span></h1>
+<h1 class="wp-block-heading" style="font-size:clamp(34px, 4.2vw, 58px)">Платформа AI-перевода целых документов<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">пере.рф — платформа, которая переводит целые документы: DOCX, XLSX, PDF, в том числе сканы, сохраняя таблицы, стили и терминологию. Мы спроектировали и разработали её своей командой: движок перевода на базе AI-моделей внутри серьёзной инженерии, на одном из самых коротких доменов, что бывают.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">Remarka AI — платформа, которая переводит целые документы: DOCX, XLSX, PDF, в том числе сканы, сохраняя таблицы, стили и терминологию. Мы спроектировали и разработали её своей командой: движок перевода на базе AI-моделей внутри серьёзной инженерии, с OCR, автоглоссарием и контролем качества.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-mono" style="font-size:12.5px;color:var(--sr-grigio);margin-top:18px"><a href="https://пере.рф" target="_blank" rel="noopener noreferrer" style="color:inherit">пере.рф ↗</a></p>
+<p class="sr-mono" style="font-size:12.5px;color:var(--sr-grigio);margin-top:18px"><a href="https://ai.perevod4.ru" target="_blank" rel="noopener noreferrer" style="color:inherit">ai.perevod4.ru ↗</a></p>
 <!-- /wp:html -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"32px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:32px"><!-- wp:button -->
@@ -34,10 +34,10 @@
 <!-- wp:column {"width":"45%","verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">пере.рф</span></div>
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">ai.perevod4.ru</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="pererf-home-1440.webp" alt="Главная страница платформы AI-перевода пере.рф: загрузка документа и выбор языков" caption="пере.рф — главная страница, загрузка документа" mobile="0"]
+[sr_shot file="ai-home-it-1440.webp" alt="Главная страница платформы AI-перевода Remarka AI: загрузка документа и выбор языков" caption="Remarka AI — главная страница, загрузка документа" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -69,7 +69,7 @@
 <h2 class="wp-block-heading">Платформа, которая переводит документ, а не только текст<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:16px;font-size:16px">Мы спроектировали и разработали пере.рф: загружаешь DOCX, XLSX или PDF — получаешь тот же документ в переводе, с таблицами, стилями и заголовками на своих местах. Движок перевода работает на AI-моделях; вокруг — архитектура из очередей и воркеров, которая держит большие файлы и долгие задачи. Это та же инженерия, которую мы вкладываем в веб-приложения на заказ для наших клиентов.</p>
+<p class="has-base-font-size" style="margin-top:16px;font-size:16px">Мы спроектировали и разработали Remarka AI: загружаешь DOCX, XLSX или PDF — получаешь тот же документ в переводе, с таблицами, стилями и заголовками на своих местах. Движок перевода работает на AI-моделях; вокруг — архитектура из очередей и воркеров, которая держит большие файлы и долгие задачи. Это та же инженерия, которую мы вкладываем в веб-приложения на заказ для наших клиентов.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div class="sr-checklist" style="margin-top:20px"><div><span class="sr-mono">✓</span><span>Мультиформат — DOCX, XLSX, PDF (в том числе сканы), TXT, HTML, до 100 МБ</span></div><div><span class="sr-mono">✓</span><span>OCR для сканированных PDF, структура документа восстанавливается на выходе</span></div><div><span class="sr-mono">✓</span><span>Автоглоссарий и память переводов для единства терминов</span></div><div><span class="sr-mono">✓</span><span>Автоматический контроль качества и прогресс в реальном времени на экране</span></div></div>
@@ -168,10 +168,10 @@
 <p class="sr-eyebrow">Результат</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Полноценная платформа — на домене из двух букв<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Полноценная платформа — в продакшене<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px;font-size:16px;max-width:760px">От загрузки файла до выдачи переведённого документа всё проходит через одну платформу: AI-движок, глоссарий, память, контроль качества и экспорт в одном потоке. И работает это на пере.рф — адресе, который диктуется по телефону за секунду.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px;font-size:16px;max-width:760px">От загрузки файла до выдачи переведённого документа всё проходит через одну платформу: AI-движок, глоссарий, память, контроль качества и экспорт в одном потоке. Работает в продакшене на ai.perevod4.ru, на реальных документах.</p>
 <!-- /wp:paragraph -->
 <!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"},"margin":{"top":"28px"}}}} -->
 <div class="wp-block-columns" style="margin-top:28px"><!-- wp:column -->
@@ -191,7 +191,7 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"11px","letterSpacing":"0.06em"}},"className":"sr-mono"} -->
-<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;margin-top:8px">ПРОЕКТ ГРУППЫ REMARKA — РАБОТАЕТ НА пере.рф</p>
+<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;margin-top:8px">ПРОЕКТ ГРУППЫ REMARKA — РАБОТАЕТ НА ai.perevod4.ru</p>
 <!-- /wp:paragraph --></section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->

@@ -218,7 +218,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Over 60 working languages and more than 10,000 requests processed a month: an AI project that gets found — and used — across markets.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/en/services/technical-seo/">Technical SEO and multilingual sites →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/remarka-ai/">Read the full case study →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/en/services/technical-seo/">Technical SEO and multilingual sites →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -344,7 +347,7 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Position no. 1 on Yandex — Russia's leading search engine — for the industry queries "notarised translation" and "manual translation", 9,000–10,000 visitors a month, at the top for over 1,000 days. Top positions won with technique, not with the name.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/pere-rf/">Read the full case study →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/pere-rf/">Read the full case study →</a></p>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:8px"><a href="/en/services/technical-seo/">Technical SEO that delivers →</a></p>

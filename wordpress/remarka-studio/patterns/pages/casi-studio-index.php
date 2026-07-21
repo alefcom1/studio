@@ -218,7 +218,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Oltre 60 lingue di lavoro e più di 10.000 richieste elaborate al mese: un progetto AI che si fa trovare — e si usa — in più mercati.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/servizi/seo-tecnica/">SEO tecnica e siti multilingue →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/remarka-ai/">Leggi il caso completo →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/servizi/seo-tecnica/">SEO tecnica e siti multilingue →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->

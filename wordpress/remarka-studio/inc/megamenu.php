@@ -122,21 +122,21 @@ function remarka_mega_data(): array {
 	$tl = $tool_label[ $lang ];
 
 	// Casi studio dei progetti reali del gruppo. La foglia dello slug è uguale
-	// nelle tre lingue (tms-perevod4, 1russian, pere-rf, att); cambia solo il
+	// nelle tre lingue (tms-perevod4, 1russian, att, remarka-ai, mini-app-telegram); cambia solo il
 	// genitore localizzato (casi-studio / case-studies / kejsy).
 	$casi_base = array( 'it' => '/casi-studio/', 'en' => '/en/case-studies/', 'ru' => '/ru/kejsy/' );
 	$cb        = $casi_base[ $lang ];
 	$casi_url  = array(
 		'tms'      => $cb . 'tms-perevod4/',
 		'1russian' => $cb . '1russian/',
-		'pere-rf'  => $cb . 'pere-rf/',
+		'remarka-ai' => $cb . 'remarka-ai/',
 		'att'      => $cb . 'att/',
 		'index'    => $cb,
 	);
 	$casi_label = array(
-		'it' => array( 'tms' => 'TMS — web app gestionale', '1russian' => '1russian.com — piattaforma', 'pere-rf' => 'пере.рф — traduzione AI', 'att' => 'ATT — sito d’agenzia' ),
-		'en' => array( 'tms' => 'TMS — management web app', '1russian' => '1russian.com — platform', 'pere-rf' => 'пере.рф — AI translation', 'att' => 'ATT — agency website' ),
-		'ru' => array( 'tms' => 'TMS — веб-приложение', '1russian' => '1russian.com — платформа', 'pere-rf' => 'пере.рф — AI-перевод', 'att' => 'ATT — сайт агентства' ),
+		'it' => array( 'tms' => 'TMS — web app gestionale', '1russian' => '1russian.com — piattaforma', 'remarka-ai' => 'Remarka AI — traduzione documenti', 'att' => 'ATT — sito d’agenzia' ),
+		'en' => array( 'tms' => 'TMS — management web app', '1russian' => '1russian.com — platform', 'remarka-ai' => 'Remarka AI — document translation', 'att' => 'ATT — agency website' ),
+		'ru' => array( 'tms' => 'TMS — веб-приложение', '1russian' => '1russian.com — платформа', 'remarka-ai' => 'Remarka AI — перевод документов', 'att' => 'ATT — сайт агентства' ),
 	);
 	$cl = $casi_label[ $lang ];
 
@@ -156,7 +156,7 @@ function remarka_mega_data(): array {
 		'tool_url' => $tu,
 		'casi_url' => $casi_url,
 		'casi'     => array(
-			array( 'eyebrow' => $s['casi_eyebrow'], 'items' => array( $casi_item( 'tms' ), $casi_item( '1russian' ), $casi_item( 'pere-rf' ), $casi_item( 'att' ) ) ),
+			array( 'eyebrow' => $s['casi_eyebrow'], 'items' => array( $casi_item( 'tms' ), $casi_item( '1russian' ), $casi_item( 'remarka-ai' ), $casi_item( 'att' ) ) ),
 		),
 		'servizi'  => array(
 			array( 'eyebrow' => $s['creare'], 'items' => array( $serv_item( 'siti-aziendali' ), $serv_item( 'e-commerce' ), $serv_item( 'web-app' ), $serv_item( 'siti-pwa' ) ) ),

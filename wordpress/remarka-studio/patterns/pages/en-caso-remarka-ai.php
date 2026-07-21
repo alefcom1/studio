@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Pagina — Case: пере.рф — the AI translation platform on a two-letter domain
- * Slug: remarka-studio/en-caso-pere-rf
+ * Title: Pagina — Case: Remarka AI — the AI document translation platform
+ * Slug: remarka-studio/en-caso-remarka-ai
  * Categories: remarka-pagine
- * Description: Case study of пере.рф — an AI document translation platform built by the Remarka group: pipeline, features, stack and phases, on a two-letter Cyrillic domain.
+ * Description: Case study of Remarka AI — an AI document translation platform built by the Remarka group: pipeline, features, stack and phases of the project.
  * Viewport Width: 1400
  */
 ?>
@@ -14,13 +14,13 @@
 <p class="sr-eyebrow"><a href="/en/case-studies/" style="color:inherit;text-decoration:none">Case studies</a> / Web app · AI platform</p>
 <!-- /wp:html -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(34px, 4.2vw, 58px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(34px, 4.2vw, 58px)">An AI translation platform on a two-letter domain<span class="sr-accent-dot">.</span></h1>
+<h1 class="wp-block-heading" style="font-size:clamp(34px, 4.2vw, 58px)">An AI platform that translates whole documents<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">пере.рф is a platform that translates whole documents — DOCX, XLSX, PDF, even scanned ones — keeping their tables, styles and terminology intact. We designed and built it as our own team: a translation engine powered by AI models, wrapped in serious engineering, on one of the shortest domains there is.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">Remarka AI is a platform that translates whole documents — DOCX, XLSX, PDF, even scanned ones — keeping their tables, styles and terminology intact. We designed and built it as our own team: a translation engine powered by AI models, wrapped in serious engineering, with OCR, an automatic glossary and quality control.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-mono" style="font-size:12.5px;color:var(--sr-grigio);margin-top:18px"><a href="https://пере.рф" target="_blank" rel="noopener noreferrer" style="color:inherit">пере.рф ↗</a></p>
+<p class="sr-mono" style="font-size:12.5px;color:var(--sr-grigio);margin-top:18px"><a href="https://ai.perevod4.ru" target="_blank" rel="noopener noreferrer" style="color:inherit">ai.perevod4.ru ↗</a></p>
 <!-- /wp:html -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"32px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:32px"><!-- wp:button -->
@@ -34,10 +34,10 @@
 <!-- wp:column {"width":"45%","verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">пере.рф</span></div>
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">ai.perevod4.ru</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="pererf-home-1440.webp" alt="Home page of the пере.рф AI translation platform: document upload and language selection" caption="пере.рф — home page, document upload" mobile="0"]
+[sr_shot file="ai-home-it-1440.webp" alt="Home page of the Remarka AI AI translation platform: document upload and language selection" caption="Remarka AI — home page, document upload" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -69,7 +69,7 @@
 <h2 class="wp-block-heading">A platform that translates the document, not just the text<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:16px;font-size:16px">We designed and developed пере.рф: you upload a DOCX, an XLSX or a PDF and get the same document translated, with its tables, styles and headings in place. The translation engine is powered by AI models; around it, a queue-and-worker architecture that copes with large files and long jobs. It is the same kind of engineering we put into the custom web apps we build for our clients.</p>
+<p class="has-base-font-size" style="margin-top:16px;font-size:16px">We designed and developed Remarka AI: you upload a DOCX, an XLSX or a PDF and get the same document translated, with its tables, styles and headings in place. The translation engine is powered by AI models; around it, a queue-and-worker architecture that copes with large files and long jobs. It is the same kind of engineering we put into the custom web apps we build for our clients.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div class="sr-checklist" style="margin-top:20px"><div><span class="sr-mono">✓</span><span>Multi-format — DOCX, XLSX, PDF (scanned too), TXT, HTML, up to 100 MB</span></div><div><span class="sr-mono">✓</span><span>OCR for scanned PDFs, document structure rebuilt on the way out</span></div><div><span class="sr-mono">✓</span><span>Auto glossary and translation memory for term consistency</span></div><div><span class="sr-mono">✓</span><span>Automatic quality checks and real-time progress on screen</span></div></div>
@@ -168,10 +168,10 @@
 <p class="sr-eyebrow">The result</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">A complete platform, on a two-letter domain<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">A complete platform, in production<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px;font-size:16px;max-width:760px">From file upload to the delivery of the translated document, everything runs through one platform: AI engine, glossary, memory, quality checks and export in a single flow. And it lives on пере.рф — an address you can dictate over the phone in one second.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px;font-size:16px;max-width:760px">From file upload to the delivery of the translated document, everything runs through one platform: AI engine, glossary, memory, quality checks and export in a single flow. It is online at ai.perevod4.ru, working on real documents.</p>
 <!-- /wp:paragraph -->
 <!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"},"margin":{"top":"28px"}}}} -->
 <div class="wp-block-columns" style="margin-top:28px"><!-- wp:column -->
@@ -191,7 +191,7 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"11px","letterSpacing":"0.06em"}},"className":"sr-mono"} -->
-<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;margin-top:8px">REMARKA GROUP PROJECT — LIVE AT пере.рф</p>
+<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;margin-top:8px">REMARKA GROUP PROJECT — LIVE AT ai.perevod4.ru</p>
 <!-- /wp:paragraph --></section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->

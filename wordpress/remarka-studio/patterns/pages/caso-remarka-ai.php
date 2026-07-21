@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Pagina — Caso: пере.рф — la piattaforma di traduzione AI su un dominio di due lettere
- * Slug: remarka-studio/caso-pere-rf
+ * Title: Pagina — Caso: Remarka AI — la piattaforma di traduzione AI di documenti
+ * Slug: remarka-studio/caso-remarka-ai
  * Categories: remarka-pagine
- * Description: Caso studio di пере.рф — piattaforma di traduzione AI di documenti sviluppata dal gruppo Remarka: pipeline, funzioni, stack e fasi, su un dominio cirillico di due lettere.
+ * Description: Caso studio di Remarka AI — piattaforma di traduzione AI di documenti sviluppata dal gruppo Remarka: pipeline, funzioni, stack e fasi del progetto.
  * Viewport Width: 1400
  */
 ?>
@@ -14,13 +14,13 @@
 <p class="sr-eyebrow"><a href="/casi-studio/" style="color:inherit;text-decoration:none">Casi studio</a> / Web app · Piattaforma AI</p>
 <!-- /wp:html -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(34px, 4.2vw, 58px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(34px, 4.2vw, 58px)">Una piattaforma di traduzione AI su un dominio di due lettere<span class="sr-accent-dot">.</span></h1>
+<h1 class="wp-block-heading" style="font-size:clamp(34px, 4.2vw, 58px)">Una piattaforma AI che traduce documenti interi<span class="sr-accent-dot">.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"textColor":"grigio","fontSize":"medium"} -->
-<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">пере.рф è una piattaforma che traduce interi documenti — DOCX, XLSX, PDF anche scansionati — conservandone tabelle, stili e terminologia. L'abbiamo progettata e sviluppata come nostro team: un motore di traduzione basato su modelli AI, dentro un'ingegneria seria, su uno dei domini più corti che esistano.</p>
+<p class="has-grigio-color has-text-color has-medium-font-size" style="max-width:640px;margin-top:24px">Remarka AI è una piattaforma che traduce interi documenti — DOCX, XLSX, PDF anche scansionati — conservandone tabelle, stili e terminologia. L'abbiamo progettata e sviluppata come nostro team: un motore di traduzione basato su modelli AI, dentro un'ingegneria seria: OCR, glossario automatico e controllo qualità.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-mono" style="font-size:12.5px;color:var(--sr-grigio);margin-top:18px"><a href="https://пере.рф" target="_blank" rel="noopener noreferrer" style="color:inherit">пере.рф ↗</a></p>
+<p class="sr-mono" style="font-size:12.5px;color:var(--sr-grigio);margin-top:18px"><a href="https://ai.perevod4.ru" target="_blank" rel="noopener noreferrer" style="color:inherit">ai.perevod4.ru ↗</a></p>
 <!-- /wp:html -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"14px","margin":{"top":"32px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:32px"><!-- wp:button -->
@@ -34,10 +34,10 @@
 <!-- wp:column {"width":"45%","verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
-<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">пере.рф</span></div>
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">ai.perevod4.ru</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="pererf-home-1440.webp" alt="Home page della piattaforma di traduzione AI пере.рф: caricamento del documento e scelta delle lingue" caption="пере.рф — home page, caricamento del documento" mobile="0"]
+[sr_shot file="ai-home-it-1440.webp" alt="Home page della piattaforma di traduzione AI Remarka AI: caricamento del documento e scelta delle lingue" caption="Remarka AI — home page, caricamento del documento" mobile="0"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
@@ -69,7 +69,7 @@
 <h2 class="wp-block-heading">Una piattaforma che traduce il documento, non solo il testo<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:16px;font-size:16px">Abbiamo progettato e sviluppato пере.рф: carichi un DOCX, uno XLSX o un PDF e ricevi lo stesso documento tradotto, con tabelle, stili e titoli al loro posto. Il motore di traduzione è basato su modelli AI; intorno, un'architettura a code e worker che regge file grandi e lavori lunghi. È lo stesso tipo di ingegneria che mettiamo nelle web app su misura per i nostri clienti.</p>
+<p class="has-base-font-size" style="margin-top:16px;font-size:16px">Abbiamo progettato e sviluppato Remarka AI: carichi un DOCX, uno XLSX o un PDF e ricevi lo stesso documento tradotto, con tabelle, stili e titoli al loro posto. Il motore di traduzione è basato su modelli AI; intorno, un'architettura a code e worker che regge file grandi e lavori lunghi. È lo stesso tipo di ingegneria che mettiamo nelle web app su misura per i nostri clienti.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
 <div class="sr-checklist" style="margin-top:20px"><div><span class="sr-mono">✓</span><span>Multiformato — DOCX, XLSX, PDF (anche scansionati), TXT, HTML, fino a 100 MB</span></div><div><span class="sr-mono">✓</span><span>OCR per i PDF scansionati, struttura del documento ricostruita in uscita</span></div><div><span class="sr-mono">✓</span><span>Glossario automatico e memoria di traduzione per la coerenza dei termini</span></div><div><span class="sr-mono">✓</span><span>Controllo qualità automatico e avanzamento in tempo reale a video</span></div></div>
@@ -168,10 +168,10 @@
 <p class="sr-eyebrow">Il risultato</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Una piattaforma completa, su un dominio di due lettere<span class="sr-accent-dot">.</span></h2>
+<h2 class="wp-block-heading">Una piattaforma completa, in produzione<span class="sr-accent-dot">.</span></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"base","textColor":"grigio"} -->
-<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px;font-size:16px;max-width:760px">Dall'upload del file alla consegna del documento tradotto, tutto passa da un'unica piattaforma: motore AI, glossario, memoria, controllo qualità ed export in un solo flusso. E gira su пере.рф — un indirizzo che si detta al telefono in un secondo.</p>
+<p class="has-grigio-color has-text-color has-base-font-size" style="margin-top:16px;font-size:16px;max-width:760px">Dall'upload del file alla consegna del documento tradotto, tutto passa da un'unica piattaforma: motore AI, glossario, memoria, controllo qualità ed export in un solo flusso. È online su ai.perevod4.ru, al lavoro su documenti reali.</p>
 <!-- /wp:paragraph -->
 <!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"},"margin":{"top":"28px"}}}} -->
 <div class="wp-block-columns" style="margin-top:28px"><!-- wp:column -->
@@ -191,7 +191,7 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"11px","letterSpacing":"0.06em"}},"className":"sr-mono"} -->
-<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;margin-top:8px">PROGETTO DEL GRUPPO REMARKA — ONLINE SU пере.рф</p>
+<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;margin-top:8px">PROGETTO DEL GRUPPO REMARKA — ONLINE SU ai.perevod4.ru</p>
 <!-- /wp:paragraph --></section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
