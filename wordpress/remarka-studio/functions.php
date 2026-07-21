@@ -1300,6 +1300,14 @@ function remarka_case_study_schema(): void {
 			'shots'       => array( 'att-home-1440.webp' ),
 			'crumb'       => 'ATT',
 		),
+		'pere-rf' => array(
+			'name'        => 'пере.рф — piattaforma di traduzione AI di documenti',
+			'live_url'    => 'https://пере.рф',
+			'category'    => 'BusinessApplication',
+			'description' => 'Piattaforma SaaS di traduzione AI di documenti (DOCX, XLSX, PDF) sviluppata dal gruppo Remarka: pipeline OCR, glossario automatico, memoria di traduzione, motore di QA ed export multiformato, su un dominio di due lettere.',
+			'shots'       => array( 'pererf-home-1440.webp' ),
+			'crumb'       => 'пере.рф',
+		),
 	);
 
 	// Attiva solo sulle pagine-caso conosciute (slug foglia sotto /casi-studio/).

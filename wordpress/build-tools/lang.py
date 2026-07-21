@@ -41,11 +41,18 @@ SERVICES_SLUGS = {
     'adeguamento-eaa':      {'en': 'eaa-compliance',        'ru': 'dostupnost-eaa'},
 }
 
-# I casi studio (docs/copy-casi-studio.md, deck §8.3) non hanno più pagine
-# dedicate /casi-studio/<slug>/: vivono come schede con àncora nel catalogo
-# unico (IT: casi-studio-index.php, EN: en-casi-studio-index.php, RU:
-# ru-casi-studio-index.php — narrativa a sé). Niente slug da tradurre.
-CASES_SLUGS = {}
+# Casi studio: oltre al catalogo unico con schede-àncora, dal 21.07.2026
+# esistono di nuovo pagine dedicate /casi-studio/<slug>/ per i progetti REALI
+# del gruppo (approfondimenti tecnici, forte SEO). La foglia dello slug è
+# uguale nelle tre lingue; cambia solo il genitore localizzato (casi-studio /
+# case-studies / kejsy), gestito da paths_for(). Le pagine EN/RU sono tradotte
+# a mano (translate_pages SKIP), ma lo slug qui serve a href-map e hreflang.
+CASES_SLUGS = {
+    'tms-perevod4': {'en': 'tms-perevod4', 'ru': 'tms-perevod4'},
+    '1russian':     {'en': '1russian',     'ru': '1russian'},
+    'att':          {'en': 'att',          'ru': 'att'},
+    'pere-rf':      {'en': 'pere-rf',       'ru': 'pere-rf'},
+}
 
 TOOLS_SLUGS = {
     'test-velocita':          {'en': 'speed-test',           'ru': 'test-skorosti'},

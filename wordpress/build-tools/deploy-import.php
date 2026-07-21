@@ -192,6 +192,7 @@ $page_map = array(
 	'caso-tms-perevod4'                    => array( 'tms-perevod4', 'casi-studio', 'TMS Perevod4' ),
 	'caso-1russian'                        => array( '1russian', 'casi-studio', '1russian.com' ),
 	'caso-att'                             => array( 'att', 'casi-studio', 'ATT · traduzione.tech' ),
+	'caso-pere-rf'                         => array( 'pere-rf', 'casi-studio', 'пере.рф' ),
 
 	'prezzi'                               => array( 'prezzi', null, null ),
 
@@ -279,6 +280,7 @@ $page_map = array(
 	'en-caso-tms-perevod4'                         => array( 'tms-perevod4', 'en/case-studies', 'TMS Perevod4' ),
 	'en-caso-1russian'                             => array( '1russian', 'en/case-studies', '1russian.com' ),
 	'en-caso-att'                                  => array( 'att', 'en/case-studies', 'ATT · traduzione.tech' ),
+	'en-caso-pere-rf'                              => array( 'pere-rf', 'en/case-studies', 'пере.рф' ),
 	'en-strumenti-index'                           => array( 'tools', 'en', 'Tools' ),
 	'en-blog-index'                                => array( 'blog', 'en', 'Blog' ),
 	'en-servizio-siti-aziendali'                   => array( 'business-websites', 'en/services', null ),
@@ -352,6 +354,7 @@ $page_map = array(
 	'ru-caso-tms-perevod4'                         => array( 'tms-perevod4', 'ru/kejsy', 'TMS Perevod4' ),
 	'ru-caso-1russian'                             => array( '1russian', 'ru/kejsy', '1russian.com' ),
 	'ru-caso-att'                                  => array( 'att', 'ru/kejsy', 'ATT · traduzione.tech' ),
+	'ru-caso-pere-rf'                              => array( 'pere-rf', 'ru/kejsy', 'пере.рф' ),
 	'ru-strumenti-index'                           => array( 'instrumenty', 'ru', 'Инструменты' ),
 	'ru-blog-index'                                => array( 'blog', 'ru', 'Блог' ),
 	'ru-servizio-siti-aziendali'                   => array( 'korporativnye-sajty', 'ru/uslugi', null ),

@@ -65,7 +65,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Live since 2022, the site brings the agency around 20 orders a month across more than 40 language pairs and directions. It's the channel ATT wins clients with today.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/en/services/business-websites/">A business website like this one →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/att/">Read the full case study →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/en/services/business-websites/">A business website like this one →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -128,7 +131,7 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">In production for 2 years: the system handles 180 orders a month, over 2,000 a year. Inside it work 2 administrators, 8 project managers and 4 partner agencies with their own client base — and orders no longer get lost in email.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/tms-perevod4/">Read the full case study: architecture, features and phases →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/tms-perevod4/">Read the full case study: architecture, features and phases →</a></p>
 <!-- /wp:html -->
 <!-- wp:html -->
 <p class="sr-card-link" style="margin-top:8px"><a href="/en/services/custom-web-apps/">A custom web app for your company →</a></p>
@@ -341,7 +344,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Position no. 1 on Yandex — Russia's leading search engine — for the industry queries "notarised translation" and "manual translation", 9,000–10,000 visitors a month, at the top for over 1,000 days. Top positions won with technique, not with the name.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/en/services/technical-seo/">Technical SEO that delivers →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/pere-rf/">Read the full case study →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/en/services/technical-seo/">Technical SEO that delivers →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -521,7 +527,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Over 10,000 visitors a month from 80 countries: a project that speaks English to a genuinely global audience.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/en/services/multilingual-websites/">Native content in several languages for your site →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/1russian/">Read the full case study →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/en/services/multilingual-websites/">Native content in several languages for your site →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->

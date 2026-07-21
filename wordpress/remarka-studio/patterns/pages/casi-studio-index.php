@@ -65,7 +65,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Online dal 2022, il sito porta all'agenzia circa 20 ordini al mese, su oltre 40 combinazioni e direzioni linguistiche. È il canale con cui ATT acquisisce clienti oggi.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/servizi/siti-aziendali/">Un sito aziendale come questo →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/att/">Leggi il caso completo →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/servizi/siti-aziendali/">Un sito aziendale come questo →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -341,7 +344,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Posizione n. 1 su Yandex — il principale motore di ricerca russo — per le query di settore «traduzione notarile» e «traduzione di manuali», 9.000–10.000 visitatori al mese, in vetta da oltre 1.000 giorni. Primi posti ottenuti con la tecnica, non con il nome.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/servizi/seo-tecnica/">SEO tecnica che porta risultati →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/pere-rf/">Leggi il caso completo →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/servizi/seo-tecnica/">SEO tecnica che porta risultati →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -521,7 +527,10 @@
 <p style="margin-top:16px;font-size:15.5px;font-weight:500">Oltre 10.000 visitatori al mese da 80 Paesi: un progetto che parla inglese a un pubblico realmente globale.</p>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/servizi/siti-multilingue/">Contenuti nativi in più lingue per il vostro sito →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/1russian/">Leggi il caso completo →</a></p>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-card-link" style="margin-top:8px"><a href="/servizi/siti-multilingue/">Contenuti nativi in più lingue per il vostro sito →</a></p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
