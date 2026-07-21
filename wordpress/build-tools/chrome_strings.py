@@ -4144,3 +4144,9 @@ CHROME_BLOG_BATCH7_LINKS = {
         {"en": "Read also: the anatomy of a landing page that converts →"},
 }
 CHROME.update(CHROME_BLOG_BATCH7_LINKS)
+
+# Link dalla scheda-caso sull'indice /casi-studio/ verso la pagina-caso singola.
+CHROME.update({
+    "Leggi il caso completo: architettura, funzioni e fasi →":
+        {"en": "Read the full case study: architecture, features and phases →"},
+})

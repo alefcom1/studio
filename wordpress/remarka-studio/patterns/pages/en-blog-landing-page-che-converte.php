@@ -54,7 +54,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Next to the proof sits the form, the point where the promise becomes a contact. Here the rule is clear and confirmed by every usability study: fewer fields, more submissions. Ask only for what’s needed to take the first step. A form with twelve fields says “this will take time and effort”; one with three says “it’s a click away.”</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/reviews-social-proof-done-right/">Come raccogliere recensioni senza inventarle →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/reviews-social-proof-done-right/">How to collect reviews without inventing them →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Fast, mobile and readable: otherwise nothing converts<span class="sr-accent-dot">.</span></h2>
@@ -66,7 +66,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Mobile comes first, not last. Most campaign traffic arrives from a phone, so the page must be designed from that screen: a headline that fits whole, a big button within thumb’s reach, a form you fill in with one hand. And the copy has to be written to be skimmed — headings, bold text, short lists — because on the web nobody reads line by line: they scroll. It’s the foundation of the technical SEO and content we deliver, not a final touch-up.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/technical-seo/">SEO tecnica e velocità di serie in ogni pagina →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/full-site-checkup/">Prima di lanciare: misura velocità e salute della pagina →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/technical-seo/">Technical SEO and speed as standard on every page →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/full-site-checkup/">Before you launch: measure the page’s speed and health →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">One page, one purpose, measured<span class="sr-accent-dot">.</span></h2>
@@ -87,7 +87,7 @@
 <ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://www.nngroup.com/articles/how-users-read-on-the-web/" target="_blank" rel="noopener">Nielsen Norman Group — how people read on the web</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">People skim, they don’t read: the page must be built for a fast glance, not for linear reading.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://baymard.com/checkout-usability" target="_blank" rel="noopener">Baymard Institute — checkout and form usability</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Years of testing forms and payments: every extra field is a lost enquiry. Fewer fields, more submissions.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev — Web Vitals</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Speed is part of conversion: on a paid-traffic landing, every second lost is money burned twice.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">Google — creating helpful, reliable content</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">What Google considers quality: the same clarity that convinces people convinces the engine too.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:32px"><a href="/en/services/business-websites/">Un sito e una landing che portano contatti, a prezzo chiuso →</a></p>
+<p class="sr-card-link" style="margin-top:32px"><a href="/en/services/business-websites/">A site and a landing that bring enquiries, at a fixed price →</a></p>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->

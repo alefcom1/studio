@@ -54,7 +54,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The fourth leak is the over-long contact form. Every extra field is one more reason to give up: usability studies on forms agree — ask only for what you truly need in order to reply. Name, contact, two lines of message. The VAT number, the full address and “how did you hear about us” you ask for later, when the person is already a customer, not on the doorstep.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/full-site-checkup/">Misura la salute del vostro sito: il check-up completo, gratuito →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/full-site-checkup/">Measure your site’s health: the complete check-up, free →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Leaks 5 and 6: trust is missing, and the copy doesn’t speak to the customer<span class="sr-accent-dot">.</span></h2>
@@ -66,7 +66,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The sixth leak is copy that talks about you instead of to the customer. “Innovative, tailor-made solutions for your business” means nothing to someone looking for a plumber or an accountant. The visitor wants to know whether you solve their problem, how long it takes, on what terms. Copy that converts is concrete, states numbers and deadlines, and uses the customer’s words — not the brochure’s. We’ve devoted a separate article to the weight of copy, because it’s the most underrated lever of all.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/business-websites/">Cosa include un sito aziendale che converte, a prezzo chiuso →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/website-copywriting-before-design/">Leggi anche: il testo prima del design, perché il copy decide la conversione →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/business-websites/">What a business website that converts includes, at a fixed price →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/website-copywriting-before-design/">Read also: copy before design, why copy decides conversion →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Leak 7: accessibility barriers (the ones your reports don’t show)<span class="sr-accent-dot">.</span></h2>
@@ -78,7 +78,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The thread that ties the seven leaks together is a single one: you seal them by measuring, not by gut feeling. The first concrete step is an honest diagnosis — which of these seven losses you actually have, and which you don’t. From there you work in order of return: first the leaks that are cheap to close and pay off handsomely, like speed and calls to action, then the rest. You don’t need to redo everything: you need to stop pouring water into a leaky bucket.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/full-site-checkup/">Prima di rifare, scoprite dove perdete: analisi gratuita del sito →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/full-site-checkup/">Before rebuilding, find out where you’re losing: free site analysis →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Sources<span class="sr-accent-dot">.</span></h2>
@@ -90,7 +90,7 @@
 <ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://baymard.com/lists/cart-abandonment-rate" target="_blank" rel="noopener">Baymard Institute — cart abandonment rate</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The average of nearly 7 carts out of 10 abandoned: proof that conversion is lost in the site, not in the traffic.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev — Web Vitals</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Why speed is part of the experience: every extra second of waiting is conversion walking out the door.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/" target="_blank" rel="noopener">Nielsen Norman Group — the F-shaped reading pattern</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">How people actually read a page: they look little and fast, so the copy must be built for that glance.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">W3C — Web Content Accessibility Guidelines (WCAG)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Accessibility barriers are lost conversion before they’re a legal obligation: a site usable by everyone sells to everyone.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:32px"><a href="/en/tools/full-site-checkup/">Misura dove perde il vostro sito — check-up gratuito →</a></p>
+<p class="sr-card-link" style="margin-top:32px"><a href="/en/tools/full-site-checkup/">See where your site is losing — free check-up →</a></p>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->

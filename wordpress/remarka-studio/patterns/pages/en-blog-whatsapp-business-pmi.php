@@ -63,7 +63,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Nothing prohibitive, but nothing to improvise either: the chat goes into the site with the same care as a form, privacy notice included. If you have doubts about your current site, it’s better to measure them before an inspection does. It’s the same approach we hold on every project: convenience for the customer must never become a risk for you.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/gdpr-check/">Verifica gratis la conformità GDPR e cookie del vostro sito →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/services/business-websites/">Cosa include un sito aziendale, contatti a norma compresi →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/gdpr-check/">Check your site’s GDPR and cookie compliance for free →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/services/business-websites/">What a business website includes, compliant contact channels and all →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Put the contact where the customer already is<span class="sr-accent-dot">.</span></h2>
@@ -75,7 +75,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">The form and the chat aren’t rivals: they’re two doors for two kinds of people. Those who like a written trail fill in the form; those who want to talk send a message. Opening both, and truly staffing them, is the simplest way not to lose either one on the doorstep.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/why-your-website-doesnt-convert/">Leggi anche: perché il sito non converte, le 7 fughe silenziose →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/why-your-website-doesnt-convert/">Read also: why the site doesn’t convert, the 7 silent leaks →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Sources<span class="sr-accent-dot">.</span></h2>
@@ -87,7 +87,7 @@
 <ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://business.whatsapp.com/" target="_blank" rel="noopener">WhatsApp Business — official site</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">What the business version offers: profile, catalogues, automatic messages and quick replies.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://blog.whatsapp.com/two-billion-users-connecting-the-world-privately" target="_blank" rel="noopener">WhatsApp — two billion users (official blog)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The reach figure: WhatsApp is the messaging app customers already use every day.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.facebook.com/docs/whatsapp" target="_blank" rel="noopener">Meta — WhatsApp Business Platform (documentation)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The API version for high volumes and integrations: when the chat has to connect to your systems.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener">GDPR Regulation 2016/679 — EUR-Lex</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">A chat conversation processes personal data too: the privacy notice and legal bases apply just as for a form.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:32px"><a href="/en/services/custom-web-apps/">Integriamo WhatsApp nel vostro sito e nei vostri sistemi →</a></p>
+<p class="sr-card-link" style="margin-top:32px"><a href="/en/services/custom-web-apps/">We integrate WhatsApp into your site and your systems →</a></p>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->

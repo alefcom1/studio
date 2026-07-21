@@ -54,7 +54,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Then you reply, to all of them, criticism included. A polite reply to a negative review convinces future customers more than ten words of praise: it shows there’s someone listening behind it. And never, ever offer money or discounts in exchange for a positive review: besides being forbidden, it falsifies the signal. Asking for a review is legitimate; buying one is not.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/eeat-signals/">Misura i vostri segnali di fiducia E-E-A-T, gratis →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/eeat-signals/">Measure your E-E-A-T trust signals, free →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Where to put them, and how to make them count for Google<span class="sr-accent-dot">.</span></h2>
@@ -66,7 +66,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">There’s also a technical aspect few tend to: structured data. Marking up reviews with schema.org’s Review type lets you, within Google’s rules, show the stars directly in search results. Mind the policies, though: Google forbids marking up self-attributed or invented reviews, and penalises them. Here too, the dishonest shortcut backfires. Honesty and technique together are what we deliver as standard on every site.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/business-websites/">Cosa include un sito aziendale che ispira fiducia →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/google-business-profile-guide/">Read also: Google Business Profile, the storefront nobody tends →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/business-websites/">What a business website that inspires trust includes →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/google-business-profile-guide/">Read also: Google Business Profile, the storefront nobody tends →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Trust isn’t faked, it’s built<span class="sr-accent-dot">.</span></h2>
@@ -87,7 +87,7 @@
 <ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://www.brightlocal.com/research/local-consumer-review-survey/" target="_blank" rel="noopener">BrightLocal — Local Consumer Review Survey</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The annual survey: almost everyone reads reviews before choosing, and many trust them as much as a friend’s advice.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://eur-lex.europa.eu/eli/dir/2019/2161/oj" target="_blank" rel="noopener">EU Directive 2019/2161 (Omnibus) — EUR-Lex</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The European rule that bans fake reviews and the deceptive attribution to real customers: it isn’t a grey area.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/appearance/structured-data/review-snippet" target="_blank" rel="noopener">Google — structured data for reviews (review snippet)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">How to show the stars in results — and the rules to respect: no self-attributed or invented reviews.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://schema.org/" target="_blank" rel="noopener">schema.org — the Review type</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The structured-data vocabulary you use to mark up a review so search engines understand it.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:32px"><a href="/en/services/business-websites/">Costruiamo la fiducia del vostro sito, senza trucchi →</a></p>
+<p class="sr-card-link" style="margin-top:32px"><a href="/en/services/business-websites/">We build your site’s trust, no tricks →</a></p>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->

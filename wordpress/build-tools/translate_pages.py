@@ -58,6 +58,14 @@ SKIP = {
     'citta-napoli', 'citta-bari', 'citta-palermo', 'citta-catania',
     'dove-lavoriamo',
     'cookie-policy', 'cookie-preferenze', 'privacy',
+    # Brief wizard: le versioni EN/RU sono tradotte a mano (come privacy/
+    # cookie), non dal conveyor — le sue stringhe non stanno in chrome_strings.
+    'brief',
+    # Pagine-caso dei progetti reali: specchio EN/RU fatto a mano dopo
+    # l'ok del titolare al template (non dal conveyor), coppie CHROME
+    # dedicate. Finché non è pronto, il conveyor le salta (altrimenti
+    # exit 1 su stringhe non tradotte).
+    'caso-tms-perevod4',
 }
 
 

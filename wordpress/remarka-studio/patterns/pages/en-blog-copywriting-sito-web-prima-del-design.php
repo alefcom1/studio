@@ -54,7 +54,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">Concreteness means numbers and deadlines in place of adjectives. “We deliver in three weeks, with the date in the contract” says more than “fast turnaround.” “Fixed price, no surprises on the invoice” says more than “tailor-made solutions.” Copy full of superlatives gives no information: it asks for trust without offering proof. Copy full of facts does the opposite — and Google, not by chance, rewards exactly this quality in its criteria for helpful content.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/seo-audit/">Misura i segnali che il vostro sito già manda a Google →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/services/business-websites/">Cosa include un sito aziendale, testi che convertono compresi →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/tools/seo-audit/">Measure the signals your site already sends Google →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/services/business-websites/">What a business website includes, copy that converts and all →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Copy first in a restyle too<span class="sr-accent-dot">.</span></h2>
@@ -66,7 +66,7 @@
 <p class="has-base-font-size" style="font-size:17px;line-height:1.75;max-width:75ch;margin-top:16px">It’s the approach we hold when we rebuild or improve a site: first you decide what to say and to whom, then how to show it. A site that loads fast and looks good on a phone but says nothing stays a site that doesn’t convert. Graphics hold the gaze; copy turns the gaze into a decision.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/redesign-migration/">Restyling e migrazione: nuovo look, messaggio rimesso a fuoco →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/landing-page-that-converts/">Leggi anche: anatomia di una landing page che converte →</a></p>
+<p class="sr-card-link" style="margin-top:14px"><a href="/en/services/redesign-migration/">Restyle and migration: new look, message brought back into focus →</a></p><p class="sr-card-link" style="margin-top:14px"><a href="/en/blog/landing-page-that-converts/">Read also: the anatomy of a landing page that converts →</a></p>
 <!-- /wp:html -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">The right order: message, then form<span class="sr-accent-dot">.</span></h2>
@@ -87,7 +87,7 @@
 <ul style="list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--sr-bordo)"><li style="margin-top:16px;line-height:1.55"><a href="https://www.nngroup.com/articles/how-users-read-on-the-web/" target="_blank" rel="noopener">Nielsen Norman Group — how people read on the web</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Twenty years of research: on the web people skim, they don’t read. Copy must be written for a jumping gaze.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/" target="_blank" rel="noopener">Nielsen Norman Group — the F-shaped reading pattern</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The eye follows an “F”: first lines and left column. Headings and the first paragraph carry almost all the weight.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://www.gov.uk/guidance/content-design/writing-for-gov-uk" target="_blank" rel="noopener">GOV.UK — writing for the web (content design)</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">The British government’s guide for its digital services: plain, concrete language, on the reader’s side.</span></li><li style="margin-top:16px;line-height:1.55"><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">Google — creating helpful, reliable content</a><span style="display:block;font-size:14.5px;color:var(--sr-grigio);margin-top:4px">Google’s quality criteria reward the same concreteness that convinces people: facts, not adjectives.</span></li></ul>
 <!-- /wp:html -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:32px"><a href="/en/services/business-websites/">Un sito che dice la cosa giusta, prima ancora che bella →</a></p>
+<p class="sr-card-link" style="margin-top:32px"><a href="/en/services/business-websites/">A site that says the right thing before it looks pretty →</a></p>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
