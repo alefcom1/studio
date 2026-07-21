@@ -64,7 +64,11 @@ services:
       # TTL sessione: l'API rinnova cab_session con questa durata (parità col
       # cabinet, che usa la stessa var). Default 7 giorni.
       SESSION_TTL_DAYS: ${SESSION_TTL_DAYS:-7}
+      # Market: каталог загруженных файлов (общий с worker через named volume).
+      MARKET_FILES_DIR: /data/market-files
     env_file: .env
+    volumes:
+      - market-files:/data/market-files
     # Remove the base file's `ports: ['3001:3001']` publication entirely.
     # Compose CONCATENATES `ports` on merge, so a normal override would leave the
     # public 0.0.0.0:3001 in place (and Docker's own iptables rules bypass ufw,
@@ -85,7 +89,10 @@ services:
       DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL in .env}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
       NODE_ENV: production
+      MARKET_FILES_DIR: /data/market-files
     env_file: .env
+    volumes:
+      - market-files:/data/market-files
     deploy:
       resources:
         limits:
@@ -230,6 +237,23 @@ services:
           # box's full memory budget (3328M summed limits on a 4 GB host).
           memory: 384M
 
+  # ─── Remarka Market — Telegram Mini App (market.remarka.biz) ───────────────
+  # НЕ override: сервиса market в базовом compose нет — это полное определение
+  # (тот же паттерн, что cabinet). Чистая статика (SPA, Vite build), отдаётся
+  # мини-контейнером; всё живое — роуты /api/market/* в сервисе api.
+  # См. docs/piano-market.md (studio) §14; DNS market.remarka.biz — до старта.
+  market:
+    build:
+      context: .
+      dockerfile: apps/market/Dockerfile
+    restart: unless-stopped
+    # Не публикуется на хост — Caddy ходит как market:80 по внутренней сети.
+    deploy:
+      resources:
+        limits:
+          # Статика: caddy file-server, десятки мегабайт с запасом.
+          memory: 48M
+
   # ─── WordPress remarka.biz (миграция с РФ-хостинга, 16.07.2026) ────────────
   # Сайт-визитка переезжает на этот же сервер (docs/migrazione-wp-hetzner.md).
   # Не override: сервисов wpdb/wordpress/wpcli в базовом compose нет — это
@@ -337,3 +361,6 @@ volumes:
   # pgdata / redisdata are declared in the base compose; re-declaring caddy vols:
   caddy_data:
   caddy_config:
+  # Market: приватные загрузки пользователей (PDF/DOCX/TXT для оценки перевода).
+  # Named volume, вне WP и вне public; retention-джоб чистит по mkt_file.
+  market-files:

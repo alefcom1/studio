@@ -104,6 +104,40 @@ cab.remarka.biz {
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Remarka Market — Telegram Mini App (market.remarka.biz), piano-market.md.
+#
+#   Browser/Telegram ──TLS──▶ Caddy ─┬─ /api/* → api:3001 (роуты /api/market/*,
+#                                    │           включая Telegram/CryptoPay webhook)
+#                                    └─ /*     → market:80 (статика SPA)
+#
+# Публичный по замыслу: витрина каталога открыта, всё остальное защищает
+# приложение (Telegram initData → mkt_session, см. piano-market.md §3, §13).
+# Precondition: DNS A-запись market.remarka.biz → сервер ДО первого старта
+# (иначе ACME HTTP-01 не пройдёт — та же грабля, что у cab).
+# ─────────────────────────────────────────────────────────────────────────────
+
+market.remarka.biz {
+	encode zstd gzip
+
+	handle /api/* {
+		reverse_proxy api:3001
+	}
+
+	handle {
+		reverse_proxy market:80
+	}
+
+	# SPA-статика версионируется хэшами Vite в имени файла — кэш агрессивный.
+	@assets path /assets/*
+	header @assets Cache-Control "public, max-age=31536000, immutable"
+
+	log {
+		output stdout
+		format console
+	}
+}
+
+# ─────────────────────────────────────────────────────────────────────────────
 # WordPress remarka.biz — БОЕВОЙ (cutover выполнен 17.07.2026,
 # docs/migrazione-wp-hetzner.md). Стейджинг-блок new.remarka.biz удалён:
 # миграция шла сразу на боевой домен, A-записи new.* не существует, и блок
