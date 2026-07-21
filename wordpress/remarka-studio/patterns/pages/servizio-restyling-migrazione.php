@@ -78,8 +78,20 @@
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
-<div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"55%"} -->
-<div class="wp-block-column" style="flex-basis:55%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"52%"} -->
+<div class="wp-block-column" style="flex-basis:52%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
+<div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">moscowtrans.ru</span></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+[sr_shot file="moscowtrans-home-1440.webp" alt="Home page dei siti d’agenzia moscowtrans.ru e techperevod.com affiancate" caption="moscowtrans.ru — home page" mobile="0"]
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"width":"48%"} -->
+<div class="wp-block-column" style="flex-basis:48%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Dal nostro catalogo</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(26px,3vw,34px)"}}} -->
@@ -92,19 +104,13 @@
 <p class="has-base-font-size" style="margin-top:16px;font-size:16px">Due siti d’agenzia ridisegnati nel 2026, curati nel design e ottimizzati nelle performance. Le conversioni sono cresciute di oltre il 300% negli ultimi mesi.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
+<div class="sr-teaser-stats" style="display:flex;flex-wrap:wrap;gap:16px 28px;margin-top:20px"><div><span class="sr-stat__num" style="font-size:clamp(22px,2.4vw,28px);color:var(--sr-oltremare)">+300%</span><p style="margin-top:4px;font-size:13px;color:var(--sr-grigio)">conversioni dopo il rinnovo 2026</p></div><div><span class="sr-stat__num" style="font-size:clamp(22px,2.4vw,28px);color:var(--sr-oltremare)">2</span><p style="margin-top:4px;font-size:13px;color:var(--sr-grigio)">siti rinnovati con lo stesso metodo</p></div></div>
+<!-- /wp:html -->
+<!-- wp:html -->
+<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:16px">PROGETTO DEL GRUPPO REMARKA — VERIFICABILE SUI DUE SITI</p>
+<!-- /wp:html -->
+<!-- wp:html -->
 <p class="sr-card-link" style="margin-top:16px"><a href="/casi-studio/#moscowtrans-techperevod">Leggi il caso completo →</a></p>
-<!-- /wp:html -->
-</div>
-<!-- /wp:column -->
-<!-- wp:column {"width":"45%"} -->
-<div class="wp-block-column" style="flex-basis:45%"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">+300%</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">conversioni dopo il rinnovo 2026</p></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<div class="sr-stat" style="margin-top:24px"><span class="sr-stat__num" style="font-size:clamp(30px,3vw,40px);color:var(--sr-oltremare)">2</span><p style="margin-top:8px;font-size:14px;color:var(--sr-grigio)">siti rinnovati con lo stesso metodo</p></div>
-<!-- /wp:html -->
-<!-- wp:html -->
-<p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;color:var(--sr-grigio);margin-top:20px">PROGETTO DEL GRUPPO REMARKA — VERIFICABILE SUI DUE SITI</p>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
