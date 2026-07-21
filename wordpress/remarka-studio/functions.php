@@ -1308,6 +1308,14 @@ function remarka_case_study_schema(): void {
 			'shots'       => array( 'pererf-home-1440.webp' ),
 			'crumb'       => 'пере.рф',
 		),
+		'mini-app-telegram' => array(
+			'name'        => 'Mini App Telegram del TMS',
+			'live_url'    => 'https://t.me/massimoalefBot',
+			'category'    => 'BusinessApplication',
+			'description' => 'Mini App Telegram sviluppata dal gruppo Remarka per il proprio TMS: accesso agli ordini e ai loro stati direttamente dentro la chat di Telegram, senza installare nulla, con login automatico e notifiche.',
+			'shots'       => array( 'miniapp-orders-390.webp' ),
+			'crumb'       => 'Mini App Telegram',
+		),
 	);
 
 	// Attiva solo sulle pagine-caso conosciute (slug foglia sotto /casi-studio/).

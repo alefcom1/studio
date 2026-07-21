@@ -193,6 +193,7 @@ $page_map = array(
 	'caso-1russian'                        => array( '1russian', 'casi-studio', '1russian.com' ),
 	'caso-att'                             => array( 'att', 'casi-studio', 'ATT · traduzione.tech' ),
 	'caso-pere-rf'                         => array( 'pere-rf', 'casi-studio', 'пере.рф' ),
+	'caso-mini-app-telegram'               => array( 'mini-app-telegram', 'casi-studio', 'Mini App Telegram' ),
 
 	'prezzi'                               => array( 'prezzi', null, null ),
 
@@ -281,6 +282,7 @@ $page_map = array(
 	'en-caso-1russian'                             => array( '1russian', 'en/case-studies', '1russian.com' ),
 	'en-caso-att'                                  => array( 'att', 'en/case-studies', 'ATT · traduzione.tech' ),
 	'en-caso-pere-rf'                              => array( 'pere-rf', 'en/case-studies', 'пере.рф' ),
+	'en-caso-mini-app-telegram'                    => array( 'mini-app-telegram', 'en/case-studies', 'Mini App Telegram' ),
 	'en-strumenti-index'                           => array( 'tools', 'en', 'Tools' ),
 	'en-blog-index'                                => array( 'blog', 'en', 'Blog' ),
 	'en-servizio-siti-aziendali'                   => array( 'business-websites', 'en/services', null ),
@@ -355,6 +357,7 @@ $page_map = array(
 	'ru-caso-1russian'                             => array( '1russian', 'ru/kejsy', '1russian.com' ),
 	'ru-caso-att'                                  => array( 'att', 'ru/kejsy', 'ATT · traduzione.tech' ),
 	'ru-caso-pere-rf'                              => array( 'pere-rf', 'ru/kejsy', 'пере.рф' ),
+	'ru-caso-mini-app-telegram'                    => array( 'mini-app-telegram', 'ru/kejsy', 'Mini App Telegram' ),
 	'ru-strumenti-index'                           => array( 'instrumenty', 'ru', 'Инструменты' ),
 	'ru-blog-index'                                => array( 'blog', 'ru', 'Блог' ),
 	'ru-servizio-siti-aziendali'                   => array( 'korporativnye-sajty', 'ru/uslugi', null ),

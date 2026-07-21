@@ -160,7 +160,7 @@
 <p class="has-base-font-size" style="margin-top:16px;font-size:16px">Мы перенесли основные функции в Telegram Mini App: заказы открываются прямо внутри чата, ничего не нужно устанавливать. Такую интеграцию в Италии пока предлагают немногие — а мы умеем её делать, потому что уже сделали её для себя.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/ru/kejsy/#mini-app-telegram">Смотреть кейс Telegram Mini App →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/ru/kejsy/mini-app-telegram/">Смотреть полный кейс Telegram Mini App →</a></p>
 <!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

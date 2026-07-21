@@ -160,7 +160,7 @@
 <p class="has-base-font-size" style="margin-top:16px;font-size:16px">Abbiamo portato le funzioni principali in una Mini App Telegram: gli ordini si aprono direttamente dentro la chat, senza installare nulla. È un tipo di integrazione che in Italia pochi propongono ancora — e che sappiamo costruire perché l'abbiamo già fatta per noi.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/#mini-app-telegram">Vedi il caso della Mini App Telegram →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/casi-studio/mini-app-telegram/">Vedi il caso completo della Mini App Telegram →</a></p>
 <!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

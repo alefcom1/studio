@@ -52,6 +52,7 @@ CASES_SLUGS = {
     '1russian':     {'en': '1russian',     'ru': '1russian'},
     'att':          {'en': 'att',          'ru': 'att'},
     'pere-rf':      {'en': 'pere-rf',       'ru': 'pere-rf'},
+    'mini-app-telegram': {'en': 'mini-app-telegram', 'ru': 'mini-app-telegram'},
 }
 
 TOOLS_SLUGS = {

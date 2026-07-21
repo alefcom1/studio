@@ -160,7 +160,7 @@
 <p class="has-base-font-size" style="margin-top:16px;font-size:16px">We brought the main features into a Telegram Mini App: orders open right inside the chat, with nothing to install. It is a kind of integration that few in Italy still offer — and one we know how to build, because we have already built it for ourselves.</p>
 <!-- /wp:paragraph -->
 <!-- wp:html -->
-<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/#mini-app-telegram">See the Telegram Mini App case →</a></p>
+<p class="sr-card-link" style="margin-top:18px"><a href="/en/case-studies/mini-app-telegram/">See the full Telegram Mini App case →</a></p>
 <!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

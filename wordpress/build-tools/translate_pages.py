@@ -66,6 +66,7 @@ SKIP = {
     # dedicate. Finché non è pronto, il conveyor le salta (altrimenti
     # exit 1 su stringhe non tradotte).
     'caso-tms-perevod4', 'caso-1russian', 'caso-att', 'caso-pere-rf',
+    'caso-mini-app-telegram',
 }
 
 
