@@ -190,6 +190,8 @@ $page_map = array(
 	// tecnici con forte potenziale SEO. Prima: TMS (flagship, template).
 	'casi-studio-index'                    => array( 'casi-studio', null, 'Casi studio' ),
 	'caso-tms-perevod4'                    => array( 'tms-perevod4', 'casi-studio', 'TMS Perevod4' ),
+	'caso-1russian'                        => array( '1russian', 'casi-studio', '1russian.com' ),
+	'caso-att'                             => array( 'att', 'casi-studio', 'ATT · traduzione.tech' ),
 
 	'prezzi'                               => array( 'prezzi', null, null ),
 
@@ -274,6 +276,9 @@ $page_map = array(
 	// ---- Albero EN (genitore = percorso completo) ----
 	'en-servizi-index'                             => array( 'services', 'en', 'Services' ),
 	'en-casi-studio-index'                         => array( 'case-studies', 'en', 'Case studies' ),
+	'en-caso-tms-perevod4'                         => array( 'tms-perevod4', 'en/case-studies', 'TMS Perevod4' ),
+	'en-caso-1russian'                             => array( '1russian', 'en/case-studies', '1russian.com' ),
+	'en-caso-att'                                  => array( 'att', 'en/case-studies', 'ATT · traduzione.tech' ),
 	'en-strumenti-index'                           => array( 'tools', 'en', 'Tools' ),
 	'en-blog-index'                                => array( 'blog', 'en', 'Blog' ),
 	'en-servizio-siti-aziendali'                   => array( 'business-websites', 'en/services', null ),
@@ -344,6 +349,9 @@ $page_map = array(
 	// ---- Albero RU (genitore = percorso completo) ----
 	'ru-servizi-index'                             => array( 'uslugi', 'ru', 'Услуги' ),
 	'ru-casi-studio-index'                         => array( 'kejsy', 'ru', 'Кейсы' ),
+	'ru-caso-tms-perevod4'                         => array( 'tms-perevod4', 'ru/kejsy', 'TMS Perevod4' ),
+	'ru-caso-1russian'                             => array( '1russian', 'ru/kejsy', '1russian.com' ),
+	'ru-caso-att'                                  => array( 'att', 'ru/kejsy', 'ATT · traduzione.tech' ),
 	'ru-strumenti-index'                           => array( 'instrumenty', 'ru', 'Инструменты' ),
 	'ru-blog-index'                                => array( 'blog', 'ru', 'Блог' ),
 	'ru-servizio-siti-aziendali'                   => array( 'korporativnye-sajty', 'ru/uslugi', null ),

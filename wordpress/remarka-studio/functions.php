@@ -1284,6 +1284,22 @@ function remarka_case_study_schema(): void {
 			'shots'       => array( 'tms-board-1440.webp', 'tms-clienti-1440.webp', 'tms-fatture-1440.webp' ),
 			'crumb'       => 'TMS Perevod4',
 		),
+		'1russian' => array(
+			'name'        => '1russian.com — piattaforma di audit SEO',
+			'live_url'    => 'https://1russian.com',
+			'category'    => 'BusinessApplication',
+			'description' => 'Piattaforma di audit SEO self-hosted sviluppata dal gruppo Remarka: crawler, 11 gruppi di regole di analisi, integrazioni con Google Search Console, PageSpeed, Yandex e OpenPageRank, cruscotto Monitor e area clienti Cabinet.',
+			'shots'       => array( '1russian-home-1440.webp' ),
+			'crumb'       => '1russian.com',
+		),
+		'att' => array(
+			'type'        => 'WebSite',
+			'name'        => 'ATT — traduzione.tech, sito dell\'agenzia di traduzioni',
+			'live_url'    => 'https://www.traduzione.tech',
+			'description' => 'Sito aziendale dell\'agenzia di traduzioni ATT (traduzione.tech), realizzato dal gruppo Remarka: architettura dei servizi per lingua e settore, richiesta di preventivo in pochi passaggi, SEO tecnica e dati strutturati. Online dal 2022.',
+			'shots'       => array( 'att-home-1440.webp' ),
+			'crumb'       => 'ATT',
+		),
 	);
 
 	// Attiva solo sulle pagine-caso conosciute (slug foglia sotto /casi-studio/).
@@ -1294,27 +1310,31 @@ function remarka_case_study_schema(): void {
 	$c       = $cases[ $slug ];
 	$img_base = get_stylesheet_directory_uri() . '/assets/img/casi/';
 
-	$app = array(
-		'@context'            => 'https://schema.org',
-		'@type'               => 'SoftwareApplication',
-		'name'                => $c['name'],
-		'url'                 => $c['live_url'],
-		'applicationCategory' => $c['category'],
-		'operatingSystem'     => 'Web',
-		'description'         => $c['description'],
-		'screenshot'          => array_map(
+	$type = $c['type'] ?? 'SoftwareApplication';
+	$app  = array(
+		'@context'   => 'https://schema.org',
+		'@type'      => $type,
+		'name'       => $c['name'],
+		'url'        => $c['live_url'],
+		'description' => $c['description'],
+		'screenshot' => array_map(
 			static function ( $f ) use ( $img_base ) {
 				return $img_base . $f;
 			},
 			$c['shots']
 		),
-		'author'              => array(
+		'author'     => array(
 			'@type' => 'Organization',
 			'name'  => 'Studio Remarka',
 			'url'   => home_url( '/' ),
 		),
-		'isBasedOn'           => get_permalink(),
+		'isBasedOn'  => get_permalink(),
 	);
+	// Campi specifici delle applicazioni (non validi su un WebSite).
+	if ( in_array( $type, array( 'SoftwareApplication', 'WebApplication' ), true ) ) {
+		$app['applicationCategory'] = $c['category'] ?? 'BusinessApplication';
+		$app['operatingSystem']     = 'Web';
+	}
 
 	$crumbs = array(
 		array( 'name' => 'Home', 'url' => home_url( '/' ) ),

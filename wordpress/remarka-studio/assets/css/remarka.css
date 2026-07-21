@@ -4159,6 +4159,14 @@ body #masthead.site-header {
 #masthead .sr-mega--lab .sr-mega__inner {
   grid-template-columns: 1.9fr 1fr;
 }
+/* Pannello «Casi»: meno contenuto delle altre due voci → box più stretto
+   (lista dei progetti + card «tutti i casi»), niente colonna vuota. */
+#masthead .sr-mega--casi .sr-mega__box {
+  max-width: 760px;
+}
+#masthead .sr-mega--casi .sr-mega__inner {
+  grid-template-columns: 1fr 1fr;
+}
 
 #masthead .sr-mega__col {
   min-width: 0;
