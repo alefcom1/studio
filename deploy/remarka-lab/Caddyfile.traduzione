@@ -1,0 +1,42 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# traduzione.tech — блоки для добавления в КОНЕЦ существующего Caddyfile
+# (deploy/remarka-lab/Caddyfile в репо studio, ~/remarka-lab/sitelens/Caddyfile
+# на сервере). Копия блока remarka.biz — тот же контейнер `wordpress:80`,
+# Apache внутри разведёт сайты по заголовку Host.
+#
+# Предусловие: A-записи traduzione.tech (@) и www.traduzione.tech → 178.105.192.76
+# должны СУЩЕСТВОВАТЬ до перезагрузки Caddy, иначе ACME HTTP-01 challenge для
+# TLS-сертификата не пройдёт (та же грабля, что у cab/market — см. Caddyfile).
+# На стейджинге до cutover — использовать stage.traduzione.tech (см. раннбук).
+#
+# Применение (без полного рестарта, чтобы не тронуть остальные домены):
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml \
+#     exec caddy caddy reload --config /etc/caddy/Caddyfile
+# ─────────────────────────────────────────────────────────────────────────────
+
+traduzione.tech {
+	# Caddy по умолчанию НЕ сжимает (на REG.RU это делал Apache/nginx сам) —
+	# включаем явно, иначе регрессия LCP после переезда.
+	encode zstd gzip
+
+	# CSS/JS/шрифты версионируются через ?ver=filemtime (tdt-theme,
+	# TDT_THEME_VERSION + wp_enqueue) — URL меняется при правке файла,
+	# поэтому кэшируем агрессивно и без ревалидации на 1 год.
+	@static-versioned path *.css *.js *.mjs *.woff2 *.woff *.ttf *.otf
+	header @static-versioned Cache-Control "public, max-age=31536000, immutable"
+
+	# Картинки версии в URL не несут — 30 дней.
+	@static-images path *.svg *.png *.jpg *.jpeg *.webp *.avif *.gif *.ico
+	header @static-images Cache-Control "public, max-age=2592000"
+
+	reverse_proxy wordpress:80
+
+	log {
+		output stdout
+		format console
+	}
+}
+
+www.traduzione.tech {
+	redir https://traduzione.tech{uri} permanent
+}

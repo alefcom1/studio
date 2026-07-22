@@ -1,0 +1,47 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# traduzione.tech — ТРЕТИЙ compose-override, добавляется в конец цепочки -f.
+# НЕ создаёт новых сервисов: расширяет уже существующий `wordpress`
+# (и `wpcli`) второй площадкой. Один Apache/PHP-рантайм обслуживает оба
+# сайта через name-based virtual hosting — как обычный shared-хостинг.
+#
+# Запуск на сервере (из ~/remarka-lab/sitelens):
+#   COMPOSE="docker compose \
+#     -f docker-compose.yml \
+#     -f docker-compose.prod.yml \
+#     -f docker-compose.traduzione.yml"
+#   $COMPOSE up -d wordpress          # пересоздаст контейнер с новыми маунтами
+#
+# Почему это дёшево по памяти (ответ на вопрос владельца):
+#   Второй сайт НЕ добавляет второй пул PHP-воркеров — Apache один, пул
+#   воркеров общий, воркер обслуживает тот сайт, чей запрос пришёл. Реальный
+#   прирост — только OPcache на два набора WP-core/плагинов (десятки МБ) +
+#   запас на одновременные пики обоих сайтов. Поэтому лимит поднимаем
+#   умеренно (512M → 768M), а не удваиваем.
+#
+# ВАЖНО про слияние Compose:
+#   • `volumes:` МАССИВЫ КОНКАТЕНИРУЮТСЯ между -f файлами → строки ниже
+#     ДОБАВЛЯЮТСЯ к уже существующим маунтам wordpress (./wp-html и
+#     ./wp-uploads.ini остаются). Ничего не перетираем.
+#   • `deploy.resources.limits.memory` — скаляр, override ЗАМЕНЯЕТ 512M на 768M.
+# ─────────────────────────────────────────────────────────────────────────────
+
+services:
+  wordpress:
+    volumes:
+      # Второй docroot — данные traduzione.tech (WP core + wp-config + wp-content),
+      # bind-mount рядом с compose-файлом, чтобы backup.sh брал его tar'ом.
+      - ./wp-html-traduzione:/var/www/traduzione
+      # Vhost для traduzione.tech (см. apache-traduzione.conf). 020-* грузится
+      # после 000-default (remarka.biz), поэтому дефолтный vhost не меняется.
+      - ./apache-traduzione.conf:/etc/apache2/sites-enabled/020-traduzione.conf:ro
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+
+  # wpcli тоже видит второй docroot — команды для traduzione.tech идут с
+  #   --path=/var/www/traduzione
+  # (для remarka.biz по-прежнему --path=/var/www/html или без флага).
+  wpcli:
+    volumes:
+      - ./wp-html-traduzione:/var/www/traduzione
