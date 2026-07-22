@@ -93,7 +93,17 @@
   perche-non-converte и whatsapp-pmi на 390/1440 без переполнения. Побочно:
   brief и caso-tms-perevod4 добавлены в SKIP конвейера (их EN/RU — руками),
   en-brief восстановлен из ручного перевода.
-- Батч 8 — ⬜ очередь.
+- Батч 8 — ✅ выполнен и принят. 5 IT-статей (36–40, «Privacy e dati nel
+  2026»: Consent Mode v2, GA4 e privacy UE, alternative privacy-first
+  Matomo/Plausible, cookie vs privacy policy, backup e sicurezza) + EN-конвейер
+  (exit 0, 69 файлов, 0 IT-остатков в телах). По 2 фирменных SVG (10 шт.,
+  on-brand, без переполнения — проверены монтажом), по 4 внешних источника
+  (Garante, EDPB, EUR-Lex, Google/Matomo/Plausible/Patchstack), перелинковка
+  услуга+инструмент+соседняя, JSON-LD BlogPosting для всех 10 slug. Приёмка
+  оркестратора: вычитаны все 5 текстов целиком — живой «voi», честно (аккуратные
+  оговорки по DPF/Schrems II/провведименто Garante 2022, без выдуманных фактов
+  и экспертов; единственная неисточниковая цифра убрана), без упоминаний ИИ,
+  фокус-ключи на месте. Title ≤60 / Desc ≤160.
 - Батч 9 — ⬜ очередь.
 - Батч 10 — ⬜ очередь.
 - Батч 11 (RU руками) — ⬜ очередь.
