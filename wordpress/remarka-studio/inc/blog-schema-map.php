@@ -7,6 +7,12 @@
 return array(
 	'_modified' => '2026-07-22',
 	'posts' => array(
+		'piattaforma-ecommerce-quale-scegliere' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ecommerce-piattaforme-cover.svg' ),
+		'which-ecommerce-platform' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ecommerce-piattaforme-cover.svg' ),
+		'ecommerce-checklist-prima-del-lancio' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ecommerce-checklist-cover.svg' ),
+		'ecommerce-pre-launch-checklist' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ecommerce-checklist-cover.svg' ),
+		'cosa-include-sito-aziendale' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/sito-cosa-include-cover.svg' ),
+		'what-a-business-website-includes' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/sito-cosa-include-cover.svg' ),
 		'consent-mode-v2-cosa-cambia' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/consent-cover.svg' ),
 		'consent-mode-v2-what-changes' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/consent-cover.svg' ),
 		'google-analytics-4-privacy-ue' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ga4-cover.svg' ),

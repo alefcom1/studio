@@ -1781,6 +1781,51 @@ function remarka_case_cta_shortcode( $atts ): string {
 add_shortcode( 'remarka_case_cta', 'remarka_case_cta_shortcode' );
 
 /**
+ * Shortcode [remarka_cluster slug="siti-aziendali"]: blocco «Approfondimenti»
+ * in fondo alle pagine-pillar. Stampa i link agli articoli del cluster (mappa
+ * in inc/cluster-map.php) — la metà top-down della perelinkovka a cluster.
+ * Si stampa solo su IT ed EN (gli articoli non hanno versione RU); su RU e per
+ * slug sconosciuti restituisce stringa vuota.
+ */
+function remarka_cluster_map(): array {
+	static $map = null;
+	if ( null === $map ) {
+		$file = get_stylesheet_directory() . '/inc/cluster-map.php';
+		$map  = file_exists( $file ) ? (array) include $file : array();
+	}
+	return $map;
+}
+
+function remarka_cluster_shortcode( $atts ): string {
+	$atts = shortcode_atts( array( 'slug' => '' ), $atts, 'remarka_cluster' );
+	$lang = function_exists( 'remarka_current_lang' ) ? remarka_current_lang() : 'it';
+	if ( 'ru' === $lang ) {
+		return ''; // Gli articoli del blog (batch 7–10) non hanno versione RU.
+	}
+	$items = remarka_cluster_map()[ $atts['slug'] ] ?? array();
+	if ( empty( $items ) ) {
+		return '';
+	}
+	$base = ( 'en' === $lang ) ? '/en/blog/' : '/blog/';
+	ob_start();
+	?>
+	<section class="wp-block-group sr-section sr-section--carta sr-cluster">
+		<div class="sr-cluster__inner">
+			<p class="sr-eyebrow"><?php echo esc_html( remarka_str( 'cluster_eyebrow' ) ); ?></p>
+			<h2 class="sr-cluster__h"><?php echo esc_html( remarka_str( 'cluster_title' ) ); ?><span class="sr-accent-dot">.</span></h2>
+			<ul class="sr-cluster__list">
+				<?php foreach ( $items as $it ) : ?>
+					<li><a href="<?php echo esc_url( home_url( $base . $it['slug'] . '/' ) ); ?>"><span><?php echo esc_html( $it[ $lang ] ?? $it['it'] ); ?></span><span class="sr-cluster__arr" aria-hidden="true">&rarr;</span></a></li>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+	</section>
+	<?php
+	return (string) ob_get_clean();
+}
+add_shortcode( 'remarka_cluster', 'remarka_cluster_shortcode' );
+
+/**
  * Валидация + отправка. Возвращает null при успехе или текст ошибки.
  * Общая для AJAX и admin-post путей.
  */

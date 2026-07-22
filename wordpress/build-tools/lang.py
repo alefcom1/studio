@@ -77,6 +77,10 @@ TOOLS_SLUGS = {
 }
 
 BLOG_SLUGS = {
+    # SEO gap-fill (cluster e-commerce, siti-aziendali) — IT+EN-only.
+    'piattaforma-ecommerce-quale-scegliere': {'en': 'which-ecommerce-platform', 'ru': 'kakuju-platformu-ecommerce'},
+    'ecommerce-checklist-prima-del-lancio': {'en': 'ecommerce-pre-launch-checklist', 'ru': 'chek-list-pered-zapuskom-magazina'},
+    'cosa-include-sito-aziendale': {'en': 'what-a-business-website-includes', 'ru': 'chto-vhodit-v-korporativnyj-sajt'},
     'sito-quattro-lingue-costi-tempi':      {'en': 'website-four-languages-costs',        'ru': 'sajt-na-4-jazykah'},
     'cookie-banner-checklist-garante-2026': {'en': 'cookie-banner-compliance-italy-2026', 'ru': 'cookie-banner-trebovanija-2026'},
     'migrare-wordpress-senza-perdere-seo':  {'en': 'migrate-wordpress-without-losing-seo', 'ru': 'migracija-wordpress-bez-poteri-seo'},
@@ -135,6 +139,10 @@ BLOG_SLUGS = {
 # una riga hreflang verso una pagina RU inesistente: la colonna RU rimanda
 # all'indice /ru/blog/ (pagina reale), così switcher e hreflang restano validi.
 BLOG_IT_EN_ONLY = {
+    # SEO gap-fill
+    'piattaforma-ecommerce-quale-scegliere',
+    'ecommerce-checklist-prima-del-lancio',
+    'cosa-include-sito-aziendale',
     'european-accessibility-act-ecommerce',
     'llms-txt-cos-e',
     'farsi-trovare-da-chatgpt-geo',

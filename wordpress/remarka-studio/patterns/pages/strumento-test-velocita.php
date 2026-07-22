@@ -154,6 +154,9 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
+<!-- wp:shortcode -->
+[remarka_cluster slug="test-velocita"]
+<!-- /wp:shortcode -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">Gli altri strumenti gratuiti</p>

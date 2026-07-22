@@ -91,6 +91,9 @@
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
+<!-- wp:shortcode -->
+[remarka_cluster slug="prezzi"]
+<!-- /wp:shortcode -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">Preventivo chiuso in 24 ore<span class="sr-accent-dot">.</span></h2>

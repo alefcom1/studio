@@ -169,6 +169,10 @@ def translate_file(path, d, href_map, lang_code, report):
     def lookup(s):
         if s in d:
             return d[s]
+        # Shortcode nudi ([remarka_cluster slug="…"], ecc.): identici in tutte le
+        # lingue, la localizzazione avviene a runtime nel PHP. Pass-through.
+        if re.fullmatch(r'\[/?[a-z_][a-z0-9_]*(?:\s[^\]]*)?\]', s):
+            return s
         # Цитаты: генератор оборачивает строку корпуса в «…» — матчим
         # внутренность и заворачиваем в кавычки целевого языка.
         if s.startswith('«') and s.endswith('»'):

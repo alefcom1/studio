@@ -127,6 +127,9 @@
 <!-- /wp:details -->
 </section>
 <!-- /wp:group -->
+<!-- wp:shortcode -->
+[remarka_cluster slug="export-ready"]
+<!-- /wp:shortcode -->
 <!-- wp:group {"tagName":"section","className":"sr-section sr-cta-band","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section sr-cta-band"><!-- wp:heading -->
 <h2 class="wp-block-heading">Il vostro prossimo mercato parla un’altra lingua<span class="sr-accent-dot">?</span></h2>

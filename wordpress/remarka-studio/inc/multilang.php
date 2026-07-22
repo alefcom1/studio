@@ -284,6 +284,9 @@ function remarka_str( string $key ): string {
 		'case_cta_p3'      => array( 'it' => 'I vostri dati restano nell’UE', 'en' => 'Your data stays in the EU', 'ru' => 'Ваши данные остаются в ЕС' ),
 		'case_cta_form_title' => array( 'it' => 'Raccontateci il progetto', 'en' => 'Tell us about the project', 'ru' => 'Расскажите о проекте' ),
 		'case_cta_svc_prefix' => array( 'it' => 'Scopri il servizio', 'en' => 'Explore the service', 'ru' => 'Смотреть услугу' ),
+		// --- Blocco cluster «Approfondimenti» (shortcode remarka_cluster) ---
+		'cluster_eyebrow' => array( 'it' => 'Guide e approfondimenti', 'en' => 'Guides & insights', 'ru' => 'Гайды и разборы' ),
+		'cluster_title'   => array( 'it' => 'Approfondimenti sul tema', 'en' => 'More on this topic', 'ru' => 'Больше по теме' ),
 		// --- Modulo preventivo a step ---
 		'form_q_tipo'      => array( 'it' => 'Di cosa hai bisogno?', 'en' => 'What do you need?', 'ru' => 'Что вам нужно?' ),
 		'form_q_tipo_hint' => array(

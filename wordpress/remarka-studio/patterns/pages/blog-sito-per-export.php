@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Pagina — Articolo: Export digitale: il sito che apre mercati esteri
+ * Title: Pagina — Articolo: Vendere all’estero online: da dove iniziare
  * Slug: remarka-studio/blog-sito-per-export
  * Categories: remarka-pagine
- * Description: Articolo blog: Export digitale: il sito che apre mercati esteri
+ * Description: Articolo blog: Vendere all’estero online: da dove iniziare
  * Viewport Width: 1400
  */
 ?>
@@ -12,16 +12,16 @@
 <p class="sr-mono" style="color:var(--sr-grigio);font-size:13px">18 LUG 2026</p>
 <!-- /wp:html -->
 <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(32px,4vw,48px)"}}} -->
-<h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Export digitale: il sito che apre mercati esteri</h1>
+<h1 class="wp-block-heading" style="font-size:clamp(32px,4vw,48px)">Vendere all’estero online: da dove iniziare</h1>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/export-cover.svg" alt="Un sito per l’export che apre mercati esteri: lingue native, SEO internazionale, pagamenti e fiducia oltre confine" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
+<figure class="wp-block-image size-large" style="margin:8px 0 8px"><img src="/wp-content/themes/remarka-studio/assets/img/blog/export-cover.svg" alt="Vendere all’estero online: cosa serve al sito — lingue native, SEO internazionale, pagamenti e fiducia oltre confine" width="1200" height="630" loading="lazy" style="max-width:100%;height:auto;display:block;border:1px solid var(--sr-bordo)"/></figure>
 <!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","className":"sr-section","layout":{"type":"constrained","contentSize":"1440px"}} -->
 <section class="wp-block-group is-layout-constrained sr-section"><!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="font-size:18px;line-height:1.75;max-width:75ch">Un’azienda manifatturiera bresciana fa il 40% del fatturato in Germania, ma il suo sito è solo in italiano — e i clienti tedeschi ordinano per telefono, quando va bene. Una guest house sul lago di Como riempie le stanze con ospiti stranieri, ma online si presenta in una lingua sola. È lo spreco silenzioso di tantissime PMI italiane: il prodotto è pronto per l’estero, il sito no. Un sito per l’export non è la home tradotta con un plugin: è uno strumento pensato per farsi trovare, capire e scegliere da chi vive in un altro mercato. Vediamo cosa serve davvero, e i casi reali del gruppo Remarka che l’hanno fatto — con numeri, non promesse.</p>
+<p class="has-base-font-size" style="font-size:18px;line-height:1.75;max-width:75ch">Un’azienda manifatturiera bresciana fa il 40% del fatturato in Germania, ma il suo sito è solo in italiano — e i clienti tedeschi ordinano per telefono, quando va bene. Una guest house sul lago di Como riempie le stanze con ospiti stranieri, ma online si presenta in una lingua sola. È lo spreco silenzioso di tantissime PMI italiane: il prodotto è pronto per l’estero, il sito no. Vendere all’estero online non è tradurre la home con un plugin: serve uno strumento pensato per farsi trovare, capire e scegliere da chi vive in un altro mercato. Vediamo cosa serve davvero, e i casi reali del gruppo Remarka che l’hanno fatto — con numeri, non promesse.</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
 <h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Perché «tradurre la home» non è export<span class="sr-accent-dot">.</span></h2>
