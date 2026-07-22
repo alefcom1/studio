@@ -34,9 +34,17 @@ services:
       # Vhost для traduzione.tech (см. apache-traduzione.conf). 020-* грузится
       # после 000-default (remarka.biz), поэтому дефолтный vhost не меняется.
       - ./apache-traduzione.conf:/etc/apache2/sites-enabled/020-traduzione.conf:ro
+      # ОГРАНИЧЕНИЕ ВОРКЕРОВ — обязательно без рескейла (4 ГБ). Заменяет
+      # дефолтный mpm_prefork.conf (MaxRequestWorkers 150 → 10), чтобы Apache
+      # не превысил docker-лимит и не словил OOM. ⚠️ Глобально для обоих сайтов
+      # (Apache общий) — см. комментарий в apache-mpm-tuning.conf.
+      - ./apache-mpm-tuning.conf:/etc/apache2/mods-enabled/mpm_prefork.conf:ro
     deploy:
       resources:
         limits:
+          # 768M безопасен ТОЛЬКО вместе с MaxRequestWorkers=10 выше
+          # (10×~60МБ + база/OPcache ~150МБ ≈ 750МБ < 768М). Без ограничения
+          # воркеров этот лимит контейнер лишь быстрее убивает под нагрузкой.
           memory: 768M
 
   # wpcli тоже видит второй docroot — команды для traduzione.tech идут с
