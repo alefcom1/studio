@@ -976,21 +976,18 @@ body .entry-header {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 .sr-case-cta__points li {
-  position: relative;
-  padding-left: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
   font-size: 15px;
 }
-.sr-case-cta__points li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: -1px;
+.sr-case-cta__ico {
   color: var(--sr-oltremare);
-  font-family: var(--sr-font-mono);
-  font-weight: 700;
+  flex: 0 0 auto;
+  margin-top: 1px;
 }
 .sr-case-cta__btns {
   margin-top: 28px;
@@ -998,6 +995,25 @@ body .entry-header {
   flex-wrap: wrap;
   gap: 14px;
 }
+/* I due pulsanti devono SEMBRARE pulsanti anche senza gli stili generati da
+   theme.json: padding, raggio, peso espliciti. WhatsApp verde (icona inclusa)
+   + servizio in outline. */
+.sr-case-cta__btns .wp-block-button__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 22px;
+  border-radius: 11px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+}
+.sr-case-cta__btns .wp-block-button:not(.is-style-outline):not(.sr-btn-whatsapp) .wp-block-button__link {
+  background: var(--sr-oltremare);
+  color: var(--sr-carta);
+}
+.sr-case-cta__wa svg { flex: 0 0 auto; }
 .sr-case-cta__form {
   background: var(--sr-bianco);
   border: 1px solid var(--sr-bordo);

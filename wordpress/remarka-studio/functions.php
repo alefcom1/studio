@@ -1759,20 +1759,19 @@ function remarka_case_cta_shortcode( $atts ): string {
 				<h2 class="sr-case-cta__h"><?php echo esc_html( remarka_str( 'case_cta_h' ) ); ?><span class="sr-accent-dot">.</span></h2>
 				<p class="sr-case-cta__lead"><?php echo esc_html( remarka_str( 'case_cta_text' ) ); ?></p>
 				<ul class="sr-case-cta__points">
-					<li><?php echo esc_html( remarka_str( 'case_cta_p1' ) ); ?></li>
-					<li><?php echo esc_html( remarka_str( 'case_cta_p2' ) ); ?></li>
-					<li><?php echo esc_html( remarka_str( 'case_cta_p3' ) ); ?></li>
+					<li><svg class="sr-case-cta__ico" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span><?php echo esc_html( remarka_str( 'case_cta_p1' ) ); ?></span></li>
+					<li><svg class="sr-case-cta__ico" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.4"/></svg><span><?php echo esc_html( remarka_str( 'case_cta_p2' ) ); ?></span></li>
+					<li><svg class="sr-case-cta__ico" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.2-3 7.4-7 9-4-1.6-7-4.8-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span><?php echo esc_html( remarka_str( 'case_cta_p3' ) ); ?></span></li>
 				</ul>
 				<div class="wp-block-buttons sr-case-cta__btns">
-					<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( $wa ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html( remarka_str( 'wa_label' ) ); ?></a></div>
+					<div class="wp-block-button sr-btn-whatsapp"><a class="wp-block-button__link wp-element-button sr-case-cta__wa" href="<?php echo esc_url( $wa ); ?>" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.14-.19.29-.74.93-.91 1.12-.17.19-.34.21-.62.07-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.72-1.6-2-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.57-.89-2.15-.24-.56-.48-.49-.65-.5h-.56c-.19 0-.51.07-.77.36-.26.29-1.01.99-1.01 2.41s1.04 2.8 1.18 2.99c.15.19 2.04 3.12 4.95 4.38.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12.05 21.5h-.01a9.5 9.5 0 01-4.84-1.33l-.35-.2-3.6.94.96-3.51-.23-.36a9.46 9.46 0 01-1.45-5.05c0-5.24 4.27-9.5 9.51-9.5 2.54 0 4.93.99 6.72 2.79a9.44 9.44 0 012.78 6.72c0 5.24-4.27 9.5-9.5 9.5z"/></svg><span><?php echo esc_html( remarka_str( 'wa_label' ) ); ?></span></a></div>
 					<?php if ( $svc_url ) : ?>
 					<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( $svc_url ) ); ?>"><?php echo esc_html( remarka_str( 'case_cta_svc_prefix' ) . ' ' . $svc_label ); ?> &rarr;</a></div>
 					<?php endif; ?>
 				</div>
 			</div>
 			<div class="sr-case-cta__form">
-				<p class="sr-eyebrow sr-case-cta__form-title"><?php echo esc_html( remarka_str( 'case_cta_form_title' ) ); ?></p>
-				<?php echo do_shortcode( '[remarka_form]' ); ?>
+				<?php echo do_shortcode( '[remarka_hero_form]' ); ?>
 			</div>
 		</div>
 	</section>
