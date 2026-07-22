@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="Cookie policy e privacy policy a confronto: due documenti, due scopi, quando servono">
+  <defs>
+    <pattern id="gridCd" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="520" fill="#F7F6F2"/>
+  <rect width="1200" height="520" fill="url(#gridCd)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">DUE DOCUMENTI, DUE SCOPI — QUANDO SERVONO</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <!-- Privacy policy -->
+  <g transform="translate(80,110)">
+    <rect x="0" y="0" width="500" height="360" fill="#FFFFFF" stroke="#2440C8" stroke-width="2"/>
+    <rect x="0" y="0" width="500" height="66" fill="#2440C8"/>
+    <text x="28" y="42" class="disp" font-size="30" fill="#FFFFFF">Privacy policy</text>
+    <text x="28" y="112" class="mono" font-size="14" letter-spacing="1" fill="#2440C8">RIGUARDA</text>
+    <text x="28" y="142" class="body" font-size="19" fill="#14161A">Tutti i dati personali che trattate</text>
+    <text x="28" y="196" class="mono" font-size="14" letter-spacing="1" fill="#2440C8">CONTIENE</text>
+    <text x="28" y="226" class="body" font-size="17" fill="#14161A">Titolare · finalità · basi giuridiche</text>
+    <text x="28" y="252" class="body" font-size="17" fill="#14161A">Tempi · destinatari · diritti</text>
+    <text x="28" y="306" class="mono" font-size="14" letter-spacing="1" fill="#2440C8">QUANDO</text>
+    <text x="28" y="336" class="body" font-size="17" fill="#14161A">Sempre, se raccogliete qualcosa</text>
+    <text x="480" y="336" class="mono" font-size="13" fill="#5A5E66" text-anchor="end">GDPR art. 13–14</text>
+  </g>
+  <!-- Cookie policy -->
+  <g transform="translate(620,110)">
+    <rect x="0" y="0" width="500" height="360" fill="#FFFFFF" stroke="#14161A" stroke-width="2"/>
+    <rect x="0" y="0" width="500" height="66" fill="#14161A"/>
+    <text x="28" y="42" class="disp" font-size="30" fill="#FFFFFF">Cookie policy</text>
+    <text x="28" y="112" class="mono" font-size="14" letter-spacing="1" fill="#14161A">RIGUARDA</text>
+    <text x="28" y="142" class="body" font-size="19" fill="#14161A">I cookie e i tracciatori del sito</text>
+    <text x="28" y="196" class="mono" font-size="14" letter-spacing="1" fill="#14161A">CONTIENE</text>
+    <text x="28" y="226" class="body" font-size="17" fill="#14161A">Elenco cookie · titolare · finalità</text>
+    <text x="28" y="252" class="body" font-size="17" fill="#14161A">Durata · terze parti · + banner</text>
+    <text x="28" y="306" class="mono" font-size="14" letter-spacing="1" fill="#14161A">QUANDO</text>
+    <text x="28" y="336" class="body" font-size="17" fill="#14161A">Se usate cookie non tecnici</text>
+    <text x="480" y="336" class="mono" font-size="13" fill="#5A5E66" text-anchor="end">+ consenso</text>
+  </g>
+  <text x="600" y="502" class="mono" font-size="15" fill="#2440C8" text-anchor="middle">Nella maggior parte dei siti reali servono entrambe.</text>
+</svg>

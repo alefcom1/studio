@@ -4150,3 +4150,367 @@ CHROME.update({
     "Leggi il caso completo: architettura, funzioni e fasi →":
         {"en": "Read the full case study: architecture, features and phases →"},
 })
+
+
+# CHROME_BLOG_BATCH8 — Blog · Batch 8 (seconda ondata, 5 articoli IT → EN):
+# Consent Mode v2, GA4 e GDPR, alternative privacy-first (Matomo/Plausible),
+# cookie policy vs privacy policy, backup e sicurezza. Copre ogni nodo di testo
+# generato da build_blog_post (titolo, estratto, corpo, sezioni, figure, fonti).
+# Solo EN (il blog RU è un batch a sé).
+CHROME_BLOG_BATCH8 = {
+    "22 LUG 2026": {"en": "22 JUL 2026"},
+
+    # ============= Articolo 36 · Google Consent Mode v2 =============
+    "Google Consent Mode v2: cosa cambia per annunci e analytics":
+        {"en": "Google Consent Mode v2: what changes for ads and analytics"},
+    "Da marzo 2024 Google chiede il Consent Mode v2 a chi fa pubblicità in UE. Cos’è, perché serve e come metterlo senza tradire il consenso ai cookie.":
+        {"en": "Since March 2024 Google requires Consent Mode v2 from anyone advertising in the EU. What it is, why it matters and how to set it up without betraying cookie consent."},
+    "Se fate pubblicità con Google o misurate il sito con Analytics, dal 2024 è comparsa una sigla che non potete più ignorare: Consent Mode v2. Non è l’ennesima moda tecnica, è il modo con cui Google ha legato i suoi strumenti al consenso ai cookie che ogni sito europeo deve già chiedere. Chi non lo configura vede campagne meno efficaci e dati che si assottigliano, senza capire perché. Vediamo cos’è il Consent Mode v2, cosa cambia davvero per annunci e analytics, e come metterlo in modo che rispetti la scelta di chi visita — non che la aggiri.":
+        {"en": "If you advertise with Google or measure your site with Analytics, since 2024 a label has appeared that you can no longer ignore: Consent Mode v2. It isn’t yet another technical fad — it’s how Google has tied its tools to the cookie consent that every European site already has to request. Skip the setup and you see less effective campaigns and data thinning out, without understanding why. Let’s look at what Consent Mode v2 is, what really changes for ads and analytics, and how to set it up so it respects the visitor’s choice — rather than working around it."},
+    "Consent Mode v2: cosa cambia per annunci e analytics con il consenso ai cookie":
+        {"en": "Consent Mode v2: what changes for ads and analytics with cookie consent"},
+    "Cos’è il Consent Mode (e perché è arrivata la v2)":
+        {"en": "What Consent Mode is (and why v2 arrived)"},
+    "Il Consent Mode è il ponte tra il vostro banner dei cookie e i tag di Google. In pratica dice ai tag — Analytics, Google Ads — come comportarsi a seconda di ciò che il visitatore ha scelto: se ha accettato i cookie di misurazione, se ha rifiutato quelli pubblicitari, e così via. Non è una novità assoluta: esisteva già da qualche anno. La versione 2 aggiunge due nuovi segnali di consenso, dedicati agli usi pubblicitari dei dati, e li rende obbligatori.":
+        {"en": "Consent Mode is the bridge between your cookie banner and Google’s tags. In practice it tells the tags — Analytics, Google Ads — how to behave depending on what the visitor chose: whether they accepted measurement cookies, whether they refused advertising ones, and so on. It isn’t entirely new: it had existed for a few years already. Version 2 adds two new consent signals, dedicated to the advertising uses of data, and makes them mandatory."},
+    "Il perché è semplice: dal marzo 2024 Google richiede il Consent Mode v2 a chi vuole continuare a usare i dati del pubblico europeo per la pubblicità — remarketing, liste di segmenti, conversioni. Senza quei due segnali, alcune funzioni si spengono per gli utenti dello Spazio economico europeo. Google lo ha fatto per allinearsi alle regole UE sul consenso, non per capriccio: è la sua risposta al fatto che in Europa, prima di tracciare qualcuno, il consenso valido va chiesto davvero.":
+        {"en": "The reason is simple: since March 2024 Google requires Consent Mode v2 from anyone who wants to keep using European audience data for advertising — remarketing, audience lists, conversions. Without those two signals, some features switch off for users in the European Economic Area. Google did it to align with EU consent rules, not on a whim: it’s its answer to the fact that in Europe, before tracking anyone, valid consent has to be genuinely requested."},
+    "Cosa cambia davvero per annunci e analytics":
+        {"en": "What really changes for ads and analytics"},
+    "Sul lato pubblicità il cambiamento è netto: se non trasmettete i nuovi segnali, le liste di remarketing e i segmenti di pubblico costruiti su utenti europei smettono di alimentarsi. Le campagne non si fermano, ma perdono progressivamente il carburante che le rendeva precise. Chi se ne accorge tardi si ritrova con annunci meno mirati e un costo per contatto che sale, senza una causa evidente.":
+        {"en": "On the advertising side the change is sharp: if you don’t transmit the new signals, remarketing lists and audience segments built on European users stop being fed. The campaigns don’t stop, but they gradually lose the fuel that made them precise. Those who notice late end up with less targeted ads and a cost per lead that climbs, with no obvious cause."},
+    "Sul lato misurazione, invece, cambia la natura del dato. Quando un visitatore rifiuta, i tag non scrivono cookie ma possono inviare a Google segnali anonimi e aggregati, da cui gli strumenti stimano — non registrano — una parte di ciò che è successo. I vostri report cambiano faccia: meno utenti identificati, più modellazione statistica. È un compromesso voluto, privacy prima di tutto, e va capito per non leggere i numeri come se fossero ancora quelli di una volta.":
+        {"en": "On the measurement side, instead, the nature of the data changes. When a visitor refuses, the tags don’t write cookies but can send Google anonymous, aggregated signals, from which the tools estimate — not record — part of what happened. Your reports change face: fewer identified users, more statistical modelling. It’s a deliberate trade-off, privacy first, and it has to be understood so you don’t read the numbers as if they were still the old ones."},
+    "Verifica gratis conformità cookie e consenso del vostro sito":
+        {"en": "Check your site’s cookie and consent compliance for free"},
+    "Il Consent Mode v2 non sostituisce il banner (né il consenso)":
+        {"en": "Consent Mode v2 doesn’t replace the banner (or consent)"},
+    "Qui casca la maggior parte dei siti. Il Consent Mode non è un banner dei cookie e non è una piattaforma di raccolta del consenso: è l’idraulica che legge la scelta che un banner serio raccoglie. Il banner vero deve bloccare i tag prima del consenso e offrire un rifiuto facile quanto l’accettazione. Su questo il Garante, nelle sue linee guida sui cookie, e la task force europea dell’EDPB sono espliciti: le caselle pre-spuntate e l’«accetta scorrendo» non sono consenso valido.":
+        {"en": "This is where most sites fall down. Consent Mode isn’t a cookie banner and isn’t a consent-collection platform: it’s the plumbing that reads the choice a serious banner collects. The real banner has to block the tags before consent and offer a refusal as easy as acceptance. On this the Italian Garante, in its cookie guidelines, and the European EDPB taskforce are explicit: pre-ticked boxes and “accept by scrolling” are not valid consent."},
+    "L’ordine conta. Prima il banner blocca gli script per impostazione predefinita; poi il visitatore sceglie; solo allora il Consent Mode trasmette quella scelta ai tag di Google. Se il banner è finto — cioè carica tutto comunque e chiede il permesso a cose fatte — il Consent Mode diventa una foglia di fico, non una prova di conformità. La tecnica di Google funziona solo appoggiata a un consenso raccolto come si deve.":
+        {"en": "Order matters. First the banner blocks the scripts by default; then the visitor chooses; only then does Consent Mode transmit that choice to Google’s tags. If the banner is fake — that is, it loads everything anyway and asks permission after the fact — Consent Mode becomes a fig leaf, not proof of compliance. Google’s technology only works when it rests on consent collected properly."},
+    "SEO tecnica e tracciamento pulito di serie in ogni pagina":
+        {"en": "Technical SEO and clean tracking as standard on every page"},
+    "Leggi anche: cookie policy o privacy policy, cosa serve a chi":
+        {"en": "Read also: cookie policy or privacy policy, what serves whom"},
+    "Come si mette senza rompere niente":
+        {"en": "How to set it up without breaking anything"},
+    "In pratica servono tre pezzi che lavorino insieme. Una piattaforma di gestione del consenso (una CMP) che raccolga la scelta e sia compatibile con Consent Mode v2; il collegamento tra CMP e tag di Google, così che i due nuovi segnali partano correttamente; e una verifica onesta che, prima del consenso, nessun cookie di analytics o pubblicità venga scritto. È l’ordine giusto, non un dettaglio da rimandare al lancio.":
+        {"en": "In practice you need three pieces working together. A consent management platform (a CMP) that collects the choice and is compatible with Consent Mode v2; the link between the CMP and Google’s tags, so the two new signals fire correctly; and an honest check that, before consent, no analytics or advertising cookie is written. That’s the right order, not a detail to postpone until launch."},
+    "Poi si misura il risultato. Controllate che a consenso negato arrivino i dati modellati e non zero, che i segnali pubblicitari si attivino solo dopo l’accettazione, e soprattutto che il banner blocchi davvero all’inizio. Una scansione della conformità cookie e GDPR vi dice in pochi secondi se i tag partono prima del consenso — l’errore più comune e più costoso.":
+        {"en": "Then you measure the result. Check that with consent denied the modelled data arrives and not zero, that the advertising signals activate only after acceptance, and above all that the banner really does block at the start. A cookie and GDPR compliance scan tells you in a few seconds whether the tags fire before consent — the most common and most expensive mistake."},
+    "Come funziona Consent Mode v2: dal banner dei cookie ai segnali di consenso verso Google":
+        {"en": "How Consent Mode v2 works: from the cookie banner to the consent signals sent to Google"},
+    "Come funziona il Consent Mode v2: il banner blocca i tag per impostazione predefinita (1), il visitatore sceglie (2), la CMP trasmette la scelta e i due nuovi segnali pubblicitari a Google (3). A consenso negato i tag non scrivono cookie ma inviano segnali anonimi e aggregati. Il Consent Mode legge il consenso, non lo raccoglie.":
+        {"en": "How Consent Mode v2 works: the banner blocks the tags by default (1), the visitor chooses (2), the CMP transmits the choice and the two new advertising signals to Google (3). With consent denied the tags don’t write cookies but send anonymous, aggregated signals. Consent Mode reads consent, it doesn’t collect it."},
+    "Il consenso prima, la misura dopo":
+        {"en": "Consent first, measurement after"},
+    "Il senso di tutto è un ordine: prima il consenso, poi la misura. Il Consent Mode v2 allinea gli strumenti di Google al consenso che siete comunque obbligati a raccogliere. Configurato bene, vi lascia tutta la misurazione che la legge permette senza tradire chi vi visita. Configurato male, o saltato, vi fa perdere due cose insieme — la conformità e i dati — e spesso ve ne accorgete solo quando le campagne rendono meno e i report si svuotano.":
+        {"en": "The whole point is an order: consent first, measurement after. Consent Mode v2 aligns Google’s tools with the consent you’re required to collect anyway. Set up well, it leaves you all the measurement the law allows without betraying your visitors. Set up badly, or skipped, it makes you lose two things at once — compliance and data — and you often notice only when campaigns pay off less and the reports empty out."},
+    "La nostra linea è semplice: costruiamo siti dove il banner blocca per impostazione predefinita e la misurazione rispetta la scelta di chi arriva. Misurare va bene; misurare a spese della fiducia, no. E la buona notizia è che, fatta nell’ordine giusto, la conformità non è nemica dei dati: è la condizione per averli puliti e difendibili.":
+        {"en": "Our line is simple: we build sites where the banner blocks by default and measurement respects the visitor’s choice. Measuring is fine; measuring at the expense of trust is not. And the good news is that, done in the right order, compliance isn’t the enemy of data: it’s the condition for having it clean and defensible."},
+    "Leggi anche: Google Analytics 4 e privacy in UE, siete a norma?":
+        {"en": "Read also: Google Analytics 4 and privacy in the EU, are you compliant?"},
+    "Google — Consent Mode (guida per sviluppatori)":
+        {"en": "Google — Consent Mode (developer guide)"},
+    "La documentazione ufficiale: cosa fanno i segnali di consenso e come i tag si comportano prima e dopo la scelta.":
+        {"en": "The official documentation: what the consent signals do and how the tags behave before and after the choice."},
+    "Google — EU user consent policy":
+        {"en": "Google — EU user consent policy"},
+    "La politica che obbliga chi usa gli strumenti Google in UE a raccogliere un consenso valido: la ragione del Consent Mode v2.":
+        {"en": "The policy that requires anyone using Google’s tools in the EU to collect valid consent: the reason for Consent Mode v2."},
+    "EDPB — report della cookie banner taskforce":
+        {"en": "EDPB — cookie banner taskforce report"},
+    "Cosa non è consenso valido secondo i garanti europei: caselle pre-spuntate e «accetta scorrendo» non bastano.":
+        {"en": "What is not valid consent according to Europe’s regulators: pre-ticked boxes and “accept by scrolling” aren’t enough."},
+    "Garante Privacy — linee guida sui cookie":
+        {"en": "Garante Privacy — cookie guidelines"},
+    "Le regole italiane sul banner: blocco preventivo dei tag e rifiuto facile quanto l’accettazione.":
+        {"en": "Italy’s rules on the banner: pre-emptive blocking of tags and a refusal as easy as acceptance."},
+
+    # ============= Articolo 37 · Google Analytics 4 e GDPR =============
+    "Google Analytics 4 e privacy in UE: siete davvero a norma?":
+        {"en": "Google Analytics 4 and privacy in the EU: are you really compliant?"},
+    "GA4 ha sostituito Universal Analytics, ma non ha chiuso la domanda: si può usare in UE a norma? Cosa dice il GDPR, cosa fece il Garante e come mettervi in regola.":
+        {"en": "GA4 replaced Universal Analytics, but it didn’t close the question: can it be used compliantly in the EU? What the GDPR says, what the Garante did, and how to get in order."},
+    "Nel luglio 2023 Google Analytics 4 ha preso il posto della vecchia Universal Analytics, e in molti hanno migrato in fretta pensando di aver risolto un problema. In realtà la domanda più scomoda è rimasta identica: si può usare Google Analytics 4 in UE nel rispetto del GDPR? Installare GA4 non equivale, da solo, a essere a norma — e chi lo dà per scontato rischia di scoprire il contrario nel momento peggiore. Vediamo cosa è davvero cambiato con GA4, dove sta il nodo della privacy, e la checklist concreta per usarlo senza esporsi.":
+        {"en": "In July 2023 Google Analytics 4 took the place of the old Universal Analytics, and many migrated in a hurry thinking they had solved a problem. In reality the most uncomfortable question stayed exactly the same: can you use Google Analytics 4 in the EU in compliance with the GDPR? Installing GA4 does not, on its own, amount to being compliant — and those who take it for granted risk discovering the opposite at the worst moment. Let’s look at what really changed with GA4, where the privacy knot lies, and the concrete checklist for using it without exposing yourself."},
+    "Google Analytics 4 e GDPR: il vostro sito è davvero a norma sulla privacy in UE":
+        {"en": "Google Analytics 4 and GDPR: is your site really privacy-compliant in the EU"},
+    "Da Universal Analytics a GA4: cosa è cambiato (e cosa no)":
+        {"en": "From Universal Analytics to GA4: what changed (and what didn’t)"},
+    "GA4 è stato ridisegnato con qualche attenzione in più alla privacy rispetto al predecessore: non memorizza gli indirizzi IP come faceva Universal Analytics, offre controlli sulla conservazione dei dati e impostazioni per limitare la condivisione. Su questo, un passo avanti c’è stato davvero, e va riconosciuto senza minimizzarlo.":
+        {"en": "GA4 was redesigned with a little more attention to privacy than its predecessor: it doesn’t store IP addresses the way Universal Analytics did, it offers data-retention controls and settings to limit sharing. On this, a step forward genuinely happened, and it should be acknowledged without playing it down."},
+    "Ciò che non è cambiato è la sostanza: GA4 resta uno strumento di Google che raccoglie dati sui vostri visitatori e li elabora sulla sua infrastruttura. Le impostazioni migliori del mondo non tolgono il fatto che state affidando dati personali a un fornitore, e che dietro c’è un flusso che attraversa l’Atlantico. La migrazione tecnica ha risolto un problema di prodotto, non quello giuridico.":
+        {"en": "What didn’t change is the substance: GA4 remains a Google tool that collects data about your visitors and processes it on its infrastructure. The best settings in the world don’t remove the fact that you’re entrusting personal data to a provider, and that behind it there’s a flow crossing the Atlantic. The technical migration solved a product problem, not the legal one."},
+    "Il nodo vero: il trasferimento dei dati":
+        {"en": "The real knot: data transfer"},
+    "Il punto delicato è sempre stato il trasferimento dei dati verso gli Stati Uniti. Nel 2022 il Garante italiano, in linea con altre autorità europee, dichiarò illecito l’uso di Google Analytics così com’era configurato da un sito, proprio per quel trasferimento in un Paese senza garanzie adeguate dopo la sentenza «Schrems II». Fu un segnale forte: la comodità di uno strumento non basta a giustificare un flusso di dati fuori regola.":
+        {"en": "The sensitive point has always been the transfer of data to the United States. In 2022 the Italian Garante, in line with other European authorities, declared unlawful the use of Google Analytics as one site had it configured, precisely because of that transfer to a country without adequate safeguards after the “Schrems II” ruling. It was a strong signal: the convenience of a tool isn’t enough to justify a data flow that breaks the rules."},
+    "Nel 2023 il quadro è cambiato di nuovo: l’Unione europea e gli Stati Uniti hanno adottato il «Data Privacy Framework», una nuova base giuridica per i trasferimenti verso le aziende americane che vi aderiscono, Google inclusa. Non è un liberi tutti definitivo — il Framework è già contestato e potrebbe essere rimesso in discussione — ma oggi offre un appiglio legale che nel 2022 mancava. Su questi passaggi conviene essere onesti: sono in evoluzione, e vanno verificati, non dati per acquisiti.":
+        {"en": "In 2023 the picture changed again: the European Union and the United States adopted the “Data Privacy Framework,” a new legal basis for transfers to American companies that join it, Google included. It isn’t a definitive free-for-all — the Framework is already being challenged and could be called into question — but today it offers a legal foothold that was missing in 2022. On these developments it pays to be honest: they’re evolving, and they should be verified, not taken as settled."},
+    "Google Analytics 4 e GDPR: la checklist per essere a norma":
+        {"en": "Google Analytics 4 and GDPR: the checklist to be compliant"},
+    "Mettere GA4 a norma è possibile, ma va fatto per davvero, punto per punto. Serve un banner che blocchi GA4 prima del consenso e lo attivi solo dopo l’accettazione, idealmente attraverso il Consent Mode; vanno configurate la conservazione dei dati e le condivisioni verso altri prodotti Google, disattivando ciò che non usate; va accettato e conservato l’accordo sul trattamento dei dati con Google; e GA4 va dichiarato nella cookie policy e nell’informativa privacy, con i diritti dell’utente resi esercitabili.":
+        {"en": "Making GA4 compliant is possible, but it has to be done for real, point by point. You need a banner that blocks GA4 before consent and activates it only after acceptance, ideally through Consent Mode; data retention and sharing with other Google products have to be configured, switching off what you don’t use; the data processing agreement with Google has to be accepted and kept; and GA4 has to be declared in the cookie policy and the privacy notice, with the user’s rights made exercisable."},
+    "Nessuno di questi passaggi è complicato preso da solo. Il problema è che quasi sempre ne manca uno o due — di solito il primo, il consenso — e basta a rendere tutto il resto inutile. Una verifica sistematica, non a memoria, è il modo più rapido per sapere a che punto siete.":
+        {"en": "None of these steps is complicated taken on its own. The problem is that almost always one or two are missing — usually the first, consent — and that’s enough to make all the rest pointless. A systematic check, not one from memory, is the quickest way to know where you stand."},
+    "Google Analytics 4 e GDPR: la checklist per essere a norma sulla privacy":
+        {"en": "Google Analytics 4 and GDPR: the checklist to be privacy-compliant"},
+    "Google Analytics 4 a norma, in cinque mosse: consenso raccolto prima che GA4 parta (1), conservazione dei dati configurata (2), condivisioni verso Google disattivate se non servono (3), accordo sul trattamento firmato (4), GA4 dichiarato in cookie e privacy policy (5). Manca spesso la prima — e da sola annulla le altre.":
+        {"en": "GA4 compliant in five moves: consent collected before GA4 fires (1), data retention configured (2), sharing with Google switched off where not needed (3), the processing agreement signed (4), GA4 declared in the cookie and privacy policy (5). The first is often missing — and on its own it cancels the others."},
+    "Consenso e configurazione: i due errori più comuni":
+        {"en": "Consent and configuration: the two most common mistakes"},
+    "Il primo errore, il più diffuso, è far partire GA4 prima del consenso: il banner c’è, ma è decorativo, e i dati vengono raccolti comunque dal primo istante. È esattamente ciò che le autorità contestano, ed è anche la cosa più facile da rilevare con una scansione. Il secondo errore è lasciare attive per inerzia le condivisioni dei dati verso i prodotti pubblicitari di Google senza dichiararle e senza una base valida: un tracciamento in più di cui l’utente non sa nulla.":
+        {"en": "The first mistake, the most widespread, is letting GA4 fire before consent: the banner is there, but it’s decorative, and the data is collected anyway from the first instant. It’s exactly what the authorities object to, and it’s also the easiest thing to detect with a scan. The second mistake is leaving data sharing with Google’s advertising products active out of inertia, without declaring it and without a valid basis: an extra layer of tracking the user knows nothing about."},
+    "Entrambi gli errori nascono dallo stesso equivoco: pensare che installare lo strumento sia la fine del lavoro, quando è l’inizio. La configurazione predefinita di GA4 è pensata per raccogliere il massimo, non per la conformità: sta a voi restringerla. È lo stesso lavoro di pulizia tecnica che facciamo su ogni sito, non un ritocco da rimandare.":
+        {"en": "Both mistakes come from the same misconception: thinking that installing the tool is the end of the job, when it’s the start. GA4’s default configuration is designed to collect the maximum, not for compliance: it’s up to you to narrow it. It’s the same technical clean-up work we do on every site, not a touch-up to postpone."},
+    "SEO tecnica e tracciamento a norma di serie":
+        {"en": "Technical SEO and compliant tracking as standard"},
+    "Leggi anche: Consent Mode v2, cosa cambia per annunci e analytics":
+        {"en": "Read also: Consent Mode v2, what changes for ads and analytics"},
+    "A norma si può, ma va fatto":
+        {"en": "Compliant is possible, but you have to do it"},
+    "La risposta alla domanda del titolo, quindi, è: sì, si può usare Google Analytics 4 a norma in UE — ma non per il solo fatto di averlo installato. Serve un consenso raccolto prima, una configurazione ristretta, gli accordi in ordine e la trasparenza nelle informative. Fatto questo, GA4 è uno strumento legittimo; saltato anche solo il primo passo, è un rischio che vi portate dietro a ogni visita.":
+        {"en": "The answer to the title’s question, then, is: yes, you can use Google Analytics 4 compliantly in the EU — but not by the mere fact of having installed it. You need consent collected first, a narrowed configuration, the agreements in order and transparency in the notices. Do this and GA4 is a legitimate tool; skip even the first step and it’s a risk you carry with every visit."},
+    "E se tutta questa fatica per restare a norma vi sembra sproporzionata rispetto a ciò che vi serve davvero sapere del sito, è una domanda legittima: esistono alternative più leggere e privacy-first, che chiedono meno consenso e meno configurazione. Ne parliamo nell’articolo dedicato. Lo strumento giusto è quello che riuscite a tenere a norma senza dimenticarvi un pezzo per strada.":
+        {"en": "And if all this effort to stay compliant seems out of proportion to what you actually need to know about the site, that’s a fair question: there are lighter, privacy-first alternatives that ask for less consent and less configuration. We cover them in the dedicated article. The right tool is the one you can keep compliant without forgetting a piece along the way."},
+    "Leggi anche: alternative privacy-first a Google Analytics":
+        {"en": "Read also: privacy-first alternatives to Google Analytics"},
+    "Regolamento GDPR 2016/679 — EUR-Lex":
+        {"en": "GDPR Regulation 2016/679 — EUR-Lex"},
+    "Il testo di legge: consenso, trasparenza e diritti dell’utente valgono anche quando misurate il traffico.":
+        {"en": "The text of the law: consent, transparency and the user’s rights apply even when you measure traffic."},
+    "EDPB — trasferimenti internazionali di dati":
+        {"en": "EDPB — international data transfers"},
+    "Perché il flusso verso gli Stati Uniti è il nodo di Google Analytics: la guida dei garanti europei sui trasferimenti.":
+        {"en": "Why the flow to the United States is Google Analytics’ sticking point: Europe’s regulators’ guide on transfers."},
+    "Garante Privacy — sito ufficiale":
+        {"en": "Garante Privacy — official website"},
+    "L’autorità italiana che nel 2022 dichiarò illecito l’uso di Google Analytics così configurato: provvedimenti e aggiornamenti.":
+        {"en": "The Italian authority that in 2022 declared unlawful the use of Google Analytics as configured: rulings and updates."},
+    "Google — centro assistenza Analytics":
+        {"en": "Google — Analytics Help Center"},
+    "La documentazione ufficiale su conservazione dei dati, condivisioni e controlli privacy di GA4.":
+        {"en": "The official documentation on data retention, sharing and GA4’s privacy controls."},
+
+    # ============= Articolo 38 · Alternative privacy-first =============
+    "Alternative privacy-first a Google Analytics: Matomo e Plausible":
+        {"en": "Privacy-first alternatives to Google Analytics: Matomo and Plausible"},
+    "Se il consenso vi mangia metà dei dati, forse il problema è lo strumento. Le alternative privacy-first a Google Analytics — Matomo e Plausible — cosa offrono e a chi convengono.":
+        {"en": "If consent eats half your data, maybe the problem is the tool. Privacy-first alternatives to Google Analytics — Matomo and Plausible — what they offer and who they suit."},
+    "Ogni volta che un visitatore rifiuta i cookie, una fetta dei vostri dati di Google Analytics svanisce — e con banner fatti bene quella fetta è grande. A un certo punto è lecito chiedersi se il problema non sia lo strumento. Le alternative privacy-first a Google Analytics esistono, sono mature, e per molte PMI raccontano ciò che serve davvero con molto meno peso normativo e tecnico. Le due più note sono Matomo e Plausible. Vediamo cosa offrono, in cosa si distinguono, e — onestamente — quando conviene cambiare e quando no.":
+        {"en": "Every time a visitor refuses cookies, a slice of your Google Analytics data vanishes — and with a well-built banner that slice is large. At some point it’s fair to ask whether the problem isn’t the tool. Privacy-first alternatives to Google Analytics exist, they’re mature, and for many SMEs they tell you what you actually need with far less regulatory and technical weight. The two best known are Matomo and Plausible. Let’s look at what they offer, how they differ, and — honestly — when it’s worth switching and when it isn’t."},
+    "Alternative privacy-first a Google Analytics: Matomo e Plausible a confronto":
+        {"en": "Privacy-first alternatives to Google Analytics: Matomo and Plausible compared"},
+    "Perché cercare un’alternativa":
+        {"en": "Why look for an alternative"},
+    "Google Analytics ha due costi che non compaiono in fattura. Il primo è normativo: è uno strumento americano che raccoglie dati personali, quindi richiede consenso esplicito, configurazione attenta e una gestione dei trasferimenti sempre in evoluzione. Il secondo è di peso: il suo codice è pesante e, insieme al banner necessario per attivarlo, appesantisce ogni pagina. Per un sito che punta a essere veloce, non è neutro.":
+        {"en": "Google Analytics has two costs that don’t show up on an invoice. The first is regulatory: it’s an American tool that collects personal data, so it requires explicit consent, careful configuration and an ever-evolving handling of transfers. The second is weight: its code is heavy and, together with the banner needed to activate it, it weighs down every page. For a site aiming to be fast, that isn’t neutral."},
+    "Gli strumenti privacy-first nascono per togliere entrambi i costi. Molti non usano cookie identificativi e non raccolgono dati personali, il che — a seconda della configurazione e sentito il quadro del Garante — può ridurre o azzerare il bisogno di un banner per la sola analisi. E hanno codice leggero, che non rallenta il sito. Meno consenso da gestire, meno peso da caricare: per una PMI è spesso esattamente ciò che serve.":
+        {"en": "Privacy-first tools are born to remove both costs. Many use no identifying cookies and collect no personal data, which — depending on the configuration and given the Garante’s framework — can reduce or eliminate the need for a banner for analytics alone. And they have lightweight code that doesn’t slow the site down. Less consent to manage, less weight to load: for an SME that’s often exactly what’s needed."},
+    "Matomo: il controllo completo dei dati":
+        {"en": "Matomo: full control of your data"},
+    "Matomo è la più potente delle due ed è pensata per chi vuole possedere i propri dati. È open source e potete installarla sul vostro server, oppure usarne la versione cloud ospitata in Europa: in entrambi i casi i dati restano sotto il vostro controllo, senza girare a un terzo per finalità pubblicitarie. Offre report ricchi, vicini a quelli a cui GA vi ha abituati, e può funzionare in modalità anonimizzata e senza cookie.":
+        {"en": "Matomo is the more powerful of the two and is built for those who want to own their data. It’s open source and you can install it on your own server, or use its cloud version hosted in Europe: in both cases the data stays under your control, without going to a third party for advertising purposes. It offers rich reports, close to the ones GA got you used to, and it can run in anonymised, cookieless mode."},
+    "È la scelta giusta quando l’analisi vi serve seria e volete tenere il timone: siti con volumi importanti, esigenze di conformità stringenti, o semplicemente la volontà di non affidare a Google il comportamento dei vostri visitatori. In cambio chiede un po’ più di cura nell’installazione e nella manutenzione — è più uno strumento professionale che un interruttore.":
+        {"en": "It’s the right choice when you need serious analysis and want to keep the helm: sites with significant volumes, strict compliance needs, or simply the wish not to entrust your visitors’ behaviour to Google. In return it asks for a bit more care in setup and maintenance — it’s more a professional tool than a switch."},
+    "Plausible: leggero e senza cookie":
+        {"en": "Plausible: lightweight and cookieless"},
+    "Plausible sta all’estremo opposto della semplicità. È un servizio ospitato in Europa, non usa cookie e non raccoglie dati personali, e il suo script pesa una frazione di quello di Google. Il pannello è essenziale per scelta: da dove arrivano i visitatori, quali pagine funzionano, quali campagne portano traffico. Niente labirinti di menu — le domande che una PMI si pone davvero, con la risposta a portata di sguardo.":
+        {"en": "Plausible sits at the opposite end of simplicity. It’s a service hosted in Europe, uses no cookies and collects no personal data, and its script weighs a fraction of Google’s. The dashboard is minimal by design: where visitors come from, which pages work, which campaigns bring traffic. No maze of menus — the questions an SME actually asks, with the answer at a glance."},
+    "Il suo vantaggio nascosto è la velocità: uno script minuscolo e nessun banner per l’analisi significano pagine più leggere, quindi più rapide e con un impatto ambientale minore. È la stessa logica che misuriamo con lo strumento sull’impronta di CO₂ di un sito: ogni kilobyte in meno è un guadagno per tutti. Per un sito vetrina o un blog che vogliono capire cosa funziona senza complicazioni, Plausible è spesso più che sufficiente.":
+        {"en": "Its hidden advantage is speed: a tiny script and no banner for analytics mean lighter pages, therefore faster and with a smaller environmental impact. It’s the same logic we measure with the tool on a site’s CO₂ footprint: every kilobyte less is a gain for everyone. For a showcase site or a blog that want to understand what works without complications, Plausible is often more than enough."},
+    "Google Analytics contro le alternative privacy-first Matomo e Plausible: cosa cambia":
+        {"en": "Google Analytics versus the privacy-first alternatives Matomo and Plausible: what changes"},
+    "Tre strumenti a confronto: Google Analytics 4 (potente, gratuito, ma pesante e a consenso obbligatorio), Matomo (controllo totale dei dati, self-host o cloud UE), Plausible (leggero, senza cookie, ospitato in UE). Lo strumento giusto dipende da cosa vi serve sapere — e da quanto consenso volete gestire.":
+        {"en": "Three tools compared: Google Analytics 4 (powerful, free, but heavy and consent-mandatory), Matomo (full control of the data, self-hosted or EU cloud), Plausible (lightweight, cookieless, hosted in the EU). The right tool depends on what you need to know — and on how much consent you want to manage."},
+    "Alternative privacy-first a Google Analytics: quando conviene cambiare":
+        {"en": "Privacy-first alternatives to Google Analytics: when it’s worth switching"},
+    "Va detto con onestà: non sempre conviene cambiare. Se il vostro marketing vive dentro l’ecosistema di Google Ads, con remarketing e conversioni cucite su GA4, l’integrazione nativa è un vantaggio che le alternative non pareggiano. In quel caso ha più senso configurare GA4 a norma che abbandonarlo. Chi vende dice cose diverse; noi diciamo la nostra: dipende da cosa vi serve.":
+        {"en": "In all honesty: it isn’t always worth switching. If your marketing lives inside the Google Ads ecosystem, with remarketing and conversions stitched onto GA4, the native integration is an advantage the alternatives don’t match. In that case it makes more sense to configure GA4 compliantly than to abandon it. Sellers say different things; we say ours: it depends on what you need."},
+    "Se invece vi bastano le domande di fondo — quanti visitatori, da dove, quali pagine, quali campagne — e volete meno banner da gestire, meno consenso da rincorrere e un sito più leggero, allora Matomo o Plausible sono spesso la scelta migliore. Il criterio non è «qual è il più potente», ma «qual è quello che userete davvero e riuscirete a tenere a norma senza fatica».":
+        {"en": "If instead the fundamental questions are enough — how many visitors, from where, which pages, which campaigns — and you want fewer banners to manage, less consent to chase and a lighter site, then Matomo or Plausible are often the better choice. The criterion isn’t “which is the most powerful,” but “which one you’ll actually use and can keep compliant without effort.”"},
+    "Verifica gratis cookie e consenso del vostro sito":
+        {"en": "Check your site’s cookies and consent for free"},
+    "Misura il peso e l’impronta di CO₂ del vostro sito":
+        {"en": "Measure your site’s weight and CO₂ footprint"},
+    "Lo strumento giusto è quello che potete tenere a norma":
+        {"en": "The right tool is the one you can keep compliant"},
+    "La morale è la stessa che teniamo su ogni scelta tecnica: lo strumento migliore non è il più ricco di funzioni, è quello adatto a voi e sostenibile nel tempo. Un GA4 configurato male vale meno di un Plausible che nessuno deve toccare. E un Matomo ben tenuto vale più di dieci dashboard che nessuno guarda. La domanda giusta parte dai vostri bisogni, non dal nome più famoso.":
+        {"en": "The moral is the same we hold for every technical choice: the best tool isn’t the one richest in features, it’s the one that suits you and is sustainable over time. A badly configured GA4 is worth less than a Plausible nobody needs to touch. And a well-kept Matomo is worth more than ten dashboards nobody looks at. The right question starts from your needs, not from the most famous name."},
+    "Quando costruiamo o rifacciamo un sito, l’analisi la impostiamo insieme a voi: GA4 tenuto a norma se vi serve l’ecosistema Google, un’alternativa privacy-first se contano leggerezza e semplicità. In entrambi i casi la regola non cambia — misurare rispettando chi vi visita, senza raccogliere dati che poi non saprete come difendere.":
+        {"en": "When we build or rebuild a site, we set up the analytics together with you: GA4 kept compliant if you need the Google ecosystem, a privacy-first alternative if lightness and simplicity matter. In both cases the rule doesn’t change — measure while respecting your visitors, without collecting data you then won’t know how to defend."},
+    "Matomo — sito ufficiale":
+        {"en": "Matomo — official website"},
+    "L’analytics open source che potete ospitare voi o in cloud UE: i dati restano vostri, con opzioni senza cookie.":
+        {"en": "The open-source analytics you can self-host or run in the EU cloud: the data stays yours, with cookieless options."},
+    "Plausible — sito ufficiale":
+        {"en": "Plausible — official website"},
+    "Analisi leggera, ospitata in Europa, senza cookie né dati personali: le domande di fondo con uno script minuscolo.":
+        {"en": "Lightweight analytics, hosted in Europe, with no cookies or personal data: the fundamental questions with a tiny script."},
+    "Perché un’analisi senza cookie identificativi può alleggerire gli obblighi di consenso: le regole da cui parte la valutazione.":
+        {"en": "Why analytics without identifying cookies can lighten consent obligations: the rules the assessment starts from."},
+    "Il quadro di legge che rende il trattamento «privacy-first» un vantaggio concreto, non solo un’etichetta di marketing.":
+        {"en": "The legal framework that makes “privacy-first” processing a concrete advantage, not just a marketing label."},
+
+    # ============= Articolo 39 · Cookie policy o privacy policy =============
+    "Cookie policy e privacy policy: cosa serve davvero e a chi":
+        {"en": "Cookie policy and privacy policy: what you really need and who for"},
+    "Cookie policy o privacy policy? Non sono la stessa cosa, e non basta incollarne una dal web. Cosa sono, cosa deve contenere ognuna e quando servono sul serio.":
+        {"en": "Cookie policy or privacy policy? They’re not the same thing, and pasting one from the web isn’t enough. What they are, what each must contain and when they’re genuinely needed."},
+    "«Ne ho una, l’ho copiata da un altro sito»: è la risposta più frequente quando chiediamo di privacy e cookie, ed è anche la più pericolosa. Cookie policy o privacy policy sono due documenti diversi, con scopi diversi, e uno non sostituisce l’altro — mentre una versione incollata dal web, con il nome del titolare sbagliato e cookie che non usate, è spesso peggio di niente. Vediamo cosa sono davvero, cosa deve contenere ciascuna, e quando ne serve una, l’altra o — quasi sempre — entrambe.":
+        {"en": "“I’ve got one, I copied it from another site”: it’s the most frequent answer when we ask about privacy and cookies, and it’s also the most dangerous. Cookie policy or privacy policy are two different documents, with different purposes, and one doesn’t replace the other — while a version pasted from the web, with the wrong data controller’s name and cookies you don’t use, is often worse than nothing. Let’s look at what they really are, what each must contain, and when you need one, the other or — almost always — both."},
+    "Cookie policy o privacy policy: cosa serve davvero e a chi, i due documenti a confronto":
+        {"en": "Cookie policy or privacy policy: what you really need and who for, the two documents compared"},
+    "Due documenti, due scopi":
+        {"en": "Two documents, two purposes"},
+    "La privacy policy — in italiano informativa sulla privacy — riguarda tutti i dati personali che trattate: chi li raccoglie, quali, per quale scopo, per quanto tempo, a chi vengono comunicati e con quali diritti per l’interessato. È richiesta dal GDPR ogni volta che trattate un dato personale, anche solo il nome e l’email lasciati in un modulo di contatto. Se raccogliete qualcosa, vi serve.":
+        {"en": "The privacy policy — in Italian informativa sulla privacy — concerns all the personal data you process: who collects it, which data, for what purpose, for how long, to whom it’s disclosed and with what rights for the data subject. It’s required by the GDPR every time you process a personal datum, even just the name and email left in a contact form. If you collect anything, you need it."},
+    "La cookie policy è un documento più specifico: riguarda i cookie e gli altri strumenti di tracciamento del sito. Elenca quali cookie usate, di chi sono, a cosa servono e quanto durano. Serve quando il sito installa cookie che vanno oltre quelli strettamente tecnici — per esempio analytics o pubblicità — e va accompagnata dal banner del consenso. In pratica, la privacy policy è l’ombrello; la cookie policy è il capitolo dedicato ai tracciatori.":
+        {"en": "The cookie policy is a more specific document: it concerns the site’s cookies and other tracking tools. It lists which cookies you use, whose they are, what they’re for and how long they last. It’s needed when the site installs cookies that go beyond the strictly technical ones — analytics or advertising, for example — and it must be accompanied by the consent banner. In practice, the privacy policy is the umbrella; the cookie policy is the chapter dedicated to trackers."},
+    "Cosa deve contenere la privacy policy":
+        {"en": "What the privacy policy must contain"},
+    "Una informativa privacy fatta bene risponde, in modo leggibile, a domande precise: chi è il titolare del trattamento, con un contatto reale; quali dati raccogliete e come; per quali finalità e su quale base giuridica; per quanto tempo li conservate; a chi li comunicate o se li trasferite fuori dall’UE; e quali diritti può esercitare la persona — accesso, rettifica, cancellazione, opposizione. Sono i contenuti che il GDPR indica agli articoli 13 e 14.":
+        {"en": "A well-made privacy notice answers, in readable form, precise questions: who the data controller is, with a real contact; what data you collect and how; for what purposes and on what legal basis; how long you keep it; to whom you disclose it or whether you transfer it outside the EU; and what rights the person can exercise — access, rectification, erasure, objection. These are the contents the GDPR sets out in Articles 13 and 14."},
+    "La parola chiave è «vera». Un’informativa che nomina un titolare che non siete voi, o che descrive trattamenti che non fate, non vi protegge: vi espone, perché dichiara il falso. Meglio poche righe esatte sul vostro caso reale che dieci pagine generiche copiate altrove. È un documento che parla di voi: deve dire la verità su di voi.":
+        {"en": "The key word is “true.” A notice that names a controller who isn’t you, or describes processing you don’t carry out, doesn’t protect you: it exposes you, because it states what’s false. Better a few exact lines about your real case than ten generic pages copied elsewhere. It’s a document that speaks about you: it has to tell the truth about you."},
+    "Cosa deve contenere la cookie policy (e il banner)":
+        {"en": "What the cookie policy must contain (and the banner)"},
+    "La cookie policy elenca in modo trasparente i tracciatori del sito: nome, titolare, finalità, durata e — per i cookie di terze parti — il collegamento all’informativa del fornitore. Ma il documento da solo non basta: se usate cookie non tecnici, serve un banner che li blocchi prima del consenso e permetta di rifiutare con la stessa facilità con cui si accetta. Le linee guida del Garante del 2021 e la task force europea sono chiare su questo punto.":
+        {"en": "The cookie policy transparently lists the site’s trackers: name, owner, purpose, duration and — for third-party cookies — the link to the provider’s notice. But the document alone isn’t enough: if you use non-technical cookies, you need a banner that blocks them before consent and lets people refuse as easily as they accept. The Garante’s 2021 guidelines and the European taskforce are clear on this point."},
+    "L’errore classico è avere una bella cookie policy e un banner finto, che carica analytics e pubblicità dal primo istante e chiede il permesso a cose fatte. In quel caso il documento diventa la prova scritta di ciò che avreste dovuto fare e non fate. Cookie policy e banner sono due facce dello stesso obbligo: descrivere e, prima ancora, rispettare la scelta.":
+        {"en": "The classic mistake is to have a nice cookie policy and a fake banner, which loads analytics and advertising from the first instant and asks permission after the fact. In that case the document becomes the written proof of what you should have done and don’t. Cookie policy and banner are two sides of the same obligation: to describe and, before that, to respect the choice."},
+    "Cookie policy e privacy policy a confronto: due documenti, due scopi, quando servono":
+        {"en": "Cookie policy and privacy policy compared: two documents, two purposes, when they’re needed"},
+    "Due documenti a confronto. Privacy policy (informativa): riguarda tutti i dati personali, richiesta sempre che raccogliate qualcosa, dagli articoli 13–14 del GDPR. Cookie policy: riguarda i tracciatori, richiesta quando usate cookie non tecnici, con banner del consenso. Nella maggior parte dei siti servono entrambe.":
+        {"en": "Two documents compared. Privacy policy (notice): concerns all personal data, required whenever you collect anything, under Articles 13–14 of the GDPR. Cookie policy: concerns trackers, required when you use non-technical cookies, with a consent banner. On most sites you need both."},
+    "Cookie policy o privacy policy: quale vi serve (di solito entrambe)":
+        {"en": "Cookie policy or privacy policy: which you need (usually both)"},
+    "Proviamo a rispondere alla domanda pratica. Un sito con un semplice modulo di contatto e nessun cookie oltre a quelli tecnici ha bisogno almeno della privacy policy. Nel momento in cui aggiungete Google Analytics, i pixel pubblicitari o i video incorporati, entrano in gioco cookie non tecnici: allora vi servono anche la cookie policy e il banner del consenso. Poiché quasi ogni sito reale usa almeno un tracciatore, nella pratica la risposta è: quasi sempre entrambe.":
+        {"en": "Let’s try to answer the practical question. A site with a simple contact form and no cookies beyond the technical ones needs at least the privacy policy. The moment you add Google Analytics, advertising pixels or embedded videos, non-technical cookies come into play: then you also need the cookie policy and the consent banner. Since almost every real site uses at least one tracker, in practice the answer is: almost always both."},
+    "La scorciatoia di copiarne una dal web fallisce due volte. Sbaglia il titolare, quindi dichiara il falso; ed elenca cookie che non avete e ne omette che avete, quindi è inutile proprio dove dovrebbe proteggervi. Se poi il vostro sito ricade anche negli obblighi di accessibilità, l’intera area legale va rivista con lo stesso metro di serietà: documenti su misura, non modelli riciclati.":
+        {"en": "The shortcut of copying one from the web fails twice. It gets the controller wrong, so it states what’s false; and it lists cookies you don’t have and omits ones you do, so it’s useless exactly where it should protect you. And if your site also falls under accessibility obligations, the whole legal area has to be reviewed with the same seriousness: tailored documents, not recycled templates."},
+    "Verifica gratis cookie e conformità GDPR del vostro sito":
+        {"en": "Check your site’s cookies and GDPR compliance for free"},
+    "Adeguamento EAA: sito accessibile e a norma, area legale compresa":
+        {"en": "EAA compliance: an accessible, compliant site, legal area included"},
+    "Non è burocrazia: è fiducia (e legge)":
+        {"en": "It isn’t bureaucracy: it’s trust (and law)"},
+    "È facile vivere privacy e cookie policy come una tassa fastidiosa da assolvere copiando il primo modello. Ma sono anche un segnale di serietà verso chi vi visita: dire con chiarezza quali dati raccogliete e perché costruisce fiducia esattamente dove il visitatore è più diffidente. Un sito trasparente sui dati vende meglio di uno che nasconde la questione sotto un banner ingannevole.":
+        {"en": "It’s easy to experience privacy and cookie policies as an annoying tax to discharge by copying the first template. But they’re also a signal of seriousness towards your visitors: stating clearly what data you collect and why builds trust exactly where the visitor is most wary. A site transparent about data sells better than one that hides the matter under a deceptive banner."},
+    "Quando costruiamo un sito, le informative le scriviamo sul vostro caso reale — titolare vero, cookie effettivi, trattamenti che fate davvero — e le colleghiamo a un banner che rispetta la scelta. Non è la parte glamour di un progetto, ma è quella che, il giorno di un controllo o di una domanda scomoda, fa la differenza tra una risposta serena e un problema.":
+        {"en": "When we build a site, we write the notices on your real case — the true controller, the actual cookies, the processing you genuinely do — and we connect them to a banner that respects the choice. It isn’t the glamorous part of a project, but it’s the one that, on the day of an inspection or an awkward question, makes the difference between a calm answer and a problem."},
+    "Le regole italiane su cookie e banner: quando serve il consenso e come dev’essere raccolto.":
+        {"en": "Italy’s rules on cookies and banners: when consent is needed and how it must be collected."},
+    "Gli articoli 13 e 14 indicano cosa deve contenere l’informativa privacy: titolare, finalità, basi, tempi, diritti.":
+        {"en": "Articles 13 and 14 set out what the privacy notice must contain: controller, purposes, bases, timeframes, rights."},
+    "Cosa considerano scorretto i garanti europei nei banner: la cornice comune oltre le regole nazionali.":
+        {"en": "What Europe’s regulators consider improper in banners: the common frame beyond national rules."},
+    "L’autorità italiana con modelli, FAQ e provvedimenti su informative, cookie e diritti degli interessati.":
+        {"en": "The Italian authority with templates, FAQs and rulings on notices, cookies and data subjects’ rights."},
+
+    # ============= Articolo 40 · Backup e sicurezza =============
+    "Backup e sicurezza del sito: cosa perdete se domani sparisce":
+        {"en": "Backup and site security: what you lose if it disappears tomorrow"},
+    "Un sito può sparire in un attimo: attacco, errore, hosting che chiude. Backup e sicurezza per le PMI: cosa rischiate davvero e la regola 3-2-1 per dormire sereni.":
+        {"en": "A site can vanish in an instant: an attack, an error, a host that shuts down. Backup and security for SMEs: what you really risk and the 3-2-1 rule for sleeping soundly."},
+    "Immaginate di aprire il sito domani mattina e trovare una pagina bianca, o peggio, un avviso di sito compromesso. Nessun preavviso: un aggiornamento saltato, una password debole, un server che cede. Per una piccola impresa la sicurezza del sito web non è un tema da grandi aziende con reparti IT: è la differenza tra un contrattempo di un’ora e la perdita di anni di lavoro. Vediamo cosa rischiate davvero se il sito sparisce, quali sono le minacce concrete per una PMI, e le poche mosse — backup in testa — che vi mettono al riparo.":
+        {"en": "Imagine opening your site tomorrow morning and finding a blank page, or worse, a “site compromised” warning. No advance notice: a skipped update, a weak password, a server that gives out. For a small business, website security isn’t a topic for large companies with IT departments: it’s the difference between an hour’s setback and the loss of years of work. Let’s look at what you really risk if the site disappears, what the concrete threats are for an SME, and the few moves — backup first — that keep you safe."},
+    "Backup e sicurezza del sito web per le PMI: cosa perdete se domani sparisce":
+        {"en": "Website backup and security for SMEs: what you lose if it disappears tomorrow"},
+    "Cosa perdete se il sito sparisce domani":
+        {"en": "What you lose if the site disappears tomorrow"},
+    "Un sito non è solo un insieme di pagine: è un capitale accumulato negli anni. Perderlo significa perdere il posizionamento su Google costruito articolo dopo articolo, i contatti e gli ordini arrivati dai moduli, le foto e i testi che avete curato, a volte l’unico canale da cui i clienti vi trovano. E c’è il danno meno visibile: ogni ora offline è una richiesta che non arriva e un cliente che apre il concorrente.":
+        {"en": "A site isn’t just a set of pages: it’s capital accumulated over the years. Losing it means losing the Google ranking built article after article, the contacts and orders that came through the forms, the photos and copy you curated, sometimes the only channel through which customers find you. And there’s the less visible damage: every hour offline is an enquiry that doesn’t arrive and a customer who opens the competitor."},
+    "Il colpo peggiore, però, è quando non c’è modo di tornare indietro. Senza un backup recente e funzionante, un sito compromesso o cancellato può essere semplicemente irrecuperabile: si riparte da zero, con settimane di lavoro e la reputazione ammaccata. La differenza tra un disastro e un fastidio non è la fortuna: è essersi preparati prima.":
+        {"en": "The worst blow, though, is when there’s no way back. Without a recent, working backup, a compromised or deleted site can simply be unrecoverable: you start from scratch, with weeks of work and a dented reputation. The difference between a disaster and a nuisance isn’t luck: it’s having prepared beforehand."},
+    "Le minacce reali per una PMI":
+        {"en": "The real threats for an SME"},
+    "Il malinteso da sfatare è che «tanto chi vuoi che attacchi il mio sito». Nella stragrande maggioranza dei casi non c’è nessun hacker in carne e ossa interessato a voi: ci sono programmi automatici che scandagliano l’intera rete in cerca di siti con falle note. E le falle note abbondano: i report di sicurezza come quelli di Patchstack censiscono ogni anno migliaia di vulnerabilità nei plugin e nei temi più diffusi, quasi tutte in componenti che qualcuno non ha aggiornato.":
+        {"en": "The misconception to dispel is “who’s going to bother attacking my site anyway.” In the vast majority of cases there’s no flesh-and-blood hacker interested in you: there are automated programs that scour the entire network looking for sites with known flaws. And known flaws abound: security reports like Patchstack’s catalogue thousands of vulnerabilities every year in the most widespread plugins and themes, almost all in components someone didn’t update."},
+    "Le porte d’ingresso più comuni sono banali: un plugin o un CMS non aggiornato, una password debole o riutilizzata, un accesso amministrativo lasciato aperto. A queste si aggiungono i guasti che non c’entrano con la malizia: un server che si rompe, un hosting che chiude, un file cancellato per errore. La sicurezza di un sito web per una PMI riguarda tutte queste cose insieme, non solo gli attacchi da film.":
+        {"en": "The most common entry points are mundane: an unpatched plugin or CMS, a weak or reused password, an admin login left open. Added to these are the failures that have nothing to do with malice: a server that breaks, a host that shuts down, a file deleted by mistake. Website security for an SME concerns all these things together, not just the movie-style attacks."},
+    "Sicurezza del sito web per le PMI: le basi che bastano":
+        {"en": "Website security for SMEs: the basics that are enough"},
+    "La buona notizia è che gran parte del rischio si abbatte con poche abitudini di base, alla portata di chiunque. Tenere aggiornati CMS, temi e plugin è la più importante in assoluto: la maggior parte degli attacchi sfrutta falle già corrette, che colpiscono solo chi non ha installato l’aggiornamento. Poi password robuste e uniche, con l’autenticazione a due fattori sugli accessi amministrativi, e HTTPS attivo su tutto il sito.":
+        {"en": "The good news is that much of the risk is knocked down with a few basic habits, within anyone’s reach. Keeping the CMS, themes and plugins updated is by far the most important: most attacks exploit flaws that have already been fixed, which only hit those who didn’t install the update. Then strong, unique passwords, with two-factor authentication on admin logins, and HTTPS active across the whole site."},
+    "Il resto è disciplina di accesso: dare i permessi da amministratore solo a chi serve, rimuovere gli account inutilizzati, scegliere un hosting serio che faccia la sua parte. Sono le stesse pratiche di irrobustimento che la documentazione ufficiale di WordPress raccoglie da anni. Non serve essere esperti di cybersicurezza: serve non lasciare le porte aperte.":
+        {"en": "The rest is access discipline: granting admin permissions only to those who need them, removing unused accounts, choosing a serious host that does its part. These are the same hardening practices WordPress’s official documentation has collected for years. You don’t need to be a cybersecurity expert: you need to not leave the doors open."},
+    "Il backup: la regola 3-2-1":
+        {"en": "The backup: the 3-2-1 rule"},
+    "Se dovete ricordare una sola cosa di questo articolo, è il backup. La regola collaudata si chiama 3-2-1: tre copie dei dati, su due tipi di supporto diversi, di cui una conservata altrove — fuori dal server del sito. Così, se salta l’hosting, la copia esterna vi salva; se un attacco cripta tutto, ne avete una pulita da cui ripartire. E i backup vanno automatici e regolari, non «quando mi ricordo».":
+        {"en": "If you must remember one single thing from this article, it’s the backup. The proven rule is called 3-2-1: three copies of the data, on two different types of media, one of which kept elsewhere — off the site’s server. That way, if the hosting fails, the external copy saves you; if an attack encrypts everything, you have a clean one to start from. And backups must be automatic and regular, not “when I remember.”"},
+    "C’è un dettaglio che quasi tutti trascurano: un backup che non avete mai provato a ripristinare non è un backup, è una speranza. Va testato almeno una volta, per essere certi che si ripristini davvero e che sia completo. La domanda giusta non è «faccio i backup?», ma «quanto tempo mi ci vuole a rimettere online il sito da un backup, e l’ho mai verificato?».":
+        {"en": "There’s a detail almost everyone overlooks: a backup you’ve never tried to restore isn’t a backup, it’s a hope. It has to be tested at least once, to be sure it really restores and that it’s complete. The right question isn’t “do I make backups?”, but “how long does it take me to bring the site back online from a backup, and have I ever checked?”."},
+    "La regola del backup 3-2-1 per la sicurezza di un sito web":
+        {"en": "The 3-2-1 backup rule for website security"},
+    "La regola del backup 3-2-1: tre copie dei dati (2), su due tipi di supporto diversi, di cui almeno una conservata fuori dal server del sito (1). Automatici, regolari e — soprattutto — testati: un backup mai ripristinato non è un backup. È la rete di sicurezza che trasforma un disastro in un fastidio.":
+        {"en": "The 3-2-1 backup rule: three copies of the data (2), on two different types of media, at least one kept off the site’s server (1). Automatic, regular and — above all — tested: a backup never restored isn’t a backup. It’s the safety net that turns a disaster into a nuisance."},
+    "Sicurezza è anche un dovere (GDPR, articolo 32)":
+        {"en": "Security is a duty too (GDPR, Article 32)"},
+    "C’è un motivo in più per prendere sul serio la questione: la legge. Se il vostro sito raccoglie dati personali — e basta un modulo di contatto — l’articolo 32 del GDPR vi chiede di adottare misure di sicurezza adeguate a proteggerli. Un sito bucato che espone gli indirizzi dei vostri clienti non è solo un guaio tecnico: può diventare una violazione di dati da notificare, con le conseguenze del caso. Sicurezza e conformità, qui, sono la stessa cosa.":
+        {"en": "There’s one more reason to take the matter seriously: the law. If your site collects personal data — and a contact form is enough — Article 32 of the GDPR requires you to adopt security measures adequate to protect it. A breached site that exposes your customers’ addresses isn’t just a technical hitch: it can become a data breach to be notified, with the consequences that follow. Security and compliance, here, are the same thing."},
+    "È l’approccio che teniamo su ogni progetto: aggiornamenti, backup automatici e testati, accessi controllati non sono un extra da vendervi a parte, sono il minimo perché un sito sia un investimento e non una scommessa. Un sito veloce e bello che sparisce in una notte non era un buon sito: era un rischio ben verniciato.":
+        {"en": "It’s the approach we hold on every project: updates, automatic and tested backups, controlled access aren’t an extra to sell you separately, they’re the minimum for a site to be an investment and not a gamble. A fast, beautiful site that disappears overnight wasn’t a good site: it was a well-varnished risk."},
+    "Cosa include un sito aziendale, sicurezza e manutenzione comprese":
+        {"en": "What a business website includes, security and maintenance and all"},
+    "WordPress — backup del sito (documentazione ufficiale)":
+        {"en": "WordPress — site backup (official documentation)"},
+    "Come e perché fare backup regolari: la guida ufficiale, valida ben oltre WordPress.":
+        {"en": "How and why to make regular backups: the official guide, valid well beyond WordPress."},
+    "WordPress — irrobustire la sicurezza (hardening)":
+        {"en": "WordPress — hardening security"},
+    "Le pratiche di base per chiudere le porte: aggiornamenti, permessi, accessi. Semplici e decisive.":
+        {"en": "The basic practices for closing the doors: updates, permissions, access. Simple and decisive."},
+    "Patchstack — State of WordPress Security":
+        {"en": "Patchstack — State of WordPress Security"},
+    "Il report annuale sulle vulnerabilità: migliaia ogni anno, quasi tutte in componenti non aggiornati.":
+        {"en": "The annual vulnerability report: thousands every year, almost all in components that weren’t updated."},
+    "L’articolo 32 impone misure di sicurezza adeguate: proteggere i dati dei clienti è anche un obbligo di legge.":
+        {"en": "Article 32 requires adequate security measures: protecting customers’ data is also a legal obligation."},
+}
+CHROME.update(CHROME_BLOG_BATCH8)
+
+# CHROME_BLOG_BATCH8_LINKS — le CTA e i link contestuali del batch 8: il
+# generatore appende « →» all'etichetta (build_blog_post / _blog_section_links),
+# quindi il nodo di testo è «Etichetta →». Coppie con la freccia inclusa.
+CHROME_BLOG_BATCH8_LINKS = {
+    "Verifica gratis consenso e cookie del vostro sito →":
+        {"en": "Check your site’s consent and cookies for free →"},
+    "Verifica gratis conformità cookie e consenso del vostro sito →":
+        {"en": "Check your site’s cookie and consent compliance for free →"},
+    "SEO tecnica e tracciamento pulito di serie in ogni pagina →":
+        {"en": "Technical SEO and clean tracking as standard on every page →"},
+    "Leggi anche: cookie policy o privacy policy, cosa serve a chi →":
+        {"en": "Read also: cookie policy or privacy policy, what serves whom →"},
+    "Leggi anche: Google Analytics 4 e privacy in UE, siete a norma? →":
+        {"en": "Read also: Google Analytics 4 and privacy in the EU, are you compliant? →"},
+    "Controlla gratis se il vostro sito è a norma GDPR →":
+        {"en": "Check for free whether your site is GDPR-compliant →"},
+    "SEO tecnica e tracciamento a norma di serie →":
+        {"en": "Technical SEO and compliant tracking as standard →"},
+    "Leggi anche: Consent Mode v2, cosa cambia per annunci e analytics →":
+        {"en": "Read also: Consent Mode v2, what changes for ads and analytics →"},
+    "Leggi anche: alternative privacy-first a Google Analytics →":
+        {"en": "Read also: privacy-first alternatives to Google Analytics →"},
+    "Un sito veloce e a norma, misura compresa →":
+        {"en": "A fast, compliant site, measurement included →"},
+    "Verifica gratis cookie e consenso del vostro sito →":
+        {"en": "Check your site’s cookies and consent for free →"},
+    "Misura il peso e l’impronta di CO₂ del vostro sito →":
+        {"en": "Measure your site’s weight and CO₂ footprint →"},
+    "Verifica gratis cookie e privacy del vostro sito →":
+        {"en": "Check your site’s cookies and privacy for free →"},
+    "Verifica gratis cookie e conformità GDPR del vostro sito →":
+        {"en": "Check your site’s cookies and GDPR compliance for free →"},
+    "Adeguamento EAA: sito accessibile e a norma, area legale compresa →":
+        {"en": "EAA compliance: an accessible, compliant site, legal area included →"},
+    "Misura la salute e la sicurezza del vostro sito, gratis →":
+        {"en": "Measure your site’s health and security, free →"},
+    "Misura gratis la salute e la sicurezza del vostro sito →":
+        {"en": "Measure your site’s health and security for free →"},
+    "Cosa include un sito aziendale, sicurezza e manutenzione comprese →":
+        {"en": "What a business website includes, security and maintenance and all →"},
+}
+CHROME.update(CHROME_BLOG_BATCH8_LINKS)

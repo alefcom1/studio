@@ -5,8 +5,18 @@
  * обложка, для JSON-LD BlogPosting (см. remarka_blog_posting_schema).
  */
 return array(
-	'_modified' => '2026-07-21',
+	'_modified' => '2026-07-22',
 	'posts' => array(
+		'consent-mode-v2-cosa-cambia' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/consent-cover.svg' ),
+		'consent-mode-v2-what-changes' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/consent-cover.svg' ),
+		'google-analytics-4-privacy-ue' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ga4-cover.svg' ),
+		'google-analytics-4-gdpr-eu' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ga4-cover.svg' ),
+		'alternative-google-analytics-privacy' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/alternative-cover.svg' ),
+		'privacy-first-google-analytics-alternatives' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/alternative-cover.svg' ),
+		'cookie-policy-o-privacy-policy' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/cookiepolicy-cover.svg' ),
+		'cookie-policy-vs-privacy-policy' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/cookiepolicy-cover.svg' ),
+		'backup-e-sicurezza-sito-web' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/backup-cover.svg' ),
+		'website-backup-and-security' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/backup-cover.svg' ),
 		'perche-il-sito-non-converte' => array( 'date' => '2026-07-21', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/nonconverte-cover.svg' ),
 		'why-your-website-doesnt-convert' => array( 'date' => '2026-07-21', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/nonconverte-cover.svg' ),
 		'landing-page-che-converte' => array( 'date' => '2026-07-21', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/landing-cover.svg' ),

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="Google Analytics contro le alternative privacy-first Matomo e Plausible: cosa cambia">
+  <defs>
+    <pattern id="gridAc" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="520" fill="#F7F6F2"/>
+  <rect width="1200" height="520" fill="url(#gridAc)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">TRE STRUMENTI A CONFRONTO — COSA VI SERVE SAPERE?</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <!-- header -->
+  <g transform="translate(80,110)">
+    <rect x="0" y="0" width="318" height="60" fill="none" stroke="#9AA0AA" stroke-width="1.5"/>
+    <text x="24" y="38" class="disp" font-size="28" fill="#5A5E66">Google Analytics 4</text>
+    <rect x="352" y="0" width="318" height="60" fill="#14161A"/>
+    <text x="376" y="38" class="disp" font-size="28" fill="#FFFFFF">Matomo</text>
+    <rect x="704" y="0" width="318" height="60" fill="#2440C8"/>
+    <text x="728" y="38" class="disp" font-size="28" fill="#FFFFFF">Plausible</text>
+  </g>
+  <g class="body" font-size="16" fill="#14161A">
+    <!-- row 1 -->
+    <text x="104" y="216">Potente, ma pesante</text>
+    <text x="456" y="216">Controllo totale dei dati</text>
+    <text x="808" y="216">Leggero, senza cookie</text>
+    <line x1="80" y1="238" x2="1120" y2="238" stroke="#EBEAE4" stroke-width="1"/>
+    <!-- row 2 -->
+    <text x="104" y="282">Consenso obbligatorio</text>
+    <text x="456" y="282">Self-host o cloud UE</text>
+    <text x="808" y="282">Ospitato in UE</text>
+    <line x1="80" y1="304" x2="1120" y2="304" stroke="#EBEAE4" stroke-width="1"/>
+    <!-- row 3 -->
+    <text x="104" y="348">Dati elaborati da Google</text>
+    <text x="456" y="348">I dati restano vostri</text>
+    <text x="808" y="348">Nessun dato personale</text>
+    <line x1="80" y1="370" x2="1120" y2="370" stroke="#EBEAE4" stroke-width="1"/>
+    <!-- row 4 -->
+    <text x="104" y="414">Ecosistema Ads nativo</text>
+    <text x="456" y="414">Report ricchi</text>
+    <text x="808" y="414">Solo l'essenziale</text>
+  </g>
+  <g transform="translate(80,446)">
+    <rect x="0" y="0" width="1040" height="50" fill="#EEF1FE" stroke="#2440C8" stroke-width="1"/>
+    <text x="20" y="31" class="mono" font-size="15" fill="#2440C8">Lo strumento giusto dipende da cosa vi serve sapere — e da quanto consenso volete gestire.</text>
+  </g>
+</svg>

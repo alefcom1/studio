@@ -934,3 +934,58 @@ Description (IT/EN): 137/136 · 143/139 · 133/136 · 128/138 · 141/131 — в�
 
 **Проверка длин.** Title (IT/EN): 46/51 · 47/49 · 54/58 · 55/50 · 57/49 — все ≤60.
 Description (IT/EN): 138/127 · 140/141 · 141/141 · 136/136 · 140/135 — все ≤160.
+
+---
+
+## Blog · Batch 8 — IT/EN (5 статей: privacy e dati nel 2026, вторая волна)
+
+> Вторая волна блога (piano-blog-2.md, статьи 36–40). IT + EN (RU-блог —
+> отдельный батч, не перевод). Фокус-ключ у каждой статьи в лиде, одном H2 и
+> одном alt. Слаги — `build-tools/lang.py` (`BLOG_SLUGS`, `BLOG_IT_EN_ONLY`).
+> Перелинковка: услуга + инструмент Lab + соседняя статья батча.
+
+| Страница IT · EN | Focus Keyword IT | Focus Keyword EN |
+|---|---|---|
+| `/blog/consent-mode-v2-cosa-cambia/` · `/en/blog/consent-mode-v2-what-changes/` | consent mode v2 | consent mode v2 |
+| `/blog/google-analytics-4-privacy-ue/` · `/en/blog/google-analytics-4-gdpr-eu/` | google analytics 4 gdpr | google analytics 4 gdpr |
+| `/blog/alternative-google-analytics-privacy/` · `/en/blog/privacy-first-google-analytics-alternatives/` | alternative google analytics privacy | privacy-first google analytics alternatives |
+| `/blog/cookie-policy-o-privacy-policy/` · `/en/blog/cookie-policy-vs-privacy-policy/` | cookie policy o privacy policy | cookie policy or privacy policy |
+| `/blog/backup-e-sicurezza-sito-web/` · `/en/blog/website-backup-and-security/` | sicurezza sito web pmi | website security for smes |
+
+### 36 — Google Consent Mode v2
+
+- **IT Title:** `Google Consent Mode v2: cosa cambia | Remarka` (45)
+- **IT Description:** `Da marzo 2024 Google chiede il Consent Mode v2 per gli annunci in UE. Cos'è, cosa cambia per annunci e analytics e come metterlo senza rompere il consenso.` (155)
+- **EN Title:** `Google Consent Mode v2: what changes | Remarka` (46)
+- **EN Description:** `Since March 2024 Google requires Consent Mode v2 for EU ads. What it is, what changes for ads and analytics, and how to set it up without breaking consent.` (155)
+
+### 37 — Google Analytics 4 e privacy in UE
+
+- **IT Title:** `Google Analytics 4 e GDPR: a norma? | Remarka` (45)
+- **IT Description:** `GA4 ha sostituito Universal Analytics ma non ha chiuso la domanda: è a norma in UE? Cosa dice il GDPR, cosa fece il Garante e la checklist per esserlo.` (151)
+- **EN Title:** `Google Analytics 4 and GDPR: compliant? | Remarka` (49)
+- **EN Description:** `GA4 replaced Universal Analytics but didn't close the question: is it EU-compliant? What the GDPR says, what the Garante did, and the checklist to be.` (150)
+
+### 38 — Alternative privacy-first a Google Analytics
+
+- **IT Title:** `Alternative privacy-first a Google Analytics | Remarka` (54)
+- **IT Description:** `Se il consenso vi mangia metà dei dati, forse il problema è lo strumento. Matomo e Plausible: le alternative privacy-first a Google Analytics a confronto.` (154)
+- **EN Title:** `Privacy-first Google Analytics alternatives | Remarka` (53)
+- **EN Description:** `If consent eats half your data, maybe the tool is the problem. Matomo and Plausible: the privacy-first alternatives to Google Analytics compared.` (145)
+
+### 39 — Cookie policy o privacy policy
+
+- **IT Title:** `Cookie policy o privacy policy? | Remarka` (41)
+- **IT Description:** `Cookie policy o privacy policy non sono la stessa cosa, e copiarne una dal web è peggio di niente. Cosa sono, cosa contengono e quando servono davvero.` (151)
+- **EN Title:** `Cookie policy or privacy policy? | Remarka` (42)
+- **EN Description:** `Cookie policy or privacy policy aren't the same, and copying one from the web is worse than nothing. What they are, what they contain and when you need them.` (157)
+
+### 40 — Backup e sicurezza del sito
+
+- **IT Title:** `Backup e sicurezza del sito web PMI | Remarka` (45)
+- **IT Description:** `Un sito può sparire in un attimo: attacco, errore, hosting che chiude. Backup e sicurezza per le PMI: cosa rischiate e la regola 3-2-1 per stare sereni.` (152)
+- **EN Title:** `Website backup and security for SMEs | Remarka` (46)
+- **EN Description:** `A site can vanish in an instant: attack, error, host shutting down. Backup and security for SMEs: what you risk and the 3-2-1 rule to sleep soundly.` (148)
+
+**Проверка длин.** Title (IT/EN): 45/46 · 45/49 · 54/53 · 41/42 · 45/46 — все ≤60.
+Description (IT/EN): 155/155 · 151/150 · 154/145 · 151/157 · 152/148 — все ≤160.

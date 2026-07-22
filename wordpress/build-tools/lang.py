@@ -122,6 +122,12 @@ BLOG_SLUGS = {
     'recensioni-riprova-sociale-onesta':    {'en': 'reviews-social-proof-done-right',      'ru': 'otzyvy-socialnoe-dokazatelstvo'},
     'whatsapp-business-pmi':                {'en': 'whatsapp-business-for-smes',           'ru': 'whatsapp-business-dlja-biznesa'},
     'copywriting-sito-web-prima-del-design': {'en': 'website-copywriting-before-design',    'ru': 'kopirajting-sajta-tekst-pered-dizajnom'},
+    # Blog · Batch 8 (seconda ondata) — IT + EN (RU è un batch a sé: slug RU pianificati, IT+EN-only).
+    'consent-mode-v2-cosa-cambia':          {'en': 'consent-mode-v2-what-changes',         'ru': 'consent-mode-v2-chto-menjaetsja'},
+    'google-analytics-4-privacy-ue':        {'en': 'google-analytics-4-gdpr-eu',           'ru': 'google-analytics-4-gdpr'},
+    'alternative-google-analytics-privacy': {'en': 'privacy-first-google-analytics-alternatives', 'ru': 'privacy-alternativy-google-analytics'},
+    'cookie-policy-o-privacy-policy':       {'en': 'cookie-policy-vs-privacy-policy',       'ru': 'cookie-i-privacy-politika'},
+    'backup-e-sicurezza-sito-web':          {'en': 'website-backup-and-security',           'ru': 'rezervnoe-kopirovanie-i-bezopasnost-sajta'},
 }
 
 # Articoli del blog pubblicati solo in IT + EN in questa fase (la loro versione
@@ -161,6 +167,12 @@ BLOG_IT_EN_ONLY = {
     'recensioni-riprova-sociale-onesta',
     'whatsapp-business-pmi',
     'copywriting-sito-web-prima-del-design',
+    # Batch 8 (seconda ondata)
+    'consent-mode-v2-cosa-cambia',
+    'google-analytics-4-privacy-ue',
+    'alternative-google-analytics-privacy',
+    'cookie-policy-o-privacy-policy',
+    'backup-e-sicurezza-sito-web',
 }
 
 # Blog · Batch 5 — RU-only (scritti a mano in russo, senza specchio IT/EN;

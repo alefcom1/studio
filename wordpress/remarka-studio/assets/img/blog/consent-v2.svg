@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-label="Come funziona Consent Mode v2: dal banner dei cookie ai segnali di consenso verso Google">
+  <defs>
+    <pattern id="gridCv2" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="480" fill="#F7F6F2"/>
+  <rect width="1200" height="480" fill="url(#gridCv2)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">COME FUNZIONA IL CONSENT MODE v2 — L'ORDINE GIUSTO</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <g transform="translate(80,132)">
+    <rect x="0" y="0" width="300" height="150" fill="#2440C8"/>
+    <text x="24" y="44" class="mono" font-size="15" letter-spacing="2" fill="#C9D2FF">1 · BANNER (CMP)</text>
+    <text x="24" y="88" class="disp" font-size="30" fill="#FFFFFF">Blocca i tag</text>
+    <text x="24" y="122" class="body" font-size="16" fill="#EEF1FE">per impostazione</text>
+    <text x="24" y="142" class="body" font-size="16" fill="#EEF1FE">predefinita</text>
+  </g>
+  <text x="402" y="215" class="mono" font-size="34" fill="#9AA0AA">→</text>
+  <g transform="translate(450,132)">
+    <rect x="0" y="0" width="300" height="150" fill="#5B73E8"/>
+    <text x="24" y="44" class="mono" font-size="15" letter-spacing="2" fill="#EEF1FE">2 · VISITATORE</text>
+    <text x="24" y="88" class="disp" font-size="30" fill="#FFFFFF">Sceglie</text>
+    <text x="24" y="122" class="body" font-size="16" fill="#EEF1FE">accetta o rifiuta,</text>
+    <text x="24" y="142" class="body" font-size="16" fill="#EEF1FE">con pari facilità</text>
+  </g>
+  <text x="772" y="215" class="mono" font-size="34" fill="#9AA0AA">→</text>
+  <g transform="translate(820,132)">
+    <rect x="0" y="0" width="300" height="150" fill="#14161A"/>
+    <text x="24" y="44" class="mono" font-size="15" letter-spacing="2" fill="#9AA0AA">3 · TAG GOOGLE</text>
+    <text x="24" y="88" class="disp" font-size="30" fill="#FFFFFF">Ricevono</text>
+    <text x="24" y="122" class="body" font-size="16" fill="#C9D2FF">la scelta + i 2 nuovi</text>
+    <text x="24" y="142" class="body" font-size="16" fill="#C9D2FF">segnali (ad_user_data)</text>
+  </g>
+  <g transform="translate(80,332)">
+    <rect x="0" y="0" width="1040" height="52" fill="#EEF1FE" stroke="#2440C8" stroke-width="1"/>
+    <text x="20" y="32" class="mono" font-size="15" fill="#2440C8">A consenso negato: nessun cookie, ma segnali anonimi e aggregati. Il Consent Mode legge il consenso, non lo raccoglie.</text>
+  </g>
+  <text x="80" y="430" class="body" font-size="15" fill="#5A5E66">Se il banner non blocca all'inizio, il Consent Mode è una foglia di fico: la tecnica funziona solo su un consenso vero.</text>
+</svg>

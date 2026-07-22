@@ -2004,8 +2004,283 @@ _S_META_WA_PLATFORM    = 'https://developers.facebook.com/docs/whatsapp'
 _S_EU_OMNIBUS          = 'https://eur-lex.europa.eu/eli/dir/2019/2161/oj'
 _S_GOOGLE_REVIEW_SNIP  = 'https://developers.google.com/search/docs/appearance/structured-data/review-snippet'
 _S_GOVUK_WRITING       = 'https://www.gov.uk/guidance/content-design/writing-for-gov-uk'
+# --- Batch 8 (privacy e dati nel 2026): Google (Consent Mode developer guide,
+#     EU user consent policy, centro assistenza Analytics), Garante privacy
+#     (home + linee guida cookie, già presenti), EDPB (cookie banner taskforce
+#     + trasferimenti, già presenti), Matomo e Plausible (siti ufficiali),
+#     GDPR/WordPress/Patchstack (già presenti). Solo URL canonici stabili
+#     (sandbox senza rete: niente deep-link inventati). ---
+_S_GOOGLE_CONSENT      = 'https://developers.google.com/tag-platform/security/guides/consent'
+_S_GOOGLE_EU_CONSENT   = 'https://www.google.com/about/company/user-consent-policy/'
+_S_GA4_HELP            = 'https://support.google.com/analytics/'
+_S_GARANTE_HOME        = 'https://www.garanteprivacy.it/'
+_S_MATOMO              = 'https://matomo.org/'
+_S_PLAUSIBLE           = 'https://plausible.io/'
 
 BLOG_POSTS = [
+    # ---- Blog · Batch 8 (seconda ondata) — Privacy e dati nel 2026 — IT + EN ----
+    # 5 articoli (36–40): Consent Mode v2, GA4 e GDPR, alternative privacy-first
+    # (Matomo/Plausible), cookie policy vs privacy policy, backup e sicurezza.
+    # Fonti reali (Google ufficiale, Garante, EDPB, EUR-Lex GDPR, Matomo,
+    # Plausible, WordPress, Patchstack). SVG di marca in assets/img/blog/.
+    # IT+EN via conveyor (CHROME_BLOG_BATCH8); RU è un batch a sé (BLOG_IT_EN_ONLY).
+    dict(slug='consent-mode-v2-cosa-cambia', data='22 LUG 2026', tema='norme',
+         titolo='Google Consent Mode v2: cosa cambia per annunci e analytics',
+         estratto='Da marzo 2024 Google chiede il Consent Mode v2 a chi fa pubblicità in UE. Cos’è, perché serve e come metterlo senza tradire il consenso ai cookie.',
+         corpo="Se fate pubblicità con Google o misurate il sito con Analytics, dal 2024 è comparsa una sigla che non potete più ignorare: Consent Mode v2. Non è l’ennesima moda tecnica, è il modo con cui Google ha legato i suoi strumenti al consenso ai cookie che ogni sito europeo deve già chiedere. Chi non lo configura vede campagne meno efficaci e dati che si assottigliano, senza capire perché. Vediamo cos’è il Consent Mode v2, cosa cambia davvero per annunci e analytics, e come metterlo in modo che rispetti la scelta di chi visita — non che la aggiri.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/consent-cover.svg',
+                    alt='Consent Mode v2: cosa cambia per annunci e analytics con il consenso ai cookie'),
+         cta=('Verifica gratis consenso e cookie del vostro sito', '/strumenti/check-gdpr/'),
+         sezioni=[
+             dict(titolo='Cos’è il Consent Mode (e perché è arrivata la v2)',
+                  paragrafi=[
+                      "Il Consent Mode è il ponte tra il vostro banner dei cookie e i tag di Google. In pratica dice ai tag — Analytics, Google Ads — come comportarsi a seconda di ciò che il visitatore ha scelto: se ha accettato i cookie di misurazione, se ha rifiutato quelli pubblicitari, e così via. Non è una novità assoluta: esisteva già da qualche anno. La versione 2 aggiunge due nuovi segnali di consenso, dedicati agli usi pubblicitari dei dati, e li rende obbligatori.",
+                      "Il perché è semplice: dal marzo 2024 Google richiede il Consent Mode v2 a chi vuole continuare a usare i dati del pubblico europeo per la pubblicità — remarketing, liste di segmenti, conversioni. Senza quei due segnali, alcune funzioni si spengono per gli utenti dello Spazio economico europeo. Google lo ha fatto per allinearsi alle regole UE sul consenso, non per capriccio: è la sua risposta al fatto che in Europa, prima di tracciare qualcuno, il consenso valido va chiesto davvero.",
+                  ]),
+             dict(titolo='Cosa cambia davvero per annunci e analytics',
+                  paragrafi=[
+                      "Sul lato pubblicità il cambiamento è netto: se non trasmettete i nuovi segnali, le liste di remarketing e i segmenti di pubblico costruiti su utenti europei smettono di alimentarsi. Le campagne non si fermano, ma perdono progressivamente il carburante che le rendeva precise. Chi se ne accorge tardi si ritrova con annunci meno mirati e un costo per contatto che sale, senza una causa evidente.",
+                      "Sul lato misurazione, invece, cambia la natura del dato. Quando un visitatore rifiuta, i tag non scrivono cookie ma possono inviare a Google segnali anonimi e aggregati, da cui gli strumenti stimano — non registrano — una parte di ciò che è successo. I vostri report cambiano faccia: meno utenti identificati, più modellazione statistica. È un compromesso voluto, privacy prima di tutto, e va capito per non leggere i numeri come se fossero ancora quelli di una volta.",
+                  ],
+                  links=[('Verifica gratis conformità cookie e consenso del vostro sito', '/strumenti/check-gdpr/')]),
+             dict(titolo='Il Consent Mode v2 non sostituisce il banner (né il consenso)',
+                  paragrafi=[
+                      "Qui casca la maggior parte dei siti. Il Consent Mode non è un banner dei cookie e non è una piattaforma di raccolta del consenso: è l’idraulica che legge la scelta che un banner serio raccoglie. Il banner vero deve bloccare i tag prima del consenso e offrire un rifiuto facile quanto l’accettazione. Su questo il Garante, nelle sue linee guida sui cookie, e la task force europea dell’EDPB sono espliciti: le caselle pre-spuntate e l’«accetta scorrendo» non sono consenso valido.",
+                      "L’ordine conta. Prima il banner blocca gli script per impostazione predefinita; poi il visitatore sceglie; solo allora il Consent Mode trasmette quella scelta ai tag di Google. Se il banner è finto — cioè carica tutto comunque e chiede il permesso a cose fatte — il Consent Mode diventa una foglia di fico, non una prova di conformità. La tecnica di Google funziona solo appoggiata a un consenso raccolto come si deve.",
+                  ],
+                  links=[('SEO tecnica e tracciamento pulito di serie in ogni pagina', '/servizi/seo-tecnica/'),
+                         ('Leggi anche: cookie policy o privacy policy, cosa serve a chi', '/blog/cookie-policy-o-privacy-policy/')]),
+             dict(titolo='Come si mette senza rompere niente',
+                  paragrafi=[
+                      "In pratica servono tre pezzi che lavorino insieme. Una piattaforma di gestione del consenso (una CMP) che raccolga la scelta e sia compatibile con Consent Mode v2; il collegamento tra CMP e tag di Google, così che i due nuovi segnali partano correttamente; e una verifica onesta che, prima del consenso, nessun cookie di analytics o pubblicità venga scritto. È l’ordine giusto, non un dettaglio da rimandare al lancio.",
+                      "Poi si misura il risultato. Controllate che a consenso negato arrivino i dati modellati e non zero, che i segnali pubblicitari si attivino solo dopo l’accettazione, e soprattutto che il banner blocchi davvero all’inizio. Una scansione della conformità cookie e GDPR vi dice in pochi secondi se i tag partono prima del consenso — l’errore più comune e più costoso.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/consent-v2.svg',
+                              alt='Come funziona Consent Mode v2: dal banner dei cookie ai segnali di consenso verso Google',
+                              caption='Come funziona il Consent Mode v2: il banner blocca i tag per impostazione predefinita (1), il visitatore sceglie (2), la CMP trasmette la scelta e i due nuovi segnali pubblicitari a Google (3). A consenso negato i tag non scrivono cookie ma inviano segnali anonimi e aggregati. Il Consent Mode legge il consenso, non lo raccoglie.')),
+             dict(titolo='Il consenso prima, la misura dopo',
+                  paragrafi=[
+                      "Il senso di tutto è un ordine: prima il consenso, poi la misura. Il Consent Mode v2 allinea gli strumenti di Google al consenso che siete comunque obbligati a raccogliere. Configurato bene, vi lascia tutta la misurazione che la legge permette senza tradire chi vi visita. Configurato male, o saltato, vi fa perdere due cose insieme — la conformità e i dati — e spesso ve ne accorgete solo quando le campagne rendono meno e i report si svuotano.",
+                      "La nostra linea è semplice: costruiamo siti dove il banner blocca per impostazione predefinita e la misurazione rispetta la scelta di chi arriva. Misurare va bene; misurare a spese della fiducia, no. E la buona notizia è che, fatta nell’ordine giusto, la conformità non è nemica dei dati: è la condizione per averli puliti e difendibili.",
+                  ],
+                  links=[('Leggi anche: Google Analytics 4 e privacy in UE, siete a norma?', '/blog/google-analytics-4-privacy-ue/')]),
+         ],
+         fonti=[
+             ('Google — Consent Mode (guida per sviluppatori)', _S_GOOGLE_CONSENT,
+              'La documentazione ufficiale: cosa fanno i segnali di consenso e come i tag si comportano prima e dopo la scelta.'),
+             ('Google — EU user consent policy', _S_GOOGLE_EU_CONSENT,
+              'La politica che obbliga chi usa gli strumenti Google in UE a raccogliere un consenso valido: la ragione del Consent Mode v2.'),
+             ('EDPB — report della cookie banner taskforce', _S_EDPB_COOKIE,
+              'Cosa non è consenso valido secondo i garanti europei: caselle pre-spuntate e «accetta scorrendo» non bastano.'),
+             ('Garante Privacy — linee guida sui cookie', _S_GARANTE_COOKIE,
+              'Le regole italiane sul banner: blocco preventivo dei tag e rifiuto facile quanto l’accettazione.'),
+         ]),
+
+    dict(slug='google-analytics-4-privacy-ue', data='22 LUG 2026', tema='norme',
+         titolo='Google Analytics 4 e privacy in UE: siete davvero a norma?',
+         estratto='GA4 ha sostituito Universal Analytics, ma non ha chiuso la domanda: si può usare in UE a norma? Cosa dice il GDPR, cosa fece il Garante e come mettervi in regola.',
+         corpo="Nel luglio 2023 Google Analytics 4 ha preso il posto della vecchia Universal Analytics, e in molti hanno migrato in fretta pensando di aver risolto un problema. In realtà la domanda più scomoda è rimasta identica: si può usare Google Analytics 4 in UE nel rispetto del GDPR? Installare GA4 non equivale, da solo, a essere a norma — e chi lo dà per scontato rischia di scoprire il contrario nel momento peggiore. Vediamo cosa è davvero cambiato con GA4, dove sta il nodo della privacy, e la checklist concreta per usarlo senza esporsi.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/ga4-cover.svg',
+                    alt='Google Analytics 4 e GDPR: il vostro sito è davvero a norma sulla privacy in UE'),
+         cta=('Controlla gratis se il vostro sito è a norma GDPR', '/strumenti/check-gdpr/'),
+         sezioni=[
+             dict(titolo='Da Universal Analytics a GA4: cosa è cambiato (e cosa no)',
+                  paragrafi=[
+                      "GA4 è stato ridisegnato con qualche attenzione in più alla privacy rispetto al predecessore: non memorizza gli indirizzi IP come faceva Universal Analytics, offre controlli sulla conservazione dei dati e impostazioni per limitare la condivisione. Su questo, un passo avanti c’è stato davvero, e va riconosciuto senza minimizzarlo.",
+                      "Ciò che non è cambiato è la sostanza: GA4 resta uno strumento di Google che raccoglie dati sui vostri visitatori e li elabora sulla sua infrastruttura. Le impostazioni migliori del mondo non tolgono il fatto che state affidando dati personali a un fornitore, e che dietro c’è un flusso che attraversa l’Atlantico. La migrazione tecnica ha risolto un problema di prodotto, non quello giuridico.",
+                  ]),
+             dict(titolo='Il nodo vero: il trasferimento dei dati',
+                  paragrafi=[
+                      "Il punto delicato è sempre stato il trasferimento dei dati verso gli Stati Uniti. Nel 2022 il Garante italiano, in linea con altre autorità europee, dichiarò illecito l’uso di Google Analytics così com’era configurato da un sito, proprio per quel trasferimento in un Paese senza garanzie adeguate dopo la sentenza «Schrems II». Fu un segnale forte: la comodità di uno strumento non basta a giustificare un flusso di dati fuori regola.",
+                      "Nel 2023 il quadro è cambiato di nuovo: l’Unione europea e gli Stati Uniti hanno adottato il «Data Privacy Framework», una nuova base giuridica per i trasferimenti verso le aziende americane che vi aderiscono, Google inclusa. Non è un liberi tutti definitivo — il Framework è già contestato e potrebbe essere rimesso in discussione — ma oggi offre un appiglio legale che nel 2022 mancava. Su questi passaggi conviene essere onesti: sono in evoluzione, e vanno verificati, non dati per acquisiti.",
+                  ]),
+             dict(titolo='Google Analytics 4 e GDPR: la checklist per essere a norma',
+                  paragrafi=[
+                      "Mettere GA4 a norma è possibile, ma va fatto per davvero, punto per punto. Serve un banner che blocchi GA4 prima del consenso e lo attivi solo dopo l’accettazione, idealmente attraverso il Consent Mode; vanno configurate la conservazione dei dati e le condivisioni verso altri prodotti Google, disattivando ciò che non usate; va accettato e conservato l’accordo sul trattamento dei dati con Google; e GA4 va dichiarato nella cookie policy e nell’informativa privacy, con i diritti dell’utente resi esercitabili.",
+                      "Nessuno di questi passaggi è complicato preso da solo. Il problema è che quasi sempre ne manca uno o due — di solito il primo, il consenso — e basta a rendere tutto il resto inutile. Una verifica sistematica, non a memoria, è il modo più rapido per sapere a che punto siete.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/ga4-norma.svg',
+                              alt='Google Analytics 4 e GDPR: la checklist per essere a norma sulla privacy',
+                              caption='Google Analytics 4 a norma, in cinque mosse: consenso raccolto prima che GA4 parta (1), conservazione dei dati configurata (2), condivisioni verso Google disattivate se non servono (3), accordo sul trattamento firmato (4), GA4 dichiarato in cookie e privacy policy (5). Manca spesso la prima — e da sola annulla le altre.')),
+             dict(titolo='Consenso e configurazione: i due errori più comuni',
+                  paragrafi=[
+                      "Il primo errore, il più diffuso, è far partire GA4 prima del consenso: il banner c’è, ma è decorativo, e i dati vengono raccolti comunque dal primo istante. È esattamente ciò che le autorità contestano, ed è anche la cosa più facile da rilevare con una scansione. Il secondo errore è lasciare attive per inerzia le condivisioni dei dati verso i prodotti pubblicitari di Google senza dichiararle e senza una base valida: un tracciamento in più di cui l’utente non sa nulla.",
+                      "Entrambi gli errori nascono dallo stesso equivoco: pensare che installare lo strumento sia la fine del lavoro, quando è l’inizio. La configurazione predefinita di GA4 è pensata per raccogliere il massimo, non per la conformità: sta a voi restringerla. È lo stesso lavoro di pulizia tecnica che facciamo su ogni sito, non un ritocco da rimandare.",
+                  ],
+                  links=[('SEO tecnica e tracciamento a norma di serie', '/servizi/seo-tecnica/'),
+                         ('Leggi anche: Consent Mode v2, cosa cambia per annunci e analytics', '/blog/consent-mode-v2-cosa-cambia/')]),
+             dict(titolo='A norma si può, ma va fatto',
+                  paragrafi=[
+                      "La risposta alla domanda del titolo, quindi, è: sì, si può usare Google Analytics 4 a norma in UE — ma non per il solo fatto di averlo installato. Serve un consenso raccolto prima, una configurazione ristretta, gli accordi in ordine e la trasparenza nelle informative. Fatto questo, GA4 è uno strumento legittimo; saltato anche solo il primo passo, è un rischio che vi portate dietro a ogni visita.",
+                      "E se tutta questa fatica per restare a norma vi sembra sproporzionata rispetto a ciò che vi serve davvero sapere del sito, è una domanda legittima: esistono alternative più leggere e privacy-first, che chiedono meno consenso e meno configurazione. Ne parliamo nell’articolo dedicato. Lo strumento giusto è quello che riuscite a tenere a norma senza dimenticarvi un pezzo per strada.",
+                  ],
+                  links=[('Leggi anche: alternative privacy-first a Google Analytics', '/blog/alternative-google-analytics-privacy/')]),
+         ],
+         fonti=[
+             ('Regolamento GDPR 2016/679 — EUR-Lex', _S_GDPR,
+              'Il testo di legge: consenso, trasparenza e diritti dell’utente valgono anche quando misurate il traffico.'),
+             ('EDPB — trasferimenti internazionali di dati', _S_EDPB_TRANSFERS,
+              'Perché il flusso verso gli Stati Uniti è il nodo di Google Analytics: la guida dei garanti europei sui trasferimenti.'),
+             ('Garante Privacy — sito ufficiale', _S_GARANTE_HOME,
+              'L’autorità italiana che nel 2022 dichiarò illecito l’uso di Google Analytics così configurato: provvedimenti e aggiornamenti.'),
+             ('Google — centro assistenza Analytics', _S_GA4_HELP,
+              'La documentazione ufficiale su conservazione dei dati, condivisioni e controlli privacy di GA4.'),
+         ]),
+
+    dict(slug='alternative-google-analytics-privacy', data='22 LUG 2026', tema='prodotti',
+         titolo='Alternative privacy-first a Google Analytics: Matomo e Plausible',
+         estratto='Se il consenso vi mangia metà dei dati, forse il problema è lo strumento. Le alternative privacy-first a Google Analytics — Matomo e Plausible — cosa offrono e a chi convengono.',
+         corpo="Ogni volta che un visitatore rifiuta i cookie, una fetta dei vostri dati di Google Analytics svanisce — e con banner fatti bene quella fetta è grande. A un certo punto è lecito chiedersi se il problema non sia lo strumento. Le alternative privacy-first a Google Analytics esistono, sono mature, e per molte PMI raccontano ciò che serve davvero con molto meno peso normativo e tecnico. Le due più note sono Matomo e Plausible. Vediamo cosa offrono, in cosa si distinguono, e — onestamente — quando conviene cambiare e quando no.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/alternative-cover.svg',
+                    alt='Alternative privacy-first a Google Analytics: Matomo e Plausible a confronto'),
+         cta=('Un sito veloce e a norma, misura compresa', '/servizi/seo-tecnica/'),
+         sezioni=[
+             dict(titolo='Perché cercare un’alternativa',
+                  paragrafi=[
+                      "Google Analytics ha due costi che non compaiono in fattura. Il primo è normativo: è uno strumento americano che raccoglie dati personali, quindi richiede consenso esplicito, configurazione attenta e una gestione dei trasferimenti sempre in evoluzione. Il secondo è di peso: il suo codice è pesante e, insieme al banner necessario per attivarlo, appesantisce ogni pagina. Per un sito che punta a essere veloce, non è neutro.",
+                      "Gli strumenti privacy-first nascono per togliere entrambi i costi. Molti non usano cookie identificativi e non raccolgono dati personali, il che — a seconda della configurazione e sentito il quadro del Garante — può ridurre o azzerare il bisogno di un banner per la sola analisi. E hanno codice leggero, che non rallenta il sito. Meno consenso da gestire, meno peso da caricare: per una PMI è spesso esattamente ciò che serve.",
+                  ]),
+             dict(titolo='Matomo: il controllo completo dei dati',
+                  paragrafi=[
+                      "Matomo è la più potente delle due ed è pensata per chi vuole possedere i propri dati. È open source e potete installarla sul vostro server, oppure usarne la versione cloud ospitata in Europa: in entrambi i casi i dati restano sotto il vostro controllo, senza girare a un terzo per finalità pubblicitarie. Offre report ricchi, vicini a quelli a cui GA vi ha abituati, e può funzionare in modalità anonimizzata e senza cookie.",
+                      "È la scelta giusta quando l’analisi vi serve seria e volete tenere il timone: siti con volumi importanti, esigenze di conformità stringenti, o semplicemente la volontà di non affidare a Google il comportamento dei vostri visitatori. In cambio chiede un po’ più di cura nell’installazione e nella manutenzione — è più uno strumento professionale che un interruttore.",
+                  ]),
+             dict(titolo='Plausible: leggero e senza cookie',
+                  paragrafi=[
+                      "Plausible sta all’estremo opposto della semplicità. È un servizio ospitato in Europa, non usa cookie e non raccoglie dati personali, e il suo script pesa una frazione di quello di Google. Il pannello è essenziale per scelta: da dove arrivano i visitatori, quali pagine funzionano, quali campagne portano traffico. Niente labirinti di menu — le domande che una PMI si pone davvero, con la risposta a portata di sguardo.",
+                      "Il suo vantaggio nascosto è la velocità: uno script minuscolo e nessun banner per l’analisi significano pagine più leggere, quindi più rapide e con un impatto ambientale minore. È la stessa logica che misuriamo con lo strumento sull’impronta di CO₂ di un sito: ogni kilobyte in meno è un guadagno per tutti. Per un sito vetrina o un blog che vogliono capire cosa funziona senza complicazioni, Plausible è spesso più che sufficiente.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/alternative-confronto.svg',
+                              alt='Google Analytics contro le alternative privacy-first Matomo e Plausible: cosa cambia',
+                              caption='Tre strumenti a confronto: Google Analytics 4 (potente, gratuito, ma pesante e a consenso obbligatorio), Matomo (controllo totale dei dati, self-host o cloud UE), Plausible (leggero, senza cookie, ospitato in UE). Lo strumento giusto dipende da cosa vi serve sapere — e da quanto consenso volete gestire.')),
+             dict(titolo='Alternative privacy-first a Google Analytics: quando conviene cambiare',
+                  paragrafi=[
+                      "Va detto con onestà: non sempre conviene cambiare. Se il vostro marketing vive dentro l’ecosistema di Google Ads, con remarketing e conversioni cucite su GA4, l’integrazione nativa è un vantaggio che le alternative non pareggiano. In quel caso ha più senso configurare GA4 a norma che abbandonarlo. Chi vende dice cose diverse; noi diciamo la nostra: dipende da cosa vi serve.",
+                      "Se invece vi bastano le domande di fondo — quanti visitatori, da dove, quali pagine, quali campagne — e volete meno banner da gestire, meno consenso da rincorrere e un sito più leggero, allora Matomo o Plausible sono spesso la scelta migliore. Il criterio non è «qual è il più potente», ma «qual è quello che userete davvero e riuscirete a tenere a norma senza fatica».",
+                  ],
+                  links=[('Verifica gratis cookie e consenso del vostro sito', '/strumenti/check-gdpr/'),
+                         ('Misura il peso e l’impronta di CO₂ del vostro sito', '/strumenti/impatto-co2/')]),
+             dict(titolo='Lo strumento giusto è quello che potete tenere a norma',
+                  paragrafi=[
+                      "La morale è la stessa che teniamo su ogni scelta tecnica: lo strumento migliore non è il più ricco di funzioni, è quello adatto a voi e sostenibile nel tempo. Un GA4 configurato male vale meno di un Plausible che nessuno deve toccare. E un Matomo ben tenuto vale più di dieci dashboard che nessuno guarda. La domanda giusta parte dai vostri bisogni, non dal nome più famoso.",
+                      "Quando costruiamo o rifacciamo un sito, l’analisi la impostiamo insieme a voi: GA4 tenuto a norma se vi serve l’ecosistema Google, un’alternativa privacy-first se contano leggerezza e semplicità. In entrambi i casi la regola non cambia — misurare rispettando chi vi visita, senza raccogliere dati che poi non saprete come difendere.",
+                  ],
+                  links=[('Leggi anche: Google Analytics 4 e privacy in UE, siete a norma?', '/blog/google-analytics-4-privacy-ue/')]),
+         ],
+         fonti=[
+             ('Matomo — sito ufficiale', _S_MATOMO,
+              'L’analytics open source che potete ospitare voi o in cloud UE: i dati restano vostri, con opzioni senza cookie.'),
+             ('Plausible — sito ufficiale', _S_PLAUSIBLE,
+              'Analisi leggera, ospitata in Europa, senza cookie né dati personali: le domande di fondo con uno script minuscolo.'),
+             ('Garante Privacy — linee guida sui cookie', _S_GARANTE_COOKIE,
+              'Perché un’analisi senza cookie identificativi può alleggerire gli obblighi di consenso: le regole da cui parte la valutazione.'),
+             ('Regolamento GDPR 2016/679 — EUR-Lex', _S_GDPR,
+              'Il quadro di legge che rende il trattamento «privacy-first» un vantaggio concreto, non solo un’etichetta di marketing.'),
+         ]),
+
+    dict(slug='cookie-policy-o-privacy-policy', data='22 LUG 2026', tema='norme',
+         titolo='Cookie policy e privacy policy: cosa serve davvero e a chi',
+         estratto='Cookie policy o privacy policy? Non sono la stessa cosa, e non basta incollarne una dal web. Cosa sono, cosa deve contenere ognuna e quando servono sul serio.',
+         corpo="«Ne ho una, l’ho copiata da un altro sito»: è la risposta più frequente quando chiediamo di privacy e cookie, ed è anche la più pericolosa. Cookie policy o privacy policy sono due documenti diversi, con scopi diversi, e uno non sostituisce l’altro — mentre una versione incollata dal web, con il nome del titolare sbagliato e cookie che non usate, è spesso peggio di niente. Vediamo cosa sono davvero, cosa deve contenere ciascuna, e quando ne serve una, l’altra o — quasi sempre — entrambe.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/cookiepolicy-cover.svg',
+                    alt='Cookie policy o privacy policy: cosa serve davvero e a chi, i due documenti a confronto'),
+         cta=('Verifica gratis cookie e privacy del vostro sito', '/strumenti/check-gdpr/'),
+         sezioni=[
+             dict(titolo='Due documenti, due scopi',
+                  paragrafi=[
+                      "La privacy policy — in italiano informativa sulla privacy — riguarda tutti i dati personali che trattate: chi li raccoglie, quali, per quale scopo, per quanto tempo, a chi vengono comunicati e con quali diritti per l’interessato. È richiesta dal GDPR ogni volta che trattate un dato personale, anche solo il nome e l’email lasciati in un modulo di contatto. Se raccogliete qualcosa, vi serve.",
+                      "La cookie policy è un documento più specifico: riguarda i cookie e gli altri strumenti di tracciamento del sito. Elenca quali cookie usate, di chi sono, a cosa servono e quanto durano. Serve quando il sito installa cookie che vanno oltre quelli strettamente tecnici — per esempio analytics o pubblicità — e va accompagnata dal banner del consenso. In pratica, la privacy policy è l’ombrello; la cookie policy è il capitolo dedicato ai tracciatori.",
+                  ]),
+             dict(titolo='Cosa deve contenere la privacy policy',
+                  paragrafi=[
+                      "Una informativa privacy fatta bene risponde, in modo leggibile, a domande precise: chi è il titolare del trattamento, con un contatto reale; quali dati raccogliete e come; per quali finalità e su quale base giuridica; per quanto tempo li conservate; a chi li comunicate o se li trasferite fuori dall’UE; e quali diritti può esercitare la persona — accesso, rettifica, cancellazione, opposizione. Sono i contenuti che il GDPR indica agli articoli 13 e 14.",
+                      "La parola chiave è «vera». Un’informativa che nomina un titolare che non siete voi, o che descrive trattamenti che non fate, non vi protegge: vi espone, perché dichiara il falso. Meglio poche righe esatte sul vostro caso reale che dieci pagine generiche copiate altrove. È un documento che parla di voi: deve dire la verità su di voi.",
+                  ]),
+             dict(titolo='Cosa deve contenere la cookie policy (e il banner)',
+                  paragrafi=[
+                      "La cookie policy elenca in modo trasparente i tracciatori del sito: nome, titolare, finalità, durata e — per i cookie di terze parti — il collegamento all’informativa del fornitore. Ma il documento da solo non basta: se usate cookie non tecnici, serve un banner che li blocchi prima del consenso e permetta di rifiutare con la stessa facilità con cui si accetta. Le linee guida del Garante del 2021 e la task force europea sono chiare su questo punto.",
+                      "L’errore classico è avere una bella cookie policy e un banner finto, che carica analytics e pubblicità dal primo istante e chiede il permesso a cose fatte. In quel caso il documento diventa la prova scritta di ciò che avreste dovuto fare e non fate. Cookie policy e banner sono due facce dello stesso obbligo: descrivere e, prima ancora, rispettare la scelta.",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/cookiepolicy-due.svg',
+                              alt='Cookie policy e privacy policy a confronto: due documenti, due scopi, quando servono',
+                              caption='Due documenti a confronto. Privacy policy (informativa): riguarda tutti i dati personali, richiesta sempre che raccogliate qualcosa, dagli articoli 13–14 del GDPR. Cookie policy: riguarda i tracciatori, richiesta quando usate cookie non tecnici, con banner del consenso. Nella maggior parte dei siti servono entrambe.')),
+             dict(titolo='Cookie policy o privacy policy: quale vi serve (di solito entrambe)',
+                  paragrafi=[
+                      "Proviamo a rispondere alla domanda pratica. Un sito con un semplice modulo di contatto e nessun cookie oltre a quelli tecnici ha bisogno almeno della privacy policy. Nel momento in cui aggiungete Google Analytics, i pixel pubblicitari o i video incorporati, entrano in gioco cookie non tecnici: allora vi servono anche la cookie policy e il banner del consenso. Poiché quasi ogni sito reale usa almeno un tracciatore, nella pratica la risposta è: quasi sempre entrambe.",
+                      "La scorciatoia di copiarne una dal web fallisce due volte. Sbaglia il titolare, quindi dichiara il falso; ed elenca cookie che non avete e ne omette che avete, quindi è inutile proprio dove dovrebbe proteggervi. Se poi il vostro sito ricade anche negli obblighi di accessibilità, l’intera area legale va rivista con lo stesso metro di serietà: documenti su misura, non modelli riciclati.",
+                  ],
+                  links=[('Verifica gratis cookie e conformità GDPR del vostro sito', '/strumenti/check-gdpr/'),
+                         ('Adeguamento EAA: sito accessibile e a norma, area legale compresa', '/servizi/adeguamento-eaa/')]),
+             dict(titolo='Non è burocrazia: è fiducia (e legge)',
+                  paragrafi=[
+                      "È facile vivere privacy e cookie policy come una tassa fastidiosa da assolvere copiando il primo modello. Ma sono anche un segnale di serietà verso chi vi visita: dire con chiarezza quali dati raccogliete e perché costruisce fiducia esattamente dove il visitatore è più diffidente. Un sito trasparente sui dati vende meglio di uno che nasconde la questione sotto un banner ingannevole.",
+                      "Quando costruiamo un sito, le informative le scriviamo sul vostro caso reale — titolare vero, cookie effettivi, trattamenti che fate davvero — e le colleghiamo a un banner che rispetta la scelta. Non è la parte glamour di un progetto, ma è quella che, il giorno di un controllo o di una domanda scomoda, fa la differenza tra una risposta serena e un problema.",
+                  ],
+                  links=[('Leggi anche: Google Analytics 4 e privacy in UE, siete a norma?', '/blog/google-analytics-4-privacy-ue/')]),
+         ],
+         fonti=[
+             ('Garante Privacy — linee guida sui cookie', _S_GARANTE_COOKIE,
+              'Le regole italiane su cookie e banner: quando serve il consenso e come dev’essere raccolto.'),
+             ('Regolamento GDPR 2016/679 — EUR-Lex', _S_GDPR,
+              'Gli articoli 13 e 14 indicano cosa deve contenere l’informativa privacy: titolare, finalità, basi, tempi, diritti.'),
+             ('EDPB — report della cookie banner taskforce', _S_EDPB_COOKIE,
+              'Cosa considerano scorretto i garanti europei nei banner: la cornice comune oltre le regole nazionali.'),
+             ('Garante Privacy — sito ufficiale', _S_GARANTE_HOME,
+              'L’autorità italiana con modelli, FAQ e provvedimenti su informative, cookie e diritti degli interessati.'),
+         ]),
+
+    dict(slug='backup-e-sicurezza-sito-web', data='22 LUG 2026', tema='norme',
+         titolo='Backup e sicurezza del sito: cosa perdete se domani sparisce',
+         estratto='Un sito può sparire in un attimo: attacco, errore, hosting che chiude. Backup e sicurezza per le PMI: cosa rischiate davvero e la regola 3-2-1 per dormire sereni.',
+         corpo="Immaginate di aprire il sito domani mattina e trovare una pagina bianca, o peggio, un avviso di sito compromesso. Nessun preavviso: un aggiornamento saltato, una password debole, un server che cede. Per una piccola impresa la sicurezza del sito web non è un tema da grandi aziende con reparti IT: è la differenza tra un contrattempo di un’ora e la perdita di anni di lavoro. Vediamo cosa rischiate davvero se il sito sparisce, quali sono le minacce concrete per una PMI, e le poche mosse — backup in testa — che vi mettono al riparo.",
+         cover=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/backup-cover.svg',
+                    alt='Backup e sicurezza del sito web per le PMI: cosa perdete se domani sparisce'),
+         cta=('Misura la salute e la sicurezza del vostro sito, gratis', '/strumenti/check-up-completo/'),
+         sezioni=[
+             dict(titolo='Cosa perdete se il sito sparisce domani',
+                  paragrafi=[
+                      "Un sito non è solo un insieme di pagine: è un capitale accumulato negli anni. Perderlo significa perdere il posizionamento su Google costruito articolo dopo articolo, i contatti e gli ordini arrivati dai moduli, le foto e i testi che avete curato, a volte l’unico canale da cui i clienti vi trovano. E c’è il danno meno visibile: ogni ora offline è una richiesta che non arriva e un cliente che apre il concorrente.",
+                      "Il colpo peggiore, però, è quando non c’è modo di tornare indietro. Senza un backup recente e funzionante, un sito compromesso o cancellato può essere semplicemente irrecuperabile: si riparte da zero, con settimane di lavoro e la reputazione ammaccata. La differenza tra un disastro e un fastidio non è la fortuna: è essersi preparati prima.",
+                  ]),
+             dict(titolo='Le minacce reali per una PMI',
+                  paragrafi=[
+                      "Il malinteso da sfatare è che «tanto chi vuoi che attacchi il mio sito». Nella stragrande maggioranza dei casi non c’è nessun hacker in carne e ossa interessato a voi: ci sono programmi automatici che scandagliano l’intera rete in cerca di siti con falle note. E le falle note abbondano: i report di sicurezza come quelli di Patchstack censiscono ogni anno migliaia di vulnerabilità nei plugin e nei temi più diffusi, quasi tutte in componenti che qualcuno non ha aggiornato.",
+                      "Le porte d’ingresso più comuni sono banali: un plugin o un CMS non aggiornato, una password debole o riutilizzata, un accesso amministrativo lasciato aperto. A queste si aggiungono i guasti che non c’entrano con la malizia: un server che si rompe, un hosting che chiude, un file cancellato per errore. La sicurezza di un sito web per una PMI riguarda tutte queste cose insieme, non solo gli attacchi da film.",
+                  ]),
+             dict(titolo='Sicurezza del sito web per le PMI: le basi che bastano',
+                  paragrafi=[
+                      "La buona notizia è che gran parte del rischio si abbatte con poche abitudini di base, alla portata di chiunque. Tenere aggiornati CMS, temi e plugin è la più importante in assoluto: la maggior parte degli attacchi sfrutta falle già corrette, che colpiscono solo chi non ha installato l’aggiornamento. Poi password robuste e uniche, con l’autenticazione a due fattori sugli accessi amministrativi, e HTTPS attivo su tutto il sito.",
+                      "Il resto è disciplina di accesso: dare i permessi da amministratore solo a chi serve, rimuovere gli account inutilizzati, scegliere un hosting serio che faccia la sua parte. Sono le stesse pratiche di irrobustimento che la documentazione ufficiale di WordPress raccoglie da anni. Non serve essere esperti di cybersicurezza: serve non lasciare le porte aperte.",
+                  ],
+                  links=[('Misura gratis la salute e la sicurezza del vostro sito', '/strumenti/check-up-completo/')]),
+             dict(titolo='Il backup: la regola 3-2-1',
+                  paragrafi=[
+                      "Se dovete ricordare una sola cosa di questo articolo, è il backup. La regola collaudata si chiama 3-2-1: tre copie dei dati, su due tipi di supporto diversi, di cui una conservata altrove — fuori dal server del sito. Così, se salta l’hosting, la copia esterna vi salva; se un attacco cripta tutto, ne avete una pulita da cui ripartire. E i backup vanno automatici e regolari, non «quando mi ricordo».",
+                      "C’è un dettaglio che quasi tutti trascurano: un backup che non avete mai provato a ripristinare non è un backup, è una speranza. Va testato almeno una volta, per essere certi che si ripristini davvero e che sia completo. La domanda giusta non è «faccio i backup?», ma «quanto tempo mi ci vuole a rimettere online il sito da un backup, e l’ho mai verificato?».",
+                  ],
+                  figura=dict(src='/wp-content/themes/remarka-studio/assets/img/blog/backup-regola.svg',
+                              alt='La regola del backup 3-2-1 per la sicurezza di un sito web',
+                              caption='La regola del backup 3-2-1: tre copie dei dati (2), su due tipi di supporto diversi, di cui almeno una conservata fuori dal server del sito (1). Automatici, regolari e — soprattutto — testati: un backup mai ripristinato non è un backup. È la rete di sicurezza che trasforma un disastro in un fastidio.')),
+             dict(titolo='Sicurezza è anche un dovere (GDPR, articolo 32)',
+                  paragrafi=[
+                      "C’è un motivo in più per prendere sul serio la questione: la legge. Se il vostro sito raccoglie dati personali — e basta un modulo di contatto — l’articolo 32 del GDPR vi chiede di adottare misure di sicurezza adeguate a proteggerli. Un sito bucato che espone gli indirizzi dei vostri clienti non è solo un guaio tecnico: può diventare una violazione di dati da notificare, con le conseguenze del caso. Sicurezza e conformità, qui, sono la stessa cosa.",
+                      "È l’approccio che teniamo su ogni progetto: aggiornamenti, backup automatici e testati, accessi controllati non sono un extra da vendervi a parte, sono il minimo perché un sito sia un investimento e non una scommessa. Un sito veloce e bello che sparisce in una notte non era un buon sito: era un rischio ben verniciato.",
+                  ],
+                  links=[('Cosa include un sito aziendale, sicurezza e manutenzione comprese', '/servizi/siti-aziendali/'),
+                         ('Leggi anche: alternative privacy-first a Google Analytics', '/blog/alternative-google-analytics-privacy/')]),
+         ],
+         fonti=[
+             ('WordPress — backup del sito (documentazione ufficiale)', _S_WP_BACKUP,
+              'Come e perché fare backup regolari: la guida ufficiale, valida ben oltre WordPress.'),
+             ('WordPress — irrobustire la sicurezza (hardening)', _S_WP_HARDENING,
+              'Le pratiche di base per chiudere le porte: aggiornamenti, permessi, accessi. Semplici e decisive.'),
+             ('Patchstack — State of WordPress Security', _S_PATCHSTACK_24,
+              'Il report annuale sulle vulnerabilità: migliaia ogni anno, quasi tutte in componenti non aggiornati.'),
+             ('Regolamento GDPR 2016/679 — EUR-Lex', _S_GDPR,
+              'L’articolo 32 impone misure di sicurezza adeguate: proteggere i dati dei clienti è anche un obbligo di legge.'),
+         ]),
+
+
     # ---- Blog · Batch 7 (seconda ondata) — Conversione e fiducia — IT + EN ----
     # 5 articoli (31–35): perché il sito non converte, landing page, recensioni
     # oneste, WhatsApp Business, il testo prima del design. Fonti reali (Baymard,
