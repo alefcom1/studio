@@ -131,6 +131,13 @@ market.remarka.biz {
 	@assets path /assets/*
 	header @assets Cache-Control "public, max-age=31536000, immutable"
 
+	# index.html и SPA-фолбэк НЕ кэшируем: иначе Telegram/браузер держат
+	# старый index.html со старой ссылкой на JS, и деплой не виден до
+	# истечения кэша (ловили на auth-фиксе). Хэш-ассеты выше — вечные,
+	# сам index — всегда свежий. API (/api/*) исключаем, у него свои заголовки.
+	@html not path /assets/* /api/*
+	header @html Cache-Control "no-store, no-cache, must-revalidate"
+
 	log {
 		output stdout
 		format console
