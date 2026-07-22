@@ -32,12 +32,12 @@
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%","verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:group {"className":"sr-browser sr-browser--mobile","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-browser sr-browser--mobile"><!-- wp:html -->
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">traduzione.tech/gioco</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="gioco-play-1440.webp" alt="A screen from «The Empire of Translations» at traduzione.tech/gioco: the board where you run the agency" caption="The Empire of Translations — a game in progress, Italian version" mobile="0"]
+[sr_shot file="gioco-play-390.webp" alt="A screen from «The Empire of Translations» at traduzione.tech/gioco: Phase 1 · Freelance, available jobs and the team to manage" caption="The Empire of Translations — a game in progress, Italian version" mobile="1"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

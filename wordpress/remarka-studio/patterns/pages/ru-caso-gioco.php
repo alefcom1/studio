@@ -32,12 +32,12 @@
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%","verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:group {"className":"sr-browser sr-browser--mobile","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-browser sr-browser--mobile"><!-- wp:html -->
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">traduzione.tech/gioco</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="gioco-play-1440.webp" alt="Экран игры «Империя переводов» на traduzione.tech/gioco: поле, на котором управляешь бюро" caption="Империя переводов — партия в процессе, итальянская версия" mobile="0"]
+[sr_shot file="gioco-play-390.webp" alt="Экран игры «Империя переводов» на traduzione.tech/gioco: Фаза 1 · Фриланс, доступные заказы и команда, которой управляешь" caption="Империя переводов — партия в процессе, итальянская версия" mobile="1"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->

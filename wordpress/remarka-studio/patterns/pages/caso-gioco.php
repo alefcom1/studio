@@ -32,12 +32,12 @@
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"45%","verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:group {"className":"sr-browser","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-layout-constrained sr-browser"><!-- wp:html -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:group {"className":"sr-browser sr-browser--mobile","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-layout-constrained sr-browser sr-browser--mobile"><!-- wp:html -->
 <div class="sr-browser__bar"><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__dot"></span><span class="sr-browser__url">traduzione.tech/gioco</span></div>
 <!-- /wp:html -->
 <!-- wp:html -->
-[sr_shot file="gioco-play-1440.webp" alt="Schermata di gioco de «L'Impero delle Traduzioni» su traduzione.tech/gioco: la plancia dove si gestisce l'agenzia" caption="L'Impero delle Traduzioni — una partita in corso, versione italiana" mobile="0"]
+[sr_shot file="gioco-play-390.webp" alt="Schermata di gioco de «L'Impero delle Traduzioni» su traduzione.tech/gioco: Fase 1 · Freelance, incarichi disponibili, il team da gestire" caption="L'Impero delle Traduzioni — una partita in corso, versione italiana" mobile="1"]
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
