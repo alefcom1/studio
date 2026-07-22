@@ -930,6 +930,24 @@ body .entry-header {
 .sr-dark .sr-stat__num,
 .is-style-sr-dark .sr-stat__num { color: var(--sr-oltremare-chiaro); }
 
+/* Unità/parola dopo la cifra grande («2 settimane», «100 MB», «1.000+ giorni»):
+   nel corpo mono gigante una parola lunga andava a capo spezzata («settiman/e»).
+   La cifra resta grande, l'unità diventa un token piccolo sulla stessa base,
+   così la statistica non sfonda mai la colonna. */
+.sr-stat__num .sr-stat__unit {
+  font-size: clamp(16px, 1.6vw, 22px);
+  margin-left: 8px;
+  opacity: 0.82;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+/* Valore-parola senza cifra («Centinaia», «Dal 2022»): non entra nel corpo
+   gigante → dimensione ridotta ma ancora d'impatto, su una riga. */
+.sr-stat__num--sm {
+  font-size: clamp(28px, 3vw, 44px);
+  white-space: nowrap;
+}
+
 .sr-stat p {
   margin: 8px 0 0;
 }

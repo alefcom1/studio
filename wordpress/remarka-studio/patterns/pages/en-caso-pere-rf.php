@@ -175,12 +175,12 @@
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">9–10k</span><p style="margin-top:8px;font-size:14px">visitors a month, from organic search</p></div>
+<div class="sr-stat"><span class="sr-stat__num sr-stat__num--sm" style="color:var(--sr-oltremare-chiaro)">9–10k</span><p style="margin-top:8px;font-size:14px">visitors a month, from organic search</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">1,000+ days</span><p style="margin-top:8px;font-size:14px">at the top of the results, without losing the position</p></div>
+<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">1,000+<span class="sr-stat__unit">days</span></span><p style="margin-top:8px;font-size:14px">at the top of the results, without losing the position</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

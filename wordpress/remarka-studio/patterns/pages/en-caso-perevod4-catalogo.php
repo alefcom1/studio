@@ -175,12 +175,12 @@
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">Hundreds</span><p style="margin-top:8px;font-size:14px">of pages with internal links and industry semantics</p></div>
+<div class="sr-stat"><span class="sr-stat__num sr-stat__num--sm" style="color:var(--sr-oltremare-chiaro)">Hundreds</span><p style="margin-top:8px;font-size:14px">of pages with internal links and industry semantics</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">1 industry</span><p style="margin-top:8px;font-size:14px">whole industry as the test bed, not a demo page</p></div>
+<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">1<span class="sr-stat__unit">industry</span></span><p style="margin-top:8px;font-size:14px">whole industry as the test bed, not a demo page</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

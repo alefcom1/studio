@@ -193,7 +193,7 @@
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">2 sites</span><p style="margin-top:8px;font-size:14px">of the group rebuilt: moscowtrans.ru and techperevod.com</p></div>
+<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">2<span class="sr-stat__unit">sites</span></span><p style="margin-top:8px;font-size:14px">of the group rebuilt: moscowtrans.ru and techperevod.com</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column -->
 <!-- wp:column -->

@@ -150,7 +150,7 @@
 <!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"},"margin":{"top":"28px"}}}} -->
 <div class="wp-block-columns" style="margin-top:28px"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">2 недели</span><p style="margin-top:8px;font-size:14px">от старта до Mini App в продакшене</p></div>
+<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">2<span class="sr-stat__unit">недели</span></span><p style="margin-top:8px;font-size:14px">от старта до Mini App в продакшене</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column -->
 <!-- wp:column -->

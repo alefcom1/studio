@@ -175,12 +175,12 @@
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">9–10 mila</span><p style="margin-top:8px;font-size:14px">visitatori al mese, dalla ricerca organica</p></div>
+<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">9–10<span class="sr-stat__unit">mila</span></span><p style="margin-top:8px;font-size:14px">visitatori al mese, dalla ricerca organica</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">1.000+ giorni</span><p style="margin-top:8px;font-size:14px">in cima ai risultati, senza perdere la posizione</p></div>
+<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">1.000+<span class="sr-stat__unit">giorni</span></span><p style="margin-top:8px;font-size:14px">in cima ai risultati, senza perdere la posizione</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

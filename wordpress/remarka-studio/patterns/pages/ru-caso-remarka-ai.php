@@ -186,7 +186,7 @@
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">100 МБ</span><p style="margin-top:8px;font-size:14px">максимальный размер одного документа</p></div>
+<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">100<span class="sr-stat__unit">МБ</span></span><p style="margin-top:8px;font-size:14px">максимальный размер одного документа</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

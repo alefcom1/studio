@@ -186,7 +186,7 @@
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">100 MB</span><p style="margin-top:8px;font-size:14px">maximum size per single document</p></div>
+<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">100<span class="sr-stat__unit">MB</span></span><p style="margin-top:8px;font-size:14px">maximum size per single document</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

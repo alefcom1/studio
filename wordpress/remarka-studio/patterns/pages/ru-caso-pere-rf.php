@@ -175,12 +175,12 @@
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">9–10 тыс.</span><p style="margin-top:8px;font-size:14px">посетителей в месяц из органического поиска</p></div>
+<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">9–10<span class="sr-stat__unit">тыс.</span></span><p style="margin-top:8px;font-size:14px">посетителей в месяц из органического поиска</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">1000+ дней</span><p style="margin-top:8px;font-size:14px">в топе выдачи, без потери позиций</p></div>
+<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">1000+<span class="sr-stat__unit">дней</span></span><p style="margin-top:8px;font-size:14px">в топе выдачи, без потери позиций</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

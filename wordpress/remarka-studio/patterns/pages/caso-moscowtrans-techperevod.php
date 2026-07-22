@@ -193,7 +193,7 @@
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">2 siti</span><p style="margin-top:8px;font-size:14px">del gruppo rifatti: moscowtrans.ru e techperevod.com</p></div>
+<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">2<span class="sr-stat__unit">siti</span></span><p style="margin-top:8px;font-size:14px">del gruppo rifatti: moscowtrans.ru e techperevod.com</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column -->
 <!-- wp:column -->

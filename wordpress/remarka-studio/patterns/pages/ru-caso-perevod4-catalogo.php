@@ -175,12 +175,12 @@
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">Сотни</span><p style="margin-top:8px;font-size:14px">страниц с внутренней перелинковкой и отраслевой семантикой</p></div>
+<div class="sr-stat"><span class="sr-stat__num sr-stat__num--sm" style="color:var(--sr-oltremare-chiaro)">Сотни</span><p style="margin-top:8px;font-size:14px">страниц с внутренней перелинковкой и отраслевой семантикой</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">1 отрасль</span><p style="margin-top:8px;font-size:14px">целая отрасль как полигон, а не демо-страница</p></div>
+<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">1<span class="sr-stat__unit">отрасль</span></span><p style="margin-top:8px;font-size:14px">целая отрасль как полигон, а не демо-страница</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

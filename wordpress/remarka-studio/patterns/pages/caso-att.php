@@ -170,7 +170,7 @@
 <!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"},"margin":{"top":"28px"}}}} -->
 <div class="wp-block-columns" style="margin-top:28px"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">Dal 2022</span><p style="margin-top:8px;font-size:14px">online, come canale di acquisizione dell'agenzia</p></div>
+<div class="sr-stat"><span class="sr-stat__num sr-stat__num--sm" style="color:var(--sr-oltremare-chiaro)">Dal 2022</span><p style="margin-top:8px;font-size:14px">online, come canale di acquisizione dell'agenzia</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column -->
 <!-- wp:column -->

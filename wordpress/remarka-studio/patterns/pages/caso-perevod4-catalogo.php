@@ -175,12 +175,12 @@
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">Centinaia</span><p style="margin-top:8px;font-size:14px">di pagine con link interni e semantica di settore</p></div>
+<div class="sr-stat"><span class="sr-stat__num sr-stat__num--sm" style="color:var(--sr-oltremare-chiaro)">Centinaia</span><p style="margin-top:8px;font-size:14px">di pagine con link interni e semantica di settore</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
-<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">1 industria</span><p style="margin-top:8px;font-size:14px">intera come banco di prova, non una pagina demo</p></div>
+<div class="sr-stat"><span class="sr-stat__num" style="color:var(--sr-oltremare-chiaro)">1<span class="sr-stat__unit">industria</span></span><p style="margin-top:8px;font-size:14px">intera come banco di prova, non una pagina demo</p></div>
 <!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
