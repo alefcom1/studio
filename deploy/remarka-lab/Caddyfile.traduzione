@@ -4,10 +4,12 @@
 # на сервере). Копия блока remarka.biz — тот же контейнер `wordpress:80`,
 # Apache внутри разведёт сайты по заголовку Host.
 #
-# Предусловие: A-записи traduzione.tech (@) и www.traduzione.tech → 178.105.192.76
-# должны СУЩЕСТВОВАТЬ до перезагрузки Caddy, иначе ACME HTTP-01 challenge для
-# TLS-сертификата не пройдёт (та же грабля, что у cab/market — см. Caddyfile).
-# На стейджинге до cutover — использовать stage.traduzione.tech (см. раннбук).
+# Стратегия — заливаем сразу на боевой домен, без поддомена (решение владельца
+# 22.07.2026). Публичный Let's Encrypt-серт нельзя выпустить, пока A-запись
+# traduzione.tech не смотрит на этот сервер. Поэтому раннбук на время проверки
+# через hosts-файл ВРЕМЕННО добавляет в этот блок строку `tls internal`
+# (self-signed), а при cutover убирает её — тогда Caddy выпускает настоящий
+# серт после переключения DNS. См. docs/hetzner-migration-traduzione.md фазы 3–5.
 #
 # Применение (без полного рестарта, чтобы не тронуть остальные домены):
 #   docker compose -f docker-compose.yml -f docker-compose.prod.yml \

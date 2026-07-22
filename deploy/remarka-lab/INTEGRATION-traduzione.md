@@ -45,24 +45,25 @@ Remarka Lab (worker ~1 ГБ) + пик обоих WP-сайтов может вы
 
 ## Точка интеграции 1 — `Caddyfile` (дописать в конец)
 
-Блоки для traduzione.tech лежат в `Caddyfile.traduzione`. На боевом:
+Заливаем сразу на боевой домен (без поддомена). Блоки для traduzione.tech —
+в `Caddyfile.traduzione`. Пока A-запись не переключена, публичный серт
+выпустить нельзя, поэтому на время проверки через hosts-файл включаем
+временный `tls internal`:
 
 ```bash
 cd ~/remarka-lab/sitelens
 cat Caddyfile.traduzione >> Caddyfile
-# На время стейджинга (пока A-запись боевого домена не переключена) —
-# временно превратить боевой блок в stage.traduzione.tech, чтобы ACME
-# выпустил cert на уже существующую A-запись stage.*:
-sed -i '0,/^traduzione\.tech {/s//stage.traduzione.tech {/' Caddyfile
+sed -i '/^traduzione\.tech {/a tls internal' Caddyfile   # временный self-signed
 docker compose -f docker-compose.yml -f docker-compose.prod.yml \
   exec caddy caddy reload --config /etc/caddy/Caddyfile
 ```
 
-На cutover (фаза 5 раннбука) — вернуть боевой хост:
+На cutover (фаза 5 раннбука) — убрать `tls internal`, чтобы Caddy выпустил
+настоящий Let's Encrypt-серт после переключения DNS:
 
 ```bash
 cd ~/remarka-lab/sitelens
-sed -i 's/^stage\.traduzione\.tech {/traduzione.tech {/' Caddyfile
+sed -i '/^[[:space:]]*tls internal$/d' Caddyfile
 docker compose -f docker-compose.yml -f docker-compose.prod.yml \
   exec caddy caddy reload --config /etc/caddy/Caddyfile
 ```
