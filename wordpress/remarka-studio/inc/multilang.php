@@ -271,6 +271,19 @@ function remarka_str( string $key ): string {
 		'cookie_accetta'   => array( 'it' => 'Accetta', 'en' => 'Accept', 'ru' => 'Принять' ),
 		'wa_label'         => array( 'it' => 'Scrivici su WhatsApp', 'en' => 'Message us on WhatsApp', 'ru' => 'Написать нам в WhatsApp' ),
 		'footer_tel'       => array( 'it' => 'Tel./WhatsApp', 'en' => 'Phone/WhatsApp', 'ru' => 'Тел./WhatsApp' ),
+		// --- CTA finale delle pagine-caso (pitch + modulo d'ordine) ---
+		'case_cta_eyebrow' => array( 'it' => 'Interessati a questo progetto?', 'en' => 'Interested in this project?', 'ru' => 'Заинтересовал этот проект?' ),
+		'case_cta_h'       => array( 'it' => 'Vi serve un sito o un’app su misura? Parliamone', 'en' => 'Need a custom website or app? Let’s talk', 'ru' => 'Нужен сайт или приложение под задачу? Давайте обсудим' ),
+		'case_cta_text'    => array(
+			'it' => 'Progettiamo e sviluppiamo siti e web app su misura per aziende e professionisti. Raccontateci la vostra idea: rispondiamo con un’analisi o un preventivo chiuso.',
+			'en' => 'We design and build custom websites and web apps for companies and professionals. Tell us your idea: we’ll reply with an analysis or a fixed quote.',
+			'ru' => 'Проектируем и разрабатываем сайты и веб-приложения под задачу — для компаний и специалистов. Расскажите идею: ответим анализом или фиксированной сметой.',
+		),
+		'case_cta_p1'      => array( 'it' => 'Preventivo chiuso entro 24 ore', 'en' => 'Fixed quote within 24 hours', 'ru' => 'Фиксированная смета за 24 часа' ),
+		'case_cta_p2'      => array( 'it' => 'Prezzo chiaro, senza sorprese', 'en' => 'Clear price, no surprises', 'ru' => 'Понятная цена, без сюрпризов' ),
+		'case_cta_p3'      => array( 'it' => 'I vostri dati restano nell’UE', 'en' => 'Your data stays in the EU', 'ru' => 'Ваши данные остаются в ЕС' ),
+		'case_cta_form_title' => array( 'it' => 'Raccontateci il progetto', 'en' => 'Tell us about the project', 'ru' => 'Расскажите о проекте' ),
+		'case_cta_svc_prefix' => array( 'it' => 'Scopri il servizio', 'en' => 'Explore the service', 'ru' => 'Смотреть услугу' ),
 		// --- Modulo preventivo a step ---
 		'form_q_tipo'      => array( 'it' => 'Di cosa hai bisogno?', 'en' => 'What do you need?', 'ru' => 'Что вам нужно?' ),
 		'form_q_tipo_hint' => array(

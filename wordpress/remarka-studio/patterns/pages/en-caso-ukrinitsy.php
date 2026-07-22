@@ -218,28 +218,6 @@
 <p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;margin-top:8px">A REMARKA GROUP PROJECT — VERIFIABLE AT ukrinitsy.ru</p>
 <!-- /wp:paragraph --></section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
-<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"48px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
-<div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"64%"} -->
-<div class="wp-block-column" style="flex-basis:64%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Interested in this project?</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
-<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Need a custom site or app? Let's talk<span class="sr-accent-dot">.</span></h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:12px;font-size:16px">We design and build custom sites and web apps for companies and professionals — including booking modules with no fees or commissions, hosted on your own domain. Tell us your idea: a quote in 24 hours, at a fixed price.</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:column -->
-<!-- wp:column {"width":"36%"} -->
-<div class="wp-block-column" style="flex-basis:36%"><!-- wp:buttons {"layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"14px"}}} -->
-<div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/en/#contatti">Request a quote</a></div>
-<!-- /wp:button -->
-<!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/en/services/business-websites/">Explore the Business websites service</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns --></section>
-<!-- /wp:group -->
+<!-- wp:shortcode -->
+[remarka_case_cta service="siti-aziendali"]
+<!-- /wp:shortcode -->

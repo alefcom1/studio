@@ -1707,6 +1707,81 @@ function remarka_form_shortcode(): string {
 add_shortcode( 'remarka_form', 'remarka_form_shortcode' );
 
 /**
+ * Shortcode [remarka_case_cta service="web-app"]: blocco CTA finale delle
+ * pagine-caso. A sinistra il pitch con i punti di fiducia e due pulsanti
+ * (WhatsApp + «Scopri il servizio X»); a destra il vero modulo d'ordine
+ * [remarka_form]. Localizzato via remarka_str/remarka_current_lang, così IT,
+ * EN e RU rendono dallo stesso sorgente (l'attributo service resta invariato
+ * nella pagina EN generata dal convogliatore). Un solo posto da migliorare
+ * invece di 22 blocchi duplicati nei pattern.
+ */
+function remarka_case_cta_service( string $service, string $lang ): array {
+	$map = array(
+		'web-app' => array(
+			'it' => array( 'Web app', '/servizi/web-app/' ),
+			'en' => array( 'Web apps', '/en/services/custom-web-apps/' ),
+			'ru' => array( 'Веб-приложения', '/ru/uslugi/veb-prilozhenija/' ),
+		),
+		'siti-aziendali' => array(
+			'it' => array( 'Siti aziendali', '/servizi/siti-aziendali/' ),
+			'en' => array( 'Business websites', '/en/services/business-websites/' ),
+			'ru' => array( 'Корпоративные сайты', '/ru/uslugi/korporativnye-sajty/' ),
+		),
+		'restyling-migrazione' => array(
+			'it' => array( 'Restyling e migrazione', '/servizi/restyling-migrazione/' ),
+			'en' => array( 'Redesign & migration', '/en/services/redesign-migration/' ),
+			'ru' => array( 'Редизайн и миграция', '/ru/uslugi/redizajn-i-migracija/' ),
+		),
+		'seo-tecnica' => array(
+			'it' => array( 'SEO tecnica', '/servizi/seo-tecnica/' ),
+			'en' => array( 'Technical SEO', '/en/services/technical-seo/' ),
+			'ru' => array( 'Техническое SEO', '/ru/uslugi/tehnicheskoe-seo/' ),
+		),
+	);
+	if ( isset( $map[ $service ][ $lang ] ) ) {
+		return $map[ $service ][ $lang ];
+	}
+	return array( '', '' );
+}
+
+function remarka_case_cta_shortcode( $atts ): string {
+	$atts = shortcode_atts( array( 'service' => '' ), $atts, 'remarka_case_cta' );
+	$lang = function_exists( 'remarka_current_lang' ) ? remarka_current_lang() : 'it';
+	list( $svc_label, $svc_url ) = remarka_case_cta_service( (string) $atts['service'], $lang );
+	$wa = 'https://api.whatsapp.com/send?phone=393478311141&text=';
+
+	ob_start();
+	?>
+	<section class="wp-block-group sr-section sr-case-cta">
+		<div class="sr-case-cta__grid">
+			<div class="sr-case-cta__pitch">
+				<p class="sr-eyebrow"><?php echo esc_html( remarka_str( 'case_cta_eyebrow' ) ); ?></p>
+				<h2 class="sr-case-cta__h"><?php echo esc_html( remarka_str( 'case_cta_h' ) ); ?><span class="sr-accent-dot">.</span></h2>
+				<p class="sr-case-cta__lead"><?php echo esc_html( remarka_str( 'case_cta_text' ) ); ?></p>
+				<ul class="sr-case-cta__points">
+					<li><?php echo esc_html( remarka_str( 'case_cta_p1' ) ); ?></li>
+					<li><?php echo esc_html( remarka_str( 'case_cta_p2' ) ); ?></li>
+					<li><?php echo esc_html( remarka_str( 'case_cta_p3' ) ); ?></li>
+				</ul>
+				<div class="wp-block-buttons sr-case-cta__btns">
+					<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( $wa ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html( remarka_str( 'wa_label' ) ); ?></a></div>
+					<?php if ( $svc_url ) : ?>
+					<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( $svc_url ) ); ?>"><?php echo esc_html( remarka_str( 'case_cta_svc_prefix' ) . ' ' . $svc_label ); ?> &rarr;</a></div>
+					<?php endif; ?>
+				</div>
+			</div>
+			<div class="sr-case-cta__form">
+				<p class="sr-eyebrow sr-case-cta__form-title"><?php echo esc_html( remarka_str( 'case_cta_form_title' ) ); ?></p>
+				<?php echo do_shortcode( '[remarka_form]' ); ?>
+			</div>
+		</div>
+	</section>
+	<?php
+	return (string) ob_get_clean();
+}
+add_shortcode( 'remarka_case_cta', 'remarka_case_cta_shortcode' );
+
+/**
  * Валидация + отправка. Возвращает null при успехе или текст ошибки.
  * Общая для AJAX и admin-post путей.
  */

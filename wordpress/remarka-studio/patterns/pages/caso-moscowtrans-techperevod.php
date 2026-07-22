@@ -206,28 +206,6 @@
 <p class="sr-mono" style="font-size:11px;letter-spacing:0.06em;margin-top:8px">PROGETTI DEL GRUPPO REMARKA — VERIFICABILI SU moscowtrans.ru E techperevod.com</p>
 <!-- /wp:paragraph --></section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"sr-section sr-section--bianco","layout":{"type":"constrained","contentSize":"1440px"}} -->
-<section class="wp-block-group is-layout-constrained sr-section sr-section--bianco"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"48px"}}},"verticalAlignment":"center","className":"sr-cascade"} -->
-<div class="wp-block-columns are-vertically-aligned-center sr-cascade"><!-- wp:column {"width":"64%"} -->
-<div class="wp-block-column" style="flex-basis:64%"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
-<p class="sr-eyebrow">Interessati a questo progetto?</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(24px,2.6vw,32px)"}}} -->
-<h2 class="wp-block-heading" style="font-size:clamp(24px,2.6vw,32px)">Vi serve un restyling o una migrazione? Parliamone<span class="sr-accent-dot">.</span></h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size" style="margin-top:12px;font-size:16px">Rifacciamo siti web senza perdere posizionamento: nuovo design, più velocità e una struttura che converte. Raccontateci il vostro sito attuale: preventivo in 24 ore, prezzo chiuso.</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:column -->
-<!-- wp:column {"width":"36%"} -->
-<div class="wp-block-column" style="flex-basis:36%"><!-- wp:buttons {"layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"14px"}}} -->
-<div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contatti">Richiedi un preventivo</a></div>
-<!-- /wp:button -->
-<!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/servizi/restyling-migrazione/">Scopri il servizio Restyling e migrazione</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns --></section>
-<!-- /wp:group -->
+<!-- wp:shortcode -->
+[remarka_case_cta service="restyling-migrazione"]
+<!-- /wp:shortcode -->

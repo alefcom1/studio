@@ -948,6 +948,68 @@ body .entry-header {
   white-space: nowrap;
 }
 
+/* ---------- CTA finale delle pagine-caso (shortcode remarka_case_cta) ----------
+   Pitch + punti di fiducia + pulsanti a sinistra, modulo d'ordine reale a destra.
+   Sfondo carta per staccarsi dalle sezioni bianche; il modulo in card bianca
+   elevata così è il fuoco del blocco. */
+.sr-case-cta { background: var(--sr-carta); }
+.sr-case-cta__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(32px, 4vw, 64px);
+  align-items: start;
+}
+.sr-case-cta__h {
+  font-size: clamp(26px, 2.8vw, 38px);
+  line-height: 1.1;
+  margin: 6px 0 0;
+}
+.sr-case-cta__lead {
+  margin-top: 16px;
+  font-size: 16px;
+  color: var(--sr-grigio);
+  max-width: 48ch;
+}
+.sr-case-cta__points {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sr-case-cta__points li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 15px;
+}
+.sr-case-cta__points li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  color: var(--sr-oltremare);
+  font-family: var(--sr-font-mono);
+  font-weight: 700;
+}
+.sr-case-cta__btns {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.sr-case-cta__form {
+  background: var(--sr-bianco);
+  border: 1px solid var(--sr-bordo);
+  border-radius: 18px;
+  padding: clamp(20px, 2.4vw, 30px);
+  box-shadow: 0 22px 56px -26px rgba(20, 22, 26, 0.24);
+}
+.sr-case-cta__form-title { margin-bottom: 14px; }
+@media (max-width: 860px) {
+  .sr-case-cta__grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
 .sr-stat p {
   margin: 8px 0 0;
 }
