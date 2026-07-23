@@ -132,6 +132,12 @@ BLOG_SLUGS = {
     'alternative-google-analytics-privacy': {'en': 'privacy-first-google-analytics-alternatives', 'ru': 'privacy-alternativy-google-analytics'},
     'cookie-policy-o-privacy-policy':       {'en': 'cookie-policy-vs-privacy-policy',       'ru': 'cookie-i-privacy-politika'},
     'backup-e-sicurezza-sito-web':          {'en': 'website-backup-and-security',           'ru': 'rezervnoe-kopirovanie-i-bezopasnost-sajta'},
+    # Blog · Batch 9 (seconda ondata) — IT + EN (RU è un batch a sé: slug RU pianificati, IT+EN-only).
+    'ai-overviews-google-restare-visibili': {'en': 'google-ai-overviews-stay-visible',      'ru': 'ai-overviews-google-vidimost'},
+    'inp-metrica-core-web-vitals':          {'en': 'inp-core-web-vitals-metric',            'ru': 'inp-metrika-core-web-vitals'},
+    'autorevolezza-tematica-batte-keyword': {'en': 'topical-authority-beats-keywords',      'ru': 'tematicheskij-avtoritet-seo'},
+    'link-interni-seo-gratis':              {'en': 'internal-links-free-seo',               'ru': 'vnutrennie-ssylki-seo'},
+    'immagini-velocita-webp-lazy-load':     {'en': 'image-optimization-webp-lazy-load',     'ru': 'optimizacija-izobrazhenij-sajta'},
 }
 
 # Articoli del blog pubblicati solo in IT + EN in questa fase (la loro versione
@@ -181,6 +187,12 @@ BLOG_IT_EN_ONLY = {
     'alternative-google-analytics-privacy',
     'cookie-policy-o-privacy-policy',
     'backup-e-sicurezza-sito-web',
+    # Batch 9 (seconda ondata)
+    'ai-overviews-google-restare-visibili',
+    'inp-metrica-core-web-vitals',
+    'autorevolezza-tematica-batte-keyword',
+    'link-interni-seo-gratis',
+    'immagini-velocita-webp-lazy-load',
 }
 
 # Blog · Batch 5 — RU-only (scritti a mano in russo, senza specchio IT/EN;

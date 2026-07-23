@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-label="Ottimizzare le immagini: WebP invece di JPEG, lazy-load sotto la piega, dimensioni giuste per LCP e CLS">
+  <defs>
+    <pattern id="gridIms" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="500" fill="#F7F6F2"/>
+  <rect width="1200" height="500" fill="url(#gridIms)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">TRE LEVE PER IMMAGINI LEGGERE E VELOCI</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <g transform="translate(80,124)">
+    <rect x="0" y="0" width="318" height="200" fill="#2440C8"/>
+    <text x="28" y="46" class="mono" font-size="14" letter-spacing="2" fill="#C9D2FF">1 · FORMATO</text>
+    <text x="28" y="104" class="disp" font-size="42" fill="#FFFFFF">WebP / AVIF</text>
+    <text x="28" y="146" class="body" font-size="19" fill="#FFFFFF">al posto di JPEG/PNG</text>
+    <text x="28" y="178" class="mono" font-size="14" fill="#C9D2FF">fino al 25-35% in meno</text>
+  </g>
+  <g transform="translate(430,124)">
+    <rect x="0" y="0" width="318" height="200" fill="#5B73E8"/>
+    <text x="28" y="46" class="mono" font-size="14" letter-spacing="2" fill="#EEF1FE">2 · CARICAMENTO</text>
+    <text x="28" y="104" class="disp" font-size="42" fill="#FFFFFF">lazy-load</text>
+    <text x="28" y="146" class="body" font-size="19" fill="#FFFFFF">solo ciò che si vede</text>
+    <text x="28" y="178" class="mono" font-size="14" fill="#EEF1FE">mai l'immagine in cima</text>
+  </g>
+  <g transform="translate(780,124)">
+    <rect x="0" y="0" width="318" height="200" fill="#14161A"/>
+    <text x="28" y="46" class="mono" font-size="14" letter-spacing="2" fill="#9AA0AA">3 · DIMENSIONI</text>
+    <text x="28" y="104" class="disp" font-size="42" fill="#FFFFFF">giuste</text>
+    <text x="28" y="146" class="body" font-size="19" fill="#FFFFFF">servite al dispositivo</text>
+    <text x="28" y="178" class="mono" font-size="14" fill="#9AA0AA">width e height dichiarate</text>
+  </g>
+  <g transform="translate(80,360)">
+    <rect x="0" y="0" width="1060" height="54" fill="#EEF1FE" stroke="#2440C8" stroke-width="1"/>
+    <text x="20" y="33" class="mono" font-size="15" fill="#2440C8">Insieme migliorano LCP (velocità del contenuto principale) e CLS (stabilità visiva): due dei tre Core Web Vitals.</text>
+  </g>
+  <text x="80" y="456" class="body" font-size="15" fill="#5A5E66">Le immagini sono spesso il contenuto più pesante di una pagina: qui ottimizzare rende di più.</text>
+</svg>

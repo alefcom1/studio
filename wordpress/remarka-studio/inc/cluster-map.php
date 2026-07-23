@@ -57,6 +57,9 @@ return array(
 		array( 'slug' => 'core-web-vitals-2026', 'it' => 'Core Web Vitals nel 2026', 'en' => 'Core Web Vitals in 2026' ),
 		array( 'slug' => 'seo-locale-milano', 'it' => 'SEO locale a Milano', 'en' => 'Local SEO in Milan' ),
 		array( 'slug' => 'farsi-trovare-da-chatgpt-geo', 'it' => 'Farsi trovare da ChatGPT (GEO)', 'en' => 'Get found by ChatGPT (GEO)' ),
+		array( 'slug' => 'ai-overviews-google-restare-visibili', 'it' => 'AI Overviews di Google', 'en' => 'Google’s AI Overviews' ),
+		array( 'slug' => 'autorevolezza-tematica-batte-keyword', 'it' => 'Autorevolezza tematica', 'en' => 'Topical authority' ),
+		array( 'slug' => 'link-interni-seo-gratis', 'it' => 'Link interni: la SEO gratis', 'en' => 'Internal links: free SEO' ),
 	),
 	'siti-multilingue' => array(
 		array( 'slug' => 'sito-quattro-lingue-costi-tempi', 'it' => 'Un sito in quattro lingue', 'en' => 'A site in four languages' ),
@@ -98,6 +101,8 @@ return array(
 		array( 'slug' => 'check-up-sito-web-7-misure', 'it' => 'Check-up del sito: 7 misure', 'en' => 'Website check-up: 7 metrics' ),
 		array( 'slug' => 'hosting-sito-web-italia', 'it' => 'Hosting in Italia o cloud', 'en' => 'Hosting in Italy or cloud' ),
 		array( 'slug' => 'impatto-ambientale-sito-web', 'it' => 'Impatto ambientale del sito', 'en' => 'A site’s environmental impact' ),
+		array( 'slug' => 'inp-metrica-core-web-vitals', 'it' => 'INP: la nuova metrica', 'en' => 'INP: the new metric' ),
+		array( 'slug' => 'immagini-velocita-webp-lazy-load', 'it' => 'Immagini e velocità', 'en' => 'Images and speed' ),
 	),
 	'verifica-accessibilita' => array(
 		array( 'slug' => 'dichiarazione-di-accessibilita-guida-2026', 'it' => 'Dichiarazione di accessibilità', 'en' => 'Accessibility statement' ),

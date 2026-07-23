@@ -989,3 +989,59 @@ Description (IT/EN): 138/127 · 140/141 · 141/141 · 136/136 · 140/135 — в�
 
 **Проверка длин.** Title (IT/EN): 45/46 · 45/49 · 54/53 · 41/42 · 45/46 — все ≤60.
 Description (IT/EN): 155/155 · 151/150 · 154/145 · 151/157 · 152/148 — все ≤160.
+
+## Blog · Batch 9 — IT/EN (5 статей: SEO che regge nel 2026, вторая волна)
+
+> Вторая волна блога (piano-blog-2.md, статьи 41–45). IT + EN (RU-блог —
+> отдельный батч, не перевод). Фокус-ключ у каждой статьи в лиде, одном H2 и
+> одном alt. Слаги — `build-tools/lang.py` (`BLOG_SLUGS`, `BLOG_IT_EN_ONLY`).
+> Перелинковка: услуга + инструмент Lab + соседняя статья батча.
+> Анти-каннибализация: INP ≠ core-web-vitals-2026 (частная метрика), AI
+> Overviews ≠ farsi-trovare-da-chatgpt-geo (SERP-фича Google ≠ GEO/ChatGPT),
+> topical authority ≠ eeat (архитектура контента ≠ доверие).
+
+| Страница IT · EN | Focus Keyword IT | Focus Keyword EN |
+|---|---|---|
+| `/blog/ai-overviews-google-restare-visibili/` · `/en/blog/google-ai-overviews-stay-visible/` | ai overviews google | google ai overviews |
+| `/blog/inp-metrica-core-web-vitals/` · `/en/blog/inp-core-web-vitals-metric/` | inp core web vitals | inp core web vitals |
+| `/blog/autorevolezza-tematica-batte-keyword/` · `/en/blog/topical-authority-beats-keywords/` | topical authority seo | topical authority seo |
+| `/blog/link-interni-seo-gratis/` · `/en/blog/internal-links-free-seo/` | link interni seo | internal links seo |
+| `/blog/immagini-velocita-webp-lazy-load/` · `/en/blog/image-optimization-webp-lazy-load/` | ottimizzare immagini sito | optimize website images |
+
+### 41 — AI Overviews di Google
+
+- **IT Title:** `AI Overviews di Google: restare visibili | Remarka` (50)
+- **IT Description:** `In cima a Google ora risponde l'AI. Cosa sono gli AI Overviews, cosa cambia per i clic del vostro sito e come restare tra le fonti che l'AI cita.` (144)
+- **EN Title:** `Google AI Overviews: stay visible | Remarka` (43)
+- **EN Description:** `Google now answers with AI at the top of search. What AI Overviews are, what changes for your clicks, and how to stay among the sources AI cites.` (144)
+
+### 42 — INP, la nuova metrica dei Core Web Vitals
+
+- **IT Title:** `INP: la nuova metrica Core Web Vitals | Remarka` (47)
+- **IT Description:** `Da marzo 2024 INP ha sostituito FID tra i Core Web Vitals. Cosa misura la nuova metrica, perché un sito «sembra» veloce senza esserlo e come si risolve.` (150)
+- **EN Title:** `INP: the new Core Web Vitals metric | Remarka` (45)
+- **EN Description:** `Since March 2024 INP replaced FID among the Core Web Vitals. What the new metric measures, why a site seems fast without being it, and how to fix it.` (147)
+
+### 43 — Autorevolezza tematica (topical authority)
+
+- **IT Title:** `Autorevolezza tematica: topical authority | Remarka` (51)
+- **IT Description:** `Inseguire 100 keyword sparse non funziona più. L'autorevolezza tematica (topical authority) è ciò che Google premia: cos'è e come si costruisce.` (143)
+- **EN Title:** `Topical authority beats 100 keywords | Remarka` (46)
+- **EN Description:** `Chasing 100 scattered keywords no longer works. Topical authority — covering a subject deeply — is what Google rewards: what it is and how to build it.` (150)
+
+### 44 — Link interni: la SEO gratis
+
+- **IT Title:** `Link interni: la SEO gratis (guida) | Remarka` (45)
+- **IT Description:** `I link interni sono la leva SEO più sottovalutata: gratis e sotto il vostro controllo. Cosa fanno, gli errori comuni e come usarli bene.` (134)
+- **EN Title:** `Internal links: free SEO few bother with | Remarka` (50)
+- **EN Description:** `Internal links are the most underrated SEO lever: free and under your control. What they do, the common mistakes, and how to use them well.` (138)
+
+### 45 — Immagini e velocità: WebP e lazy-load
+
+- **IT Title:** `Ottimizzare le immagini del sito: WebP | Remarka` (48)
+- **IT Description:** `Le immagini sono spesso il peso più grande di una pagina. Come ottimizzare le immagini del sito con WebP, lazy-load e le dimensioni giuste.` (138)
+- **EN Title:** `Optimize website images: WebP & lazy-load | Remarka` (51)
+- **EN Description:** `Images are often a page's heaviest weight. How to optimize your site's images with WebP, lazy-load and the right dimensions for Core Web Vitals.` (142)
+
+**Проверка длин.** Title (IT/EN): 50/43 · 47/45 · 51/46 · 45/50 · 48/51 — все ≤60.
+Description (IT/EN): 144/144 · 150/147 · 143/150 · 134/138 · 138/142 — все ≤160.

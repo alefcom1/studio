@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="AI Overviews di Google: come restare visibili quando a rispondere è l'AI">
+  <defs>
+    <pattern id="gridAio" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="#F7F6F2"/>
+  <rect width="1200" height="630" fill="url(#gridAio)"/>
+  <line x1="80" y1="96" x2="1120" y2="96" stroke="#14161A" stroke-width="1.5"/>
+  <text x="80" y="82" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">REMARKA · STUDIO — BLOG</text>
+  <text x="1120" y="82" class="mono" font-size="15" letter-spacing="2" fill="#2440C8" text-anchor="end">SEO · 2026</text>
+  <text x="80" y="238" class="disp" font-size="96" letter-spacing="1" fill="#14161A">La risposta</text>
+  <text x="80" y="330" class="disp" font-size="96" letter-spacing="1" fill="#14161A">prima del clic.</text>
+  <text x="84" y="392" class="mono" font-size="20" fill="#5A5E66">ai overviews di google — restare visibili quando risponde l'ai</text>
+  <g transform="translate(80,452)">
+    <rect x="0" y="0" width="270" height="110" fill="#2440C8"/>
+    <text x="24" y="40" class="mono" font-size="14" letter-spacing="2" fill="#C9D2FF">1 · CERCA</text>
+    <text x="24" y="88" class="disp" font-size="40" fill="#FFFFFF">domanda</text>
+  </g>
+  <text x="372" y="518" class="mono" font-size="30" fill="#9AA0AA">→</text>
+  <g transform="translate(420,452)">
+    <rect x="0" y="0" width="270" height="110" fill="#5B73E8"/>
+    <text x="24" y="40" class="mono" font-size="14" letter-spacing="2" fill="#EEF1FE">2 · AI</text>
+    <text x="24" y="88" class="disp" font-size="40" fill="#FFFFFF">riassume</text>
+  </g>
+  <text x="712" y="518" class="mono" font-size="30" fill="#9AA0AA">→</text>
+  <g transform="translate(760,452)">
+    <rect x="0" y="0" width="270" height="110" fill="#14161A"/>
+    <text x="24" y="40" class="mono" font-size="14" letter-spacing="2" fill="#9AA0AA">3 · FONTI</text>
+    <text x="24" y="88" class="disp" font-size="40" fill="#FFFFFF">cita</text>
+  </g>
+</svg>

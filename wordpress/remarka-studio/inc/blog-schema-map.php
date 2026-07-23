@@ -5,7 +5,7 @@
  * обложка, для JSON-LD BlogPosting (см. remarka_blog_posting_schema).
  */
 return array(
-	'_modified' => '2026-07-22',
+	'_modified' => '2026-07-23',
 	'posts' => array(
 		'piattaforma-ecommerce-quale-scegliere' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ecommerce-piattaforme-cover.svg' ),
 		'which-ecommerce-platform' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ecommerce-piattaforme-cover.svg' ),
@@ -99,6 +99,16 @@ return array(
 		'web-agency-client-portal' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/areaclienti-cover.svg' ),
 		'monitoraggio-sito-dopo-lancio' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/monitoraggio-cover.svg' ),
 		'website-monitoring-after-launch' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/monitoraggio-cover.svg' ),
+		'ai-overviews-google-restare-visibili' => array( 'date' => '2026-07-23', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ai-overviews-cover.svg' ),
+		'google-ai-overviews-stay-visible' => array( 'date' => '2026-07-23', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ai-overviews-cover.svg' ),
+		'inp-metrica-core-web-vitals' => array( 'date' => '2026-07-23', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/inp-cover.svg' ),
+		'inp-core-web-vitals-metric' => array( 'date' => '2026-07-23', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/inp-cover.svg' ),
+		'autorevolezza-tematica-batte-keyword' => array( 'date' => '2026-07-23', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/topical-authority-cover.svg' ),
+		'topical-authority-beats-keywords' => array( 'date' => '2026-07-23', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/topical-authority-cover.svg' ),
+		'link-interni-seo-gratis' => array( 'date' => '2026-07-23', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/link-interni-cover.svg' ),
+		'internal-links-free-seo' => array( 'date' => '2026-07-23', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/link-interni-cover.svg' ),
+		'immagini-velocita-webp-lazy-load' => array( 'date' => '2026-07-23', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/immagini-velocita-cover.svg' ),
+		'image-optimization-webp-lazy-load' => array( 'date' => '2026-07-23', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/immagini-velocita-cover.svg' ),
 		'sajt-dlya-vyhoda-na-rynok-italii' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-mercato-cover.svg' ),
 		'seo-v-italii-po-russki' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-seo-cover.svg' ),
 		'gdpr-dlya-russkoyazychnogo-biznesa-v-es' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-gdpr-cover.svg' ),

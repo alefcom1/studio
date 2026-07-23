@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-label="Anatomia di un risultato Google con AI Overview: risposta AI in alto, fonti citate a lato, link organici sotto">
+  <defs>
+    <pattern id="gridAis" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="500" fill="#F7F6F2"/>
+  <rect width="1200" height="500" fill="url(#gridAis)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">ANATOMIA DI UN RISULTATO CON AI OVERVIEW</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <g transform="translate(80,108)">
+    <rect x="0" y="0" width="740" height="150" fill="#2440C8"/>
+    <text x="28" y="42" class="mono" font-size="14" letter-spacing="2" fill="#C9D2FF">IN ALTO — LA RISPOSTA GENERATA DALL'AI</text>
+    <text x="28" y="92" class="disp" font-size="46" fill="#FFFFFF">AI Overview</text>
+    <text x="28" y="128" class="body" font-size="18" fill="#EEF1FE">riassume più fonti in un paragrafo</text>
+  </g>
+  <g transform="translate(840,108)">
+    <rect x="0" y="0" width="280" height="150" fill="#14161A"/>
+    <text x="24" y="40" class="mono" font-size="14" letter-spacing="2" fill="#9AA0AA">A LATO</text>
+    <text x="24" y="86" class="disp" font-size="34" fill="#FFFFFF">Fonti citate</text>
+    <text x="24" y="120" class="body" font-size="16" fill="#9AA0AA">la nuova prima posizione</text>
+  </g>
+  <g transform="translate(80,286)">
+    <rect x="0" y="0" width="1040" height="120" fill="#FFFFFF" stroke="#D8D6CE" stroke-width="1"/>
+    <text x="28" y="40" class="mono" font-size="14" letter-spacing="2" fill="#5A5E66">SOTTO — I RISULTATI ORGANICI DI SEMPRE</text>
+    <rect x="28" y="58" width="520" height="12" fill="#EBEAE4"/>
+    <rect x="28" y="82" width="700" height="12" fill="#EBEAE4"/>
+  </g>
+  <text x="80" y="452" class="body" font-size="15" fill="#5A5E66">Non basta arrivare decimi: la partita è essere la fonte che l'AI sceglie di riassumere e linkare.</text>
+</svg>
