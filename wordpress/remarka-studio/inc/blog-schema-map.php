@@ -5,7 +5,7 @@
  * обложка, для JSON-LD BlogPosting (см. remarka_blog_posting_schema).
  */
 return array(
-	'_modified' => '2026-07-24',
+	'_modified' => '2026-07-25',
 	'posts' => array(
 		'piattaforma-ecommerce-quale-scegliere' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ecommerce-piattaforme-cover.svg' ),
 		'which-ecommerce-platform' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ecommerce-piattaforme-cover.svg' ),
@@ -129,5 +129,10 @@ return array(
 		'zakon-o-dostupnosti-sajtov' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-eaa-cover.svg' ),
 		'sajt-v-chatgpt' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-chatgpt-cover.svg' ),
 		'russkoyazychnaya-auditoriya-v-evrope' => array( 'date' => '2026-07-20', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch6-rus-cover.svg' ),
+		'pochemu-sajt-ne-prinosit-zayavok' => array( 'date' => '2026-07-25', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch11-utechki-cover.svg' ),
+		'otzyvy-i-reputaciya-v-italii' => array( 'date' => '2026-07-25', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch11-otzyvy-cover.svg' ),
+		'whatsapp-dlya-biznesa-v-evrope' => array( 'date' => '2026-07-25', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch11-whatsapp-cover.svg' ),
+		'reklama-ili-seo-s-chego-nachat' => array( 'date' => '2026-07-25', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch11-seo-reklama-cover.svg' ),
+		'kak-prinyat-oplatu-na-sajte' => array( 'date' => '2026-07-25', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch11-oplata-cover.svg' ),
 	),
 );

@@ -76,6 +76,11 @@ return array(
 	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/zakon-o-dostupnosti-sajtov' ),
 	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/sajt-v-chatgpt' ),
 	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/russkoyazychnaya-auditoriya-v-evrope' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/pochemu-sajt-ne-prinosit-zayavok' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/otzyvy-i-reputaciya-v-italii' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/whatsapp-dlya-biznesa-v-evrope' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/reklama-ili-seo-s-chego-nachat' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/kak-prinyat-oplatu-na-sajte' ),
 	array( 'it' => 'blog/area-clienti-agenzia-web', 'en' => 'en/blog/web-agency-client-portal', 'ru' => 'ru/blog' ),
 	array( 'it' => 'blog/monitoraggio-sito-dopo-lancio', 'en' => 'en/blog/website-monitoring-after-launch', 'ru' => 'ru/blog' ),
 );

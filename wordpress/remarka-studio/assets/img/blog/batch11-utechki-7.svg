@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-label="Семь тихих мест, где сайт теряет заявки">
+  <defs>
+    <pattern id="gridUt7" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="600" fill="#F7F6F2"/>
+  <rect width="1200" height="600" fill="url(#gridUt7)"/>
+  <line x1="80" y1="86" x2="1120" y2="86" stroke="#14161A" stroke-width="1.5"/>
+  <text x="80" y="72" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">СЕМЬ ТИХИХ УТЕЧЕК — ГДЕ САЙТ ТЕРЯЕТ ЗАЯВКИ</text>
+  <g transform="translate(80,120)"><rect width="245" height="100" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/><text x="18" y="42" class="disp" font-size="28" fill="#2440C8">1</text><text x="60" y="42" class="body" font-size="19" font-weight="600" fill="#14161A">Скорость</text><text x="18" y="78" class="body" font-size="15" fill="#5A5E66">грузится дольше 3 секунд</text></g>
+  <g transform="translate(345,120)"><rect width="245" height="100" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/><text x="18" y="42" class="disp" font-size="28" fill="#2440C8">2</text><text x="60" y="42" class="body" font-size="19" font-weight="600" fill="#14161A">Мобильный</text><text x="18" y="78" class="body" font-size="15" fill="#5A5E66">неудобно с телефона</text></g>
+  <g transform="translate(610,120)"><rect width="245" height="100" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/><text x="18" y="42" class="disp" font-size="28" fill="#2440C8">3</text><text x="60" y="42" class="body" font-size="19" font-weight="600" fill="#14161A">Форма</text><text x="18" y="78" class="body" font-size="15" fill="#5A5E66">слишком много полей</text></g>
+  <g transform="translate(875,120)"><rect width="245" height="100" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/><text x="18" y="42" class="disp" font-size="28" fill="#2440C8">4</text><text x="60" y="42" class="body" font-size="19" font-weight="600" fill="#14161A">Оффер</text><text x="18" y="78" class="body" font-size="15" fill="#5A5E66">непонятно, что делать</text></g>
+  <g transform="translate(212,245)"><rect width="245" height="100" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/><text x="18" y="42" class="disp" font-size="28" fill="#2440C8">5</text><text x="60" y="42" class="body" font-size="19" font-weight="600" fill="#14161A">Доверие</text><text x="18" y="78" class="body" font-size="15" fill="#5A5E66">нет отзывов и лиц</text></g>
+  <g transform="translate(477,245)"><rect width="245" height="100" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/><text x="18" y="42" class="disp" font-size="28" fill="#2440C8">6</text><text x="60" y="42" class="body" font-size="19" font-weight="600" fill="#14161A">Контакты</text><text x="18" y="78" class="body" font-size="15" fill="#5A5E66">телефон спрятан</text></g>
+  <g transform="translate(742,245)"><rect width="245" height="100" fill="#2440C8"/><text x="18" y="42" class="disp" font-size="28" fill="#FFFFFF">7</text><text x="60" y="42" class="body" font-size="19" font-weight="600" fill="#FFFFFF">Аналитика</text><text x="18" y="78" class="body" font-size="15" fill="#C9D2FF">вы не видите утечку</text></g>
+  <text x="80" y="430" class="mono" font-size="15" fill="#5A5E66">Сначала измеряем, потом чиним — по одной утечке за раз.</text>
+  <text x="80" y="460" class="mono" font-size="15" fill="#5A5E66">Источник: Google Search Central · web.dev Web Vitals · Nielsen Norman Group · Baymard.</text>
+</svg>

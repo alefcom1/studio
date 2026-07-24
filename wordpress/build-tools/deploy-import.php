@@ -458,6 +458,12 @@ $page_map = array(
 	'ru-blog-zakon-o-dostupnosti-sajtov'           => array( 'zakon-o-dostupnosti-sajtov', 'ru/blog', null ),
 	'ru-blog-sajt-v-chatgpt'                       => array( 'sajt-v-chatgpt', 'ru/blog', null ),
 	'ru-blog-russkoyazychnaya-auditoriya-v-evrope' => array( 'russkoyazychnaya-auditoriya-v-evrope', 'ru/blog', null ),
+	// Blog · Batch 11 — RU-only (scritti a mano, senza specchio IT/EN).
+	'ru-blog-pochemu-sajt-ne-prinosit-zayavok'     => array( 'pochemu-sajt-ne-prinosit-zayavok', 'ru/blog', null ),
+	'ru-blog-otzyvy-i-reputaciya-v-italii'         => array( 'otzyvy-i-reputaciya-v-italii', 'ru/blog', null ),
+	'ru-blog-whatsapp-dlya-biznesa-v-evrope'       => array( 'whatsapp-dlya-biznesa-v-evrope', 'ru/blog', null ),
+	'ru-blog-reklama-ili-seo-s-chego-nachat'       => array( 'reklama-ili-seo-s-chego-nachat', 'ru/blog', null ),
+	'ru-blog-kak-prinyat-oplatu-na-sajte'          => array( 'kak-prinyat-oplatu-na-sajte', 'ru/blog', null ),
 	'ru-prezzi'                                    => array( 'ceny', 'ru', null ),
 	'ru-brief'                                     => array( 'brif', 'ru', 'Бриф' ),
 	'ru-citta-milano'                              => array( 'milan', 'ru', null ),

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-label="Реклама и SEO: два разных инструмента для роста">
+  <defs>
+    <pattern id="gridSrVs" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="600" fill="#F7F6F2"/>
+  <rect width="1200" height="600" fill="url(#gridSrVs)"/>
+  <line x1="80" y1="86" x2="1120" y2="86" stroke="#14161A" stroke-width="1.5"/>
+  <text x="80" y="72" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">РЕКЛАМА И SEO — ДВА РАЗНЫХ ИНСТРУМЕНТА</text>
+  <g transform="translate(80,120)">
+    <rect width="490" height="340" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/>
+    <text x="28" y="56" class="disp" font-size="26" fill="#14161A">РЕКЛАМА</text>
+    <line x1="28" y1="76" x2="462" y2="76" stroke="#DDDBD4" stroke-width="1"/>
+    <text x="28" y="128" class="body" font-size="20" fill="#5A5E66">трафик уже сегодня</text>
+    <text x="28" y="184" class="body" font-size="20" fill="#5A5E66">платите за каждый клик</text>
+    <text x="28" y="240" class="body" font-size="20" fill="#5A5E66">выключили — тишина</text>
+    <text x="28" y="296" class="body" font-size="20" fill="#5A5E66">хорошо для теста спроса</text>
+  </g>
+  <g transform="translate(630,120)">
+    <rect width="490" height="340" fill="#FFFFFF" stroke="#2440C8" stroke-width="2"/>
+    <text x="28" y="56" class="disp" font-size="26" fill="#2440C8">SEO</text>
+    <line x1="28" y1="76" x2="462" y2="76" stroke="#C9D2FF" stroke-width="1"/>
+    <text x="28" y="128" class="body" font-size="20" fill="#14161A">эффект через месяцы</text>
+    <text x="28" y="184" class="body" font-size="20" fill="#14161A">клики бесплатны</text>
+    <text x="28" y="240" class="body" font-size="20" fill="#14161A">актив остаётся с вами</text>
+    <text x="28" y="296" class="body" font-size="20" fill="#14161A">растёт со временем</text>
+  </g>
+  <text x="80" y="510" class="mono" font-size="15" fill="#5A5E66">Не «или», а «сначала»: реклама — для теста, SEO — для роста.</text>
+  <text x="80" y="540" class="mono" font-size="15" fill="#5A5E66">Источник: Google Search Central · Google Ads Help · web.dev Web Vitals.</text>
+</svg>

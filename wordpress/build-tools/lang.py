@@ -227,6 +227,12 @@ BLOG_RU_ONLY = {
     'zakon-o-dostupnosti-sajtov':             {'date': '2026-07-20', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch6-eaa-cover.svg'},
     'sajt-v-chatgpt':                         {'date': '2026-07-20', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch6-chatgpt-cover.svg'},
     'russkoyazychnaya-auditoriya-v-evrope':   {'date': '2026-07-20', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch6-rus-cover.svg'},
+    # Batch 11 — RU-only (vendite e fiducia, scritti a mano in russo).
+    'pochemu-sajt-ne-prinosit-zayavok':       {'date': '2026-07-25', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch11-utechki-cover.svg'},
+    'otzyvy-i-reputaciya-v-italii':           {'date': '2026-07-25', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch11-otzyvy-cover.svg'},
+    'whatsapp-dlya-biznesa-v-evrope':         {'date': '2026-07-25', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch11-whatsapp-cover.svg'},
+    'reklama-ili-seo-s-chego-nachat':         {'date': '2026-07-25', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch11-seo-reklama-cover.svg'},
+    'kak-prinyat-oplatu-na-sajte':            {'date': '2026-07-25', 'image': '/wp-content/themes/remarka-studio/assets/img/blog/batch11-oplata-cover.svg'},
 }
 
 
