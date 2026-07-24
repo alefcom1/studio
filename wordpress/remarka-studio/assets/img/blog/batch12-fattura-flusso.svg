@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-label="Путь электронного счёта: заказ на сайте, данные покупателя, XML, система SdI и получатель">
+  <defs>
+    <pattern id="gridFatS" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="600" fill="#F7F6F2"/>
+  <rect width="1200" height="600" fill="url(#gridFatS)"/>
+  <line x1="80" y1="86" x2="1120" y2="86" stroke="#14161A" stroke-width="1.5"/>
+  <text x="80" y="72" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">ПУТЬ ЭЛЕКТРОННОГО СЧЁТА</text>
+  <g transform="translate(80,130)"><rect width="200" height="130" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/><text x="16" y="40" class="mono" font-size="13" letter-spacing="1" fill="#5A5E66">1 · ЧЕКАУТ</text><text x="16" y="76" class="body" font-size="18" font-weight="600" fill="#14161A">данные</text><text x="16" y="100" class="body" font-size="18" font-weight="600" fill="#14161A">покупателя</text></g>
+  <text x="292" y="205" class="disp" font-size="26" fill="#2440C8">→</text>
+  <g transform="translate(322,130)"><rect width="200" height="130" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/><text x="16" y="40" class="mono" font-size="13" letter-spacing="1" fill="#5A5E66">2 · ФОРМАТ</text><text x="16" y="88" class="disp" font-size="30" fill="#14161A">XML</text></g>
+  <text x="534" y="205" class="disp" font-size="26" fill="#2440C8">→</text>
+  <g transform="translate(564,130)"><rect width="200" height="130" fill="#2440C8"/><text x="16" y="40" class="mono" font-size="13" letter-spacing="1" fill="#C9D2FF">3 · ПРОВЕРКА</text><text x="16" y="88" class="disp" font-size="28" fill="#FFFFFF">SdI</text></g>
+  <text x="776" y="205" class="disp" font-size="26" fill="#2440C8">→</text>
+  <g transform="translate(806,130)"><rect width="200" height="130" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/><text x="16" y="40" class="mono" font-size="13" letter-spacing="1" fill="#5A5E66">4 · ДОСТАВКА</text><text x="16" y="76" class="body" font-size="18" font-weight="600" fill="#14161A">покупателю</text></g>
+  <text x="1018" y="205" class="disp" font-size="26" fill="#2440C8">→</text>
+  <g transform="translate(1040,130)"><rect width="80" height="130" fill="none" stroke="#14161A" stroke-width="1.5"/><text x="12" y="40" class="mono" font-size="12" fill="#5A5E66">5</text><text x="12" y="72" class="body" font-size="14" font-weight="600" fill="#14161A">копия</text><text x="12" y="92" class="body" font-size="14" font-weight="600" fill="#14161A">в налог.</text></g>
+  <line x1="80" y1="330" x2="1120" y2="330" stroke="#DDDBD4" stroke-width="1.5"/>
+  <text x="80" y="380" class="body" font-size="17" fill="#14161A">Ошибка формата или пропущенное обязательное поле на первом шаге —</text>
+  <text x="80" y="408" class="body" font-size="17" fill="#14161A">и SdI отклоняет весь счёт целиком: сбой в начале ломает всю цепочку.</text>
+  <text x="80" y="460" class="mono" font-size="15" fill="#5A5E66">Источник: Agenzia delle Entrate · FatturaPA — портал электронного счёта.</text>
+</svg>

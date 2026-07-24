@@ -81,6 +81,11 @@ return array(
 	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/whatsapp-dlya-biznesa-v-evrope' ),
 	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/reklama-ili-seo-s-chego-nachat' ),
 	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/kak-prinyat-oplatu-na-sajte' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/sajt-dlya-nemeckogo-rynka' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/google-business-profile-v-italii' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/analitika-i-privatnost-ga4' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/elektronnyj-schet-i-sajt' ),
+	array( 'it' => 'blog', 'en' => 'en/blog', 'ru' => 'ru/blog/mobilnaya-versiya-sajta' ),
 	array( 'it' => 'blog/area-clienti-agenzia-web', 'en' => 'en/blog/web-agency-client-portal', 'ru' => 'ru/blog' ),
 	array( 'it' => 'blog/monitoraggio-sito-dopo-lancio', 'en' => 'en/blog/website-monitoring-after-launch', 'ru' => 'ru/blog' ),
 );

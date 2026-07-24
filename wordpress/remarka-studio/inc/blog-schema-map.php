@@ -134,5 +134,10 @@ return array(
 		'whatsapp-dlya-biznesa-v-evrope' => array( 'date' => '2026-07-25', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch11-whatsapp-cover.svg' ),
 		'reklama-ili-seo-s-chego-nachat' => array( 'date' => '2026-07-25', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch11-seo-reklama-cover.svg' ),
 		'kak-prinyat-oplatu-na-sajte' => array( 'date' => '2026-07-25', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch11-oplata-cover.svg' ),
+		'sajt-dlya-nemeckogo-rynka' => array( 'date' => '2026-07-26', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch12-germania-cover.svg' ),
+		'google-business-profile-v-italii' => array( 'date' => '2026-07-26', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch12-gbp-cover.svg' ),
+		'analitika-i-privatnost-ga4' => array( 'date' => '2026-07-26', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch12-ga4-cover.svg' ),
+		'elektronnyj-schet-i-sajt' => array( 'date' => '2026-07-26', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch12-fattura-cover.svg' ),
+		'mobilnaya-versiya-sajta' => array( 'date' => '2026-07-26', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch12-mobile-cover.svg' ),
 	),
 );

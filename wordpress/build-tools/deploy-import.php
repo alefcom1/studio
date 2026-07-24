@@ -464,6 +464,12 @@ $page_map = array(
 	'ru-blog-whatsapp-dlya-biznesa-v-evrope'       => array( 'whatsapp-dlya-biznesa-v-evrope', 'ru/blog', null ),
 	'ru-blog-reklama-ili-seo-s-chego-nachat'       => array( 'reklama-ili-seo-s-chego-nachat', 'ru/blog', null ),
 	'ru-blog-kak-prinyat-oplatu-na-sajte'          => array( 'kak-prinyat-oplatu-na-sajte', 'ru/blog', null ),
+	// Blog · Batch 12 — RU-only (scritti a mano, senza specchio IT/EN). Ultimo batch della volна 2.
+	'ru-blog-sajt-dlya-nemeckogo-rynka'            => array( 'sajt-dlya-nemeckogo-rynka', 'ru/blog', null ),
+	'ru-blog-google-business-profile-v-italii'     => array( 'google-business-profile-v-italii', 'ru/blog', null ),
+	'ru-blog-analitika-i-privatnost-ga4'           => array( 'analitika-i-privatnost-ga4', 'ru/blog', null ),
+	'ru-blog-elektronnyj-schet-i-sajt'             => array( 'elektronnyj-schet-i-sajt', 'ru/blog', null ),
+	'ru-blog-mobilnaya-versiya-sajta'              => array( 'mobilnaya-versiya-sajta', 'ru/blog', null ),
 	'ru-prezzi'                                    => array( 'ceny', 'ru', null ),
 	'ru-brief'                                     => array( 'brif', 'ru', 'Бриф' ),
 	'ru-citta-milano'                              => array( 'milan', 'ru', null ),

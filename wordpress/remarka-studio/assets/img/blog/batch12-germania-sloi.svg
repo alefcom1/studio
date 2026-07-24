@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-label="Четыре слоя сайта для немецкого рынка">
+  <defs>
+    <pattern id="gridDeS" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}
+      .disp{font-family:'Clash Display','Arial Narrow',Arial,sans-serif;font-weight:600;}
+      .body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;}
+    </style>
+  </defs>
+  <rect width="1200" height="600" fill="#F7F6F2"/>
+  <rect width="1200" height="600" fill="url(#gridDeS)"/>
+  <line x1="80" y1="86" x2="1120" y2="86" stroke="#14161A" stroke-width="1.5"/>
+  <text x="80" y="72" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">ЧЕТЫРЕ СЛОЯ НЕМЕЦКОГО САЙТА</text>
+  <g transform="translate(80,130)"><rect width="500" height="130" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/><text x="18" y="50" class="disp" font-size="26" fill="#2440C8">1</text><text x="64" y="50" class="body" font-size="20" font-weight="600" fill="#14161A">Язык носителя</text><text x="18" y="92" class="body" font-size="15" fill="#5A5E66">сухой деловой тон, без превосходных степеней</text></g>
+  <g transform="translate(620,130)"><rect width="500" height="130" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/><text x="18" y="50" class="disp" font-size="26" fill="#2440C8">2</text><text x="64" y="50" class="body" font-size="20" font-weight="600" fill="#14161A">Impressum и право</text><text x="18" y="92" class="body" font-size="15" fill="#5A5E66">юр. данные по местным меркам, доступны везде</text></g>
+  <g transform="translate(80,300)"><rect width="500" height="130" fill="#FFFFFF" stroke="#14161A" stroke-width="1.5"/><text x="18" y="50" class="disp" font-size="26" fill="#2440C8">3</text><text x="64" y="50" class="body" font-size="20" font-weight="600" fill="#14161A">Привычная оплата</text><text x="18" y="92" class="body" font-size="15" fill="#5A5E66">по счёту, списание, местные сервисы</text></g>
+  <g transform="translate(620,300)"><rect width="500" height="130" fill="#2440C8"/><text x="18" y="50" class="disp" font-size="26" fill="#FFFFFF">4</text><text x="64" y="50" class="body" font-size="20" font-weight="600" fill="#FFFFFF">Доказательства</text><text x="18" y="92" class="body" font-size="15" fill="#C9D2FF">адрес, люди, история — а не лозунги</text></g>
+  <text x="80" y="500" class="mono" font-size="15" fill="#5A5E66">Немецкий сайт считается «серьёзным» только со всеми четырьмя слоями.</text>
+  <text x="80" y="530" class="mono" font-size="15" fill="#5A5E66">Источник: Destatis · Your Europe Business · Google Search Central.</text>
+</svg>
