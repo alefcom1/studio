@@ -123,6 +123,21 @@
   целостность ссылок — 43/43 без «висячих» slug'ов. Побочно: агент, писавший
   батч, упал по лимиту сессии на середине сборки EN-переводов (IT-часть была
   полностью готова и корректна) — довёл EN-перевод и полную проверку сам.
-- Батч 10 — ⬜ очередь.
+- Батч 10 — ✅ выполнен и принят. 5 IT-статей (46–50, «Locale e mercati»:
+  SEO locale a Roma, SEO locale a Torino, Napoli e turismo/sito multilingue,
+  traduzione madrelingua vs AI, ROI della localizzazione) + EN-конвейер
+  (exit 0 подтверждён независимо, 82 файла, 3160 пар, 0 IT-остатков в телах).
+  По 2 фирменных SVG (10 шт.) — независимый bbox-аудит анти-overflow:
+  TOTAL_FLAGS=0. Анти-каннибализация проверена независимо (53 поста, 0
+  пересечений; Roma/Torino/Napoli не пересекаются с seo-locale-milano;
+  traduzione-madrelingua-vs-ai и roi-localizzazione разведены с
+  hreflang/sito-per-export по углу). Приёмка оркестратора: вычитаны все
+  5 текстов целиком — живо, честно, с реальным локальным колоритом (районы,
+  отрасли Roma/Torino/Napoli), сбалансированный взгляд на AI-перевод (не
+  демонизирует, чётко разводит «когда ИИ ок» и «когда нужен носитель»),
+  источники реальные (Google official docs, BrightLocal, CSA Research,
+  Istat, Eurostat), без упоминаний ИИ-инструментов разработки. Cluster-map
+  дополнен (`siti-multilingue` +2, `export-ready` +1), целостность ссылок
+  46/46. Title ≤60 / Desc ≤160 на всех 10 строках IT+EN.
 - Батч 11 (RU руками) — ⬜ очередь.
 - Батч 12 (RU руками) — ⬜ очередь.
