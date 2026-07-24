@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-label="Come un sito turismo multilingue a Napoli fa prenotare: la catena dalla ricerca alla prenotazione diretta">
+  <defs>
+    <pattern id="gridNas" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/></pattern>
+    <style>.mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}.body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}</style>
+  </defs>
+  <rect width="1200" height="500" fill="#F7F6F2"/>
+  <rect width="1200" height="500" fill="url(#gridNas)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">SITO TURISMO A NAPOLI — LA CATENA DELLA PRENOTAZIONE DIRETTA</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+
+  <g transform="translate(80,150)"><rect x="0" y="0" width="52" height="52" fill="#2440C8"/><text x="26" y="35" class="body" font-size="24" fill="#FFFFFF" text-anchor="middle">1</text></g>
+  <text x="80" y="240" class="body" font-size="19" fill="#14161A">Il turista</text>
+  <text x="80" y="266" class="mono" font-size="13.5" fill="#5A5E66">cerca nella</text>
+  <text x="80" y="286" class="mono" font-size="13.5" fill="#5A5E66">sua lingua</text>
+
+  <g transform="translate(350,150)"><rect x="0" y="0" width="52" height="52" fill="#3A55D8"/><text x="26" y="35" class="body" font-size="24" fill="#FFFFFF" text-anchor="middle">2</text></g>
+  <text x="350" y="240" class="body" font-size="19" fill="#14161A">Hreflang</text>
+  <text x="350" y="266" class="mono" font-size="13.5" fill="#5A5E66">serve la</text>
+  <text x="350" y="286" class="mono" font-size="13.5" fill="#5A5E66">versione giusta</text>
+
+  <g transform="translate(620,150)"><rect x="0" y="0" width="52" height="52" fill="#5B73E8"/><text x="26" y="35" class="body" font-size="24" fill="#FFFFFF" text-anchor="middle">3</text></g>
+  <text x="620" y="240" class="body" font-size="19" fill="#14161A">Madrelingua</text>
+  <text x="620" y="266" class="mono" font-size="13.5" fill="#5A5E66">il testo suona</text>
+  <text x="620" y="286" class="mono" font-size="13.5" fill="#5A5E66">nativo, dà fiducia</text>
+
+  <g transform="translate(890,150)"><rect x="0" y="0" width="52" height="52" fill="#14161A"/><text x="26" y="35" class="body" font-size="24" fill="#FFFFFF" text-anchor="middle">4</text></g>
+  <text x="890" y="240" class="body" font-size="19" fill="#14161A">Prenota</text>
+  <text x="890" y="266" class="mono" font-size="13.5" fill="#5A5E66">diretto: il</text>
+  <text x="890" y="286" class="mono" font-size="13.5" fill="#5A5E66">margine resta a voi</text>
+
+  <g stroke="#2440C8" stroke-width="3" fill="#2440C8">
+    <line x1="180" y1="176" x2="338" y2="176"/><path d="M338 170 L352 176 L338 182 Z"/>
+    <line x1="450" y1="176" x2="608" y2="176"/><path d="M608 170 L622 176 L608 182 Z"/>
+    <line x1="720" y1="176" x2="878" y2="176"/><path d="M878 170 L892 176 L878 182 Z"/>
+  </g>
+
+  <g transform="translate(80,360)">
+    <rect x="0" y="0" width="1040" height="90" fill="#EEF1FE" stroke="#2440C8" stroke-width="1"/>
+    <text x="24" y="38" class="mono" font-size="14.5" fill="#2440C8">Un sito solo in italiano, o tradotto a macchina, spezza la catena al primo anello:</text>
+    <text x="24" y="66" class="mono" font-size="14.5" fill="#2440C8">il turista non capisce, non si fida, e la prenotazione va al portale.</text>
+  </g>
+</svg>

@@ -1045,3 +1045,58 @@ Description (IT/EN): 155/155 · 151/150 · 154/145 · 151/157 · 152/148 — в�
 
 **Проверка длин.** Title (IT/EN): 50/43 · 47/45 · 51/46 · 45/50 · 48/51 — все ≤60.
 Description (IT/EN): 144/144 · 150/147 · 143/150 · 134/138 · 138/142 — все ≤160.
+
+## Blog · Batch 10 — IT/EN (5 статей: Locale e mercati, вторая волна)
+
+> Вторая волна блога (piano-blog-2.md, статьи 46–50). IT + EN (RU-блог —
+> отдельный батч, не перевод). Фокус-ключ у каждой статьи в лиде, одном H2 и
+> одном alt. Слаги — `build-tools/lang.py` (`BLOG_SLUGS`, `BLOG_IT_EN_ONLY`).
+> Перелинковка: пиллар (услуга или страница города) + инструмент Lab (где есть)
+> + соседняя статья батча. Анти-каннибализация: Roma/Torino/Napoli ≠
+> seo-locale-milano (другой город); traduzione-madrelingua-vs-ai и
+> roi-localizzazione ≠ hreflang/sito-per-export (угол — качество перевода и ROI,
+> не техника hreflang). Roma/Torino линкуют на страницы-города `/roma/` `/torino/`
+> (геопиллар), Napoli — на `/napoli/` + услугу `/servizi/siti-multilingue/`.
+
+| Страница IT · EN | Focus Keyword IT | Focus Keyword EN |
+|---|---|---|
+| `/blog/seo-locale-roma/` · `/en/blog/local-seo-rome/` | seo locale roma | local seo rome |
+| `/blog/seo-locale-torino/` · `/en/blog/local-seo-turin/` | seo locale torino | local seo turin |
+| `/blog/napoli-turismo-sito-multilingue/` · `/en/blog/naples-tourism-multilingual-website/` | sito turismo napoli | naples tourism website |
+| `/blog/traduzione-madrelingua-vs-ai/` · `/en/blog/native-translation-vs-ai/` | traduzione madrelingua sito | native translation website |
+| `/blog/roi-localizzazione-sito/` · `/en/blog/localization-roi/` | roi traduzione sito | localization roi |
+
+### 46 — SEO locale a Roma
+
+- **IT Title:** `SEO locale a Roma: emergere nella capitale | Remarka` (52)
+- **IT Description:** `A Roma il cliente cerca «vicino a me». Come funziona la SEO locale nella capitale dei servizi, cosa pesa nel ranking e da dove partire.` (135)
+- **EN Title:** `Local SEO in Rome: stand out in the capital | Remarka` (53)
+- **EN Description:** `In Rome customers search «near me». How local SEO works in the capital of services, what weighs in the ranking and where to start.` (130)
+
+### 47 — SEO locale a Torino
+
+- **IT Title:** `SEO locale a Torino: industria ed export | Remarka` (50)
+- **IT Description:** `A Torino il cliente è un buyer tecnico. Come funziona la SEO locale in una città di manifattura e come emergere tra le imprese che esportano.` (141)
+- **EN Title:** `Local SEO in Turin: industry and export | Remarka` (49)
+- **EN Description:** `In Turin the customer is a technical buyer. How local SEO works in a manufacturing city and how to stand out among exporting companies.` (135)
+
+### 48 — Napoli e il turismo (sito multilingue)
+
+- **IT Title:** `Sito turismo a Napoli: multilingue che prenota | Remarka` (56)
+- **IT Description:** `A Napoli il turismo è internazionale e prenota online. Perché un sito multilingue fatto bene fa prenotare diretto, e come costruirlo.` (133)
+- **EN Title:** `Naples tourism: a multilingual site that books | Remarka` (56)
+- **EN Description:** `In Naples tourism is international and books online. Why a well-built multilingual website gets direct bookings, and how to build it.` (133)
+
+### 49 — Traduzione madrelingua vs AI
+
+- **IT Title:** `Traduzione madrelingua o AI per il sito | Remarka` (49)
+- **IT Description:** `La traduzione automatica è migliorata. Ma per il sito che deve vendere, quando conta ancora un madrelingua? Una guida onesta ed equilibrata.` (140)
+- **EN Title:** `Native translation or AI for your website | Remarka` (51)
+- **EN Description:** `Machine translation has improved. But for a site that must sell, when does a native speaker still matter? An honest, balanced guide.` (132)
+
+### 50 — ROI della localizzazione
+
+- **IT Title:** `ROI della localizzazione: tradurre rende? | Remarka` (51)
+- **IT Description:** `Tradurre il sito è un costo o un investimento? Come si ragiona sul ROI della localizzazione e come stimare se aprire una lingua conviene.` (137)
+- **EN Title:** `Localization ROI: does translating pay off? | Remarka` (53)
+- **EN Description:** `Is translating your site a cost or an investment? How to reason about localization ROI and estimate whether opening a language pays.` (132)

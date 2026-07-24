@@ -138,6 +138,12 @@ BLOG_SLUGS = {
     'autorevolezza-tematica-batte-keyword': {'en': 'topical-authority-beats-keywords',      'ru': 'tematicheskij-avtoritet-seo'},
     'link-interni-seo-gratis':              {'en': 'internal-links-free-seo',               'ru': 'vnutrennie-ssylki-seo'},
     'immagini-velocita-webp-lazy-load':     {'en': 'image-optimization-webp-lazy-load',     'ru': 'optimizacija-izobrazhenij-sajta'},
+    # Blog · Batch 10 (seconda ondata) — IT + EN (RU è un batch a sé: slug RU pianificati, IT+EN-only).
+    'seo-locale-roma':                      {'en': 'local-seo-rome',                        'ru': 'lokalnoe-seo-rim'},
+    'seo-locale-torino':                    {'en': 'local-seo-turin',                       'ru': 'lokalnoe-seo-turin'},
+    'napoli-turismo-sito-multilingue':      {'en': 'naples-tourism-multilingual-website',   'ru': 'napoli-turizm-mnogojazychnyj-sajt'},
+    'traduzione-madrelingua-vs-ai':         {'en': 'native-translation-vs-ai',              'ru': 'perevod-nositelem-vs-ai'},
+    'roi-localizzazione-sito':              {'en': 'localization-roi',                      'ru': 'roi-lokalizacii-sajta'},
 }
 
 # Articoli del blog pubblicati solo in IT + EN in questa fase (la loro versione
@@ -193,6 +199,12 @@ BLOG_IT_EN_ONLY = {
     'autorevolezza-tematica-batte-keyword',
     'link-interni-seo-gratis',
     'immagini-velocita-webp-lazy-load',
+    # Batch 10 (seconda ondata)
+    'seo-locale-roma',
+    'seo-locale-torino',
+    'napoli-turismo-sito-multilingue',
+    'traduzione-madrelingua-vs-ai',
+    'roi-localizzazione-sito',
 }
 
 # Blog · Batch 5 — RU-only (scritti a mano in russo, senza specchio IT/EN;

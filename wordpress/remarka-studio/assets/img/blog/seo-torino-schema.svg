@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-label="I tre fattori della SEO locale a Torino: rilevanza, distanza e prominenza">
+  <defs>
+    <pattern id="gridTos" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#EBEAE4" stroke-width="1"/></pattern>
+    <style>.mono{font-family:'Fragment Mono',ui-monospace,'DejaVu Sans Mono',monospace;}.body{font-family:'General Sans',system-ui,'DejaVu Sans',Arial,sans-serif;font-weight:600;}</style>
+  </defs>
+  <rect width="1200" height="500" fill="#F7F6F2"/>
+  <rect width="1200" height="500" fill="url(#gridTos)"/>
+  <text x="80" y="58" class="mono" font-size="15" letter-spacing="3" fill="#5A5E66">SEO LOCALE A TORINO — COSA DECIDE IL LOCAL PACK</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#14161A" stroke-width="1.5"/>
+  <g transform="translate(80,120)">
+    <rect x="0" y="0" width="320" height="150" fill="#FFFFFF" stroke="#2440C8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="320" height="8" fill="#2440C8"/>
+    <text x="24" y="52" class="mono" font-size="14" fill="#2440C8">01</text>
+    <text x="24" y="88" class="body" font-size="26" fill="#14161A">Rilevanza</text>
+    <text x="24" y="120" class="mono" font-size="13" fill="#5A5E66">categoria e servizi</text>
+    <text x="24" y="138" class="mono" font-size="13" fill="#5A5E66">descritti per bene</text>
+  </g>
+  <g transform="translate(440,120)">
+    <rect x="0" y="0" width="320" height="150" fill="#FFFFFF" stroke="#2440C8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="320" height="8" fill="#2440C8"/>
+    <text x="24" y="52" class="mono" font-size="14" fill="#2440C8">02</text>
+    <text x="24" y="88" class="body" font-size="26" fill="#14161A">Distanza</text>
+    <text x="24" y="120" class="mono" font-size="13" fill="#5A5E66">quanto siete vicini</text>
+    <text x="24" y="138" class="mono" font-size="13" fill="#5A5E66">a chi sta cercando</text>
+  </g>
+  <g transform="translate(800,120)">
+    <rect x="0" y="0" width="320" height="150" fill="#FFFFFF" stroke="#2440C8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="320" height="8" fill="#2440C8"/>
+    <text x="24" y="52" class="mono" font-size="14" fill="#2440C8">03</text>
+    <text x="24" y="88" class="body" font-size="26" fill="#14161A">Prominenza</text>
+    <text x="24" y="120" class="mono" font-size="13" fill="#5A5E66">quanto siete conosciuti</text>
+    <text x="24" y="138" class="mono" font-size="13" fill="#5A5E66">recensioni comprese</text>
+  </g>
+  <g stroke="#2440C8" stroke-width="3"><line x1="240" y1="290" x2="240" y2="330"/><line x1="600" y1="290" x2="600" y2="330"/><line x1="960" y1="290" x2="960" y2="330"/></g>
+  <g fill="#2440C8"><path d="M231 330 L249 330 L240 344 Z"/><path d="M591 330 L609 330 L600 344 Z"/><path d="M951 330 L969 330 L960 344 Z"/></g>
+  <g transform="translate(80,360)">
+    <rect x="0" y="0" width="1040" height="96" fill="#14161A"/>
+    <text x="28" y="40" class="mono" font-size="14" fill="#9AA0AA">RISULTATO</text>
+    <text x="28" y="74" class="body" font-size="22" fill="#F7F6F2">i tre posti nella mappa che il buyer torinese vede — e sceglie — per primi</text>
+  </g>
+</svg>

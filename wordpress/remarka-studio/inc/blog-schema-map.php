@@ -5,7 +5,7 @@
  * обложка, для JSON-LD BlogPosting (см. remarka_blog_posting_schema).
  */
 return array(
-	'_modified' => '2026-07-23',
+	'_modified' => '2026-07-24',
 	'posts' => array(
 		'piattaforma-ecommerce-quale-scegliere' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ecommerce-piattaforme-cover.svg' ),
 		'which-ecommerce-platform' => array( 'date' => '2026-07-22', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/ecommerce-piattaforme-cover.svg' ),
@@ -109,6 +109,16 @@ return array(
 		'internal-links-free-seo' => array( 'date' => '2026-07-23', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/link-interni-cover.svg' ),
 		'immagini-velocita-webp-lazy-load' => array( 'date' => '2026-07-23', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/immagini-velocita-cover.svg' ),
 		'image-optimization-webp-lazy-load' => array( 'date' => '2026-07-23', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/immagini-velocita-cover.svg' ),
+		'seo-locale-roma' => array( 'date' => '2026-07-24', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/seo-roma-cover.svg' ),
+		'local-seo-rome' => array( 'date' => '2026-07-24', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/seo-roma-cover.svg' ),
+		'seo-locale-torino' => array( 'date' => '2026-07-24', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/seo-torino-cover.svg' ),
+		'local-seo-turin' => array( 'date' => '2026-07-24', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/seo-torino-cover.svg' ),
+		'napoli-turismo-sito-multilingue' => array( 'date' => '2026-07-24', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/napoli-turismo-cover.svg' ),
+		'naples-tourism-multilingual-website' => array( 'date' => '2026-07-24', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/napoli-turismo-cover.svg' ),
+		'traduzione-madrelingua-vs-ai' => array( 'date' => '2026-07-24', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/traduzione-madrelingua-cover.svg' ),
+		'native-translation-vs-ai' => array( 'date' => '2026-07-24', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/traduzione-madrelingua-cover.svg' ),
+		'roi-localizzazione-sito' => array( 'date' => '2026-07-24', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/roi-localizzazione-cover.svg' ),
+		'localization-roi' => array( 'date' => '2026-07-24', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/roi-localizzazione-cover.svg' ),
 		'sajt-dlya-vyhoda-na-rynok-italii' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-mercato-cover.svg' ),
 		'seo-v-italii-po-russki' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-seo-cover.svg' ),
 		'gdpr-dlya-russkoyazychnogo-biznesa-v-es' => array( 'date' => '2026-07-19', 'image' => '/wp-content/themes/remarka-studio/assets/img/blog/batch5-gdpr-cover.svg' ),

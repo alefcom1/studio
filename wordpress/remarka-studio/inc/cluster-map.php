@@ -65,11 +65,14 @@ return array(
 		array( 'slug' => 'sito-quattro-lingue-costi-tempi', 'it' => 'Un sito in quattro lingue', 'en' => 'A site in four languages' ),
 		array( 'slug' => 'hreflang-sito-multilingue', 'it' => 'Hreflang senza mal di testa', 'en' => 'Hreflang without headaches' ),
 		array( 'slug' => 'sito-per-export', 'it' => 'Vendere all’estero online', 'en' => 'Selling abroad online' ),
+		array( 'slug' => 'napoli-turismo-sito-multilingue', 'it' => 'Napoli: un sito che fa prenotare', 'en' => 'Naples: a site that gets bookings' ),
+		array( 'slug' => 'traduzione-madrelingua-vs-ai', 'it' => 'Traduzione madrelingua o AI', 'en' => 'Native translation or AI' ),
 	),
 	'export-ready' => array(
 		array( 'slug' => 'sito-per-export', 'it' => 'Vendere all’estero online', 'en' => 'Selling abroad online' ),
 		array( 'slug' => 'sito-quattro-lingue-costi-tempi', 'it' => 'Un sito in quattro lingue', 'en' => 'A site in four languages' ),
 		array( 'slug' => 'hreflang-sito-multilingue', 'it' => 'Hreflang senza mal di testa', 'en' => 'Hreflang without headaches' ),
+		array( 'slug' => 'roi-localizzazione-sito', 'it' => 'ROI della localizzazione', 'en' => 'Localization ROI' ),
 	),
 	'web-app' => array(
 		array( 'slug' => 'gestionale-su-misura-vs-excel', 'it' => 'Gestionale su misura vs Excel', 'en' => 'Custom software vs Excel' ),
